@@ -1,0 +1,902 @@
+{
+ "cards": [
+  {
+   "id": "ma05_01",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "worried",
+   "arc": {
+    "id": "MA05",
+    "stage": 1
+   },
+   "text": "I have to tell someone. There's a drawer in my office. In it is a copy of Marrow's Year 6 survey. I've had it six years. I've read the tables. I've never read the conclusions. Sorry. I'm frightened of the conclusions.",
+   "left": {
+    "label": "Read them together",
+    "outcome": "\"Yes. Yes. Tonight. Bring a lamp. Two.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Give me the drawer key",
+    "outcome": "She gives it. Her hand shakes. \"Don't read it in front of me.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 40
+     }
+    },
+    "resources": {
+     "water": {
+      "max": 45
+     }
+    }
+   },
+   "weight": 1.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_02",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "MA05",
+    "stage": 1
+   },
+   "text": "Page forty. 'The Ninefold Reservoirs, at maximum, will sustain the Summit Pound for two summers in three.' Two in three. It's in her own hand. It was never enough. It was never meant to be.",
+   "left": {
+    "label": "Then what fills it in the third summer?",
+    "outcome": "\"Nothing in the survey. Nothing. There's a page missing after forty. Cut, not torn.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "read_survey",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Perhaps the reservoirs were enlarged",
+    "outcome": "\"They weren't. I've measured them. Roughly. Exactly.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "flags_set": [
+      "read_survey",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_03",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "arc": {
+    "id": "MA05",
+    "stage": 1
+   },
+   "text": "The missing page. There's a note in the margin of forty-one, tiny, in Marrow's hand: 'see S.H. sect. 4'. S.H. Sorry. I don't know what S.H. is. I've been not knowing for six years.",
+   "left": {
+    "label": "Sluice house",
+    "outcome": "\"Oh.\" A very long pause. \"Oh, that's why it's on the list.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Someone's initials",
+    "outcome": "\"I checked the rolls. There's nobody. There was never anybody.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_survey"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_04",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "MA05",
+    "stage": 2
+   },
+   "text": "I want to walk the aqueduct. All of it, from Cald Tarn to the pound. Nobody has since the Dry Year. It's a day. If it's dry where it should be wet, we'll know. If it's wet where it should be dry, we'll know something else.",
+   "left": {
+    "label": "Walk it with her",
+    "outcome": "A day on the Spine. The aqueduct is a trickle for six miles. The pound, when you return, has fallen its usual mark and no more.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "clue_dry_aqueduct"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 3
+     },
+     "resources": {
+      "traffic": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Send Mirren with her",
+    "outcome": "They go together. Mirren comes back and does not speak. Quenn comes back and does not stop.",
+    "effects": {
+     "relationships": {
+      "quenn": 4,
+      "mirren": 4
+     },
+     "flags_set": [
+      "clue_dry_aqueduct"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_survey",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_05",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "MA05",
+    "stage": 2
+   },
+   "text": "Cald Tarn. The lake that feeds the aqueduct. It's full. Full, and the aqueduct's dry, because the sluice at the tarn was closed. By hand. Recently. Someone closed the Company's own aqueduct and the pound didn't notice.",
+   "left": {
+    "label": "Open the tarn sluice",
+    "outcome": "You open it. The aqueduct runs. The pound rises a finger. A finger. From a full lake.",
+    "effects": {
+     "resources": {
+      "water": 1
+     },
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_dry_aqueduct",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Leave it; see who closed it",
+    "outcome": "You wait a night. A Company man comes up from Halfway with a lamp and checks the sluice is shut. Vosk's man.",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "flags_set": [
+      "clue_sluice_guard",
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_dry_aqueduct"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_06",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "MA05",
+    "stage": 2
+   },
+   "text": "Vosk asked where I was yesterday. I said the aqueduct. She said 'noted'. Then she asked whether I'd found the tarn sluice 'in good order'. She knew, Keeper. She knew before she asked. Sorry. I'm going to be sick.",
+   "left": {
+    "label": "Tell Vosk it was your order",
+    "outcome": "You tell her. \"Noted. Then the engineer was obeying orders. Good.\" She writes your name, not Quenn's.",
+    "effects": {
+     "relationships": {
+      "quenn": 8,
+      "vosk": -2
+     },
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Say nothing; wait",
+    "outcome": "Vosk says nothing more. Quenn does not sleep. Neither, now, do you.",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "counters": {
+      "suspicion": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_dry_aqueduct",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma05_07",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA05",
+    "stage": 3
+   },
+   "text": "I understand the engineer has been walking aqueducts. I note that I have been counting water for six years and have told nobody. I note that two people counting alone is a coincidence and two together is evidence. Shall we be evidence?",
+   "left": {
+    "label": "Bring Crane in",
+    "outcome": "Crane and Quenn compare six years of figures. They match to the sixteenth of a mark. Crane says 'duly' and sits down.",
+    "effects": {
+     "relationships": {
+      "crane": 6,
+      "quenn": 4
+     },
+     "flags_set": [
+      "clue_crane_counts",
+      "crane_recruited"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Keep Aldmere out of it",
+    "outcome": "\"Duly. I shall continue to count alone. It is what I am for.\"",
+    "effects": {
+     "relationships": {
+      "crane": -3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_survey",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_08",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "arc": {
+    "id": "MA05",
+    "stage": 3
+   },
+   "text": "The figures show the pound loses one mark per watch regardless of inflow, and gains nothing from the aqueduct. Something else feeds it and something else drains it. The Compact has no schedule for 'something else'. I have begun drafting one.",
+   "left": {
+    "label": "Draft it",
+    "outcome": "Schedule Nine, revised: 'joint declaration of material fact regarding the water'. It is a weapon disguised as a form.",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "A form won't fill the pound",
+    "outcome": "\"No. It will make someone say why it is empty. That is what forms are for.\"",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_crane_counts"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma05_09",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "MA05",
+    "stage": 3
+   },
+   "text": "The Aldmere inspector and the Company engineer have been dining together with papers. I have not read the papers. For the record, I know what is in them. For the record, I am asking you to end the dinners.",
+   "left": {
+    "label": "End them",
+    "outcome": "You tell Crane and Quenn to stop. They stop dining. They do not stop counting.",
+    "effects": {
+     "relationships": {
+      "vosk": 4,
+      "crane": -4,
+      "quenn": -4
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Join them",
+    "outcome": "\"Noted.\" Three at the table now. Vosk watches from the Company house and does not report it. Yet.",
+    "effects": {
+     "relationships": {
+      "vosk": -3,
+      "crane": 4,
+      "quenn": 4
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_crane_counts",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma05_10",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "MA05",
+    "stage": 4
+   },
+   "text": "Two explanations. One: the reservoirs leak and the Company hides it. Drought, badly managed. Two: something else feeds the pound and is failing. The figures fit both. Only one fits the missing page. Which do we say?",
+   "left": {
+    "label": "Drought, badly managed",
+    "outcome": "\"Safer. Yes. Roughly true. Not true.\" She writes it up. It is very good and it is wrong.",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "flags_set": [
+      "drought_report_filed"
+     ],
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Something else, failing",
+    "outcome": "\"Then we need to know what.\" She looks toward the north bank. So do you.",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "flags_set": [
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_survey"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_11",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "MA05",
+    "stage": 4
+   },
+   "text": "If something under the north bank feeds the pound, then Marrow built it and hid it, and the missing page said so. And the Company has known since the Dry Year, and Vosk knows, and Dray found out. Sorry. All at once.",
+   "left": {
+    "label": "Say it again, slowly, to the Ledger",
+    "outcome": "She dictates it. You write it. It is the first time the whole shape of it has been on paper since Year 6.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Don't say it again to anyone",
+    "outcome": "\"No. No. I'll put it in the drawer.\" The drawer is very full.",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_cut"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_12",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "tired",
+   "arc": {
+    "id": "MA05",
+    "stage": 4
+   },
+   "text": "The engineer has written a report. I have read it. It is very good. It is wrong in one respect: it says 'drought'. You will find I am relieved it says drought. You will find I am also, irregularly, disappointed.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "knows_cut"
+      ]
+     },
+     "text": "The engineer has written a report. I have read it. It does not say drought. It says what the missing page said. You will find that if this report leaves the summit, the summit as you know it ends. You will find I am not threatening. I am describing."
+    }
+   ],
+   "left": {
+    "label": "It will not leave the summit",
+    "outcome": "\"Noted.\" She does not take the report. She leaves it with you, which is a kind of trust.",
+    "effects": {
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "It will",
+    "outcome": "\"Noted.\" She stands a long time at the door. \"Then I hope it is a good report.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -4
+     },
+     "counters": {
+      "suspicion": 4
+     },
+     "flags_set": [
+      "suspicion_high"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 4
+     }
+    },
+    "flags_any": [
+     "drought_report_filed",
+     "knows_cut"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma05_13",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "MA05",
+    "stage": 5
+   },
+   "text": "It's finished. The report. Crane will seal it under the Compact. Hesse will print it both sides in the same watch. Or I burn it and we've spent six years learning something nobody will ever know. Sorry. It's your gate. Say.",
+   "left": {
+    "label": "Publish it",
+    "outcome": "Crane's seal. Hesse's press. By evening both shores have the figures and the missing page's shape.",
+    "effects": {
+     "resources": {
+      "company": -8,
+      "town": 3
+     },
+     "relationships": {
+      "quenn": 10,
+      "crane": 6,
+      "hesse": 6
+     },
+     "flags_set": [
+      "survey_published",
+      "quenn_brave"
+     ],
+     "unlocks": [
+      "unlock_quenn_survey",
+      "unlock_quenn_courage"
+     ],
+     "arc": {
+      "MA05": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "suspicion": 6,
+      "evidence": 2
+     },
+     "factions": {
+      "aldmere": 4,
+      "sorrel": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet; keep it safe",
+    "outcome": "\"Not yet. Right. I've got a drawer.\" She has. It is the safest place at the summit, because Vosk has already read it.",
+    "effects": {
+     "relationships": {
+      "quenn": 4
+     },
+     "unlocks": [
+      "unlock_quenn_survey"
+     ],
+     "arc": {
+      "MA05": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_cut"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 4
+     }
+    },
+    "flags_none": [
+     "drought_report_filed"
+    ]
+   },
+   "weight": 4,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma05_14",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "MA05",
+    "stage": 5
+   },
+   "text": "The drought report. It's ready. It's honest about everything except the one thing. If I send it the Board will thank me and blame the weather and nothing will change. If I don't, nothing will change either. Sorry. I don't know which nothing is worse.",
+   "left": {
+    "label": "Send it",
+    "outcome": "The Board thanks her. It blames the weather. It commissions a tenth reservoir. The pound falls a mark a watch.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "quenn": 3
+     },
+     "flags_set": [
+      "survey_published"
+     ],
+     "arc": {
+      "MA05": {
+       "status": "completed"
+      }
+     },
+     "ending": "end_false_drought",
+     "ending_chance": 0.5
+    }
+   },
+   "right": {
+    "label": "Burn it; start again with the truth",
+    "outcome": "\"Burn it. Right.\" She burns it. She starts again the same night, on page forty-one.",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "flags_set": [
+      "survey_burned",
+      "knows_cut"
+     ],
+     "flags_clear": [
+      "drought_report_filed"
+     ],
+     "counters": {
+      "evidence": 2
+     },
+     "arc": {
+      "MA05": {
+       "stage": 4
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "drought_report_filed"
+    ],
+    "arc_stage": {
+     "MA05": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma05_15",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "worried",
+   "arc": {
+    "id": "MA05",
+    "stage": 5
+   },
+   "pool": "forced",
+   "text": "They've transferred me. Ardent. Reservoirs. Effective this watch. Vosk delivered it herself and said 'noted' and then, very quietly, 'I am sorry'. I've emptied the drawer into this bag. It's yours. Don't let it be nobody's.",
+   "left": {
+    "label": "Take the bag",
+    "outcome": "Six years of figures in a canvas bag. She goes down the flight without looking back, because she cannot.",
+    "effects": {
+     "relationships": {
+      "quenn": 10
+     },
+     "flags_set": [
+      "quenn_silenced",
+      "read_survey"
+     ],
+     "unlocks": [
+      "unlock_quenn_survey"
+     ],
+     "arc": {
+      "MA05": {
+       "status": "failed"
+      }
+     },
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Give it to Crane",
+    "outcome": "Crane takes it under the Compact. It is the safest bag on the canal. Quenn goes east.",
+    "effects": {
+     "relationships": {
+      "quenn": 6,
+      "crane": 6
+     },
+     "flags_set": [
+      "quenn_silenced",
+      "crane_recruited"
+     ],
+     "unlocks": [
+      "unlock_quenn_survey"
+     ],
+     "arc": {
+      "MA05": {
+       "status": "failed"
+      }
+     },
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "notes": "Delayed follow-up from ma03_12 right or cri_company; Quenn's forced transfer."
+  }
+ ]
+}

@@ -18,11 +18,11 @@ Exactly 1,000 playable decision cards are planned (see `content/CARD_INVENTORY.j
 | Phase | Status | Notes |
 |---|---|---|
 | 0 Repository inspection | done | Repo was empty except `.hoplite/settings.json`. |
-| 1 Creative foundation | in progress | Concept selected: **Halfway Lock**. Bibles being written. |
-| 2 Technical/narrative architecture | pending | |
-| 3 Vertical slice | pending | |
-| 4 Production tooling | pending | |
-| 5 Full content production | pending | 0 / 1000 cards |
+| 1 Creative foundation | done | Concept: **Halfway Lock**. All bibles written. |
+| 2 Technical/narrative architecture | done | Schemas, registries, 1000-id inventory, story graph. |
+| 3 Vertical slice | done | Engine, UI, save, selector, dev panel, tests, placeholders. |
+| 4 Production tooling | done | validate_content, analyze_dialogue, simulate_runs, set_card_text, build_placeholders. |
+| 5 Full content production | in progress | 591 / 1000 cards (onboarding 30, evergreen 220, resources 150, relationships 120, mi01 6, MA02 15, endings_meta 50). Remaining: 29 minor arcs (174), 11 major arcs (165), crises (70). |
 | 6 Art and audio pipeline | pending | |
 | 7 Balancing and narrative QA | pending | |
 | 8 Polish and accessibility | pending | |
