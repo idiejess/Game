@@ -1,0 +1,1845 @@
+{
+ "cards": [
+  {
+   "id": "rel_vosk_01",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "neutral",
+   "pool": "character",
+   "text": "You keep the Book in a plain hand. Dray's was ornamental. For the record, I preferred his. For the record, yours is easier to check.",
+   "left": {
+    "label": "Easier is better",
+    "outcome": "\"Noted. That is what I would have said.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask about Dray's hand",
+    "outcome": "\"Loops. Flourishes. Numbers where words should be. Noted, and filed.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -1
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_02",
+   "category": "relationships",
+   "speaker": "vosk",
+   "pool": "character",
+   "text": "I take my supper alone at the Company house. I have for eleven years. Tonight there are two plates. I did not order two plates. You will find this is as close as I come to an invitation.",
+   "left": {
+    "label": "Sit",
+    "outcome": "She talks about accounts for an hour. It is, somehow, not dull.",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Another night",
+    "outcome": "\"Noted.\" There is one plate the next night.",
+    "effects": {
+     "relationships": {
+      "vosk": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_03",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "text": "You asked the engineer about the reservoirs. She told you what she tells everyone. Then you asked again. Nobody asks again. Dray asked again.",
+   "left": {
+    "label": "And what did you tell Dray?",
+    "outcome": "\"That the reservoirs are a Company matter. You will find I am telling you the same.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -3
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I will not ask a third time",
+    "outcome": "\"Noted.\" A pause. \"That was the wrong answer. It was the safe one.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 3
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "flags_any": [
+     "clue_reservoirs",
+     "clue_dry_aqueduct"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_04",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "tired",
+   "text": "I was appointed to this summit at twenty-six and told what to watch for. I have watched every day since. I am not asking for sympathy. I am telling you the length of the watch.",
+   "left": {
+    "label": "What were you told to watch for?",
+    "outcome": "\"A Keeper who reads the gauge too carefully.\" She looks at you. \"Noted.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Eleven years is a long watch",
+    "outcome": "\"It is not the longest at this summit. Marrow's was longer. She is still keeping it.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_05",
+   "category": "relationships",
+   "speaker": "vosk",
+   "text": "The Board has asked for my assessment of your character. I have written 'diligent'. I could write 'curious'. In Ardent those are different words with different consequences. Tell me which is true.",
+   "left": {
+    "label": "Diligent",
+    "outcome": "\"Noted. I have sent it. You will find I did not believe it.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 2
+     },
+     "resources": {
+      "company": 3
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Curious",
+    "outcome": "\"Noted. I have sent 'diligent' anyway. That is the last kindness I have.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_06",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "text": "You have been kind to the Dray girl. For the record, I approve. For the record, it is the only thing about you I have not written down.",
+   "left": {
+    "label": "Why not?",
+    "outcome": "\"Because I owe her father something I cannot file.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Write it; I don't mind",
+    "outcome": "\"You should. Ardent reads kindness as alliance.\" She does not write it.",
+    "effects": {
+     "relationships": {
+      "vosk": 3,
+      "mirren": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk",
+     "met_mirren"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_07",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "rare_warmth",
+   "text": "I have decided something. It is irregular. I am going to tell you a true thing and not write down that I did. The last Keeper did not resign. You knew that. Now you know that I know.",
+   "left": {
+    "label": "Where is he?",
+    "outcome": "\"Where the water goes. You will find I have said enough.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 5
+     },
+     "flags_set": [
+      "knows_dray_fate"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Why tell me?",
+    "outcome": "\"Because I am tired, and you are the first who has not made me more so.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 8
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "min": 65
+     }
+    },
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_vosk_08",
+   "category": "relationships",
+   "speaker": "vosk",
+   "text": "You have been avoiding me for a week. You will find I notice. I have not asked why. I am asking now, once, and I will not ask again.",
+   "left": {
+    "label": "I have been busy",
+    "outcome": "\"Noted. That is the Company's word for it too.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -5
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "I have been afraid of you",
+    "outcome": "\"Good. I am the only person here it is sensible to fear. Noted, and, for once, appreciated.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "max": 40
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_09",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "tired",
+   "text": "You will find I have made an error in the accounts. A real one. Mine. Nobody has noticed. If you report it, the Board will send someone to check me, and that someone will not be tired, or kind.",
+   "left": {
+    "label": "Report it",
+    "outcome": "\"Noted.\" Ardent sends a young man. He is neither tired nor kind. Vosk is recalled for a month.",
+    "effects": {
+     "relationships": {
+      "vosk": -12
+     },
+     "resources": {
+      "company": 3
+     },
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Correct it quietly",
+    "outcome": "\"You will find I am in your debt. I have never said that.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 10
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "min": 50
+     }
+    },
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vosk_10",
+   "category": "relationships",
+   "speaker": "vosk",
+   "expression": "neutral",
+   "text": "Your predecessor asked me once whether I believed in the reservoirs. I said belief was irregular. He laughed. I have not been laughed at since. You will find I have missed it.",
+   "left": {
+    "label": "Do you believe in the reservoirs?",
+    "outcome": "\"I believe in the pound. It is there every morning. That is enough belief for an auditor.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Laugh",
+    "outcome": "You laugh. She almost does. It is the closest thing to a smile at the summit.",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "relationships": {
+     "vosk": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_01",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "beaming",
+   "pool": "character",
+   "text": "Keeper! Have you seen the pound at dawn from the Company house roof? Magnificent. I go up every morning. Twenty years. Nobody has ever come with me. I mention it in passing.",
+   "left": {
+    "label": "Go up with him",
+    "outcome": "The pound at dawn is, in fact, magnificent. He does not speak for once.",
+    "effects": {
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The gate opens at dawn",
+    "outcome": "\"It does. It does. Duty. I admire it. From the roof.\"",
+    "effects": {
+     "relationships": {
+      "pell": -2
+     },
+     "resources": {
+      "traffic": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_02",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "The Courier calls me 'the Superintendent of Adjectives'. I have read it eleven times. I do use adjectives, Keeper. Words are what I have. I do not have a gate.",
+   "left": {
+    "label": "Words are not nothing",
+    "outcome": "\"No. No, they are not. Thank you. That was a good word.\"",
+    "effects": {
+     "relationships": {
+      "pell": 5
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Hesse is a Sorrel paper",
+    "outcome": "\"He is. He is also read in Ardent.\" He folds the paper very small.",
+    "effects": {
+     "relationships": {
+      "pell": 1,
+      "hesse": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell",
+     "met_hesse"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_03",
+   "category": "relationships",
+   "speaker": "pell",
+   "text": "I have never been to Ardent, Keeper. Twenty years with the Company and I have never seen the Board's house. They have never asked. I tell people I prefer the summit. It is not entirely untrue.",
+   "left": {
+    "label": "Ask why they've never asked",
+    "outcome": "\"Because a Superintendent who is happy where he is does not need to be managed.\" He knows exactly what he is.",
+    "effects": {
+     "relationships": {
+      "pell": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The summit is better than Ardent",
+    "outcome": "\"It is! It is. Magnificent, in its way. Yes.\"",
+    "effects": {
+     "relationships": {
+      "pell": 3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_04",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "I heard you at the inn. 'The Company's flood.' Your words. The Company built this canal and this town, Keeper. Remember which side of the gate you stand on.",
+   "left": {
+    "label": "I stand on the gate",
+    "outcome": "\"Ah. Clever. I hate clever. Vosk is clever.\"",
+    "effects": {
+     "relationships": {
+      "pell": -4
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Company's side; I misspoke",
+    "outcome": "\"Good. Good. We all misspeak. I misspeak magnificently.\"",
+    "effects": {
+     "relationships": {
+      "pell": 4
+     },
+     "resources": {
+      "company": 2,
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "town": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_05",
+   "category": "relationships",
+   "speaker": "pell",
+   "text": "A confession. I keep a draft of the Clearance Order in my desk, updated yearly, never sent. The Board once asked if I had a contingency, and I did not, and I never wish to feel that again.",
+   "left": {
+    "label": "Burn the draft",
+    "outcome": "He looks at the drawer for a long time. He does not burn it. He does not update it that year.",
+    "effects": {
+     "relationships": {
+      "pell": 3
+     },
+     "factions": {
+      "hullfolk": 2
+     },
+     "flags_set": [
+      "clearance_drafted"
+     ]
+    }
+   },
+   "right": {
+    "label": "Every Superintendent needs a contingency",
+    "outcome": "\"Yes. Yes! You understand. It is merely a piece of paper.\"",
+    "effects": {
+     "relationships": {
+      "pell": 5
+     },
+     "flags_set": [
+      "clearance_drafted"
+     ],
+     "factions": {
+      "hullfolk": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 50
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_06",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "I have written a history of the summit, Keeper. Four hundred pages. Nobody has read it. I would be honored, magnificently honored, if you would. There is a chapter on the Dry Year I am rather proud of.",
+   "left": {
+    "label": "Read the Dry Year chapter",
+    "outcome": "Forty pages. In the middle, a line about 'night works on the north bank' he has not understood himself.",
+    "effects": {
+     "relationships": {
+      "pell": 8
+     },
+     "flags_set": [
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Perhaps after the season",
+    "outcome": "\"Of course. Of course. It will keep. It has kept twenty years.\"",
+    "effects": {
+     "relationships": {
+      "pell": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_pell_07",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "Vosk does not respect me. You have seen it. She was appointed to watch this summit and I to run it, and she has never asked my view. Do you respect me? I would like a true answer. A kind one more.",
+   "left": {
+    "label": "The true answer",
+    "outcome": "You tell him. It is not unkind. He is quiet, then: \"Thank you. Nobody does that.\"",
+    "effects": {
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The kind answer",
+    "outcome": "\"Magnificent. I shall believe it. I am good at that.\"",
+    "effects": {
+     "relationships": {
+      "pell": 4
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell",
+     "met_vosk"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_08",
+   "category": "relationships",
+   "speaker": "pell",
+   "text": "I have had a letter from the Board that uses the word 'retirement'. About me. I have not answered. I am asking you, as the only person here who does not want my post, what I should say.",
+   "left": {
+    "label": "Say the summit still needs you",
+    "outcome": "He writes it. It is true. The Board withdraws the word, for now.",
+    "effects": {
+     "relationships": {
+      "pell": 8
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what you'd do in Ardent",
+    "outcome": "\"Nothing. That is the difficulty. Nothing magnificently.\" He answers the Board the next day, briefly.",
+    "effects": {
+     "relationships": {
+      "pell": 3
+     },
+     "counters": {
+      "evidence": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 55
+     }
+    },
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_09",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "You have made me look a fool before the Board twice this quarter. I am not a fool. I am, at most, a man who prefers a good word to a true one. Do not confuse the two again.",
+   "left": {
+    "label": "I won't",
+    "outcome": "\"Good.\" He does not say magnificent. It is how you know he means it.",
+    "effects": {
+     "relationships": {
+      "pell": 4
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The truth did that, not I",
+    "outcome": "\"Then the truth may keep the gate. I shall keep the Company.\"",
+    "effects": {
+     "relationships": {
+      "pell": -6
+     },
+     "resources": {
+      "company": -3,
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "max": 40
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_pell_10",
+   "category": "relationships",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "Keeper, a small thing. The hands have named the goose in the inn cellar after me. I have heard. I want you to know I find it magnificent. I want you to know that very much.",
+   "left": {
+    "label": "It is meant kindly",
+    "outcome": "\"Is it? Is it. Yes. I shall choose to believe that.\" He visits the goose.",
+    "effects": {
+     "relationships": {
+      "pell": 5
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It is a goose",
+    "outcome": "\"It is a goose named Pell. There is a difference, and I feel it.\"",
+    "effects": {
+     "relationships": {
+      "pell": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell",
+     "geese_loose"
+    ]
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "rel_quenn_01",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "pool": "character",
+   "text": "Sorry. I've drawn the gate. All of it, every timber, because nobody has since Marrow. It took three months. Do you want to see it? It's roughly the size of the wall.",
+   "left": {
+    "label": "See it",
+    "outcome": "It is the size of the wall. It is beautiful. She is embarrassed by your face.",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Later; the gate needs you",
+    "outcome": "\"Right. Yes. The actual gate. Sorry.\"",
+    "effects": {
+     "relationships": {
+      "quenn": -2
+     },
+     "resources": {
+      "traffic": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_quenn_02",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "Vosk asked me today what I'd told you. About the figures. I said nothing. I mean I said I'd said nothing. Which is a lie. I don't lie well. Sorry. I think she knows.",
+   "left": {
+    "label": "Say I asked and you refused",
+    "outcome": "\"I can do that. Roughly. Thank you.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5,
+      "vosk": -1
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell her the truth",
+    "outcome": "She does. Vosk says 'noted'. Quenn does not sleep for two nights.",
+    "effects": {
+     "relationships": {
+      "quenn": 2,
+      "vosk": 2
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_vosk"
+    ],
+    "flags_any": [
+     "clue_reservoirs",
+     "clue_dry_aqueduct"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_quenn_03",
+   "category": "relationships",
+   "speaker": "quenn",
+   "text": "My father was an engineer on the Sorrel flight. He used to say the Meridian was built on a lie and a very good survey. I thought he meant the tolls. I've started to think he meant the survey.",
+   "left": {
+    "label": "What lie?",
+    "outcome": "\"He never said. He died when I was nine. I have his survey. I have Marrow's too. They don't agree.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ]
+    }
+   },
+   "right": {
+    "label": "Fathers say things",
+    "outcome": "\"They do. Mine said them with figures. Sorry. That's not nothing.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_quenn_04",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "I've been offered a bribe. By Vane. To say the Sorrel gear would work in our gates. It wouldn't. I said no. I'd like it written down somewhere that I said no.",
+   "left": {
+    "label": "Write it in the Ledger",
+    "outcome": "\"In the Ledger. Yes. Where things are true.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 6,
+      "vane": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Tell Vosk, too",
+    "outcome": "Vosk notes it. Quenn is 'reliable' in a Company file for the first time.",
+    "effects": {
+     "relationships": {
+      "quenn": 4,
+      "vosk": 2
+     },
+     "resources": {
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_vane"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_quenn_05",
+   "category": "relationships",
+   "speaker": "quenn",
+   "text": "I don't sleep. Not much. I lie there doing the reservoir sums and they never close. Stroud says it's nerves. It isn't nerves. It's arithmetic. You can't treat arithmetic.",
+   "left": {
+    "label": "Do the sums with her, once",
+    "outcome": "You sit up till the third bell. They do not close. You both know why now.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "counters": {
+      "evidence": 2,
+      "fatigue": 2
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ]
+    }
+   },
+   "right": {
+    "label": "Send her to Stroud anyway",
+    "outcome": "Stroud gives her something. She sleeps. The sums wait.",
+    "effects": {
+     "relationships": {
+      "quenn": 2,
+      "stroud": 2
+     },
+     "counters": {
+      "fatigue": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_quenn_06",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "I'm frightened of Vosk. I know that's obvious. I'm telling you because I've decided to stop, and I don't know how, and I thought saying it aloud to someone might be the first step. Sorry.",
+   "left": {
+    "label": "I'm frightened of her too",
+    "outcome": "\"Oh. Oh, good. I mean. Not good. Better.\" She laughs, once, surprised.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "quenn_brave"
+     ]
+    }
+   },
+   "right": {
+    "label": "She is only an auditor",
+    "outcome": "\"She is only an auditor the way the pound is only water.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_vosk"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_quenn_07",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "I've decided. I'm going to read the whole survey. Marrow's. Not just the tables. I've had it six years. I'd like someone in the room when I do. I'd like it to be you.",
+   "left": {
+    "label": "Be in the room",
+    "outcome": "Four hours. At the end she puts it down and says, very quietly, 'the Quell'.",
+    "effects": {
+     "relationships": {
+      "quenn": 10
+     },
+     "flags_set": [
+      "read_survey",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 4,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Crane to sit with her",
+    "outcome": "Crane sits. He reads faster than she does. He says 'duly' once, and then nothing.",
+    "effects": {
+     "relationships": {
+      "quenn": 4,
+      "crane": 4
+     },
+     "flags_set": [
+      "read_survey",
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "quenn_brave"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 60
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_quenn_08",
+   "category": "relationships",
+   "speaker": "quenn",
+   "text": "You went over my head to Pell about the spindle. I know it worked. I know he said yes. I'd have liked to be asked first. I'm the engineer. Sorry. I'm not sorry. I'm the engineer.",
+   "left": {
+    "label": "You're right; I should have asked",
+    "outcome": "\"Oh. Right. Thank you. Sorry. No. Thank you.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     }
+    }
+   },
+   "right": {
+    "label": "It got done",
+    "outcome": "\"It did. Roughly. Next time it might not.\"",
+    "effects": {
+     "relationships": {
+      "quenn": -5
+     },
+     "resources": {
+      "coffers": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_pell"
+    ],
+    "relationships": {
+     "quenn": {
+      "max": 45
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_quenn_09",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "text": "I've worked out where the water comes in. There's a boil off the north bank at the fourth mark, always the fourth. I could show you. It means a boat, at night. Sorry.",
+   "left": {
+    "label": "Go out tonight",
+    "outcome": "A boil of cold water, tasting of iron, rising from under the sluice house. She writes the bearing.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Draw it for me instead",
+    "outcome": "She draws it. It is very exact and it is not the same as seeing it.",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 55
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 3
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_quenn_10",
+   "category": "relationships",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "I'm not going to say sorry. I've been practicing. The gate is sound, the figures are what they are, and I have done my job better than anyone since Marrow. I wanted someone to hear me say it.",
+   "left": {
+    "label": "You have",
+    "outcome": "\"I have.\" She does not say sorry. It lasts most of the day.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "quenn_brave"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Better than Marrow, maybe",
+    "outcome": "\"No. She built it. I just know what it is. That's different. That might be worse.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_fennick_01",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "eager",
+   "pool": "character",
+   "text": "You'll never guess what I found in the wire code book. There's a code for 'Keeper deceased'. There's a code for 'Keeper dismissed'. There's no code for 'Keeper resigned'. I shouldn't find that interesting. I do.",
+   "left": {
+    "label": "So how did they wire Dray's resignation?",
+    "outcome": "\"In clear. Vosk wrote it out in words. I'd never seen her do that.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 5
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Codes are codes",
+    "outcome": "\"Right. Yes. Codes. I'll stop reading the book.\" He does not.",
+    "effects": {
+     "relationships": {
+      "fennick": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_fennick_02",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "sheepish",
+   "text": "I sold a copy of your traffic wire to Hesse. He gives me a mark a wire and I've got my mother in Aldmere. You'll never guess: he didn't print it. Too boring. I'm sorry it was boring.",
+   "left": {
+    "label": "Stop selling my wires",
+    "outcome": "\"Yes. Yes. Right. Yours. I'll stop yours.\" He means it. About yours.",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ]
+    }
+   },
+   "right": {
+    "label": "Sell him better ones; I'll write them",
+    "outcome": "You dictate a wire about geese. Hesse prints it. Fennick earns two marks.",
+    "effects": {
+     "relationships": {
+      "fennick": 6,
+      "hesse": 2
+     },
+     "resources": {
+      "town": 1
+     },
+     "counters": {
+      "bribes_taken": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_fennick_03",
+   "category": "relationships",
+   "speaker": "fennick",
+   "text": "Mirren came to the office to send a wire to Aldmere and I. I wrote it wrong. Twice. She had to say it three times. I'm not usually. I'm very good at the key. I shouldn't be telling you this.",
+   "left": {
+    "label": "Tell her you're sorry",
+    "outcome": "He does, in the street, at length. She is baffled, and then, briefly, kind.",
+    "effects": {
+     "relationships": {
+      "fennick": 4,
+      "mirren": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Say nothing to anyone",
+    "outcome": "\"Right. Nothing. I'm good at nothing. I'm not, obviously. But I'll try.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick",
+     "met_mirren"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_fennick_04",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "text": "Vosk came to the office. She stood behind me for an hour. She didn't say anything. She didn't do anything. She just stood there. I sent nine wires perfectly and then I was sick in the yard. Is that normal?",
+   "left": {
+    "label": "It is not normal; I'll speak to her",
+    "outcome": "You speak to Vosk. \"Noted. I was checking his hand.\" She does not do it again.",
+    "effects": {
+     "relationships": {
+      "fennick": 8,
+      "vosk": -2
+     }
+    }
+   },
+   "right": {
+    "label": "It is Vosk being Vosk",
+    "outcome": "\"Right. Right. She does it to you too? Oh. Oh, good.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick",
+     "met_vosk"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_fennick_05",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "eager",
+   "text": "In strictest confidence. The Ardent number code Vosk gets isn't a code. It's the sill gauge: marks and dates. Somebody in Ardent is tracking the pound. Every day. For years.",
+   "left": {
+    "label": "Show me the numbers",
+    "outcome": "Columns of them. The pound, falling, in Ardent's own hand, since before you were born.",
+    "effects": {
+     "relationships": {
+      "fennick": 6
+     },
+     "flags_set": [
+      "clue_cipher",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Stop learning codes",
+    "outcome": "\"I can't. It's like a song. Once you've heard it.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "relationships": {
+     "fennick": {
+      "min": 55
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_fennick_06",
+   "category": "relationships",
+   "speaker": "fennick",
+   "text": "You've never asked me to send a wire you didn't want read. Everyone else has. Dray did, at the end. If you ever do, would you tell me it's that kind? I'd like to be trusted with one.",
+   "left": {
+    "label": "When the time comes, you'll be the one",
+    "outcome": "He goes red to the eyeshade and cannot speak.",
+    "effects": {
+     "relationships": {
+      "fennick": 8
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ]
+    }
+   },
+   "right": {
+    "label": "I don't send that kind",
+    "outcome": "\"No. No, you don't. That's what I like about you. It's a bit dull.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "relationships": {
+     "fennick": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_fennick_07",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "sheepish",
+   "text": "I told Hesse something about you I shouldn't have. It wasn't for money. He asked, and I like being asked, and it came out. It was about the study. I'm sorry. He'll print it. He prints everything eventually.",
+   "left": {
+    "label": "Go to Hesse first",
+    "outcome": "You tell Hesse yourself. It is a better story from you. He runs that one.",
+    "effects": {
+     "relationships": {
+      "fennick": 3,
+      "hesse": 3
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "You've cost me something",
+    "outcome": "\"I know. I know. I do this. I'll stop.\" He does, for a month, which is a record.",
+    "effects": {
+     "relationships": {
+      "fennick": -4
+     },
+     "flags_set": [
+      "fennick_exposed"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick",
+     "met_hesse",
+     "found_ledger"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_fennick_08",
+   "category": "relationships",
+   "speaker": "fennick",
+   "text": "My mother's ill in Aldmere. I'd need a week. Nobody else can work the key, so the summit would be off the wire, and the Company would notice. I'm asking anyway.",
+   "left": {
+    "label": "Go; I'll work the key",
+    "outcome": "You work the key, badly. Ardent receives several wires about geese that were not about geese.",
+    "effects": {
+     "relationships": {
+      "fennick": 10
+     },
+     "resources": {
+      "company": -3
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Send your mother money instead",
+    "outcome": "You send it. He stays. He does not forgive himself for staying.",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     },
+     "resources": {
+      "coffers": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "relationships": {
+     "fennick": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_fennick_09",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "text": "A wire for you, from nobody. No origin code. 'THE TENTH MARK STOP TELL M STOP'. It came at the third bell. Nobody sends from nowhere. I didn't touch it. I'm touching it now.",
+   "left": {
+    "label": "Take it to Mirren",
+    "outcome": "She reads it and sits down on the wharf. \"His words. His exact words.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 4,
+      "mirren": 8
+     },
+     "flags_set": [
+      "has_wire_copy",
+      "clue_cipher"
+     ],
+     "counters": {
+      "evidence": 3,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Burn it",
+    "outcome": "\"Right.\" He burns it in the stove. He keeps the ash. He does not know why.",
+    "effects": {
+     "relationships": {
+      "fennick": 2
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick",
+     "met_mirren"
+    ],
+    "relationships": {
+     "fennick": {
+      "min": 60
+     }
+    },
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_fennick_10",
+   "category": "relationships",
+   "speaker": "fennick",
+   "expression": "eager",
+   "text": "You'll never guess. I've been offered the Ardent office. The big key. I don't want to go. Things happen here, and I know this wire like my own hand. But it's Ardent.",
+   "left": {
+    "label": "Go; it's Ardent",
+    "outcome": "He goes. A stranger runs the wire. Ardent knows everything now, and nothing interesting.",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     },
+     "resources": {
+      "company": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Stay; things happen here",
+    "outcome": "\"They do. They do!\" He stays. He is the happiest man at the summit for a week.",
+    "effects": {
+     "relationships": {
+      "fennick": 8
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "relationships": {
+     "fennick": {
+      "min": 60
+     }
+    },
+    "watch": {
+     "min": 35
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:company"
+   ]
+  }
+ ]
+}

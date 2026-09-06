@@ -1,0 +1,1418 @@
+{
+ "cards": [
+  {
+   "id": "rel_ilse_01",
+   "category": "relationships",
+   "speaker": "ilse",
+   "pool": "character",
+   "text": "You drink here. That's noticed. You drink one and go. That's noticed more. The last one who drank one and went was Dray. Costs nothing to sit a while. Costs a bit to not.",
+   "left": {
+    "label": "Sit a while",
+    "outcome": "An hour. You learn who owes whom. It is most of the town.",
+    "effects": {
+     "relationships": {
+      "ilse": 5
+     },
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The gate does not sit",
+    "outcome": "\"No. Neither did he.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_02",
+   "category": "relationships",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "The Company sent a man to price my cellar again. I sent him back with a price for his hat. You're smiling. Don't. It's your Company. What does it want with my cellar?",
+   "left": {
+    "label": "I'll find out",
+    "outcome": "You do. It wants to know how the well fills. So do you.",
+    "effects": {
+     "relationships": {
+      "ilse": 4
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ]
+    }
+   },
+   "right": {
+    "label": "It wants everything",
+    "outcome": "\"True. Doesn't help. Have another.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 2
+     },
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_ilse_03",
+   "category": "relationships",
+   "speaker": "ilse",
+   "text": "The moot wants to give you a chain. Not a big one. A reeve's guest chain. Means you can speak at moot without being asked. Means the Company will hate it. I said I'd ask. I'm asking.",
+   "left": {
+    "label": "Take the chain",
+    "outcome": "You wear it once, to the moot. Pell sees it. It is worth it.",
+    "effects": {
+     "relationships": {
+      "ilse": 6
+     },
+     "resources": {
+      "town": 4,
+      "company": -3
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "A Keeper wears no chain",
+    "outcome": "\"Right. I'll tell them. Some'll respect it. I don't.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -3
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_04",
+   "category": "relationships",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "You let Vosk into my cellar. Company auditor, in my cellar, with a measuring rod. I don't care what she found. I care that you let her. What does it cost to ask me first?",
+   "left": {
+    "label": "It cost me nothing; I was wrong",
+    "outcome": "\"Right. Say it at the bar, so they hear it.\" You do.",
+    "effects": {
+     "relationships": {
+      "ilse": 4
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Company inspects what it likes",
+    "outcome": "\"It does. Drinks are full price for you, from now.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -6
+     },
+     "resources": {
+      "town": -3,
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_vosk"
+    ],
+    "relationships": {
+     "ilse": {
+      "max": 45
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_05",
+   "category": "relationships",
+   "speaker": "ilse",
+   "text": "The well's fed from the pound. You know that. I've known it twenty years. The ale's Company water and I've sold it as spring water and nobody's died. Now you know. What does it cost me?",
+   "left": {
+    "label": "Nothing; it's good ale",
+    "outcome": "\"It is.\" She pours one. She does not charge for it.",
+    "effects": {
+     "relationships": {
+      "ilse": 8
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It costs the truth to Stroud",
+    "outcome": "Stroud tests it. Iron and pound water. She shrugs: \"People have drunk worse.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -3,
+      "stroud": 3
+     },
+     "flags_set": [
+      "well_tested",
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_ilse_06",
+   "category": "relationships",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "text": "He was fourteen. My boy. Went in off the wharf the week after the riot, showing off for the Hullfolk girls. Nothing to do with the Company. Everything to do with it. I don't tell people. I'm telling you.",
+   "left": {
+    "label": "Say nothing; stay",
+    "outcome": "You stay till the lamps are out. She talks about him. Then she doesn't.",
+    "effects": {
+     "relationships": {
+      "ilse": 10
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask why the Company",
+    "outcome": "\"Because the town was drunk on rising, and nobody was watching a boy.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 60
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_07",
+   "category": "relationships",
+   "speaker": "ilse",
+   "text": "Bram Holloway asked me to drink with him. Forty years I've known him. Never asked. I said yes. Town saw. Half of it thinks I've gone Hullfolk. I'd like the Keeper seen drinking with both of us. Tonight.",
+   "left": {
+    "label": "Drink with them both",
+    "outcome": "The three of you at one table. The inn goes quiet, then loud again. Something has changed.",
+    "effects": {
+     "relationships": {
+      "ilse": 6,
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not tonight",
+    "outcome": "\"Right. Then it's just me gone Hullfolk. I can live with that.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -3,
+      "bram": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_bram"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_08",
+   "category": "relationships",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "You've never asked me what the town says about you when you're not here. Everybody asks. Dray asked every week. You haven't once. Either you don't care, or you're afraid. Which?",
+   "left": {
+    "label": "Afraid",
+    "outcome": "\"Good. They say you're all right. Now you can stop being afraid, and start worrying.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 6
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Don't care",
+    "outcome": "\"Liar. They say you're all right, anyway. Don't let it go to your head.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_09",
+   "category": "relationships",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "You signed the Company's order and the town's paying for it. I stood up for you at moot. I won't again. That's not a threat. That's the price, and I'm telling you it before you pay it.",
+   "left": {
+    "label": "I'll earn it back",
+    "outcome": "\"Try. Start with the cellar.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The order was right",
+    "outcome": "\"Then pay for it yourself.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -6
+     },
+     "resources": {
+      "town": -3,
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "max": 40
+     }
+    },
+    "flags_any": [
+     "clearance_signed",
+     "requisitioned_labor",
+     "scrip_refused"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_ilse_10",
+   "category": "relationships",
+   "speaker": "ilse",
+   "text": "I've a spare room above the bar. Warm. Dry, mostly. Dray's house is the Company's and one day they'll want it back. This isn't the Company's. It'd cost you nothing. It'd cost me the room. I'm offering.",
+   "left": {
+    "label": "Take the room",
+    "outcome": "You move a chest of things above the bar. Mirren keeps the house. It suits everyone, oddly.",
+    "effects": {
+     "relationships": {
+      "ilse": 8,
+      "mirren": 3
+     },
+     "resources": {
+      "town": 3,
+      "company": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The Keeper's house is the Keeper's",
+    "outcome": "\"For now. The room's there.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_01",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "pool": "character",
+   "text": "You sit in his chair like it's yours. It is yours. I know that. Did you have to move it to the window?",
+   "left": {
+    "label": "Move it back",
+    "outcome": "You move it back. She does not thank you. She notices.",
+    "effects": {
+     "relationships": {
+      "mirren": 5
+     }
+    }
+   },
+   "right": {
+    "label": "I like the light",
+    "outcome": "\"He liked the dark.\" She goes to the paddles.",
+    "effects": {
+     "relationships": {
+      "mirren": -3
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_02",
+   "category": "relationships",
+   "speaker": "mirren",
+   "text": "Quenn's teaching me the gear drawings. Says I've got the hand for it. Says I could be an engineer, with papers. Papers cost. The Company pays for Company apprentices. I'm a lock hand.",
+   "left": {
+    "label": "Sign her as a Company apprentice",
+    "outcome": "Papers. Quenn is delighted. Mirren is something she does not have a word for yet.",
+    "effects": {
+     "relationships": {
+      "mirren": 8,
+      "quenn": 4
+     },
+     "resources": {
+      "coffers": -3,
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The gate needs its hand",
+    "outcome": "\"Right.\" She keeps learning anyway, at night.",
+    "effects": {
+     "relationships": {
+      "mirren": -4
+     },
+     "resources": {
+      "traffic": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "met_quenn"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_mirren_03",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "neutral",
+   "text": "Did he ever write to you? Before. When you were appointed. They must have told you something about him. What did they tell you?",
+   "left": {
+    "label": "They said he resigned",
+    "outcome": "\"Resigned.\" She says it like a word in another language.",
+    "effects": {
+     "relationships": {
+      "mirren": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "They told me nothing",
+    "outcome": "\"No. They wouldn't.\" She almost laughs.",
+    "effects": {
+     "relationships": {
+      "mirren": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 6
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_04",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "hopeful",
+   "text": "Wren says there's a place at the Reach where the water comes out of the hill. Says her people have always known. Says he asked them, the month before. Did you know that? That he asked them?",
+   "left": {
+    "label": "Go to the Reach with her",
+    "outcome": "Bram receives you both. He says nothing about the water. He looks at Mirren a long time.",
+    "effects": {
+     "relationships": {
+      "mirren": 6,
+      "bram": 3,
+      "wren": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Wren yourself, alone",
+    "outcome": "Wren tells you. Mirren learns you went without her.",
+    "effects": {
+     "relationships": {
+      "mirren": -5,
+      "wren": 3
+     },
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "clue_song"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "met_wren"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_mirren_05",
+   "category": "relationships",
+   "speaker": "mirren",
+   "text": "The hands call you Keeper. I call you Keeper. I've never asked your name. He'd have asked. He asked everyone their name. Even Vosk. What is it?",
+   "left": {
+    "label": "Tell her",
+    "outcome": "She uses it once, testing it, and then goes back to Keeper. It is different, though.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Keeper will do",
+    "outcome": "\"Right. Keeper.\" She does not ask again.",
+    "effects": {
+     "relationships": {
+      "mirren": -2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 40
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_06",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "text": "Vosk asked me about the study. What I'd seen. I said nothing. She said 'noted'. Then she said she was sorry. Vosk. Sorry. Why would she be sorry to me?",
+   "left": {
+    "label": "Because she knows what happened to him",
+    "outcome": "She goes white. \"Then why won't she say.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 4,
+      "vosk": -2
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask her yourself",
+    "outcome": "She does. Vosk says 'noted' and walks away. Mirren does not go to the paddles for a day.",
+    "effects": {
+     "relationships": {
+      "mirren": 1,
+      "vosk": -1
+     },
+     "resources": {
+      "traffic": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "met_vosk"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_07",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "broken",
+   "text": "I've stopped expecting him. I noticed today. I turned the paddles and I didn't look at the road. First time. I don't know if that's better. I don't know who to ask.",
+   "left": {
+    "label": "Not better or worse; later",
+    "outcome": "She nods. She looks at the road anyway, once, out of habit.",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It is better",
+    "outcome": "\"You'd say that. You're in his chair.\" It is not an accusation. Nearly.",
+    "effects": {
+     "relationships": {
+      "mirren": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 55
+     }
+    },
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_mirren_08",
+   "category": "relationships",
+   "speaker": "mirren",
+   "text": "You've been to the sluice house. Don't. I saw your boots. Did you go in?",
+   "left": {
+    "label": "Only to the door",
+    "outcome": "\"Only to the door.\" She repeats it as if to fix it there.",
+    "effects": {
+     "relationships": {
+      "mirren": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet",
+    "outcome": "\"Not yet.\" Her hands are shaking. \"That's what he said.\"",
+    "effects": {
+     "relationships": {
+      "mirren": -3
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "sluice_house_seen"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_mirren_09",
+   "category": "relationships",
+   "speaker": "mirren",
+   "expression": "hopeful",
+   "text": "Tobin told me a story about him tonight. About the Dry Year, when he was a boy, watching men go up the north bank at night. He never told me that. Why would Tobin know and not me?",
+   "left": {
+    "label": "Because Tobin was there",
+    "outcome": "\"Then I want to be there. Wherever there is.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 5,
+      "tobin": 2
+     },
+     "flags_set": [
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Because he was protecting you",
+    "outcome": "\"From what? From knowing? That's not protecting.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "met_tobin"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_mirren_10",
+   "category": "relationships",
+   "speaker": "mirren",
+   "text": "If you find him. When. If. I want to be the one who's told. Not Vosk. Not Pell. Not the Book. Me, first, from you. Promise that and I'll stop asking about the study.",
+   "left": {
+    "label": "Promise",
+    "outcome": "\"Right.\" She stops asking. She does not stop watching.",
+    "effects": {
+     "relationships": {
+      "mirren": 10
+     },
+     "flags_set": [
+      "promised_bram"
+     ],
+     "counters": {
+      "evidence": 0
+     }
+    }
+   },
+   "right": {
+    "label": "I can't promise",
+    "outcome": "\"No. He couldn't either.\"",
+    "effects": {
+     "relationships": {
+      "mirren": -6
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 60
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_01",
+   "category": "relationships",
+   "speaker": "bram",
+   "expression": "patient",
+   "pool": "character",
+   "text": "We sit here most days. On this bollard. Charter men walk past and do not see us. You stopped. That is the first thing. What is the second?",
+   "left": {
+    "label": "Sit with him",
+    "outcome": "An hour on the next bollard. He says eleven words. They are good ones.",
+    "effects": {
+     "relationships": {
+      "bram": 6
+     },
+     "factions": {
+      "hullfolk": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what he wants",
+    "outcome": "\"We want nothing from a gate. We watch what it does.\"",
+    "effects": {
+     "relationships": {
+      "bram": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_02",
+   "category": "relationships",
+   "speaker": "bram",
+   "text": "The young one, Wren, says you are a gate. We have heard young ones say that of Keepers before. We would like to know what the gate thinks it is, before the water tells us.",
+   "left": {
+    "label": "A gate that can close",
+    "outcome": "\"Honest. We have not heard honest from a Keeper. We remember it.\"",
+    "effects": {
+     "relationships": {
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 3
+     }
+    }
+   },
+   "right": {
+    "label": "A gate",
+    "outcome": "\"The young one said so. We shall see. We are good at seeing.\"",
+    "effects": {
+     "relationships": {
+      "bram": 2,
+      "wren": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram",
+     "met_wren"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_03",
+   "category": "relationships",
+   "speaker": "bram",
+   "expression": "stern",
+   "text": "A charter man struck one of ours at the Reach today. Open hand. Our young men wanted to answer it. We told them the gate would. We do not usually say that. We are saying it once.",
+   "left": {
+    "label": "Dismiss the man",
+    "outcome": "He goes down the flight. Pell protests. The Reach is very quiet, in a good way.",
+    "effects": {
+     "relationships": {
+      "bram": 8,
+      "pell": -3
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "resources": {
+      "company": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Fine him; keep him",
+    "outcome": "\"A fine. So. The gate answers with coin. We remember that too.\"",
+    "effects": {
+     "relationships": {
+      "bram": -4
+     },
+     "factions": {
+      "hullfolk": -3
+     },
+     "resources": {
+      "coffers": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 40
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_04",
+   "category": "relationships",
+   "speaker": "bram",
+   "text": "Old Petronel wants to sing for you. Not at the Reach. Here, at the gate, where the water is deepest. We have never let it be sung off the Reach. We ask what the gate would do with it.",
+   "left": {
+    "label": "Hear it at the gate",
+    "outcome": "She sings at the sill at dusk. The town stops. A river, a hill, a door. The tenth mark.",
+    "effects": {
+     "relationships": {
+      "bram": 6,
+      "petronel": 6
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "flags_set": [
+      "clue_song",
+      "met_petronel"
+     ],
+     "counters": {
+      "song_verses": 2,
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The song belongs to the Reach",
+    "outcome": "\"So we have always said. We wondered if a gate would say otherwise.\"",
+    "effects": {
+     "relationships": {
+      "bram": 3
+     },
+     "factions": {
+      "hullfolk": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_bram_05",
+   "category": "relationships",
+   "speaker": "bram",
+   "expression": "mourning",
+   "text": "We lost a child in the pound in the Dry Year. Ours. Mine. The charter men wrote 'vagrant infant' in the Book. We have never asked a Keeper to change a word in the Book. We are asking.",
+   "left": {
+    "label": "Change it; write the name",
+    "outcome": "You write a name in a book forty years closed. He does not thank you. He stands up.",
+    "effects": {
+     "relationships": {
+      "bram": 12
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "flags_set": [
+      "honored_remembered"
+     ],
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The Book cannot be changed",
+    "outcome": "\"No. Nothing here can. We knew that. We asked anyway.\"",
+    "effects": {
+     "relationships": {
+      "bram": -6
+     },
+     "factions": {
+      "hullfolk": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 55
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_06",
+   "category": "relationships",
+   "speaker": "bram",
+   "text": "You have been to the north bank at night. We saw the lamp. We do not go there. Our grandmothers said the hill would take anyone who went in after the river. We ask whether the gate believes in grandmothers.",
+   "left": {
+    "label": "I believe in yours",
+    "outcome": "\"Then do not go in alone. That is all they meant.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I believe in lamps",
+    "outcome": "\"So did the one before you.\"",
+    "effects": {
+     "relationships": {
+      "bram": 1
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram",
+     "sluice_house_seen"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_bram_07",
+   "category": "relationships",
+   "speaker": "bram",
+   "expression": "stern",
+   "text": "The young ones have stopped listening to us. They listen to Wren. Wren listens to coin. One day soon they will do something to the charter men that cannot be undone. We are old. We are asking the gate to be young for us.",
+   "left": {
+    "label": "Speak to the young ones",
+    "outcome": "You go to the Reach at dusk and speak. They listen, because Bram is beside you.",
+    "effects": {
+     "relationships": {
+      "bram": 8,
+      "wren": -2
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Speak to Wren",
+    "outcome": "Wren listens. Wren says \"fair\". The young ones do not do the thing, this month.",
+    "effects": {
+     "relationships": {
+      "bram": 4,
+      "wren": 3
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram",
+     "met_wren"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_08",
+   "category": "relationships",
+   "speaker": "bram",
+   "text": "You spoke for the charter men at the moot. Against the Reach. We heard. We do not hold it against a gate to be a wall sometimes. We hold it against a gate to pretend it was not.",
+   "left": {
+    "label": "I was a wall",
+    "outcome": "\"Yes. Now we know where we stand. That is worth something.\"",
+    "effects": {
+     "relationships": {
+      "bram": 3
+     },
+     "factions": {
+      "hullfolk": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I did what the gate required",
+    "outcome": "\"The gate. Yes. Keepers say that. Then they say 'the Company'. Then they say nothing.\"",
+    "effects": {
+     "relationships": {
+      "bram": -5
+     },
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "relationships": {
+     "bram": {
+      "max": 40
+     }
+    },
+    "counters": {
+     "hullfolk_offenses": {
+      "min": 1
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_bram_09",
+   "category": "relationships",
+   "speaker": "bram",
+   "expression": "patient",
+   "text": "We have a boat. Old. Sailcloth. It was ours before the canal, and our grandmother's before that, from a river. We are giving it to no one. We would like the gate to have seen it, once, before we are gone.",
+   "left": {
+    "label": "See the boat",
+    "outcome": "It is very old. On the bow, worn to a shadow: the name of a river. Quell.",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Another day",
+    "outcome": "\"We have fewer of those than you. We understand.\"",
+    "effects": {
+     "relationships": {
+      "bram": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 60
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_bram_10",
+   "category": "relationships",
+   "speaker": "bram",
+   "text": "We have decided to tell you where the water comes out of the hill. Not why; we do not know why. Where. We have never told a charter man. We have never told a Keeper. We are telling a gate.",
+   "left": {
+    "label": "Take the bearing",
+    "outcome": "By lamps and stones, in the old way. Below the sluice house, where the clear water runs.",
+    "effects": {
+     "relationships": {
+      "bram": 10
+     },
+     "flags_set": [
+      "knows_cut",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 3
+     },
+     "factions": {
+      "hullfolk": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Tell Mirren too",
+    "outcome": "He tells you both. Mirren does not speak on the way back.",
+    "effects": {
+     "relationships": {
+      "bram": 8,
+      "mirren": 6
+     },
+     "flags_set": [
+      "knows_cut",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram",
+     "met_mirren"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 65
+     }
+    },
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  }
+ ]
+}

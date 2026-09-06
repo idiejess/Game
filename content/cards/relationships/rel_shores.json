@@ -1,0 +1,2342 @@
+{
+ "cards": [
+  {
+   "id": "rel_wren_01",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "grinning",
+   "pool": "character",
+   "text": "You look tired. I've got a thing for tired. Cargo. Hullfolk recipe, mostly legal. One cup and you'll turn paddles till dawn. Two and you'll see the river. Want one?",
+   "left": {
+    "label": "One cup",
+    "outcome": "It tastes of reed and iron. You turn paddles till dawn. You do not see the river.",
+    "effects": {
+     "relationships": {
+      "wren": 5
+     },
+     "counters": {
+      "fatigue": -3
+     }
+    }
+   },
+   "right": {
+    "label": "What river?",
+    "outcome": "\"Figure of speech. The old man's. Forget it.\" She does not forget you asked.",
+    "effects": {
+     "relationships": {
+      "wren": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_wren_02",
+   "category": "relationships",
+   "speaker": "wren",
+   "text": "The old man says I'm going to end up like him. On a bollard, remembering. I'd rather end up in Sorrel with money. He'd rather I ended up here with a song. You're the tiebreaker. Pick.",
+   "left": {
+    "label": "Sorrel, with money",
+    "outcome": "\"Right answer. Wrong, but right.\"",
+    "effects": {
+     "relationships": {
+      "wren": 5,
+      "bram": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Here, with a song",
+    "outcome": "\"You've been talking to him.\" She is not as annoyed as she sounds.",
+    "effects": {
+     "relationships": {
+      "wren": 2,
+      "bram": 3
+     },
+     "counters": {
+      "song_verses": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "met_bram"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_wren_03",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "caught",
+   "text": "Fine. You saw me at the sluice house. I wasn't going in. I was seeing if anyone else was. Someone else was. Not Company. Not you. I don't know who. That's new.",
+   "left": {
+    "label": "Watch it with me",
+    "outcome": "Two nights in the reeds. On the second, a lamp, and a woman's coat. Vosk.",
+    "effects": {
+     "relationships": {
+      "wren": 6
+     },
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Stay away from it",
+    "outcome": "\"You first.\"",
+    "effects": {
+     "relationships": {
+      "wren": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_wren_04",
+   "category": "relationships",
+   "speaker": "wren",
+   "text": "Mirren Dray's the only townie who talks to me straight. She asked me what I know about her father. I know a bit. I haven't told her. I'm asking you if I should, because you're the only other one who's straight.",
+   "left": {
+    "label": "Tell her",
+    "outcome": "She tells her. Mirren comes to the paddles with red eyes and works a double watch.",
+    "effects": {
+     "relationships": {
+      "wren": 5,
+      "mirren": 4
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet; tell me first",
+    "outcome": "\"He came to the Reach. Asked the old man about the hill. Went in. Didn't come out. That's it. That's all.\"",
+    "effects": {
+     "relationships": {
+      "wren": 3,
+      "mirren": -1
+     },
+     "flags_set": [
+      "knows_dray_fate"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "met_mirren"
+    ],
+    "relationships": {
+     "wren": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_wren_05",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "serious",
+   "text": "No jokes. Solas's men want the reed cargo doubled and they've stopped saying please. I said I'd think. If I stop, they'll find someone who won't stop, and that someone won't be careful. If I don't stop, I'm what the old man thinks I am.",
+   "left": {
+    "label": "Stop; I'll deal with Solas",
+    "outcome": "\"You'll deal with Solas. Right. I'd like to watch that.\" She stops.",
+    "effects": {
+     "relationships": {
+      "wren": 6,
+      "solas": -3
+     },
+     "flags_set": [
+      "convoy_stopped"
+     ],
+     "counters": {
+      "sorrel_favors": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Be careful; don't stop",
+    "outcome": "\"Careful. Yes. I'm always careful.\" She is, mostly.",
+    "effects": {
+     "relationships": {
+      "wren": 2,
+      "solas": 1
+     },
+     "flags_set": [
+      "rifles_known"
+     ],
+     "counters": {
+      "sorrel_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "met_solas",
+     "reeds_cargo"
+    ]
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_wren_06",
+   "category": "relationships",
+   "speaker": "wren",
+   "text": "I've learned the song. All of it. Don't tell the old man. He thinks I don't listen. I listen. There's a verse about a door in the hill with a key that's not a key. I don't know what that means. You look like you might.",
+   "left": {
+    "label": "Sing me that verse",
+    "outcome": "She sings, badly, quietly. A brass key. A tenth mark. A door that drinks.",
+    "effects": {
+     "relationships": {
+      "wren": 6
+     },
+     "flags_set": [
+      "clue_song",
+      "clue_cipher"
+     ],
+     "counters": {
+      "song_verses": 1,
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell the old man you learned it",
+    "outcome": "She does. Bram says nothing for a long time, and then, \"we hold\".",
+    "effects": {
+     "relationships": {
+      "wren": 3,
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 3
+     },
+     "counters": {
+      "song_verses": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "relationships": {
+     "wren": {
+      "min": 55
+     }
+    },
+    "counters": {
+     "song_verses": {
+      "min": 1
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_wren_07",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "caught",
+   "text": "Crane's got me. Properly. Crate, seal, the lot. He's holding me at his post till you come. He's very polite about it. I'd rather he hit me. What's it going to cost?",
+   "left": {
+    "label": "Pay the fine; release her",
+    "outcome": "Crane accepts coin and notes it. Wren owes you, and hates it.",
+    "effects": {
+     "resources": {
+      "coffers": -5
+     },
+     "relationships": {
+      "wren": 8,
+      "crane": 1
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     },
+     "flags_set": [
+      "wren_protected"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let Crane hold her",
+    "outcome": "A night in Crane's post. He reads her Schedule Four. She says it was worse than a cell.",
+    "effects": {
+     "relationships": {
+      "wren": -8,
+      "crane": 4
+     },
+     "factions": {
+      "hullfolk": -4
+     },
+     "flags_set": [
+      "wren_jailed"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "met_crane",
+     "reeds_cargo"
+    ]
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_wren_08",
+   "category": "relationships",
+   "speaker": "wren",
+   "text": "I made money this month. Real money. I could buy a house in the town. A Hullfolk in a house. The town'd hate it. The old man'd hate it more. I want to do it just to see their faces. Tell me not to.",
+   "left": {
+    "label": "Don't; buy a boat",
+    "outcome": "She buys a boat. A good one. She names it something rude, in Hullfolk.",
+    "effects": {
+     "relationships": {
+      "wren": 4,
+      "bram": 2
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Do it; I'll witness the deed",
+    "outcome": "A Hullfolk in a house on Chapel Street. Cole sells it to her at a premium and is faintly impressed.",
+    "effects": {
+     "relationships": {
+      "wren": 8,
+      "cole": 2,
+      "bram": -3
+     },
+     "resources": {
+      "town": -3
+     },
+     "factions": {
+      "hullfolk": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "relationships": {
+     "wren": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_wren_09",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "grinning",
+   "text": "You're the first Keeper who's never asked me for a cut. Dray didn't either, but Dray didn't know. You know. That's either very honest or very stupid. I've decided it's honest. Don't ruin it.",
+   "left": {
+    "label": "I won't",
+    "outcome": "\"Good. Here's a fish. It's not a cut. It's a fish.\"",
+    "effects": {
+     "relationships": {
+      "wren": 6
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "What would a cut be worth?",
+    "outcome": "\"Ruined it.\" She grins anyway, and names a figure, and you refuse it, and she grins wider.",
+    "effects": {
+     "relationships": {
+      "wren": 3
+     },
+     "counters": {
+      "bribes_taken": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "reeds_cargo"
+    ],
+    "relationships": {
+     "wren": {
+      "min": 55
+     }
+    },
+    "counters": {
+     "bribes_taken": {
+      "max": 1
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_wren_10",
+   "category": "relationships",
+   "speaker": "wren",
+   "expression": "serious",
+   "text": "If you go in the hill, I'm coming. Not for you. For the old man, who won't, and for Mirren, who shouldn't, and because I know the reeds and you don't. That's not a favor. That's the price of the others.",
+   "left": {
+    "label": "Come, then",
+    "outcome": "\"Right. Bring a lamp. Bring two.\"",
+    "effects": {
+     "relationships": {
+      "wren": 10
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "promised_bram"
+     ]
+    }
+   },
+   "right": {
+    "label": "Nobody's going in the hill",
+    "outcome": "\"Sure. Nobody. I'll bring two lamps anyway.\"",
+    "effects": {
+     "relationships": {
+      "wren": 3
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "sluice_house_seen"
+    ],
+    "relationships": {
+     "wren": {
+      "min": 60
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_crane_01",
+   "category": "relationships",
+   "speaker": "crane",
+   "pool": "character",
+   "text": "I take my meals at the inn at the sixth bell precisely. I note that you have twice sat at the adjoining table. I note that this is not forbidden. I note that I should not mind if it continued.",
+   "left": {
+    "label": "Sit with him, not adjoining",
+    "outcome": "He talks about the Compact for an hour. It is, unexpectedly, fascinating.",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The adjoining table is fine",
+    "outcome": "\"Duly. It is, in fact, fine.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_crane_02",
+   "category": "relationships",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "text": "I have found, in the Compact's third appendix, a provision that the Keeper may request an inspector's assistance 'in any matter touching the water'. Any matter. It has never been invoked. I should very much like it to be.",
+   "left": {
+    "label": "Invoke it: help me read the gauge",
+    "outcome": "He reads the gauge every watch for a month, to the sixteenth of a mark. His figures match Quenn's.",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Perhaps later",
+    "outcome": "\"Duly. It has waited fifty-eight years. It can wait.\"",
+    "effects": {
+     "relationships": {
+      "crane": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_crane_03",
+   "category": "relationships",
+   "speaker": "crane",
+   "text": "The Sorrel agent called me 'Matthias' today. In public. I have been Inspector Crane at this summit for six years. I do not know what to do with 'Matthias'. I am asking you, as a neutral party, whether I should object.",
+   "left": {
+    "label": "Don't object",
+    "outcome": "\"Very well. I shall not. I note that I did not entirely dislike it.\"",
+    "effects": {
+     "relationships": {
+      "crane": 4,
+      "vane": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Object formally",
+    "outcome": "He objects in writing. Vane frames the letter. They are both, obscurely, pleased.",
+    "effects": {
+     "relationships": {
+      "crane": 2,
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_crane_04",
+   "category": "relationships",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "text": "You passed a vessel without my seal. I note that you had reasons. I note that reasons are how the Compact dies: one at a time, each a good one. I am not angry. I am concerned. It is worse.",
+   "left": {
+    "label": "You are right; it won't recur",
+    "outcome": "\"Duly. I shall hold you to it. I hold things well.\"",
+    "effects": {
+     "relationships": {
+      "crane": 5
+     },
+     "resources": {
+      "traffic": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The Compact is not the gate",
+    "outcome": "\"No. The Compact is what keeps the gate from being a wall for one shore. I note you did not consider that.\"",
+    "effects": {
+     "relationships": {
+      "crane": -6
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "compact_breached"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_crane_05",
+   "category": "relationships",
+   "speaker": "crane",
+   "text": "I have been writing a report for six years. On how Aldmere might operate the canal. I have never shown it to anyone. I note that it has a chapter on the water supply, and that the chapter does not close.",
+   "left": {
+    "label": "Show me the chapter",
+    "outcome": "Forty pages of gauge readings. The same shape as Quenn's. He knows. He has always known.",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Show it to Quenn",
+    "outcome": "They compare figures for four hours. They are, in their way, happy.",
+    "effects": {
+     "relationships": {
+      "crane": 5,
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 50
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_crane_06",
+   "category": "relationships",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "text": "I have been offered a post in Aldmere. Senior. Desk. No canal. I note that I should accept. I note that I have drafted the acceptance four times. I note that I am asking a Company Keeper for advice, which is irregular.",
+   "left": {
+    "label": "Stay; the summit needs a witness",
+    "outcome": "\"A witness. Yes. That is a role. I accept it.\" He tears up the fourth draft.",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "factions": {
+      "aldmere": 2
+     },
+     "flags_set": [
+      "crane_recruited"
+     ]
+    }
+   },
+   "right": {
+    "label": "Take the desk",
+    "outcome": "\"Duly.\" He does not go. He does not say why. He is angrier at the Sorrel agent than usual for a month.",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 55
+     }
+    },
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_crane_07",
+   "category": "relationships",
+   "speaker": "crane",
+   "text": "The Sorrel agent and I have dined together. Once. It was her proposal. I note that we did not argue for the first hour. I note that this alarmed us both. I am telling you because I have nobody else to tell.",
+   "left": {
+    "label": "Dine with them both",
+    "outcome": "The three of you. Crane and Vane argue for two hours. It is the best evening at the summit.",
+    "effects": {
+     "relationships": {
+      "crane": 5,
+      "vane": 4
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Be alarmed with him",
+    "outcome": "\"Thank you. It is good to be alarmed in company.\"",
+    "effects": {
+     "relationships": {
+      "crane": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_crane_08",
+   "category": "relationships",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "text": "You have sided with Sorrel on four matters this quarter. I have counted. I am not partisan; I am a counter. I note that a Keeper who counts with one shore is not a Keeper under the Compact. I note that I would regret that.",
+   "left": {
+    "label": "I'll count more evenly",
+    "outcome": "\"Duly. I shall count with you.\"",
+    "effects": {
+     "relationships": {
+      "crane": 4
+     },
+     "factions": {
+      "aldmere": 2,
+      "sorrel": -1
+     }
+    }
+   },
+   "right": {
+    "label": "I count what the gate needs",
+    "outcome": "\"Then the gate is Sorrel's. I note that. I note it with sorrow, which is unprofessional.\"",
+    "effects": {
+     "relationships": {
+      "crane": -6
+     },
+     "factions": {
+      "aldmere": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "max": 40
+     }
+    },
+    "factions": {
+     "sorrel": {
+      "min": 58
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_crane_09",
+   "category": "relationships",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "text": "An extraordinary discovery. Schedule Nine of the Compact, unused since ratification, provides for a 'joint declaration of material fact' by both shores' inspectors, binding on the Company. I do not know what it was for. I begin to.",
+   "left": {
+    "label": "Keep it ready",
+    "outcome": "\"I have already drafted the form. I drafted it six years ago. I did not know why.\"",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell Vane about it",
+    "outcome": "Vane reads Schedule Nine and goes very quiet. \"That's a weapon.\" \"It is a form.\" \"Same thing.\"",
+    "effects": {
+     "relationships": {
+      "crane": 3,
+      "vane": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 55
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 4
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_crane_10",
+   "category": "relationships",
+   "speaker": "crane",
+   "text": "I have never been liked. I note this without complaint. I note that the lock hands have begun to nod to me, and the Dray girl said good morning. I do not know what I have done. I should like to keep doing it.",
+   "left": {
+    "label": "You've been fair",
+    "outcome": "\"Fair. Yes. I had thought that was invisible.\"",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "You've been here long enough",
+    "outcome": "\"Duration. A defensible reading. I prefer yours to mine.\"",
+    "effects": {
+     "relationships": {
+      "crane": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 60
+     }
+    },
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_vane_01",
+   "category": "relationships",
+   "speaker": "vane",
+   "expression": "brisk",
+   "pool": "character",
+   "text": "You keep good time. I noticed. Most Keepers open the gate when they've finished their tea. You open it at the bell. I could work with a Keeper who opens at the bell. Could you work with me?",
+   "left": {
+    "label": "At the bell, for anyone",
+    "outcome": "\"Anyone. Fine. I'll be first in line, then.\"",
+    "effects": {
+     "relationships": {
+      "vane": 4
+     },
+     "resources": {
+      "traffic": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Depends what 'work with' means",
+    "outcome": "\"It means I stop making your life difficult. It's a big offer. Think about it.\"",
+    "effects": {
+     "relationships": {
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_vane_02",
+   "category": "relationships",
+   "speaker": "vane",
+   "text": "My principals asked me what the Keeper wants. Everyone wants something. I said I'd find out. So: what does the Keeper want? Not for the gate. For you.",
+   "left": {
+    "label": "To know where the water comes from",
+    "outcome": "She stops writing. \"That's not a want. That's a problem. Interesting.\"",
+    "effects": {
+     "relationships": {
+      "vane": 4
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing you can supply",
+    "outcome": "\"Everyone says that. Then they name a figure. I'll wait.\"",
+    "effects": {
+     "relationships": {
+      "vane": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_vane_03",
+   "category": "relationships",
+   "speaker": "vane",
+   "expression": "amused",
+   "text": "I've been offered a bribe to bribe you. By an Aldmere grain factor who assumes everyone at the summit is for sale. I've refused, for now. I'm telling you because it's funny, and because I want you to know I could have.",
+   "left": {
+    "label": "Thank her",
+    "outcome": "\"Don't. I'll want something for it eventually.\"",
+    "effects": {
+     "relationships": {
+      "vane": 5
+     }
+    }
+   },
+   "right": {
+    "label": "How much?",
+    "outcome": "\"Enough to make me think. Not enough to make me do. Yet.\"",
+    "effects": {
+     "relationships": {
+      "vane": 3
+     },
+     "counters": {
+      "bribes_taken": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "relationships": {
+     "vane": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "rel_vane_04",
+   "category": "relationships",
+   "speaker": "vane",
+   "text": "I don't like the Escort Company. I pay them. That's different. Solas is a good man in a bad job, and the men above him are bad men in worse ones. If it comes to it, I'd like you to remember I said so.",
+   "left": {
+    "label": "Why tell me now?",
+    "outcome": "\"Because something's coming east that isn't coal, and I'd like to have said it before it does.\"",
+    "effects": {
+     "relationships": {
+      "vane": 4
+     },
+     "flags_set": [
+      "rifles_known"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "You pay them; you own it",
+    "outcome": "\"I pay for coal to move. What else moves isn't on my rate card.\" She does not quite believe it.",
+    "effects": {
+     "relationships": {
+      "vane": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_solas"
+    ],
+    "relationships": {
+     "vane": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_vane_05",
+   "category": "relationships",
+   "speaker": "vane",
+   "expression": "furious",
+   "text": "You told Crane about my printing press. My press. He impounded it under Schedule Two. I'll get it back in a month. I'll get you back in less. What did I do to you?",
+   "left": {
+    "label": "Nothing; the Compact did it",
+    "outcome": "\"The Compact. Right. The Compact and I are going to have words.\"",
+    "effects": {
+     "relationships": {
+      "vane": -4,
+      "crane": 2
+     }
+    }
+   },
+   "right": {
+    "label": "You'll have the press back in a week",
+    "outcome": "You lean on Crane. He releases it, disapproving. Vane forgives you, mostly.",
+    "effects": {
+     "relationships": {
+      "vane": 4,
+      "crane": -3
+     },
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_crane"
+    ],
+    "relationships": {
+     "vane": {
+      "max": 42
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_vane_06",
+   "category": "relationships",
+   "speaker": "vane",
+   "text": "The canal's dying. Don't look at me like that. I move coal on it; I know what it's doing. The pound's falling and nobody in Ardent will say why. I want the Sorrel half before it goes. I'm telling you because you'll find out anyway.",
+   "left": {
+    "label": "What will you do with a dying canal?",
+    "outcome": "\"Fix it. Sorrel engineers. Real reservoirs. The Company won't. We would.\" She half believes it.",
+    "effects": {
+     "relationships": {
+      "vane": 5
+     },
+     "flags_set": [
+      "sorrel_purchase_offered"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It isn't dying; it's being drained",
+    "outcome": "\"By what?\" You do not answer. She writes something down for the first time in your presence.",
+    "effects": {
+     "relationships": {
+      "vane": 3
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "relationships": {
+     "vane": {
+      "min": 50
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_vane_07",
+   "category": "relationships",
+   "speaker": "vane",
+   "expression": "amused",
+   "text": "I bet Crane a month's wages the pound would be up a mark by the solstice. I've lost. I never lose bets. I want to know why the pound didn't do what water does. You're the Keeper. Tell me.",
+   "left": {
+    "label": "The reservoirs can't fill it",
+    "outcome": "\"Can't. Not don't. Can't.\" She pays Crane and does not sleep well.",
+    "effects": {
+     "relationships": {
+      "vane": 4,
+      "crane": 1
+     },
+     "flags_set": [
+      "clue_reservoirs",
+      "wager_on"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Water does what it likes",
+    "outcome": "\"No, it doesn't. That's the one thing about water. Fine. Keep your secret.\"",
+    "effects": {
+     "relationships": {
+      "vane": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_crane"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_vane_08",
+   "category": "relationships",
+   "speaker": "vane",
+   "text": "My principals are the same people who pay for what goes through the reeds. I didn't choose them. I'd like to choose better ones. If the Company falls, I'll need a Keeper who'll deal with a new consortium. A cleaner one. Mine.",
+   "left": {
+    "label": "A cleaner one, and I'll deal",
+    "outcome": "\"Done. Nothing on paper. Everything on your word. Delay costs; so does trust.\"",
+    "effects": {
+     "relationships": {
+      "vane": 8
+     },
+     "factions": {
+      "sorrel": 3
+     },
+     "flags_set": [
+      "sorrel_purchase_offered"
+     ]
+    }
+   },
+   "right": {
+    "label": "No consortiums",
+    "outcome": "\"Then it'll be the dirty one, and a Keeper who'll take their coin. There's always one.\"",
+    "effects": {
+     "relationships": {
+      "vane": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "rifles_known"
+    ],
+    "relationships": {
+     "vane": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_vane_09",
+   "category": "relationships",
+   "speaker": "vane",
+   "expression": "brisk",
+   "text": "Ilse Harrow won't sell me ale. Won't. Six years. I've offered double. Today she poured me one and didn't charge. I don't know what you did. I want to know so I can do it in Aldmere.",
+   "left": {
+    "label": "I drank with her and said nothing",
+    "outcome": "\"Said nothing. Right. I'll try it.\" She cannot.",
+    "effects": {
+     "relationships": {
+      "vane": 4,
+      "ilse": 1
+     }
+    }
+   },
+   "right": {
+    "label": "You'll never manage it",
+    "outcome": "\"Probably not. I'll keep the free pint though.\"",
+    "effects": {
+     "relationships": {
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_ilse"
+    ],
+    "relationships": {
+     "ilse": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_vane_10",
+   "category": "relationships",
+   "speaker": "vane",
+   "text": "Off every record. I like you. I don't like people; they're slow. You're not. When this canal changes hands, and it will, I'd like you on the right side of it. I don't know which side that is yet. I'll tell you when I do.",
+   "left": {
+    "label": "Tell me when you know",
+    "outcome": "\"I will. By the next watch, probably. I'm quick.\"",
+    "effects": {
+     "relationships": {
+      "vane": 8
+     },
+     "counters": {
+      "allies": 0
+     }
+    }
+   },
+   "right": {
+    "label": "I'll pick my own side",
+    "outcome": "\"You will. It's why I like you. Pick fast.\"",
+    "effects": {
+     "relationships": {
+      "vane": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "relationships": {
+     "vane": {
+      "min": 65
+     }
+    },
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_solas_01",
+   "category": "relationships",
+   "speaker": "solas",
+   "pool": "character",
+   "text": "You don't ask about the arm. Everyone asks. Then they're sorry they asked. I'd rather be asked by someone who'd rather not know than not asked by someone who's dying to.",
+   "left": {
+    "label": "Ask about the arm",
+    "outcome": "\"Year 58. Our own guns. Nobody's fault. Everybody's.\"",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     },
+     "counters": {
+      "evidence": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Don't ask",
+    "outcome": "\"Fair. It's not a good story anyway.\"",
+    "effects": {
+     "relationships": {
+      "solas": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_solas_02",
+   "category": "relationships",
+   "speaker": "solas",
+   "text": "My men are bored. Bored soldiers are worse than angry ones. I'd like them to do something useful at the summit while we wait. Your hands are short. I'm offering. No charge. No conditions I'll admit to.",
+   "left": {
+    "label": "Put them on the paddles",
+    "outcome": "Sorrel soldiers turning Company paddles. Crane is speechless. The gate runs beautifully.",
+    "effects": {
+     "relationships": {
+      "solas": 6,
+      "crane": -3,
+      "dace": 2
+     },
+     "resources": {
+      "traffic": 3
+     },
+     "flags_clear": [
+      "hands_short"
+     ]
+    }
+   },
+   "right": {
+    "label": "Soldiers are not lock hands",
+    "outcome": "\"No. They're bored. I'll find them something. I'd rather it was yours.\"",
+    "effects": {
+     "relationships": {
+      "solas": -2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_dace"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_solas_03",
+   "category": "relationships",
+   "speaker": "solas",
+   "expression": "weary",
+   "text": "Bram Holloway and I sit on the same bollard, some nights. Different wars. Same silence. He says you're a gate. He's said that of two Keepers in forty years. The other one's in the hill. Take it as you like.",
+   "left": {
+    "label": "Sit with you both",
+    "outcome": "Three on a bollard. Nobody speaks. It is the most restful hour you have had.",
+    "effects": {
+     "relationships": {
+      "solas": 5,
+      "bram": 3
+     },
+     "counters": {
+      "fatigue": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what he said of the other",
+    "outcome": "\"That he'd open the wrong door. He did.\"",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_bram"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_solas_04",
+   "category": "relationships",
+   "speaker": "solas",
+   "text": "The rifles. You know. I know you know. I'm not asking you to look away. I'm telling you that if you stop them at the gate, I'll be ordered to force it, and I won't, and then I'm finished. That's not your problem. I wanted it said.",
+   "left": {
+    "label": "Then I'll stop them below the gate",
+    "outcome": "Crane holds them at his post under the Compact. Solas is not ordered to force a customs post. He looks at you a long time.",
+    "effects": {
+     "relationships": {
+      "solas": 8,
+      "crane": 3
+     },
+     "flags_set": [
+      "convoy_stopped",
+      "solas_owed"
+     ],
+     "factions": {
+      "sorrel": -3
+     }
+    }
+   },
+   "right": {
+    "label": "I won't stop them",
+    "outcome": "\"Understood.\" The convoy passes. He does not thank you. He does not sleep either.",
+    "effects": {
+     "relationships": {
+      "solas": 2
+     },
+     "flags_set": [
+      "sorrel_armed"
+     ],
+     "factions": {
+      "sorrel": 3,
+      "aldmere": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "rifles_known"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_solas_05",
+   "category": "relationships",
+   "speaker": "solas",
+   "expression": "hard",
+   "text": "One of mine deserted into your town. Young. Frightened. I'm supposed to want him back. I'm asking, quietly, whether the chapel's still taking people in. I'm not asking as an officer.",
+   "left": {
+    "label": "The chapel is taking people in",
+    "outcome": "\"Good.\" He does not look for the boy. His sergeant does, and finds nothing, and is told well done.",
+    "effects": {
+     "relationships": {
+      "solas": 8,
+      "hale": 3
+     },
+     "flags_set": [
+      "deserter_hidden"
+     ],
+     "factions": {
+      "sorrel": -1
+     }
+    }
+   },
+   "right": {
+    "label": "You should want him back",
+    "outcome": "\"Should. Yes.\" He finds the boy. He is gentle. The boy goes west.",
+    "effects": {
+     "relationships": {
+      "solas": -4
+     },
+     "flags_set": [
+      "deserter_returned"
+     ],
+     "factions": {
+      "sorrel": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_hale"
+    ],
+    "flags_none": [
+     "deserter_hidden",
+     "deserter_returned"
+    ]
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_solas_06",
+   "category": "relationships",
+   "speaker": "solas",
+   "text": "I've been ordered to draw up a plan for 'securing the summit' in the event of 'disorder'. I've drawn it up. It's very bad. Deliberately. I'd like you to read it and tell me it's very bad, so I can say the Keeper said so.",
+   "left": {
+    "label": "It is very bad",
+    "outcome": "\"Thank you. I'll wire that. They'll ask for a better one. I'll be slow.\"",
+    "effects": {
+     "relationships": {
+      "solas": 8
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Improve it; a bad plan gets people killed",
+    "outcome": "\"So does a good one. Faster.\" He takes your notes. He does not use them.",
+    "effects": {
+     "relationships": {
+      "solas": 2
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 50
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_solas_07",
+   "category": "relationships",
+   "speaker": "solas",
+   "expression": "almost_smiling",
+   "text": "My sergeant says you're soft. My sergeant says it of everyone who hasn't shot anyone. I told him you'd closed the gate on a Board member's launch. He said that's not soft, that's mad. I said yes.",
+   "left": {
+    "label": "Mad is fair",
+    "outcome": "\"It'll do. Mad's kept me alive. Soft hasn't kept anyone.\"",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Tell your sergeant to mind his tongue",
+    "outcome": "\"I did. He's my sergeant. He didn't.\"",
+    "effects": {
+     "relationships": {
+      "solas": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_solas_08",
+   "category": "relationships",
+   "speaker": "solas",
+   "text": "You gave the order I wouldn't have given. My men followed it because you're the Keeper, not because I said so. That's the last time that happens. Next time they wait for me. I wanted you to hear it from me.",
+   "left": {
+    "label": "Understood",
+    "outcome": "\"Good. We understand each other. It's rarer than you'd think.\"",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The gate gives orders on the gate",
+    "outcome": "\"The gate can turn its own paddles, then.\"",
+    "effects": {
+     "relationships": {
+      "solas": -6
+     },
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "relationships": {
+     "solas": {
+      "max": 40
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "rel_solas_09",
+   "category": "relationships",
+   "speaker": "solas",
+   "expression": "weary",
+   "text": "Bram told me about the river. The old one. The one that went into the hill. He doesn't tell charter men. I'm not a charter man; I'm a Sorrel soldier who guards their coal. He told me anyway. I think he wanted me to tell you.",
+   "left": {
+    "label": "Tell me",
+    "outcome": "\"There was a valley. Lowmere. There was a river. Then there was a canal. That's the whole of it. That's everything.\"",
+    "effects": {
+     "relationships": {
+      "solas": 5,
+      "bram": 2
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Why would he want that?",
+    "outcome": "\"Because I'm the one with the rifles. If it comes to a choice, he wants me to have chosen already.\"",
+    "effects": {
+     "relationships": {
+      "solas": 4
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_bram"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 55
+     },
+     "bram": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_solas_10",
+   "category": "relationships",
+   "speaker": "solas",
+   "text": "If it comes to the hill, and the water, and a choice about who has it, I'll hold the towpath. Not for Sorrel. Not for the Company. For whoever's in the hill with a lamp. That's you, I think. It won't come to that. If it does.",
+   "left": {
+    "label": "Hold the towpath",
+    "outcome": "\"Understood.\" He never says another word about it. He is there when it matters.",
+    "effects": {
+     "relationships": {
+      "solas": 10
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "solas_owed"
+     ]
+    }
+   },
+   "right": {
+    "label": "Hold your men back entirely",
+    "outcome": "\"That's the same thing, said kinder. Understood.\"",
+    "effects": {
+     "relationships": {
+      "solas": 6
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "sluice_house_seen"
+    ],
+    "relationships": {
+     "solas": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_hale_01",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "serene",
+   "pool": "character",
+   "text": "You have not come to the chapel. Most Keepers come once, for form. You have not come for form. I find I respect that more than the coming. Will you come for tea, instead? Tea is not a rite.",
+   "left": {
+    "label": "Tea",
+    "outcome": "The chapel parlor. She talks about the town's poor. She does not mention the water once, which is how you know she is thinking of it.",
+    "effects": {
+     "relationships": {
+      "hale": 6
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The gate does not take tea",
+    "outcome": "\"Then I shall bring it to the gate.\" She does.",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_hale_02",
+   "category": "relationships",
+   "speaker": "hale",
+   "text": "I was a lock hand's daughter at Lock 4 before I took the grey. I know what a paddle sounds like when it is failing. Yours is not failing. I tell you so you have one less thing to tend.",
+   "left": {
+    "label": "Thank her",
+    "outcome": "\"Do not. Tending is what we do.\"",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what else she hears",
+    "outcome": "\"Water where there should be stone. Under the chapel. I have heard it since I came. I have not asked it anything.\"",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_hale_03",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "troubled",
+   "text": "Vosk comes to the chapel on the first of each month and sits in the last pew and does not pray. She has done it eleven years. We have never spoken of why. I am telling you because you have started to sit in the last pew too.",
+   "left": {
+    "label": "Ask why Vosk comes",
+    "outcome": "\"To be near something she cannot file. I think. I do not ask.\"",
+    "effects": {
+     "relationships": {
+      "hale": 3,
+      "vosk": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I'll sit somewhere else",
+    "outcome": "\"Sit where you like. The water does not mind pews.\"",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale",
+     "met_vosk"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "rel_hale_04",
+   "category": "relationships",
+   "speaker": "hale",
+   "text": "You asked the novice about the spring and she came to me weeping because she could not answer. I have asked you nothing in all this time. I ask now: leave the children out of it. Ask me. I will not answer, but ask me.",
+   "left": {
+    "label": "I'll ask you",
+    "outcome": "\"Good.\" You ask. She does not answer. It is, somehow, an answer.",
+    "effects": {
+     "relationships": {
+      "hale": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The children should know too",
+    "outcome": "\"Should. That word again. It is not a chapel word.\"",
+    "effects": {
+     "relationships": {
+      "hale": -5
+     },
+     "factions": {
+      "concordance": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "counters": {
+     "evidence": {
+      "min": 3
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_hale_05",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "serene",
+   "text": "The Lamp Vigil is not for the water. I have never told anyone that. It is for the people who watch the water, so that for one night they are not alone with it. You watch it more than anyone. Come to the Vigil.",
+   "left": {
+    "label": "Come",
+    "outcome": "You stand with lamps on the sill among people who are not alone. It does not raise the pound. It helps.",
+    "effects": {
+     "relationships": {
+      "hale": 8
+     },
+     "factions": {
+      "concordance": 4
+     },
+     "counters": {
+      "fatigue": -3
+     },
+     "flags_set": [
+      "lamp_vigil_held"
+     ]
+    }
+   },
+   "right": {
+    "label": "I am used to being alone with it",
+    "outcome": "\"So was Marrow.\" She does not explain.",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "rel_hale_06",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "troubled",
+   "text": "I have read the letters in the undercroft. All of them. I read them my first year, and I decided, and I have kept the decision for twenty. I am not asking you to keep it. I am asking you to know it was a decision.",
+   "left": {
+    "label": "What did you decide?",
+    "outcome": "\"That a gift is what it does, not where it came from. That eighty years of dry cellars is a gift.\"",
+    "effects": {
+     "relationships": {
+      "hale": 6
+     },
+     "flags_set": [
+      "hale_confessed",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "A decision can be undecided",
+    "outcome": "\"It can. I have not found the strength. Perhaps you have. I would not envy you it.\"",
+    "effects": {
+     "relationships": {
+      "hale": 3
+     },
+     "flags_set": [
+      "hale_confessed"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 55
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 5
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_hale_07",
+   "category": "relationships",
+   "speaker": "hale",
+   "text": "Bram Holloway came to the chapel today. Sat in the last pew, where Vosk sits. Did not pray. When he left he touched the founding stone, once, and said a word I did not know. I think it was a river's name. I did not ask.",
+   "left": {
+    "label": "It was",
+    "outcome": "\"Then two people have sat in that pew for the same reason, and never met there. We tend such things badly.\"",
+    "effects": {
+     "relationships": {
+      "hale": 4,
+      "bram": 2
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask him next time",
+    "outcome": "\"I do not ask. It is the one thing I am sure of.\" She sounds less sure than usual.",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale",
+     "met_bram"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_hale_08",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "unveiled",
+   "text": "You forced the undercroft door. I know it was you. I do not forgive you and I do not blame you; both are asking the water. I am telling you that whatever you read there, read the last letter too. Nobody reads the last one.",
+   "left": {
+    "label": "Read the last letter",
+    "outcome": "Marrow, the night before the collapse: 'If the sluice fails, tell them nothing. Let them have the water. Let them have eighty years.'",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     },
+     "flags_set": [
+      "read_letters"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "I've read enough",
+    "outcome": "\"Nobody has. That is the trouble with letters.\"",
+    "effects": {
+     "relationships": {
+      "hale": -3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale",
+     "letters_taken"
+    ]
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "rel_hale_09",
+   "category": "relationships",
+   "speaker": "hale",
+   "text": "You have been kind to the town and hard on the chapel. I understand it. The chapel has been kind to the town and hard on the truth. We are alike, you and I, and I do not think either of us likes it.",
+   "left": {
+    "label": "We are alike",
+    "outcome": "\"Yes. Then tend it with me. It is easier tended by two.\"",
+    "effects": {
+     "relationships": {
+      "hale": 6
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "right": {
+    "label": "I am not hard on the truth",
+    "outcome": "\"Not yet. You have not had to choose between it and a dry town. I have. Every morning.\"",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "relationships": {
+     "hale": {
+      "max": 45
+     }
+    },
+    "resources": {
+     "town": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "rel_hale_10",
+   "category": "relationships",
+   "speaker": "hale",
+   "expression": "serene",
+   "text": "If it comes to a choice about the water, and it will, you will not ask me, because you know I will not answer. So I will say it now, once, unasked. Whatever you choose, let the town keep its lamp. That is all the chapel is.",
+   "left": {
+    "label": "The town keeps its lamp",
+    "outcome": "\"Then I am with you. Whichever door.\"",
+    "effects": {
+     "relationships": {
+      "hale": 10
+     },
+     "counters": {
+      "allies": 1
+     },
+     "factions": {
+      "concordance": 5
+     }
+    }
+   },
+   "right": {
+    "label": "The town deserves the truth more",
+    "outcome": "\"Perhaps. Give it both, then. Nobody has tried both.\"",
+    "effects": {
+     "relationships": {
+      "hale": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "relationships": {
+     "hale": {
+      "min": 65
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 6
+     }
+    }
+   },
+   "cooldown": 300,
+   "tags": [
+    "res:water"
+   ]
+  }
+ ]
+}

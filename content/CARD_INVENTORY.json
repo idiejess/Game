@@ -2520,7 +2520,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_02",
@@ -2530,7 +2530,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_03",
@@ -2540,7 +2540,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_04",
@@ -2550,7 +2550,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_05",
@@ -2560,7 +2560,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_06",
@@ -2570,7 +2570,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_07",
@@ -2580,7 +2580,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_08",
@@ -2590,7 +2590,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_09",
@@ -2600,7 +2600,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_10",
@@ -2610,7 +2610,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_11",
@@ -2620,7 +2620,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_12",
@@ -2630,7 +2630,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_13",
@@ -2640,7 +2640,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_14",
@@ -2650,7 +2650,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_15",
@@ -2660,7 +2660,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_16",
@@ -2670,7 +2670,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_17",
@@ -2680,7 +2680,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_18",
@@ -2690,7 +2690,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_19",
@@ -2700,7 +2700,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_20",
@@ -2710,7 +2710,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_21",
@@ -2720,7 +2720,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_22",
@@ -2730,7 +2730,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_23",
@@ -2740,7 +2740,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_24",
@@ -2750,7 +2750,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_25",
@@ -2760,7 +2760,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_26",
@@ -2770,7 +2770,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_27",
@@ -2780,7 +2780,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_28",
@@ -2790,7 +2790,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_29",
@@ -2800,7 +2800,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_water_30",
@@ -2810,7 +2810,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "water >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_01",
@@ -2820,7 +2820,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_02",
@@ -2830,7 +2830,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_03",
@@ -2840,7 +2840,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_04",
@@ -2850,7 +2850,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_05",
@@ -2860,7 +2860,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_06",
@@ -2870,7 +2870,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_07",
@@ -2880,7 +2880,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_08",
@@ -2890,7 +2890,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_09",
@@ -2900,7 +2900,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_10",
@@ -2910,7 +2910,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_11",
@@ -2920,7 +2920,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_12",
@@ -2930,7 +2930,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_13",
@@ -2940,7 +2940,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_14",
@@ -2950,7 +2950,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_15",
@@ -2960,7 +2960,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_16",
@@ -2970,7 +2970,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_17",
@@ -2980,7 +2980,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_18",
@@ -2990,7 +2990,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_19",
@@ -3000,7 +3000,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_20",
@@ -3010,7 +3010,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_21",
@@ -3020,7 +3020,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_22",
@@ -3030,7 +3030,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_23",
@@ -3040,7 +3040,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_24",
@@ -3050,7 +3050,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_25",
@@ -3060,7 +3060,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_26",
@@ -3070,7 +3070,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_27",
@@ -3080,7 +3080,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_28",
@@ -3090,7 +3090,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_29",
@@ -3100,7 +3100,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_traffic_30",
@@ -3110,7 +3110,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "traffic >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_01",
@@ -3120,7 +3120,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_02",
@@ -3130,7 +3130,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_03",
@@ -3140,7 +3140,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_04",
@@ -3150,7 +3150,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_05",
@@ -3160,7 +3160,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_06",
@@ -3170,7 +3170,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_07",
@@ -3180,7 +3180,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_08",
@@ -3190,7 +3190,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_09",
@@ -3200,7 +3200,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_10",
@@ -3210,7 +3210,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_11",
@@ -3220,7 +3220,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_12",
@@ -3230,7 +3230,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_13",
@@ -3240,7 +3240,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_14",
@@ -3250,7 +3250,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_15",
@@ -3260,7 +3260,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_16",
@@ -3270,7 +3270,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_17",
@@ -3280,7 +3280,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_18",
@@ -3290,7 +3290,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_19",
@@ -3300,7 +3300,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_20",
@@ -3310,7 +3310,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_21",
@@ -3320,7 +3320,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_22",
@@ -3330,7 +3330,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_23",
@@ -3340,7 +3340,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_24",
@@ -3350,7 +3350,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_25",
@@ -3360,7 +3360,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_26",
@@ -3370,7 +3370,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_27",
@@ -3380,7 +3380,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_28",
@@ -3390,7 +3390,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_29",
@@ -3400,7 +3400,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_coffers_30",
@@ -3410,7 +3410,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "coffers >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_01",
@@ -3420,7 +3420,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_02",
@@ -3430,7 +3430,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_03",
@@ -3440,7 +3440,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_04",
@@ -3450,7 +3450,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_05",
@@ -3460,7 +3460,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_06",
@@ -3470,7 +3470,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_07",
@@ -3480,7 +3480,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_08",
@@ -3490,7 +3490,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_09",
@@ -3500,7 +3500,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_10",
@@ -3510,7 +3510,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_11",
@@ -3520,7 +3520,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_12",
@@ -3530,7 +3530,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_13",
@@ -3540,7 +3540,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_14",
@@ -3550,7 +3550,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_15",
@@ -3560,7 +3560,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_16",
@@ -3570,7 +3570,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_17",
@@ -3580,7 +3580,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_18",
@@ -3590,7 +3590,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_19",
@@ -3600,7 +3600,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_20",
@@ -3610,7 +3610,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_21",
@@ -3620,7 +3620,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_22",
@@ -3630,7 +3630,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_23",
@@ -3640,7 +3640,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_24",
@@ -3650,7 +3650,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_25",
@@ -3660,7 +3660,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_26",
@@ -3670,7 +3670,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_27",
@@ -3680,7 +3680,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_28",
@@ -3690,7 +3690,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_29",
@@ -3700,7 +3700,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_company_30",
@@ -3710,7 +3710,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "company >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_01",
@@ -3720,7 +3720,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_02",
@@ -3730,7 +3730,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_03",
@@ -3740,7 +3740,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_04",
@@ -3750,7 +3750,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_05",
@@ -3760,7 +3760,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_06",
@@ -3770,7 +3770,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_07",
@@ -3780,7 +3780,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_08",
@@ -3790,7 +3790,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_09",
@@ -3800,7 +3800,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_10",
@@ -3810,7 +3810,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_11",
@@ -3820,7 +3820,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_12",
@@ -3830,7 +3830,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_13",
@@ -3840,7 +3840,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_14",
@@ -3850,7 +3850,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_15",
@@ -3860,7 +3860,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town <=35",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_16",
@@ -3870,7 +3870,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_17",
@@ -3880,7 +3880,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_18",
@@ -3890,7 +3890,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_19",
@@ -3900,7 +3900,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_20",
@@ -3910,7 +3910,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_21",
@@ -3920,7 +3920,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_22",
@@ -3930,7 +3930,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_23",
@@ -3940,7 +3940,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_24",
@@ -3950,7 +3950,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_25",
@@ -3960,7 +3960,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_26",
@@ -3970,7 +3970,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_27",
@@ -3980,7 +3980,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_28",
@@ -3990,7 +3990,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_29",
@@ -4000,7 +4000,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "res_town_30",
@@ -4010,7 +4010,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "town >=65",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_01",
@@ -4020,7 +4020,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_02",
@@ -4030,7 +4030,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_03",
@@ -4040,7 +4040,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_04",
@@ -4050,7 +4050,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_05",
@@ -4060,7 +4060,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_06",
@@ -4070,7 +4070,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_07",
@@ -4080,7 +4080,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_08",
@@ -4090,7 +4090,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_09",
@@ -4100,7 +4100,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vosk_10",
@@ -4110,7 +4110,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_01",
@@ -4120,7 +4120,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_02",
@@ -4130,7 +4130,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_03",
@@ -4140,7 +4140,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_04",
@@ -4150,7 +4150,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_05",
@@ -4160,7 +4160,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_06",
@@ -4170,7 +4170,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_07",
@@ -4180,7 +4180,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_08",
@@ -4190,7 +4190,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_09",
@@ -4200,7 +4200,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_pell_10",
@@ -4210,7 +4210,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_01",
@@ -4220,7 +4220,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_02",
@@ -4230,7 +4230,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_03",
@@ -4240,7 +4240,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_04",
@@ -4250,7 +4250,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_05",
@@ -4260,7 +4260,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_06",
@@ -4270,7 +4270,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_07",
@@ -4280,7 +4280,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_08",
@@ -4290,7 +4290,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_09",
@@ -4300,7 +4300,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_quenn_10",
@@ -4310,7 +4310,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_01",
@@ -4320,7 +4320,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_02",
@@ -4330,7 +4330,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_03",
@@ -4340,7 +4340,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_04",
@@ -4350,7 +4350,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_05",
@@ -4360,7 +4360,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_06",
@@ -4370,7 +4370,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_07",
@@ -4380,7 +4380,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_08",
@@ -4390,7 +4390,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_09",
@@ -4400,7 +4400,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_ilse_10",
@@ -4410,7 +4410,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_01",
@@ -4420,7 +4420,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_02",
@@ -4430,7 +4430,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_03",
@@ -4440,7 +4440,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_04",
@@ -4450,7 +4450,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_05",
@@ -4460,7 +4460,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_06",
@@ -4470,7 +4470,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_07",
@@ -4480,7 +4480,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_08",
@@ -4490,7 +4490,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_09",
@@ -4500,7 +4500,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_mirren_10",
@@ -4510,7 +4510,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_01",
@@ -4520,7 +4520,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_02",
@@ -4530,7 +4530,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_03",
@@ -4540,7 +4540,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_04",
@@ -4550,7 +4550,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_05",
@@ -4560,7 +4560,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_06",
@@ -4570,7 +4570,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_07",
@@ -4580,7 +4580,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_08",
@@ -4590,7 +4590,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_09",
@@ -4600,7 +4600,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_bram_10",
@@ -4610,7 +4610,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_01",
@@ -4620,7 +4620,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_02",
@@ -4630,7 +4630,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_03",
@@ -4640,7 +4640,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_04",
@@ -4650,7 +4650,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_05",
@@ -4660,7 +4660,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_06",
@@ -4670,7 +4670,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_07",
@@ -4680,7 +4680,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_08",
@@ -4690,7 +4690,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_09",
@@ -4700,7 +4700,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_wren_10",
@@ -4710,7 +4710,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_01",
@@ -4720,7 +4720,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_02",
@@ -4730,7 +4730,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_03",
@@ -4740,7 +4740,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_04",
@@ -4750,7 +4750,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_05",
@@ -4760,7 +4760,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_06",
@@ -4770,7 +4770,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_07",
@@ -4780,7 +4780,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_08",
@@ -4790,7 +4790,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_09",
@@ -4800,7 +4800,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_crane_10",
@@ -4810,7 +4810,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_01",
@@ -4820,7 +4820,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_02",
@@ -4830,7 +4830,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_03",
@@ -4840,7 +4840,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_04",
@@ -4850,7 +4850,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_05",
@@ -4860,7 +4860,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_06",
@@ -4870,7 +4870,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_07",
@@ -4880,7 +4880,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_08",
@@ -4890,7 +4890,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_09",
@@ -4900,7 +4900,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_vane_10",
@@ -4910,7 +4910,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_01",
@@ -4920,7 +4920,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_02",
@@ -4930,7 +4930,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_03",
@@ -4940,7 +4940,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_04",
@@ -4950,7 +4950,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_05",
@@ -4960,7 +4960,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_06",
@@ -4970,7 +4970,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_07",
@@ -4980,7 +4980,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_08",
@@ -4990,7 +4990,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_09",
@@ -5000,7 +5000,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_solas_10",
@@ -5010,7 +5010,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_01",
@@ -5020,7 +5020,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_02",
@@ -5030,7 +5030,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_03",
@@ -5040,7 +5040,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_04",
@@ -5050,7 +5050,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_05",
@@ -5060,7 +5060,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_06",
@@ -5070,7 +5070,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_07",
@@ -5080,7 +5080,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_08",
@@ -5090,7 +5090,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_09",
@@ -5100,7 +5100,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_hale_10",
@@ -5110,7 +5110,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_01",
@@ -5120,7 +5120,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_02",
@@ -5130,7 +5130,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_03",
@@ -5140,7 +5140,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_04",
@@ -5150,7 +5150,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_05",
@@ -5160,7 +5160,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_06",
@@ -5170,7 +5170,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_07",
@@ -5180,7 +5180,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_08",
@@ -5190,7 +5190,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_09",
@@ -5200,7 +5200,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "rel_fennick_10",
@@ -5210,7 +5210,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "met flag; relationship band",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "mi01_1",
