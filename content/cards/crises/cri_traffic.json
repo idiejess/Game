@@ -1,0 +1,746 @@
+{
+ "cards": [
+  {
+   "id": "cri_jam_01",
+   "category": "crises",
+   "speaker": "src_gate",
+   "pool": "crisis",
+   "text": "The queue has reached Lock 6. Sixty boats. The lower pounds are so full of moored hulls that nothing can move in either direction. Aldmere has posted a cutter at Lock 5 to stop more coming up. It is not a queue now. It is a wall.",
+   "left": {
+    "label": "Work through the night, every night",
+    "outcome": "Lamps for a week. The hands sleep on the beam. The wall shortens to Lock 7.",
+    "effects": {
+     "resources": {
+      "traffic": 7,
+      "water": -4,
+      "town": -3
+     },
+     "flags_set": [
+      "night_passages"
+     ],
+     "counters": {
+      "passages_night": 4,
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Turn back everything west of Lock 7",
+    "outcome": "Twenty boats sent back down. Sorrel is livid. The wall becomes a queue.",
+    "effects": {
+     "resources": {
+      "traffic": 4
+     },
+     "factions": {
+      "sorrel": -6
+     },
+     "relationships": {
+      "vane": -5
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 28
+     }
+    }
+   },
+   "weight": 2,
+   "cooldown": 25,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_jam_02",
+   "category": "crises",
+   "speaker": "vane",
+   "expression": "furious",
+   "pool": "crisis",
+   "text": "Twelve days. My principals have sent a man to replace me. He's at Lock 4, waiting in your queue. When he gets here I'm finished and you get someone who doesn't ask. I'd like to still be here. Clear my boats. Anything. Now.",
+   "left": {
+    "label": "Sorrel boats first, until she's safe",
+    "outcome": "Twenty Sorrel boats through in two days. The replacement arrives to find nothing to replace. Crane writes eleven pages.",
+    "effects": {
+     "resources": {
+      "traffic": 5
+     },
+     "relationships": {
+      "vane": 10,
+      "crane": -6
+     },
+     "factions": {
+      "sorrel": 4,
+      "aldmere": -5
+     }
+    }
+   },
+   "right": {
+    "label": "In order; I'm sorry",
+    "outcome": "\"Sorry. Right.\" She is replaced. The new man does not ask. He pays.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "coffers": 3
+     },
+     "relationships": {
+      "vane": -8
+     },
+     "counters": {
+      "bribes_taken": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 26
+     }
+    },
+    "flags_all": [
+     "met_vane"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_jam_03",
+   "category": "crises",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "pool": "crisis",
+   "text": "Aldmere has invoked the Compact's embargo clause. No grain passes the summit until the queue is 'cleared to Aldmere's satisfaction'. I did not advise it. I note that satisfaction is not defined. I note that I am the one who must define it.",
+   "left": {
+    "label": "Ask him to define it kindly",
+    "outcome": "\"Kindly. Duly.\" He defines it as 'no vessel waiting more than three days'. It is nearly achievable.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Defy the embargo",
+    "outcome": "Grain passes under your signature. Aldmere sends a second cutter. Crane does not speak to you for a week, then does, sadly.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "company": -3
+     },
+     "relationships": {
+      "crane": -8
+     },
+     "factions": {
+      "aldmere": -8
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 25
+     }
+    },
+    "flags_all": [
+     "met_crane"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_jam_04",
+   "category": "crises",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "pool": "crisis",
+   "text": "Three things. A bargee in the queue has been stabbed over a place. He'll live. The one who did it has forty friends in the queue and the town has a rope. And I've eleven men and no constables.",
+   "left": {
+    "label": "Hold him in the lock house for Crane",
+    "outcome": "Crane holds a hearing under the Compact. It is very long. Nobody is hanged. The queue watches every minute.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 4,
+      "crane": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Send him down the flight, now",
+    "outcome": "He goes west in the night on a Hullfolk boat. The town's rope stays coiled. Justice, of a kind.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "dace": 2,
+      "wren": 3
+     },
+     "factions": {
+      "aldmere": -2
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 28
+     }
+    },
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_jam_05",
+   "category": "crises",
+   "speaker": "pell",
+   "expression": "wounded",
+   "pool": "crisis",
+   "text": "The Board has sent the word 'remove'. Not yet with a name. The queue is in every newspaper on both shores and one has a drawing of the summit with a padlock on it. I have one week to send figures the Board can bear. One week, Keeper.",
+   "left": {
+    "label": "Suspend tolls and inspections for the week",
+    "outcome": "Free, uninspected passage. Sixty boats in a week. The chest is empty and Crane is silent. The Board bears it.",
+    "effects": {
+     "resources": {
+      "traffic": 10,
+      "coffers": -8,
+      "company": 4
+     },
+     "relationships": {
+      "pell": 6,
+      "crane": -6
+     },
+     "flags_set": [
+      "inspections_waived"
+     ]
+    }
+   },
+   "right": {
+    "label": "Send the true figures",
+    "outcome": "The true figures. The Board's next word has a name in it.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "relationships": {
+      "pell": -3
+     },
+     "delayed": [
+      {
+       "card": "ma01_15",
+       "delay": 3,
+       "delay_max": 6
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 24
+     }
+    },
+    "flags_all": [
+     "met_pell"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ],
+   "sound": "sfx_telegram"
+  },
+  {
+   "id": "cri_jam_06",
+   "category": "crises",
+   "speaker": "solas",
+   "expression": "hard",
+   "pool": "crisis",
+   "text": "The queue's become a town of its own. Sixty boats, three hundred people, a market, two fights a day. Somebody's going to burn something. My men could patrol it. Aldmere would call that an occupation. Aldmere's cutter is at Lock 5, not here.",
+   "left": {
+    "label": "Patrol it",
+    "outcome": "Sorrel soldiers walking a Company towpath. Nothing burns. Crane files. Aldmere protests. The queue sleeps.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": 2
+     },
+     "relationships": {
+      "solas": 6,
+      "crane": -5
+     },
+     "factions": {
+      "aldmere": -5
+     }
+    }
+   },
+   "right": {
+    "label": "The town's constable and Dace's men",
+    "outcome": "One constable and eleven tired hands. Something burns: a tent. Nobody is hurt. Barely.",
+    "effects": {
+     "resources": {
+      "town": -2
+     },
+     "relationships": {
+      "dace": -2,
+      "solas": 1
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 26
+     }
+    },
+    "flags_all": [
+     "met_solas"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_jam_07",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The queue is a queue again. Twenty boats, orderly, complaining. The Ledger's jam page has two other Keepers' hands on it. Both end: 'the pound would not carry what the Company sent'. The pound is a mark lower than when it began.",
+   "left": {
+    "label": "Write it",
+    "outcome": "The third hand. The same sentence.",
+    "effects": {
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ]
+    }
+   },
+   "right": {
+    "label": "Write the number of boats",
+    "outcome": "Numbers. The Board likes numbers. So, it turns out, do you.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 35,
+      "max": 50
+     }
+    },
+    "counters": {
+     "jam_ignored": {
+      "min": 0
+     }
+    },
+    "flags_any": [
+     "night_passages",
+     "inspections_waived",
+     "compact_breached"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_pileup_01",
+   "category": "crises",
+   "speaker": "src_gate",
+   "pool": "crisis",
+   "text": "Two boats in the chamber and a third coming in because nobody said stop. The paddles are running. The hulls are grinding. A bargee has jumped for the wall and missed. Everything is happening at once and none of it slowly.",
+   "left": {
+    "label": "Drop the paddles; dive for the bargee",
+    "outcome": "You go in. He comes out. The boats settle against each other like tired animals. Nobody is under them.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "town": 4
+     },
+     "flags_set": [
+      "chamber_collision"
+     ],
+     "counters": {
+      "fatigue": 4
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Drop the paddles; Dace gets the bargee",
+    "outcome": "Dace gets him with a hook. The boats settle. The third has a hole in her bow you could put a barrel through.",
+    "effects": {
+     "resources": {
+      "traffic": -4
+     },
+     "flags_set": [
+      "chamber_collision"
+     ],
+     "counters": {
+      "repairs_deferred": 2
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 74
+     }
+    }
+   },
+   "weight": 3,
+   "cooldown": 30,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_pileup_02",
+   "category": "crises",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "pool": "crisis",
+   "text": "Three things. The coal boat's holed and sinking in the chamber. If she goes down there the gate's blocked for a month. I can beach her on the sill if we drain now, and lose the sill facing. Or she sinks. Pick.",
+   "left": {
+    "label": "Drain and beach her",
+    "outcome": "She grounds on the sill with a sound of breaking stone. The chamber is clear by dark. The sill is not what it was.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "water": -4,
+      "coffers": -5
+     },
+     "counters": {
+      "repairs_deferred": 3
+     },
+     "relationships": {
+      "dace": 4,
+      "quenn": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Let her sink; raise her later",
+    "outcome": "She sinks in the chamber. Three weeks with Tamm's rig. Sixty boats wait. The sill lives.",
+    "effects": {
+     "resources": {
+      "traffic": -10,
+      "coffers": -8
+     },
+     "relationships": {
+      "tamm": 3,
+      "quenn": 3
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    },
+    "flags_all": [
+     "met_dace",
+     "chamber_collision"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_pileup_03",
+   "category": "crises",
+   "speaker": "stroud",
+   "expression": "grave",
+   "pool": "crisis",
+   "text": "One dead. Crushed between the hulls. A Sorrel bargee, young, with a wife at Lock 3 who does not know yet. I will write to her. I would like the Keeper to sign the letter, because the Company's form does not have a place for sorry and mine does.",
+   "left": {
+    "label": "Sign it",
+    "outcome": "You sign under 'sorry'. It is the only Company letter that has ever had the word.",
+    "effects": {
+     "relationships": {
+      "stroud": 6
+     },
+     "resources": {
+      "company": -2,
+      "town": 2
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Company's form only",
+    "outcome": "\"The form. Yes. I shall send mine anyway, unsigned. She will know whose it is.\"",
+    "effects": {
+     "relationships": {
+      "stroud": -5
+     },
+     "resources": {
+      "company": 2
+     },
+     "factions": {
+      "sorrel": -3
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 72
+     }
+    },
+    "flags_all": [
+     "met_stroud",
+     "chamber_collision"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 80,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ],
+   "sound": "sfx_death"
+  },
+  {
+   "id": "cri_pileup_04",
+   "category": "crises",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "pool": "crisis",
+   "text": "A collision in the chamber. A death. The Board requires an inquiry and the inquiry requires a name. The order to run two boats a filling was given. The Book does not say by whom. You will find I am asking whom to write.",
+   "left": {
+    "label": "Write mine",
+    "outcome": "\"Noted.\" She writes it. Then she writes, beneath it, 'under Superintendent's standing instruction'. Pell does not thank her. He does not know.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "relationships": {
+      "vosk": 6,
+      "pell": 3
+     },
+     "flags_set": [
+      "inquiry_pending"
+     ],
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Write Pell's",
+    "outcome": "\"Noted.\" She writes it. Pell is scolded for nine pages and does not speak to you for a month.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "pell": -10,
+      "vosk": 1
+     },
+     "flags_set": [
+      "inquiry_pending"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    },
+    "flags_all": [
+     "met_vosk",
+     "chamber_collision"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 80,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_pileup_05",
+   "category": "crises",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "pool": "crisis",
+   "text": "I have examined the chamber. Two vessels, one filling, contrary to regulation and the Compact's safety schedule. I have the dates of every such passage this quarter. Forty-one. I am obliged to report them. I take no pleasure in it.",
+   "left": {
+    "label": "Report them all",
+    "outcome": "\"Duly.\" Forty-one breaches to Aldmere. Aldmere demands the summit slow. It slows.",
+    "effects": {
+     "resources": {
+      "traffic": -8,
+      "company": -3
+     },
+     "relationships": {
+      "crane": 5
+     },
+     "factions": {
+      "aldmere": 4
+     },
+     "flags_clear": [
+      "night_passages",
+      "inspections_waived"
+     ]
+    }
+   },
+   "right": {
+    "label": "Report the one",
+    "outcome": "\"One. I note that is not what happened. I note I am doing it anyway, which I shall regret.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "crane": -4
+     },
+     "counters": {
+      "aldmere_favors": -1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    },
+    "flags_all": [
+     "met_crane",
+     "chamber_collision"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 80,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_pileup_06",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The chamber is clear. The gate runs one boat a filling, at the bell. The record is gone and so is a man. In the Ledger the pile-up page has one other hand, from Year 58: 'we were told to go faster, and we did'.",
+   "left": {
+    "label": "Write the same",
+    "outcome": "You write it. It is still true.",
+    "effects": {
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Write 'one boat a filling, always'",
+    "outcome": "A rule, in the Ledger, for the next Keeper. Whether they read it is theirs.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "company": 1
+     },
+     "counters": {
+      "repairs_deferred": -1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 50,
+      "max": 68
+     }
+    },
+    "flags_all": [
+     "chamber_collision"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 80,
+   "tags": [
+    "res:traffic",
+    "recovery"
+   ]
+  }
+ ]
+}

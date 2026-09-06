@@ -7020,7 +7020,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_02",
@@ -7030,7 +7030,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_03",
@@ -7040,7 +7040,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_04",
@@ -7050,7 +7050,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_05",
@@ -7060,7 +7060,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_06",
@@ -7070,7 +7070,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_07",
@@ -7080,7 +7080,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_08",
@@ -7090,7 +7090,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_09",
@@ -7100,7 +7100,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_10",
@@ -7110,7 +7110,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_11",
@@ -7120,7 +7120,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_12",
@@ -7130,7 +7130,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_13",
@@ -7140,7 +7140,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_14",
@@ -7150,7 +7150,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma01_15",
@@ -7160,7 +7160,7 @@
    "resource": "company",
    "arc": "MA01",
    "prerequisites": "arc MA01 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma02_01",
@@ -7320,7 +7320,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_02",
@@ -7330,7 +7330,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_03",
@@ -7340,7 +7340,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_04",
@@ -7350,7 +7350,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_05",
@@ -7360,7 +7360,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_06",
@@ -7370,7 +7370,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_07",
@@ -7380,7 +7380,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_08",
@@ -7390,7 +7390,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_09",
@@ -7400,7 +7400,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_10",
@@ -7410,7 +7410,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_11",
@@ -7420,7 +7420,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_12",
@@ -7430,7 +7430,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_13",
@@ -7440,7 +7440,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_14",
@@ -7450,7 +7450,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma03_15",
@@ -7460,7 +7460,7 @@
    "resource": "company",
    "arc": "MA03",
    "prerequisites": "arc MA03 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_01",
@@ -7470,7 +7470,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_02",
@@ -7480,7 +7480,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_03",
@@ -7490,7 +7490,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_04",
@@ -7500,7 +7500,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_05",
@@ -7510,7 +7510,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_06",
@@ -7520,7 +7520,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_07",
@@ -7530,7 +7530,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_08",
@@ -7540,7 +7540,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_09",
@@ -7550,7 +7550,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_10",
@@ -7560,7 +7560,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_11",
@@ -7570,7 +7570,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_12",
@@ -7580,7 +7580,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_13",
@@ -7590,7 +7590,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_14",
@@ -7600,7 +7600,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma04_15",
@@ -7610,7 +7610,7 @@
    "resource": "traffic",
    "arc": "MA04",
    "prerequisites": "arc MA04 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_01",
@@ -7620,7 +7620,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_02",
@@ -7630,7 +7630,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_03",
@@ -7640,7 +7640,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_04",
@@ -7650,7 +7650,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_05",
@@ -7660,7 +7660,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_06",
@@ -7670,7 +7670,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_07",
@@ -7680,7 +7680,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_08",
@@ -7690,7 +7690,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_09",
@@ -7700,7 +7700,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_10",
@@ -7710,7 +7710,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_11",
@@ -7720,7 +7720,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_12",
@@ -7730,7 +7730,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_13",
@@ -7740,7 +7740,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_14",
@@ -7750,7 +7750,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma05_15",
@@ -7760,7 +7760,7 @@
    "resource": "water",
    "arc": "MA05",
    "prerequisites": "arc MA05 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_01",
@@ -7770,7 +7770,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_02",
@@ -7780,7 +7780,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_03",
@@ -7790,7 +7790,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_04",
@@ -7800,7 +7800,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_05",
@@ -7810,7 +7810,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_06",
@@ -7820,7 +7820,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_07",
@@ -7830,7 +7830,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_08",
@@ -7840,7 +7840,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_09",
@@ -7850,7 +7850,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_10",
@@ -7860,7 +7860,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_11",
@@ -7870,7 +7870,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_12",
@@ -7880,7 +7880,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_13",
@@ -7890,7 +7890,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_14",
@@ -7900,7 +7900,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma06_15",
@@ -7910,7 +7910,7 @@
    "resource": "town",
    "arc": "MA06",
    "prerequisites": "arc MA06 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_01",
@@ -7920,7 +7920,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_02",
@@ -7930,7 +7930,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_03",
@@ -7940,7 +7940,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_04",
@@ -7950,7 +7950,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_05",
@@ -7960,7 +7960,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_06",
@@ -7970,7 +7970,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_07",
@@ -7980,7 +7980,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_08",
@@ -7990,7 +7990,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_09",
@@ -8000,7 +8000,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_10",
@@ -8010,7 +8010,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_11",
@@ -8020,7 +8020,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_12",
@@ -8030,7 +8030,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_13",
@@ -8040,7 +8040,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_14",
@@ -8050,7 +8050,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma07_15",
@@ -8060,7 +8060,7 @@
    "resource": "traffic",
    "arc": "MA07",
    "prerequisites": "arc MA07 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_01",
@@ -8070,7 +8070,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_02",
@@ -8080,7 +8080,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_03",
@@ -8090,7 +8090,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_04",
@@ -8100,7 +8100,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_05",
@@ -8110,7 +8110,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_06",
@@ -8120,7 +8120,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_07",
@@ -8130,7 +8130,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_08",
@@ -8140,7 +8140,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_09",
@@ -8150,7 +8150,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_10",
@@ -8160,7 +8160,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_11",
@@ -8170,7 +8170,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_12",
@@ -8180,7 +8180,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_13",
@@ -8190,7 +8190,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_14",
@@ -8200,7 +8200,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma08_15",
@@ -8210,7 +8210,7 @@
    "resource": "water",
    "arc": "MA08",
    "prerequisites": "arc MA08 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_01",
@@ -8220,7 +8220,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_02",
@@ -8230,7 +8230,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_03",
@@ -8240,7 +8240,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_04",
@@ -8250,7 +8250,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_05",
@@ -8260,7 +8260,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_06",
@@ -8270,7 +8270,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_07",
@@ -8280,7 +8280,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_08",
@@ -8290,7 +8290,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_09",
@@ -8300,7 +8300,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_10",
@@ -8310,7 +8310,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_11",
@@ -8320,7 +8320,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_12",
@@ -8330,7 +8330,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_13",
@@ -8340,7 +8340,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_14",
@@ -8350,7 +8350,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma09_15",
@@ -8360,7 +8360,7 @@
    "resource": "company",
    "arc": "MA09",
    "prerequisites": "arc MA09 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_01",
@@ -8370,7 +8370,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_02",
@@ -8380,7 +8380,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_03",
@@ -8390,7 +8390,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_04",
@@ -8400,7 +8400,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_05",
@@ -8410,7 +8410,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_06",
@@ -8420,7 +8420,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_07",
@@ -8430,7 +8430,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_08",
@@ -8440,7 +8440,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_09",
@@ -8450,7 +8450,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_10",
@@ -8460,7 +8460,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_11",
@@ -8470,7 +8470,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_12",
@@ -8480,7 +8480,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_13",
@@ -8490,7 +8490,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_14",
@@ -8500,7 +8500,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma10_15",
@@ -8510,7 +8510,7 @@
    "resource": "town",
    "arc": "MA10",
    "prerequisites": "arc MA10 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_01",
@@ -8520,7 +8520,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_02",
@@ -8530,7 +8530,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_03",
@@ -8540,7 +8540,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_04",
@@ -8550,7 +8550,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_05",
@@ -8560,7 +8560,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_06",
@@ -8570,7 +8570,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_07",
@@ -8580,7 +8580,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_08",
@@ -8590,7 +8590,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_09",
@@ -8600,7 +8600,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_10",
@@ -8610,7 +8610,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_11",
@@ -8620,7 +8620,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_12",
@@ -8630,7 +8630,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_13",
@@ -8640,7 +8640,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_14",
@@ -8650,7 +8650,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma11_15",
@@ -8660,7 +8660,7 @@
    "resource": "water",
    "arc": "MA11",
    "prerequisites": "arc MA11 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_01",
@@ -8670,7 +8670,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc entry",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_02",
@@ -8680,7 +8680,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_03",
@@ -8690,7 +8690,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 1",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_04",
@@ -8700,7 +8700,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_05",
@@ -8710,7 +8710,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_06",
@@ -8720,7 +8720,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 2",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_07",
@@ -8730,7 +8730,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_08",
@@ -8740,7 +8740,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_09",
@@ -8750,7 +8750,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 3",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_10",
@@ -8760,7 +8760,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_11",
@@ -8770,7 +8770,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_12",
@@ -8780,7 +8780,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 4",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_13",
@@ -8790,7 +8790,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_14",
@@ -8800,7 +8800,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "ma12_15",
@@ -8810,7 +8810,7 @@
    "resource": "water",
    "arc": "MA12",
    "prerequisites": "arc MA12 stage 5",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_01",
@@ -8820,7 +8820,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_02",
@@ -8830,7 +8830,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_03",
@@ -8840,7 +8840,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_04",
@@ -8850,7 +8850,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_05",
@@ -8860,7 +8860,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_06",
@@ -8870,7 +8870,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_07",
@@ -8880,7 +8880,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_flood_08",
@@ -8890,7 +8890,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_01",
@@ -8900,7 +8900,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_02",
@@ -8910,7 +8910,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_03",
@@ -8920,7 +8920,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_04",
@@ -8930,7 +8930,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_05",
@@ -8940,7 +8940,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_06",
@@ -8950,7 +8950,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_07",
@@ -8960,7 +8960,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_dry_08",
@@ -8970,7 +8970,7 @@
    "resource": "water",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_01",
@@ -8980,7 +8980,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_02",
@@ -8990,7 +8990,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_03",
@@ -9000,7 +9000,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_04",
@@ -9010,7 +9010,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_05",
@@ -9020,7 +9020,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_06",
@@ -9030,7 +9030,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_jam_07",
@@ -9040,7 +9040,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_01",
@@ -9050,7 +9050,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_02",
@@ -9060,7 +9060,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_03",
@@ -9070,7 +9070,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_04",
@@ -9080,7 +9080,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_05",
@@ -9090,7 +9090,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_pileup_06",
@@ -9100,7 +9100,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_01",
@@ -9110,7 +9110,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_02",
@@ -9120,7 +9120,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_03",
@@ -9130,7 +9130,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_04",
@@ -9140,7 +9140,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_05",
@@ -9150,7 +9150,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_06",
@@ -9160,7 +9160,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_money_07",
@@ -9170,7 +9170,7 @@
    "resource": "coffers",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_01",
@@ -9180,7 +9180,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_02",
@@ -9190,7 +9190,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_03",
@@ -9200,7 +9200,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_04",
@@ -9210,7 +9210,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_05",
@@ -9220,7 +9220,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_company_06",
@@ -9230,7 +9230,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_01",
@@ -9240,7 +9240,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_02",
@@ -9250,7 +9250,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_03",
@@ -9260,7 +9260,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_04",
@@ -9270,7 +9270,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_05",
@@ -9280,7 +9280,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_06",
@@ -9290,7 +9290,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_07",
@@ -9300,7 +9300,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_town_08",
@@ -9310,7 +9310,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fire_01",
@@ -9320,7 +9320,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fire_02",
@@ -9330,7 +9330,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fire_03",
@@ -9340,7 +9340,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fire_04",
@@ -9350,7 +9350,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fire_05",
@@ -9360,7 +9360,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_frost_01",
@@ -9370,7 +9370,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_frost_02",
@@ -9380,7 +9380,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_frost_03",
@@ -9390,7 +9390,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_frost_04",
@@ -9400,7 +9400,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_frost_05",
@@ -9410,7 +9410,7 @@
    "resource": "traffic",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fever_01",
@@ -9420,7 +9420,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fever_02",
@@ -9430,7 +9430,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fever_03",
@@ -9440,7 +9440,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fever_04",
@@ -9450,7 +9450,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_fever_05",
@@ -9460,7 +9460,7 @@
    "resource": "town",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_recover_01",
@@ -9470,7 +9470,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_recover_02",
@@ -9480,7 +9480,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_recover_03",
@@ -9490,7 +9490,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_recover_04",
@@ -9500,7 +9500,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "cri_recover_05",
@@ -9510,7 +9510,7 @@
    "resource": "company",
    "arc": "",
    "prerequisites": "crisis pool trigger",
-   "status": "planned"
+   "status": "written"
   },
   {
    "id": "end_res_water_min",

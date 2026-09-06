@@ -1,0 +1,730 @@
+{
+ "cards": [
+  {
+   "id": "cri_money_01",
+   "category": "crises",
+   "speaker": "cole",
+   "expression": "cold",
+   "pool": "crisis",
+   "text": "The chest is empty, the hands unpaid, and I hold the town's debts and now, kindly, yours. I have sent the Company a copy of every note. Commissioner Kell arrives Tuesday. I am telling you so you may prepare a face.",
+   "left": {
+    "label": "Pay her something, anything",
+    "outcome": "You sell the good chair and the Company lamp oil. She accepts it, kindly, and withdraws one of the notes.",
+    "effects": {
+     "resources": {
+      "coffers": -4,
+      "company": -2
+     },
+     "relationships": {
+      "cole": 3
+     },
+     "counters": {
+      "cole_debt": -1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let Kell come",
+    "outcome": "Kell comes. He reads the notes. He says 'regrettably' four times.",
+    "effects": {
+     "resources": {
+      "company": -5
+     },
+     "relationships": {
+      "cole": -3
+     },
+     "flags_set": [
+      "audit_pending",
+      "cole_defaulted"
+     ],
+     "delayed": [
+      {
+       "card": "cri_money_05",
+       "delay": 2,
+       "delay_max": 4
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 22
+     }
+    },
+    "flags_all": [
+     "met_cole"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 30,
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_money_02",
+   "category": "crises",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "pool": "crisis",
+   "text": "The chest cannot meet wages and the Company will not advance them again. There is a fund for 'exceptional maintenance' that nobody audits but me. Wages are not maintenance. I am asking whether the gate is.",
+   "left": {
+    "label": "The gate is maintenance",
+    "outcome": "\"Noted.\" Wages appear from a fund that does not exist for wages. She has done this before. Once.",
+    "effects": {
+     "resources": {
+      "coffers": 8
+     },
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Don't lie for me",
+    "outcome": "\"Noted. I have lied for the Company eleven years. I would have liked to lie for a gate once.\"",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "vosk": 4,
+      "dace": -3
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 20
+     }
+    },
+    "flags_all": [
+     "met_vosk"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_money_03",
+   "category": "crises",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "pool": "crisis",
+   "text": "Three things. Nobody's been paid in three watches. Six hands have gone down the flight to Lock 6 where the Keeper pays. And the five left have asked me to tell you they're staying because of you, not the Company, and they'd like that written down somewhere.",
+   "left": {
+    "label": "Write it in the Ledger, with their names",
+    "outcome": "Five names in the Ledger. It has never had lock hands' names in it. They come to see.",
+    "effects": {
+     "resources": {
+      "town": 5
+     },
+     "relationships": {
+      "dace": 8
+     },
+     "flags_set": [
+      "hands_short"
+     ],
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell them to go to Lock 6 too",
+    "outcome": "\"Right.\" They don't go. They work unpaid. It is worse than if they'd gone.",
+    "effects": {
+     "resources": {
+      "town": 2,
+      "traffic": -3
+     },
+     "relationships": {
+      "dace": 3
+     },
+     "flags_set": [
+      "hands_short"
+     ],
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 18
+     }
+    },
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_money_04",
+   "category": "crises",
+   "speaker": "ilse",
+   "expression": "wry",
+   "pool": "crisis",
+   "text": "The moot's had a whip-round. For the Keeper's chest. Nobody's ever done that for a Company post. It's not much. It's the town's beer money for a month. Take it and the Company owns nothing here; refuse it and the town'll never offer again.",
+   "left": {
+    "label": "Take it",
+    "outcome": "The town's beer money in the Company's chest. Vosk sees the entry. 'Irregular.' She does not strike it.",
+    "effects": {
+     "resources": {
+      "coffers": 7,
+      "town": 6,
+      "company": -3
+     },
+     "relationships": {
+      "ilse": 8
+     },
+     "counters": {
+      "town_favors": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Refuse it, gratefully",
+    "outcome": "\"Gratefully. Right.\" The town drinks its beer money and toasts you with it, which is something.",
+    "effects": {
+     "resources": {
+      "town": 2,
+      "company": 2
+     },
+     "relationships": {
+      "ilse": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 20
+     }
+    },
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 80,
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_money_05",
+   "category": "crises",
+   "speaker": "kell",
+   "expression": "courteous",
+   "pool": "forced",
+   "text": "The Board's view is that a post which cannot pay its hands is a post in default. Regrettably, default has consequences: the account is frozen, the Keeper's salary is suspended, and a Company clerk will keep the Book until the account recovers. Do carry on. Under supervision.",
+   "left": {
+    "label": "Accept supervision",
+    "outcome": "A clerk from Ardent at your elbow for a month. He is very young. He counts everything. The account recovers.",
+    "effects": {
+     "resources": {
+      "coffers": 6,
+      "company": 2,
+      "town": -3
+     },
+     "relationships": {
+      "kell": 2
+     },
+     "counters": {
+      "suspicion": 2
+     },
+     "flags_clear": [
+      "audit_pending"
+     ]
+    }
+   },
+   "right": {
+    "label": "The town will fund the gate",
+    "outcome": "\"The town. Regrettably, the Board has no view on the town.\" The town has one on the Board.",
+    "effects": {
+     "resources": {
+      "company": -6,
+      "town": 5
+     },
+     "relationships": {
+      "kell": -4,
+      "ilse": 4
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_kell"
+    ]
+   },
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ],
+   "notes": "Forced via cri_money_01 right."
+  },
+  {
+   "id": "cri_money_06",
+   "category": "crises",
+   "speaker": "src_telegram",
+   "pool": "crisis",
+   "text": "COMPANY TO KEEPER STOP ACCOUNT IRREGULARITY NOTED STOP SURPLUS EXCEEDS TOLL CAPACITY STOP BOARD AUDITOR DISPATCHED STOP EXPLAIN BY RETURN STOP",
+   "left": {
+    "label": "Remit the surplus tonight",
+    "outcome": "The chest goes east in a strongbox by the last boat. The auditor arrives to find a book that balances.",
+    "effects": {
+     "resources": {
+      "coffers": -12,
+      "company": 5
+     },
+     "counters": {
+      "suspicion": -3
+     }
+    }
+   },
+   "right": {
+    "label": "'GIFTS FROM GRATEFUL BARGEES'",
+    "outcome": "The auditor arrives. He asks which bargees. You do not have names.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "flags_set": [
+      "audit_pending"
+     ],
+     "counters": {
+      "suspicion": 4
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "min": 80
+     }
+    }
+   },
+   "weight": 3,
+   "cooldown": 40,
+   "tags": [
+    "res:coffers",
+    "escalation"
+   ],
+   "sound": "sfx_telegram"
+  },
+  {
+   "id": "cri_money_07",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The chest is neither empty nor suspicious. Wages paid, Cole paid, the Book balanced to the mark. The Ledger's money page has one other hand: 'a Keeper who is rich or poor is noticed. Be neither.'",
+   "left": {
+    "label": "Be neither",
+    "outcome": "You write it under the other hand. It is good advice. It is hard.",
+    "effects": {
+     "counters": {
+      "suspicion": -1,
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Bury a reserve in the false bottom",
+    "outcome": "Twenty marks under Dray's board. Neither rich nor poor. Prepared.",
+    "effects": {
+     "resources": {
+      "coffers": -5
+     },
+     "delayed_resources": [
+      {
+       "delay": 25,
+       "resources": {
+        "coffers": 5
+       },
+       "message": "You retrieve the reserve from the false bottom."
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "min": 42,
+      "max": 58
+     }
+    },
+    "flags_any": [
+     "cole_loan",
+     "audit_pending",
+     "hands_short"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 80,
+   "tags": [
+    "res:coffers",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_company_01",
+   "category": "crises",
+   "speaker": "src_telegram",
+   "pool": "crisis",
+   "text": "COMPANY TO KEEPER STOP CONFIDENCE IN SUMMIT WITHDRAWN STOP KEEPER TO SHOW CAUSE WHY APPOINTMENT SHOULD NOT BE REVOKED STOP REPLY WITHIN THE WATCH STOP",
+   "left": {
+    "label": "Show cause: the figures",
+    "outcome": "You send the Book's figures. They are honest. They are not good. Ardent replies 'noted'.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Show cause: the town",
+    "outcome": "You send the moot's letter, Ilse's, Bram's mark, Crane's seal. Ardent has never received such a thing. It does not know what to do with it.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 3,
+      "crane": 2
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 22
+     }
+    }
+   },
+   "weight": 2,
+   "cooldown": 30,
+   "tags": [
+    "res:company",
+    "escalation"
+   ],
+   "sound": "sfx_telegram"
+  },
+  {
+   "id": "cri_company_02",
+   "category": "crises",
+   "speaker": "vosk",
+   "expression": "tired",
+   "pool": "crisis",
+   "text": "The Board asked me for a name to replace you. I gave one: a clerk in Ardent who has never seen a lock. The Board will take a month to discover this. You will find that is the month I have bought you.",
+   "left": {
+    "label": "Use the month",
+    "outcome": "A month. Quiet figures, no letters, the gate at the bell. The Board forgets what is quiet.",
+    "effects": {
+     "resources": {
+      "company": 6
+     },
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": -2,
+      "company_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Why buy it?",
+    "outcome": "\"Because the clerk would not watch the gauge. You will find I have started to want someone to.\"",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "vosk": 8
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 20
+     }
+    },
+    "flags_all": [
+     "met_vosk"
+    ],
+    "flags_none": [
+     "vosk_enemy"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 80,
+   "tags": [
+    "res:company",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_company_03",
+   "category": "crises",
+   "speaker": "kell",
+   "expression": "final",
+   "pool": "crisis",
+   "text": "I have the revocation in my case. Signed, dated Tuesday. It is Monday. My view, which the Board did not ask for, is that the summit under you has not lost a boat, a hand, or a mark of water it could have kept. Convince me by Tuesday.",
+   "left": {
+    "label": "Show him the Ledger",
+    "outcome": "He reads it all night. In the morning: \"Regrettably, this is not evidence. It is, however, persuasive.\" He tears the revocation in half.",
+    "effects": {
+     "resources": {
+      "company": 8
+     },
+     "relationships": {
+      "kell": 8
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Show him the gate at work",
+    "outcome": "A day at the gate beside you. He does not speak. At dusk he says 'regrettably' and burns the paper in the lock house stove.",
+    "effects": {
+     "resources": {
+      "company": 6,
+      "traffic": 2
+     },
+     "relationships": {
+      "kell": 6
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 18
+     }
+    },
+    "flags_all": [
+     "met_kell"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_company_04",
+   "category": "crises",
+   "speaker": "pell",
+   "expression": "wounded",
+   "pool": "crisis",
+   "text": "I have been told to prepare the Keeper's house for a successor. I have sat with the order and a pen for two days. Tell me something to write that is not 'no'. I have never written 'no'. I do not know how it is spelled.",
+   "left": {
+    "label": "Write 'no'",
+    "outcome": "He writes it. Two letters. He looks at it a long time. He sends it. Ardent is silent for a week, astonished.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "pell": 12
+     },
+     "counters": {
+      "company_favors": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Write 'the house is not ready'",
+    "outcome": "\"Not ready. Yes. It can be not ready for months.\" It is.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 6
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 20
+     }
+    },
+    "flags_all": [
+     "met_pell"
+    ],
+    "relationships": {
+     "pell": {
+      "min": 45
+     }
+    }
+   },
+   "weight": 4,
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_company_05",
+   "category": "crises",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "pool": "crisis",
+   "text": "A wire's come through for the constables at Lock 5. It says your name and 'detain pending inquiry'. I haven't sent it on. I'm meant to. I've been sitting here with it for an hour. Tell me what to do.",
+   "left": {
+    "label": "Send it on",
+    "outcome": "\"Right. Right.\" He sends it. The constables come. Vosk meets them at the boundary stone and they go back. You do not know what she said.",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "relationships": {
+      "fennick": 3,
+      "vosk": 3
+     },
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Lose it",
+    "outcome": "\"Lost. Yes. I lose things. I've never lost a thing in my life.\" He loses it. It is the bravest thing he has done.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "fennick": 10
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ],
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 18
+     }
+    },
+    "flags_all": [
+     "met_fennick"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "escalation"
+   ],
+   "sound": "sfx_telegram"
+  },
+  {
+   "id": "cri_company_06",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The Board has stopped writing. Not favorably; silently. The summit runs. The Book balances. Nobody from Ardent has visited in a season. The Ledger's Company page, in Dray's hand, says: 'when they stop writing, they have decided. Find out what.'",
+   "left": {
+    "label": "Find out what",
+    "outcome": "Fennick reads the Ardent code for a week. They have decided nothing. They have forgotten the summit. It is the safest you have been.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "fennick": 3
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Enjoy the silence",
+    "outcome": "You enjoy it. It lasts. Silence from Ardent is the Company's only gift.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "counters": {
+      "fatigue": -2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "min": 35,
+      "max": 55
+     }
+    },
+    "flags_any": [
+     "audit_pending",
+     "inquiry_pending",
+     "suspicion_high"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 80,
+   "tags": [
+    "res:company",
+    "recovery"
+   ]
+  }
+ ]
+}

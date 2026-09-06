@@ -3,7 +3,7 @@
 Enforced partly by `tools/analyze_dialogue.py`. Rules marked (auto) are checked automatically.
 
 ## Length (auto)
-- Situation text: 6–32 words. Documented exceptions: `relationships` and `major_arcs` cards may run to 40 (character beats need room for voice); `end_*` cards may run to 60.
+- Situation text: 6–32 words. Documented exceptions: `relationships`, `major_arcs` and `crises` cards may run to 40 (character beats and emergencies need room); `end_*` cards may run to 60.
 - Choice labels: 1–8 words.
 - Outcome text (optional): ≤ 24 words.
 

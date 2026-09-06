@@ -1,0 +1,1780 @@
+{
+ "cards": [
+  {
+   "id": "cri_town_01",
+   "category": "crises",
+   "speaker": "ilse",
+   "expression": "angry",
+   "pool": "crisis",
+   "text": "There's a crowd at the Company house. Not a mob. Not yet. A crowd with lamps and one voice too many. They want the Keeper to come out and say whose side the gate is on. I've told them you're coming. Come.",
+   "left": {
+    "label": "Go out and speak",
+    "outcome": "You speak from the step. You say the gate's. It is not what they wanted. It is enough to go home on.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -3
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Send Dace to disperse them",
+    "outcome": "Dace goes out. He is one of them. He comes back in. They do not disperse.",
+    "effects": {
+     "resources": {
+      "town": -5
+     },
+     "relationships": {
+      "dace": -3,
+      "ilse": -3
+     },
+     "flags_set": [
+      "riot_brewing"
+     ],
+     "delayed": [
+      {
+       "card": "cri_town_02",
+       "delay": 1,
+       "delay_max": 2
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 25
+     }
+    },
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 25,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_town_02",
+   "category": "crises",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "pool": "crisis",
+   "text": "Three things. Somebody's thrown a lamp through the Company house window. It didn't catch. The crowd's gone quiet, which is worse than loud. And the constable's asked me whose men mine are: the Company's or the town's. I didn't have an answer.",
+   "left": {
+    "label": "The town's; stand them down",
+    "outcome": "The hands go home. The Company house stands empty and unguarded. Nobody touches it. That is the town's answer.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -4
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "right": {
+    "label": "The Company's; guard the house",
+    "outcome": "Eleven hands in a line before the Company house, facing their neighbors. Nobody moves. By dawn the hands are not the town's any more.",
+    "effects": {
+     "resources": {
+      "town": -6,
+      "company": 3
+     },
+     "relationships": {
+      "dace": -4
+     },
+     "flags_set": [
+      "riot_brewing"
+     ],
+     "delayed": [
+      {
+       "card": "cri_town_03",
+       "delay": 1,
+       "delay_max": 3
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 24
+     }
+    },
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 40,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_town_03",
+   "category": "crises",
+   "speaker": "src_stranger",
+   "pool": "crisis",
+   "text": "A man on the wharf with a torch, and thirty behind him, and the Company warehouse full of grain and lamp oil. He does not know you. He knows the Company. He asks the Keeper, quite politely, to step aside.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "clearance_signed"
+      ]
+     },
+     "text": "A man on the wharf with a torch, and thirty behind him, and the Reach beyond with forty boats and a Clearance order on every hull. He asks the Keeper, quite politely, whether the order stands, because if it does he means to help it along."
+    }
+   ],
+   "left": {
+    "label": "Don't step aside",
+    "outcome": "You stand in front of the warehouse. He looks at you a long time. Somebody behind him laughs. Somebody else takes his torch.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": 3
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Step aside",
+    "outcome": "The warehouse burns. The town watches. The Company's grain and lamp oil light the pound orange until dawn.",
+    "effects": {
+     "resources": {
+      "town": 2,
+      "company": -10,
+      "coffers": -6
+     },
+     "flags_set": [
+      "fire_boatyard"
+     ],
+     "delayed": [
+      {
+       "card": "cri_fire_01",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 22
+     }
+    },
+    "flags_all": [
+     "riot_brewing"
+    ]
+   },
+   "weight": 3,
+   "weight_mods": [
+    {
+     "when": {
+      "flags_all": [
+       "clearance_signed"
+      ]
+     },
+     "multiply": 2.0
+    }
+   ],
+   "cooldown": 50,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_town_04",
+   "category": "crises",
+   "speaker": "cole",
+   "expression": "cold",
+   "pool": "crisis",
+   "text": "The town has stopped paying rent. All of it. To me. They say it is about the Keeper; I say it is about money, which everything is. I have written to the Company for constables. The Company has written back asking whether the Keeper approved. Did you?",
+   "left": {
+    "label": "No constables",
+    "outcome": "\"Then no rent. Kindly.\" She waits. She is very good at it. The town is not.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -3
+     },
+     "relationships": {
+      "cole": -8
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Constables, for the rent only",
+    "outcome": "Constables collect rent in Company green. The town pays. The town remembers who let them in.",
+    "effects": {
+     "resources": {
+      "town": -6,
+      "company": 3
+     },
+     "relationships": {
+      "cole": 6
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 25
+     }
+    },
+    "flags_all": [
+     "met_cole"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_town_05",
+   "category": "crises",
+   "speaker": "hesse",
+   "expression": "curious",
+   "pool": "crisis",
+   "text": "The Courier's Aldmere edition has a piece about the summit 'in revolt'. It's mine. It's mostly true. Ardent has read it and is sending someone. I can print a second piece, calmer, tomorrow. Or I can print what happens when Ardent's someone arrives. Your pick.",
+   "left": {
+    "label": "The calmer piece",
+    "outcome": "HALFWAY: A TOWN AT PEACE. It is not, quite. It becomes so, partly because it was printed.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": 2
+     },
+     "relationships": {
+      "hesse": 3
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "right": {
+    "label": "Print what happens",
+    "outcome": "\"Right. I'll bring a plate-man.\" Ardent's someone arrives to find a newspaperman and a crowd and does not know which to arrest.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -5
+     },
+     "relationships": {
+      "hesse": 5
+     },
+     "flags_set": [
+      "pressed_by_hesse",
+      "hesse_friendly"
+     ],
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 24
+     }
+    },
+    "flags_all": [
+     "met_hesse"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 60,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_town_06",
+   "category": "crises",
+   "speaker": "solas",
+   "expression": "hard",
+   "pool": "crisis",
+   "text": "The town's on the wharf with lamps and the Company house is dark and Ardent's constables are at Lock 8 asking me to hold the towpath till they arrive. I've got twelve men. The town's got three hundred. I'd rather nobody found out which number matters.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "clearance_signed"
+      ]
+     },
+     "text": "The town's on the wharf. Half want the Reach cleared tonight and half want the constables gone. Both halves have lamps. Ardent's constables are at Lock 8. I've got twelve men and I'm asking which half I'm standing in front of."
+    }
+   ],
+   "left": {
+    "label": "Stand between the town and the constables",
+    "outcome": "Sorrel soldiers facing Company constables on a Company towpath, with a town behind them. Nobody moves till dawn. At dawn the constables go back.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -6
+     },
+     "relationships": {
+      "solas": 10
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ],
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Stand aside; let it happen",
+    "outcome": "He stands aside. It happens. In the morning there is a boy on the towpath who does not stand up.",
+    "effects": {
+     "resources": {
+      "town": -4,
+      "company": -2
+     },
+     "relationships": {
+      "solas": -4
+     },
+     "flags_set": [
+      "riot_brewing"
+     ],
+     "delayed": [
+      {
+       "card": "ma10_15",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 22
+     }
+    },
+    "flags_all": [
+     "met_solas",
+     "riot_brewing"
+    ]
+   },
+   "weight": 4,
+   "weight_mods": [
+    {
+     "when": {
+      "flags_all": [
+       "clearance_signed"
+      ]
+     },
+     "multiply": 3.0
+    }
+   ],
+   "cooldown": 80,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_town_07",
+   "category": "crises",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "pool": "crisis",
+   "text": "It's happening. The town's risen. For you, they say, and against the Company. They've barred the Company house with Pell in it and cut the tow ropes and somebody's singing. I buried a boy after the last one. Stop them.",
+   "left": {
+    "label": "Stop them",
+    "outcome": "You stand on the wharf and tell them to go home. You say Pell is a fool, not an enemy. You say the water is the enemy. They go home. Slowly. For you.",
+    "effects": {
+     "resources": {
+      "town": -8,
+      "company": 4
+     },
+     "relationships": {
+      "ilse": 10,
+      "pell": 6
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "town_favors": 2,
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Let them rise",
+    "outcome": "They rise. Pell is walked to the boundary stone. The Company house is the town's by morning. So, on paper, is the Keeper's neck.",
+    "effects": {
+     "resources": {
+      "town": 10,
+      "company": -15
+     },
+     "relationships": {
+      "ilse": -10,
+      "pell": -10
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "min": 80
+     }
+    },
+    "flags_all": [
+     "met_ilse",
+     "riot_brewing"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 80,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_town_08",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The town has gone home. The Company house has a new window. In the Ledger, the riot page from Year 44 ends: 'they will forgive the Company, in time. They will not forgive the Keeper who let them.' You did not let them.",
+   "left": {
+    "label": "Write it",
+    "outcome": "'The Keeper did not let them.' It is true. It may be enough.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Write what they wanted",
+    "outcome": "You write what the town wanted: the water. It has always been the water.",
+    "effects": {
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "min": 30,
+      "max": 70
+     }
+    },
+    "flags_none": [
+     "riot_brewing"
+    ],
+    "seen_cards_any": [
+     "cri_town_01",
+     "cri_town_07",
+     "cri_town_03"
+    ]
+   },
+   "weight": 2,
+   "cooldown": 80,
+   "tags": [
+    "res:town",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_fire_01",
+   "category": "crises",
+   "speaker": "tamm",
+   "expression": "doubtful",
+   "pool": "crisis",
+   "text": "Fire in my yard. Tar barrels went first. Season's hulls are next and the Company warehouse after that and the town after that if the wind holds. I've got buckets. The pound's right there. I need every hand and I need them not to argue.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "fire_boatyard"
+      ]
+     },
+     "text": "The warehouse fire's jumped to my yard. Tar barrels went first. Season's hulls are next and the town after that if the wind holds. I've got buckets and the pound's right there. I need every hand and I need them not to argue."
+    }
+   ],
+   "left": {
+    "label": "Every hand; requisition the town",
+    "outcome": "The whole town on a bucket chain from the pound. The hulls are lost. The town is not.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "coffers": -4
+     },
+     "relationships": {
+      "tamm": 6,
+      "dace": 3
+     },
+     "flags_set": [
+      "fire_boatyard",
+      "requisitioned_labor"
+     ],
+     "counters": {
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Cut the yard loose; save the warehouse",
+    "outcome": "The yard burns to the waterline. The warehouse stands. Tamm watches his life go up and says nothing to you again for a month.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "town": -4
+     },
+     "relationships": {
+      "tamm": -10
+     },
+     "flags_set": [
+      "fire_boatyard"
+     ],
+     "delayed": [
+      {
+       "card": "cri_fire_02",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 15
+    },
+    "flags_none": [
+     "fire_boatyard"
+    ]
+   },
+   "weight": 1,
+   "weight_mods": [
+    {
+     "when": {
+      "flags_all": [
+       "riot_brewing"
+      ]
+     },
+     "multiply": 3.0
+    },
+    {
+     "when": {
+      "counters": {
+       "repairs_deferred": {
+        "min": 3
+       }
+      }
+     },
+     "multiply": 2.0
+    }
+   ],
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_fire_02",
+   "category": "crises",
+   "speaker": "dace",
+   "pool": "crisis",
+   "text": "Three things. The fire's out. It took the yard and two houses on the low street. And the town says it started at the Company warehouse, from a Company lamp, and wants to know why the Company's lamp oil was stacked against Tamm's fence.",
+   "left": {
+    "label": "Ask the Company the same",
+    "outcome": "You write to Ardent. Ardent replies that lamp oil storage is 'at Keeper's discretion'. It was not. It is now.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -4
+     },
+     "relationships": {
+      "dace": 3
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Fires start; nobody's to blame",
+    "outcome": "\"Right. Nobody. I'll tell the two families nobody.\"",
+    "effects": {
+     "resources": {
+      "town": -5,
+      "company": 2
+     },
+     "relationships": {
+      "dace": -4
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fire_boatyard",
+     "met_dace"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fire_03",
+   "category": "crises",
+   "speaker": "stroud",
+   "expression": "grave",
+   "pool": "crisis",
+   "text": "Eleven burned. Two badly. One is Perrin, five children, flooded cellar, and now no hands to work with. I can keep him alive. I cannot keep him a lock hand. The compensation form has a line for 'cause'. What do I write?",
+   "left": {
+    "label": "'Company lamp oil, improperly stored'",
+    "outcome": "Perrin is compensated in full. Ardent notes the cause. Vosk notes that you wrote it.",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 5
+     },
+     "relationships": {
+      "stroud": 6
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "'Accident'",
+    "outcome": "Perrin is compensated at half. The town knows what the form says. Stroud does not argue. She writes her own letter.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -4
+     },
+     "relationships": {
+      "stroud": -5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fire_boatyard",
+     "met_stroud"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fire_04",
+   "category": "crises",
+   "speaker": "ilse",
+   "pool": "crisis",
+   "text": "Two families with no house. The inn's full. Cole has empty rooms and a price. The Company has a warehouse, half-burned, and a rule about townsfolk in Company buildings. I've asked both. Both said ask the Keeper. Everyone says ask the Keeper.",
+   "left": {
+    "label": "The warehouse, rule or no rule",
+    "outcome": "Two families in the Company's half-burned warehouse. Pell finds out and, for once, says nothing at all.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -3
+     },
+     "relationships": {
+      "ilse": 5,
+      "pell": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Pay Cole's price from the Coffers",
+    "outcome": "Cole is paid. The families are housed. The Book has a line Vosk reads twice.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "town": 4
+     },
+     "relationships": {
+      "cole": 3,
+      "ilse": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fire_boatyard",
+     "met_ilse",
+     "met_cole"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fire_05",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The yard is a black square by the water. Tamm has started again on the far side, with the Hullfolk's driftwood and the town's nails. The Ledger has no fire page. You start one. It begins: 'the pound was right there'.",
+   "left": {
+    "label": "Fund the new yard",
+    "outcome": "Company timber, quietly. Tamm does not ask where it came from. He builds a better yard.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "town": 4
+     },
+     "relationships": {
+      "tamm": 8
+     }
+    }
+   },
+   "right": {
+    "label": "Let the town rebuild it",
+    "outcome": "The town rebuilds it. Slowly. It is the town's yard now, whatever the lease says.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "tamm": 3
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fire_boatyard"
+    ],
+    "flags_none": [
+     "riot_brewing"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "weight": 2,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_frost_01",
+   "category": "crises",
+   "speaker": "src_weather",
+   "pool": "crisis",
+   "text": "Hard frost. The west flight has frozen solid to Lock 5 and forty boats are trapped in the pound with a month's food between them and no way down. The east flight is open but the pound itself is skinning over. By morning it may not be.",
+   "left": {
+    "label": "Break the ice all night",
+    "outcome": "Every hand with a pole, all night, every night. The pound stays open. The hands stay awake.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "coffers": -3
+     },
+     "flags_set": [
+      "frost"
+     ],
+     "counters": {
+      "fatigue": 4
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Let it freeze; ration the town",
+    "outcome": "The pound freezes. Forty crews walk into town. The Company store is emptied in a week.",
+    "effects": {
+     "resources": {
+      "traffic": -8,
+      "town": -3
+     },
+     "flags_set": [
+      "frost"
+     ],
+     "delayed": [
+      {
+       "card": "cri_frost_02",
+       "delay": 2,
+       "delay_max": 4
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 20
+    },
+    "flags_none": [
+     "frost"
+    ]
+   },
+   "weight": 1,
+   "weight_mods": [
+    {
+     "when": {
+      "resources": {
+       "traffic": {
+        "max": 35
+       }
+      }
+     },
+     "multiply": 2.0
+    }
+   ],
+   "cooldown": 100,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_frost_02",
+   "category": "crises",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "pool": "crisis",
+   "text": "Three things. The Company store's empty. Forty bargees and their families are eating the town's winter. And a Sorrel crew has broken into the grain warehouse and is handing it out, which is theft, and also the only thing keeping anyone fed.",
+   "left": {
+    "label": "Let them hand it out; call it requisition",
+    "outcome": "Grain for everyone, by order. Aldmere's grain factor will want paying. Later. If there is a later.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "coffers": -6
+     },
+     "factions": {
+      "aldmere": -5
+     },
+     "flags_set": [
+      "requisitioned_labor"
+     ],
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Stop them; the grain is Aldmere's",
+    "outcome": "Dace stops them. The grain is Aldmere's. The town is hungry and looking at the warehouse door.",
+    "effects": {
+     "resources": {
+      "town": -6
+     },
+     "factions": {
+      "aldmere": 3
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "frost",
+     "met_dace"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_frost_03",
+   "category": "crises",
+   "speaker": "vane",
+   "expression": "furious",
+   "pool": "crisis",
+   "text": "My boats are in ice and my crews are eating your town and my principals are asking why I let it happen. I've a Sorrel ice-breaker at Lock 4. It could cut through in three days. It's a Sorrel vessel in Company water without a permit. Say yes.",
+   "left": {
+    "label": "Yes",
+    "outcome": "A Sorrel ice-breaker cuts the west flight open in three days. Crane records the permit violation. Nobody cares. Everybody eats.",
+    "effects": {
+     "resources": {
+      "traffic": 8,
+      "town": 3,
+      "company": -3
+     },
+     "relationships": {
+      "vane": 8,
+      "crane": -3
+     },
+     "factions": {
+      "sorrel": 4
+     },
+     "flags_clear": [
+      "frost"
+     ]
+    }
+   },
+   "right": {
+    "label": "No Sorrel vessels without a permit",
+    "outcome": "\"Then we all freeze together. Fine. I'll write it up as your decision.\"",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "vane": -8
+     },
+     "factions": {
+      "sorrel": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "frost",
+     "met_vane"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:traffic",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_frost_04",
+   "category": "crises",
+   "speaker": "stroud",
+   "expression": "grave",
+   "pool": "crisis",
+   "text": "A child from a trapped boat has the winter cough and it has gone to her chest. I have nothing left. There is a physician at Lock 3 with what I need and the flight is ice. Someone could walk it. Nobody has since Year 31.",
+   "left": {
+    "label": "Walk it yourself",
+    "outcome": "Nine miles of ice in the dark. You come back with a bottle and no feeling in your hands. The child lives.",
+    "effects": {
+     "resources": {
+      "town": 6
+     },
+     "relationships": {
+      "stroud": 10
+     },
+     "counters": {
+      "fatigue": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Send Wren; she knows ice",
+    "outcome": "Wren goes. She is back by dawn, grinning, frozen. The child lives. Wren does not let you forget it.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "stroud": 6,
+      "wren": 8
+     },
+     "factions": {
+      "hullfolk": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "frost",
+     "met_stroud",
+     "met_wren"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_frost_05",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "Thaw. Forty boats go down the west flight in a day, thin and quiet. The town counts its winter and finds it short. The Ledger's frost page, in Tobin's hand from Year 31: 'the pound froze because it was low. Ask why it was low.'",
+   "left": {
+    "label": "Ask why it was low",
+    "outcome": "You know why. You write that you know. It is the first Ledger entry that says so plainly.",
+    "effects": {
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ]
+    }
+   },
+   "right": {
+    "label": "Restock the town first",
+    "outcome": "The Coffers buy the town's winter back. Vosk reads the entry and says nothing, which is a gift.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "town": 6
+     },
+     "relationships": {
+      "ilse": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "frost"
+    ],
+    "watch": {
+     "min": 25
+    },
+    "resources": {
+     "traffic": {
+      "min": 30
+     }
+    }
+   },
+   "weight": 2,
+   "cooldown": 100,
+   "tags": [
+    "res:traffic",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_fever_01",
+   "category": "crises",
+   "speaker": "stroud",
+   "expression": "grave",
+   "pool": "crisis",
+   "text": "Three cases of the coalfield fever in the town, off a boat with a clean bill. It spreads in crowds: the inn, the chapel, the queue. I am asking for a quarantine. Nobody has ever closed the summit for a physician.",
+   "left": {
+    "label": "Quarantine; close the summit",
+    "outcome": "The gate shuts. The queue stops. The inn empties. Three cases stay three.",
+    "effects": {
+     "resources": {
+      "traffic": -10,
+      "company": -4,
+      "town": 3
+     },
+     "relationships": {
+      "stroud": 8
+     },
+     "flags_set": [
+      "quarantine",
+      "fever_aboard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Isolate the three; keep the gate",
+    "outcome": "Three in the chapel's back room. The gate runs. By the week's end there are nine.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "stroud": -3
+     },
+     "flags_set": [
+      "fever_aboard"
+     ],
+     "delayed": [
+      {
+       "card": "cri_fever_02",
+       "delay": 2,
+       "delay_max": 4
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "flags_none": [
+     "quarantine"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "weight": 1,
+   "weight_mods": [
+    {
+     "when": {
+      "counters": {
+       "fatigue": {
+        "min": 6
+       }
+      }
+     },
+     "multiply": 2.0
+    },
+    {
+     "when": {
+      "flags_all": [
+       "fever_aboard"
+      ]
+     },
+     "multiply": 3.0
+    }
+   ],
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ],
+   "sound": "sfx_warning"
+  },
+  {
+   "id": "cri_fever_02",
+   "category": "crises",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "pool": "crisis",
+   "text": "Nine cases. The Board has been informed by someone who is not me. Its instruction is that the summit remain open 'to avoid alarm'. The Board is in Ardent. I am asking you to disobey it, and I will write that you did not.",
+   "left": {
+    "label": "Disobey; close the gate",
+    "outcome": "\"Noted. The gate closed for maintenance.\" She writes it. Nine cases stay nine.",
+    "effects": {
+     "resources": {
+      "traffic": -8,
+      "company": -2,
+      "town": 4
+     },
+     "relationships": {
+      "vosk": 8,
+      "stroud": 5
+     },
+     "flags_set": [
+      "quarantine"
+     ],
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Obey; stay open",
+    "outcome": "The gate runs. By the month's end there are thirty. Two are children. Vosk does not write anything at all.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "company": 3,
+      "town": -8
+     },
+     "relationships": {
+      "vosk": -4,
+      "stroud": -8
+     },
+     "delayed": [
+      {
+       "card": "cri_fever_03",
+       "delay": 2,
+       "delay_max": 3
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_vosk"
+    ],
+    "flags_none": [
+     "quarantine"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fever_03",
+   "category": "crises",
+   "speaker": "hale",
+   "expression": "troubled",
+   "pool": "crisis",
+   "text": "The chapel is a hospital. Thirty on pallets in the nave. Stroud has not slept in four days. I carry water from the well, which she says is safe boiled. The town is asking for a Vigil. I am asking for hands.",
+   "left": {
+    "label": "Every hand to the chapel",
+    "outcome": "The gate closes. Lock hands carry water and bodies. Hale holds the Vigil anyway, at the end, for those who did not need the hands.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "town": 5
+     },
+     "relationships": {
+      "hale": 8,
+      "stroud": 5
+     },
+     "flags_set": [
+      "quarantine",
+      "lamp_vigil_held"
+     ],
+     "counters": {
+      "fatigue": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Hold the Vigil; the hands keep the gate",
+    "outcome": "Lamps at the sill. Boats through. The town takes the Vigil as an answer. It is not one Stroud accepts.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "town": 2
+     },
+     "relationships": {
+      "hale": 3,
+      "stroud": -5
+     },
+     "flags_set": [
+      "lamp_vigil_held"
+     ],
+     "factions": {
+      "concordance": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_hale",
+     "met_stroud"
+    ]
+   },
+   "weight": 4,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fever_04",
+   "category": "crises",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "pool": "crisis",
+   "text": "Four dead. The inn's been shut a month and I've fed the town from the cellar for nothing and I'm not asking for the money. I'm asking why a boat with a clean bill came through your gate, and who signed the bill, and whether you looked.",
+   "left": {
+    "label": "I didn't look; I should have",
+    "outcome": "\"Right. Say it at the burying. They need to hear someone say it.\" You do.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 8
+     },
+     "counters": {
+      "fatigue": 2,
+      "inspections": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The bill was clean; nobody could have",
+    "outcome": "\"Nobody. Right. Nobody's buried four.\"",
+    "effects": {
+     "resources": {
+      "town": -5
+     },
+     "relationships": {
+      "ilse": -6
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 25
+    }
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "escalation"
+   ]
+  },
+  {
+   "id": "cri_fever_05",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "The fever has burned out. Stroud has slept. The queue has come back as if it never left. The Ledger's fever page, from Year 62: 'inspect the bills. Every one. It costs an hour. The other thing costs more.'",
+   "left": {
+    "label": "Inspect every bill from now",
+    "outcome": "An hour a boat. Traffic slows. Nobody sickens. Crane approves so much he says nothing.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 3
+     },
+     "relationships": {
+      "stroud": 4,
+      "crane": 3
+     },
+     "counters": {
+      "inspections": 5
+     },
+     "flags_clear": [
+      "quarantine",
+      "fever_aboard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Spot checks; the gate must move",
+    "outcome": "One in five. Faster. Stroud says nothing. She has said it.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "stroud": -2
+     },
+     "counters": {
+      "inspections": 1
+     },
+     "flags_clear": [
+      "quarantine",
+      "fever_aboard"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard"
+    ],
+    "watch": {
+     "min": 30
+    },
+    "resources": {
+     "town": {
+      "min": 30
+     }
+    }
+   },
+   "weight": 2,
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_recover_01",
+   "category": "crises",
+   "speaker": "src_ledger",
+   "pool": "crisis",
+   "text": "A quiet watch. The first in a season. No queue past Lock 8, no water over the path, a chest that closes, a Board that has stopped writing, a town that nods. The Ledger has a page for quiet watches. It is the shortest page. It says: 'they end'.",
+   "left": {
+    "label": "Use it: walk the north bank",
+    "outcome": "In daylight, for once. The sluice house. The clear stream. You see it all plainly and nobody stops you.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Use it: sleep",
+    "outcome": "You sleep a whole night. The gate does not fall down. Stroud is smug for a week.",
+    "effects": {
+     "counters": {
+      "fatigue": -5
+     },
+     "relationships": {
+      "stroud": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "min": 40,
+      "max": 60
+     },
+     "traffic": {
+      "min": 40,
+      "max": 60
+     },
+     "coffers": {
+      "min": 40,
+      "max": 60
+     },
+     "company": {
+      "min": 40,
+      "max": 60
+     },
+     "town": {
+      "min": 40,
+      "max": 60
+     }
+    },
+    "watch": {
+     "min": 20
+    }
+   },
+   "weight": 3,
+   "cooldown": 40,
+   "tags": [
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_recover_02",
+   "category": "crises",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "pool": "crisis",
+   "text": "You've had a bad season. I've watched it from Lock 8. Dray had a bad season too, his second year. He came out of it different. Quieter. Started asking about the tenth mark. Just saying.",
+   "left": {
+    "label": "Ask about the tenth mark",
+    "outcome": "\"Below the sill. Painted over in Year 31. For when the pound goes where it shouldn't.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 5
+     },
+     "flags_set": [
+      "clue_cipher",
+      "met_tobin"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Come out of it louder",
+    "outcome": "\"Louder. Ha. Nobody's tried louder. Might work.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 3
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 25
+    },
+    "seen_cards_any": [
+     "cri_flood_02",
+     "cri_dry_02",
+     "cri_jam_02",
+     "cri_town_02",
+     "cri_fire_02",
+     "cri_frost_02",
+     "cri_fever_02",
+     "cri_money_02",
+     "cri_company_02"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 80,
+   "tags": [
+    "recovery",
+    "clue"
+   ]
+  },
+  {
+   "id": "cri_recover_03",
+   "category": "crises",
+   "speaker": "hale",
+   "expression": "serene",
+   "pool": "crisis",
+   "text": "The town has come through something. The chapel does not keep that kind of ledger. It wishes to give thanks, and has asked, for the first time in my memory, that the Keeper stand at the front. Not the last pew.",
+   "left": {
+    "label": "Stand at the front",
+    "outcome": "You stand where the chaplain stands. The town looks at you. It is worse than the boundary stone and better than anything.",
+    "effects": {
+     "resources": {
+      "town": 6
+     },
+     "relationships": {
+      "hale": 6
+     },
+     "factions": {
+      "concordance": 5
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The last pew, with Vosk",
+    "outcome": "You sit in the last pew. Vosk sits beside you. Hale gives thanks anyway. The town turns to look, twice.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "hale": 3,
+      "vosk": 4
+     },
+     "factions": {
+      "concordance": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "watch": {
+     "min": 25
+    },
+    "resources": {
+     "town": {
+      "min": 45
+     }
+    },
+    "seen_cards_any": [
+     "cri_flood_08",
+     "cri_dry_08",
+     "cri_town_08",
+     "cri_fire_05",
+     "cri_frost_05",
+     "cri_fever_05"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_recover_04",
+   "category": "crises",
+   "speaker": "ilse",
+   "expression": "wry",
+   "pool": "crisis",
+   "text": "The moot's voted you a name. Not 'the Keeper', not 'the new one'. A name. Yours, the one you gave Mirren, which she told me, which I told the moot. It's on a board over the bar now. It'll come down if you earn it. Don't.",
+   "left": {
+    "label": "Don't",
+    "outcome": "\"Right.\" The board stays up. It is the only thing at the summit with your name on it that the Company did not write.",
+    "effects": {
+     "resources": {
+      "town": 5
+     },
+     "relationships": {
+      "ilse": 6,
+      "mirren": 2
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Put the hands' names beside it",
+    "outcome": "Eleven names beside yours. Dace pretends not to look at it. He looks at it every night.",
+    "effects": {
+     "resources": {
+      "town": 6
+     },
+     "relationships": {
+      "ilse": 4,
+      "dace": 6
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 30
+    },
+    "resources": {
+     "town": {
+      "min": 55
+     }
+    },
+    "seen_cards_any": [
+     "cri_town_08",
+     "cri_flood_08",
+     "cri_fever_05"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 200,
+   "tags": [
+    "recovery"
+   ]
+  },
+  {
+   "id": "cri_recover_05",
+   "category": "crises",
+   "speaker": "pell",
+   "expression": "beaming",
+   "pool": "crisis",
+   "text": "Keeper! We have come through. Whatever it was, we have come through it, and the Board, which knows nothing of what it was, has written 'satisfactory'. Satisfactory! I have not seen the word in eleven years. I have framed it. Come and look at the frame.",
+   "left": {
+    "label": "Look at the frame",
+    "outcome": "It is a very good frame. He has hung it beside a blank space he says is for the next one.",
+    "effects": {
+     "resources": {
+      "company": 4
+     },
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what 'satisfactory' cost",
+    "outcome": "\"Cost? Nothing. Everything. A season. Magnificent.\" He means all four.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "pell": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "watch": {
+     "min": 25
+    },
+    "resources": {
+     "company": {
+      "min": 45
+     }
+    },
+    "seen_cards_any": [
+     "cri_company_06",
+     "cri_money_07",
+     "cri_jam_07",
+     "cri_pileup_06"
+    ]
+   },
+   "weight": 3,
+   "cooldown": 100,
+   "tags": [
+    "recovery"
+   ]
+  }
+ ]
+}

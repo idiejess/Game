@@ -1,8 +1,6 @@
 {
-  "ok": false,
-  "errors": [
-    "unreachable card: ma10_15 (forced, never referenced)"
-  ],
+  "ok": true,
+  "errors": [],
   "warnings": [
     "assets/art_manifest.csv missing"
   ],
@@ -13,8 +11,6 @@
       "dray_accused_vosk",
       "fiddle_impounded",
       "fiddle_returned",
-      "fire_boatyard",
-      "frost",
       "hesse_hostile",
       "hullfolk_vigil_joined",
       "jubilee_funded",
@@ -31,7 +27,6 @@
       "windlass_missing"
     ],
     "unused_counters": [
-      "jam_ignored",
       "ledger_days",
       "p_company_trust",
       "p_hullfolk_honor",
@@ -39,26 +34,24 @@
     ],
     "tradeoff_ratio": 0.695,
     "pure_ratio": 0.088,
-    "delayed_ratio": 0.022,
-    "reactive_ratio": 0.917,
-    "unreachable": [
-      "ma10_15 (forced, never referenced)"
-    ],
+    "delayed_ratio": 0.038,
+    "reactive_ratio": 0.924,
+    "unreachable": [],
     "arcs_with_cards": 13,
     "clue_setters": {
-      "noticed_water_fall": 5,
+      "noticed_water_fall": 9,
       "clue_dry_aqueduct": 6,
-      "clue_sluice_guard": 18,
-      "clue_charter": 15,
+      "clue_sluice_guard": 22,
+      "clue_charter": 17,
       "clue_iron_well": 9,
-      "clue_reservoirs": 17,
-      "clue_cipher": 10,
-      "clue_night_dredgers": 9,
+      "clue_reservoirs": 18,
+      "clue_cipher": 11,
+      "clue_night_dredgers": 10,
       "clue_crane_counts": 9,
       "clue_song": 12
     },
-    "total_cards": 756,
-    "inventory_missing": 244,
+    "total_cards": 826,
+    "inventory_missing": 174,
     "by_category": {
       "onboarding": 30,
       "evergreen": 220,
@@ -66,6 +59,7 @@
       "relationships": 120,
       "minor_arcs": 6,
       "major_arcs": 180,
+      "crises": 70,
       "endings_meta": 50
     },
     "fallback_cards": 0

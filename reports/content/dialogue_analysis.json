@@ -1,117 +1,135 @@
 {
-  "cards": 15,
-  "errors": [
-    "[ma12_01] situation 49 words (6-40)"
-  ],
+  "cards": 28,
+  "errors": [],
   "warnings": [
-    "[ma12_02] situation 47 words (6-40)",
-    "[ma12_02] left outcome 26 words (>24)",
-    "[ma12_03] situation 48 words (6-40)",
-    "[ma12_04] situation 45 words (6-40)",
-    "[ma12_06] situation 46 words (6-40)",
-    "[ma12_06] slang 'whatever'",
-    "[ma12_07] situation 44 words (6-40)",
-    "[ma12_08] situation 48 words (6-40)",
-    "[ma12_09] situation 45 words (6-40)",
-    "[ma12_10] situation 42 words (6-40)",
-    "[ma12_10] left outcome 29 words (>24)",
-    "[ma12_11] situation 45 words (6-40)",
-    "[ma12_11] left outcome 25 words (>24)",
-    "[ma12_12] situation 43 words (6-40)",
-    "[ma12_13] situation 45 words (6-40)",
-    "[ma12_14] situation 43 words (6-40)",
-    "[ma12_15] situation 47 words (6-40)"
+    "[cri_town_01] situation 42 words (6-40)",
+    "[cri_town_02] situation 42 words (6-40)",
+    "[cri_town_04] situation 47 words (6-40)",
+    "[cri_town_05] situation 45 words (6-40)",
+    "[cri_town_06] situation 45 words (6-40)",
+    "[cri_town_07] left outcome 33 words (>24)",
+    "[cri_town_08] situation 43 words (6-40)",
+    "[cri_fire_01] situation 45 words (6-40)",
+    "[cri_fire_02] situation 44 words (6-40)",
+    "[cri_fire_03] situation 42 words (6-40)",
+    "[cri_fire_04] situation 43 words (6-40)",
+    "[cri_fire_05] situation 41 words (6-40)",
+    "[cri_frost_01] situation 46 words (6-40)",
+    "[cri_frost_01] slang 'no way'",
+    "[cri_frost_02] situation 42 words (6-40)",
+    "[cri_frost_03] situation 48 words (6-40)",
+    "[cri_frost_04] situation 44 words (6-40)",
+    "[cri_frost_05] situation 45 words (6-40)",
+    "[cri_fever_01] situation 41 words (6-40)",
+    "[cri_fever_02] situation 44 words (6-40)",
+    "[cri_fever_03] situation 42 words (6-40)",
+    "[cri_fever_03] left outcome 25 words (>24)",
+    "[cri_fever_04] situation 47 words (6-40)",
+    "[cri_recover_01] situation 48 words (6-40)",
+    "[cri_recover_03] situation 41 words (6-40)",
+    "[cri_recover_04] situation 46 words (6-40)",
+    "[cri_recover_05] situation 46 words (6-40)",
+    "[cri_recover_05] slang 'whatever'",
+    "[cri_recover_05] 2 exclamation marks"
   ],
   "speakers": {
-    "src_ledger": 3,
-    "vosk": 3,
-    "bram": 3,
-    "quenn": 2,
-    "crane": 2,
-    "hale": 1,
-    "solas": 1
+    "ilse": 5,
+    "dace": 3,
+    "src_stranger": 1,
+    "cole": 1,
+    "hesse": 1,
+    "solas": 1,
+    "src_ledger": 5,
+    "tamm": 1,
+    "stroud": 3,
+    "src_weather": 1,
+    "vane": 1,
+    "vosk": 1,
+    "hale": 2,
+    "tobin": 1,
+    "pell": 1
   },
   "top_openers": [
     [
-      "you have",
-      2
-    ],
-    [
-      "dawn the",
-      2
-    ],
-    [
-      "the pound",
-      1
-    ],
-    [
-      "i've read",
-      1
-    ],
-    [
-      "whichever wheel",
-      1
-    ],
-    [
-      "you will",
-      1
-    ],
-    [
-      "the night",
-      1
-    ],
-    [
-      "constables eight",
-      1
+      "three things",
+      3
     ],
     [
       "the town",
+      3
+    ],
+    [
+      "there's a",
       1
     ],
     [
-      "the wheel",
+      "a man",
+      1
+    ],
+    [
+      "the courier's",
+      1
+    ],
+    [
+      "the town's",
+      1
+    ],
+    [
+      "it's happening",
+      1
+    ],
+    [
+      "fire in",
+      1
+    ],
+    [
+      "eleven burned",
+      1
+    ],
+    [
+      "two families",
       1
     ]
   ],
   "top_labels": [
     [
-      "gather allies",
+      "go out and speak",
       1
     ],
     [
-      "do it alone",
+      "send dace to disperse them",
       1
     ],
     [
-      "tell her everything",
+      "the town's; stand them down",
       1
     ],
     [
-      "tell her nothing",
+      "the company's; guard the house",
       1
     ],
     [
-      "it will go home",
+      "don't step aside",
       1
     ],
     [
-      "some of it",
+      "step aside",
       1
     ],
     [
-      "there must be a fourth",
+      "no constables",
       1
     ],
     [
-      "three is enough",
+      "constables, for the rent only",
       1
     ],
     [
-      "file it",
+      "the calmer piece",
       1
     ],
     [
-      "not yet",
+      "print what happens",
       1
     ]
   ]
