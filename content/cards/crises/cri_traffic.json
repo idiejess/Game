@@ -464,7 +464,7 @@
    "speaker": "dace",
    "expression": "fed_up",
    "pool": "crisis",
-   "text": "Three things. The coal boat's holed and sinking in the chamber. If she goes down there the gate's blocked for a month. I can beach her on the sill if we drain now, and lose the sill facing. Or she sinks. Pick.",
+   "text": "The coal boat's holed and sinking in the chamber. If she goes down there the gate's blocked for a month. I can beach her on the sill if we drain now, and lose the sill facing. Or she sinks. Pick.",
    "left": {
     "label": "Drain and beach her",
     "outcome": "She grounds on the sill with a sound of breaking stone. The chamber is clear by dark. The sill is not what it was.",

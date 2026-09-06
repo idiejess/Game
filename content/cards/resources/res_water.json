@@ -1048,7 +1048,7 @@
    "id": "res_water_21",
    "category": "resources",
    "speaker": "dace",
-   "text": "Three things. Water's over the top gate's sill when she's shut. That means she's not shut. That means anything in the chamber's going down the flight whether we like it or not.",
+   "text": "Water's over the top gate's sill when she's shut. That means she's not shut. That means anything in the chamber's going down the flight whether we like it or not.",
    "left": {
     "label": "Clear the chamber; nothing passes",
     "outcome": "No boats. The chamber is a waterfall for a day.",

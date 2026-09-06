@@ -23,10 +23,11 @@ CATEGORIES = ["onboarding", "evergreen", "resources", "relationships", "minor_ar
 
 # Selector constants (keep in sync with CardSelector.gd)
 DANGER_LOW, DANGER_HIGH = 30, 70
-REPEAT_PENALTY, UNDISCOVERED_BONUS, ARC_ACTIVE_BONUS = 0.25, 1.6, 3.0
+REPEAT_PENALTY, UNDISCOVERED_BONUS, ARC_ACTIVE_BONUS = 0.25, 1.6, 5.0
 RESOURCE_DANGER_BONUS, SPEAKER_RECENT_PENALTY, CATEGORY_RECENT_PENALTY = 2.5, 0.4, 0.6
 CRISIS_BASE_WEIGHT, MAX_DELAY_POSTPONES = 0.15, 3
 LEDGER_DAY_INTERVAL, LONG_WATCH, WATER_DRIFT = 20, 100, -1
+TRAFFIC_QUIET, TRAFFIC_BUSY = 35, 70
 
 
 class Rng:
@@ -76,7 +77,10 @@ class Sim:
     def __init__(self, cards, chars, endings, counters):
         self.cards, self.chars, self.endings, self.counters = cards, chars, endings, counters
         self.fallback = sorted(c for c in cards if cards[c].get("pool") == "fallback")
-        self.general = sorted(c for c in cards if cards[c].get("pool", "general") in ("general", "character", "crisis"))
+        # Same candidate order as ContentDB._build_indexes: unconditional cards first, then
+        # conditional, each sorted by id. Order matters for the weighted pick.
+        pooled = sorted(c for c in cards if cards[c].get("pool", "general") in ("general", "character", "crisis"))
+        self.general = [c for c in pooled if not cards[c].get("conditions")] + [c for c in pooled if cards[c].get("conditions")]
         self.profile = self.fresh_profile()
 
     @staticmethod
@@ -402,6 +406,10 @@ class Sim:
             drift -= 1
         if self.has_flag("wet_season"):
             drift += 1
+        if self.get_res("traffic") <= TRAFFIC_QUIET:
+            drift += 1
+        elif self.get_res("traffic") >= TRAFFIC_BUSY:
+            drift -= 1
         if self.has_flag("sluice_rebuilt"):
             drift = 0
         r["res"]["water"] = max(0, min(100, r["res"]["water"] + drift))
@@ -420,19 +428,47 @@ class Sim:
         for res in RESOURCES:
             v = r["res"][res]
             if v <= 0:
-                return f"end_res_{res}_min"
+                return self.edge_ending(res, "min")
             if v >= 100:
-                return f"end_res_{res}_max"
+                return self.edge_ending(res, "max")
+        return ""
+
+    # Mirrors GameState._edge_ending / check_triggered_endings / long_watch_ending.
+    def edge_ending(self, res, edge):
+        fallback = f"end_res_{res}_{edge}"
+        for eid, e in self.endings.items():
+            trig = e.get("trigger", {})
+            re_ = trig.get("resource_edge", {})
+            if re_.get("resource") != res or re_.get("edge") != edge:
+                continue
+            if "conditions" in trig:
+                if self.satisfied(trig["conditions"]):
+                    return eid
+            elif eid != fallback:
+                fallback = eid
+        return fallback
+
+    def check_triggered_endings(self):
+        for eid, e in self.endings.items():
+            trig = e.get("trigger", {})
+            if not trig or "resource_edge" in trig or trig.get("long_watch") or "conditions" not in trig:
+                continue
+            if "watch_min" in trig and self.run["watch"] < trig["watch_min"]:
+                continue
+            if self.satisfied(trig["conditions"]):
+                return eid
         return ""
 
     def long_watch_ending(self):
-        if self.has_flag("jubilee_held") and "end_ord_jubilee" in self.endings:
-            return "end_ord_jubilee"
-        if self.get_res("town") >= 75:
-            return "end_ord_towns_keeper"
-        if self.get_res("company") >= 75:
-            return "end_ord_companys_keeper"
-        return "end_ord_long_watch"
+        fallback = ""
+        for eid, e in self.endings.items():
+            trig = e.get("trigger", {})
+            if trig.get("long_watch"):
+                if self.satisfied(trig.get("conditions", {})):
+                    return eid
+            elif "watch_min" in trig and "conditions" not in trig and "resource_edge" not in trig:
+                fallback = eid
+        return fallback
 
     def end_run(self, eid):
         r, p = self.run, self.profile
@@ -501,6 +537,8 @@ class Sim:
                 break
             if not ending:
                 ending = self.advance()
+            if not ending:
+                ending = self.check_triggered_endings()
             if not ending and r["watch"] >= LONG_WATCH and not self.has_flag("allies_gathered"):
                 ending = self.long_watch_ending()
             if ending:
@@ -546,6 +584,34 @@ class Balance(Strategy):
 
     def choose(self, sim, card):
         l, r = score_res(sim, card["left"]["effects"]), score_res(sim, card["right"]["effects"])
+        if l == r:
+            return "left" if sim.rng.next_float() < 0.5 else "right"
+        return "left" if l > r else "right"
+
+
+class Keeper(Strategy):
+    """A competent player: treats Water as the clock (targets high water, weights it heavily),
+    keeps Traffic low when Water is short so the pound recovers, otherwise balances."""
+    name = "keeper"
+
+    def score(self, sim, eff):
+        total = 0.0
+        water = sim.get_res("water")
+        for r in RESOURCES:
+            v = sim.get_res(r)
+            d = eff.get("resources", {}).get(r, 0)
+            if r == "water":
+                total += 3.0 * d
+            elif r == "traffic":
+                target = 30 if water < 45 else 50
+                total += 0.8 * (abs(v - target) - abs(v + d - target))
+            else:
+                total += (abs(v - 50) - abs(v + d - 50))
+        total += 0.15 * eff.get("counters", {}).get("evidence", 0)
+        return total
+
+    def choose(self, sim, card):
+        l, r = self.score(sim, card["left"]["effects"]), self.score(sim, card["right"]["effects"])
         if l == r:
             return "left" if sim.rng.next_float() < 0.5 else "right"
         return "left" if l > r else "right"
@@ -656,7 +722,7 @@ class LongTerm(Strategy):
 
 
 def all_strategies():
-    return [RandomS(), Balance(), RiskSeek(), RiskAvoid(), Loyalist("vosk"), Loyalist("bram"), Loyalist("mirren"),
+    return [RandomS(), Balance(), Keeper(), RiskSeek(), RiskAvoid(), Loyalist("vosk"), Loyalist("bram"), Loyalist("mirren"),
             FactionLoyal("company"), FactionLoyal("hullfolk"), Mystery(), ShortTerm(), LongTerm()]
 
 

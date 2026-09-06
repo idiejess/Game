@@ -54,7 +54,7 @@ ui.slot,Slot
 ui.delete,Delete
 ui.content_warning,Before you begin
 ui.content_warning_text,"Halfway Lock is a story about a canal, a town and the people who depend on both. It includes death and drowning described in text, displacement of a community, alcohol, and institutions behaving badly. Nothing is depicted graphically. Suitable for ages 13 and up."
-ui.controls_text,"Drag the card left or right, press the buttons beneath it, or use A/D or the arrow keys. Escape pauses. F1 opens developer tools."
+ui.controls_text,"Drag the card left or right, press the buttons beneath it, or use A/D or the arrow keys. Escape pauses."
 ui.understood,Understood
 ui.next_keeper,The next Keeper
 ui.ledger_records,The Ledger now records:

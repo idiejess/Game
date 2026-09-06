@@ -22,6 +22,7 @@
       "p_hullfolk_honor",
       "p_keepers_lost"
     ],
+    "endings_reachable": 40,
     "tradeoff_ratio": 0.697,
     "pure_ratio": 0.094,
     "delayed_ratio": 0.035,

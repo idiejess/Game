@@ -71,8 +71,10 @@ func decide(side: String) -> Dictionary:
 	var ending: String = report.get("ending", "")
 	if ending == "":
 		ending = GameState.advance_watch()
+	if ending == "":
+		ending = GameState.check_triggered_endings()
 	if ending == "" and GameState.watch >= GameState.LONG_WATCH and not GameState.has_flag("allies_gathered"):
-		ending = _long_watch_ending()
+		ending = GameState.long_watch_ending()
 	if ending != "":
 		_stage_ending(ending)
 		return report
@@ -93,19 +95,6 @@ func _stage_ending(ending_id: String) -> void:
 		draw()
 	else:
 		_fire_ending(ending_id)
-
-
-func _long_watch_ending() -> String:
-	var gs = GameState
-	if gs.has_flag("jubilee_held") and ContentDB.endings.has("end_ord_jubilee"):
-		return "end_ord_jubilee"
-	if gs.get_resource("town") >= 75 and ContentDB.endings.has("end_ord_towns_keeper"):
-		return "end_ord_towns_keeper"
-	if gs.get_resource("company") >= 75 and ContentDB.endings.has("end_ord_companys_keeper"):
-		return "end_ord_companys_keeper"
-	if ContentDB.endings.has("end_ord_long_watch"):
-		return "end_ord_long_watch"
-	return ""
 
 
 func _fire_ending(ending_id: String) -> void:

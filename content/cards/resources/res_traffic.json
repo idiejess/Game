@@ -250,7 +250,7 @@
    "category": "resources",
    "speaker": "dace",
    "expression": "fed_up",
-   "text": "Three things. The hands are working double watches. One's fallen asleep on the beam and nearly gone in. And the queue's started calling us 'the Halfway sleepers'.",
+   "text": "Double watches, Keeper. One hand's fallen asleep on the beam and nearly gone in. And the queue's started calling us 'the Halfway sleepers'.",
    "left": {
     "label": "Hire day labor from the queue",
     "outcome": "Bargees turn paddles for their own boats. It is chaos and it works.",
@@ -866,7 +866,7 @@
    "category": "resources",
    "speaker": "crane",
    "expression": "disapproving",
-   "text": "I have inspected four vessels today of the sixty that passed. Four. Under the Compact I am entitled to inspect any. I am entitled, not able. I am asking you to make me able.",
+   "text": "Four vessels inspected today, of the sixty that passed. Four. Under the Compact I am entitled to inspect any. I am entitled, not able. I am asking you to make me able.",
    "left": {
     "label": "Hold every fifth boat for him",
     "outcome": "\"Duly. Thank you.\" He inspects with a thoroughness that is almost joy.",
@@ -1449,7 +1449,7 @@
    "id": "res_traffic_29",
    "category": "resources",
    "speaker": "dace",
-   "text": "Three things. We've passed more boats this month than in any month in the Book. The pound's down four marks for it. And the hands have asked, politely, what happens when there's no water left to pass them on.",
+   "text": "We've passed more boats this month than in any month in the Book. The pound's down four marks for it. And the hands have asked, politely, what happens when there's no water left to pass them on.",
    "left": {
     "label": "Tell them the truth: I don't know",
     "outcome": "\"Right. Honest. They'll take honest.\"",

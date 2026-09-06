@@ -1,6 +1,6 @@
 {
   "failures": 0,
-  "generated": "2026-09-06T21:24:44",
+  "generated": "2026-09-06T22:48:21",
   "results": [
     {
       "message": "content loaded without errors: []",
@@ -203,6 +203,21 @@
       "test": "test_water_drift_and_resource_death"
     },
     {
+      "message": "quiet gate: pound holds (drift 0)",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
+      "message": "busy gate: pound loses 2",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
+      "message": "rebuilt sluice stops drift",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
       "message": "coffers 0 -> Foreclosure",
       "ok": true,
       "test": "test_water_drift_and_resource_death"
@@ -241,6 +256,66 @@
       "message": "revelation ending grants unlock_dray_fate",
       "ok": true,
       "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "water death with sluice house opened -> Into the Dark Water (got end_rev_sluice)",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "plain water death otherwise",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "no triggered ending in a calm run",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "riot brewing at town 10 -> The Riot (got end_crisis_riot)",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "Dray's Killer needs watch >= 40 (watch 0)",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "Dray's Killer fires after watch 40",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "plain retirement fallback",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "Town's Keeper when town high",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "Jubilee outranks Town's Keeper",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "frost closure staged via controller (got end_crisis_frost)",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "frost ending card shown first",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
+    },
+    {
+      "message": "run ended with The Frost Closure",
+      "ok": true,
+      "test": "test_data_driven_ending_triggers"
     },
     {
       "message": "TE1 finale eligible under its conditions: ",
@@ -286,6 +361,16 @@
       "message": "at least 60 distinct cards in 100 watches (101)",
       "ok": true,
       "test": "test_selection_variety"
+    },
+    {
+      "message": "40-card trace equals Python simulator (first diff at -1: none)",
+      "ok": true,
+      "test": "test_engine_matches_python_simulator"
+    },
+    {
+      "message": "resources after 40 watches equal Python simulator { \"water\": 3, \"traffic\": 40, \"coffers\": 53, \"company\": 67, \"town\": 63 } vs { \"water\": 3, \"traffic\": 40, \"coffers\": 53, \"company\": 67, \"town\": 63 }",
+      "ok": true,
+      "test": "test_engine_matches_python_simulator"
     },
     {
       "message": "save slot 3",
@@ -493,6 +578,26 @@
       "test": "test_save_ignores_removed_content_references"
     },
     {
+      "message": "stale forced card dropped",
+      "ok": true,
+      "test": "test_save_ignores_removed_content_references"
+    },
+    {
+      "message": "stale delayed card dropped",
+      "ok": true,
+      "test": "test_save_ignores_removed_content_references"
+    },
+    {
+      "message": "stale cooldown dropped",
+      "ok": true,
+      "test": "test_save_ignores_removed_content_references"
+    },
+    {
+      "message": "stale discovered card dropped",
+      "ok": true,
+      "test": "test_save_ignores_removed_content_references"
+    },
+    {
       "message": "corrupt save rejected",
       "ok": true,
       "test": "test_invalid_save_recovery"
@@ -653,17 +758,37 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_ord_long_watch card exists",
+      "message": "ending end_false_drought card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_ord_transferred card exists",
+      "message": "ending end_true_river card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_true_ledger card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_true_cut card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
       "message": "ending end_ord_jubilee card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_tobin card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_quiet card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
@@ -678,12 +803,12 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_ord_quiet card exists",
+      "message": "ending end_ord_transferred card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_false_drought card exists",
+      "message": "ending end_ord_long_watch card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
@@ -713,56 +838,6 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_rev_sluice card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_survey card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_song card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_letters card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_file card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_cipher card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_crane card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_tobin card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_bram card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
-      "message": "ending end_rev_vosk card exists",
-      "ok": true,
-      "test": "test_every_ending_has_card_and_every_arc_has_cards"
-    },
-    {
       "message": "ending end_crisis_fire card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
@@ -788,17 +863,47 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_true_river card exists",
+      "message": "ending end_rev_sluice card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_true_ledger card exists",
+      "message": "ending end_rev_cipher card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
     {
-      "message": "ending end_true_cut card exists",
+      "message": "ending end_rev_letters card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_file card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_vosk card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_survey card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_crane card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_song card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_bram card exists",
       "ok": true,
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     },
@@ -1013,5 +1118,5 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     }
   ],
-  "total": 202
+  "total": 223
 }

@@ -72,3 +72,34 @@ against corrupt saves, changes no on-disk format, and old saves load unchanged.
 The imported repository had no `main` branch on the remote (only the import branch
 `hoplite/aitna-17a46edb`). Work proceeds on the thread branch `hoplite/phleious-16c2ad27` and the
 draft PR targets the repository's configured base branch. No history is rewritten.
+
+## D-009 — Balance: traffic-coupled water drift and arc bonus ×5
+A 10,000-run baseline showed 74% of runs ending in The Dry Summit, median 50 watches (design target
+40–120), 12 major arcs entering but almost never completing (MA10 0.0%, MA01 0.2%), and true
+endings at 0.04%. Experiments (`tools/sim_experiment.py`, 360 runs each): halving drift pushed the
+median to 86 and cut water deaths to 41% but removes the clock the whole mystery rests on; doubling
+water gains barely moved anything (only 16 raising effects exist); coupling drift to Traffic
+(+1 at ≤35, −1 at ≥70) keeps the clock, gives the player an actual lever (the bible's "opening the
+gate spends Water for Traffic"), and cut water deaths to 67%; raising the arc-active bonus from ×3 to
+×5 raised arc completions ~40% with no other side effect. Both shipped; the "keeper" simulator
+strategy (plays water as the clock) now reaches watch 100 in 80% of runs, so the game is winnable
+by a player who understands it. Water still dominates deaths by design.
+
+## D-010 — Endings are triggered from data, not code
+26 of 40 endings had no way to fire: only resource edges, the watch-100 retirement and three
+card-fired endings existed in code. Rather than hard-code 26 conditions, `endings.json` gained
+`trigger` blocks (resource-edge variants with conditions, condition triggers with `watch_min`,
+long-watch candidates); `GameState` evaluates them and the simulator mirrors it. The validator now
+rejects an ending nothing can fire.
+
+## D-011 — Analyzer false positives narrowed, not silenced
+"whatever it was" / "no way down" are ordinary English, so slang detection now requires the
+standalone interjection. Pell's double exclamations are his defined voice and are exempt; other
+speakers are still flagged. `flag` in the literal flags-on-a-barge card is exempt. Crisis and arc
+situations up to 48 words remain warnings (documented in `docs/CONTENT_REPORT.md`) because the
+UI now scrolls long text rather than clipping it.
+
+## D-012 — Simulator candidate order must match the engine
+The Python simulator iterated candidates sorted by id while `ContentDB` indexes unconditional cards
+before conditional ones. Same seed, same weights, different pick. Fixed in the simulator and pinned
+by `test_engine_matches_python_simulator` (40-card trace + resources for seed 12345).

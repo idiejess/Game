@@ -1,0 +1,894 @@
+{
+ "problems": [],
+ "notes": [
+  "MA01: external prerequisites ['kell_present', 'met_bram', 'met_ilse', 'met_pell', 'met_quenn']",
+  "MA02: external prerequisites ['found_ledger', 'has_wire_copy', 'met_mirren']",
+  "MA03: external prerequisites ['hesse_has_story', 'met_quenn', 'met_vosk', 'sluice_house_seen']",
+  "MA04: external prerequisites ['met_crane', 'met_ilse', 'met_pell', 'met_vane', 'throughput_record']",
+  "MA05: external prerequisites ['clue_crane_counts', 'clue_dry_aqueduct', 'drought_report_filed', 'knows_cut', 'met_crane', 'met_quenn', 'met_vosk', 'read_survey']",
+  "MA06: external prerequisites ['honored_remembered', 'met_bram', 'met_ilse', 'met_petronel', 'met_wren', 'song_heard']",
+  "MA07: external prerequisites ['met_crane', 'met_solas', 'met_vane', 'met_wren', 'reeds_cargo', 'rifles_known']",
+  "MA08: no explicit failure route (arc can only complete or stall by conditions)",
+  "MA08: external prerequisites ['met_cole', 'met_hale', 'met_ilse', 'met_stroud', 'met_vosk', 'read_letters', 'undercroft_flooded']",
+  "MA09: external prerequisites ['met_crane', 'met_fennick', 'met_hesse', 'met_vane', 'met_vosk', 'vosk_file_seen']",
+  "MA10: external prerequisites ['clearance_drafted', 'met_bram', 'met_hesse', 'met_ilse', 'met_pell', 'met_solas', 'moot_called']",
+  "MA11: no explicit failure route (arc can only complete or stall by conditions)",
+  "MA11: external prerequisites ['knows_cut', 'met_bram', 'met_mirren', 'met_vosk']",
+  "MA12: no explicit failure route (arc can only complete or stall by conditions)",
+  "MA12: external prerequisites ['met_bram', 'met_crane', 'met_hale', 'met_ilse', 'met_quenn', 'met_solas', 'met_vosk', 'route_cut', 'route_ledger', 'route_river', 'sluice_rebuilt']",
+  "mi02: external prerequisites ['met_crane', 'met_vane']",
+  "mi03: external prerequisites ['met_ilse', 'met_quenn', 'met_stroud']",
+  "mi04: external prerequisites ['met_hale', 'met_vane']",
+  "mi05: external prerequisites ['met_dace', 'met_ilse', 'met_pell']",
+  "mi06: external prerequisites ['met_ilse']",
+  "mi07: external prerequisites ['clue_dry_aqueduct', 'clue_reservoirs', 'met_fennick', 'met_pell', 'noticed_water_fall']",
+  "mi08: external prerequisites ['met_mirren', 'met_tobin', 'met_vosk']",
+  "mi09: external prerequisites ['met_crane', 'met_hale']",
+  "mi10: external prerequisites ['met_crane', 'met_dace', 'met_ilse']",
+  "mi11: external prerequisites ['met_mirren', 'met_solas']",
+  "mi12: external prerequisites ['met_ilse', 'met_stroud', 'met_vosk']",
+  "mi13: external prerequisites ['met_fennick', 'met_vosk']",
+  "mi14: external prerequisites ['met_cole', 'met_dace', 'met_ilse', 'met_pell']",
+  "mi15: external prerequisites ['met_bram', 'met_crane', 'met_wren']",
+  "mi16: external prerequisites ['met_dace', 'met_ilse', 'met_quenn', 'met_vane']",
+  "mi17: external prerequisites ['met_bram', 'met_hale']",
+  "mi18: external prerequisites ['met_crane', 'met_tamm', 'met_wren']",
+  "mi19: external prerequisites ['met_cole', 'met_ilse']",
+  "mi20: external prerequisites ['met_pell', 'met_vosk']",
+  "mi21: external prerequisites ['met_crane', 'met_hale', 'met_ilse']",
+  "mi22: external prerequisites ['met_crane', 'met_quenn', 'met_vane']",
+  "mi23: external prerequisites ['met_bram', 'met_dace', 'met_ilse', 'met_mirren', 'met_wren']",
+  "mi24: external prerequisites ['met_crane', 'met_solas']",
+  "mi25: external prerequisites ['met_pell', 'met_quenn', 'met_tamm', 'met_vosk']",
+  "mi26: external prerequisites ['met_bram', 'met_vosk', 'met_wren']",
+  "mi27: external prerequisites ['met_quenn', 'met_vosk']",
+  "mi28: external prerequisites ['met_mirren']",
+  "mi29: external prerequisites ['clue_cipher', 'found_ledger', 'met_fennick', 'met_hesse', 'met_ilse', 'met_pell', 'pressed_by_hesse']",
+  "mi30: external prerequisites ['met_dace', 'met_ilse']"
+ ],
+ "arcs": {
+  "MA01": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "kell_present",
+    "met_bram",
+    "met_ilse",
+    "met_pell",
+    "met_quenn"
+   ]
+  },
+  "MA02": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "found_ledger",
+    "has_wire_copy",
+    "met_mirren"
+   ]
+  },
+  "MA03": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "hesse_has_story",
+    "met_quenn",
+    "met_vosk",
+    "sluice_house_seen"
+   ]
+  },
+  "MA04": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "met_crane",
+    "met_ilse",
+    "met_pell",
+    "met_vane",
+    "throughput_record"
+   ]
+  },
+  "MA05": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "clue_crane_counts",
+    "clue_dry_aqueduct",
+    "drought_report_filed",
+    "knows_cut",
+    "met_crane",
+    "met_quenn",
+    "met_vosk",
+    "read_survey"
+   ]
+  },
+  "MA06": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "honored_remembered",
+    "met_bram",
+    "met_ilse",
+    "met_petronel",
+    "met_wren",
+    "song_heard"
+   ]
+  },
+  "MA07": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "met_crane",
+    "met_solas",
+    "met_vane",
+    "met_wren",
+    "reeds_cargo",
+    "rifles_known"
+   ]
+  },
+  "MA08": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_cole",
+    "met_hale",
+    "met_ilse",
+    "met_stroud",
+    "met_vosk",
+    "read_letters",
+    "undercroft_flooded"
+   ]
+  },
+  "MA09": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "met_crane",
+    "met_fennick",
+    "met_hesse",
+    "met_vane",
+    "met_vosk",
+    "vosk_file_seen"
+   ]
+  },
+  "MA10": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": true,
+   "external": [
+    "clearance_drafted",
+    "met_bram",
+    "met_hesse",
+    "met_ilse",
+    "met_pell",
+    "met_solas",
+    "moot_called"
+   ]
+  },
+  "MA11": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "knows_cut",
+    "met_bram",
+    "met_mirren",
+    "met_vosk"
+   ]
+  },
+  "MA12": {
+   "cards": 15,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "completes": false,
+   "fails": false,
+   "external": [
+    "met_bram",
+    "met_crane",
+    "met_hale",
+    "met_ilse",
+    "met_quenn",
+    "met_solas",
+    "met_vosk",
+    "route_cut",
+    "route_ledger",
+    "route_river",
+    "sluice_rebuilt"
+   ]
+  },
+  "mi01": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": []
+  },
+  "mi02": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_vane"
+   ]
+  },
+  "mi03": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_ilse",
+    "met_quenn",
+    "met_stroud"
+   ]
+  },
+  "mi04": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_hale",
+    "met_vane"
+   ]
+  },
+  "mi05": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_dace",
+    "met_ilse",
+    "met_pell"
+   ]
+  },
+  "mi06": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_ilse"
+   ]
+  },
+  "mi07": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "clue_dry_aqueduct",
+    "clue_reservoirs",
+    "met_fennick",
+    "met_pell",
+    "noticed_water_fall"
+   ]
+  },
+  "mi08": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_mirren",
+    "met_tobin",
+    "met_vosk"
+   ]
+  },
+  "mi09": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_hale"
+   ]
+  },
+  "mi10": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_dace",
+    "met_ilse"
+   ]
+  },
+  "mi11": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_mirren",
+    "met_solas"
+   ]
+  },
+  "mi12": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_ilse",
+    "met_stroud",
+    "met_vosk"
+   ]
+  },
+  "mi13": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_fennick",
+    "met_vosk"
+   ]
+  },
+  "mi14": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_cole",
+    "met_dace",
+    "met_ilse",
+    "met_pell"
+   ]
+  },
+  "mi15": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_bram",
+    "met_crane",
+    "met_wren"
+   ]
+  },
+  "mi16": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_dace",
+    "met_ilse",
+    "met_quenn",
+    "met_vane"
+   ]
+  },
+  "mi17": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_bram",
+    "met_hale"
+   ]
+  },
+  "mi18": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_tamm",
+    "met_wren"
+   ]
+  },
+  "mi19": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_cole",
+    "met_ilse"
+   ]
+  },
+  "mi20": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_pell",
+    "met_vosk"
+   ]
+  },
+  "mi21": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_hale",
+    "met_ilse"
+   ]
+  },
+  "mi22": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_quenn",
+    "met_vane"
+   ]
+  },
+  "mi23": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_bram",
+    "met_dace",
+    "met_ilse",
+    "met_mirren",
+    "met_wren"
+   ]
+  },
+  "mi24": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_crane",
+    "met_solas"
+   ]
+  },
+  "mi25": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_pell",
+    "met_quenn",
+    "met_tamm",
+    "met_vosk"
+   ]
+  },
+  "mi26": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_bram",
+    "met_vosk",
+    "met_wren"
+   ]
+  },
+  "mi27": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_quenn",
+    "met_vosk"
+   ]
+  },
+  "mi28": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_mirren"
+   ]
+  },
+  "mi29": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "clue_cipher",
+    "found_ledger",
+    "met_fennick",
+    "met_hesse",
+    "met_ilse",
+    "met_pell",
+    "pressed_by_hesse"
+   ]
+  },
+  "mi30": {
+   "cards": 6,
+   "stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "completes": true,
+   "fails": false,
+   "external": [
+    "met_dace",
+    "met_ilse"
+   ]
+  }
+ },
+ "true_routes": {
+  "end_true_river": {
+   "finale_cards": [
+    "ma12_13"
+   ],
+   "route_flag_setters": [
+    "meta_route_river_gate"
+   ],
+   "unlocks_granted_by_cards": {
+    "unlock_cut_map": [
+     "ma11_07"
+    ],
+    "unlock_quenn_survey": [
+     "ma05_13",
+     "ma05_15"
+    ],
+    "unlock_lowmere_song": [
+     "ma06_13"
+    ],
+    "unlock_marrow_letters": [
+     "ma08_13"
+    ]
+   }
+  },
+  "end_true_ledger": {
+   "finale_cards": [
+    "ma12_14"
+   ],
+   "route_flag_setters": [
+    "meta_route_ledger_gate"
+   ],
+   "unlocks_granted_by_cards": {
+    "unlock_cut_map": [
+     "ma11_07"
+    ],
+    "unlock_quenn_survey": [
+     "ma05_13",
+     "ma05_15"
+    ],
+    "unlock_lowmere_song": [
+     "ma06_13"
+    ],
+    "unlock_marrow_letters": [
+     "ma08_13"
+    ]
+   }
+  },
+  "end_true_cut": {
+   "finale_cards": [
+    "ma12_15"
+   ],
+   "route_flag_setters": [
+    "meta_route_cut_gate"
+   ],
+   "unlocks_granted_by_cards": {
+    "unlock_cut_map": [
+     "ma11_07"
+    ],
+    "unlock_quenn_survey": [
+     "ma05_13",
+     "ma05_15"
+    ],
+    "unlock_lowmere_song": [
+     "ma06_13"
+    ],
+    "unlock_marrow_letters": [
+     "ma08_13"
+    ]
+   }
+  }
+ }
+}

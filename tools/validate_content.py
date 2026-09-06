@@ -173,9 +173,32 @@ def reference_check(cards, rep):
         for rc in cond.get("relationships", {}):
             if rc not in chars:
                 rep.err(f"[{cid}] condition on unknown character {rc}")
+    flags_reg = {f["id"] for f in load_json(ROOT / "content" / "FLAG_REGISTRY.json")["flags"]}
+    counters_reg = {c["id"] for c in load_json(ROOT / "content" / "COUNTER_REGISTRY.json")["counters"]}
+    triggered = 0
     for eid, e in endings.items():
         if e["card"] not in cards:
             rep.err(f"ending {eid} -> unknown card {e['card']}")
+        elif cards[e["card"]].get("pool") != "ending":
+            rep.err(f"ending {eid}: card {e['card']} must be in the 'ending' pool")
+        trig = e.get("trigger", {})
+        cond = trig.get("conditions", {})
+        for k in ("flags_all", "flags_any", "flags_none"):
+            for f in cond.get(k, []):
+                if f not in flags_reg:
+                    rep.err(f"ending {eid}: trigger flag {f} undeclared")
+        for k in cond.get("counters", {}):
+            if k not in counters_reg:
+                rep.err(f"ending {eid}: trigger counter {k} undeclared")
+        for rc in cond.get("relationships", {}):
+            if rc not in chars:
+                rep.err(f"ending {eid}: trigger relationship with unknown character {rc}")
+        fired_by_card = any(c[s]["effects"].get("ending") == eid for c in cards.values() for s in ("left", "right"))
+        if trig or fired_by_card:
+            triggered += 1
+        else:
+            rep.err(f"ending {eid} has no trigger and no card fires it (unreachable)")
+    rep.stats["endings_reachable"] = triggered
     return chars, endings
 
 

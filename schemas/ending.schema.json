@@ -17,6 +17,7 @@
       "properties": {
         "resource_edge": { "type": "object", "additionalProperties": false, "properties": { "resource": { "type": "string" }, "edge": { "type": "string", "enum": ["min", "max"] } }, "required": ["resource", "edge"] },
         "watch_min": { "type": "integer" },
+        "long_watch": { "type": "boolean", "description": "Candidate for the watch-100 retirement; first satisfied in file order wins." },
         "conditions": { "$ref": "card.schema.json#/$defs/conditions" }
       }
     },

@@ -1,84 +1,989 @@
 {
-  "cards": [
-    {"id": "evg_shores_01", "category": "evergreen", "speaker": "crane", "text": "The Sorrel agent has flown her Assembly's flag from a moored barge. The Compact says nothing about flags. I have brought Aldmere's, in case it says nothing about two.",
-     "left": {"label": "No flags on Company water", "outcome": "Both come down. Both parties blame you, which is a kind of balance.", "effects": {"resources": {"company": 2}, "relationships": {"crane": -1, "vane": -1}}},
-     "right": {"label": "Fly them both", "outcome": "Two flags over one pound. Hesse takes a plate of it.", "effects": {"resources": {"town": 1}, "relationships": {"crane": 2, "vane": 2, "hesse": 2}, "factions": {"aldmere": 1, "sorrel": 1}}},
-     "conditions": {"flags_all": ["met_crane", "met_vane"]}, "cooldown": 50, "tags": ["res:traffic"]},
-    {"id": "evg_shores_02", "category": "evergreen", "speaker": "vane", "text": "Aldmere has raised its grain price again and Sorrel's mills are on short time. My principals ask whether the summit could 'lose' a grain barge for a week. Just one. Just once.",
-     "left": {"label": "Nothing gets lost here", "outcome": "\"Didn't think so. Had to ask.\"", "effects": {"relationships": {"vane": -2, "crane": 2}, "factions": {"aldmere": 2}}},
-     "right": {"label": "A week's delay for repairs", "outcome": "The grain barge sits. The mills run. Crane files.", "effects": {"resources": {"traffic": -3, "company": -2}, "relationships": {"vane": 6, "crane": -5}, "factions": {"sorrel": 5, "aldmere": -5}, "counters": {"sorrel_favors": 1}}},
-     "conditions": {"flags_all": ["met_vane"]}, "cooldown": 50, "tags": ["res:traffic"]},
-    {"id": "evg_shores_03", "category": "evergreen", "speaker": "solas", "text": "An Aldmere customs cutter has moored beside my convoy with its gun uncovered. It is within its rights. So am I, if I uncover mine. I would rather you told them to cover up first.",
-     "left": {"label": "Tell Crane to cover the gun", "outcome": "Crane is appalled that anyone uncovered anything. It is covered.", "effects": {"relationships": {"solas": 5, "crane": 1}, "factions": {"sorrel": 2}}},
-     "right": {"label": "Both stay covered, or both leave", "outcome": "Both leave. The pound is briefly very quiet.", "effects": {"resources": {"traffic": -3}, "relationships": {"solas": 1, "crane": 1}}},
-     "conditions": {"flags_all": ["met_solas", "met_crane"]}, "cooldown": 60, "tags": ["res:traffic"]},
-    {"id": "evg_shores_04", "category": "evergreen", "speaker": "src_telegram", "text": "ALDMERE GUILDS TO KEEPER STOP SORREL AGENT VANE TO BE DENIED ACCESS TO TOLL BOOK UNDER COMPACT ARTICLE SIX STOP CONFIRM STOP",
-     "left": {"label": "Confirm", "outcome": "Vane learns of it from Fennick before you can tell her.", "effects": {"factions": {"aldmere": 4, "sorrel": -4}, "relationships": {"vane": -5, "crane": 3}}},
-     "right": {"label": "Article Six says no such thing", "outcome": "Crane, consulted, agrees with you, painfully.", "effects": {"factions": {"aldmere": -3}, "relationships": {"vane": 3, "crane": 2}}},
-     "sound": "sfx_telegram", "conditions": {"flags_all": ["met_vane", "met_crane"]}, "cooldown": 60, "tags": ["res:traffic"]},
-    {"id": "evg_shores_05", "category": "evergreen", "speaker": "hesse", "expression": "curious", "text": "Lucan Hesse, Sorrel Courier. My readers want to know: is the summit Aldmere's, Sorrel's, or the Company's? On the record. One word will do, and one word is all I'll print.",
-     "left": {"label": "The Company's", "outcome": "COMPANY MAN AT THE SUMMIT. Pell frames it.", "effects": {"resources": {"company": 3, "town": -2}, "relationships": {"hesse": 1, "pell": 2}, "flags_set": ["met_hesse"]}},
-     "right": {"label": "The water's", "outcome": "KEEPER: SUMMIT BELONGS TO 'THE WATER'. It is the most read line he has printed.", "effects": {"resources": {"town": 3, "company": -2}, "relationships": {"hesse": 4}, "flags_set": ["met_hesse", "pressed_by_hesse"], "factions": {"hullfolk": 2}}},
-     "conditions": {"watch": {"min": 8}}, "cooldown": 60, "tags": ["res:company"]},
-    {"id": "evg_shores_06", "category": "evergreen", "speaker": "crane", "expression": "alarmed", "text": "A Sorrel vessel has requested passage for 'sixty agricultural laborers' bound for Aldmere. I have counted them. They march in step. I am not permitted to refuse laborers. I am permitted to ask you.",
-     "left": {"label": "Laborers pass", "outcome": "Sixty men in step go down the east flight. Aldmere hears of it in a week.", "effects": {"resources": {"traffic": 2}, "factions": {"sorrel": 4, "aldmere": -6}, "relationships": {"crane": -5}, "flags_set": ["compact_breached"]}},
-     "right": {"label": "Hold them for both inspectors", "outcome": "They wait two days and go back west. Solas looks relieved.", "effects": {"resources": {"traffic": -4}, "factions": {"sorrel": -4, "aldmere": 4}, "relationships": {"crane": 6, "solas": 2}}},
-     "conditions": {"flags_all": ["met_crane"], "watch": {"min": 20}}, "cooldown": 80, "tags": ["res:traffic"]},
-    {"id": "evg_shores_07", "category": "evergreen", "speaker": "vane", "expression": "amused", "text": "The Aldmere inspector has proposed a duel over the order of passage. A duel. With pistols. I've accepted, obviously. I need a second. You're neutral. Neutral is what seconds are.",
-     "left": {"label": "Second her", "outcome": "Both fire wide, formally. Crane is thrilled to have followed procedure.", "effects": {"resources": {"town": 3}, "relationships": {"vane": 5, "crane": 2}, "flags_set": ["duel_pending"]}},
-     "right": {"label": "Forbid it on Company water", "outcome": "\"Spoilsport.\" Crane, secretly, is relieved.", "effects": {"resources": {"company": 2}, "relationships": {"vane": -2, "crane": 1}}},
-     "conditions": {"flags_all": ["met_vane", "met_crane"], "flags_none": ["duel_pending"]}, "cooldown": 80, "tags": ["res:town"]},
-    {"id": "evg_shores_08", "category": "evergreen", "speaker": "solas", "expression": "weary", "text": "News from Sorrel. There has been shooting at the coalfield. My people are asking whether they will be sent back. I do not know. I would like to tell them the summit is not sending them anywhere.",
-     "left": {"label": "The summit sends nobody", "outcome": "\"Thank you. They'll sleep. So will I.\"", "effects": {"relationships": {"solas": 6}, "factions": {"sorrel": 2}, "resources": {"company": -1}}},
-     "right": {"label": "The Company decides that", "outcome": "\"It does. I'd hoped you'd lie a little.\"", "effects": {"relationships": {"solas": -3}, "resources": {"company": 2}}},
-     "conditions": {"flags_all": ["met_solas"], "watch": {"min": 20}}, "cooldown": 70, "tags": ["res:traffic"]},
-    {"id": "evg_shores_09", "category": "evergreen", "speaker": "src_telegram", "text": "SORREL ASSEMBLY TO KEEPER STOP PROTEST DELAYS TO COAL STOP REQUEST SUMMIT OPERATE THROUGH NIGHT STOP COSTS TO BE MET BY ASSEMBLY STOP",
-     "left": {"label": "Night operation, at their cost", "outcome": "Lamps on the gate all night. The Coffers fill. The town does not sleep.", "effects": {"resources": {"traffic": 5, "coffers": 4, "town": -4, "water": -2}, "factions": {"sorrel": 4}, "flags_set": ["night_passages"], "counters": {"passages_night": 3}}},
-     "right": {"label": "The gate keeps the bell", "outcome": "Sorrel protests to Ardent. Ardent is used to it.", "effects": {"resources": {"traffic": -2}, "factions": {"sorrel": -4}}},
-     "sound": "sfx_telegram", "conditions": {"watch": {"min": 12}}, "cooldown": 60, "tags": ["res:traffic"]},
-    {"id": "evg_shores_10", "category": "evergreen", "speaker": "hesse", "expression": "triumphant", "text": "I have it from a source that the Aldmere inspector keeps his own water gauge. Private. Six years. Why would a customs man count water, Keeper? Give me a line and I'll give you the front page.",
-     "left": {"label": "No line", "outcome": "\"Suit yourself. I'll ask him. He'll tell me. He can't help it.\"", "effects": {"relationships": {"hesse": -2, "crane": 2}, "counters": {"suspicion": 0}}},
-     "right": {"label": "Ask Crane yourself; I'd like to know", "outcome": "\"So you don't know either. That's the story.\"", "effects": {"relationships": {"hesse": 3}, "flags_set": ["clue_crane_counts"], "counters": {"evidence": 1, "suspicion": 1}}},
-     "conditions": {"flags_all": ["met_hesse", "met_crane"], "watch": {"min": 20}}, "cooldown": 80, "tags": ["res:water", "clue"]},
-    {"id": "evg_shores_11", "category": "evergreen", "speaker": "crane", "text": "The Guilds instruct me to record every Sorrel cargo weight to the pound. It adds an hour to each passage. I note that I did not ask for this. I note that I shall obey it.",
-     "left": {"label": "Obey it; Compact rights", "outcome": "Sorrel's fleet backs up to Lock 7. Vane sends a bill.", "effects": {"resources": {"traffic": -6}, "factions": {"aldmere": 4, "sorrel": -5}, "relationships": {"crane": 4, "vane": -4}}},
-     "right": {"label": "Weigh one in five", "outcome": "\"A sampling approach. Irregular. I shall document my objection and comply.\"", "effects": {"resources": {"traffic": -2}, "factions": {"aldmere": -2}, "relationships": {"crane": -2, "vane": 2}}},
-     "conditions": {"flags_all": ["met_crane"]}, "cooldown": 60, "tags": ["res:traffic"]},
-    {"id": "evg_shores_12", "category": "evergreen", "speaker": "vane", "expression": "furious", "text": "Aldmere has seized a Sorrel coal fleet at Lock 3 over a 'paperwork discrepancy'. Twelve boats. My principals want the summit closed to Aldmere grain until they're released. You can do that. You have the gate.",
-     "left": {"label": "Close the summit to grain", "outcome": "Grain stops. Bread in Sorrel rises. Aldmere releases the fleet in four days. Nobody thanks you.", "effects": {"resources": {"traffic": -7, "company": -5}, "factions": {"sorrel": 8, "aldmere": -10}, "relationships": {"vane": 8, "crane": -8}, "flags_set": ["compact_breached"]}},
-     "right": {"label": "The gate is not a weapon", "outcome": "\"Everything's a weapon. Some of them are just slow.\"", "effects": {"relationships": {"vane": -5, "crane": 4}, "factions": {"aldmere": 3, "sorrel": -3}}},
-     "conditions": {"flags_all": ["met_vane", "met_crane"], "watch": {"min": 25}}, "cooldown": 90, "tags": ["res:traffic"]},
-    {"id": "evg_shores_13", "category": "evergreen", "speaker": "solas", "expression": "hard", "text": "There is an Aldmere man at the inn asking my sergeants what they are paid, and offering more. He is recruiting. Openly. Under the Compact I cannot touch him. Under the Compact you can move him.",
-     "left": {"label": "Move him along", "outcome": "He goes down the east flight with a list of names anyway.", "effects": {"relationships": {"solas": 5}, "factions": {"aldmere": -3, "sorrel": 2}}},
-     "right": {"label": "A man may talk at an inn", "outcome": "Two sergeants leave with him. Solas does not mention it again.", "effects": {"relationships": {"solas": -5}, "factions": {"aldmere": 2}, "resources": {"town": 1}}},
-     "conditions": {"flags_all": ["met_solas"], "watch": {"min": 15}}, "cooldown": 70, "tags": ["res:town"]},
-    {"id": "evg_shores_14", "category": "evergreen", "speaker": "src_telegram", "text": "ALDMERE AND SORREL JOINT TO KEEPER STOP COMPACT ANNIVERSARY STOP BOTH INSPECTORS TO DINE AT KEEPER'S TABLE STOP THIS IS NOT A REQUEST STOP",
-     "left": {"label": "Host the dinner", "outcome": "Crane and Vane argue for four hours about a fish course. It is the best evening in months.", "effects": {"resources": {"coffers": -3, "town": 2}, "relationships": {"crane": 4, "vane": 4}, "factions": {"aldmere": 2, "sorrel": 2}}},
-     "right": {"label": "Host it at the inn, at their cost", "outcome": "Ilse serves them. They tip differently. She remembers which.", "effects": {"resources": {"town": 3}, "relationships": {"crane": 1, "vane": 1, "ilse": 2}}},
-     "sound": "sfx_telegram", "conditions": {"flags_all": ["met_crane", "met_vane"], "watch": {"min": 20}}, "cooldown": 100, "tags": ["res:town"]},
-    {"id": "evg_shores_15", "category": "evergreen", "speaker": "hesse", "text": "The Courier's Aldmere edition was seized at Lock 2 as 'seditious'. It was about grain prices. I'd like to print the next one at Halfway and send it both ways. I need a room.",
-     "left": {"label": "Print at the Company house", "outcome": "Ink on the Company's floor. The Guilds are livid. Sorrel cheers.", "effects": {"resources": {"company": -4, "town": 2}, "relationships": {"hesse": 8}, "factions": {"aldmere": -5, "sorrel": 4}, "flags_set": ["hesse_friendly"]}},
-     "right": {"label": "Print at the inn, if Ilse will", "outcome": "Ilse will, for a fee and a column about the cellar.", "effects": {"resources": {"town": 3}, "relationships": {"hesse": 4, "ilse": 2}, "factions": {"aldmere": -2}}},
-     "conditions": {"flags_all": ["met_hesse", "met_ilse"], "watch": {"min": 20}}, "cooldown": 80, "tags": ["res:company"]},
-    {"id": "evg_shores_16", "category": "evergreen", "speaker": "crane", "expression": "neutral", "text": "I am recalled to Aldmere for a month to give evidence on the Compact's operation. I note that in my absence there will be no second seal for arms. I note that I have told nobody else this.",
-     "left": {"label": "No arms pass while he is gone", "outcome": "\"Duly. I am, I find, grateful.\"", "effects": {"resources": {"traffic": -2}, "relationships": {"crane": 6, "solas": -2}, "factions": {"aldmere": 3}}},
-     "right": {"label": "The Sorrel seal will have to serve", "outcome": "\"I note that. I note it with regret.\"", "effects": {"resources": {"traffic": 3}, "relationships": {"crane": -6, "vane": 3}, "flags_set": ["compact_breached"]}},
-     "conditions": {"flags_all": ["met_crane"], "watch": {"min": 25}}, "cooldown": 100, "tags": ["res:traffic"]},
-    {"id": "evg_shores_17", "category": "evergreen", "speaker": "vane", "text": "My principals have bought the inn's debt from Cole. Not to call it in. To have it. Sorrel likes having things at the summit. I'm telling you as a courtesy, and because Ilse won't believe it from me.",
-     "left": {"label": "Tell Ilse yourself", "outcome": "Ilse is quiet for a long moment, then charges Vane double forever.", "effects": {"relationships": {"ilse": 4, "vane": -2}, "resources": {"town": 1}, "factions": {"sorrel": -2}}},
-     "right": {"label": "Not the Keeper's business", "outcome": "\"Everything at the gate is. That's the job. Isn't it?\"", "effects": {"relationships": {"vane": 2, "ilse": -2}}},
-     "conditions": {"flags_all": ["met_vane", "met_ilse", "met_cole"], "watch": {"min": 25}}, "cooldown": 100, "tags": ["res:town"]},
-    {"id": "evg_shores_18", "category": "evergreen", "speaker": "solas", "text": "Aldmere has posted a customs cutter at the east flight to inspect every convoy twice. Once here, once below. My men are tired of being counted. I am asking you to make one count enough.",
-     "left": {"label": "One count, at the summit", "outcome": "Crane agrees, reluctantly: the Compact says summit. Below stands down.", "effects": {"resources": {"traffic": 3}, "relationships": {"solas": 5, "crane": 1}, "factions": {"aldmere": -2}}},
-     "right": {"label": "Aldmere's flight, Aldmere's count", "outcome": "\"Understood.\" He does not say it is.", "effects": {"relationships": {"solas": -3, "crane": 2}, "factions": {"aldmere": 2}}},
-     "conditions": {"flags_all": ["met_solas", "met_crane"]}, "cooldown": 60, "tags": ["res:traffic"]},
-    {"id": "evg_shores_19", "category": "evergreen", "speaker": "hesse", "expression": "curious", "text": "Off the record: both shores are drafting plans to take the canal if the Company falls. Aldmere by law, Sorrel by purchase. On the record: which would you rather worked for?",
-     "left": {"label": "Neither; the Company keeps the gate", "outcome": "KEEPER LOYAL, says the Courier, in a tone.", "effects": {"resources": {"company": 3}, "relationships": {"hesse": -1}, "factions": {"aldmere": -1, "sorrel": -1}}},
-     "right": {"label": "Whoever fixes the water", "outcome": "He stops writing. \"What's wrong with the water?\"", "effects": {"relationships": {"hesse": 4}, "counters": {"suspicion": 2, "evidence": 1}, "flags_set": ["hesse_has_story"]}},
-     "conditions": {"flags_all": ["met_hesse"], "watch": {"min": 30}}, "cooldown": 100, "tags": ["res:company", "clue"]},
-    {"id": "evg_shores_20", "category": "evergreen", "speaker": "crane", "expression": "delighted_by_a_clause", "text": "I have discovered that the Compact, read strictly, obliges the Keeper to host a joint shore conference at the summit every seven years. None has ever been held. We are, I calculate, eleven years overdue.",
-     "left": {"label": "Hold the conference", "outcome": "Delegates from both shores. Three days. Nothing is decided and everyone is impressed.", "effects": {"resources": {"coffers": -5, "town": 4, "company": 2}, "relationships": {"crane": 8, "vane": 2}, "factions": {"aldmere": 3, "sorrel": 3}}},
-     "right": {"label": "Eleven more years won't hurt", "outcome": "\"It might. I shall note the date.\"", "effects": {"relationships": {"crane": -3}, "resources": {"coffers": 1}}},
-     "conditions": {"flags_all": ["met_crane"], "watch": {"min": 30}}, "cooldown": 120, "tags": ["res:town"]}
-  ]
+ "cards": [
+  {
+   "id": "evg_shores_01",
+   "category": "evergreen",
+   "speaker": "crane",
+   "text": "The Sorrel agent has flown her Assembly's flag from a moored barge. The Compact says nothing about flags. I have brought Aldmere's, in case it says nothing about two.",
+   "left": {
+    "label": "No flags on Company water",
+    "outcome": "Both come down. Both parties blame you, which is a kind of balance.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "crane": -1,
+      "vane": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Fly them both",
+    "outcome": "Two flags over one pound. Hesse takes a plate of it.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "crane": 2,
+      "vane": 2,
+      "hesse": 2
+     },
+     "factions": {
+      "aldmere": 1,
+      "sorrel": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_02",
+   "category": "evergreen",
+   "speaker": "vane",
+   "text": "Aldmere has raised its grain price again and Sorrel's mills are on short time. My principals ask whether the summit could 'lose' a grain barge for a week. Just one. Just once.",
+   "left": {
+    "label": "Nothing gets lost here",
+    "outcome": "\"Didn't think so. Had to ask.\"",
+    "effects": {
+     "relationships": {
+      "vane": -2,
+      "crane": 2
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "right": {
+    "label": "A week's delay for repairs",
+    "outcome": "The grain barge sits. The mills run. Crane files.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "company": -2
+     },
+     "relationships": {
+      "vane": 6,
+      "crane": -5
+     },
+     "factions": {
+      "sorrel": 5,
+      "aldmere": -5
+     },
+     "counters": {
+      "sorrel_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_03",
+   "category": "evergreen",
+   "speaker": "solas",
+   "text": "An Aldmere customs cutter has moored beside my convoy with its gun uncovered. It is within its rights. So am I, if I uncover mine. I would rather you told them to cover up first.",
+   "left": {
+    "label": "Tell Crane to cover the gun",
+    "outcome": "Crane is appalled that anyone uncovered anything. It is covered.",
+    "effects": {
+     "relationships": {
+      "solas": 5,
+      "crane": 1
+     },
+     "factions": {
+      "sorrel": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Both stay covered, or both leave",
+    "outcome": "Both leave. The pound is briefly very quiet.",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "solas": 1,
+      "crane": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_crane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_04",
+   "category": "evergreen",
+   "speaker": "src_telegram",
+   "text": "ALDMERE GUILDS TO KEEPER STOP SORREL AGENT VANE TO BE DENIED ACCESS TO TOLL BOOK UNDER COMPACT ARTICLE SIX STOP CONFIRM STOP",
+   "left": {
+    "label": "Confirm",
+    "outcome": "Vane learns of it from Fennick before you can tell her.",
+    "effects": {
+     "factions": {
+      "aldmere": 4,
+      "sorrel": -4
+     },
+     "relationships": {
+      "vane": -5,
+      "crane": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Article Six says no such thing",
+    "outcome": "Crane, consulted, agrees with you, painfully.",
+    "effects": {
+     "factions": {
+      "aldmere": -3
+     },
+     "relationships": {
+      "vane": 3,
+      "crane": 2
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_crane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_05",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "Lucan Hesse, Sorrel Courier. My readers want to know: is the summit Aldmere's, Sorrel's, or the Company's? On the record. One word will do, and one word is all I'll print.",
+   "left": {
+    "label": "The Company's",
+    "outcome": "COMPANY MAN AT THE SUMMIT. Pell frames it.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "town": -2
+     },
+     "relationships": {
+      "hesse": 1,
+      "pell": 2
+     },
+     "flags_set": [
+      "met_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "The water's",
+    "outcome": "KEEPER: SUMMIT BELONGS TO 'THE WATER'. It is the most read line he has printed.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -2
+     },
+     "relationships": {
+      "hesse": 4
+     },
+     "flags_set": [
+      "met_hesse",
+      "pressed_by_hesse"
+     ],
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 8
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_shores_06",
+   "category": "evergreen",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "text": "A Sorrel vessel has requested passage for 'sixty agricultural laborers' bound for Aldmere. I have counted them. They march in step. I am not permitted to refuse laborers. I am permitted to ask you.",
+   "left": {
+    "label": "Laborers pass",
+    "outcome": "Sixty men in step go down the east flight. Aldmere hears of it in a week.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "factions": {
+      "sorrel": 4,
+      "aldmere": -6
+     },
+     "relationships": {
+      "crane": -5
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "right": {
+    "label": "Hold them for both inspectors",
+    "outcome": "They wait two days and go back west. Solas looks relieved.",
+    "effects": {
+     "resources": {
+      "traffic": -4
+     },
+     "factions": {
+      "sorrel": -4,
+      "aldmere": 4
+     },
+     "relationships": {
+      "crane": 6,
+      "solas": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_07",
+   "category": "evergreen",
+   "speaker": "vane",
+   "expression": "amused",
+   "text": "The Aldmere inspector has proposed a duel over the order of passage. A duel. With pistols. I've accepted, obviously. I need a second. You're neutral. Neutral is what seconds are.",
+   "left": {
+    "label": "Second her",
+    "outcome": "Both fire wide, formally. Crane is thrilled to have followed procedure.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "vane": 5,
+      "crane": 2
+     },
+     "flags_set": [
+      "duel_pending"
+     ]
+    }
+   },
+   "right": {
+    "label": "Forbid it on Company water",
+    "outcome": "\"Spoilsport.\" Crane, secretly, is relieved.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "vane": -2,
+      "crane": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_crane"
+    ],
+    "flags_none": [
+     "duel_pending"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_shores_08",
+   "category": "evergreen",
+   "speaker": "solas",
+   "expression": "weary",
+   "text": "News from Sorrel. There has been shooting at the coalfield. My people are asking whether they will be sent back. I do not know. I would like to tell them the summit is not sending them anywhere.",
+   "left": {
+    "label": "The summit sends nobody",
+    "outcome": "\"Thank you. They'll sleep. So will I.\"",
+    "effects": {
+     "relationships": {
+      "solas": 6
+     },
+     "factions": {
+      "sorrel": 2
+     },
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The Company decides that",
+    "outcome": "\"It does. I'd hoped you'd lie a little.\"",
+    "effects": {
+     "relationships": {
+      "solas": -3
+     },
+     "resources": {
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 70,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_09",
+   "category": "evergreen",
+   "speaker": "src_telegram",
+   "text": "SORREL ASSEMBLY TO KEEPER STOP PROTEST DELAYS TO COAL STOP REQUEST SUMMIT OPERATE THROUGH NIGHT STOP COSTS TO BE MET BY ASSEMBLY STOP",
+   "left": {
+    "label": "Night operation, at their cost",
+    "outcome": "Lamps on the gate all night. The Coffers fill. The town does not sleep.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "coffers": 4,
+      "town": -4,
+      "water": -2
+     },
+     "factions": {
+      "sorrel": 4
+     },
+     "flags_set": [
+      "night_passages"
+     ],
+     "counters": {
+      "passages_night": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The gate keeps the bell",
+    "outcome": "Sorrel protests to Ardent. Ardent is used to it.",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "factions": {
+      "sorrel": -4
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_10",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "text": "I have it from a source that the Aldmere inspector keeps his own water gauge. Private. Six years. Why would a customs man count water, Keeper? Give me a line and I'll give you the front page.",
+   "left": {
+    "label": "No line",
+    "outcome": "\"Suit yourself. I'll ask him. He'll tell me. He can't help it.\"",
+    "effects": {
+     "relationships": {
+      "hesse": -2,
+      "crane": 2
+     },
+     "counters": {
+      "suspicion": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Crane yourself; I'd like to know",
+    "outcome": "\"So you don't know either. That's the story.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 3
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_crane"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_shores_11",
+   "category": "evergreen",
+   "speaker": "crane",
+   "text": "The Guilds instruct me to record every Sorrel cargo weight to the pound. It adds an hour to each passage. I note that I did not ask for this. I note that I shall obey it.",
+   "left": {
+    "label": "Obey it; Compact rights",
+    "outcome": "Sorrel's fleet backs up to Lock 7. Vane sends a bill.",
+    "effects": {
+     "resources": {
+      "traffic": -6
+     },
+     "factions": {
+      "aldmere": 4,
+      "sorrel": -5
+     },
+     "relationships": {
+      "crane": 4,
+      "vane": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Weigh one in five",
+    "outcome": "\"A sampling approach. Irregular. I shall document my objection and comply.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "factions": {
+      "aldmere": -2
+     },
+     "relationships": {
+      "crane": -2,
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_12",
+   "category": "evergreen",
+   "speaker": "vane",
+   "expression": "furious",
+   "text": "Aldmere has seized a Sorrel coal fleet at Lock 3 over a 'paperwork discrepancy'. Twelve boats. My principals want the summit closed to Aldmere grain until they're released. You can do that. You have the gate.",
+   "left": {
+    "label": "Close the summit to grain",
+    "outcome": "Grain stops. Bread in Sorrel rises. Aldmere releases the fleet in four days. Nobody thanks you.",
+    "effects": {
+     "resources": {
+      "traffic": -7,
+      "company": -5
+     },
+     "factions": {
+      "sorrel": 8,
+      "aldmere": -10
+     },
+     "relationships": {
+      "vane": 8,
+      "crane": -8
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "right": {
+    "label": "The gate is not a weapon",
+    "outcome": "\"Everything's a weapon. Some of them are just slow.\"",
+    "effects": {
+     "relationships": {
+      "vane": -5,
+      "crane": 4
+     },
+     "factions": {
+      "aldmere": 3,
+      "sorrel": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_crane"
+    ],
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 90,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_13",
+   "category": "evergreen",
+   "speaker": "solas",
+   "expression": "hard",
+   "text": "There is an Aldmere man at the inn asking my sergeants what they are paid, and offering more. He is recruiting. Openly. Under the Compact I cannot touch him. Under the Compact you can move him.",
+   "left": {
+    "label": "Move him along",
+    "outcome": "He goes down the east flight with a list of names anyway.",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     },
+     "factions": {
+      "aldmere": -3,
+      "sorrel": 2
+     }
+    }
+   },
+   "right": {
+    "label": "A man may talk at an inn",
+    "outcome": "Two sergeants leave with him. Solas does not mention it again.",
+    "effects": {
+     "relationships": {
+      "solas": -5
+     },
+     "factions": {
+      "aldmere": 2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 70,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_shores_14",
+   "category": "evergreen",
+   "speaker": "src_telegram",
+   "text": "ALDMERE AND SORREL JOINT TO KEEPER STOP COMPACT ANNIVERSARY STOP BOTH INSPECTORS TO DINE AT KEEPER'S TABLE STOP THIS IS NOT A REQUEST STOP",
+   "left": {
+    "label": "Host the dinner",
+    "outcome": "Crane and Vane argue for four hours about a fish course. It is the best evening in months.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "town": 2
+     },
+     "relationships": {
+      "crane": 4,
+      "vane": 4
+     },
+     "factions": {
+      "aldmere": 2,
+      "sorrel": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Host it at the inn, at their cost",
+    "outcome": "Ilse serves them. They tip differently. She remembers which.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "crane": 1,
+      "vane": 1,
+      "ilse": 2
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_shores_15",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "text": "The Courier's Aldmere edition was seized at Lock 2 as 'seditious'. It was about grain prices. I'd like to print the next one at Halfway and send it both ways. I need a room.",
+   "left": {
+    "label": "Print at the Company house",
+    "outcome": "Ink on the Company's floor. The Guilds are livid. Sorrel cheers.",
+    "effects": {
+     "resources": {
+      "company": -4,
+      "town": 2
+     },
+     "relationships": {
+      "hesse": 8
+     },
+     "factions": {
+      "aldmere": -5,
+      "sorrel": 4
+     },
+     "flags_set": [
+      "hesse_friendly"
+     ]
+    }
+   },
+   "right": {
+    "label": "Print at the inn, if Ilse will",
+    "outcome": "Ilse will, for a fee and a column about the cellar.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "hesse": 4,
+      "ilse": 2
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_shores_16",
+   "category": "evergreen",
+   "speaker": "crane",
+   "expression": "neutral",
+   "text": "I am recalled to Aldmere for a month to give evidence on the Compact's operation. I note that in my absence there will be no second seal for arms. I note that I have told nobody else this.",
+   "left": {
+    "label": "No arms pass while he is gone",
+    "outcome": "\"Duly. I am, I find, grateful.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "crane": 6,
+      "solas": -2
+     },
+     "factions": {
+      "aldmere": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The Sorrel seal will have to serve",
+    "outcome": "\"I note that. I note it with regret.\"",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "crane": -6,
+      "vane": 3
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_17",
+   "category": "evergreen",
+   "speaker": "vane",
+   "text": "My principals have bought the inn's debt from Cole. Not to call it in. To have it. Sorrel likes having things at the summit. I'm telling you as a courtesy, and because Ilse won't believe it from me.",
+   "left": {
+    "label": "Tell Ilse yourself",
+    "outcome": "Ilse is quiet for a long moment, then charges Vane double forever.",
+    "effects": {
+     "relationships": {
+      "ilse": 4,
+      "vane": -2
+     },
+     "resources": {
+      "town": 1
+     },
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Not the Keeper's business",
+    "outcome": "\"Everything at the gate is. That's the job. Isn't it?\"",
+    "effects": {
+     "relationships": {
+      "vane": 2,
+      "ilse": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_ilse",
+     "met_cole"
+    ],
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_shores_18",
+   "category": "evergreen",
+   "speaker": "solas",
+   "text": "Aldmere has posted a customs cutter at the east flight to inspect every convoy twice. Once here, once below. My men are tired of being counted. I am asking you to make one count enough.",
+   "left": {
+    "label": "One count, at the summit",
+    "outcome": "Crane agrees, reluctantly: the Compact says summit. Below stands down.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "solas": 5,
+      "crane": 1
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Aldmere's flight, Aldmere's count",
+    "outcome": "\"Understood.\" He does not say it is.",
+    "effects": {
+     "relationships": {
+      "solas": -3,
+      "crane": 2
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_crane"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_shores_19",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "Off the record: both shores are drafting plans to take the canal if the Company falls. Aldmere by law, Sorrel by purchase. On the record: which would you rather worked for?",
+   "left": {
+    "label": "Neither; the Company keeps the gate",
+    "outcome": "KEEPER LOYAL, says the Courier, in a tone.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "hesse": -1
+     },
+     "factions": {
+      "aldmere": -1,
+      "sorrel": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Whoever fixes the water",
+    "outcome": "He stops writing. \"What's wrong with the water?\"",
+    "effects": {
+     "relationships": {
+      "hesse": 4
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_shores_20",
+   "category": "evergreen",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "text": "The Compact, read strictly, obliges the Keeper to host a joint shore conference at the summit every seven years. None has ever been held. We are, I calculate, eleven years overdue.",
+   "left": {
+    "label": "Hold the conference",
+    "outcome": "Delegates from both shores. Three days. Nothing is decided and everyone is impressed.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 4,
+      "company": 2
+     },
+     "relationships": {
+      "crane": 8,
+      "vane": 2
+     },
+     "factions": {
+      "aldmere": 3,
+      "sorrel": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Eleven more years won't hurt",
+    "outcome": "\"It might. I shall note the date.\"",
+    "effects": {
+     "relationships": {
+      "crane": -3
+     },
+     "resources": {
+      "coffers": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 120,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
 }

@@ -1,84 +1,934 @@
 {
-  "cards": [
-    {"id": "evg_weather_01", "category": "evergreen", "speaker": "src_weather", "text": "Three days of rain on the Spine. The pound is rising faster than the paddles can pass it down. The east flight is already full of boats waiting for water they now have too much of.",
-     "left": {"label": "Run all paddles down the east flight", "outcome": "The lower pounds slop over their towpaths. Halfway stays dry.", "effects": {"resources": {"water": -6, "traffic": -3}, "factions": {"aldmere": -2}}},
-     "right": {"label": "Hold the water; let the flight clear", "outcome": "Cellars begin to whisper.", "effects": {"resources": {"water": 3, "traffic": 2}, "counters": {"flood_ignored": 1}}},
-     "conditions": {"resources": {"water": {"min": 55}}}, "cooldown": 15, "tags": ["res:water"]},
-    {"id": "evg_weather_02", "category": "evergreen", "speaker": "quenn", "expression": "worried", "text": "Sorry. The aqueduct's running a third of what the table says it should for the season. The pound isn't falling a third faster. I've checked. I keep checking.",
-     "left": {"label": "Check again, with me", "outcome": "You walk the aqueduct together. It is a trickle. The pound is not.", "effects": {"relationships": {"quenn": 5}, "flags_set": ["clue_dry_aqueduct"], "counters": {"evidence": 1, "fatigue": 1}}},
-     "right": {"label": "Be glad the pound holds", "outcome": "\"I am. That's what worries me. Roughly.\"", "effects": {"relationships": {"quenn": -1}, "resources": {"company": 1}}},
-     "conditions": {"flags_all": ["met_quenn"], "watch": {"min": 10}}, "cooldown": 30, "tags": ["res:water", "clue"]},
-    {"id": "evg_weather_03", "category": "evergreen", "speaker": "dace", "text": "Three things. Wind's from the west, hard. The top gate won't hold shut against it without a man on the beam all night. And I've only got two men.",
-     "left": {"label": "You stand the beam", "outcome": "A long night. The gate holds. So, barely, do you.", "effects": {"resources": {"town": 3}, "relationships": {"dace": 5}, "counters": {"fatigue": 3}}},
-     "right": {"label": "Requisition a man from the inn", "outcome": "Ilse sends her potboy. He is not pleased. She is less.", "effects": {"resources": {"town": -3}, "relationships": {"ilse": -3, "dace": 2}, "flags_set": ["requisitioned_labor"]}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 25, "tags": ["res:town"]},
-    {"id": "evg_weather_04", "category": "evergreen", "speaker": "tamm", "text": "Ice on the pound by morning if this holds. I can rig a boom to keep the gate clear, a day's work and my good timber. Or we chance it.",
-     "left": {"label": "Rig the boom", "outcome": "Ice, by morning. The gate clear. Tamm's timber gone.", "effects": {"resources": {"coffers": -4}, "relationships": {"tamm": 3}, "flags_set": ["met_tamm"]}},
-     "right": {"label": "Chance it", "outcome": "No ice. Tamm shrugs. \"Next time.\"", "effects": {"resources": {"coffers": 1}, "relationships": {"tamm": -1}, "flags_set": ["met_tamm"], "counters": {"repairs_deferred": 1}}},
-     "conditions": {"watch": {"min": 15}}, "cooldown": 30, "tags": ["res:coffers"]},
-    {"id": "evg_weather_05", "category": "evergreen", "speaker": "hale", "expression": "serene", "text": "The water is low, Keeper, and the town is anxious. We would hold the Lamp Vigil at the sill tonight. It costs nothing but a night's passage, and a little belief.",
-     "left": {"label": "Close the gate for the Vigil", "outcome": "Lamps on the water. The queue, unexpectedly, joins in.", "effects": {"resources": {"traffic": -4, "town": 4}, "factions": {"concordance": 6}, "relationships": {"hale": 4}, "flags_set": ["lamp_vigil_held"]}},
-     "right": {"label": "Hold it on the bank", "outcome": "\"The water hears from the bank as well.\" She does not believe that.", "effects": {"resources": {"traffic": 1}, "factions": {"concordance": -2}, "relationships": {"hale": -2}}},
-     "conditions": {"flags_all": ["met_hale"], "resources": {"water": {"max": 42}}}, "cooldown": 30, "tags": ["res:water"]},
-    {"id": "evg_weather_06", "category": "evergreen", "speaker": "src_weather", "text": "A hot, still week. The pound has a skin of green on it and the gauge has dropped two marks in three days. Boats are starting to touch the sill going in.",
-     "left": {"label": "Restrict to light drafts", "outcome": "Heavy barges wait or unload. Nobody grounds.", "effects": {"resources": {"traffic": -5, "water": 1}, "factions": {"sorrel": -2}}},
-     "right": {"label": "Pass everything, carefully", "outcome": "One grounds. Half a day to float her off.", "effects": {"resources": {"traffic": 1, "water": -2}, "flags_set": ["grounding"], "counters": {"repairs_deferred": 1}}},
-     "conditions": {"resources": {"water": {"max": 40}}}, "cooldown": 15, "tags": ["res:water"]},
-    {"id": "evg_weather_07", "category": "evergreen", "speaker": "quenn", "expression": "absorbed", "text": "I've drawn the pound's level against rainfall for a year. Rain makes it rise. But it falls at the same rate whether it rained or not. Something feeds it, and something takes from it. Sorry.",
-     "left": {"label": "Keep drawing", "outcome": "\"I will. I wasn't going to stop. I just wanted someone to know.\"", "effects": {"relationships": {"quenn": 5}, "flags_set": ["clue_reservoirs"], "counters": {"evidence": 1}}},
-     "right": {"label": "Show it to Vosk", "outcome": "\"Oh. No. Sorry. Not her.\" She takes the drawing back.", "effects": {"relationships": {"quenn": -6}, "counters": {"suspicion": 1}}},
-     "conditions": {"flags_all": ["met_quenn"], "relationships": {"quenn": {"min": 45}}}, "cooldown": 40, "tags": ["res:water", "clue"]},
-    {"id": "evg_weather_08", "category": "evergreen", "speaker": "dace", "expression": "fed_up", "text": "Lightning's struck the chapel weathervane and half the town's on the towpath watching it smoke. Nobody's at the paddles. Three things, and they're all that.",
-     "left": {"label": "Let them watch", "outcome": "The vane falls into the pound with a hiss. Cheering.", "effects": {"resources": {"traffic": -3, "town": 3}}},
-     "right": {"label": "Back to the paddles", "outcome": "Grumbling. The vane falls unseen.", "effects": {"resources": {"traffic": 2, "town": -2}, "relationships": {"dace": 2}}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_weather_09", "category": "evergreen", "speaker": "tamm", "expression": "doubtful", "text": "The top gate's lower beam is soft. It'll hold or it won't. If it won't, it'll be in a storm. There's one coming. A week's work, and I'd start today.",
-     "left": {"label": "Start today", "outcome": "The gate is out for a week. The storm finds a new beam.", "effects": {"resources": {"coffers": -7, "traffic": -4}, "flags_set": ["gates_repaired"], "flags_clear": ["gates_leaking"], "relationships": {"tamm": 4}}},
-     "right": {"label": "After the storm", "outcome": "The beam holds. Tamm says nothing, which is how he says 'lucky'.", "effects": {"resources": {"coffers": 1}, "counters": {"repairs_deferred": 2}, "relationships": {"tamm": -2}}},
-     "conditions": {"flags_all": ["met_tamm"], "counters": {"repairs_deferred": {"min": 1}}}, "cooldown": 30, "tags": ["res:coffers"]},
-    {"id": "evg_weather_10", "category": "evergreen", "speaker": "hale", "text": "A rainbow over the Reed Reach, Keeper. The Hullfolk are out on their decks looking at it. The town says it is a sign. I say it is a gift. What do you say?",
-     "left": {"label": "A gift", "outcome": "She is pleased. The town is pleased. It is also a rainbow.", "effects": {"factions": {"concordance": 3}, "relationships": {"hale": 3}, "resources": {"town": 1}}},
-     "right": {"label": "Rain and sun", "outcome": "\"So it is. Both are given.\"", "effects": {"relationships": {"hale": 1, "quenn": 1}}},
-     "conditions": {"flags_all": ["met_hale"]}, "cooldown": 60, "tags": ["res:water"]},
-    {"id": "evg_weather_11", "category": "evergreen", "speaker": "src_weather", "text": "Snowmelt from the Spine. Every stream on the north bank is running brown into the pound. Every stream except one, which runs clear and cold and does not seem to come from the snow.",
-     "left": {"label": "Walk up the clear stream", "outcome": "It comes out of the hill below the sluice house, and nowhere else.", "effects": {"flags_set": ["clue_sluice_guard"], "counters": {"evidence": 2, "fatigue": 1}}},
-     "right": {"label": "Streams are streams", "outcome": "The pound rises. The boats float. That is the job.", "effects": {"resources": {"water": 3}}},
-     "conditions": {"watch": {"min": 12}}, "cooldown": 60, "tags": ["res:water", "clue"]},
-    {"id": "evg_weather_12", "category": "evergreen", "speaker": "quenn", "text": "The west paddle gear's seized with frost. I can free it with a fire under the gear, which is roughly how the Dry Year keeper lost his eyebrows, or wait for noon.",
-     "left": {"label": "Light the fire", "outcome": "Gear freed by the second bell. Eyebrows intact. Barely.", "effects": {"resources": {"traffic": 3, "coffers": -1}, "relationships": {"quenn": 2}}},
-     "right": {"label": "Wait for noon", "outcome": "Six boats wait with you.", "effects": {"resources": {"traffic": -3}, "relationships": {"quenn": 1}}},
-     "conditions": {"flags_all": ["met_quenn"], "watch": {"min": 15}}, "cooldown": 40, "tags": ["res:traffic"]},
-    {"id": "evg_weather_13", "category": "evergreen", "speaker": "dace", "text": "Heatstroke. Two hands down and Stroud says it's the third day of this that kills. We can work the paddles at night instead, if the boats will have it.",
-     "left": {"label": "Night working", "outcome": "The queue mutters and then sleeps through the passage.", "effects": {"resources": {"town": 3, "traffic": -1}, "relationships": {"dace": 4, "stroud": 2}, "counters": {"passages_night": 2}}},
-     "right": {"label": "Work through it", "outcome": "The third man goes down at the fifth bell.", "effects": {"resources": {"traffic": 2, "town": -4}, "relationships": {"dace": -5, "stroud": -3}, "flags_set": ["hands_short"]}},
-     "conditions": {"flags_all": ["met_dace", "met_stroud"]}, "cooldown": 40, "tags": ["res:town"]},
-    {"id": "evg_weather_14", "category": "evergreen", "speaker": "tamm", "text": "Storm's brought a whole tree down across the pound below the Reach. Boats can't pass it. I can cut it, two days. Or the Hullfolk can, one day, for a price they haven't said.",
-     "left": {"label": "Tamm cuts it", "outcome": "Two days. Good firewood.", "effects": {"resources": {"traffic": -5, "coffers": -3}, "relationships": {"tamm": 3}}},
-     "right": {"label": "Ask the Hullfolk", "outcome": "One day. The price is the firewood, and a nod.", "effects": {"resources": {"traffic": -2}, "factions": {"hullfolk": 4}, "counters": {"hullfolk_favors": 1}, "relationships": {"tamm": -2}}},
-     "conditions": {"flags_all": ["met_tamm"], "watch": {"min": 12}}, "cooldown": 50, "tags": ["res:traffic"]},
-    {"id": "evg_weather_15", "category": "evergreen", "speaker": "hale", "expression": "troubled", "text": "The undercroft is damp again. Only damp. It happens when the pound is high, and only then, though the chapel is well above the bank. We tend it. We do not ask why.",
-     "left": {"label": "Ask why", "outcome": "\"Because it is old, Keeper.\" She does not meet your eye.", "effects": {"relationships": {"hale": -2}, "counters": {"evidence": 1}}},
-     "right": {"label": "Send hands to bail", "outcome": "The hands bail. Hale is grateful and does not show them the far corner.", "effects": {"resources": {"town": 1, "coffers": -1}, "factions": {"concordance": 4}, "relationships": {"hale": 4}}},
-     "conditions": {"flags_all": ["met_hale"], "resources": {"water": {"min": 58}}}, "cooldown": 30, "tags": ["res:water"]},
-    {"id": "evg_weather_16", "category": "evergreen", "speaker": "src_weather", "text": "Mist on the pound at dawn, and in it, from the north bank, the sound of water running where no stream is marked. By the time the mist lifts the sound has stopped.",
-     "left": {"label": "Mark the place", "outcome": "Below the sluice house. You write a bearing in the Ledger.", "effects": {"counters": {"evidence": 1}, "flags_set": ["sluice_house_seen"]}},
-     "right": {"label": "Mist plays tricks", "outcome": "The day's boats arrive and the sound is forgotten.", "effects": {"resources": {"traffic": 1}, "counters": {"fatigue": -1}}},
-     "conditions": {"watch": {"min": 18}}, "cooldown": 60, "tags": ["res:water", "clue"]},
-    {"id": "evg_weather_17", "category": "evergreen", "speaker": "quenn", "expression": "resolved", "text": "The reservoir report's late again. It's always late when the pound's low. I've started writing my own. It doesn't agree with theirs. It doesn't agree with the pound either.",
-     "left": {"label": "Send yours to the Board", "outcome": "\"Oh. All right. Sorry. Yes.\" She does not sleep that night.", "effects": {"resources": {"company": -3}, "relationships": {"quenn": 6}, "counters": {"suspicion": 2, "evidence": 1}, "flags_set": ["clue_reservoirs"]}},
-     "right": {"label": "Keep yours in the drawer", "outcome": "\"The drawer. Yes. It's getting full.\"", "effects": {"relationships": {"quenn": 2}, "flags_set": ["clue_reservoirs"]}},
-     "conditions": {"flags_all": ["met_quenn"], "resources": {"water": {"max": 45}}}, "cooldown": 40, "tags": ["res:water", "clue"]},
-    {"id": "evg_weather_18", "category": "evergreen", "speaker": "dace", "text": "Flood debris in the chamber: a hen coop, a door, a dead sheep. The hands want a mark each to go in after it. The sheep, Keeper. It's the sheep.",
-     "left": {"label": "A mark each", "outcome": "The sheep is removed with ceremony.", "effects": {"resources": {"coffers": -3, "traffic": 2}, "relationships": {"dace": 3}}},
-     "right": {"label": "It's the job", "outcome": "It is done. Slowly. With looks.", "effects": {"resources": {"traffic": -2, "town": -2}, "relationships": {"dace": -3}}},
-     "conditions": {"flags_all": ["met_dace"], "resources": {"water": {"min": 55}}}, "cooldown": 40, "tags": ["res:town"]},
-    {"id": "evg_weather_19", "category": "evergreen", "speaker": "tamm", "text": "Dry weather's opened the seams on the top gate. She's weeping a hand's width a watch. I can caulk her in the water, badly, or drain the chamber and do it right.",
-     "left": {"label": "Drain and do it right", "outcome": "A closed gate for a day. A dry gate for a year.", "effects": {"resources": {"traffic": -5, "coffers": -4}, "flags_set": ["gates_repaired"], "flags_clear": ["gates_leaking"], "relationships": {"tamm": 3}}},
-     "right": {"label": "Caulk in the water", "outcome": "She weeps less. She still weeps.", "effects": {"resources": {"coffers": -2}, "flags_set": ["gates_leaking"], "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_tamm"], "resources": {"water": {"max": 45}}}, "cooldown": 30, "tags": ["res:water"]},
-    {"id": "evg_weather_20", "category": "evergreen", "speaker": "src_weather", "text": "A week of soft rain and the pound is up two marks for the first time since you came. The gauge, for once, is going the right way. The hands are almost cheerful.",
-     "left": {"label": "Bank it: pass fewer boats", "outcome": "The pound keeps its gain. The queue does not thank you.", "effects": {"resources": {"water": 2, "traffic": -3}, "flags_set": ["wet_season"]}},
-     "right": {"label": "Spend it: clear the queue", "outcome": "A record day. The gauge, by evening, is where it was.", "effects": {"resources": {"traffic": 5, "water": -3, "company": 2}}},
-     "conditions": {"watch": {"min": 8}}, "cooldown": 30, "tags": ["res:water"]}
-  ]
+ "cards": [
+  {
+   "id": "evg_weather_01",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "Three days of rain on the Spine. The pound is rising faster than the paddles can pass it down. The east flight is already full of boats waiting for water they now have too much of.",
+   "left": {
+    "label": "Run all paddles down the east flight",
+    "outcome": "The lower pounds slop over their towpaths. Halfway stays dry.",
+    "effects": {
+     "resources": {
+      "water": -6,
+      "traffic": -3
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Hold the water; let the flight clear",
+    "outcome": "Cellars begin to whisper.",
+    "effects": {
+     "resources": {
+      "water": 3,
+      "traffic": 2
+     },
+     "counters": {
+      "flood_ignored": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 15,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_02",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "Sorry. The aqueduct's running a third of what the table says it should for the season. The pound isn't falling a third faster. I've checked. I keep checking.",
+   "left": {
+    "label": "Check again, with me",
+    "outcome": "You walk the aqueduct together. It is a trickle. The pound is not.",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_dry_aqueduct"
+     ],
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Be glad the pound holds",
+    "outcome": "\"I am. That's what worries me. Roughly.\"",
+    "effects": {
+     "relationships": {
+      "quenn": -1
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_weather_03",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Wind's from the west, hard. The top gate won't hold shut against it without a man on the beam all night. I've got two men.",
+   "left": {
+    "label": "You stand the beam",
+    "outcome": "A long night. The gate holds. So, barely, do you.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "counters": {
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Requisition a man from the inn",
+    "outcome": "Ilse sends her potboy. He is not pleased. She is less.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "ilse": -3,
+      "dace": 2
+     },
+     "flags_set": [
+      "requisitioned_labor"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_weather_04",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "Ice on the pound by morning if this holds. I can rig a boom to keep the gate clear, a day's work and my good timber. Or we chance it.",
+   "left": {
+    "label": "Rig the boom",
+    "outcome": "Ice, by morning. The gate clear. Tamm's timber gone.",
+    "effects": {
+     "resources": {
+      "coffers": -4
+     },
+     "relationships": {
+      "tamm": 3
+     },
+     "flags_set": [
+      "met_tamm"
+     ]
+    }
+   },
+   "right": {
+    "label": "Chance it",
+    "outcome": "No ice. Tamm shrugs. \"Next time.\"",
+    "effects": {
+     "resources": {
+      "coffers": 1
+     },
+     "relationships": {
+      "tamm": -1
+     },
+     "flags_set": [
+      "met_tamm"
+     ],
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_weather_05",
+   "category": "evergreen",
+   "speaker": "hale",
+   "expression": "serene",
+   "text": "The water is low, Keeper, and the town is anxious. We would hold the Lamp Vigil at the sill tonight. It costs nothing but a night's passage, and a little belief.",
+   "left": {
+    "label": "Close the gate for the Vigil",
+    "outcome": "Lamps on the water. The queue, unexpectedly, joins in.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 4
+     },
+     "factions": {
+      "concordance": 6
+     },
+     "relationships": {
+      "hale": 4
+     },
+     "flags_set": [
+      "lamp_vigil_held"
+     ]
+    }
+   },
+   "right": {
+    "label": "Hold it on the bank",
+    "outcome": "\"The water hears from the bank as well.\" She does not believe that.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "factions": {
+      "concordance": -2
+     },
+     "relationships": {
+      "hale": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "max": 42
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_06",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "A hot, still week. The pound has a skin of green on it and the gauge has dropped two marks in three days. Boats are starting to touch the sill going in.",
+   "left": {
+    "label": "Restrict to light drafts",
+    "outcome": "Heavy barges wait or unload. Nobody grounds.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "water": 1
+     },
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Pass everything, carefully",
+    "outcome": "One grounds. Half a day to float her off.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "water": -2
+     },
+     "flags_set": [
+      "grounding"
+     ],
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "max": 40
+     }
+    }
+   },
+   "cooldown": 15,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_07",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "text": "I've drawn the pound's level against rainfall for a year. Rain makes it rise. But it falls at the same rate whether it rained or not. Something feeds it, and something takes from it. Sorry.",
+   "left": {
+    "label": "Keep drawing",
+    "outcome": "\"I will. I wasn't going to stop. I just wanted someone to know.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Show it to Vosk",
+    "outcome": "\"Oh. No. Sorry. Not her.\" She takes the drawing back.",
+    "effects": {
+     "relationships": {
+      "quenn": -6
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 45
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_weather_08",
+   "category": "evergreen",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Lightning's struck the chapel weathervane and half the town's on the towpath watching it smoke. Nobody's at the paddles. Three things, and they're all that.",
+   "left": {
+    "label": "Let them watch",
+    "outcome": "The vane falls into the pound with a hiss. Cheering.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Back to the paddles",
+    "outcome": "Grumbling. The vane falls unseen.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -2
+     },
+     "relationships": {
+      "dace": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_weather_09",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "expression": "doubtful",
+   "text": "The top gate's lower beam is soft. It'll hold or it won't. If it won't, it'll be in a storm. There's one coming. A week's work, and I'd start today.",
+   "left": {
+    "label": "Start today",
+    "outcome": "The gate is out for a week. The storm finds a new beam.",
+    "effects": {
+     "resources": {
+      "coffers": -7,
+      "traffic": -4
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ],
+     "relationships": {
+      "tamm": 4
+     }
+    }
+   },
+   "right": {
+    "label": "After the storm",
+    "outcome": "The beam holds. Tamm says nothing, which is how he says 'lucky'.",
+    "effects": {
+     "resources": {
+      "coffers": 1
+     },
+     "counters": {
+      "repairs_deferred": 2
+     },
+     "relationships": {
+      "tamm": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "counters": {
+     "repairs_deferred": {
+      "min": 1
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_weather_10",
+   "category": "evergreen",
+   "speaker": "hale",
+   "text": "A rainbow over the Reed Reach, Keeper. The Hullfolk are out on their decks looking at it. The town says it is a sign. I say it is a gift. What do you say?",
+   "left": {
+    "label": "A gift",
+    "outcome": "She is pleased. The town is pleased. It is also a rainbow.",
+    "effects": {
+     "factions": {
+      "concordance": 3
+     },
+     "relationships": {
+      "hale": 3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Rain and sun",
+    "outcome": "\"So it is. Both are given.\"",
+    "effects": {
+     "relationships": {
+      "hale": 1,
+      "quenn": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_11",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "Snowmelt from the Spine. Every stream on the north bank is running brown into the pound. Every stream except one, which runs clear and cold and does not seem to come from the snow.",
+   "left": {
+    "label": "Walk up the clear stream",
+    "outcome": "It comes out of the hill below the sluice house, and nowhere else.",
+    "effects": {
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Streams are streams",
+    "outcome": "The pound rises. The boats float. That is the job.",
+    "effects": {
+     "resources": {
+      "water": 3
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_weather_12",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "text": "The west paddle gear's seized with frost. I can free it with a fire under the gear, which is roughly how the Dry Year keeper lost his eyebrows, or wait for noon.",
+   "left": {
+    "label": "Light the fire",
+    "outcome": "Gear freed by the second bell. Eyebrows intact. Barely.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "coffers": -1
+     },
+     "relationships": {
+      "quenn": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Wait for noon",
+    "outcome": "Six boats wait with you.",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "quenn": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_weather_13",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Heatstroke. Two hands down and Stroud says it's the third day of this that kills. We can work the paddles at night instead, if the boats will have it.",
+   "left": {
+    "label": "Night working",
+    "outcome": "The queue mutters and then sleeps through the passage.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "traffic": -1
+     },
+     "relationships": {
+      "dace": 4,
+      "stroud": 2
+     },
+     "counters": {
+      "passages_night": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Work through it",
+    "outcome": "The third man goes down at the fifth bell.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -4
+     },
+     "relationships": {
+      "dace": -5,
+      "stroud": -3
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_stroud"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_weather_14",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "Storm's brought a whole tree down across the pound below the Reach. Boats can't pass it. I can cut it, two days. Or the Hullfolk can, one day, for a price they haven't said.",
+   "left": {
+    "label": "Tamm cuts it",
+    "outcome": "Two days. Good firewood.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "coffers": -3
+     },
+     "relationships": {
+      "tamm": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Ask the Hullfolk",
+    "outcome": "One day. The price is the firewood, and a nod.",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     },
+     "relationships": {
+      "tamm": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_weather_15",
+   "category": "evergreen",
+   "speaker": "hale",
+   "expression": "troubled",
+   "text": "The undercroft is damp again. Only damp. It happens when the pound is high, and only then, though the chapel is well above the bank. We tend it. We do not ask why.",
+   "left": {
+    "label": "Ask why",
+    "outcome": "\"Because it is old, Keeper.\" She does not meet your eye.",
+    "effects": {
+     "relationships": {
+      "hale": -2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send hands to bail",
+    "outcome": "The hands bail. Hale is grateful and does not show them the far corner.",
+    "effects": {
+     "resources": {
+      "town": 1,
+      "coffers": -1
+     },
+     "factions": {
+      "concordance": 4
+     },
+     "relationships": {
+      "hale": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "min": 58
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_16",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "Mist on the pound at dawn, and in it, from the north bank, the sound of water running where no stream is marked. By the time the mist lifts the sound has stopped.",
+   "left": {
+    "label": "Mark the place",
+    "outcome": "Below the sluice house. You write a bearing in the Ledger.",
+    "effects": {
+     "counters": {
+      "evidence": 1
+     },
+     "flags_set": [
+      "sluice_house_seen"
+     ]
+    }
+   },
+   "right": {
+    "label": "Mist plays tricks",
+    "outcome": "The day's boats arrive and the sound is forgotten.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 18
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_weather_17",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "The reservoir report's late again. It's always late when the pound's low. I've started writing my own. It doesn't agree with theirs. It doesn't agree with the pound either.",
+   "left": {
+    "label": "Send yours to the Board",
+    "outcome": "\"Oh. All right. Sorry. Yes.\" She does not sleep that night.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "quenn": 6
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ]
+    }
+   },
+   "right": {
+    "label": "Keep yours in the drawer",
+    "outcome": "\"The drawer. Yes. It's getting full.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "water": {
+      "max": 45
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_weather_18",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Flood debris in the chamber: a hen coop, a door, a dead sheep. The hands want a mark each to go in after it. The sheep, Keeper. It's the sheep.",
+   "left": {
+    "label": "A mark each",
+    "outcome": "The sheep is removed with ceremony.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "traffic": 2
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "It's the job",
+    "outcome": "It is done. Slowly. With looks.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": -2
+     },
+     "relationships": {
+      "dace": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "water": {
+      "min": 55
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_weather_19",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "Dry weather's opened the seams on the top gate. She's weeping a hand's width a watch. I can caulk her in the water, badly, or drain the chamber and do it right.",
+   "left": {
+    "label": "Drain and do it right",
+    "outcome": "A closed gate for a day. A dry gate for a year.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "coffers": -4
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ],
+     "relationships": {
+      "tamm": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Caulk in the water",
+    "outcome": "She weeps less. She still weeps.",
+    "effects": {
+     "resources": {
+      "coffers": -2
+     },
+     "flags_set": [
+      "gates_leaking"
+     ],
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "resources": {
+     "water": {
+      "max": 45
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_weather_20",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "A week of soft rain and the pound is up two marks for the first time since you came. The gauge, for once, is going the right way. The hands are almost cheerful.",
+   "left": {
+    "label": "Bank it: pass fewer boats",
+    "outcome": "The pound keeps its gain. The queue does not thank you.",
+    "effects": {
+     "resources": {
+      "water": 2,
+      "traffic": -3
+     },
+     "flags_set": [
+      "wet_season"
+     ]
+    }
+   },
+   "right": {
+    "label": "Spend it: clear the queue",
+    "outcome": "A record day. The gauge, by evening, is where it was.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "water": -3,
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 8
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  }
+ ]
 }

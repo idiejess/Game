@@ -25,6 +25,11 @@ const SMALL_FONT := 26
 const TITLE_FONT := 56
 
 
+## Font size honouring the player's text-size setting, for controls that override theme sizes.
+static func scaled(px: int) -> int:
+	return int(round(px * float(Settings.get_value("text_scale"))))
+
+
 static func build(text_scale: float, high_contrast: bool) -> Theme:
 	var t := Theme.new()
 	var base := int(BASE_FONT * text_scale)

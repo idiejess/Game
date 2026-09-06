@@ -197,6 +197,20 @@ func test_water_drift_and_resource_death() -> void:
 	var w: int = GameState.get_resource("water")
 	GameState.advance_watch()
 	ok(GameState.get_resource("water") == w - 1, "water drifts -1 per watch")
+	GameState.set_resource("traffic", GameState.TRAFFIC_QUIET)
+	w = GameState.get_resource("water")
+	GameState.advance_watch()
+	ok(GameState.get_resource("water") == w, "quiet gate: pound holds (drift 0)")
+	GameState.set_resource("traffic", GameState.TRAFFIC_BUSY)
+	w = GameState.get_resource("water")
+	GameState.advance_watch()
+	ok(GameState.get_resource("water") == w - 2, "busy gate: pound loses 2")
+	GameState.set_resource("traffic", 50)
+	GameState.set_flag("sluice_rebuilt", true)
+	w = GameState.get_resource("water")
+	GameState.advance_watch()
+	ok(GameState.get_resource("water") == w, "rebuilt sluice stops drift")
+	GameState.set_flag("sluice_rebuilt", false)
 	GameState.set_resource("coffers", 0)
 	ok(GameState.check_edges() == "end_res_coffers_min", "coffers 0 -> Foreclosure")
 	GameState.set_resource("coffers", 50)
@@ -221,6 +235,52 @@ func test_ending_flow_and_unlocks() -> void:
 	_fresh_run(13)
 	GameState.end_run("end_rev_sluice")
 	ok(GameState.has_unlock("unlock_dray_fate"), "revelation ending grants unlock_dray_fate")
+
+
+func test_data_driven_ending_triggers() -> void:
+	GameState.reset_profile()
+	var tc := _fresh_run(16)
+	# Revelation variant of a resource death takes priority over the plain death.
+	GameState.set_flag("sluice_house_opened", true)
+	GameState.set_resource("water", 0)
+	ok(GameState.check_edges() == "end_rev_sluice", "water death with sluice house opened -> Into the Dark Water (got %s)" % GameState.check_edges())
+	GameState.set_flag("sluice_house_opened", false)
+	ok(GameState.check_edges() == "end_res_water_min", "plain water death otherwise")
+	GameState.set_resource("water", 50)
+	# Crisis ending from flags + resources.
+	ok(GameState.check_triggered_endings() == "", "no triggered ending in a calm run")
+	GameState.set_flag("riot_brewing", true)
+	GameState.set_resource("town", 10)
+	ok(GameState.check_triggered_endings() == "end_crisis_riot", "riot brewing at town 10 -> The Riot (got %s)" % GameState.check_triggered_endings())
+	GameState.set_flag("riot_brewing", false)
+	GameState.set_resource("town", 50)
+	# False ending respects watch_min.
+	for f in ["vosk_enemy", "hesse_has_story", "pressed_by_hesse"]:
+		GameState.set_flag(f, true)
+	ok(GameState.check_triggered_endings() == "", "Dray's Killer needs watch >= 40 (watch %d)" % GameState.watch)
+	GameState.run["watch"] = 45
+	ok(GameState.check_triggered_endings() == "end_false_killer", "Dray's Killer fires after watch 40")
+	for f in ["vosk_enemy", "hesse_has_story", "pressed_by_hesse"]:
+		GameState.set_flag(f, false)
+	# Long-watch priority order and fallback.
+	ok(GameState.long_watch_ending() == "end_ord_long_watch", "plain retirement fallback")
+	GameState.set_resource("town", 80)
+	ok(GameState.long_watch_ending() == "end_ord_towns_keeper", "Town's Keeper when town high")
+	GameState.set_flag("jubilee_held", true)
+	ok(GameState.long_watch_ending() == "end_ord_jubilee", "Jubilee outranks Town's Keeper")
+	# The triggered ending flows through the controller: its card is staged, then the run ends.
+	GameState.set_flag("jubilee_held", false)
+	GameState.set_resource("town", 50)
+	GameState.set_flag("frost", true)
+	GameState.set_resource("coffers", 20)
+	GameState.set_resource("traffic", 25)
+	GameState.run["forced_queue"].clear()
+	tc.current_card_id = "onb_03"
+	tc.decide("left")
+	ok(tc.pending_ending == "end_crisis_frost", "frost closure staged via controller (got %s)" % tc.pending_ending)
+	ok(tc.current_card_id == "end_crisis_frost", "frost ending card shown first")
+	tc.decide("right")
+	ok(GameState.run["ended"] == "end_crisis_frost", "run ended with The Frost Closure")
 
 
 func test_true_ending_trigger_from_card() -> void:
@@ -279,6 +339,36 @@ func test_selection_variety() -> void:
 		tc.decide("right")
 		steps += 1
 	ok(seen.size() >= 60, "at least 60 distinct cards in 100 watches (%d)" % seen.size())
+
+
+# ------------------------------------------------------------------ parity with the Python simulator
+## Reference produced by `python3 tools/sim_trace.py --seed 12345 --steps 40`. If this fails after a
+## deliberate rules change, update both engines and regenerate the reference in one commit.
+const PY_TRACE_12345 := "onb_01 evg_company_orders_01 evg_order_01 onb_12 onb_15 onb_28 evg_cargo_09 onb_11 onb_13 onb_16 onb_20 evg_order_10 onb_26 rel_wren_01 evg_order_15 mi10_1 evg_tolls_08 evg_strangers_04 rel_wren_03 evg_tolls_03 rel_vane_01 res_water_09 ma10_01 evg_maintenance_10 evg_strangers_10 evg_cargo_13 evg_order_13 ma10_03 cri_dry_04 cri_dry_01 evg_company_orders_11 evg_cargo_01 evg_weather_11 evg_company_orders_06 ma04_01 rel_vane_06 evg_hullfolk_12 mi16_1 evg_company_orders_02 rel_vane_03"
+const PY_RES_12345 := {"water": 3, "traffic": 40, "coffers": 53, "company": 67, "town": 63}
+
+
+func test_engine_matches_python_simulator() -> void:
+	GameState.reset_profile()
+	var tc := _fresh_run(12345)
+	var seq: Array = []
+	for i in range(40):
+		if not GameState.in_run():
+			break
+		seq.append(tc.current_card_id)
+		tc.decide("left" if i % 2 == 0 else "right")
+	var expected := PY_TRACE_12345.split(" ")
+	var first_diff := -1
+	for i in range(min(seq.size(), expected.size())):
+		if seq[i] != expected[i]:
+			first_diff = i
+			break
+	ok(seq.size() == expected.size() and first_diff < 0, "40-card trace equals Python simulator (first diff at %d: %s)" % [first_diff, str(seq.slice(max(0, first_diff - 1), first_diff + 2)) if first_diff >= 0 else "none"])
+	var same := true
+	for r in GameState.RESOURCES:
+		if GameState.get_resource(r) != int(PY_RES_12345[r]):
+			same = false
+	ok(same, "resources after 40 watches equal Python simulator %s vs %s" % [str(GameState.run["resources"]), str(PY_RES_12345)])
 
 
 # ------------------------------------------------------------------ save system
@@ -393,6 +483,7 @@ func test_save_ended_run_and_persistent_between_sessions() -> void:
 func test_save_ignores_removed_content_references() -> void:
 	GameState.reset_profile()
 	var tc := _fresh_run(4343)
+	tc.decide("left")  # watch must be > 0 for the loader to resume the run
 	GameState.run["forced_queue"].append("card_that_no_longer_exists")
 	GameState.run["delayed"].append({"card": "gone_card", "due": 3})
 	GameState.run["cooldowns"]["gone_card"] = 2

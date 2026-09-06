@@ -13,6 +13,8 @@ const RESOURCES := ["water", "traffic", "coffers", "company", "town"]
 const FACTIONS := ["company", "town", "hullfolk", "aldmere", "sorrel", "concordance"]
 const START_RESOURCE := 50
 const WATER_DRIFT := -1          # per watch; the mystery in mechanical form
+const TRAFFIC_QUIET := 35        # traffic at or below: pound recovers +1 per watch
+const TRAFFIC_BUSY := 70         # traffic at or above: pound loses an extra -1 per watch
 const LEDGER_DAY_INTERVAL := 20
 const LONG_WATCH := 100
 
@@ -310,12 +312,17 @@ func _shuffle(list: Array) -> void:
 func advance_watch() -> String:
 	run["watch"] = watch + 1
 	profile["total_watches"] = int(profile.get("total_watches", 0)) + 1
-	# Water drift
+	# Water drift. The pound also answers to traffic: a quiet gate lets the pound recover a mark,
+	# a busy one spends an extra mark (the bible's "opening the gate spends Water for Traffic").
 	var drift := WATER_DRIFT + get_counter("water_drift_mod")
 	if has_flag("gates_leaking"):
 		drift -= 1
 	if has_flag("wet_season"):
 		drift += 1
+	if get_resource("traffic") <= TRAFFIC_QUIET:
+		drift += 1
+	elif get_resource("traffic") >= TRAFFIC_BUSY:
+		drift -= 1
 	if has_flag("sluice_rebuilt"):
 		drift = 0
 	set_resource("water", get_resource("water") + drift)
@@ -350,10 +357,55 @@ func check_edges() -> String:
 	for r in RESOURCES:
 		var v := get_resource(r)
 		if v <= 0:
-			return "end_res_%s_min" % r
+			return _edge_ending(r, "min")
 		if v >= 100:
-			return "end_res_%s_max" % r
+			return _edge_ending(r, "max")
 	return ""
+
+
+## A resource edge fires the first ending (in endings.json order) whose trigger names that edge and
+## whose conditions hold; the plain `end_res_<r>_<edge>` (no conditions) is the fallback.
+func _edge_ending(r: String, edge: String) -> String:
+	var fallback := "end_res_%s_%s" % [r, edge]
+	for eid in ContentDB.endings:
+		var trig: Dictionary = ContentDB.endings[eid].get("trigger", {})
+		var re: Dictionary = trig.get("resource_edge", {})
+		if re.get("resource", "") != r or re.get("edge", "") != edge:
+			continue
+		if trig.has("conditions"):
+			if Conditions.satisfied(trig["conditions"], self):
+				return eid
+		elif eid != fallback:
+			fallback = eid
+	return fallback
+
+
+## Data-driven non-edge endings (false endings, crisis endings): first satisfied wins.
+func check_triggered_endings() -> String:
+	for eid in ContentDB.endings:
+		var trig: Dictionary = ContentDB.endings[eid].get("trigger", {})
+		if trig.is_empty() or trig.has("resource_edge") or trig.get("long_watch", false):
+			continue
+		if not trig.has("conditions"):
+			continue
+		if trig.has("watch_min") and watch < int(trig["watch_min"]):
+			continue
+		if Conditions.satisfied(trig["conditions"], self):
+			return eid
+	return ""
+
+
+## Watch-100 retirement: first `long_watch` candidate whose conditions hold, else the plain one.
+func long_watch_ending() -> String:
+	var fallback := ""
+	for eid in ContentDB.endings:
+		var trig: Dictionary = ContentDB.endings[eid].get("trigger", {})
+		if trig.get("long_watch", false):
+			if Conditions.satisfied(trig.get("conditions", {}), self):
+				return eid
+		elif trig.has("watch_min") and not trig.has("conditions") and not trig.has("resource_edge"):
+			fallback = eid
+	return fallback
 
 
 func record_card_shown(cid: String) -> void:

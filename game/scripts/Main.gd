@@ -193,15 +193,23 @@ func _layout_card() -> void:
 		return
 	var hs := card_holder.size
 	var cw: float = min(hs.x, 640.0)
-	var chh: float = min(hs.y, 1100.0)
+	var chh: float = min(hs.y, 1500.0)
 	card_view.size = Vector2(cw, chh)
 	card_view.pivot_offset = Vector2(cw / 2.0, chh)
 	card_view.set_origin(Vector2((hs.x - cw) / 2.0, (hs.y - chh) / 2.0))
 
 
+## Developer tools ship disabled in release exports; debug builds, the editor and the
+## `--dev` command-line flag enable them.
+static func dev_tools_enabled() -> bool:
+	return OS.is_debug_build() or OS.has_feature("editor") or OS.get_cmdline_user_args().has("--dev")
+
+
 # ------------------------------------------------------------------ input
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_dev_panel"):
+		if not dev_tools_enabled():
+			return
 		dev_panel.visible = not dev_panel.visible
 		if dev_panel.visible:
 			dev_panel.refresh()

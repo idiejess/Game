@@ -814,7 +814,7 @@
    "id": "res_town_17",
    "category": "resources",
    "speaker": "dace",
-   "text": "Three things. The hands have made you a sign for the gate. It says KEEPER'S LOCK. They want to hang it over the Company's. And Pell's coming Thursday.",
+   "text": "The hands have made you a sign for the gate. It says KEEPER'S LOCK. They want to hang it over the Company's. And Pell's coming Thursday.",
    "left": {
     "label": "Hang it",
     "outcome": "KEEPER'S LOCK over MERIDIAN CANAL COMPANY. Pell sees it Thursday and goes a color.",

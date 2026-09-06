@@ -348,7 +348,7 @@ static func _credits(box: Control, main) -> void:
 static func _content_warning(box: Control, main) -> void:
 	_title_label(box, Loc.ui("content_warning", "Before you begin"))
 	_label(box, Loc.ui("content_warning_text", "Halfway Lock is a story about a canal, a town and the people who depend on both. It includes death and drowning described in text, displacement of a community, alcohol, and institutions behaving badly. Nothing is depicted graphically. Suitable for ages 13 and up."))
-	_label(box, Loc.ui("controls_text", "Drag the card left or right, press the buttons beneath it, or use A/D or the arrow keys. Escape pauses. F1 opens developer tools."), true)
+	_label(box, Loc.ui("controls_text", "Drag the card left or right, press the buttons beneath it, or use A/D or the arrow keys. Escape pauses."), true)
 	_button(box, Loc.ui("understood", "Understood"), func():
 		Settings.set_value("content_warnings_seen", true)
 		main._show_screen("title"))
