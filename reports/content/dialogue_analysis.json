@@ -1,62 +1,62 @@
 {
-  "cards": 20,
+  "cards": 30,
   "errors": [],
   "warnings": [
-    "[evg_strangers_03] situation 37 words (6-32)",
-    "[evg_strangers_04] situation 38 words (6-32)",
-    "[evg_strangers_05] situation 36 words (6-32)",
-    "[evg_strangers_06] situation 33 words (6-32)",
-    "[evg_strangers_07] situation 36 words (6-32)",
-    "[evg_strangers_09] situation 37 words (6-32)",
-    "[evg_strangers_10] situation 36 words (6-32)",
-    "[evg_strangers_11] situation 35 words (6-32)",
-    "[evg_strangers_12] situation 38 words (6-32)",
-    "[evg_strangers_14] situation 37 words (6-32)",
-    "[evg_strangers_15] situation 36 words (6-32)",
-    "[evg_strangers_16] situation 36 words (6-32)",
-    "[evg_strangers_18] situation 36 words (6-32)",
-    "[evg_strangers_19] situation 35 words (6-32)",
-    "[evg_strangers_20] situation 36 words (6-32)",
-    "opener 'a boat' used by 4 cards (20.0%)"
+    "[res_town_02] situation 33 words (6-32)",
+    "[res_town_03] situation 40 words (6-32)",
+    "[res_town_04] situation 34 words (6-32)",
+    "[res_town_05] situation 35 words (6-32)",
+    "[res_town_07] situation 33 words (6-32)",
+    "[res_town_08] situation 39 words (6-32)",
+    "[res_town_09] situation 36 words (6-32)",
+    "[res_town_10] situation 35 words (6-32)",
+    "[res_town_11] situation 33 words (6-32)",
+    "[res_town_12] situation 33 words (6-32)",
+    "[res_town_13] situation 36 words (6-32)",
+    "[res_town_14] situation 40 words (6-32)",
+    "[res_town_15] situation 35 words (6-32)",
+    "[res_town_16] situation 33 words (6-32)",
+    "[res_town_18] situation 35 words (6-32)",
+    "[res_town_19] situation 38 words (6-32)",
+    "[res_town_20] situation 34 words (6-32)",
+    "[res_town_21] situation 37 words (6-32)",
+    "[res_town_24] situation 33 words (6-32)",
+    "[res_town_27] situation 34 words (6-32)",
+    "[res_town_28] situation 37 words (6-32)",
+    "[res_town_29] situation 38 words (6-32)",
+    "[res_town_30] situation 37 words (6-32)",
+    "opener 'the town' used by 5 cards (16.7%)",
+    "opener 'three things' used by 4 cards (13.3%)"
   ],
   "speakers": {
+    "ilse": 6,
+    "dace": 4,
+    "cole": 4,
+    "stroud": 4,
     "src_stranger": 4,
-    "src_gate": 4,
     "hesse": 4,
-    "tobin": 4,
-    "stroud": 4
+    "tobin": 2,
+    "mirren": 2
   },
   "top_openers": [
     [
-      "a boat",
+      "the town",
+      5
+    ],
+    [
+      "three things",
       4
     ],
     [
-      "a man",
+      "the moot",
+      2
+    ],
+    [
+      "nobody came",
       1
     ],
     [
-      "i'm writing",
-      1
-    ],
-    [
-      "in my",
-      1
-    ],
-    [
-      "a drover",
-      1
-    ],
-    [
-      "sorrel says",
-      1
-    ],
-    [
-      "the dry",
-      1
-    ],
-    [
-      "a bargee",
+      "someone has",
       1
     ],
     [
@@ -64,49 +64,61 @@
       1
     ],
     [
-      "scoop the",
+      "they ran",
+      1
+    ],
+    [
+      "they're saying",
+      1
+    ],
+    [
+      "if the",
+      1
+    ],
+    [
+      "a man",
       1
     ]
   ],
   "top_labels": [
     [
-      "not for sale",
+      "print it",
+      2
+    ],
+    [
+      "ask what they decided",
       1
     ],
     [
-      "ask what he'd pay for the study alone",
+      "the moot is not my concern",
       1
     ],
     [
-      "passage for a play",
+      "give orders through dace",
       1
     ],
     [
-      "toll like anyone",
+      "the keeper gives the orders",
       1
     ],
     [
-      "the chair is comfortable",
+      "pay the town's debts to cole",
       1
     ],
     [
-      "ask about the four",
+      "the town's debts are the town's",
       1
     ],
     [
-      "sit down",
+      "ask what reasons",
       1
     ],
     [
-      "another night",
+      "find who did it",
       1
     ],
     [
-      "let her see the study",
-      1
-    ],
-    [
-      "family or not, no",
+      "post the paper on the gate",
       1
     ]
   ]

@@ -1,0 +1,1543 @@
+{
+ "cards": [
+  {
+   "id": "res_traffic_01",
+   "category": "resources",
+   "speaker": "src_gate",
+   "text": "The queue reaches Lock 7. Bargees have stopped shouting and started cooking. Somebody has set up a stall selling tea to the line. Somebody else is selling places in it.",
+   "left": {
+    "label": "Work the gate through the night",
+    "outcome": "Lamps, paddles, tired hands. The queue shortens by a third.",
+    "effects": {
+     "resources": {
+      "traffic": 6,
+      "water": -3,
+      "town": -2
+     },
+     "counters": {
+      "passages_night": 2,
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Ban the place-selling",
+    "outcome": "The seller moves down to Lock 8 and sells from there.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 10,
+   "max_per_run": 3,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_02",
+   "category": "resources",
+   "speaker": "vane",
+   "expression": "furious",
+   "text": "Nine days. Nine. My principals have coal rotting in the pound. Rotting. It doesn't, but it feels like it does. Waive inspections for a week and I'll clear my boats myself, in order, quietly.",
+   "left": {
+    "label": "Waive for a week",
+    "outcome": "Sorrel's fleet clears in three days. Crane records every one.",
+    "effects": {
+     "resources": {
+      "traffic": 7,
+      "company": -2
+     },
+     "relationships": {
+      "vane": 6,
+      "crane": -5
+     },
+     "flags_set": [
+      "inspections_waived"
+     ]
+    }
+   },
+   "right": {
+    "label": "Inspections stand",
+    "outcome": "\"Then my boats stand too. All of them. In your pound.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "vane": -5,
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_03",
+   "category": "resources",
+   "speaker": "crane",
+   "text": "The queue is long, and I am part of the reason. The Compact permits one inspection in three when trade is 'materially impeded'. I have never invoked it. I am invoking it.",
+   "left": {
+    "label": "One in three",
+    "outcome": "\"Duly.\" The queue moves. He looks faintly ill at the boats he did not open.",
+    "effects": {
+     "resources": {
+      "traffic": 5
+     },
+     "relationships": {
+      "crane": 4
+     },
+     "factions": {
+      "aldmere": -1,
+      "sorrel": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Inspect them all; I will wear it",
+    "outcome": "\"I note that. I note it with something like respect.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "company": 1
+     },
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_04",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "Keeper, the Courier has a drawing of the queue with my face on every boat. Every boat. The Board has seen it. I would like to see boats move. I would like it more than I have ever liked anything.",
+   "left": {
+    "label": "Suspend the toll for a day",
+    "outcome": "Free passage. The pound empties like a bath. The chest does not fill.",
+    "effects": {
+     "resources": {
+      "traffic": 8,
+      "coffers": -6,
+      "company": 3
+     },
+     "relationships": {
+      "pell": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Boats move when they move",
+    "outcome": "\"When they move. Yes. A philosophy, Keeper. The Board does not have one.\"",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "relationships": {
+      "pell": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_05",
+   "category": "resources",
+   "speaker": "solas",
+   "expression": "hard",
+   "text": "Bargees in the queue have started fighting over places. Two knives so far. My men could keep order on the towpath. It is not our job. It is nobody's job. That is the problem.",
+   "left": {
+    "label": "Ask his men to keep order",
+    "outcome": "Armed Sorrel men on a Company towpath. Order is kept. Crane writes a very long letter.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "town": -2
+     },
+     "relationships": {
+      "solas": 5,
+      "crane": -6
+     },
+     "factions": {
+      "sorrel": 3,
+      "aldmere": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Dace and the hands keep order",
+    "outcome": "The hands do it, badly, and are not paid for it.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "dace": -3,
+      "solas": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_06",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. The hands are working double watches. One's fallen asleep on the beam and nearly gone in. And the queue's started calling us 'the Halfway sleepers'.",
+   "left": {
+    "label": "Hire day labor from the queue",
+    "outcome": "Bargees turn paddles for their own boats. It is chaos and it works.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "coffers": -3
+     },
+     "relationships": {
+      "dace": 2
+     },
+     "flags_clear": [
+      "hands_short"
+     ]
+    }
+   },
+   "right": {
+    "label": "Rest the hands; the queue waits",
+    "outcome": "A day lost. Nobody falls in.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_07",
+   "category": "resources",
+   "speaker": "wren",
+   "expression": "grinning",
+   "text": "Nine boats back there are Hullfolk with nothing aboard that matters. Let them go round by the Reach channel, the shallow one, and your queue's a third shorter by dark. Nobody has to know they didn't pay.",
+   "left": {
+    "label": "The Reach channel",
+    "outcome": "Nine boats vanish from the queue. The Book does not notice.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "coffers": -2,
+      "company": -2
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "wren": 5
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Everyone through the gate",
+    "outcome": "\"Fair. Slow, but fair. I'll tell them you said fair.\"",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "wren": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_08",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "THE GREAT HALFWAY JAM. Front page, both shores. I'm not asking permission; I'm asking for the Keeper's own explanation, verbatim, so it's fair. You get one paragraph.",
+   "left": {
+    "label": "Blame the water",
+    "outcome": "'KEEPER: THE POUND IS FAILING.' Ardent reads it before breakfast.",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 2
+     },
+     "relationships": {
+      "hesse": 4
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     },
+     "flags_set": [
+      "pressed_by_hesse",
+      "hesse_has_story"
+     ]
+    }
+   },
+   "right": {
+    "label": "Blame the season",
+    "outcome": "'KEEPER BLAMES WEATHER.' It is what everyone expected.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -2
+     },
+     "relationships": {
+      "hesse": -1
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_09",
+   "category": "resources",
+   "speaker": "src_gate",
+   "text": "An Aldmere grain fleet, twelve boats, five days in the queue, and the master says the grain is heating in the holds. Heating grain is a fire waiting. He would like to go first.",
+   "left": {
+    "label": "Grain first",
+    "outcome": "Twelve boats through. Coal bargees throw things. The grain does not burn.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "factions": {
+      "aldmere": 5,
+      "sorrel": -5
+     },
+     "relationships": {
+      "vane": -3,
+      "crane": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Unload the hot holds on the wharf",
+    "outcome": "Grain on the wharf, cooling. The town eats well for a week.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 3,
+      "coffers": -2
+     },
+     "factions": {
+      "aldmere": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "max": 33
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_10",
+   "category": "resources",
+   "speaker": "vane",
+   "text": "I've done your sums. If you run the gate on the Sorrel pattern, two boats a filling, nose to tail, you double throughput. The Company forbids it. The Company isn't standing in a nine-day queue.",
+   "left": {
+    "label": "Two boats a filling",
+    "outcome": "Doubled. Fast. Hulls kiss twice. Nothing breaks. Yet.",
+    "effects": {
+     "resources": {
+      "traffic": 8,
+      "company": -3
+     },
+     "relationships": {
+      "vane": 5
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "right": {
+    "label": "One boat, as written",
+    "outcome": "\"Fine. I'll write to the Board about the pattern. In my hand. With your name.\"",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "vane": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_11",
+   "category": "resources",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "text": "A Sorrel vessel in the queue has struck an Aldmere vessel deliberately. Both captains claim the other. Under the Compact I must hold both until a magistrate arrives. A magistrate is nine days away.",
+   "left": {
+    "label": "Hold both",
+    "outcome": "Two boats in the pound for nine days. The queue behind them ages.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "company": 2
+     },
+     "relationships": {
+      "crane": 5
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Fine both, release both",
+    "outcome": "\"Irregular. Efficient. I shall record my disapproval and my relief.\"",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "coffers": 3
+     },
+     "relationships": {
+      "crane": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_12",
+   "category": "resources",
+   "speaker": "pell",
+   "text": "A thought, Keeper. A magnificent one. We open the disused side-pond and float the smaller boats round the chamber entirely. Quenn says the side-pond gates have not moved since Year 31. Quenn says a lot of things.",
+   "left": {
+    "label": "Open the side-pond",
+    "outcome": "The gates move, groaning. Small boats go round. The pound drops a mark for the water it took.",
+    "effects": {
+     "resources": {
+      "traffic": 6,
+      "water": -4,
+      "coffers": -3
+     },
+     "relationships": {
+      "pell": 4,
+      "quenn": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Quenn is usually right",
+    "outcome": "\"Usually. Yes. A word the Board does not like.\"",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "quenn": 3,
+      "pell": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell",
+     "met_quenn"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_13",
+   "category": "resources",
+   "speaker": "solas",
+   "text": "My convoy has waited six days and my men have behaved. When we go through, we go through together and nobody boards us. That is not a request either.",
+   "left": {
+    "label": "Together, uninspected",
+    "outcome": "The convoy passes as a unit. Crane records a Compact breach in beautiful handwriting.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "solas": 6,
+      "crane": -5
+     },
+     "flags_set": [
+      "compact_breached"
+     ],
+     "factions": {
+      "sorrel": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Together, inspected",
+    "outcome": "\"Understood.\" It is not a happy word.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "solas": -3,
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_crane"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 33
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_14",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. Aldmere's closed its flight below for 'repairs' because our queue's backing into their pounds. Nothing can leave the summit going east. And the Sorrel boats are laughing.",
+   "left": {
+    "label": "Wire Aldmere; demand they open",
+    "outcome": "They open in two days. Crane, embarrassed, says nothing about it.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "company": 1
+     },
+     "factions": {
+      "aldmere": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Send everything west instead",
+    "outcome": "Westbound only. Sorrel stops laughing when its pounds fill.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "factions": {
+      "sorrel": -3,
+      "aldmere": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_15",
+   "category": "resources",
+   "speaker": "wren",
+   "text": "Somebody in the queue is selling a story that the gate's slow because the Keeper takes coin to move boats up. It's not true. I'd know. But I could make it true, and then it'd be a fast queue.",
+   "left": {
+    "label": "Kill the story",
+    "outcome": "Wren kills it. You do not ask how.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "wren": 3
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let the queue believe it",
+    "outcome": "Coin arrives. Boats move. Vosk, later, has questions.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "coffers": 5,
+      "company": -2
+     },
+     "counters": {
+      "bribes_taken": 3
+     },
+     "flags_set": [
+      "skimming_rumor"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 33
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_16",
+   "category": "resources",
+   "speaker": "src_gate",
+   "text": "Forty boats through since dawn and the chamber has not been empty once. Hulls are touching in the approach. A bargee has been knocked into the pound by his own tiller and fished out laughing.",
+   "left": {
+    "label": "Slow it down",
+    "outcome": "The hands breathe. The bargees complain. Nobody goes in the water.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "company": -1
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Keep the pace; it is a record",
+    "outcome": "A record. The gate rattles like a mill.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "company": 3,
+      "water": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "flags_set": [
+      "throughput_record"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 10,
+   "max_per_run": 3,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_17",
+   "category": "resources",
+   "speaker": "vane",
+   "expression": "amused",
+   "text": "This is more like it. My principals are delighted. They'd like to be more delighted. Night passages, no inspections, two boats a filling. All three and I'll name a barge after you.",
+   "left": {
+    "label": "All three",
+    "outcome": "The gate runs day and night. A barge called *Keeper* goes east. Crane goes pale.",
+    "effects": {
+     "resources": {
+      "traffic": 6,
+      "coffers": 4,
+      "company": -3,
+      "water": -3
+     },
+     "relationships": {
+      "vane": 8,
+      "crane": -8
+     },
+     "flags_set": [
+      "night_passages",
+      "inspections_waived",
+      "compact_breached"
+     ],
+     "counters": {
+      "passages_night": 3
+     }
+    }
+   },
+   "right": {
+    "label": "None; it is fast enough",
+    "outcome": "\"Fast enough. There's no such thing. Fine.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "vane": -3,
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_18",
+   "category": "resources",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "text": "I have inspected four vessels today of the sixty that passed. Four. Under the Compact I am entitled to inspect any. I am entitled, not able. I am asking you to make me able.",
+   "left": {
+    "label": "Hold every fifth boat for him",
+    "outcome": "\"Duly. Thank you.\" He inspects with a thoroughness that is almost joy.",
+    "effects": {
+     "resources": {
+      "traffic": -4
+     },
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 3,
+      "sorrel": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Inspect what you can",
+    "outcome": "\"I note that. I note that four is not what I can. Four is what I did.\"",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "crane": -5
+     },
+     "flags_set": [
+      "inspections_waived"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_19",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "Magnificent! Sixty-one vessels! The Board has wired congratulations, Keeper, actual congratulations, eleven words. I have had them framed. Can we do seventy?",
+   "left": {
+    "label": "Seventy",
+    "outcome": "Seventy-two. The lower gate takes a hull in the face and holds. The town does not sleep.",
+    "effects": {
+     "resources": {
+      "traffic": 5,
+      "company": 5,
+      "water": -4,
+      "town": -4
+     },
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "repairs_deferred": 2
+     },
+     "flags_set": [
+      "throughput_record"
+     ]
+    }
+   },
+   "right": {
+    "label": "Sixty-one is enough",
+    "outcome": "\"Enough. A word I have never framed.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "company": -1
+     },
+     "relationships": {
+      "pell": -3,
+      "dace": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_20",
+   "category": "resources",
+   "speaker": "solas",
+   "expression": "weary",
+   "text": "Boats are going through at night with no lights and no questions. Some of them are mine. Some of them are not, and I do not know whose. That should worry you more than it worries me. It worries me.",
+   "left": {
+    "label": "Lights and names, or no passage",
+    "outcome": "The night boats thin out. One does not come back for its name.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "company": 2
+     },
+     "relationships": {
+      "solas": 3,
+      "crane": 3
+     },
+     "flags_clear": [
+      "night_passages"
+     ]
+    }
+   },
+   "right": {
+    "label": "Night is night",
+    "outcome": "\"So it is. I'll double my own watch. You might too.\"",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "solas": -2
+     },
+     "counters": {
+      "passages_night": 2
+     },
+     "flags_set": [
+      "night_passages"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_21",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. The hands are turning paddles so fast the gear's smoking. Two men have burns. And a coal barge came in so hot she's put her bow through the top gate's fender.",
+   "left": {
+    "label": "Stop for repairs",
+    "outcome": "Half a day. New fender. The hands sit down for the first time in a week.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "coffers": -3
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "counters": {
+      "repairs_deferred": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Work round it",
+    "outcome": "The fender hangs by a bolt. The next barge takes it off.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "dace": -4
+     },
+     "counters": {
+      "repairs_deferred": 2
+     },
+     "flags_set": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_22",
+   "category": "resources",
+   "speaker": "wren",
+   "expression": "serious",
+   "text": "With the gate running like this nobody's looking at anything. I moved four crates last night without trying. I'm telling you because if I can, anyone can, and I know who anyone is.",
+   "left": {
+    "label": "Who?",
+    "outcome": "\"Sorrel men who aren't Solas's. Coming east. Not with coal.\"",
+    "effects": {
+     "relationships": {
+      "wren": 4
+     },
+     "flags_set": [
+      "rifles_known",
+      "reeds_cargo"
+     ],
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Slow the gate",
+    "outcome": "\"Sensible. Cost me money. Still sensible.\"",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "company": -1
+     },
+     "relationships": {
+      "wren": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_23",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "text": "HALFWAY FLIES. Both shores. Sorrel loves you. Aldmere's Guilds say you're running a Sorrel gate. I've got a follow-up piece: 'What Is the Summit Not Inspecting?' I'd love a denial.",
+   "left": {
+    "label": "Deny it",
+    "outcome": "'KEEPER DENIES.' Which is, in newspapers, a confession.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "hesse": 2
+     },
+     "factions": {
+      "aldmere": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Give him an inspection to watch",
+    "outcome": "Crane inspects a coal barge for the press. It is the happiest day of his year.",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "hesse": 3,
+      "crane": 4
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_24",
+   "category": "resources",
+   "speaker": "src_gate",
+   "text": "Two barges have entered the chamber at once, from opposite ends, because both bargees were told 'go' by different hands. They have stopped a yard apart. Both are shouting. The water is still rising.",
+   "left": {
+    "label": "Drop the water; back one out",
+    "outcome": "An hour, some paint, and a bargee who will never trust a hand again.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "water": -2
+     },
+     "flags_set": [
+      "chamber_collision"
+     ]
+    }
+   },
+   "right": {
+    "label": "Fill and pass both together",
+    "outcome": "They rise together, a yard apart, glaring. It works. Nobody will admit it worked.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "flags_set": [
+      "chamber_collision"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_25",
+   "category": "resources",
+   "speaker": "vane",
+   "text": "My competitor's boats are through in an hour and mine in two because your hands know his bargees. I'm not accusing anyone. I'm offering a standing gratuity to the hands. Call it a wage supplement.",
+   "left": {
+    "label": "Accept for the hands",
+    "outcome": "The hands are paid twice. Sorrel coal moves first. Aldmere notices.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -2
+     },
+     "relationships": {
+      "vane": 5,
+      "dace": 3,
+      "crane": -3
+     },
+     "counters": {
+      "bribes_taken": 2
+     }
+    }
+   },
+   "right": {
+    "label": "No gratuities at the gate",
+    "outcome": "\"Fine. Then I'll pay the other man's bargees to be slower.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "vane": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane",
+     "met_dace"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_26",
+   "category": "resources",
+   "speaker": "crane",
+   "text": "I have counted. Of the vessels passed this week, eleven carried cargo that under Schedule Four required my seal. None had it. I am reporting to Aldmere. I am telling you first, which I need not.",
+   "left": {
+    "label": "Hold the next eleven",
+    "outcome": "The gate slows to a crawl. Crane seals things with visible satisfaction.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "company": 2
+     },
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 4,
+      "sorrel": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Report what you must",
+    "outcome": "\"I shall. I note that you did not ask me not to.\"",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "crane": 2
+     },
+     "factions": {
+      "aldmere": -3
+     },
+     "flags_set": [
+      "compact_breached"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_27",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "A word, Keeper. The Board is pleased with the figures and displeased with the letters. Aldmere's Guilds. Something about the Compact. I need the figures to stay and the letters to stop. Manage it.",
+   "left": {
+    "label": "Restore inspections quietly",
+    "outcome": "The figures dip. The letters stop. Pell notices the dip.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "company": 1
+     },
+     "relationships": {
+      "crane": 4,
+      "pell": -1
+     },
+     "flags_clear": [
+      "inspections_waived"
+     ]
+    }
+   },
+   "right": {
+    "label": "The figures are what matter",
+    "outcome": "\"Yes. Yes. That is what I said. Isn't it?\"",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "company": 2
+     },
+     "relationships": {
+      "pell": 3,
+      "crane": -3
+     },
+     "factions": {
+      "aldmere": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_28",
+   "category": "resources",
+   "speaker": "solas",
+   "text": "One of the night boats had a man aboard I knew from the coalfield shooting. Not a coal man. Whatever is coming east is coming through your gate at speed. Slow it, or don't.",
+   "left": {
+    "label": "Slow it",
+    "outcome": "The night boats stop. Some of them go round by the Reach. Wren says nothing.",
+    "effects": {
+     "resources": {
+      "traffic": -5,
+      "company": -1
+     },
+     "relationships": {
+      "solas": 5
+     },
+     "flags_set": [
+      "coup_warned"
+     ],
+     "counters": {
+      "passages_night": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The gate is not a border",
+    "outcome": "\"It's the only one there is.\"",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "solas": -4
+     },
+     "flags_set": [
+      "sorrel_armed"
+     ],
+     "factions": {
+      "sorrel": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "res_traffic_29",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. We've passed more boats this month than in any month in the Book. The pound's down four marks for it. And the hands have asked, politely, what happens when there's no water left to pass them on.",
+   "left": {
+    "label": "Tell them the truth: I don't know",
+    "outcome": "\"Right. Honest. They'll take honest.\"",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The reservoirs will make it up",
+    "outcome": "\"Right.\" He does not believe you. Neither do you.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "dace": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "traffic": {
+      "min": 68
+     },
+     "water": {
+      "max": 50
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:traffic",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_traffic_30",
+   "category": "resources",
+   "speaker": "src_gate",
+   "text": "A boat has gone through so fast it left its bargee on the wharf. He stands there with a rope in his hand, watching his barge go down the flight alone.",
+   "left": {
+    "label": "Send a boat after it",
+    "outcome": "The barge is caught at Lock 8 by Tobin, who has been waiting for something like this for years.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 2
+     },
+     "relationships": {
+      "tobin": 2
+     },
+     "flags_set": [
+      "met_tobin"
+     ]
+    }
+   },
+   "right": {
+    "label": "The bargee's problem",
+    "outcome": "He walks down the towpath after it. He does not come back up.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "traffic": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:traffic"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1527 @@
+{
+ "cards": [
+  {
+   "id": "res_town_01",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "Nobody came to the moot. That's never happened. They didn't come because they've decided, and they don't need a moot to tell them. I came, because someone should tell you.",
+   "left": {
+    "label": "Ask what they decided",
+    "outcome": "\"That you're the Company's. That the Company's the flood. Work it out.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 3
+     },
+     "resources": {
+      "town": 2
+     },
+     "flags_set": [
+      "moot_called"
+     ]
+    }
+   },
+   "right": {
+    "label": "The moot is not my concern",
+    "outcome": "\"No. It'll be at your door, though. It'll bring lamps.\"",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "ilse": -4
+     },
+     "flags_set": [
+      "moot_against"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 15,
+   "max_per_run": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_02",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. The hands won't take orders from the Keeper's mouth, only from mine. The town's stopped selling the lock house bread. And somebody's cut the tow rope on the Company boat. Clean.",
+   "left": {
+    "label": "Give orders through Dace",
+    "outcome": "The gate runs on Dace's word. He does not enjoy it as much as you'd think.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -2
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "right": {
+    "label": "The Keeper gives the orders",
+    "outcome": "Orders are given. Some are obeyed. Slowly.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": -3
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "strike"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "town": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_03",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "cold",
+   "text": "The town is angry with you, and angry towns pay late. I am owed by half of it. If the Keeper would like the town calmer, the Keeper could pay its debts to me. I would announce who paid. Kindly.",
+   "left": {
+    "label": "Pay the town's debts to Cole",
+    "outcome": "You are, briefly, the most popular person in Halfway. Cole is the richest.",
+    "effects": {
+     "resources": {
+      "coffers": -10,
+      "town": 8
+     },
+     "relationships": {
+      "cole": 6
+     },
+     "counters": {
+      "town_favors": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The town's debts are the town's",
+    "outcome": "\"Of course. Then it will remain angry, and I shall remain patient.\"",
+    "effects": {
+     "relationships": {
+      "cole": -2
+     },
+     "resources": {
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "town": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_04",
+   "category": "resources",
+   "speaker": "stroud",
+   "text": "Someone has put a dead rat on the Keeper's step. Then another. Rats carry things, and the person doing it is a patient of mine. I will not say who. Stop giving them reasons.",
+   "left": {
+    "label": "Ask what reasons",
+    "outcome": "\"The Company's. Every day you do its work in its voice, the town hears it.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Find who did it",
+    "outcome": "Dace finds him. It is Perrin. He has four children and a flooded cellar.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "stroud": -4,
+      "dace": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "resources": {
+     "town": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_05",
+   "category": "resources",
+   "speaker": "src_stranger",
+   "text": "A child throws a stone at the Keeper's window and runs. The stone has a paper round it. The paper says GO HOME in a careful adult hand that has been to the town school.",
+   "left": {
+    "label": "Post the paper on the gate",
+    "outcome": "The town reads its own handwriting. Some are ashamed. Some sign it.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Burn it; mend the window",
+    "outcome": "Tamm mends the window and says nothing, which is a kindness.",
+    "effects": {
+     "resources": {
+      "coffers": -1
+     },
+     "relationships": {
+      "tamm": 1
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_06",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "The town wants you gone. That's a story. 'KEEPER BESIEGED', or 'TOWN TURNS ON ITS OWN KEEPER'. Victim or villain? I've got type for both.",
+   "left": {
+    "label": "'Besieged'",
+    "outcome": "Sorrel pities you. The town hates being pitied more than it hates you.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": 2
+     },
+     "relationships": {
+      "hesse": 2
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "Neither; print the water figures",
+    "outcome": "He prints them. The town reads them. Something shifts, not toward you, but away from the Company.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -5
+     },
+     "relationships": {
+      "hesse": 5
+     },
+     "flags_set": [
+      "hesse_has_story",
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "town": {
+      "max": 30
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 2
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_07",
+   "category": "resources",
+   "speaker": "tobin",
+   "text": "They ran a Keeper out in my day. Year 44. Walked him to the stone with lamps, quiet as a funeral. He'd done nothing much, for too long. You've done more. Might not help.",
+   "left": {
+    "label": "Ask what would have helped him",
+    "outcome": "\"One thing they could see. One. Didn't have to be big.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "resources": {
+      "town": 1
+     },
+     "flags_set": [
+      "met_tobin"
+     ]
+    }
+   },
+   "right": {
+    "label": "Buy him a drink and say nothing",
+    "outcome": "He drinks it. \"Dray sat there too. Same face.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 2
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 30
+     }
+    },
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_08",
+   "category": "resources",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "text": "They're saying things about you at the inn. The things they said about him, before. I told them to stop. They told me I live in your house. I do. I'm asking if I should keep living in it.",
+   "left": {
+    "label": "Stay; it is your house",
+    "outcome": "\"It is.\" She stays. The inn talks about that too.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Go to Ilse's until this passes",
+    "outcome": "She goes. The house is very quiet. The town approves of her, at least.",
+    "effects": {
+     "relationships": {
+      "mirren": -3,
+      "ilse": 2
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "resources": {
+     "town": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_09",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "The moot met without me and voted to withhold the town's labor from the gate. No hands but the Company's. No repairs. No sandbags. I'm telling you as reeve. As Ilse, I'd have voted the same.",
+   "left": {
+    "label": "Requisition labor under the emergency clause",
+    "outcome": "You compel the town. It comes, and it does not forget the compelling.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -6
+     },
+     "flags_set": [
+      "requisitioned_labor"
+     ],
+     "relationships": {
+      "ilse": -5
+     }
+    }
+   },
+   "right": {
+    "label": "Work with the Company's hands alone",
+    "outcome": "Dace and four men run a summit lock. The gate slows to a crawl.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 3,
+      "ilse": 1
+     },
+     "flags_set": [
+      "strike"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_10",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. The hands have been asked, by the town, to walk out. Half want to. And the half that don't have asked me to ask you for one reason to stay that isn't wages.",
+   "left": {
+    "label": "'Someone must watch the water'",
+    "outcome": "Dace repeats it. It is not what they expected. They stay.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "dace": 6
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Wages are the reason",
+    "outcome": "\"Right.\" Half walk out. The other half work double.",
+    "effects": {
+     "resources": {
+      "town": -4,
+      "traffic": -3
+     },
+     "relationships": {
+      "dace": -4
+     },
+     "flags_set": [
+      "strike",
+      "hands_short"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "town": {
+      "max": 25
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_11",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "text": "If the town runs you out, the Keeper's house falls to me under the default clause. I would rather it did not. I am telling you so you know my interest is honest.",
+   "left": {
+    "label": "Ask her to speak at the moot",
+    "outcome": "Cole speaks. The town listens to money. It buys a month.",
+    "effects": {
+     "resources": {
+      "town": 5
+     },
+     "relationships": {
+      "cole": 5
+     },
+     "counters": {
+      "town_favors": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Your interest is noted",
+    "outcome": "\"Kindly. I shall have the locks measured, just in case.\"",
+    "effects": {
+     "relationships": {
+      "cole": -3
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "town": {
+      "max": 25
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_12",
+   "category": "resources",
+   "speaker": "stroud",
+   "expression": "grave",
+   "text": "A man came to me with a broken hand from hitting the Company house door at night. Drunk and ashamed. He was not alone. There were eleven. I am telling you the number.",
+   "left": {
+    "label": "Open the Company house to the town",
+    "outcome": "You hold a meeting in the Company's own parlor. Pell is appalled. The town is astonished.",
+    "effects": {
+     "resources": {
+      "town": 6,
+      "company": -5
+     },
+     "relationships": {
+      "stroud": 4,
+      "pell": -4,
+      "ilse": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Bar the door and post a guard",
+    "outcome": "Dace's man on the step all night. Eleven becomes twenty.",
+    "effects": {
+     "resources": {
+      "town": -4,
+      "company": 2
+     },
+     "relationships": {
+      "stroud": -2
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "resources": {
+     "town": {
+      "max": 22
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_13",
+   "category": "resources",
+   "speaker": "src_stranger",
+   "text": "The town has painted the boundary stone white and cleared the path to it. Nobody has said why. Everybody knows why. A child asks you, quite kindly, whether you will need a lamp for the walk.",
+   "left": {
+    "label": "'I hope not'",
+    "outcome": "The child considers this and offers to lend you one anyway.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "fatigue": 1
+     },
+     "flags_set": [
+      "boundary_rehearsed"
+     ]
+    }
+   },
+   "right": {
+    "label": "Have the stone repainted grey",
+    "outcome": "It is white again by morning.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "coffers": -1
+     },
+     "flags_set": [
+      "boundary_rehearsed"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "max": 22
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_14",
+   "category": "resources",
+   "speaker": "hesse",
+   "text": "There's a petition going round for your removal. A hundred names. I've seen it. Half of them are in the same hand and that hand is Cole's clerk. I could print that. It would be very funny and very cruel.",
+   "left": {
+    "label": "Print it",
+    "outcome": "The petition dies laughing. Cole does not speak to you for a month.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "hesse": 4,
+      "cole": -8
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "Leave the petition alone",
+    "outcome": "\"Merciful. Wasted, but merciful.\" A hundred names reach Ardent.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "hesse": -1,
+      "cole": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_cole"
+    ],
+    "resources": {
+     "town": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_15",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "text": "I've held them off a month. I can't hold them another. They want the Keeper at the moot tonight, to answer for the Company. Come, and they might not walk you out. I'm promising nothing.",
+   "left": {
+    "label": "Go to the moot",
+    "outcome": "Three hours of shouting. At the end, nobody walks anywhere. It is not forgiveness. It is a start.",
+    "effects": {
+     "resources": {
+      "town": 8,
+      "company": -4
+     },
+     "relationships": {
+      "ilse": 6
+     },
+     "counters": {
+      "fatigue": 3,
+      "town_favors": 1
+     },
+     "flags_set": [
+      "moot_called"
+     ]
+    }
+   },
+   "right": {
+    "label": "The Keeper does not answer to moots",
+    "outcome": "\"Then get your lamp.\"",
+    "effects": {
+     "resources": {
+      "town": -8,
+      "company": 3
+     },
+     "relationships": {
+      "ilse": -8
+     },
+     "flags_set": [
+      "moot_against",
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "max": 20
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_16",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "They've started calling it 'the Keeper's gate' at the inn. Not the Company's. Yours. It's meant kindly. I've been reeve long enough to know what kindly turns into when the Company hears it.",
+   "left": {
+    "label": "Let them call it what they like",
+    "outcome": "The name sticks. Vosk hears it. She writes it down.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -3
+     },
+     "relationships": {
+      "ilse": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It is the Company's gate",
+    "outcome": "\"Say it at the inn, then. Loud. They need reminding, for their own good.\"",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": 3
+     },
+     "relationships": {
+      "ilse": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 15,
+   "max_per_run": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_17",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. The hands have made you a sign for the gate. It says KEEPER'S LOCK. They want to hang it over the Company's. And Pell's coming Thursday.",
+   "left": {
+    "label": "Hang it",
+    "outcome": "KEEPER'S LOCK over MERIDIAN CANAL COMPANY. Pell sees it Thursday and goes a color.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -6
+     },
+     "relationships": {
+      "dace": 5,
+      "pell": -6
+     }
+    }
+   },
+   "right": {
+    "label": "Hang it in the lock house, inside",
+    "outcome": "Inside. The hands are pleased anyway. Pell never sees it.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_pell"
+    ],
+    "resources": {
+     "town": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_18",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "text": "The town loves you. I have watched towns love people; it is expensive. They will ask for things and remember every refusal. I would like to be your first refusal. I am asking for nothing.",
+   "left": {
+    "label": "Then you have it",
+    "outcome": "\"Kindly. Now everyone else knows you can say no. You owe me.\"",
+    "effects": {
+     "relationships": {
+      "cole": 5
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "right": {
+    "label": "I will refuse when I must",
+    "outcome": "\"Everyone says that. Everyone is wrong. Kindly.\"",
+    "effects": {
+     "relationships": {
+      "cole": -1
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "town": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_19",
+   "category": "resources",
+   "speaker": "stroud",
+   "text": "You are the most popular Keeper in eighty years and you look worse than any of them. Popularity is a symptom. The town wants you at every bedside, every wedding, every moot. Stop going to some of them.",
+   "left": {
+    "label": "Stop going to some",
+    "outcome": "You miss a wedding. The couple forgives you. You sleep.",
+    "effects": {
+     "resources": {
+      "town": -2
+     },
+     "counters": {
+      "fatigue": -3
+     },
+     "relationships": {
+      "stroud": 4
+     }
+    }
+   },
+   "right": {
+    "label": "The town needs its Keeper",
+    "outcome": "\"Its Keeper needs a liver. I am a physician, not a friend, but I am also that.\"",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "fatigue": 3
+     },
+     "relationships": {
+      "stroud": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "resources": {
+     "town": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_20",
+   "category": "resources",
+   "speaker": "src_stranger",
+   "text": "A deputation from the town: they would like the Keeper to stand for reeve. Ilse has said she'd step aside. The Company forbids Keepers from holding town office. The Company has not been asked.",
+   "left": {
+    "label": "Stand",
+    "outcome": "You are reeve and Keeper. The Company learns from the Courier.",
+    "effects": {
+     "resources": {
+      "town": 8,
+      "company": -8
+     },
+     "relationships": {
+      "ilse": 3
+     },
+     "counters": {
+      "town_favors": 2
+     },
+     "flags_set": [
+      "moot_called"
+     ]
+    }
+   },
+   "right": {
+    "label": "Ilse is the reeve",
+    "outcome": "The deputation goes away pleased anyway. Ilse is quietly relieved.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "ilse": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_21",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "text": "THE TOWN THAT LOVES ITS KEEPER. It's a lovely piece. It's also the kind of piece that gets read in Ardent as THE KEEPER WHO LOVES THE TOWN, which is a different piece. Shall I run it?",
+   "left": {
+    "label": "Run it",
+    "outcome": "The town frames it. Ardent files it under something else.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -4
+     },
+     "relationships": {
+      "hesse": 4
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Run something about the water instead",
+    "outcome": "He runs the gauge figures with no headline. It is the quietest thing he has ever printed. Ardent notices anyway.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "hesse": 3
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 2
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "town": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_22",
+   "category": "resources",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "text": "They loved a Keeper once, in Year 44. Rose for him when the Company crossed him. Company hanged three men for it. Him they sent east. Love's a thing to be careful with.",
+   "left": {
+    "label": "Ask what he'd have done",
+    "outcome": "\"Told them to sit down before they stood up. He didn't. He liked being loved.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "resources": {
+      "town": -1
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "counters": {
+      "tobin_pieces": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The town can stand if it likes",
+    "outcome": "\"It can. It'll stand on you.\"",
+    "effects": {
+     "relationships": {
+      "tobin": -1
+     },
+     "resources": {
+      "town": 2
+     },
+     "flags_set": [
+      "met_tobin",
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "min": 72
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_23",
+   "category": "resources",
+   "speaker": "mirren",
+   "expression": "hopeful",
+   "text": "They like you. The town. They didn't like him; they respected him, which is different. I don't know which is better. I know which one they'd fight for. Would you let them?",
+   "left": {
+    "label": "Never",
+    "outcome": "\"Good. He'd have said that.\" She almost smiles.",
+    "effects": {
+     "relationships": {
+      "mirren": 5
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "right": {
+    "label": "If it came to it",
+    "outcome": "\"Then it will. Things do, here.\"",
+    "effects": {
+     "relationships": {
+      "mirren": -2
+     },
+     "resources": {
+      "town": 2
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "resources": {
+     "town": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_24",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "The moot voted last night. Not about you. For you. They've voted the town won't obey any Company order the Keeper hasn't signed. I said that's sedition. They said it's loyalty. It's both.",
+   "left": {
+    "label": "Ask them to rescind it",
+    "outcome": "They rescind, sulking. Ardent never hears. You breathe.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": 1
+     },
+     "relationships": {
+      "ilse": 4
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let it stand",
+    "outcome": "It stands. Fennick wires it to Ardent before you can stop him. He thought you'd be pleased.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -8
+     },
+     "relationships": {
+      "ilse": 2,
+      "fennick": -2
+     },
+     "flags_set": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_25",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. A Company inspector came to count the hands and the hands wouldn't be counted without the Keeper present. He left. Ardent's wired. And the hands think it was funny.",
+   "left": {
+    "label": "Be present for the recount",
+    "outcome": "You stand there while a small man counts eleven people. Nobody laughs. Nearly.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": 1
+     },
+     "relationships": {
+      "dace": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It was funny",
+    "outcome": "\"It was.\" Ardent does not think so.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -5
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "town": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_26",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "cold",
+   "text": "Tenants are refusing rent 'until the Keeper says'. I have never needed a Keeper's leave to collect rent. I am asking politely. I have other ways of asking.",
+   "left": {
+    "label": "Tell them to pay",
+    "outcome": "They pay. They also learn you and Cole are on the same side, which you are not.",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "cole": 6,
+      "ilse": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The rent is between you and them",
+    "outcome": "\"Then the buildings are between me and the Company. Kindly.\"",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -2
+     },
+     "relationships": {
+      "cole": -6
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "town": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_27",
+   "category": "resources",
+   "speaker": "stroud",
+   "expression": "grave",
+   "text": "Men at the inn last night were talking about the Company house and what burns. I did not think they meant it in Year 44 either. You are the only one they will listen to.",
+   "left": {
+    "label": "Go to the inn tonight and speak",
+    "outcome": "You speak. They listen, sullenly, and put down whatever they were holding.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": 1
+     },
+     "relationships": {
+      "stroud": 5,
+      "ilse": 3
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Send Dace",
+    "outcome": "Dace goes. He is one of them. He comes back quiet.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "dace": -2,
+      "stroud": -3
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud",
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "min": 78
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_28",
+   "category": "resources",
+   "speaker": "src_stranger",
+   "text": "A crowd at the gate, cheerful, with a barrel. They have come to carry the Keeper shoulder-high round the town for no reason anyone can give. The Company house windows are all lit and all watching.",
+   "left": {
+    "label": "Be carried",
+    "outcome": "Round the town twice. Vosk, at her window, does not close the curtain.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -4
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Stand them a drink instead",
+    "outcome": "They drink. They carry Dace instead, who hates it.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "coffers": -2
+     },
+     "relationships": {
+      "dace": -1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "town": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_29",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "text": "My son died the week after the town rose for a Keeper. I've never told you that. I'm telling you because the town's about to do it again and I'd rather bury you than another boy. Stop them.",
+   "left": {
+    "label": "Stop them",
+    "outcome": "You stand on the wharf and tell the town to go home. It does, for you. Only for you.",
+    "effects": {
+     "resources": {
+      "town": -6,
+      "company": 3
+     },
+     "relationships": {
+      "ilse": 10
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I cannot stop them",
+    "outcome": "\"You can. You won't. It's the same thing when there's a lamp in the window.\"",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": -10
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "min": 82
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "res_town_30",
+   "category": "resources",
+   "speaker": "hesse",
+   "text": "Ardent has a word for a post whose town obeys the Keeper over the Company: sedition. It's in a wire I've seen, with your name in it. I'd like to print it. You'd like me not to.",
+   "left": {
+    "label": "Print it",
+    "outcome": "The town reads that it is seditious and is delighted. Ardent is not.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -8
+     },
+     "relationships": {
+      "hesse": 5
+     },
+     "flags_set": [
+      "pressed_by_hesse",
+      "riot_brewing"
+     ]
+    }
+   },
+   "right": {
+    "label": "Hold it",
+    "outcome": "\"Held. For now. I hold things about a month.\"",
+    "effects": {
+     "resources": {
+      "company": -1
+     },
+     "relationships": {
+      "hesse": 2
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "town": {
+      "min": 80
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1567 @@
+{
+ "cards": [
+  {
+   "id": "res_company_01",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "Keeper. The Board's letters have stopped using my name. They use 'the summit'. When the Board stops using names it is preparing to change them. I say this as a friend, which I have never said before.",
+   "left": {
+    "label": "Ask what would restore their favor",
+    "outcome": "\"Figures. Silence. A Jubilee without incident. Any one of the three.\"",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 4
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let them change the names",
+    "outcome": "\"You do not mean that. I hope you do not mean that.\"",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 2
+     },
+     "relationships": {
+      "pell": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "company": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 15,
+   "max_per_run": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_02",
+   "category": "resources",
+   "speaker": "vosk",
+   "text": "The Board has asked me whether the Keeper should be retained. For the record, I have not yet answered. For the record, I am not required to answer favorably. I am asking you for a reason to.",
+   "left": {
+    "label": "Give her the honest Book",
+    "outcome": "She reads it all. \"Noted. It will do.\" It does.",
+    "effects": {
+     "resources": {
+      "company": 5
+     },
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Give her the reason she wants to hear",
+    "outcome": "\"You do not know what I want to hear. Nobody does.\" She answers anyway. Neutrally.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "vosk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "company": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_03",
+   "category": "resources",
+   "speaker": "kell",
+   "expression": "courteous",
+   "text": "The Board's view is that the summit has become 'a town post with a Company name'. The Board would like the name back. I am here to see whether the Keeper can return it, or whether someone else must.",
+   "left": {
+    "label": "The Company's gate, from today",
+    "outcome": "Inspections, tolls, reports, all as written. The town notices at once.",
+    "effects": {
+     "resources": {
+      "company": 6,
+      "town": -5,
+      "traffic": -2
+     },
+     "relationships": {
+      "kell": 5
+     },
+     "counters": {
+      "company_favors": 2
+     },
+     "flags_set": [
+      "met_kell"
+     ]
+    }
+   },
+   "right": {
+    "label": "The town is the gate",
+    "outcome": "\"The Board's view differs. Regrettably, so, in time, will your appointment.\"",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 5
+     },
+     "relationships": {
+      "kell": -5
+     },
+     "flags_set": [
+      "met_kell"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 30
+     }
+    },
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_04",
+   "category": "resources",
+   "speaker": "src_telegram",
+   "text": "COMPANY TO KEEPER STOP EXPLAIN IN WRITING WHY SUMMIT HAS DEPARTED FROM STANDING ORDERS ON FOUR OCCASIONS STOP REPLY BY RETURN STOP",
+   "left": {
+    "label": "Explain, at length",
+    "outcome": "Nine pages. Fennick's hand aches. Ardent replies: 'NOTED'.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "counters": {
+      "fatigue": 2
+     },
+     "relationships": {
+      "fennick": -1
+     }
+    }
+   },
+   "right": {
+    "label": "'THE GATE REQUIRED IT'",
+    "outcome": "Five words. Silence for a week, then Vosk, at your door.",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "resources": {
+     "company": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_05",
+   "category": "resources",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "text": "There's a wire come for Vosk about you. I didn't read it. I read it. It says 'PREPARE SUCCESSION'. I'm sorry. I thought you'd want to know before she did. She doesn't yet. She's at supper.",
+   "left": {
+    "label": "Go to Pell tonight",
+    "outcome": "Pell, in his nightshirt, wires Ardent nine adjectives in your defense. It buys a month.",
+    "effects": {
+     "resources": {
+      "company": 4
+     },
+     "relationships": {
+      "pell": 3,
+      "fennick": 3
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let it come",
+    "outcome": "\"You're very calm. Dray was calm. Sorry. Sorry.\"",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "fennick": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "resources": {
+     "company": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_06",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "The Courier hears the Company wants you gone. The Courier's readers rather like you. A piece, 'THE KEEPER THE COMPANY FEARS', would make you very hard to dismiss and very easy to hate in Ardent.",
+   "left": {
+    "label": "Print it",
+    "outcome": "You are famous for a week and unemployable in Ardent forever.",
+    "effects": {
+     "resources": {
+      "company": -4,
+      "town": 5
+     },
+     "relationships": {
+      "hesse": 5
+     },
+     "factions": {
+      "sorrel": 3
+     },
+     "flags_set": [
+      "pressed_by_hesse",
+      "hesse_friendly"
+     ]
+    }
+   },
+   "right": {
+    "label": "Don't",
+    "outcome": "\"Your funeral. Literally, possibly. I'll hold it.\"",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "hesse": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "company": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_07",
+   "category": "resources",
+   "speaker": "crane",
+   "text": "I note that the Company appears displeased with you. I note also that the Compact provides for Aldmere to object to a Keeper's removal 'where the Keeper has upheld the Compact'. You have, mostly. Shall I object?",
+   "left": {
+    "label": "Object",
+    "outcome": "Aldmere objects, formally. The Board is astonished. You are retained, resentfully.",
+    "effects": {
+     "resources": {
+      "company": 4
+     },
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 5,
+      "sorrel": -2
+     },
+     "flags_set": [
+      "crane_recruited"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let the Company decide",
+    "outcome": "\"Duly. I shall note that you declined protection. It is unusual.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     },
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "company": {
+      "max": 30
+     }
+    },
+    "relationships": {
+     "crane": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_08",
+   "category": "resources",
+   "speaker": "quenn",
+   "text": "Sorry. If they dismiss you they'll send someone who does what they're told, and I'll be transferred, and the drawer will be emptied. I've copied everything. I'd like you to have the copies. Now, while you're still here.",
+   "left": {
+    "label": "Take the copies",
+    "outcome": "A folio of figures, in her small hand. It is heavier than paper.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "read_survey",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Keep them; you are safer than I am",
+    "outcome": "\"Am I? Oh. Yes. Roughly.\" She keeps them.",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "company": {
+      "max": 28
+     }
+    },
+    "relationships": {
+     "quenn": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_company_09",
+   "category": "resources",
+   "speaker": "pell",
+   "text": "Keeper, a proposal. I write to the Board that the summit's irregularities were mine. Superintendent's discretion. It is nearly true. They will scold me. They have never dismissed a Superintendent. They dismiss Keepers.",
+   "left": {
+    "label": "Let him take it",
+    "outcome": "He takes it. The Board scolds him for nine pages. He frames the ninth.",
+    "effects": {
+     "resources": {
+      "company": 5
+     },
+     "relationships": {
+      "pell": 8
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "No; it was mine",
+    "outcome": "\"Magnificent. Foolish. I shall write to them anyway, more carefully.\"",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": 2
+     },
+     "relationships": {
+      "pell": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "company": {
+      "max": 25
+     }
+    },
+    "relationships": {
+     "pell": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_10",
+   "category": "resources",
+   "speaker": "vosk",
+   "expression": "tired",
+   "text": "I have written my recommendation. You will find it is not what the Board expects from me. You will also find I have not sent it. I am giving you one watch to make it true.",
+   "left": {
+    "label": "Ask what it says",
+    "outcome": "\"'Retain.' One word. It is more than I have written for anyone.\"",
+    "effects": {
+     "resources": {
+      "company": 4
+     },
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Send it as it is",
+    "outcome": "\"Noted.\" She sends it. It says retain. You did not deserve to know that.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "vosk": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "company": {
+      "max": 25
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_11",
+   "category": "resources",
+   "speaker": "src_telegram",
+   "text": "COMPANY TO KEEPER STOP AUDITOR VOSK TO ASSUME JOINT AUTHORITY OVER GATE OPERATIONS PENDING REVIEW STOP ACKNOWLEDGE STOP",
+   "left": {
+    "label": "Acknowledge",
+    "outcome": "Vosk at the gate beside you. She does not interfere. She watches.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "town": -2
+     },
+     "relationships": {
+      "vosk": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Refuse joint authority",
+    "outcome": "Fennick sends it with his eyes shut. Ardent does not reply. Vosk does not come.",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 3
+     },
+     "relationships": {
+      "vosk": -2,
+      "dace": 3
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "company": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_12",
+   "category": "resources",
+   "speaker": "kell",
+   "expression": "final",
+   "text": "The Board has drafted your dismissal. I have it here, undelivered, because the Board asked my view, and my view is that you are useful in a way the Board does not understand. Make me right.",
+   "left": {
+    "label": "Ask what would make him right",
+    "outcome": "\"Nothing dramatic. A quiet quarter. The Board forgets what is quiet.\"",
+    "effects": {
+     "resources": {
+      "company": 5
+     },
+     "relationships": {
+      "kell": 5
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Deliver it if you must",
+    "outcome": "\"Regrettably, I must not, yet. You are more stubborn than useful. It will do.\"",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "kell": 2,
+      "ilse": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_kell"
+    ],
+    "resources": {
+     "company": {
+      "max": 22
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_13",
+   "category": "resources",
+   "speaker": "fennick",
+   "text": "In strictest confidence, Keeper: I've been sending your figures to Ardent a little rounder than they are. Up. Not much. I thought it'd help. Now I don't know how to stop without it looking like they fell.",
+   "left": {
+    "label": "Stop; send the true figures",
+    "outcome": "The figures fall on paper. Ardent asks why. You tell them the truth about Fennick, sparing him.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "fennick": 6
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Keep rounding",
+    "outcome": "\"Right. Right. I'll round. I'm good at rounding.\"",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "fennick": 2
+     },
+     "counters": {
+      "suspicion": 2,
+      "bribes_taken": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "resources": {
+     "company": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_14",
+   "category": "resources",
+   "speaker": "hesse",
+   "text": "I'm told Ardent has a replacement Keeper picked. Sorrel man. My readers would like to know what you'd say to him. I'd like to print it before he arrives so it's waiting for him.",
+   "left": {
+    "label": "'Watch the gauge'",
+    "outcome": "The line is printed. The replacement never arrives. Nobody explains why.",
+    "effects": {
+     "resources": {
+      "company": -2,
+      "town": 3
+     },
+     "relationships": {
+      "hesse": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing for print",
+    "outcome": "\"Fine. I'll print that you said nothing. It reads as dignity.\"",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "hesse": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "company": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_15",
+   "category": "resources",
+   "speaker": "crane",
+   "expression": "neutral",
+   "text": "I have been asked by Aldmere to report whether the Company's difficulties with its Keeper create 'an opportunity'. I have said I do not understand the question. I understand it. I am asking whether you want me to.",
+   "left": {
+    "label": "Aldmere's opportunity is mine",
+    "outcome": "He reports carefully. Aldmere's interest in the summit sharpens.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "crane": 5
+     },
+     "factions": {
+      "aldmere": 6,
+      "sorrel": -3
+     },
+     "counters": {
+      "aldmere_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Don't understand it",
+    "outcome": "\"Duly. I shall remain confused. It is restful.\"",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "company": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_16",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "Keeper! The Board has used your name. Favorably. In a minute. I have never been in a minute. They propose you attend the Jubilee dinner in Ardent as 'the face of the summit'. The face, Keeper!",
+   "left": {
+    "label": "Attend",
+    "outcome": "A week in Ardent. Speeches. Your face on a program. The gate runs without you.",
+    "effects": {
+     "resources": {
+      "company": 5,
+      "town": -3
+     },
+     "relationships": {
+      "pell": 5
+     },
+     "counters": {
+      "company_favors": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The gate needs its Keeper",
+    "outcome": "\"Modest. The Board does not reward modesty. I do, privately.\"",
+    "effects": {
+     "resources": {
+      "company": -2,
+      "town": 2
+     },
+     "relationships": {
+      "pell": 2,
+      "dace": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "company": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 15,
+   "max_per_run": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_17",
+   "category": "resources",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "text": "The Board trusts you. For the record, that is a dangerous position at this summit. The last Keeper they trusted this much was asked to do things that are not in the manual. You will be asked.",
+   "left": {
+    "label": "Ask what things",
+    "outcome": "\"Sign statements. Lose papers. Look elsewhere. Small things. They accumulate.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I will do what the Company needs",
+    "outcome": "\"Noted.\" A pause longer than her pauses. \"Noted.\"",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "vosk": -3
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "company": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_18",
+   "category": "resources",
+   "speaker": "kell",
+   "text": "The Board has a task for reliable Keepers: sign, as witness, that the sluice house was inspected this quarter and found 'disused and sound'. It was not inspected. Sign anyway.",
+   "left": {
+    "label": "Sign",
+    "outcome": "Your name on a lie about a building you have never entered.",
+    "effects": {
+     "resources": {
+      "company": 6
+     },
+     "relationships": {
+      "kell": 5
+     },
+     "counters": {
+      "company_favors": 2,
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Inspect it first",
+    "outcome": "\"Regrettably, the key is in Ardent.\" It is not. Vosk has it. You saw it.",
+    "effects": {
+     "resources": {
+      "company": -5
+     },
+     "relationships": {
+      "kell": -5
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_kell"
+    ],
+    "resources": {
+     "company": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_company_19",
+   "category": "resources",
+   "speaker": "src_telegram",
+   "text": "COMPANY TO KEEPER STOP BOARD COMMENDS SUMMIT STOP KEEPER TO SUBMIT NAMES OF LOCK HANDS SUITABLE FOR REDUCTION STOP EFFICIENCY DIVIDEND STOP",
+   "left": {
+    "label": "Submit two names",
+    "outcome": "Two men go down the flight. The Board's dividend arrives in scrip.",
+    "effects": {
+     "resources": {
+      "company": 4,
+      "coffers": 3,
+      "town": -5
+     },
+     "relationships": {
+      "dace": -5
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "right": {
+    "label": "No names; all are needed",
+    "outcome": "The commendation is quietly withdrawn from the minute.",
+    "effects": {
+     "resources": {
+      "company": -4,
+      "town": 3
+     },
+     "relationships": {
+      "dace": 4
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "resources": {
+     "company": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_20",
+   "category": "resources",
+   "speaker": "fennick",
+   "expression": "eager",
+   "text": "You'll never guess. Ardent's asked me to wire them every visitor you receive. By name. In strictest confidence, they think you're going to be Superintendent and they want to know who you know. Should I?",
+   "left": {
+    "label": "Send the names",
+    "outcome": "Ardent knows who drinks at your table. Some of them stop.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "town": -3
+     },
+     "relationships": {
+      "fennick": 1,
+      "ilse": -2,
+      "bram": -2
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send them nothing",
+    "outcome": "\"Right. I'll send them the weather. They like the weather.\"",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "fennick": 4
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "resources": {
+     "company": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_21",
+   "category": "resources",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "text": "COMPANY'S DARLING. That's the headline Sorrel wants. Aldmere wants COMPANY'S CREATURE. I've got both set. I'll run whichever you don't hate more, or neither if you give me something better.",
+   "left": {
+    "label": "Run 'Darling'",
+    "outcome": "Sorrel laughs. Ardent is pleased. The town looks at you sideways.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -3
+     },
+     "relationships": {
+      "hesse": 2
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "Give him the water figures",
+    "outcome": "He stops setting type. \"These are real?\" They are.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_has_story",
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 4,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "company": {
+      "min": 70
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 3
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_22",
+   "category": "resources",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "text": "I note that the Company has begun addressing the Keeper as 'our representative at the summit'. The Compact recognizes a Keeper. It does not recognize a representative. I am concerned about whom I am dealing with.",
+   "left": {
+    "label": "You are dealing with the Keeper",
+    "outcome": "\"Duly. I shall hold you to that. It is a comfort to have something to hold.\"",
+    "effects": {
+     "relationships": {
+      "crane": 5
+     },
+     "resources": {
+      "company": -1
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Company's representative",
+    "outcome": "\"Then I shall address my correspondence accordingly. It will be longer.\"",
+    "effects": {
+     "relationships": {
+      "crane": -4
+     },
+     "resources": {
+      "company": 2
+     },
+     "factions": {
+      "aldmere": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "company": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_23",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "They've offered me a post in Ardent. Reservoirs. Sorry. Real reservoirs, with water in them. I think it's because you're in favor and they want your engineer where they can see her. I don't want to go.",
+   "left": {
+    "label": "Refuse it for her",
+    "outcome": "You write to Ardent. She stays. Ardent remembers you kept her.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "quenn_brave"
+     ],
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Real reservoirs are a gift",
+    "outcome": "She goes. The drawer goes with her, emptied by Vosk first.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "quenn": -6
+     },
+     "flags_set": [
+      "quenn_silenced"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "company": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_24",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "A delicate matter, Keeper. The Board is so pleased with you that it has asked whether I am necessary. I have been at this summit twenty years. I would like you to tell them I am.",
+   "left": {
+    "label": "Tell them he is",
+    "outcome": "You write nine adjectives about Pell. He reads them and cannot speak.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "pell": 10
+     }
+    }
+   },
+   "right": {
+    "label": "Let the Board decide",
+    "outcome": "\"Ah.\" He does not say anything else for a week. The Board keeps him. Barely.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": -8
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "company": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_25",
+   "category": "resources",
+   "speaker": "vosk",
+   "text": "You are to be given a key. Not the gate keys. A brass one. For the record, I argued against it and was overruled. You will find the door it opens is one you have asked about.",
+   "left": {
+    "label": "Take the key",
+    "outcome": "Brass, stamped S.H. Warm from her hand. She does not let go at once.",
+    "effects": {
+     "unlocks": [
+      "unlock_drays_key"
+     ],
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "vosk": 3
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 2
+     },
+     "flags_set": [
+      "sluice_house_seen"
+     ]
+    }
+   },
+   "right": {
+    "label": "Refuse it",
+    "outcome": "\"Noted. That was wise. It will not be offered twice.\"",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "company": {
+      "min": 78
+     }
+    },
+    "unlocks_none": [
+     "unlock_drays_key"
+    ]
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_company_26",
+   "category": "resources",
+   "speaker": "kell",
+   "expression": "courteous",
+   "text": "The Board would like the Keeper to address the Jubilee crowd on the Company's behalf. A short speech, prepared in Ardent. You need not read it beforehand. Regrettably, you need not understand it either.",
+   "left": {
+    "label": "Read the speech as given",
+    "outcome": "The speech thanks 'the Ninefold Reservoirs'. Quenn, in the crowd, looks at her feet.",
+    "effects": {
+     "resources": {
+      "company": 5,
+      "town": -2
+     },
+     "relationships": {
+      "kell": 4,
+      "quenn": -3
+     },
+     "counters": {
+      "company_favors": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Write your own",
+    "outcome": "You thank the hands and the water. Ardent notes the omission.",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 5
+     },
+     "relationships": {
+      "kell": -3,
+      "dace": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_kell",
+     "jubilee_planned"
+    ],
+    "resources": {
+     "company": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_27",
+   "category": "resources",
+   "speaker": "src_telegram",
+   "text": "COMPANY TO KEEPER STOP BOARD PROPOSES KEEPER FOR SUPERINTENDENT ON PELL'S RETIREMENT STOP PELL NOT YET INFORMED STOP ADVISE STOP",
+   "left": {
+    "label": "Accept, and tell Pell yourself",
+    "outcome": "He takes it beautifully. He does not mean a word of it.",
+    "effects": {
+     "resources": {
+      "company": 6
+     },
+     "relationships": {
+      "pell": -6,
+      "kell": 3
+     },
+     "counters": {
+      "company_favors": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Decline; Pell stays",
+    "outcome": "Ardent is puzzled. Pell, learning of it from Fennick, is speechless for a day.",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "relationships": {
+      "pell": 8
+     }
+    }
+   },
+   "sound": "sfx_telegram",
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "company": {
+      "min": 78
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_28",
+   "category": "resources",
+   "speaker": "fennick",
+   "expression": "sheepish",
+   "text": "Ardent's sent a wire meant for the next Keeper. Instructions. It says the summit Keeper is 'not to be informed of the north bank works'. There aren't any north bank works. Are there?",
+   "left": {
+    "label": "Go and look tonight",
+    "outcome": "Lamps below the sluice house. Men with picks. They do not see you. You hope.",
+    "effects": {
+     "flags_set": [
+      "clue_night_dredgers",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2,
+      "fatigue": 1
+     },
+     "relationships": {
+      "fennick": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Wire it on and forget it",
+    "outcome": "\"Right. Forgotten. I'm good at forgetting. I'm not, actually.\"",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "fennick": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "resources": {
+     "company": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_company_29",
+   "category": "resources",
+   "speaker": "hesse",
+   "text": "Ardent's asked me, through a friend of a friend, to write you up as the model Keeper. Paid. Handsomely. I've never been paid by a Company to praise anyone. I'm asking if you'd mind. I'd mind, a little.",
+   "left": {
+    "label": "Take their money; write the truth",
+    "outcome": "He takes it and writes something honest. Ardent does not pay twice.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_friendly"
+     ]
+    }
+   },
+   "right": {
+    "label": "Write what they want",
+    "outcome": "MODEL KEEPER. The town reads it aloud at the inn, in voices.",
+    "effects": {
+     "resources": {
+      "company": 4,
+      "town": -4
+     },
+     "relationships": {
+      "hesse": -3
+     },
+     "counters": {
+      "company_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "resources": {
+     "company": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "res_company_30",
+   "category": "resources",
+   "speaker": "crane",
+   "text": "I note the Board has awarded you a medal. Aldmere has never recognized a Company medal. I have written suggesting it does, in your case. I do not know why I did that.",
+   "left": {
+    "label": "Thank him",
+    "outcome": "\"Do not. I shall regret it by Tuesday.\" He does not.",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "factions": {
+      "aldmere": 3
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Withdraw the letter",
+    "outcome": "\"Very well. I note that I am relieved. And disappointed. Both, duly.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     },
+     "resources": {
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "resources": {
+     "company": {
+      "min": 80
+     }
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:company"
+   ]
+  }
+ ]
+}

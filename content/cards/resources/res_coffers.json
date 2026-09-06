@@ -1,0 +1,1587 @@
+{
+ "cards": [
+  {
+   "id": "res_coffers_01",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "text": "I hear the chest is light again. I do not hear things; I am told them, kindly, by people who owe me. My offer stands. My terms have not changed, which at this point is a kindness.",
+   "left": {
+    "label": "Borrow",
+    "outcome": "Ten marks in, one in ten out, monthly. The bell on her door rings for you now.",
+    "effects": {
+     "resources": {
+      "coffers": 10
+     },
+     "flags_set": [
+      "cole_loan",
+      "met_cole"
+     ],
+     "counters": {
+      "cole_debt": 2
+     },
+     "relationships": {
+      "cole": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Not from you",
+    "outcome": "\"From whom, then? I ask because I would like to buy their debt.\"",
+    "effects": {
+     "relationships": {
+      "cole": -3
+     },
+     "flags_set": [
+      "met_cole"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 20,
+   "max_per_run": 3,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_02",
+   "category": "resources",
+   "speaker": "vosk",
+   "text": "The chest cannot meet next watch's wages. For the record, the Company will advance them against the Keeper's own salary. For the record, that is not a kindness. It is a lien.",
+   "left": {
+    "label": "Take the advance",
+    "outcome": "The hands are paid. You are not, for a season.",
+    "effects": {
+     "resources": {
+      "coffers": 8,
+      "company": 2
+     },
+     "relationships": {
+      "vosk": 2
+     },
+     "delayed_resources": [
+      {
+       "delay": 15,
+       "resources": {
+        "coffers": -5
+       },
+       "message": "The Company recovers its advance from the chest."
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "Pay them short and explain",
+    "outcome": "Dace explains. Badly. The hands understand anyway, which is worse.",
+    "effects": {
+     "resources": {
+      "coffers": 2,
+      "town": -5
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_03",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "The hands drink on credit at my bar because you pay them late. I've carried it a month. I'm not a bank. I'm a reeve with a cellar. Who's paying, Keeper, you or the moot?",
+   "left": {
+    "label": "The Coffers, what there is",
+    "outcome": "The chest empties into the inn. The hands are sober, briefly.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Cut the hands' credit",
+    "outcome": "\"Right. I'll tell them who said so.\"",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "ilse": -2,
+      "dace": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_04",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "Sorry. I know there's no money. The west paddle needs a new spindle or it needs a prayer. I've asked Hale for the prayer. She says the spindle's more reliable. I agree with her. I never agree with her.",
+   "left": {
+    "label": "The spindle, somehow",
+    "outcome": "You sell the good chair. Cole buys it back for less than she gave it.",
+    "effects": {
+     "resources": {
+      "coffers": -4
+     },
+     "relationships": {
+      "quenn": 5,
+      "cole": 1
+     },
+     "flags_set": [
+      "gates_repaired"
+     ]
+    }
+   },
+   "right": {
+    "label": "The prayer",
+    "outcome": "Hale prays over the paddle. It runs another month. Nobody explains it.",
+    "effects": {
+     "relationships": {
+      "hale": 3,
+      "quenn": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_hale"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_05",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. Wages are two watches late. Two hands have gone down to Lock 6 where the Keeper pays. And the rest are asking me if I'm going too.",
+   "left": {
+    "label": "Sell the Company lamp oil",
+    "outcome": "The town has oil for a month. Vosk will ask. Not yet.",
+    "effects": {
+     "resources": {
+      "coffers": 5,
+      "company": -3
+     },
+     "relationships": {
+      "dace": 3
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Ask them to wait one more",
+    "outcome": "\"One more. Right. That's what I said last time.\"",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "dace": -4
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_06",
+   "category": "resources",
+   "speaker": "vane",
+   "expression": "brisk",
+   "text": "Your chest is empty. Mine isn't. I'll pay a season's tolls in advance at face value, no discount, no conditions. I'm not being generous. I'm buying a Keeper who remembers who paid the wages.",
+   "left": {
+    "label": "Take the season",
+    "outcome": "The chest is full of Sorrel coin. You remember.",
+    "effects": {
+     "resources": {
+      "coffers": 12
+     },
+     "relationships": {
+      "vane": 6
+     },
+     "factions": {
+      "sorrel": 4,
+      "aldmere": -3
+     },
+     "counters": {
+      "sorrel_favors": 2
+     },
+     "delayed_resources": [
+      {
+       "delay": 20,
+       "resources": {
+        "coffers": -8
+       },
+       "message": "Sorrel barges pass on tolls paid in advance."
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "No Keeper is for sale",
+    "outcome": "\"Everyone's for sale. Some of you just haven't seen the price yet.\"",
+    "effects": {
+     "relationships": {
+      "vane": -4
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 25
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_07",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "Keeper, the Board has noticed the chest. The Board does not like noticing chests. There is a phrase in their letter, 'fiscal stewardship', which I have never seen used kindly.",
+   "left": {
+    "label": "Ask the Board for relief",
+    "outcome": "Relief arrives: a loan at Company rates, and Vosk's closer attention.",
+    "effects": {
+     "resources": {
+      "coffers": 6,
+      "company": -3
+     },
+     "counters": {
+      "suspicion": 1
+     },
+     "relationships": {
+      "pell": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Raise tolls until it recovers",
+    "outcome": "Bargees pay more and say so. The chest breathes.",
+    "effects": {
+     "resources": {
+      "coffers": 5,
+      "traffic": -4,
+      "town": -2
+     },
+     "relationships": {
+      "pell": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_08",
+   "category": "resources",
+   "speaker": "src_ledger",
+   "text": "The chest has a false bottom you did not know about. Under it, twenty marks in old coin and a note in Dray's hand: 'For the day the Company stops paying. It will.'",
+   "left": {
+    "label": "Take it; the day has come",
+    "outcome": "Twenty marks. The note goes in the Ledger.",
+    "effects": {
+     "resources": {
+      "coffers": 8
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Leave it; the day is not yet",
+    "outcome": "You close the false bottom. You know it is there now, which is something.",
+    "effects": {
+     "counters": {
+      "evidence": 1,
+      "fatigue": -1
+     },
+     "relationships": {
+      "mirren": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 25
+     }
+    },
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_09",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "cold",
+   "text": "You have missed a payment. I have sent no men; I said I would not. I have sent a note to the Company, as I said I would. Kindly expect a visitor.",
+   "left": {
+    "label": "Pay double now",
+    "outcome": "The chest bleeds. The note is withdrawn, kindly.",
+    "effects": {
+     "resources": {
+      "coffers": -8
+     },
+     "relationships": {
+      "cole": 3
+     },
+     "counters": {
+      "cole_debt": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Let the Company come",
+    "outcome": "Vosk reads the note twice. \"Noted. Irregular. Both of you.\"",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "relationships": {
+      "vosk": -3,
+      "cole": -3
+     },
+     "counters": {
+      "suspicion": 2
+     },
+     "flags_set": [
+      "cole_defaulted"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cole_loan"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 30
+     }
+    },
+    "counters": {
+     "cole_debt": {
+      "min": 2
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_10",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "The moot's had an idea. A town toll, on top of the Company's, for the town's own works. Collected at your gate, by your hands, into a chest that isn't yours. The Company would hate it.",
+   "left": {
+    "label": "Collect the town toll",
+    "outcome": "Two chests on the sill. Bargees pay both, swearing. The town mends its roofs.",
+    "effects": {
+     "resources": {
+      "town": 6,
+      "traffic": -3,
+      "company": -4
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "One toll, the Company's",
+    "outcome": "\"Thought so. Had to ask. The moot made me.\"",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "ilse": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_11",
+   "category": "resources",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "text": "You have sold Company property to meet wages. I know because I know. For the record, I have not written it down. For the record, I am deciding whether to.",
+   "left": {
+    "label": "Write it down",
+    "outcome": "\"Noted. You are the first to say that.\" She writes less than she could.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Ask her not to",
+    "outcome": "\"I did not hear that. You will find I hear very well.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -3
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 30
+     }
+    },
+    "counters": {
+     "suspicion": {
+      "min": 2
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_12",
+   "category": "resources",
+   "speaker": "quenn",
+   "text": "I've been paying for spindle oil myself. Roughly a mark a week. Sorry. I didn't want to add to the chest. I'm telling you now because I've run out too.",
+   "left": {
+    "label": "Pay her back, all of it",
+    "outcome": "Six marks. She tries to refuse. She takes it.",
+    "effects": {
+     "resources": {
+      "coffers": -6
+     },
+     "relationships": {
+      "quenn": 8
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Tamm for tallow instead",
+    "outcome": "Tallow. The gears run, greasy and slow. Quenn does not complain.",
+    "effects": {
+     "resources": {
+      "coffers": -1
+     },
+     "relationships": {
+      "quenn": 2,
+      "tamm": 2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_13",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. A bargee's offered to pay his toll in coal instead of coin. The Company store'll take coal. And half the hands have no coal at home.",
+   "left": {
+    "label": "Coal to the hands",
+    "outcome": "Warm houses, empty Book. Vosk notes a toll paid in 'kind'.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 5
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Coal to the store, coin to the chest",
+    "outcome": "The store pays less than the toll was worth. The chest breathes anyway.",
+    "effects": {
+     "resources": {
+      "coffers": 2,
+      "company": 1
+     },
+     "relationships": {
+      "dace": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_14",
+   "category": "resources",
+   "speaker": "vane",
+   "text": "Delay costs, and so does poverty. I can put you in touch with a Sorrel banker who lends to Company posts against future tolls. It's legal. Barely. The Company would call it 'irregular'. The Company isn't broke.",
+   "left": {
+    "label": "Meet the banker",
+    "outcome": "Sorrel gold in a Company chest. The paper is very long.",
+    "effects": {
+     "resources": {
+      "coffers": 10,
+      "company": -3
+     },
+     "relationships": {
+      "vane": 4
+     },
+     "factions": {
+      "sorrel": 4
+     },
+     "counters": {
+      "suspicion": 2
+     },
+     "delayed_resources": [
+      {
+       "delay": 25,
+       "resources": {
+        "coffers": -7
+       },
+       "message": "The Sorrel banker's note comes due."
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "No Sorrel money",
+    "outcome": "\"Suit yourself. The Aldmere bankers won't call you either. They don't lend to canals.\"",
+    "effects": {
+     "relationships": {
+      "vane": -2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "coffers": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_15",
+   "category": "resources",
+   "speaker": "src_ledger",
+   "text": "Nothing in the chest but the chest. The hands know. The town knows. The Company will know on Tuesday. There is one thing left to sell, and it is the Keeper's own good name at the gate.",
+   "left": {
+    "label": "Sell precedence for a week",
+    "outcome": "The queue reorders itself by coin. It is fast and ugly and pays the wages.",
+    "effects": {
+     "resources": {
+      "coffers": 8,
+      "town": -4,
+      "company": -2
+     },
+     "counters": {
+      "bribes_taken": 3
+     },
+     "flags_set": [
+      "skimming_rumor"
+     ]
+    }
+   },
+   "right": {
+    "label": "Go to the moot with empty hands",
+    "outcome": "The town votes a levy on itself. For you. Nobody expected that.",
+    "effects": {
+     "resources": {
+      "coffers": 5,
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "counters": {
+      "town_favors": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 18
+     }
+    },
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_16",
+   "category": "resources",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "text": "The chest holds more than the toll table can produce. I have checked the table. I have checked the Book. For the record, one of them is wrong, and it is not the table.",
+   "left": {
+    "label": "Remit the surplus to Ardent",
+    "outcome": "\"Noted. Correct.\" The surplus goes east. The Book is honest again.",
+    "effects": {
+     "resources": {
+      "coffers": -8,
+      "company": 4
+     },
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The Book is right",
+    "outcome": "\"Noted.\" She underlines something.",
+    "effects": {
+     "relationships": {
+      "vosk": -4
+     },
+     "counters": {
+      "suspicion": 3
+     },
+     "flags_set": [
+      "audit_pending"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 15,
+   "max_per_run": 3,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_17",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "text": "A full chest attracts attention. I would not dream of lending to you now; I would like to borrow. A small sum, at your terms, for a building. It would be kind. It would also be recorded.",
+   "left": {
+    "label": "Lend to Cole",
+    "outcome": "The Company's money in Cole's building. It is the most irregular thing you have done.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "town": 2
+     },
+     "relationships": {
+      "cole": 8
+     },
+     "counters": {
+      "suspicion": 2
+     },
+     "delayed_resources": [
+      {
+       "delay": 20,
+       "resources": {
+        "coffers": 8
+       },
+       "message": "Cole repays with interest, exactly."
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "The chest is the Company's",
+    "outcome": "\"Of course. I only wanted to hear you say it.\"",
+    "effects": {
+     "relationships": {
+      "cole": -2
+     },
+     "resources": {
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_18",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "Word is the chest is full and the town's roofs are not. The moot's asked me to ask: is any of it the town's, or is it all going to Ardent to buy a Board member a launch?",
+   "left": {
+    "label": "Fund the roofs",
+    "outcome": "Slate on every roof in the low street by winter. Vosk reads the entry twice.",
+    "effects": {
+     "resources": {
+      "coffers": -8,
+      "town": 8
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "counters": {
+      "suspicion": 1,
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It goes to Ardent",
+    "outcome": "\"Right. I'll tell them. I'll tell them the word 'launch', too.\"",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "town": -4
+     },
+     "relationships": {
+      "ilse": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_19",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "There's money. There's actually money. Sorry, I've never said that before. I could rebuild the west paddle gear properly. Both sides. Marrow's pattern. It would take the whole surplus and it would last fifty years.",
+   "left": {
+    "label": "Marrow's pattern; the whole surplus",
+    "outcome": "Six weeks. The gear runs like water. Vosk approves the spend without a word, which is unheard of.",
+    "effects": {
+     "resources": {
+      "coffers": -12,
+      "traffic": -3
+     },
+     "relationships": {
+      "quenn": 10,
+      "vosk": 2
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ],
+     "counters": {
+      "repairs_deferred": -3,
+      "water_drift_mod": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Keep the surplus for a bad year",
+    "outcome": "\"Right. Sensible. Sorry. I'll patch it.\"",
+    "effects": {
+     "relationships": {
+      "quenn": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_20",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. The chest is heavy. The hands know it's heavy because they carry it. And they've asked, politely, whether a heavy chest means a bonus or just a heavier chest.",
+   "left": {
+    "label": "A bonus",
+    "outcome": "A mark a man. Ilse's takings double for a night.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 5
+     },
+     "relationships": {
+      "dace": 6
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "A heavier chest",
+    "outcome": "\"Right. Just checking.\" They carry it anyway.",
+    "effects": {
+     "resources": {
+      "company": 1,
+      "town": -2
+     },
+     "relationships": {
+      "dace": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_21",
+   "category": "resources",
+   "speaker": "vane",
+   "expression": "amused",
+   "text": "You're rich. Relatively. My principals would like to buy the summit's surplus lamp oil, rope and tallow at a premium. The Company will say its stores aren't for sale. The Company isn't here. I am.",
+   "left": {
+    "label": "Sell the surplus stores",
+    "outcome": "The chest grows. The stores shrink. Winter is a way off.",
+    "effects": {
+     "resources": {
+      "coffers": 6,
+      "company": -3
+     },
+     "relationships": {
+      "vane": 4
+     },
+     "counters": {
+      "repairs_deferred": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Company stores stay",
+    "outcome": "\"Fine. I'll buy them from Lock 8. Tobin sells anything.\"",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "vane": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_22",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "Keeper! The summit's accounts are the envy of the flight. The Board has asked how. I said 'the Meridian spirit'. They asked again. I would be grateful for a sentence I could send them.",
+   "left": {
+    "label": "Efficient tolling and dry weather",
+    "outcome": "Pell sends it. Ardent accepts it. Vosk, reading the copy, does not.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 4,
+      "vosk": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Send them the Book",
+    "outcome": "\"The Book. Itself. Ah.\" He does not send it. He sends a summary.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "pell": -1,
+      "vosk": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_23",
+   "category": "resources",
+   "speaker": "src_ledger",
+   "text": "The chest will not close. Coin on coin, scrip on scrip, and no honest line in the Book that adds to it. Whatever you have been doing, you have been doing well. Someone will ask.",
+   "left": {
+    "label": "Bury half in the false bottom",
+    "outcome": "Dray's hiding place holds. Nobody has ever looked. Yet.",
+    "effects": {
+     "resources": {
+      "coffers": -6
+     },
+     "counters": {
+      "suspicion": -1
+     },
+     "delayed_resources": [
+      {
+       "delay": 30,
+       "resources": {
+        "coffers": 6
+       },
+       "message": "You retrieve the buried coin."
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "Spend it on the town, visibly",
+    "outcome": "A new wharf crane. The town cheers. The Book cannot explain the crane.",
+    "effects": {
+     "resources": {
+      "coffers": -8,
+      "town": 7
+     },
+     "counters": {
+      "suspicion": 1,
+      "town_favors": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_24",
+   "category": "resources",
+   "speaker": "vosk",
+   "text": "A Board auditor from Ardent arrives Tuesday to count the chest against the Book. I would rather the count was right than that he found it wrong. For the record, this is not advice.",
+   "left": {
+    "label": "Make the Book right",
+    "outcome": "Three nights of honest arithmetic. The count matches. He is faintly disappointed.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "company": 3
+     },
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "suspicion": -3,
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Let him find what he finds",
+    "outcome": "He finds it. He is not disappointed. Vosk says nothing at all.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "relationships": {
+      "vosk": -4
+     },
+     "counters": {
+      "suspicion": 3
+     },
+     "flags_set": [
+      "audit_pending"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vosk"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_25",
+   "category": "resources",
+   "speaker": "cole",
+   "expression": "cold",
+   "text": "The town says the Keeper is rich. The town says it the way it said it of Dray, the month before he went. I am not warning you. I am a landlady. I am telling you what tenants say.",
+   "left": {
+    "label": "Ask what they said of Dray",
+    "outcome": "\"That he'd found something worth more than tolls. Kindly forget I repeated it.\"",
+    "effects": {
+     "relationships": {
+      "cole": 2
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let them talk",
+    "outcome": "\"They will. They do. I collect it, like rent.\"",
+    "effects": {
+     "resources": {
+      "town": -2
+     },
+     "flags_set": [
+      "skimming_rumor"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_26",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "Somebody tried the toll chest last night with a bar. My potboy saw them off. Sorrel accent, he says. A full chest is a lit lamp, Keeper. Either spend it or guard it. Right now you're doing neither.",
+   "left": {
+    "label": "Post a guard",
+    "outcome": "Dace's man sleeps on the chest. It is very uncomfortable and very safe.",
+    "effects": {
+     "resources": {
+      "coffers": -2
+     },
+     "relationships": {
+      "dace": 2,
+      "ilse": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Spend it down on the gates",
+    "outcome": "New timber, new gear, and a chest no thief would bother with.",
+    "effects": {
+     "resources": {
+      "coffers": -10
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ],
+     "relationships": {
+      "quenn": 5,
+      "ilse": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_27",
+   "category": "resources",
+   "speaker": "quenn",
+   "text": "With this much in the chest I could hire a proper survey of the north bank. Sorrel engineers, not Company. I'd like to know what's under there. Sorry. I've wanted to know for six years.",
+   "left": {
+    "label": "Hire the survey",
+    "outcome": "Sorrel engineers on the north bank for a week. Vosk watches them from the Company house.",
+    "effects": {
+     "resources": {
+      "coffers": -9,
+      "company": -4
+     },
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "surveyor_present"
+     ],
+     "counters": {
+      "suspicion": 4,
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The Company surveys its own bank",
+    "outcome": "\"It doesn't, though. That's rather the point. Sorry.\"",
+    "effects": {
+     "relationships": {
+      "quenn": -3
+     },
+     "resources": {
+      "company": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 70
+     }
+    },
+    "counters": {
+     "evidence": {
+      "min": 3
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_coffers_28",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. Vosk's counted the chest twice this week. Kell's coming. And the hands say if the Keeper's going to be arrested they'd like their bonus first.",
+   "left": {
+    "label": "Pay the bonus",
+    "outcome": "Paid. The hands are loyal for a month, which is longer than most things.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 4
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Nobody is being arrested",
+    "outcome": "\"Right. I'll tell them that. They'll believe it about as much as I do.\"",
+    "effects": {
+     "relationships": {
+      "dace": -2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_vosk"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 78
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_29",
+   "category": "resources",
+   "speaker": "vane",
+   "text": "I know where the surplus came from. On my shore nobody minds. On the other they mind a great deal. My principals could buy a 'consultancy' from you, papered and legal. It costs a favor later.",
+   "left": {
+    "label": "The consultancy",
+    "outcome": "Paper covers coin. The favor is not named. It will be.",
+    "effects": {
+     "resources": {
+      "coffers": -4,
+      "company": 2
+     },
+     "relationships": {
+      "vane": 6
+     },
+     "counters": {
+      "suspicion": -2,
+      "sorrel_favors": 2
+     },
+     "flags_set": [
+      "sorrel_purchase_offered"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let it stand",
+    "outcome": "\"Brave. Or slow. I'll find out which when Kell does.\"",
+    "effects": {
+     "relationships": {
+      "vane": -2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_vane"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 75
+     }
+    },
+    "counters": {
+     "bribes_taken": {
+      "min": 3
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "res_coffers_30",
+   "category": "resources",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "Keeper, I have defended the summit's accounts to the Board with every adjective I possess. I am running out. Either the surplus goes to Ardent this week or I stop defending, and I have never stopped anything.",
+   "left": {
+    "label": "Send it to Ardent",
+    "outcome": "The chest is honest and light. Pell finds new adjectives.",
+    "effects": {
+     "resources": {
+      "coffers": -12,
+      "company": 6
+     },
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "suspicion": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Stop defending",
+    "outcome": "He stops. It is very quiet. Kell arrives on Tuesday.",
+    "effects": {
+     "resources": {
+      "company": -6
+     },
+     "relationships": {
+      "pell": -6
+     },
+     "flags_set": [
+      "audit_pending"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "coffers": {
+      "min": 80
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  }
+ ]
+}

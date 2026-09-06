@@ -1,0 +1,1549 @@
+{
+ "cards": [
+  {
+   "id": "res_water_01",
+   "category": "resources",
+   "speaker": "src_weather",
+   "text": "The gauge is at the sixth mark and dropping. Heavy barges are scraping the sill going in. The sound carries to the town, and the town has started to listen for it.",
+   "left": {
+    "label": "Halve the passages",
+    "outcome": "Fewer boats, less lost to the flight. The queue grows.",
+    "effects": {
+     "resources": {
+      "water": 3,
+      "traffic": -5
+     }
+    }
+   },
+   "right": {
+    "label": "Keep the boats moving",
+    "outcome": "Every filling costs a finger of water. You can hear it.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "water": -3
+     },
+     "flags_set": [
+      "grounding"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 10,
+   "max_per_run": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_02",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "Sorry. At this level the aqueduct should be making up the difference. It isn't. It can't. I've written to Ardent for the reservoir figures. They said the figures are 'in preparation'. For eighty years.",
+   "left": {
+    "label": "Write again, over my name",
+    "outcome": "The reply comes to Vosk instead, and Vosk comes to you.",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "quenn": 5
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ]
+    }
+   },
+   "right": {
+    "label": "Work with what we have",
+    "outcome": "\"Which is the pound. Which is falling. Yes.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 1
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "water": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_03",
+   "category": "resources",
+   "speaker": "bram",
+   "expression": "stern",
+   "text": "The Reach is on its side in the mud. We have moved the old and the children to the town's bank, where the town does not want them. We ask the gate for water. We know it cannot give it.",
+   "left": {
+    "label": "Close the gate two days",
+    "outcome": "The pound rises a mark. The Reach floats. Pell counts the lost boats.",
+    "effects": {
+     "resources": {
+      "water": 4,
+      "traffic": -7,
+      "company": -3
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "relationships": {
+      "bram": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Open the town's wharf to them",
+    "outcome": "Forty Hullfolk on the town wharf. Ilse manages it. Barely.",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "bram": 4,
+      "ilse": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "resources": {
+     "water": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_04",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "The well's dry. Not low. Dry. The brewery's stopped and the town's drinking Sorrel beer at Sorrel prices and blaming you. The well's never been dry before. Not in eighty years.",
+   "left": {
+    "label": "Ask why a well follows a pound",
+    "outcome": "\"Because it's the same water. Everyone knows that. Nobody says it.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 2
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Pay for the town's beer",
+    "outcome": "The Coffers buy Sorrel beer. Nobody is happy, but nobody is thirsty.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "water": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_05",
+   "category": "resources",
+   "speaker": "hale",
+   "expression": "troubled",
+   "text": "Nine nights of the Lamp Vigil and the water has not answered. The town is looking at me in a way it has not before. I would keep a tenth night. Stand with me.",
+   "left": {
+    "label": "Stand with her",
+    "outcome": "A tenth night. The town sees the Keeper and the chaplain together. It helps them, if not the pound.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "factions": {
+      "concordance": 5
+     },
+     "relationships": {
+      "hale": 6
+     },
+     "counters": {
+      "fatigue": 2
+     },
+     "flags_set": [
+      "lamp_vigil_held"
+     ]
+    }
+   },
+   "right": {
+    "label": "Nine is enough",
+    "outcome": "\"Then we shall tend what remains.\" She keeps the tenth alone.",
+    "effects": {
+     "factions": {
+      "concordance": -3
+     },
+     "relationships": {
+      "hale": -3
+     },
+     "resources": {
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_06",
+   "category": "resources",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. A coal barge is aground on the sill. The bargee wants us to drag her off with the hands. And Quenn says dragging will take the sill's facing stones with her.",
+   "left": {
+    "label": "Drag her off",
+    "outcome": "She comes off. So do three facing stones. Quenn does not speak to you for a day.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "coffers": -3
+     },
+     "relationships": {
+      "quenn": -4
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "flags_clear": [
+      "grounding"
+     ]
+    }
+   },
+   "right": {
+    "label": "Unload her where she lies",
+    "outcome": "A day of coal by hand. The sill lives. The bargee curses everyone.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 2
+     },
+     "relationships": {
+      "quenn": 3,
+      "dace": 2
+     },
+     "flags_clear": [
+      "grounding"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "water": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_07",
+   "category": "resources",
+   "speaker": "tamm",
+   "text": "Low water shows the gate's underside for the first time in years. She's rotten to a hand's depth. I can sister the timbers while she's exposed, if you close for three days. You'll never get another look.",
+   "left": {
+    "label": "Three days",
+    "outcome": "The gate is sistered. It will outlast the pound.",
+    "effects": {
+     "resources": {
+      "traffic": -7,
+      "coffers": -6
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ],
+     "relationships": {
+      "tamm": 5
+     }
+    }
+   },
+   "right": {
+    "label": "We cannot spare three days",
+    "outcome": "\"No. Nobody ever can. That's how they rot.\"",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "tamm": -3
+     },
+     "counters": {
+      "repairs_deferred": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "resources": {
+     "water": {
+      "max": 32
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_08",
+   "category": "resources",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "text": "It was this low the month before he went. He stood at the gauge every night. I asked him what he was looking at. He said 'the tenth mark'. I didn't know what he meant. I do now.",
+   "left": {
+    "label": "Show me the tenth mark",
+    "outcome": "Below the sill line, painted over. She scrapes it clean with a knife.",
+    "effects": {
+     "relationships": {
+      "mirren": 5
+     },
+     "flags_set": [
+      "clue_cipher"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Don't stand at the gauge",
+    "outcome": "\"I know. I know. I'm asking you not to either.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 3
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "resources": {
+     "water": {
+      "max": 35
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_09",
+   "category": "resources",
+   "speaker": "src_weather",
+   "text": "Cracked mud along the Reach where there was water a month ago. In the mud, exposed for the first time in eighty years: cut stone. A channel. Straight as a rule, running north into the bank.",
+   "left": {
+    "label": "Follow the channel",
+    "outcome": "It runs to the sluice house and under it. You are not the first to follow it; there are old bootprints, dried in.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Cover it before the Company sees",
+    "outcome": "You cover it. You do not know why. Bram, watching, nods once.",
+    "effects": {
+     "factions": {
+      "hullfolk": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "max": 25
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_10",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "Another three marks and the chamber won't float a loaded barge. I can pump from the Reach end by hand, every hand we have, for maybe a week. It buys time. Nothing else.",
+   "left": {
+    "label": "Pump",
+    "outcome": "A week of pumping. The pound falls anyway, slower.",
+    "effects": {
+     "resources": {
+      "water": 2,
+      "coffers": -4,
+      "town": -2
+     },
+     "relationships": {
+      "quenn": 3,
+      "dace": -2
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Save the hands for the gates",
+    "outcome": "\"Right. Sorry. Right.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "quenn": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "water": {
+      "max": 22
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_11",
+   "category": "resources",
+   "speaker": "bram",
+   "text": "When the pound was this low in the Dry Year our grandmothers saw the channel and knew it. They said nothing, because they were afraid. We are less afraid. We ask the gate if it has seen the channel.",
+   "left": {
+    "label": "I have seen it",
+    "outcome": "\"Then you know where the water goes in. Now you must decide what to do about knowing.\"",
+    "effects": {
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "bram": 6
+     },
+     "flags_set": [
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "I have seen mud",
+    "outcome": "\"Mud. Yes. Our grandmothers said mud too.\"",
+    "effects": {
+     "relationships": {
+      "bram": -3
+     },
+     "factions": {
+      "hullfolk": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram",
+     "sluice_house_seen"
+    ],
+    "resources": {
+     "water": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_12",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "The moot voted. The town wants the gate closed until the pound comes back, and the Company can whistle. I voted against, for what it's worth. It's worth less than it was.",
+   "left": {
+    "label": "Close the gate for the town",
+    "outcome": "Closed. Pell is apoplectic. The town brings you soup.",
+    "effects": {
+     "resources": {
+      "water": 4,
+      "traffic": -8,
+      "company": -5,
+      "town": 5
+     },
+     "relationships": {
+      "ilse": 3,
+      "pell": -5
+     }
+    }
+   },
+   "right": {
+    "label": "The gate stays open",
+    "outcome": "\"Right. I'll tell them. They'll remember I told them.\"",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -5
+     },
+     "relationships": {
+      "ilse": -2
+     },
+     "flags_set": [
+      "moot_called"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "water": {
+      "max": 28
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_13",
+   "category": "resources",
+   "speaker": "hale",
+   "text": "The undercroft is dry, Keeper. For the first time since I came. There are things in the far corner I have never reached. I am not sure I should be the one.",
+   "left": {
+    "label": "Go down with her",
+    "outcome": "A chest. Letters, water-stained but legible. An engineer's hand.",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     },
+     "flags_set": [
+      "read_letters",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Leave the corner",
+    "outcome": "\"Yes. Perhaps some things are meant to stay under water.\"",
+    "effects": {
+     "relationships": {
+      "hale": 2
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "max": 25
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_14",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. Vane's offering the hands double to pass her coal at this level. Crane says any passage at this level breaks the Compact's safety clause. And the hands would like the double.",
+   "left": {
+    "label": "Pass the coal",
+    "outcome": "Coal through. Hands paid. Crane files. The sill takes another stone.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "water": -3,
+      "coffers": 2
+     },
+     "relationships": {
+      "vane": 4,
+      "crane": -4,
+      "dace": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Safety clause holds",
+    "outcome": "\"Right. I'll tell the hands. They'll want to know who Crane is.\"",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "crane": 4,
+      "vane": -4,
+      "dace": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_vane",
+     "met_crane"
+    ],
+    "resources": {
+     "water": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_15",
+   "category": "resources",
+   "speaker": "tamm",
+   "expression": "doubtful",
+   "text": "Pell wants a false floor in the chamber to raise the boats. It'd work for a week. Then it'd float, with a boat on it. I'll build it if you sign. I'd rather you didn't.",
+   "left": {
+    "label": "Sign for it",
+    "outcome": "It works for a week. Then it floats. Nobody is aboard. Just.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "coffers": -5
+     },
+     "relationships": {
+      "tamm": -5,
+      "pell": 4
+     },
+     "flags_set": [
+      "chamber_collision"
+     ],
+     "counters": {
+      "repairs_deferred": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Don't build it",
+    "outcome": "\"Good.\" Pell finds something else to be magnificent about.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "tamm": 4,
+      "pell": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm",
+     "met_pell"
+    ],
+    "resources": {
+     "water": {
+      "max": 30
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_16",
+   "category": "resources",
+   "speaker": "src_weather",
+   "text": "Water over the towpath. The horses are up to their hocks and refuse the tow. Boats are drifting in the pound with nobody to pull them. The chapel undercroft has a foot in it.",
+   "left": {
+    "label": "Run every paddle down the flight",
+    "outcome": "The pound falls. Lock 8 floods instead. Tobin sends word: 'about time'.",
+    "effects": {
+     "resources": {
+      "water": -6,
+      "traffic": -3
+     },
+     "factions": {
+      "aldmere": -2
+     },
+     "flags_set": [
+      "paddles_opened_full"
+     ]
+    }
+   },
+   "right": {
+    "label": "Sandbag the town first",
+    "outcome": "The town works all night. The pound does not fall. It waits.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "flags_set": [
+      "sandbags_ordered",
+      "cellars_flooded"
+     ],
+     "counters": {
+      "flood_ignored": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 10,
+   "max_per_run": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_17",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "The east embankment's seeping. Not leaking, seeping. It does that above the seventh mark. I've never seen it above the eighth. Sorry. I'm telling you what I'd want to be told.",
+   "left": {
+    "label": "Shore the embankment",
+    "outcome": "Stone, timber, every hand. The seep slows.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "traffic": -2
+     },
+     "relationships": {
+      "quenn": 4
+     },
+     "flags_clear": [
+      "embankment_weak"
+     ]
+    }
+   },
+   "right": {
+    "label": "Drop the pound instead",
+    "outcome": "\"Yes. That's the other way. The flight won't like it.\"",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -3
+     },
+     "factions": {
+      "aldmere": -3
+     },
+     "flags_set": [
+      "paddles_opened_full"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "water": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 20,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_18",
+   "category": "resources",
+   "speaker": "bram",
+   "expression": "patient",
+   "text": "High water. The Reach floats high and easy and our children swim where the mud was. We are the only ones glad. We know it. We ask the gate to remember that when it is asked to drain us.",
+   "left": {
+    "label": "Drain slowly",
+    "outcome": "The pound comes down over a week. The Reach settles gently.",
+    "effects": {
+     "resources": {
+      "water": -3,
+      "town": -2
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "bram": 4
+     },
+     "counters": {
+      "flood_ignored": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The town comes first",
+    "outcome": "\"It always has. We remember that too.\"",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "town": 3
+     },
+     "factions": {
+      "hullfolk": -4
+     },
+     "relationships": {
+      "bram": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "resources": {
+     "water": {
+      "min": 65
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_19",
+   "category": "resources",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "Two feet in my cellar. Every barrel afloat. The moot wants the paddles run and the moot wants to know why they weren't run yesterday. So do I. I'm the moot.",
+   "left": {
+    "label": "Run them now; apologize",
+    "outcome": "The paddles run. The cellar drains. She does not accept the apology; she notes it.",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -2,
+      "town": 2
+     },
+     "relationships": {
+      "ilse": 2
+     },
+     "flags_clear": [
+      "cellars_flooded"
+     ]
+    }
+   },
+   "right": {
+    "label": "The flight was full",
+    "outcome": "\"The flight. Your Company's flight. My cellar.\"",
+    "effects": {
+     "resources": {
+      "town": -5
+     },
+     "relationships": {
+      "ilse": -6
+     },
+     "flags_set": [
+      "cellars_flooded"
+     ],
+     "counters": {
+      "flood_ignored": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "water": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_20",
+   "category": "resources",
+   "speaker": "hale",
+   "expression": "troubled",
+   "text": "The undercroft is under water to the third step. There are things down there the water should not have. I have never asked a Keeper for anything. I am asking for the paddles.",
+   "left": {
+    "label": "The paddles, now",
+    "outcome": "The undercroft drains over two days. She goes down alone with a lamp.",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -3
+     },
+     "factions": {
+      "concordance": 5
+     },
+     "relationships": {
+      "hale": 6
+     },
+     "flags_clear": [
+      "undercroft_flooded"
+     ]
+    }
+   },
+   "right": {
+    "label": "Ask what things",
+    "outcome": "\"The founding papers. Letters. Nothing that concerns the gate.\" Everything concerns the gate.",
+    "effects": {
+     "relationships": {
+      "hale": -3
+     },
+     "flags_set": [
+      "undercroft_flooded",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "min": 68
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_21",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. Water's over the top gate's sill when she's shut. That means she's not shut. That means anything in the chamber's going down the flight whether we like it or not.",
+   "left": {
+    "label": "Clear the chamber; nothing passes",
+    "outcome": "No boats. The chamber is a waterfall for a day.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "water": -3
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Pass boats on the flood",
+    "outcome": "Boats go down fast. Very fast. One bargee will not do it again.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "water": -2
+     },
+     "counters": {
+      "passages_night": 0,
+      "repairs_deferred": 1
+     },
+     "flags_set": [
+      "chamber_collision"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "resources": {
+     "water": {
+      "min": 72
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_22",
+   "category": "resources",
+   "speaker": "tamm",
+   "text": "The Reach's stage is under and my yard's under and there's a Company barge come loose that's going to take my slipway with it unless somebody gets a line on her. Somebody with a boat. I've got a boat.",
+   "left": {
+    "label": "Go with him",
+    "outcome": "Two hours in a rowing boat in a flood. The barge is saved. So is the slipway.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": 2
+     },
+     "relationships": {
+      "tamm": 6
+     },
+     "counters": {
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Let the barge go",
+    "outcome": "It takes the slipway. Tamm rebuilds. He does not ask you for help.",
+    "effects": {
+     "resources": {
+      "company": -2,
+      "town": -2
+     },
+     "relationships": {
+      "tamm": -6
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "resources": {
+     "water": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_23",
+   "category": "resources",
+   "speaker": "mirren",
+   "text": "He hated high water more than low. Low, you can see what's wrong. High, it's all underneath. He'd walk the embankment at night with a lamp. I've been doing it. I found a place that's soft.",
+   "left": {
+    "label": "Show me",
+    "outcome": "The east bank, below the chapel. Your boot sinks to the ankle.",
+    "effects": {
+     "relationships": {
+      "mirren": 5
+     },
+     "flags_set": [
+      "embankment_weak"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell Quenn, not me",
+    "outcome": "\"I did. She said 'sorry' and went white.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 1,
+      "quenn": 2
+     },
+     "flags_set": [
+      "embankment_weak"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "resources": {
+     "water": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_24",
+   "category": "resources",
+   "speaker": "src_weather",
+   "text": "The overflow weir is roaring. It has not roared in living memory. Old Tobin has come up from Lock 8 to hear it and stands on the bank with his hat off, as if at a grave.",
+   "left": {
+    "label": "Ask him what he hears",
+    "outcome": "\"The Dry Year, backwards. Water going where it shouldn't.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 3
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Get him off the bank",
+    "outcome": "You walk him to the inn. He is shaking, and not from the cold.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "tobin": 2,
+      "ilse": 1
+     },
+     "flags_set": [
+      "met_tobin"
+     ]
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "min": 75
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_25",
+   "category": "resources",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "text": "This is interesting. Sorry, wrong word. This is alarming. The pound's rising faster than rain and aqueduct together could fill it. Something else is putting water in. Something under the north bank.",
+   "left": {
+    "label": "Find the inflow",
+    "outcome": "You find it in the dark: a boil of water off the sluice house, brown with hill-silt.",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_sluice_guard",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Drop the pound; ask later",
+    "outcome": "\"Later. Yes. There's always a later, until there isn't.\"",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -3
+     },
+     "relationships": {
+      "quenn": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "resources": {
+     "water": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_26",
+   "category": "resources",
+   "speaker": "bram",
+   "text": "Our old singer says the hill is giving back what it took. She says it every high water. This time the young ones are listening. We ask the gate whether it wants them to.",
+   "left": {
+    "label": "Let them listen",
+    "outcome": "The Song is sung on the Reach for three nights, all its verses.",
+    "effects": {
+     "factions": {
+      "hullfolk": 4
+     },
+     "relationships": {
+      "bram": 3,
+      "petronel": 3
+     },
+     "counters": {
+      "song_verses": 2
+     },
+     "flags_set": [
+      "met_petronel"
+     ]
+    }
+   },
+   "right": {
+    "label": "Keep them at the pumps",
+    "outcome": "\"The pumps. Yes. The charter men would say the pumps.\"",
+    "effects": {
+     "resources": {
+      "water": -1
+     },
+     "factions": {
+      "hullfolk": -3
+     },
+     "relationships": {
+      "bram": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "resources": {
+     "water": {
+      "min": 66
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_27",
+   "category": "resources",
+   "speaker": "ilse",
+   "text": "The town's on the embankment with lanterns and no plan. Half want to cut the west bank to drain into the Reach. Half know that's murder. I need the Keeper to say which half, out loud, now.",
+   "left": {
+    "label": "Nobody cuts the west bank",
+    "outcome": "You say it loud. Bram, at the back, hears it too.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "relationships": {
+      "ilse": 4,
+      "bram": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Cut it; save the town",
+    "outcome": "The Reach floods to the gunwales. Nobody drowns. Nobody forgets.",
+    "effects": {
+     "resources": {
+      "water": -8,
+      "town": 5
+     },
+     "factions": {
+      "hullfolk": -15
+     },
+     "relationships": {
+      "bram": -12,
+      "ilse": 2
+     },
+     "counters": {
+      "hullfolk_offenses": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_bram"
+    ],
+    "resources": {
+     "water": {
+      "min": 78
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_28",
+   "category": "resources",
+   "speaker": "hale",
+   "text": "The flood has scoured the path and uncovered the founding stone at the chapel gate. There is a name on it that is not in any hymn. I have covered it. Leave the cloth.",
+   "left": {
+    "label": "Leave the cloth",
+    "outcome": "The cloth stays. You have read the name already. Marrow.",
+    "effects": {
+     "relationships": {
+      "hale": 6
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Lift it",
+    "outcome": "\"Ysolde Marrow, who gave the water.\" Hale watches you read it and does not stop you.",
+    "effects": {
+     "relationships": {
+      "hale": -4
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "resources": {
+     "water": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "res_water_29",
+   "category": "resources",
+   "speaker": "dace",
+   "text": "Three things. Pell wants boats through on the high water because it's 'free lift'. Every boat we pass drops the pound a finger, which we want. Every boat we pass in this current is a coffin, which we don't.",
+   "left": {
+    "label": "Pass them; free lift",
+    "outcome": "Nine boats down in a morning. One hits the lower gate. The gate wins.",
+    "effects": {
+     "resources": {
+      "water": -4,
+      "traffic": 5,
+      "company": 3
+     },
+     "relationships": {
+      "pell": 4,
+      "dace": -4
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing moves on this current",
+    "outcome": "Pell sulks. Dace nods. The pound falls on its own by evening.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "company": -2
+     },
+     "relationships": {
+      "dace": 4,
+      "pell": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_pell"
+    ],
+    "resources": {
+     "water": {
+      "min": 70
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "res_water_30",
+   "category": "resources",
+   "speaker": "src_weather",
+   "text": "The pound is a lake. The town's lower street is a canal. Children are being ferried to school on a door. Somebody has painted 'HALFWAY UNDER' on the Company house, and nobody has painted over it.",
+   "left": {
+    "label": "Leave the sign",
+    "outcome": "It becomes the town's joke, then its name for the year.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Paint over it",
+    "outcome": "It reappears by morning, larger.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -3
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "water": {
+      "min": 80
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:water"
+   ]
+  }
+ ]
+}
