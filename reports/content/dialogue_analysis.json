@@ -1,115 +1,139 @@
 {
-  "cards": 30,
+  "cards": 36,
   "errors": [],
   "warnings": [
-    "[mi02_1] situation 42 words (6-40)",
-    "[mi02_4] situation 42 words (6-40)",
-    "[mi03_1] situation 41 words (6-40)",
-    "[mi03_2] situation 41 words (6-40)",
-    "[mi04_4] situation 41 words (6-40)",
-    "[mi04_4] hale uses prohibited phrase 'irregular'",
-    "[mi04_6] situation 43 words (6-40)",
-    "[mi05_5] situation 42 words (6-40)",
-    "[mi06_4] situation 43 words (6-40)",
-    "[mi06_5] slang 'whatever'",
-    "[mi06_6] situation 48 words (6-40)",
-    "opener 'three things' used by 4 cards (13.3%)"
+    "[mi07_1] situation 43 words (6-40)",
+    "[mi07_2] situation 48 words (6-40)",
+    "[mi07_3] situation 44 words (6-40)",
+    "[mi07_5] situation 45 words (6-40)",
+    "[mi08_1] situation 45 words (6-40)",
+    "[mi08_2] situation 44 words (6-40)",
+    "[mi08_4] situation 46 words (6-40)",
+    "[mi08_5] situation 48 words (6-40)",
+    "[mi08_6] situation 41 words (6-40)",
+    "[mi09_2] situation 41 words (6-40)",
+    "[mi09_3] situation 48 words (6-40)",
+    "[mi09_4] situation 46 words (6-40)",
+    "[mi09_5] situation 42 words (6-40)",
+    "[mi09_6] situation 41 words (6-40)",
+    "[mi10_1] situation 44 words (6-40)",
+    "[mi10_2] situation 41 words (6-40)",
+    "[mi10_3] situation 44 words (6-40)",
+    "[mi10_5] situation 44 words (6-40)",
+    "[mi10_5] right outcome 25 words (>24)",
+    "[mi10_6] situation 44 words (6-40)",
+    "[mi11_1] right outcome 25 words (>24)",
+    "[mi11_2] situation 44 words (6-40)",
+    "[mi11_3] situation 42 words (6-40)",
+    "[mi11_4] situation 42 words (6-40)",
+    "[mi11_5] situation 41 words (6-40)",
+    "[mi11_6] situation 44 words (6-40)",
+    "[mi12_1] situation 44 words (6-40)",
+    "[mi12_2] situation 44 words (6-40)",
+    "[mi12_3] situation 42 words (6-40)",
+    "[mi12_4] situation 45 words (6-40)",
+    "[mi12_5] situation 41 words (6-40)",
+    "[mi12_6] situation 42 words (6-40)"
   ],
   "speakers": {
-    "crane": 3,
-    "vane": 4,
-    "solas": 1,
-    "stroud": 2,
-    "ilse": 5,
-    "quenn": 1,
-    "hale": 3,
-    "src_gate": 1,
-    "dace": 4,
+    "hesse": 3,
+    "fennick": 1,
     "pell": 1,
-    "cole": 4,
-    "src_ledger": 1
+    "src_telegram": 1,
+    "tobin": 4,
+    "mirren": 3,
+    "vosk": 2,
+    "hale": 3,
+    "src_stranger": 5,
+    "crane": 2,
+    "src_gate": 2,
+    "dace": 1,
+    "ilse": 2,
+    "solas": 2,
+    "src_ledger": 1,
+    "stroud": 3
   },
   "top_openers": [
     [
-      "three things",
-      4
+      "there's a",
+      3
     ],
     [
-      "the hands",
+      "the pilgrims",
       2
     ],
     [
-      "you are",
-      2
-    ],
-    [
-      "the sorrel",
+      "lucan hesse",
       1
     ],
     [
-      "he accepted",
+      "hesse asked",
       1
     ],
     [
-      "the night",
+      "i've got",
       1
     ],
     [
-      "dawn towpath",
+      "the courier",
       1
     ],
     [
-      "neither of",
+      "ardent's written",
       1
     ],
     [
-      "i have",
+      "company to",
       1
     ],
     [
-      "four cases",
+      "you want",
+      1
+    ],
+    [
+      "second piece",
       1
     ]
   ],
   "top_labels": [
     [
-      "second him",
+      "they said resigned; i didn't believe it",
       1
     ],
     [
-      "forbid it on company water",
+      "no comment on the last one",
       1
     ],
     [
-      "solas",
+      "it's something",
       1
     ],
     [
-      "wren",
+      "give the marks to the poor box",
       1
     ],
     [
-      "suggest both fire wide",
+      "run it",
       1
     ],
     [
-      "suggest he withdraw",
+      "something duller",
       1
     ],
     [
-      "say it",
+      "ask hesse for a piece on pell",
       1
     ],
     [
-      "say 'stop' instead",
+      "newspapers mention who they like",
       1
     ],
     [
-      "dine with him",
+      "print the letter",
       1
     ],
     [
-      "nothing; it was a duel",
+      "don't; they'll come for you",
       1
     ]
   ]

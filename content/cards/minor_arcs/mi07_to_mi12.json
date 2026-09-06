@@ -1,0 +1,2055 @@
+{
+ "cards": [
+  {
+   "id": "mi07_1",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "expression": "curious",
+   "arc": {
+    "id": "mi07",
+    "stage": 1
+   },
+   "text": "Lucan Hesse, Courier. I've come for a piece on the new Keeper. I've got one question and it's not the one you think. Not 'what will you do'. This: what did they tell you about the last one, and did you believe it?",
+   "left": {
+    "label": "They said resigned; I didn't believe it",
+    "outcome": "\"Good answer. Good enough that I won't print it yet.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 5
+     },
+     "flags_set": [
+      "met_hesse"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "No comment on the last one",
+    "outcome": "\"'No comment.' It's a quote. Everything's a quote.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 1
+     },
+     "flags_set": [
+      "met_hesse"
+     ],
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 10
+    },
+    "flags_none": [
+     "pressed_by_hesse"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi07_2",
+   "category": "minor_arcs",
+   "speaker": "fennick",
+   "expression": "sheepish",
+   "arc": {
+    "id": "mi07",
+    "stage": 2
+   },
+   "text": "Hesse asked me what wires you send. I said none of his business. He gave me a mark. I said still none of his business. He gave me two. I told him about the reservoir one. I'm sorry. I'm telling you before he prints it, which is something.",
+   "left": {
+    "label": "It's something",
+    "outcome": "\"It is? Oh. Good. I'll give him the two marks back.\" He does not.",
+    "effects": {
+     "relationships": {
+      "fennick": 4
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Give the marks to the poor box",
+    "outcome": "He does, red-faced. Ilse puts it in the box and tells the whole inn where it came from.",
+    "effects": {
+     "relationships": {
+      "fennick": 2,
+      "ilse": 2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_fennick"
+    ],
+    "arc_stage": {
+     "mi07": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi07_3",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "arc": {
+    "id": "mi07",
+    "stage": 3
+   },
+   "text": "I've got a headline. 'THE KEEPER WHO COUNTS THE WATER.' It's about you asking questions about reservoirs. It's flattering, in Sorrel. In Ardent it's a warrant. I'll run it if you say. I'll run something duller if you don't. I'd rather run it.",
+   "left": {
+    "label": "Run it",
+    "outcome": "Both shores read that the summit Keeper counts water. Vosk reads it twice. Quenn cuts it out.",
+    "effects": {
+     "resources": {
+      "company": -4,
+      "town": 3
+     },
+     "relationships": {
+      "hesse": 5,
+      "quenn": 2
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Something duller",
+    "outcome": "'NEW KEEPER SETTLES IN.' Nobody reads it. That is what it is for.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "hesse": -2
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "mi07": {
+      "min": 2
+     }
+    },
+    "flags_any": [
+     "noticed_water_fall",
+     "clue_reservoirs",
+     "clue_dry_aqueduct"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi07_4",
+   "category": "minor_arcs",
+   "speaker": "pell",
+   "expression": "wounded",
+   "arc": {
+    "id": "mi07",
+    "stage": 4
+   },
+   "text": "The Courier. I have read it twice. It mentions you eleven times and me once, as 'the Superintendent', without a name or an adjective. Twenty years at this summit. I have never been so unmentioned.",
+   "left": {
+    "label": "Ask Hesse for a piece on Pell",
+    "outcome": "Hesse writes one. It is kind and slightly mocking. Pell frames it and does not notice the mocking for a year.",
+    "effects": {
+     "relationships": {
+      "pell": 6,
+      "hesse": 2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Newspapers mention who they like",
+    "outcome": "\"They do. They do.\" He is quiet for a day. Then magnificent again, doggedly.",
+    "effects": {
+     "relationships": {
+      "pell": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pressed_by_hesse",
+     "met_pell"
+    ],
+    "arc_stage": {
+     "mi07": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi07_5",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "arc": {
+    "id": "mi07",
+    "stage": 5
+   },
+   "text": "Ardent's written to the Courier. A letter of complaint about 'irresponsible speculation regarding Company infrastructure'. I've never had a letter from a Board. It's the best thing that's happened to my paper. I'd like to print the letter. It's their words. They can't stop me.",
+   "left": {
+    "label": "Print the letter",
+    "outcome": "Ardent's complaint on the front page, verbatim. Both shores laugh. Ardent does not write again.",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 3
+     },
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_friendly"
+     ]
+    }
+   },
+   "right": {
+    "label": "Don't; they'll come for you",
+    "outcome": "\"Let them. No, you're right. I'll hold it. I'll hold it about a month.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 2
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pressed_by_hesse",
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "mi07": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi07_6",
+   "category": "minor_arcs",
+   "speaker": "src_telegram",
+   "arc": {
+    "id": "mi07",
+    "stage": 6
+   },
+   "text": "COMPANY TO KEEPER STOP KEEPER TO REFRAIN FROM STATEMENTS TO PRESS STOP ALL PRESS ENQUIRIES TO ARDENT STOP ACKNOWLEDGE STOP",
+   "left": {
+    "label": "Acknowledge",
+    "outcome": "You acknowledge. Hesse hears of it. He prints the wire, since it is not a statement.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "hesse": -1
+     },
+     "arc": {
+      "mi07": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "'THE KEEPER SPEAKS TO WHOM THE KEEPER LIKES'",
+    "outcome": "Fennick sends it, hands shaking. Ardent does not reply. Hesse frames it.",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 3
+     },
+     "relationships": {
+      "hesse": 6,
+      "fennick": 2
+     },
+     "flags_set": [
+      "hesse_friendly"
+     ],
+     "arc": {
+      "mi07": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pressed_by_hesse"
+    ],
+    "arc_stage": {
+     "mi07": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "sound": "sfx_telegram",
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi08_1",
+   "category": "minor_arcs",
+   "speaker": "tobin",
+   "arc": {
+    "id": "mi08",
+    "stage": 1
+   },
+   "text": "You want the Dry Year? I'll give you the Dry Year, in pieces, because that's how I remember it. First piece: the pound went to the sills in a month. No drought. Rain every week. Went down anyway. Company said drought. Company said it loud.",
+   "left": {
+    "label": "No drought?",
+    "outcome": "\"Rain every week. I was twelve. I remember being wet and the boats being dry.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "tobin_story_1",
+      "met_tobin"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Buy him another; wait for the second piece",
+    "outcome": "He drinks it and tells you about a girl instead. The second piece waits.",
+    "effects": {
+     "relationships": {
+      "tobin": 3
+     },
+     "flags_set": [
+      "tobin_story_1",
+      "met_tobin"
+     ],
+     "counters": {
+      "tobin_pieces": 1
+     },
+     "resources": {
+      "coffers": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tobin"
+    ],
+    "flags_none": [
+     "tobin_story_1"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi08_2",
+   "category": "minor_arcs",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "arc": {
+    "id": "mi08",
+    "stage": 2
+   },
+   "text": "Second piece. Men came up the west flight at night. Forty, in Company coats. Said they were a dredging crew. I knew what a dredger looked like and they didn't have one. They had picks and lamps, and they went up the north bank.",
+   "left": {
+    "label": "The north bank, not the reservoirs",
+    "outcome": "\"North bank. Reservoirs are south. Everybody knew. Nobody said.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "tobin_story_2",
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "What did the town say?",
+    "outcome": "\"Town said dredging. Town says what the Company says when the Company's paying wages.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 3
+     },
+     "flags_set": [
+      "tobin_story_2"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "tobin_story_1"
+    ],
+    "arc_stage": {
+     "mi08": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi08_3",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "arc": {
+    "id": "mi08",
+    "stage": 3
+   },
+   "text": "Tobin's been telling you the Dry Year. He told him too, the month before. I heard them from the stairs. Tobin said 'the north bank' and he went very quiet. I'd like to hear the rest with you.",
+   "left": {
+    "label": "Hear it together",
+    "outcome": "You sit with Tobin, both of you. He tells it slower for her. She does not interrupt once.",
+    "effects": {
+     "relationships": {
+      "mirren": 6,
+      "tobin": 3
+     },
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Hear it alone; tell her after",
+    "outcome": "\"After. Right. That's what he'd have said too.\" It is not a compliment.",
+    "effects": {
+     "relationships": {
+      "mirren": -3,
+      "tobin": 2
+     },
+     "counters": {
+      "tobin_pieces": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "tobin_story_2",
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "mi08": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi08_4",
+   "category": "minor_arcs",
+   "speaker": "tobin",
+   "arc": {
+    "id": "mi08",
+    "stage": 4
+   },
+   "text": "Third piece. The men came down after a month. Thin. Two fewer than went up. And the next week the pound started to rise, no rain, a mark a day, till it was full. Company said the reservoirs had 'recovered'. Reservoirs don't recover from picks, Keeper.",
+   "left": {
+    "label": "Two fewer",
+    "outcome": "\"Two. Nobody counted but me. I was twelve and I counted everything. Still do.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 5
+     },
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 2
+     },
+     "flags_set": [
+      "clue_night_dredgers"
+     ]
+    }
+   },
+   "right": {
+    "label": "A mark a day, no rain",
+    "outcome": "\"No rain. Like it's falling now, a mark a watch, no drought. Same thing, backwards.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 2
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "tobin_story_2"
+    ],
+    "arc_stage": {
+     "mi08": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi08_5",
+   "category": "minor_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "mi08",
+    "stage": 5
+   },
+   "text": "You have been sitting with the old Keeper of Lock 8. He tells a story about the Dry Year. For the record, he has told it to every Keeper since. For the record, it is substantially accurate. For the record, I am asking you not to write it down.",
+   "left": {
+    "label": "Don't write it down",
+    "outcome": "\"Noted.\" You do not write it. You remember it. She knows the difference and lets it stand.",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "It's already in the Ledger",
+    "outcome": "\"Noted.\" A long pause. \"Then it is in three Ledgers. Dray wrote it too.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -2
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_night_dredgers",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi08": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi08_6",
+   "category": "minor_arcs",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "arc": {
+    "id": "mi08",
+    "stage": 6
+   },
+   "text": "Last piece. Years after, Dray came down to Lock 8 one night, white, and asked where the men went in. I told him: below the stone house, where the clear stream is. He said thank you, Tobin. He never came down again.",
+   "left": {
+    "label": "Thank you, Tobin",
+    "outcome": "\"Don't say it like that. He said it like that.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 6
+     },
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 2
+     },
+     "arc": {
+      "mi08": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Where the clear stream is",
+    "outcome": "\"You've seen it. Course you have. You've got the face.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 3
+     },
+     "arc": {
+      "mi08": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_night_dredgers"
+    ],
+    "arc_stage": {
+     "mi08": {
+      "min": 5
+     }
+    },
+    "counters": {
+     "tobin_pieces": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi09_1",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "arc": {
+    "id": "mi09",
+    "stage": 1
+   },
+   "text": "Pilgrims from the Aldmere chapels, forty of them, for the Lamp Vigil. They have no toll money; pilgrims never do. They ask passage through the pound to the chapel stage. The Book has no line for pilgrims. Find one.",
+   "left": {
+    "label": "Free passage for pilgrims",
+    "outcome": "Forty pilgrims through the gate for nothing. Vosk finds the line and reads it twice.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "traffic": -3
+     },
+     "factions": {
+      "concordance": 6
+     },
+     "relationships": {
+      "hale": 5
+     },
+     "flags_set": [
+      "pilgrims_passed"
+     ]
+    }
+   },
+   "right": {
+    "label": "The chapel pays their toll",
+    "outcome": "Hale pays from the poor box. The poor eat less that week. She does not mention it.",
+    "effects": {
+     "resources": {
+      "coffers": 2
+     },
+     "factions": {
+      "concordance": -2
+     },
+     "relationships": {
+      "hale": -2
+     },
+     "flags_set": [
+      "pilgrims_passed"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "flags_none": [
+     "pilgrims_passed"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "mi09_2",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi09",
+    "stage": 2
+   },
+   "text": "A pilgrim, very old, has knelt at the sill and put his hand in the pound and is weeping. He says the water tastes of his village, west of the Spine and dry these sixty years. The other pilgrims are embarrassed.",
+   "left": {
+    "label": "Ask the name of his village",
+    "outcome": "\"Lowmere. Nobody says it. The water says it.\"",
+    "effects": {
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2
+     },
+     "factions": {
+      "concordance": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Help him up",
+    "outcome": "You help him up. He thanks you. He keeps his hand wet all the way to the chapel.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "factions": {
+      "concordance": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pilgrims_passed"
+    ],
+    "arc_stage": {
+     "mi09": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi09_3",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "arc": {
+    "id": "mi09",
+    "stage": 3
+   },
+   "text": "Forty Aldmere pilgrims have passed the summit without toll. I note that the Compact does not exempt pilgrims. I note that Aldmere's Guilds have asked me whether the Company is 'establishing a religious preference'. I note that I do not know what that means and must answer anyway.",
+   "left": {
+    "label": "Charity, not preference",
+    "outcome": "\"Charity. Duly. The Guilds have no schedule for charity. I shall invent one.\"",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     },
+     "factions": {
+      "aldmere": 1,
+      "concordance": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Charge the next lot",
+    "outcome": "\"Duly.\" The next pilgrims pay. Hale says nothing, which is how she says everything.",
+    "effects": {
+     "relationships": {
+      "crane": 2,
+      "hale": -3
+     },
+     "resources": {
+      "coffers": 2
+     },
+     "factions": {
+      "concordance": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pilgrims_passed",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "mi09": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi09_4",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "expression": "troubled",
+   "arc": {
+    "id": "mi09",
+    "stage": 4
+   },
+   "text": "The pilgrims asked to see the spring. I showed them the chapel well, as I show everyone. The old one from the dry village said 'that is not a spring, that is a pipe'. He is right. I have never had a pilgrim who was right.",
+   "left": {
+    "label": "Show them the north bank instead",
+    "outcome": "Forty pilgrims at the sluice house door, singing. Vosk watches from the Company house and does not come down.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_seen",
+      "clue_sluice_guard"
+     ],
+     "factions": {
+      "concordance": 3
+     },
+     "relationships": {
+      "hale": 2
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The well is the spring; say so",
+    "outcome": "You say so. The old pilgrim looks at you the way Bram does. Hale is grateful and ashamed.",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     },
+     "factions": {
+      "concordance": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pilgrims_passed",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "mi09": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi09_5",
+   "category": "minor_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "mi09",
+    "stage": 5
+   },
+   "text": "The pilgrims are leaving. Forty, by boat, down the east flight, singing something that is not a Concordance hymn. It has a river in it. They learned it at the Reach, where they went, uninvited, the last night, and were given fish.",
+   "left": {
+    "label": "Let them sing it down the flight",
+    "outcome": "The Song goes down the Aldmere flight in forty voices. Bram, on his bollard, does not sing. His lips move.",
+    "effects": {
+     "factions": {
+      "hullfolk": 4,
+      "concordance": 2
+     },
+     "relationships": {
+      "bram": 3
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "song_verses": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask them to sing a hymn instead",
+    "outcome": "They sing a hymn. Politely. The river song comes back on the next boat up.",
+    "effects": {
+     "factions": {
+      "concordance": 3
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pilgrims_passed"
+    ],
+    "arc_stage": {
+     "mi09": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi09_6",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "arc": {
+    "id": "mi09",
+    "stage": 6
+   },
+   "text": "A letter from the old pilgrim. He thanks the Keeper, the chapel and the Reach. He will not come again; he is too old. He says: 'tell the boat people the valley is still there. Somebody should go and look.'",
+   "left": {
+    "label": "Give the letter to Bram",
+    "outcome": "Bram reads it three times. \"Somebody should. We have said so for sixty years. Now a stranger has.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6,
+      "hale": 2
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi09": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Keep it in the Ledger",
+    "outcome": "The letter goes in the Ledger. It is the first entry not by a Keeper.",
+    "effects": {
+     "relationships": {
+      "hale": 3
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi09": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pilgrims_passed",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "mi09": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "mi10_1",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi10",
+    "stage": 1
+   },
+   "text": "A drover with forty cattle at the towpath gate wants to swim them across the pound rather than pay the ferry or wait for the bridge at Lock 8. Forty cattle. In a canal. Crane has gone to find a schedule. Dace is already laughing.",
+   "left": {
+    "label": "Swim them",
+    "outcome": "Forty cattle in the Summit Pound. Boats stop. Children cheer. One cow tries the chamber and has to be talked out.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 4,
+      "water": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Ferry or bridge, like anyone",
+    "outcome": "He pays the ferry, muttering. Crane arrives with the schedule too late and is quietly heartbroken.",
+    "effects": {
+     "resources": {
+      "coffers": 2,
+      "traffic": 1
+     },
+     "relationships": {
+      "crane": -1
+     },
+     "arc": {
+      "mi10": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 8
+    }
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:water",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi10_2",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "arc": {
+    "id": "mi10",
+    "stage": 2
+   },
+   "text": "Schedule Two, note four: 'livestock in transit by water'. Written for boats carrying livestock. It does not say the livestock must be in the boat. I have never seen a clause so unprepared for its own use. A toll per head.",
+   "left": {
+    "label": "Charge per head",
+    "outcome": "Forty tolls. The drover pays in cheese. Crane accepts cheese under Schedule Five, delighted.",
+    "effects": {
+     "resources": {
+      "coffers": 4
+     },
+     "relationships": {
+      "crane": 5
+     }
+    }
+   },
+   "right": {
+    "label": "One toll for the herd",
+    "outcome": "\"One. A herd as a vessel. Also defensible. I shall note both and be happy for a week.\"",
+    "effects": {
+     "resources": {
+      "coffers": 1,
+      "town": 1
+     },
+     "relationships": {
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "arc_stage": {
+     "mi10": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi10_3",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi10",
+    "stage": 3
+   },
+   "text": "One cow did not come out. She is standing in the shallows below the Reach, up to her belly, eating reeds, and will not be moved. The drover has gone on with thirty-nine. The Hullfolk have named her. They will not say what.",
+   "left": {
+    "label": "Leave her to the Reach",
+    "outcome": "The Reach has a cow. She gives milk. Bram, asked, says only 'she holds'.",
+    "effects": {
+     "factions": {
+      "hullfolk": 4
+     },
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "bram": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Rope her out with a boat",
+    "outcome": "Six hands, a boat, a rope, an hour. She comes out. She goes back in by dusk.",
+    "effects": {
+     "resources": {
+      "traffic": -1
+     },
+     "relationships": {
+      "dace": -1
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi10": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi10_4",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "arc": {
+    "id": "mi10",
+    "stage": 4
+   },
+   "text": "Three things. The cow's still in the Reach. The hands have started leaving her hay. And the Company's sent a wire asking why the summit's traffic log has an entry that reads 'forty cattle, swimming, one outstanding'.",
+   "left": {
+    "label": "Reply: 'livestock in transit, Schedule Two'",
+    "outcome": "Ardent does not reply. Crane, shown the wire, is prouder than you have ever seen him.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "crane": 3,
+      "dace": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Reply: 'clerical error'",
+    "outcome": "\"Right. Clerical. The cow's a clerical error.\" She is called Clerical from then on.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "arc_stage": {
+     "mi10": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "sound": "sfx_telegram",
+   "tags": [
+    "res:company",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi10_5",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi10",
+    "stage": 5
+   },
+   "text": "The drover is back. He has heard his cow is alive and well and living with the Hullfolk. He would like her back. The Hullfolk would like to know what he'll pay. The cow would like to eat reeds. Nobody has asked the cow.",
+   "left": {
+    "label": "She's the Reach's now",
+    "outcome": "The drover goes away with thirty-nine cows and a grudge. The Reach keeps its cow. Bram, asked, says 'she chose'.",
+    "effects": {
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "bram": 3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "She's the drover's; pay the Reach for hay",
+    "outcome": "The Coffers pay the Reach for hay. The drover takes the cow. She is back in the shallows in a week, having walked from Lock 6.",
+    "effects": {
+     "resources": {
+      "coffers": -2
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi10": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi10_6",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "mi10",
+    "stage": 6
+   },
+   "text": "There's a cow at the Reach that the town feeds and the Hullfolk milk and the Company's got a wire about. Somebody's painted her on the inn sign. It's the first thing the town and the Reach have shared in forty years. Take it.",
+   "left": {
+    "label": "Take it",
+    "outcome": "A cow on the inn sign. Bram drinks at the Wheel for the first time, under it. Nobody mentions why.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "relationships": {
+      "ilse": 4,
+      "bram": 3
+     },
+     "arc": {
+      "mi10": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what the Hullfolk named her",
+    "outcome": "\"Quell. Some river. Don't ask me.\" You do not need to.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "ilse": 2
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi10": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi10": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi11_1",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "arc": {
+    "id": "mi11",
+    "stage": 1
+   },
+   "text": "There's a boy in the lock house loft. Sorrel, Escort Company coat with the badges cut off. He came up in a coal hold, about my age, shaking. Solas's men are asking at the inn. I haven't said. Don't.",
+   "left": {
+    "label": "Say nothing; he stays hidden",
+    "outcome": "The boy stays in the loft. Mirren brings him bread. You do not go up.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "flags_set": [
+      "deserter_hidden"
+     ],
+     "factions": {
+      "sorrel": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell Solas quietly",
+    "outcome": "You tell Solas. He listens. He does not go to the loft. He does not tell his men. He goes to sit on Bram's bollard.",
+    "effects": {
+     "relationships": {
+      "mirren": -4,
+      "solas": 4
+     },
+     "flags_set": [
+      "deserter_hidden"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_mirren"
+    ],
+    "flags_none": [
+     "deserter_hidden",
+     "deserter_returned"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi11_2",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi11",
+    "stage": 2
+   },
+   "text": "Seventeen, perhaps. He was made to load rifles onto coal boats and did not know what they were for until a sergeant told him, laughing. He does not want to shoot anyone. He says it as if it were a strange thing to want.",
+   "left": {
+    "label": "It is not strange",
+    "outcome": "He looks at you as if nobody had said so before. Perhaps nobody had.",
+    "effects": {
+     "relationships": {
+      "mirren": 3
+     },
+     "flags_set": [
+      "rifles_known"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what the rifles are for",
+    "outcome": "\"Sorrel. A different Sorrel. The sergeant said 'quickly'.\"",
+    "effects": {
+     "flags_set": [
+      "rifles_known",
+      "coup_warned"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "deserter_hidden"
+    ],
+    "arc_stage": {
+     "mi11": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi11_3",
+   "category": "minor_arcs",
+   "speaker": "solas",
+   "expression": "weary",
+   "arc": {
+    "id": "mi11",
+    "stage": 3
+   },
+   "text": "One of mine's missing. Seventeen. Frightened of the wrong things and the right ones. My sergeant wants him found and made an example of. I'd rather he was found by nobody. I'm not asking where he is. I'm asking whether he's eating.",
+   "left": {
+    "label": "He's eating",
+    "outcome": "\"Good.\" He goes back to the inn and tells the sergeant the boy went east. The sergeant goes east.",
+    "effects": {
+     "relationships": {
+      "solas": 6
+     },
+     "factions": {
+      "sorrel": -1
+     }
+    }
+   },
+   "right": {
+    "label": "He's in the lock house loft",
+    "outcome": "\"I didn't hear that.\" He did. He does nothing with it. He looks older.",
+    "effects": {
+     "relationships": {
+      "solas": 3,
+      "mirren": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "deserter_hidden",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "mi11": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi11_4",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "arc": {
+    "id": "mi11",
+    "stage": 4
+   },
+   "text": "He can't stay in the loft. Solas's sergeant is searching lofts. The Reach would take him; Wren said so. The chapel would take him; Hale said so. The Company would give him back; nobody had to say so. Where does he go?",
+   "left": {
+    "label": "The Reach",
+    "outcome": "Wren takes him at night. He is a Hullfolk boy by morning, in a stitched coat, learning knots.",
+    "effects": {
+     "relationships": {
+      "mirren": 4,
+      "wren": 4
+     },
+     "factions": {
+      "hullfolk": 3
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The chapel",
+    "outcome": "Hale takes him. Sanctuary. Cole raises the chapel's lease, kindly. The sergeant does not search chapels.",
+    "effects": {
+     "relationships": {
+      "mirren": 3,
+      "hale": 4
+     },
+     "factions": {
+      "concordance": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "deserter_hidden",
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "mi11": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi11_5",
+   "category": "minor_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "mi11",
+    "stage": 5
+   },
+   "text": "My sergeant's found him. Or thinks he has. He wants to search the Reach, or the chapel; he's not sure which and he'll do both. I've told him no. He's asked on whose authority. I've got none. You've got a gate.",
+   "left": {
+    "label": "No searches on Company ground",
+    "outcome": "You say it in front of the sergeant. He looks at Solas. Solas looks at the pound. The sergeant goes back to the inn.",
+    "effects": {
+     "relationships": {
+      "solas": 8
+     },
+     "factions": {
+      "sorrel": -2
+     },
+     "resources": {
+      "company": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Let him search; find nothing",
+    "outcome": "Wren has moved the boy to a fishing boat in the reeds. The sergeant finds a cow.",
+    "effects": {
+     "relationships": {
+      "solas": 3,
+      "wren": 3
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "deserter_hidden",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "mi11": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi11_6",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi11",
+    "stage": 6
+   },
+   "text": "The sergeant has gone west without his deserter. The boy is at the Reach, or the chapel, or gone east with a new name and a Hullfolk knot in his hair. Mirren does not say. She is at the paddles, humming. She never hums.",
+   "left": {
+    "label": "Ask her which",
+    "outcome": "\"Safe.\" That is all she says. It is enough.",
+    "effects": {
+     "relationships": {
+      "mirren": 5
+     },
+     "arc": {
+      "mi11": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Don't ask",
+    "outcome": "You do not ask. She hums. The gate runs.",
+    "effects": {
+     "relationships": {
+      "mirren": 4,
+      "solas": 2
+     },
+     "counters": {
+      "fatigue": -1
+     },
+     "arc": {
+      "mi11": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "deserter_hidden"
+    ],
+    "arc_stage": {
+     "mi11": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi12_1",
+   "category": "minor_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "mi12",
+    "stage": 1
+   },
+   "text": "A coal barge from the west with a clean bill and a bargee who will not come up on deck. His mate says he is 'resting'. His mate is sweating in a cold wind. Stroud is at the inn. The queue is nine boats.",
+   "left": {
+    "label": "Hold the boat; send for Stroud",
+    "outcome": "Stroud comes. She goes below. She comes up and says one word: 'fever'.",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "stroud": 4
+     },
+     "flags_set": [
+      "fever_aboard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Pass it; the bill is clean",
+    "outcome": "It passes. Down the east flight. Stroud, told later, goes very still.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "stroud": -5
+     },
+     "flags_set": [
+      "fever_aboard"
+     ],
+     "delayed": [
+      {
+       "card": "mi12_3",
+       "delay": 3,
+       "delay_max": 5
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 14
+    },
+    "flags_none": [
+     "fever_aboard",
+     "quarantine"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi12_2",
+   "category": "minor_arcs",
+   "speaker": "stroud",
+   "expression": "grave",
+   "arc": {
+    "id": "mi12",
+    "stage": 2
+   },
+   "text": "Coalfield fever. One aboard sick; two more by week's end. The boat must not go down the east flight and must not sit in the queue. It needs a mooring apart, a physician, and time. The Company has a form. I have a patient.",
+   "left": {
+    "label": "Moor them beyond the Reach",
+    "outcome": "The Hullfolk take the boat without being asked and bring food to the end of a pole. Stroud goes daily.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "stroud": 5
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send them back down the west flight",
+    "outcome": "The boat goes west with its fever. Stroud does not speak to you for a week. Sorrel does, later, angrily.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "stroud": -6
+     },
+     "factions": {
+      "sorrel": -4
+     },
+     "flags_clear": [
+      "fever_aboard"
+     ],
+     "arc": {
+      "mi12": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_stroud"
+    ],
+    "arc_stage": {
+     "mi12": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi12_3",
+   "category": "minor_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "mi12",
+    "stage": 3
+   },
+   "text": "There is fever at the summit. The Board's standing instruction is that the summit does not close for illness; closure 'alarms the shores'. I have not shown it to you until now, and I am not sure why I am showing it.",
+   "left": {
+    "label": "Close the summit anyway",
+    "outcome": "\"Noted.\" She writes 'gate closed for maintenance'. It is the first false entry she has ever made for someone else.",
+    "effects": {
+     "resources": {
+      "traffic": -6,
+      "company": -3,
+      "town": 3
+     },
+     "relationships": {
+      "vosk": 6,
+      "stroud": 5
+     },
+     "flags_set": [
+      "quarantine"
+     ],
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Stay open; isolate the boat",
+    "outcome": "\"Noted.\" The gate runs. The boat sits apart. By the week's end there is a case in the town.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "company": 2
+     },
+     "relationships": {
+      "vosk": 2,
+      "stroud": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi12": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi12_4",
+   "category": "minor_arcs",
+   "speaker": "stroud",
+   "arc": {
+    "id": "mi12",
+    "stage": 4
+   },
+   "text": "The bargee is dead. The mate will live. The boat is a fever ship and its coal is Sorrel's and Sorrel wants it. I will not have that hold opened for a month. Vane wants it opened tomorrow. Choose a physician over a rate card.",
+   "left": {
+    "label": "A month; Sorrel waits",
+    "outcome": "Vane is furious and then, hearing the word 'dead', quiet. The coal waits.",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "stroud": 6,
+      "vane": -3
+     },
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Burn the coal in the boat",
+    "outcome": "A coal barge burning on the pound at night. Sorrel's loss. Stroud's relief. The town watches from the bank.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "town": 2
+     },
+     "relationships": {
+      "stroud": 4,
+      "vane": -5
+     },
+     "factions": {
+      "sorrel": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_stroud"
+    ],
+    "arc_stage": {
+     "mi12": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi12_5",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi12",
+    "stage": 5
+   },
+   "text": "There's a fever ship at the Reach and the town's frightened. Half want the Reach cleared for having it. Half want the inn closed for having me. Come to the inn tonight and drink, in public, and don't die of it.",
+   "left": {
+    "label": "Drink at the inn, in public",
+    "outcome": "You drink. The town watches you not die. By the second pint the inn is full.",
+    "effects": {
+     "resources": {
+      "town": 5
+     },
+     "relationships": {
+      "ilse": 6
+     },
+     "factions": {
+      "hullfolk": 2
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Stay away till Stroud says",
+    "outcome": "\"Right. Sensible.\" The inn is empty for a fortnight. Sensible costs.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "ilse": -3,
+      "stroud": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi12": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi12_6",
+   "category": "minor_arcs",
+   "speaker": "stroud",
+   "expression": "neutral",
+   "arc": {
+    "id": "mi12",
+    "stage": 6
+   },
+   "text": "The mate has walked off the boat, thin and alive. One dead, one living, none in the town. That is a good outcome for coalfield fever at a summit lock. I am telling you it was well done, because nobody else will.",
+   "left": {
+    "label": "It was your doing",
+    "outcome": "\"It was both. Take half. Doctors are bad at halves.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 6
+     },
+     "resources": {
+      "town": 2
+     },
+     "flags_clear": [
+      "fever_aboard",
+      "quarantine"
+     ],
+     "arc": {
+      "mi12": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Inspect every bill from now",
+    "outcome": "\"Every one. Good. It costs an hour. The other thing costs more.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 5,
+      "crane": 2
+     },
+     "resources": {
+      "traffic": -2
+     },
+     "counters": {
+      "inspections": 3
+     },
+     "flags_clear": [
+      "fever_aboard",
+      "quarantine"
+     ],
+     "arc": {
+      "mi12": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fever_aboard",
+     "met_stroud"
+    ],
+    "arc_stage": {
+     "mi12": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
+}
