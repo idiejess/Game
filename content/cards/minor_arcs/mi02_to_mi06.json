@@ -1,0 +1,1698 @@
+{
+ "cards": [
+  {
+   "id": "mi02_1",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "arc": {
+    "id": "mi02",
+    "stage": 1
+   },
+   "text": "The Sorrel agent and I have both claimed first passage at the same bell. She has proposed, in writing, that we settle it by duel. I have accepted, in writing. I now find I do not know how a duel is conducted.",
+   "left": {
+    "label": "Second him",
+    "outcome": "\"You would? Duly. I shall need to know what a second does.\"",
+    "effects": {
+     "relationships": {
+      "crane": 5,
+      "vane": -1
+     },
+     "flags_set": [
+      "duel_pending"
+     ],
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Forbid it on Company water",
+    "outcome": "\"Forbidden. I note I am relieved. I note I am also, irregularly, disappointed.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2,
+      "vane": -3
+     },
+     "resources": {
+      "company": 2
+     },
+     "arc": {
+      "mi02": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ],
+    "flags_none": [
+     "duel_pending"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:traffic",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi02_2",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "expression": "amused",
+   "arc": {
+    "id": "mi02",
+    "stage": 2
+   },
+   "text": "He accepted. In writing. With a citation. I was joking. I can't back down from a man who's cited the Compact at me. Pistols at dawn on the towpath. You're seconding him. Who do I get?",
+   "left": {
+    "label": "Solas",
+    "outcome": "Solas agrees, weary. \"I've seconded worse for less.\"",
+    "effects": {
+     "relationships": {
+      "vane": 4,
+      "solas": 2
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Wren",
+    "outcome": "Wren agrees, delighted. \"I've always wanted to hold a pistol legally.\"",
+    "effects": {
+     "relationships": {
+      "vane": 3,
+      "wren": 4
+     },
+     "factions": {
+      "hullfolk": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "duel_pending"
+    ],
+    "arc_stage": {
+     "mi02": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi02_3",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "arc": {
+    "id": "mi02",
+    "stage": 3
+   },
+   "text": "The night before. I have read three accounts of duels and they disagree on every particular. I have written my will. I have left my statute book to you. I would like it noted that I am not afraid.",
+   "left": {
+    "label": "Suggest both fire wide",
+    "outcome": "\"Fire wide. Is that permitted?\" It is, you say. \"Duly. Then I shall.\"",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Suggest he withdraw",
+    "outcome": "\"Withdraw. From a Sorrel agent. In writing.\" He cannot. You knew he could not.",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "duel_pending"
+    ],
+    "arc_stage": {
+     "mi02": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi02_4",
+   "category": "minor_arcs",
+   "speaker": "solas",
+   "expression": "almost_smiling",
+   "arc": {
+    "id": "mi02",
+    "stage": 4
+   },
+   "text": "Dawn. Towpath. Half the town watching from the bank with breakfast. Two pistols I've loaded with powder and no ball, which nobody's asked me about. Crane's counting paces aloud. Vane's laughing. Somebody has to say 'fire'. It's the seconds' job. That's us.",
+   "left": {
+    "label": "Say it",
+    "outcome": "Two bangs, no balls, a cloud of smoke. Crane is astonished to be alive. Vane bows. The town applauds.",
+    "effects": {
+     "resources": {
+      "town": 5
+     },
+     "relationships": {
+      "crane": 4,
+      "vane": 4,
+      "solas": 3
+     },
+     "flags_clear": [
+      "duel_pending"
+     ]
+    }
+   },
+   "right": {
+    "label": "Say 'stop' instead",
+    "outcome": "You stop it. Both are relieved. Both pretend outrage. The town is disappointed and goes to breakfast.",
+    "effects": {
+     "resources": {
+      "town": 1,
+      "company": 1
+     },
+     "relationships": {
+      "crane": 3,
+      "vane": 2
+     },
+     "flags_clear": [
+      "duel_pending"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "duel_pending"
+    ],
+    "arc_stage": {
+     "mi02": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi02_5",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "arc": {
+    "id": "mi02",
+    "stage": 5
+   },
+   "text": "Neither of us is dead and neither has first passage and the whole town saw us make fools of ourselves. He shook my hand afterward. Matthias Crane shook my hand. What do I do with that?",
+   "left": {
+    "label": "Dine with him",
+    "outcome": "They dine. They argue for two hours about fish. It is the start of something neither will name.",
+    "effects": {
+     "relationships": {
+      "vane": 4,
+      "crane": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing; it was a duel",
+    "outcome": "\"Nothing. Right.\" She does not do nothing. She sends him a fish.",
+    "effects": {
+     "relationships": {
+      "vane": 2,
+      "crane": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi02": {
+      "min": 4
+     }
+    },
+    "flags_none": [
+     "duel_pending"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi02_6",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "arc": {
+    "id": "mi02",
+    "stage": 6
+   },
+   "text": "I have drafted a schedule for precedence disputes that does not involve pistols. The Sorrel agent has signed it. I have signed it. It requires the Keeper's signature. I note this is the first Compact amendment in twenty-two years.",
+   "left": {
+    "label": "Sign it",
+    "outcome": "The Halfway Precedence Schedule. Both shores ratify it within the year, baffled. Crane is happier than you have seen him.",
+    "effects": {
+     "relationships": {
+      "crane": 8,
+      "vane": 3
+     },
+     "resources": {
+      "traffic": 3,
+      "company": 1
+     },
+     "factions": {
+      "aldmere": 2,
+      "sorrel": 2
+     },
+     "arc": {
+      "mi02": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "The Keeper decides, as ever",
+    "outcome": "\"As ever. Duly. I shall keep the draft. It will keep.\"",
+    "effects": {
+     "relationships": {
+      "crane": -2,
+      "vane": 1
+     },
+     "arc": {
+      "mi02": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi02": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi03_1",
+   "category": "minor_arcs",
+   "speaker": "stroud",
+   "arc": {
+    "id": "mi03",
+    "stage": 1
+   },
+   "text": "Four cases of the shakes this week, all from the low street, all regulars at the Wheel. Same symptoms as bad water. Ilse says her ale is spring water. I would like to test the well. She will not let me.",
+   "left": {
+    "label": "Tell Ilse to let her",
+    "outcome": "Ilse lets her, glaring. Stroud takes a bottle. Ilse takes it personally.",
+    "effects": {
+     "relationships": {
+      "stroud": 4,
+      "ilse": -3
+     },
+     "flags_set": [
+      "well_tested",
+      "ale_sickness"
+     ]
+    }
+   },
+   "right": {
+    "label": "Test the pound instead",
+    "outcome": "Stroud tests the pound. Iron, and something else. She looks toward the inn.",
+    "effects": {
+     "relationships": {
+      "stroud": 2
+     },
+     "flags_set": [
+      "ale_sickness"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_stroud"
+    ],
+    "watch": {
+     "min": 12
+    },
+    "flags_none": [
+     "ale_sickness",
+     "well_closed"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi03_2",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "angry",
+   "arc": {
+    "id": "mi03",
+    "stage": 2
+   },
+   "text": "Your physician's been at my well with a bottle. Twenty years that well's fed this town and now it's poison because four drunks have the shakes. It's spring water. It comes up cold from the hill. Everyone knows that. Tell her.",
+   "left": {
+    "label": "It comes up from the pound",
+    "outcome": "\"Does it.\" She knows. She has always known. She is furious that you said it.",
+    "effects": {
+     "relationships": {
+      "ilse": -5
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I'll tell her to stop",
+    "outcome": "\"Do.\" You do. Stroud does not stop. She tests it at night.",
+    "effects": {
+     "relationships": {
+      "ilse": 3,
+      "stroud": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "ale_sickness"
+    ],
+    "arc_stage": {
+     "mi03": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi03_3",
+   "category": "minor_arcs",
+   "speaker": "stroud",
+   "expression": "grave",
+   "arc": {
+    "id": "mi03",
+    "stage": 3
+   },
+   "text": "The well is the pound. Pound water, through a crack in the rock, with iron and, this month, something from the north bank I do not like. Boiled, it is fine. Ilse boils nothing. Ilse brews.",
+   "left": {
+    "label": "Order the ale boiled",
+    "outcome": "Ilse boils it, swearing. The ale tastes of nothing. The shakes stop. Custom halves.",
+    "effects": {
+     "resources": {
+      "town": -2
+     },
+     "relationships": {
+      "stroud": 5,
+      "ilse": -4
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "flags_clear": [
+      "ale_sickness"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let the town decide",
+    "outcome": "You post Stroud's findings at the inn. Half stop drinking. Half drink more, to prove a point.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "stroud": 2,
+      "ilse": -2
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "ale_sickness"
+    ],
+    "arc_stage": {
+     "mi03": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi03_4",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "mi03",
+    "stage": 4
+   },
+   "text": "Fine. It's the pound. My father showed me the crack when I was twelve and told me never to say. The Company would charge for the water or close the well. Twenty years. Are you going to close me?",
+   "left": {
+    "label": "No; the town needs its inn",
+    "outcome": "\"Then we understand each other.\" She pours one from the well and drinks it herself.",
+    "effects": {
+     "relationships": {
+      "ilse": 8
+     },
+     "resources": {
+      "town": 3,
+      "company": -1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell the Company; pay for the water",
+    "outcome": "Vosk assesses a water rate. It is small. Ilse pays it. She does not forgive it.",
+    "effects": {
+     "relationships": {
+      "ilse": -6,
+      "vosk": 3
+     },
+     "resources": {
+      "coffers": 2,
+      "company": 2,
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_iron_well"
+    ],
+    "arc_stage": {
+     "mi03": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi03_5",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "arc": {
+    "id": "mi03",
+    "stage": 5
+   },
+   "text": "The brewery well. I've measured it against the gauge for a month. It rises and falls with the pound, a day behind. The pound's leaking into the rock under the town. Sorry. It's been doing it eighty years.",
+   "left": {
+    "label": "Where does the leaked water go?",
+    "outcome": "\"South. Under the town. Into the ground. Some of the fall each watch is that. Not much. Some.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Can the crack be sealed?",
+    "outcome": "\"Roughly. It'd close Ilse's well. She'd rather the leak.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_iron_well",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "mi03": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi03_6",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi03",
+    "stage": 6
+   },
+   "text": "The shakes are gone. I boil what I have to. The town drinks Iron Spring and knows what it is now and drinks it anyway, because it's ours. Stroud and I are speaking again. First round's on the house.",
+   "left": {
+    "label": "Drink it",
+    "outcome": "Iron Spring. It tastes of the pound. It tastes of Halfway.",
+    "effects": {
+     "relationships": {
+      "ilse": 5,
+      "stroud": 2
+     },
+     "resources": {
+      "town": 3
+     },
+     "arc": {
+      "mi03": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Toast Stroud",
+    "outcome": "Ilse toasts her too, eventually. The inn cheers, mostly at the free round.",
+    "effects": {
+     "relationships": {
+      "ilse": 3,
+      "stroud": 4
+     },
+     "resources": {
+      "town": 2
+     },
+     "arc": {
+      "mi03": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clue_iron_well"
+    ],
+    "arc_stage": {
+     "mi03": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi04_1",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "arc": {
+    "id": "mi04",
+    "stage": 1
+   },
+   "text": "My coal crews want the chapel blessing before passage. All forty boats. They've heard the grain boats get it. It's superstition and it costs me a morning a fleet. Stop it, or make it for everyone. Pick.",
+   "left": {
+    "label": "Blessings for everyone",
+    "outcome": "Hale blesses coal. It takes all morning. The crews are delighted. Vane is not.",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "factions": {
+      "concordance": 5,
+      "sorrel": 2
+     },
+     "relationships": {
+      "hale": 4,
+      "vane": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Blessings are the chapel's business",
+    "outcome": "\"Fine. Then my crews will queue at the chapel instead of the gate, and that's your morning gone too.\"",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "relationships": {
+      "vane": 1
+     },
+     "factions": {
+      "concordance": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale",
+     "met_vane"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:traffic",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi04_2",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "expression": "serene",
+   "arc": {
+    "id": "mi04",
+    "stage": 2
+   },
+   "text": "The coal crews have asked for the blessing. The rite speaks of still water and grain. I have adapted it: still water and warmth. The Concordance in Aldmere will not approve. I did not ask.",
+   "left": {
+    "label": "Bless the coal",
+    "outcome": "\"For the warmth that comes of fire and the fire that comes of the hill.\" The crews weep. Nobody expected that.",
+    "effects": {
+     "factions": {
+      "concordance": 4,
+      "sorrel": 3
+     },
+     "relationships": {
+      "hale": 5
+     },
+     "resources": {
+      "traffic": -2,
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Stick to the rite as written",
+    "outcome": "She blesses coal with the grain rite. Nobody notices but her.",
+    "effects": {
+     "factions": {
+      "concordance": 2
+     },
+     "relationships": {
+      "hale": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi04": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "mi04_3",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "expression": "amused",
+   "arc": {
+    "id": "mi04",
+    "stage": 3
+   },
+   "text": "My crews say the blessed boats go faster. They don't; I've timed them. But they think so, and row harder, so they do. Now I'm paying for blessings. Give me a receipt. My principals will ask.",
+   "left": {
+    "label": "A receipt from the Coffers",
+    "outcome": "You write Sorrel Freight a receipt for 'spiritual services'. Crane, later, is delighted by the category.",
+    "effects": {
+     "resources": {
+      "coffers": 3
+     },
+     "factions": {
+      "concordance": 3
+     },
+     "relationships": {
+      "vane": 3,
+      "hale": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The chapel gives receipts",
+    "outcome": "Hale gives a receipt. It is a blessing on paper. Vane's principals frame it, confused.",
+    "effects": {
+     "factions": {
+      "concordance": 4
+     },
+     "relationships": {
+      "vane": 2,
+      "hale": 3
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi04": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi04_4",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "expression": "troubled",
+   "arc": {
+    "id": "mi04",
+    "stage": 4
+   },
+   "text": "A letter from the Concordance in Aldmere. They call the coal blessing 'irregular' and wish it stopped. The coal crews wish it continued. I have never disobeyed the Concordance. I have never been asked by anyone who meant it so much.",
+   "left": {
+    "label": "Bless the coal; answer Aldmere later",
+    "outcome": "She continues. Aldmere writes again. She loses the letter. It is the most disobedient thing she has done.",
+    "effects": {
+     "factions": {
+      "concordance": -2,
+      "sorrel": 4
+     },
+     "relationships": {
+      "hale": 6
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Stop; the Concordance is the Concordance",
+    "outcome": "She stops. The coal crews stand at the chapel door anyway, caps off, and she blesses them without coal.",
+    "effects": {
+     "factions": {
+      "concordance": 3
+     },
+     "relationships": {
+      "hale": 2,
+      "vane": -2
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi04": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi04_5",
+   "category": "minor_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "mi04",
+    "stage": 5
+   },
+   "text": "A coal barge has come up with a Concordance lamp burning in a glass box on its bow: blessed at Halfway, carried to Sorrel and back. The crew asks for it reblessed. Nine boats behind it have lamps.",
+   "left": {
+    "label": "Rebless the lamps",
+    "outcome": "Nine lamps, one morning. The pound at dusk is lit like a festival by coal boats with chapel lamps.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 3
+     },
+     "factions": {
+      "concordance": 6,
+      "sorrel": 3
+     },
+     "relationships": {
+      "hale": 3
+     }
+    }
+   },
+   "right": {
+    "label": "A blessing lasts; move along",
+    "outcome": "The lamps pass unreblessed. The crews are downcast. Hale, later, goes down to the wharf and does it anyway.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "factions": {
+      "concordance": 1
+     },
+     "relationships": {
+      "hale": 2
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi04": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi04_6",
+   "category": "minor_arcs",
+   "speaker": "hale",
+   "arc": {
+    "id": "mi04",
+    "stage": 6
+   },
+   "text": "The Concordance has decided the coal blessing is 'a local devotion' and may continue. They sent a hymn about coal. It is very bad. The crews love it. I have never seen so many in the chapel who could not read the hymnal.",
+   "left": {
+    "label": "Sing the bad hymn",
+    "outcome": "Forty coal men roaring a bad hymn. Hale conducts. It is, somehow, the holiest thing at the summit.",
+    "effects": {
+     "factions": {
+      "concordance": 5,
+      "sorrel": 3
+     },
+     "relationships": {
+      "hale": 5
+     },
+     "resources": {
+      "town": 3
+     },
+     "arc": {
+      "mi04": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Sing Petronel's instead",
+    "outcome": "Hale asks Petronel. Petronel sings. The coal men are silent. The hymn is not about coal. It is about a river.",
+    "effects": {
+     "factions": {
+      "concordance": 3,
+      "hullfolk": 4
+     },
+     "relationships": {
+      "hale": 4,
+      "petronel": 4
+     },
+     "flags_set": [
+      "met_petronel",
+      "clue_song"
+     ],
+     "counters": {
+      "song_verses": 1
+     },
+     "arc": {
+      "mi04": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi04": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi05_1",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "arc": {
+    "id": "mi05",
+    "stage": 1
+   },
+   "text": "Three things, and these are the hands' three things. Wages a day late, every month. No gloves in winter. And the Company store won't take Company scrip at face. They've asked me to ask you. I've asked.",
+   "left": {
+    "label": "Hear all three properly",
+    "outcome": "You sit with the hands an hour. You cannot fix all three. You say so. They did not expect that.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "dace": 5
+     },
+     "flags_set": [
+      "dace_grievances_heard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Wages are the Company's timing",
+    "outcome": "\"Right. I'll tell them the Company. They know the Company.\"",
+    "effects": {
+     "resources": {
+      "company": 1,
+      "town": -3
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "dace_grievances_heard"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "flags_none": [
+     "dace_grievances_heard"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi05_2",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "arc": {
+    "id": "mi05",
+    "stage": 2
+   },
+   "text": "Three things. The hands have heard you heard them. They've heard nothing's changed. And they've asked whether a Keeper who listens and does nothing is better than one who doesn't listen. I said I'd ask. I'm asking.",
+   "left": {
+    "label": "Fix the gloves, at least",
+    "outcome": "Twelve pairs from the Coffers. One thing of three. It counts.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 3
+     },
+     "relationships": {
+      "dace": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Listening is what I can do",
+    "outcome": "\"Right. I'll tell them that. They'll like it about as much as I do.\"",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "strike"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "dace_grievances_heard"
+    ],
+    "arc_stage": {
+     "mi05": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi05_3",
+   "category": "minor_arcs",
+   "speaker": "pell",
+   "expression": "stern",
+   "arc": {
+    "id": "mi05",
+    "stage": 3
+   },
+   "text": "The hands have sent me a letter. With three demands and eleven signatures. The Company does not receive letters from hands. It receives them from Keepers. Tell them that, kindly, and make it work.",
+   "left": {
+    "label": "Sign the letter yourself; send it up",
+    "outcome": "Twelve signatures. Pell is aghast. Ardent is puzzled. Gloves arrive from Ardent, which has never happened.",
+    "effects": {
+     "resources": {
+      "company": -4,
+      "town": 5
+     },
+     "relationships": {
+      "dace": 6,
+      "pell": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Tell them kindly",
+    "outcome": "You tell them. Kindly. They fold the letter and put it away. It comes out again, later, unkindly.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -2
+     },
+     "relationships": {
+      "pell": 3,
+      "dace": -2
+     },
+     "flags_set": [
+      "strike"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "dace_grievances_heard",
+     "met_pell"
+    ],
+    "arc_stage": {
+     "mi05": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi05_4",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "arc": {
+    "id": "mi05",
+    "stage": 4
+   },
+   "text": "Three things. The hands have stopped. Not struck; stopped. They're at the paddles and not turning them. They'll turn when the scrip's worth face at the store. The store's the Company's. The Company's in Ardent.",
+   "left": {
+    "label": "Make up the scrip difference from the Coffers",
+    "outcome": "You pay the hands the difference in coin. The paddles turn. The chest is lighter. Vosk reads the entry twice.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "traffic": 3,
+      "town": 4
+     },
+     "relationships": {
+      "dace": 6
+     },
+     "flags_clear": [
+      "strike"
+     ],
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Turn the paddles yourself",
+    "outcome": "You and Mirren turn the paddles for a day. Eleven hands watch. By dusk, three help. By morning, all.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 3,
+      "mirren": 4
+     },
+     "flags_clear": [
+      "strike"
+     ],
+     "counters": {
+      "fatigue": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "strike",
+     "met_dace"
+    ],
+    "arc_stage": {
+     "mi05": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi05_5",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "mi05",
+    "stage": 5
+   },
+   "text": "The hands drink here. I hear the three things every night. Here's a fourth, free: they'd follow you off a cliff if you asked plainly, and walk you to the stone if you lied once. Dace won't say that. I just did.",
+   "left": {
+    "label": "Then I'll ask plainly",
+    "outcome": "You go to the lock house and tell the hands exactly what you can and cannot do. They listen. It is enough.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 3,
+      "dace": 5
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Dace should say it",
+    "outcome": "\"He won't. He's a corporal. Corporals report; they don't say.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 1
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "dace_grievances_heard",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi05": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi05_6",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "arc": {
+    "id": "mi05",
+    "stage": 6
+   },
+   "text": "Three things. The hands have their gloves. The store takes scrip at face, since Pell had a word he pretends he didn't. And wages are still a day late, which the hands say they'll live with. Two of three.",
+   "left": {
+    "label": "Two of three",
+    "outcome": "\"Two of three. Right.\" He almost smiles. The hands call it 'the Keeper's two' for years.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "dace": 6
+     },
+     "arc": {
+      "mi05": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Three of three; I'll pay the day myself",
+    "outcome": "You advance wages from your own pocket, monthly. The hands know. Dace says nothing about it, loudly.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 6
+     },
+     "relationships": {
+      "dace": 8
+     },
+     "arc": {
+      "mi05": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "dace_grievances_heard"
+    ],
+    "arc_stage": {
+     "mi05": {
+      "min": 5
+     }
+    },
+    "flags_none": [
+     "strike"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi06_1",
+   "category": "minor_arcs",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "arc": {
+    "id": "mi06",
+    "stage": 1
+   },
+   "text": "The chest is light. Everyone's is, this season. Mine is not. I lend to the town at one in ten and would lend to the post at one in twelve, kindly, because I like a Keeper who stays. Twenty marks?",
+   "left": {
+    "label": "Twenty marks",
+    "outcome": "Twenty in. The bell on her door rings for you now. One in twelve, monthly, kindly.",
+    "effects": {
+     "resources": {
+      "coffers": 12
+     },
+     "flags_set": [
+      "cole_loan",
+      "met_cole"
+     ],
+     "counters": {
+      "cole_debt": 3
+     },
+     "relationships": {
+      "cole": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Ten, and no more",
+    "outcome": "\"Ten. Prudent. I like prudent. Prudent pays.\"",
+    "effects": {
+     "resources": {
+      "coffers": 6
+     },
+     "flags_set": [
+      "cole_loan",
+      "met_cole"
+     ],
+     "counters": {
+      "cole_debt": 2
+     },
+     "relationships": {
+      "cole": 2
+     }
+    }
+   },
+   "conditions": {
+    "resources": {
+     "coffers": {
+      "max": 40
+     }
+    },
+    "flags_none": [
+     "cole_loan"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi06_2",
+   "category": "minor_arcs",
+   "speaker": "cole",
+   "arc": {
+    "id": "mi06",
+    "stage": 2
+   },
+   "text": "The first payment. Kindly, on time. I mention that the interest is on the whole, not the balance, that this is written on the note, and that most people do not read the note. You did not read the note.",
+   "left": {
+    "label": "Pay it; read the note now",
+    "outcome": "You read it. One in twelve, on the whole, monthly, until cleared. It is a long note.",
+    "effects": {
+     "resources": {
+      "coffers": -3
+     },
+     "relationships": {
+      "cole": 2
+     },
+     "counters": {
+      "cole_debt": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Dispute the terms",
+    "outcome": "\"Dispute. Kindly. The note is the note. Vosk has a copy.\" Vosk does.",
+    "effects": {
+     "relationships": {
+      "cole": -4,
+      "vosk": -1
+     },
+     "counters": {
+      "cole_debt": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cole_loan"
+    ],
+    "arc_stage": {
+     "mi06": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi06_3",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi06",
+    "stage": 3
+   },
+   "text": "The Ledger has a page on Cole. Dray's hand: 'she owns the chapel, the inn's debt, half the low street and the Board's nephew's gambling paper. Do not owe her. If you must, owe her briefly.'",
+   "left": {
+    "label": "Clear the debt now, whatever it costs",
+    "outcome": "You empty the chest into Cole's hands. The bell stops ringing for you. It is very quiet.",
+    "effects": {
+     "resources": {
+      "coffers": -10
+     },
+     "flags_clear": [
+      "cole_loan"
+     ],
+     "counters": {
+      "cole_debt": -5
+     },
+     "relationships": {
+      "cole": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Owe her a while longer",
+    "outcome": "The bell rings monthly. The interest is on the whole. Dray's hand was right.",
+    "effects": {
+     "counters": {
+      "cole_debt": 1
+     },
+     "delayed_resources": [
+      {
+       "delay": 8,
+       "resources": {
+        "coffers": -4
+       },
+       "message": "Cole's monthly interest falls due."
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cole_loan"
+    ],
+    "arc_stage": {
+     "mi06": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi06_4",
+   "category": "minor_arcs",
+   "speaker": "cole",
+   "expression": "cold",
+   "arc": {
+    "id": "mi06",
+    "stage": 4
+   },
+   "text": "You are behind. I do not send men. I have sent the Company a copy of the note. I also have an alternative: the Keeper's discretion over mooring fees at the pound, assigned to me for the term. I collect; you are clear.",
+   "left": {
+    "label": "Assign the mooring fees",
+    "outcome": "Cole collects the pound's mooring fees. The Hullfolk pay a landlady now. Bram hears of it.",
+    "effects": {
+     "resources": {
+      "coffers": 4
+     },
+     "flags_clear": [
+      "cole_loan"
+     ],
+     "counters": {
+      "cole_debt": -3
+     },
+     "relationships": {
+      "cole": 5,
+      "bram": -5
+     },
+     "factions": {
+      "hullfolk": -5
+     }
+    }
+   },
+   "right": {
+    "label": "Let the Company see the note",
+    "outcome": "Vosk reads it. \"Irregular. Both of you.\" She pays it from the maintenance fund and says nothing else, which is worse.",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "flags_clear": [
+      "cole_loan"
+     ],
+     "counters": {
+      "cole_debt": -3,
+      "suspicion": 2
+     },
+     "relationships": {
+      "cole": -4,
+      "vosk": 2
+     },
+     "flags_set": [
+      "cole_defaulted"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cole_loan"
+    ],
+    "arc_stage": {
+     "mi06": {
+      "min": 3
+     }
+    },
+    "counters": {
+     "cole_debt": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi06_5",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi06",
+    "stage": 5
+   },
+   "text": "You owed Cole. Everyone in this town has. She's never been unkind and she's never let anyone go. My inn was hers for six years. Whatever you gave her to get clear, I hope it wasn't the town's.",
+   "left": {
+    "label": "It wasn't the town's",
+    "outcome": "\"Good.\" She looks at you a moment. \"Good.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 4
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It was the mooring fees",
+    "outcome": "\"The Reach's fees. To Cole.\" She does not say anything else. She does not need to.",
+    "effects": {
+     "relationships": {
+      "ilse": -3,
+      "bram": -2
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi06": {
+      "min": 4
+     }
+    },
+    "flags_none": [
+     "cole_loan"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi06_6",
+   "category": "minor_arcs",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "arc": {
+    "id": "mi06",
+    "stage": 6
+   },
+   "text": "You are clear. Few are. I have torn the note in front of you, as I do. I have kept a copy, as I do. Should the post need me again, my door has a bell. I hope you never hear it. I have never hoped that before.",
+   "left": {
+    "label": "Thank her",
+    "outcome": "\"Do not. Kindly.\" She means it, which is new.",
+    "effects": {
+     "relationships": {
+      "cole": 5
+     },
+     "arc": {
+      "mi06": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Ask why she hopes it",
+    "outcome": "\"Because you paid. Nobody pays. They give me things instead. I have enough things.\"",
+    "effects": {
+     "relationships": {
+      "cole": 6
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi06": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi06": {
+      "min": 5
+     }
+    },
+    "flags_none": [
+     "cole_loan"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  }
+ ]
+}

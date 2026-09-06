@@ -54,7 +54,7 @@ def main():
         cid, t = c["id"], c["text"]
         low = t.lower()
         n = len(words(t))
-        limit = {"endings_meta": 60, "relationships": 40, "major_arcs": 40, "crises": 40}.get(c["category"], 32)
+        limit = {"endings_meta": 60, "relationships": 40, "major_arcs": 40, "minor_arcs": 40, "crises": 40}.get(c["category"], 32)
         if n < 6 or n > limit:
             (errors if n > limit + 8 or n < 4 else warnings).append(f"[{cid}] situation {n} words (6-{limit})")
         for side in ("left", "right"):

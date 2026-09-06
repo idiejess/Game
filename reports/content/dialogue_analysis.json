@@ -1,135 +1,115 @@
 {
-  "cards": 28,
+  "cards": 30,
   "errors": [],
   "warnings": [
-    "[cri_town_01] situation 42 words (6-40)",
-    "[cri_town_02] situation 42 words (6-40)",
-    "[cri_town_04] situation 47 words (6-40)",
-    "[cri_town_05] situation 45 words (6-40)",
-    "[cri_town_06] situation 45 words (6-40)",
-    "[cri_town_07] left outcome 33 words (>24)",
-    "[cri_town_08] situation 43 words (6-40)",
-    "[cri_fire_01] situation 45 words (6-40)",
-    "[cri_fire_02] situation 44 words (6-40)",
-    "[cri_fire_03] situation 42 words (6-40)",
-    "[cri_fire_04] situation 43 words (6-40)",
-    "[cri_fire_05] situation 41 words (6-40)",
-    "[cri_frost_01] situation 46 words (6-40)",
-    "[cri_frost_01] slang 'no way'",
-    "[cri_frost_02] situation 42 words (6-40)",
-    "[cri_frost_03] situation 48 words (6-40)",
-    "[cri_frost_04] situation 44 words (6-40)",
-    "[cri_frost_05] situation 45 words (6-40)",
-    "[cri_fever_01] situation 41 words (6-40)",
-    "[cri_fever_02] situation 44 words (6-40)",
-    "[cri_fever_03] situation 42 words (6-40)",
-    "[cri_fever_03] left outcome 25 words (>24)",
-    "[cri_fever_04] situation 47 words (6-40)",
-    "[cri_recover_01] situation 48 words (6-40)",
-    "[cri_recover_03] situation 41 words (6-40)",
-    "[cri_recover_04] situation 46 words (6-40)",
-    "[cri_recover_05] situation 46 words (6-40)",
-    "[cri_recover_05] slang 'whatever'",
-    "[cri_recover_05] 2 exclamation marks"
+    "[mi02_1] situation 42 words (6-40)",
+    "[mi02_4] situation 42 words (6-40)",
+    "[mi03_1] situation 41 words (6-40)",
+    "[mi03_2] situation 41 words (6-40)",
+    "[mi04_4] situation 41 words (6-40)",
+    "[mi04_4] hale uses prohibited phrase 'irregular'",
+    "[mi04_6] situation 43 words (6-40)",
+    "[mi05_5] situation 42 words (6-40)",
+    "[mi06_4] situation 43 words (6-40)",
+    "[mi06_5] slang 'whatever'",
+    "[mi06_6] situation 48 words (6-40)",
+    "opener 'three things' used by 4 cards (13.3%)"
   ],
   "speakers": {
-    "ilse": 5,
-    "dace": 3,
-    "src_stranger": 1,
-    "cole": 1,
-    "hesse": 1,
+    "crane": 3,
+    "vane": 4,
     "solas": 1,
-    "src_ledger": 5,
-    "tamm": 1,
-    "stroud": 3,
-    "src_weather": 1,
-    "vane": 1,
-    "vosk": 1,
-    "hale": 2,
-    "tobin": 1,
-    "pell": 1
+    "stroud": 2,
+    "ilse": 5,
+    "quenn": 1,
+    "hale": 3,
+    "src_gate": 1,
+    "dace": 4,
+    "pell": 1,
+    "cole": 4,
+    "src_ledger": 1
   },
   "top_openers": [
     [
       "three things",
-      3
+      4
     ],
     [
-      "the town",
-      3
+      "the hands",
+      2
     ],
     [
-      "there's a",
+      "you are",
+      2
+    ],
+    [
+      "the sorrel",
       1
     ],
     [
-      "a man",
+      "he accepted",
       1
     ],
     [
-      "the courier's",
+      "the night",
       1
     ],
     [
-      "the town's",
+      "dawn towpath",
       1
     ],
     [
-      "it's happening",
+      "neither of",
       1
     ],
     [
-      "fire in",
+      "i have",
       1
     ],
     [
-      "eleven burned",
-      1
-    ],
-    [
-      "two families",
+      "four cases",
       1
     ]
   ],
   "top_labels": [
     [
-      "go out and speak",
+      "second him",
       1
     ],
     [
-      "send dace to disperse them",
+      "forbid it on company water",
       1
     ],
     [
-      "the town's; stand them down",
+      "solas",
       1
     ],
     [
-      "the company's; guard the house",
+      "wren",
       1
     ],
     [
-      "don't step aside",
+      "suggest both fire wide",
       1
     ],
     [
-      "step aside",
+      "suggest he withdraw",
       1
     ],
     [
-      "no constables",
+      "say it",
       1
     ],
     [
-      "constables, for the rent only",
+      "say 'stop' instead",
       1
     ],
     [
-      "the calmer piece",
+      "dine with him",
       1
     ],
     [
-      "print what happens",
+      "nothing; it was a duel",
       1
     ]
   ]

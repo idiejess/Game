@@ -7,7 +7,6 @@
   "stats": {
     "schema_errors": 0,
     "unused_flags": [
-      "dace_grievances_heard",
       "dray_accused_vosk",
       "fiddle_impounded",
       "fiddle_returned",
@@ -32,32 +31,32 @@
       "p_hullfolk_honor",
       "p_keepers_lost"
     ],
-    "tradeoff_ratio": 0.695,
-    "pure_ratio": 0.088,
-    "delayed_ratio": 0.038,
-    "reactive_ratio": 0.924,
+    "tradeoff_ratio": 0.7,
+    "pure_ratio": 0.092,
+    "delayed_ratio": 0.037,
+    "reactive_ratio": 0.926,
     "unreachable": [],
-    "arcs_with_cards": 13,
+    "arcs_with_cards": 18,
     "clue_setters": {
       "noticed_water_fall": 9,
       "clue_dry_aqueduct": 6,
       "clue_sluice_guard": 22,
       "clue_charter": 17,
-      "clue_iron_well": 9,
-      "clue_reservoirs": 18,
+      "clue_iron_well": 12,
+      "clue_reservoirs": 19,
       "clue_cipher": 11,
       "clue_night_dredgers": 10,
       "clue_crane_counts": 9,
-      "clue_song": 12
+      "clue_song": 13
     },
-    "total_cards": 826,
-    "inventory_missing": 174,
+    "total_cards": 856,
+    "inventory_missing": 144,
     "by_category": {
       "onboarding": 30,
       "evergreen": 220,
       "resources": 150,
       "relationships": 120,
-      "minor_arcs": 6,
+      "minor_arcs": 36,
       "major_arcs": 180,
       "crises": 70,
       "endings_meta": 50
