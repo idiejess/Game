@@ -1,0 +1,26 @@
+{
+  "id": "dace",
+  "name": "Corporal Dace",
+  "role": "Foreman of Lock Hands",
+  "tier": "supporting",
+  "faction": "town",
+  "expressions": [
+    "neutral",
+    "fed_up"
+  ],
+  "portrait_prefix": "dace",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Ex-soldier, whistle, sleeves torn at the seam.",
+  "speech_rhythm": "Bluff, reports in lists. 'Three things, Keeper.'",
+  "vocabulary": [
+    "three things",
+    "the hands",
+    "paddles"
+  ],
+  "prohibited_phrases": [
+    "magnificent",
+    "the gift"
+  ],
+  "notes": "Labor, strikes, requisition.",
+  "initial_relationship": 50
+}

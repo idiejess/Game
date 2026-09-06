@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halfwaylock.game/schemas/save.schema.json",
+  "title": "Halfway Lock save file",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["save_version", "content_version", "profile", "run"],
+  "properties": {
+    "save_version": { "type": "integer", "minimum": 1 },
+    "content_version": { "type": "string" },
+    "saved_at": { "type": "string" },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_number", "unlocks", "lore", "objectives", "endings", "discovered_cards", "discovered_characters"],
+      "properties": {
+        "run_number": { "type": "integer", "minimum": 1 },
+        "unlocks": { "type": "array", "items": { "type": "string" } },
+        "lore": { "type": "array", "items": { "type": "string" } },
+        "objectives": { "type": "array", "items": { "type": "string" } },
+        "endings": { "type": "array", "items": { "type": "object", "required": ["id", "run", "watch"], "properties": { "id": { "type": "string" }, "run": { "type": "integer" }, "watch": { "type": "integer" } } } },
+        "discovered_cards": { "type": "array", "items": { "type": "string" } },
+        "discovered_characters": { "type": "array", "items": { "type": "string" } },
+        "persistent_counters": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "persistent_flags": { "type": "array", "items": { "type": "string" } },
+        "achievements": { "type": "array", "items": { "type": "string" } },
+        "total_watches": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "run": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["seed", "watch", "resources", "relationships", "factions", "flags", "counters", "arcs", "history", "cooldowns", "delayed", "delayed_resources", "forced_queue", "subdecks", "rng_state"],
+      "properties": {
+        "seed": { "type": "integer" },
+        "watch": { "type": "integer", "minimum": 0 },
+        "resources": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "relationships": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "factions": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "flags": { "type": "array", "items": { "type": "string" } },
+        "counters": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "arcs": { "type": "object", "additionalProperties": { "type": "object", "properties": { "stage": { "type": "integer" }, "status": { "type": "string" } } } },
+        "history": { "type": "array", "items": { "type": "object", "required": ["card", "watch", "choice"], "properties": { "card": { "type": "string" }, "watch": { "type": "integer" }, "choice": { "type": "string" } } } },
+        "cooldowns": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "appearances": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "delayed": { "type": "array", "items": { "type": "object", "required": ["card", "due"], "properties": { "card": { "type": "string" }, "due": { "type": "integer" } } } },
+        "delayed_resources": { "type": "array", "items": { "type": "object", "required": ["due", "resources"], "properties": { "due": { "type": "integer" }, "resources": { "type": "object" }, "message": { "type": "string" } } } },
+        "forced_queue": { "type": "array", "items": { "type": "string" } },
+        "subdecks": { "type": "array", "items": { "type": "object", "required": ["id", "cards"], "properties": { "id": { "type": "string" }, "cards": { "type": "array", "items": { "type": "string" } }, "interleave": { "type": "integer" }, "since": { "type": "integer" } } } },
+        "rng_state": { "type": "integer" },
+        "current_card": { "type": ["string", "null"] },
+        "fallback_count": { "type": "integer" },
+        "ended": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

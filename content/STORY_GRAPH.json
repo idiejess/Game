@@ -1,0 +1,3749 @@
+{
+ "version": 1,
+ "major_arcs": {
+  "MA01": {
+   "title": "The Jubilee",
+   "premise": "Pell wants the canal's eightieth year celebrated at the summit with a record day of traffic and a visit from Commissioner Kell; the budget, the water and the truth all get in the way.",
+   "characters": [
+    "pell",
+    "quenn",
+    "kell",
+    "ilse"
+   ],
+   "entry": {
+    "watch": {
+     "min": 10
+    },
+    "resources": {
+     "company": {
+      "min": 40
+     }
+    },
+    "flags_none": [
+     "jubilee_ruined"
+    ]
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Plan: Pell announces; Keeper decides scale",
+     "cards": [
+      "ma01_01",
+      "ma01_02",
+      "ma01_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Budget: bunting vs repairs; Cole's loan tempts",
+     "cards": [
+      "ma01_04",
+      "ma01_05",
+      "ma01_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Rehearsal: throughput demands strain Water",
+     "cards": [
+      "ma01_07",
+      "ma01_08",
+      "ma01_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Ceremony: Kell arrives; a public moment",
+     "cards": [
+      "ma01_10",
+      "ma01_11",
+      "ma01_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Aftermath: credit, blame, or a quiet ruin",
+     "cards": [
+      "ma01_13",
+      "ma01_14",
+      "ma01_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Fund it (coffers-) or refuse (pell-)",
+    "Repairs first sets budget_repairs and lowers jubilee_progress",
+    "Ceremony during high water risks flood; during survey publication ruins it"
+   ],
+   "state_changes": [
+    "jubilee_planned",
+    "jubilee_funded",
+    "jubilee_held",
+    "jubilee_ruined",
+    "kell_present",
+    "counter jubilee_progress"
+   ],
+   "success": "jubilee_held with company+, town+; enables end_ord_jubilee.",
+   "failure": "jubilee_ruined: company-, pell relationship-, Hesse prints it.",
+   "delayed_consequences": "Kell remembers the Keeper (mi20, end cards). Traffic strain feeds MA04.",
+   "cross_run_consequences": "p_company_trust rises on success.",
+   "cards": [
+    "ma01_01",
+    "ma01_02",
+    "ma01_03",
+    "ma01_04",
+    "ma01_05",
+    "ma01_06",
+    "ma01_07",
+    "ma01_08",
+    "ma01_09",
+    "ma01_10",
+    "ma01_11",
+    "ma01_12",
+    "ma01_13",
+    "ma01_14",
+    "ma01_15"
+   ],
+   "exit": "Stage 5 card resolves the arc as completed or failed.",
+   "interactions": [
+    "MA04",
+    "MA05",
+    "MA08",
+    "mi20",
+    "mi25"
+   ]
+  },
+  "MA02": {
+   "title": "The Study",
+   "premise": "Dray's locked study holds a ciphered ledger; Mirren, Fennick and Tobin each hold a piece of the key.",
+   "characters": [
+    "mirren",
+    "fennick",
+    "tobin"
+   ],
+   "entry": {
+    "flags_any": [
+     "found_ledger"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 30
+     }
+    }
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Locked drawer: open it, or wait for Mirren",
+     "cards": [
+      "ma02_01",
+      "ma02_02",
+      "ma02_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Cipher: Mirren admits she has it",
+     "cards": [
+      "ma02_04",
+      "ma02_05",
+      "ma02_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Gauge: the sill markings are the key",
+     "cards": [
+      "ma02_07",
+      "ma02_08",
+      "ma02_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Wire copy: Fennick's kept telegram",
+     "cards": [
+      "ma02_10",
+      "ma02_11",
+      "ma02_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Key: a brass key stamped S.H.",
+     "cards": [
+      "ma02_13",
+      "ma02_14",
+      "ma02_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Force the drawer (mirren-) or earn it",
+    "Share the cipher with Mirren or work alone",
+    "Take the key to the sluice house or give it to Vosk"
+   ],
+   "state_changes": [
+    "found_ledger",
+    "cipher_solved",
+    "has_wire_copy",
+    "clue_cipher",
+    "counter cipher_progress",
+    "unlock_drays_key"
+   ],
+   "success": "unlock_drays_key granted; MA11 entry opens.",
+   "failure": "Vosk takes the ledger: suspicion+, arc failed, but cipher_progress persists via Ledger.",
+   "delayed_consequences": "Fennick's wire copy arrives 5-12 watches after asking.",
+   "cross_run_consequences": "p_cipher_progress carries partial decoding between runs.",
+   "cards": [
+    "ma02_01",
+    "ma02_02",
+    "ma02_03",
+    "ma02_04",
+    "ma02_05",
+    "ma02_06",
+    "ma02_07",
+    "ma02_08",
+    "ma02_09",
+    "ma02_10",
+    "ma02_11",
+    "ma02_12",
+    "ma02_13",
+    "ma02_14",
+    "ma02_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA03",
+    "MA11",
+    "mi13",
+    "mi28",
+    "mi08"
+   ]
+  },
+  "MA03": {
+   "title": "The Auditor's Interest",
+   "premise": "Vosk inspects the Keeper more closely than the accounts deserve, and her interest sharpens around the sluice house.",
+   "characters": [
+    "vosk",
+    "fennick"
+   ],
+   "entry": {
+    "watch": {
+     "min": 15
+    }
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Inspection: the toll book under her eye",
+     "cards": [
+      "ma03_01",
+      "ma03_02",
+      "ma03_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Questions: what the Keeper has noticed",
+     "cards": [
+      "ma03_04",
+      "ma03_05",
+      "ma03_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "The Sluice House: a locked door on the north bank",
+     "cards": [
+      "ma03_07",
+      "ma03_08",
+      "ma03_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Offer: silence for protection",
+     "cards": [
+      "ma03_10",
+      "ma03_11",
+      "ma03_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Verdict: ally, enemy or nothing",
+     "cards": [
+      "ma03_13",
+      "ma03_14",
+      "ma03_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Answer honestly (suspicion+) or evade",
+    "Go to the sluice house (clue_sluice_guard) or leave it",
+    "Accept the offer (vosk_ally, TE3 path) or refuse (vosk_enemy)"
+   ],
+   "state_changes": [
+    "met_vosk",
+    "suspicion",
+    "sluice_house_seen",
+    "clue_sluice_guard",
+    "vosk_ally",
+    "vosk_enemy",
+    "suspicion_high"
+   ],
+   "success": "vosk_ally; Vosk protects during audits.",
+   "failure": "vosk_enemy; audit_pending; MA09 becomes hostile.",
+   "delayed_consequences": "An audit arrives 10-20 watches after a hostile verdict.",
+   "cross_run_consequences": "Vosk recalls previous Keepers' answers (meta_vosk_remembers).",
+   "cards": [
+    "ma03_01",
+    "ma03_02",
+    "ma03_03",
+    "ma03_04",
+    "ma03_05",
+    "ma03_06",
+    "ma03_07",
+    "ma03_08",
+    "ma03_09",
+    "ma03_10",
+    "ma03_11",
+    "ma03_12",
+    "ma03_13",
+    "ma03_14",
+    "ma03_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA02",
+    "MA09",
+    "MA12",
+    "mi27",
+    "mi13"
+   ]
+  },
+  "MA04": {
+   "title": "Throughput",
+   "premise": "Pell's record attempt and Vane's contracts push the gate to cut corners, while Crane counts every breach of the Compact.",
+   "characters": [
+    "pell",
+    "vane",
+    "crane",
+    "solas"
+   ],
+   "entry": {
+    "resources": {
+     "traffic": {
+      "max": 35
+     }
+    }
+   },
+   "entry_alt": {
+    "resources": {
+     "traffic": {
+      "min": 65
+     }
+    }
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Record: the target is set",
+     "cards": [
+      "ma04_01",
+      "ma04_02",
+      "ma04_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Corners: waive inspections",
+     "cards": [
+      "ma04_04",
+      "ma04_05",
+      "ma04_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Inspectors: Crane objects formally",
+     "cards": [
+      "ma04_07",
+      "ma04_08",
+      "ma04_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Night passages: unlit boats",
+     "cards": [
+      "ma04_10",
+      "ma04_11",
+      "ma04_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Reckoning: a near miss or a collision",
+     "cards": [
+      "ma04_13",
+      "ma04_14",
+      "ma04_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Waive inspections (inspections_waived) or refuse",
+    "Allow night passages (night_passages) or not",
+    "Reckoning: collision leads to cri_pileup; refusal ends record"
+   ],
+   "state_changes": [
+    "throughput_record",
+    "inspections_waived",
+    "night_passages",
+    "compact_breached",
+    "chamber_collision"
+   ],
+   "success": "Record set: company+, traffic high; Crane's report hostile.",
+   "failure": "chamber_collision -> crisis pool; inquiry.",
+   "delayed_consequences": "Crane files under the Compact; Aldmere wire 8 watches later.",
+   "cross_run_consequences": "none",
+   "cards": [
+    "ma04_01",
+    "ma04_02",
+    "ma04_03",
+    "ma04_04",
+    "ma04_05",
+    "ma04_06",
+    "ma04_07",
+    "ma04_08",
+    "ma04_09",
+    "ma04_10",
+    "ma04_11",
+    "ma04_12",
+    "ma04_13",
+    "ma04_14",
+    "ma04_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA01",
+    "MA07",
+    "cri_pileup",
+    "mi02",
+    "mi24"
+   ]
+  },
+  "MA05": {
+   "title": "The Reservoir Sums",
+   "premise": "Quenn's figures for the Ninefold Reservoirs never account for the pound; Crane has been counting too.",
+   "characters": [
+    "quenn",
+    "crane",
+    "vosk"
+   ],
+   "entry": {
+    "relationships": {
+     "quenn": {
+      "min": 40
+     }
+    },
+    "resources": {
+     "water": {
+      "max": 45
+     }
+    }
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Drawer: Quenn admits the survey copy",
+     "cards": [
+      "ma05_01",
+      "ma05_02",
+      "ma05_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Aqueduct walk: the dry channel",
+     "cards": [
+      "ma05_04",
+      "ma05_05",
+      "ma05_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Crane's figures: they match",
+     "cards": [
+      "ma05_07",
+      "ma05_08",
+      "ma05_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Drought or Cut: what the numbers mean",
+     "cards": [
+      "ma05_10",
+      "ma05_11",
+      "ma05_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Publish or burn",
+     "cards": [
+      "ma05_13",
+      "ma05_14",
+      "ma05_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Read the survey (read_survey, clue_reservoirs) or leave it",
+    "Bring Crane in (clue_crane_counts, crane_recruited)",
+    "Publish without the Cut: end_false_drought; with letters or Cut: TE2 path; burn: survey_burned"
+   ],
+   "state_changes": [
+    "read_survey",
+    "clue_reservoirs",
+    "clue_dry_aqueduct",
+    "clue_crane_counts",
+    "crane_recruited",
+    "survey_published",
+    "survey_burned",
+    "quenn_brave",
+    "quenn_silenced",
+    "unlock_quenn_survey"
+   ],
+   "success": "unlock_quenn_survey; quenn_brave.",
+   "failure": "quenn_silenced (transferred); suspicion+.",
+   "delayed_consequences": "Vosk reacts 3-6 watches after any publication.",
+   "cross_run_consequences": "p_protected_quenn if Quenn kept safe.",
+   "cards": [
+    "ma05_01",
+    "ma05_02",
+    "ma05_03",
+    "ma05_04",
+    "ma05_05",
+    "ma05_06",
+    "ma05_07",
+    "ma05_08",
+    "ma05_09",
+    "ma05_10",
+    "ma05_11",
+    "ma05_12",
+    "ma05_13",
+    "ma05_14",
+    "ma05_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA01",
+    "MA09",
+    "MA12",
+    "mi22",
+    "mi25",
+    "mi08"
+   ]
+  },
+  "MA06": {
+   "title": "The Water Debt",
+   "premise": "Bram's mooring dispute becomes the story of the Hullfolk's origins as Petronel sings the Lowmere Song verse by verse.",
+   "characters": [
+    "bram",
+    "wren",
+    "petronel",
+    "ilse"
+   ],
+   "entry": {
+    "factions": {
+     "hullfolk": {
+      "min": 40
+     }
+    }
+   },
+   "entry_alt": {
+    "flags_all": [
+     "honored_remembered"
+    ]
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Mooring: the holding is challenged",
+     "cards": [
+      "ma06_01",
+      "ma06_02",
+      "ma06_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "The remembered: an invitation",
+     "cards": [
+      "ma06_04",
+      "ma06_05",
+      "ma06_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "The Song: verses",
+     "cards": [
+      "ma06_07",
+      "ma06_08",
+      "ma06_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "The outfall: Bram names a place on the north bank",
+     "cards": [
+      "ma06_10",
+      "ma06_11",
+      "ma06_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "The debt named",
+     "cards": [
+      "ma06_13",
+      "ma06_14",
+      "ma06_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Uphold the holding (ilse-, bram+) or the town",
+    "Attend the remembrance (honored_remembered)",
+    "Promise Bram the debt will be named (promised_bram)"
+   ],
+   "state_changes": [
+    "honored_remembered",
+    "clue_song",
+    "song_heard",
+    "counter song_verses",
+    "promised_bram",
+    "unlock_lowmere_song"
+   ],
+   "success": "unlock_lowmere_song; hullfolk faction high; TE1 path.",
+   "failure": "Blocked by hullfolk_cleared; Bram mourning.",
+   "delayed_consequences": "Hullfolk favors return as help during floods.",
+   "cross_run_consequences": "p_hullfolk_honor; meta_hullfolk_gift.",
+   "cards": [
+    "ma06_01",
+    "ma06_02",
+    "ma06_03",
+    "ma06_04",
+    "ma06_05",
+    "ma06_06",
+    "ma06_07",
+    "ma06_08",
+    "ma06_09",
+    "ma06_10",
+    "ma06_11",
+    "ma06_12",
+    "ma06_13",
+    "ma06_14",
+    "ma06_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA10",
+    "MA11",
+    "MA12",
+    "mi17",
+    "mi26",
+    "mi15"
+   ]
+  },
+  "MA07": {
+   "title": "The Rifle Road",
+   "premise": "Wren's reed cargo is rifles for Sorrel; Solas is the buyer, Vane the paymaster, Crane the law.",
+   "characters": [
+    "wren",
+    "solas",
+    "vane",
+    "crane"
+   ],
+   "entry": {
+    "flags_any": [
+     "reeds_cargo"
+    ]
+   },
+   "entry_alt": {
+    "factions": {
+     "sorrel": {
+      "min": 55
+     }
+    }
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Crate: what is in the reeds",
+     "cards": [
+      "ma07_01",
+      "ma07_02",
+      "ma07_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Buyer: Solas admits it",
+     "cards": [
+      "ma07_04",
+      "ma07_05",
+      "ma07_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Compact seals: Crane refuses the second seal",
+     "cards": [
+      "ma07_07",
+      "ma07_08",
+      "ma07_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Convoy: the armed boats arrive",
+     "cards": [
+      "ma07_10",
+      "ma07_11",
+      "ma07_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Choice: let them through, stop them, or warn Aldmere",
+     "cards": [
+      "ma07_13",
+      "ma07_14",
+      "ma07_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Protect Wren (wren_protected) or jail her (wren_jailed)",
+    "One seal (arms_passed, compact_breached) or hold (arms_held)",
+    "sorrel_armed / convoy_stopped / coup_warned"
+   ],
+   "state_changes": [
+    "reeds_cargo",
+    "rifles_known",
+    "wren_protected",
+    "wren_jailed",
+    "arms_held",
+    "arms_passed",
+    "sorrel_armed",
+    "convoy_stopped",
+    "coup_warned",
+    "solas_owed",
+    "solas_refused_order"
+   ],
+   "success": "convoy_stopped or coup_warned with Solas kept: solas_owed.",
+   "failure": "sorrel_armed: Sorrel faction high, Aldmere hostile; Solas may refuse TE1 in MA12.",
+   "delayed_consequences": "Aldmere wire 10 watches after arms pass; Sorrel news 6 watches after stop.",
+   "cross_run_consequences": "p_jailed_wren.",
+   "cards": [
+    "ma07_01",
+    "ma07_02",
+    "ma07_03",
+    "ma07_04",
+    "ma07_05",
+    "ma07_06",
+    "ma07_07",
+    "ma07_08",
+    "ma07_09",
+    "ma07_10",
+    "ma07_11",
+    "ma07_12",
+    "ma07_13",
+    "ma07_14",
+    "ma07_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA04",
+    "MA10",
+    "MA12",
+    "mi15",
+    "mi18",
+    "mi24",
+    "mi11"
+   ]
+  },
+  "MA08": {
+   "title": "High Water",
+   "premise": "The pound is high; cellars and the chapel undercroft flood, the brewery well rises with it, and the undercroft holds Marrow's letters.",
+   "characters": [
+    "ilse",
+    "hale",
+    "stroud",
+    "cole"
+   ],
+   "entry": {
+    "resources": {
+     "water": {
+      "min": 62
+     }
+    }
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Cellars: Ilse demands the paddles",
+     "cards": [
+      "ma08_01",
+      "ma08_02",
+      "ma08_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Undercroft: Hale will not let anyone down",
+     "cards": [
+      "ma08_04",
+      "ma08_05",
+      "ma08_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "The well: iron and the pound",
+     "cards": [
+      "ma08_07",
+      "ma08_08",
+      "ma08_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "The letters: what the water uncovered",
+     "cards": [
+      "ma08_10",
+      "ma08_11",
+      "ma08_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "The charter: 'the water I have given'",
+     "cards": [
+      "ma08_13",
+      "ma08_14",
+      "ma08_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Open paddles full (paddles_opened_full, water-, traffic-) or sandbag (town labor)",
+    "Force the undercroft (hale-) or wait",
+    "Take the letters (letters_taken) or leave them"
+   ],
+   "state_changes": [
+    "cellars_flooded",
+    "undercroft_flooded",
+    "sandbags_ordered",
+    "paddles_opened_full",
+    "clue_iron_well",
+    "well_tested",
+    "read_letters",
+    "letters_taken",
+    "clue_charter",
+    "hale_confessed",
+    "unlock_marrow_letters"
+   ],
+   "success": "unlock_marrow_letters; Hale confessed or reconciled.",
+   "failure": "flood_ignored 3 -> Breach risk; letters lost to water.",
+   "delayed_consequences": "Ale sickness 4-8 watches after the well is ignored.",
+   "cross_run_consequences": "none",
+   "cards": [
+    "ma08_01",
+    "ma08_02",
+    "ma08_03",
+    "ma08_04",
+    "ma08_05",
+    "ma08_06",
+    "ma08_07",
+    "ma08_08",
+    "ma08_09",
+    "ma08_10",
+    "ma08_11",
+    "ma08_12",
+    "ma08_13",
+    "ma08_14",
+    "ma08_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA01",
+    "MA12",
+    "mi03",
+    "mi17",
+    "cri_flood"
+   ]
+  },
+  "MA09": {
+   "title": "The Vosk File",
+   "premise": "Fennick and Hesse can get at Vosk's Y31 file, which proves the Company has known for fifty years.",
+   "characters": [
+    "vosk",
+    "fennick",
+    "hesse",
+    "crane"
+   ],
+   "entry": {
+    "counters": {
+     "suspicion": {
+      "min": 5
+     }
+    },
+    "relationships": {
+     "fennick": {
+      "min": 50
+     }
+    }
+   },
+   "entry_alt": {
+    "counters": {
+     "suspicion": {
+      "min": 5
+     }
+    },
+    "relationships": {
+     "hesse": {
+      "min": 50
+     }
+    }
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Rumor",
+     "cards": [
+      "ma09_01",
+      "ma09_02",
+      "ma09_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "The copy",
+     "cards": [
+      "ma09_04",
+      "ma09_05",
+      "ma09_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Leverage",
+     "cards": [
+      "ma09_07",
+      "ma09_08",
+      "ma09_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Press",
+     "cards": [
+      "ma09_10",
+      "ma09_11",
+      "ma09_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "File",
+     "cards": [
+      "ma09_13",
+      "ma09_14",
+      "ma09_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Blackmail Vosk (vosk_confronted, vosk_enemy) or bring it to Crane",
+    "Give Hesse the story (hesse_has_story) or hold it",
+    "End: unlock_vosk_file; The Promotion path if Company 100"
+   ],
+   "state_changes": [
+    "vosk_file_seen",
+    "vosk_confronted",
+    "hesse_has_story",
+    "hesse_friendly",
+    "hesse_hostile",
+    "fennick_trusted",
+    "unlock_vosk_file"
+   ],
+   "success": "unlock_vosk_file; Crane witness.",
+   "failure": "Fennick exposed (fennick_exposed) and dismissed; Vosk enemy.",
+   "delayed_consequences": "Hesse prints 3-5 watches after receiving.",
+   "cross_run_consequences": "none",
+   "cards": [
+    "ma09_01",
+    "ma09_02",
+    "ma09_03",
+    "ma09_04",
+    "ma09_05",
+    "ma09_06",
+    "ma09_07",
+    "ma09_08",
+    "ma09_09",
+    "ma09_10",
+    "ma09_11",
+    "ma09_12",
+    "ma09_13",
+    "ma09_14",
+    "ma09_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA03",
+    "MA05",
+    "MA12",
+    "mi07",
+    "mi13",
+    "mi29"
+   ]
+  },
+  "MA10": {
+   "title": "The Clearance",
+   "premise": "Pell revives the Y44 order to clear the Hullfolk from the Reed Reach; the town is asked to help and Solas is asked to enforce.",
+   "characters": [
+    "pell",
+    "ilse",
+    "bram",
+    "solas"
+   ],
+   "entry": {
+    "resources": {
+     "town": {
+      "max": 40
+     }
+    },
+    "factions": {
+     "hullfolk": {
+      "max": 40
+     }
+    }
+   },
+   "entry_alt": {
+    "run": {
+     "min": 2
+    },
+    "relationships": {
+     "pell": {
+      "min": 60
+     }
+    }
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Draft",
+     "cards": [
+      "ma10_01",
+      "ma10_02",
+      "ma10_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Moot",
+     "cards": [
+      "ma10_04",
+      "ma10_05",
+      "ma10_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "Order",
+     "cards": [
+      "ma10_07",
+      "ma10_08",
+      "ma10_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "The Reach",
+     "cards": [
+      "ma10_10",
+      "ma10_11",
+      "ma10_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Aftermath",
+     "cards": [
+      "ma10_13",
+      "ma10_14",
+      "ma10_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Sign (clearance_signed) or refuse (clearance_refused)",
+    "Ask Solas to enforce: he may refuse (solas_refused_order)",
+    "Riot or departure"
+   ],
+   "state_changes": [
+    "clearance_drafted",
+    "clearance_signed",
+    "clearance_refused",
+    "hullfolk_cleared",
+    "moot_called",
+    "riot_brewing",
+    "solas_refused_order"
+   ],
+   "success": "From Pell's view: hullfolk_cleared -> end_false_clearance available; MA06 blocked.",
+   "failure": "Riot -> cri_town; or refusal -> company-.",
+   "delayed_consequences": "Riot 2-4 watches after the order.",
+   "cross_run_consequences": "p_clearance_done.",
+   "cards": [
+    "ma10_01",
+    "ma10_02",
+    "ma10_03",
+    "ma10_04",
+    "ma10_05",
+    "ma10_06",
+    "ma10_07",
+    "ma10_08",
+    "ma10_09",
+    "ma10_10",
+    "ma10_11",
+    "ma10_12",
+    "ma10_13",
+    "ma10_14",
+    "ma10_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA06",
+    "MA07",
+    "MA12",
+    "cri_town",
+    "mi30",
+    "mi05"
+   ]
+  },
+  "MA11": {
+   "title": "Into the Cut",
+   "premise": "With Dray's key and Bram's knowledge of the outfall, the Keeper enters the Marrow Cut and finds what Dray found.",
+   "characters": [
+    "mirren",
+    "bram",
+    "tamm",
+    "hale"
+   ],
+   "entry": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "relationships": {
+     "mirren": {
+      "min": 50
+     }
+    }
+   },
+   "entry_alt": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "relationships": {
+     "bram": {
+      "min": 50
+     }
+    }
+   },
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Door",
+     "cards": [
+      "ma11_01",
+      "ma11_02",
+      "ma11_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Descent",
+     "cards": [
+      "ma11_04",
+      "ma11_05",
+      "ma11_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "What is found",
+     "cards": [
+      "ma11_07",
+      "ma11_08",
+      "ma11_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "Return",
+     "cards": [
+      "ma11_10",
+      "ma11_11",
+      "ma11_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Telling Mirren",
+     "cards": [
+      "ma11_13",
+      "ma11_14",
+      "ma11_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "Go alone (risk end_rev_sluice) or with Tamm/Bram",
+    "Take Dray's ledger page (cut_mapped)",
+    "Tell Mirren (told_mirren) or keep it (mirren_knows_secret_kept)"
+   ],
+   "state_changes": [
+    "sluice_house_opened",
+    "entered_cut",
+    "knows_cut",
+    "knows_dray_fate",
+    "cut_mapped",
+    "told_mirren",
+    "mirren_knows_secret_kept",
+    "unlock_dray_fate",
+    "unlock_cut_map"
+   ],
+   "success": "unlock_cut_map and unlock_dray_fate.",
+   "failure": "Drowning: end_rev_sluice (still unlocks dray_fate).",
+   "delayed_consequences": "Mirren's response 3 watches after telling.",
+   "cross_run_consequences": "p_told_mirren.",
+   "cards": [
+    "ma11_01",
+    "ma11_02",
+    "ma11_03",
+    "ma11_04",
+    "ma11_05",
+    "ma11_06",
+    "ma11_07",
+    "ma11_08",
+    "ma11_09",
+    "ma11_10",
+    "ma11_11",
+    "ma11_12",
+    "ma11_13",
+    "ma11_14",
+    "ma11_15"
+   ],
+   "exit": "Stage 5 resolves.",
+   "interactions": [
+    "MA02",
+    "MA06",
+    "MA12",
+    "mi28"
+   ]
+  },
+  "MA12": {
+   "title": "Last Water",
+   "premise": "The Keeper gathers allies and chooses how the truth about the Cut will end: the river returned, the ledger opened, or the cut kept.",
+   "characters": [
+    "vosk",
+    "bram",
+    "quenn",
+    "hale",
+    "crane",
+    "solas",
+    "wren",
+    "mirren"
+   ],
+   "entry": {
+    "watch": {
+     "min": 60
+    },
+    "unlocks": [
+     "unlock_cut_map"
+    ]
+   },
+   "entry_alt": null,
+   "stages": [
+    {
+     "stage": 1,
+     "name": "Allies",
+     "cards": [
+      "ma12_01",
+      "ma12_02",
+      "ma12_03"
+     ]
+    },
+    {
+     "stage": 2,
+     "name": "Plan",
+     "cards": [
+      "ma12_04",
+      "ma12_05",
+      "ma12_06"
+     ]
+    },
+    {
+     "stage": 3,
+     "name": "The night",
+     "cards": [
+      "ma12_07",
+      "ma12_08",
+      "ma12_09"
+     ]
+    },
+    {
+     "stage": 4,
+     "name": "The sluice",
+     "cards": [
+      "ma12_10",
+      "ma12_11",
+      "ma12_12"
+     ]
+    },
+    {
+     "stage": 5,
+     "name": "Dawn",
+     "cards": [
+      "ma12_13",
+      "ma12_14",
+      "ma12_15"
+     ]
+    }
+   ],
+   "branch_points": [
+    "route_river (Bram, Wren, Solas)",
+    "route_ledger (Crane, Quenn, Hesse)",
+    "route_cut (Vosk, Hale, Tamm)"
+   ],
+   "state_changes": [
+    "allies_gathered",
+    "route_river",
+    "route_ledger",
+    "route_cut",
+    "sluice_rebuilt",
+    "counter allies"
+   ],
+   "success": "end_true_river / end_true_ledger / end_true_cut.",
+   "failure": "Betrayal or resource edge during the night: crisis endings.",
+   "delayed_consequences": "none; the arc is terminal.",
+   "cross_run_consequences": "p_true_ending_seen; distinct epilogues.",
+   "cards": [
+    "ma12_01",
+    "ma12_02",
+    "ma12_03",
+    "ma12_04",
+    "ma12_05",
+    "ma12_06",
+    "ma12_07",
+    "ma12_08",
+    "ma12_09",
+    "ma12_10",
+    "ma12_11",
+    "ma12_12",
+    "ma12_13",
+    "ma12_14",
+    "ma12_15"
+   ],
+   "exit": "Ends the run.",
+   "interactions": [
+    "all"
+   ]
+  }
+ },
+ "minor_arcs": {
+  "mi01": {
+   "title": "The Geese",
+   "characters": [
+    "ilse",
+    "dace"
+   ],
+   "entry": {
+    "watch": {
+     "min": 6
+    }
+   },
+   "state_changes": [
+    "geese_loose",
+    "geese_resolved",
+    "counter geese_count"
+   ],
+   "cards": [
+    "mi01_1",
+    "mi01_2",
+    "mi01_3",
+    "mi01_4",
+    "mi01_5",
+    "mi01_6"
+   ],
+   "notes": "Comic; callbacks in evergreen cards.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi01_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi01_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi01_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi01_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi01_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi01_6"
+     ]
+    }
+   ]
+  },
+  "mi02": {
+   "title": "The Duel of Precedence",
+   "characters": [
+    "crane",
+    "vane",
+    "solas"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ]
+   },
+   "state_changes": [
+    "duel_pending"
+   ],
+   "cards": [
+    "mi02_1",
+    "mi02_2",
+    "mi02_3",
+    "mi02_4",
+    "mi02_5",
+    "mi02_6"
+   ],
+   "notes": "Compact standing; feeds MA04.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi02_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi02_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi02_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi02_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi02_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi02_6"
+     ]
+    }
+   ]
+  },
+  "mi03": {
+   "title": "Iron Spring",
+   "characters": [
+    "stroud",
+    "ilse",
+    "quenn"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "state_changes": [
+    "ale_sickness",
+    "well_tested",
+    "well_closed",
+    "clue_iron_well"
+   ],
+   "cards": [
+    "mi03_1",
+    "mi03_2",
+    "mi03_3",
+    "mi03_4",
+    "mi03_5",
+    "mi03_6"
+   ],
+   "notes": "Clue 4; feeds MA08.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi03_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi03_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi03_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi03_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi03_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi03_6"
+     ]
+    }
+   ]
+  },
+  "mi04": {
+   "title": "The Blessing of Coal",
+   "characters": [
+    "vane",
+    "hale"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_hale",
+     "met_vane"
+    ]
+   },
+   "state_changes": [],
+   "cards": [
+    "mi04_1",
+    "mi04_2",
+    "mi04_3",
+    "mi04_4",
+    "mi04_5",
+    "mi04_6"
+   ],
+   "notes": "Concordance vs Sorrel; comic.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi04_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi04_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi04_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi04_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi04_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi04_6"
+     ]
+    }
+   ]
+  },
+  "mi05": {
+   "title": "Dace's Three Things",
+   "characters": [
+    "dace",
+    "pell",
+    "ilse"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "state_changes": [
+    "dace_grievances_heard",
+    "strike",
+    "hands_short"
+   ],
+   "cards": [
+    "mi05_1",
+    "mi05_2",
+    "mi05_3",
+    "mi05_4",
+    "mi05_5",
+    "mi05_6"
+   ],
+   "notes": "Labor; feeds MA10 moot.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi05_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi05_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi05_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi05_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi05_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi05_6"
+     ]
+    }
+   ]
+  },
+  "mi06": {
+   "title": "The Loan",
+   "characters": [
+    "cole",
+    "ilse"
+   ],
+   "entry": {
+    "resources": {
+     "coffers": {
+      "max": 40
+     }
+    }
+   },
+   "state_changes": [
+    "cole_loan",
+    "cole_defaulted",
+    "counter cole_debt"
+   ],
+   "cards": [
+    "mi06_1",
+    "mi06_2",
+    "mi06_3",
+    "mi06_4",
+    "mi06_5",
+    "mi06_6"
+   ],
+   "notes": "Coffers rescue at compounding cost.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi06_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi06_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi06_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi06_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi06_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi06_6"
+     ]
+    }
+   ]
+  },
+  "mi07": {
+   "title": "The Courier's Headline",
+   "characters": [
+    "hesse",
+    "fennick",
+    "pell"
+   ],
+   "entry": {
+    "watch": {
+     "min": 10
+    }
+   },
+   "state_changes": [
+    "pressed_by_hesse",
+    "hesse_friendly",
+    "hesse_hostile"
+   ],
+   "cards": [
+    "mi07_1",
+    "mi07_2",
+    "mi07_3",
+    "mi07_4",
+    "mi07_5",
+    "mi07_6"
+   ],
+   "notes": "Press standing; feeds MA09.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi07_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi07_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi07_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi07_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi07_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi07_6"
+     ]
+    }
+   ]
+  },
+  "mi08": {
+   "title": "Tobin's Dry Year",
+   "characters": [
+    "tobin",
+    "mirren",
+    "vosk"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_tobin"
+    ]
+   },
+   "state_changes": [
+    "tobin_story_1",
+    "tobin_story_2",
+    "clue_night_dredgers",
+    "counter tobin_pieces"
+   ],
+   "cards": [
+    "mi08_1",
+    "mi08_2",
+    "mi08_3",
+    "mi08_4",
+    "mi08_5",
+    "mi08_6"
+   ],
+   "notes": "Clue 10; hints MA05.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi08_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi08_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi08_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi08_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi08_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi08_6"
+     ]
+    }
+   ]
+  },
+  "mi09": {
+   "title": "The Pilgrims",
+   "characters": [
+    "hale",
+    "crane"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "state_changes": [
+    "pilgrims_passed"
+   ],
+   "cards": [
+    "mi09_1",
+    "mi09_2",
+    "mi09_3",
+    "mi09_4",
+    "mi09_5",
+    "mi09_6"
+   ],
+   "notes": "Water vs Town vs Concordance.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi09_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi09_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi09_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi09_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi09_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi09_6"
+     ]
+    }
+   ]
+  },
+  "mi10": {
+   "title": "The Drover",
+   "characters": [
+    "crane",
+    "dace",
+    "ilse"
+   ],
+   "entry": {
+    "watch": {
+     "min": 8
+    }
+   },
+   "state_changes": [],
+   "cards": [
+    "mi10_1",
+    "mi10_2",
+    "mi10_3",
+    "mi10_4",
+    "mi10_5",
+    "mi10_6"
+   ],
+   "notes": "Comic; Water.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi10_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi10_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi10_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi10_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi10_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi10_6"
+     ]
+    }
+   ]
+  },
+  "mi11": {
+   "title": "The Runaway",
+   "characters": [
+    "mirren",
+    "solas"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_solas",
+     "met_mirren"
+    ]
+   },
+   "state_changes": [
+    "deserter_hidden",
+    "deserter_returned"
+   ],
+   "cards": [
+    "mi11_1",
+    "mi11_2",
+    "mi11_3",
+    "mi11_4",
+    "mi11_5",
+    "mi11_6"
+   ],
+   "notes": "Solas relationship; feeds MA07.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi11_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi11_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi11_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi11_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi11_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi11_6"
+     ]
+    }
+   ]
+  },
+  "mi12": {
+   "title": "Fever Boat",
+   "characters": [
+    "stroud",
+    "vosk",
+    "ilse"
+   ],
+   "entry": {
+    "watch": {
+     "min": 14
+    }
+   },
+   "state_changes": [
+    "fever_aboard",
+    "quarantine"
+   ],
+   "cards": [
+    "mi12_1",
+    "mi12_2",
+    "mi12_3",
+    "mi12_4",
+    "mi12_5",
+    "mi12_6"
+   ],
+   "notes": "Town vs Traffic; feeds cri_fever.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi12_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi12_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi12_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi12_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi12_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi12_6"
+     ]
+    }
+   ]
+  },
+  "mi13": {
+   "title": "The Telegram Habit",
+   "characters": [
+    "fennick",
+    "vosk"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_fennick"
+    ]
+   },
+   "state_changes": [
+    "fennick_trusted",
+    "fennick_exposed"
+   ],
+   "cards": [
+    "mi13_1",
+    "mi13_2",
+    "mi13_3",
+    "mi13_4",
+    "mi13_5",
+    "mi13_6"
+   ],
+   "notes": "Fennick trust; feeds MA02/MA09.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi13_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi13_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi13_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi13_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi13_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi13_6"
+     ]
+    }
+   ]
+  },
+  "mi14": {
+   "title": "The Scrip Riot",
+   "characters": [
+    "ilse",
+    "pell",
+    "cole",
+    "dace"
+   ],
+   "entry": {
+    "resources": {
+     "coffers": {
+      "max": 45
+     }
+    },
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "state_changes": [
+    "scrip_refused"
+   ],
+   "cards": [
+    "mi14_1",
+    "mi14_2",
+    "mi14_3",
+    "mi14_4",
+    "mi14_5",
+    "mi14_6"
+   ],
+   "notes": "Coffers vs Town.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi14_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi14_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi14_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi14_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi14_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi14_6"
+     ]
+    }
+   ]
+  },
+  "mi15": {
+   "title": "Wren's Favor",
+   "characters": [
+    "wren",
+    "bram"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_wren"
+    ]
+   },
+   "state_changes": [
+    "reeds_cargo",
+    "wren_protected",
+    "counter hullfolk_favors"
+   ],
+   "cards": [
+    "mi15_1",
+    "mi15_2",
+    "mi15_3",
+    "mi15_4",
+    "mi15_5",
+    "mi15_6"
+   ],
+   "notes": "Lead-in to MA07.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi15_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi15_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi15_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi15_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi15_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi15_6"
+     ]
+    }
+   ]
+  },
+  "mi16": {
+   "title": "The Frost",
+   "characters": [
+    "dace",
+    "vane",
+    "quenn",
+    "ilse"
+   ],
+   "entry": {
+    "watch": {
+     "min": 20
+    }
+   },
+   "state_changes": [
+    "frost"
+   ],
+   "cards": [
+    "mi16_1",
+    "mi16_2",
+    "mi16_3",
+    "mi16_4",
+    "mi16_5",
+    "mi16_6"
+   ],
+   "notes": "Traffic crisis lead-in; feeds cri_frost.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi16_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi16_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi16_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi16_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi16_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi16_6"
+     ]
+    }
+   ]
+  },
+  "mi17": {
+   "title": "The Lamp Vigil",
+   "characters": [
+    "hale",
+    "bram",
+    "petronel"
+   ],
+   "entry": {
+    "resources": {
+     "water": {
+      "max": 40
+     }
+    },
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "state_changes": [
+    "lamp_vigil_held",
+    "hullfolk_vigil_joined",
+    "honored_remembered"
+   ],
+   "cards": [
+    "mi17_1",
+    "mi17_2",
+    "mi17_3",
+    "mi17_4",
+    "mi17_5",
+    "mi17_6"
+   ],
+   "notes": "Clue 5 lead-in; feeds MA06.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi17_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi17_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi17_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi17_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi17_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi17_6"
+     ]
+    }
+   ]
+  },
+  "mi18": {
+   "title": "Tamm's Hull",
+   "characters": [
+    "tamm",
+    "wren",
+    "crane"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_tamm"
+    ]
+   },
+   "state_changes": [
+    "false_bottom_found",
+    "reeds_cargo"
+   ],
+   "cards": [
+    "mi18_1",
+    "mi18_2",
+    "mi18_3",
+    "mi18_4",
+    "mi18_5",
+    "mi18_6"
+   ],
+   "notes": "Evidence; feeds MA07.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi18_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi18_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi18_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi18_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi18_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi18_6"
+     ]
+    }
+   ]
+  },
+  "mi19": {
+   "title": "The Rent",
+   "characters": [
+    "cole",
+    "ilse"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_cole",
+     "met_ilse"
+    ]
+   },
+   "state_changes": [
+    "rent_intervened"
+   ],
+   "cards": [
+    "mi19_1",
+    "mi19_2",
+    "mi19_3",
+    "mi19_4",
+    "mi19_5",
+    "mi19_6"
+   ],
+   "notes": "Town vs Coffers.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi19_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi19_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi19_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi19_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi19_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi19_6"
+     ]
+    }
+   ]
+  },
+  "mi20": {
+   "title": "The Commissioner's Visit",
+   "characters": [
+    "pell",
+    "kell",
+    "vosk"
+   ],
+   "entry": {
+    "watch": {
+     "min": 25
+    }
+   },
+   "state_changes": [
+    "kell_present",
+    "praised_by_board"
+   ],
+   "cards": [
+    "mi20_1",
+    "mi20_2",
+    "mi20_3",
+    "mi20_4",
+    "mi20_5",
+    "mi20_6"
+   ],
+   "notes": "Company swings; feeds MA01.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi20_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi20_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi20_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi20_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi20_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi20_6"
+     ]
+    }
+   ]
+  },
+  "mi21": {
+   "title": "The Refugees",
+   "characters": [
+    "hale",
+    "crane",
+    "ilse"
+   ],
+   "entry": {
+    "watch": {
+     "min": 12
+    }
+   },
+   "state_changes": [
+    "refugees_admitted",
+    "refugees_turned"
+   ],
+   "cards": [
+    "mi21_1",
+    "mi21_2",
+    "mi21_3",
+    "mi21_4",
+    "mi21_5",
+    "mi21_6"
+   ],
+   "notes": "Ethics; Town; serious tone.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi21_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi21_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi21_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi21_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi21_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi21_6"
+     ]
+    }
+   ]
+  },
+  "mi22": {
+   "title": "The Wager",
+   "characters": [
+    "vane",
+    "crane",
+    "quenn"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ]
+   },
+   "state_changes": [
+    "wager_on",
+    "clue_crane_counts"
+   ],
+   "cards": [
+    "mi22_1",
+    "mi22_2",
+    "mi22_3",
+    "mi22_4",
+    "mi22_5",
+    "mi22_6"
+   ],
+   "notes": "Comic; clue 9.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi22_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi22_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi22_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi22_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi22_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi22_6"
+     ]
+    }
+   ]
+  },
+  "mi23": {
+   "title": "The Missing Windlass",
+   "characters": [
+    "dace",
+    "mirren",
+    "bram",
+    "ilse",
+    "wren"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_mirren",
+     "met_bram"
+    ]
+   },
+   "state_changes": [
+    "windlass_missing",
+    "windlass_blamed_hullfolk"
+   ],
+   "cards": [
+    "mi23_1",
+    "mi23_2",
+    "mi23_3",
+    "mi23_4",
+    "mi23_5",
+    "mi23_6"
+   ],
+   "notes": "Town vs Hullfolk.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi23_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi23_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi23_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi23_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi23_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi23_6"
+     ]
+    }
+   ]
+  },
+  "mi24": {
+   "title": "The Night Boat",
+   "characters": [
+    "solas",
+    "crane"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_solas"
+    ]
+   },
+   "state_changes": [
+    "night_passages",
+    "reeds_cargo"
+   ],
+   "cards": [
+    "mi24_1",
+    "mi24_2",
+    "mi24_3",
+    "mi24_4",
+    "mi24_5",
+    "mi24_6"
+   ],
+   "notes": "MA07 lead-in.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi24_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi24_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi24_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi24_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi24_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi24_6"
+     ]
+    }
+   ]
+  },
+  "mi25": {
+   "title": "Quenn's Budget",
+   "characters": [
+    "quenn",
+    "pell",
+    "tamm"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_quenn"
+    ]
+   },
+   "state_changes": [
+    "budget_repairs",
+    "gates_leaking",
+    "gates_repaired",
+    "counter repairs_deferred"
+   ],
+   "cards": [
+    "mi25_1",
+    "mi25_2",
+    "mi25_3",
+    "mi25_4",
+    "mi25_5",
+    "mi25_6"
+   ],
+   "notes": "Coffers; feeds MA01 and water drift.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi25_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi25_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi25_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi25_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi25_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi25_6"
+     ]
+    }
+   ]
+  },
+  "mi26": {
+   "title": "Petronel's Fiddle",
+   "characters": [
+    "petronel",
+    "wren",
+    "vosk",
+    "bram"
+   ],
+   "entry": {
+    "flags_all": [
+     "met_wren"
+    ]
+   },
+   "state_changes": [
+    "fiddle_impounded",
+    "fiddle_returned",
+    "met_petronel"
+   ],
+   "cards": [
+    "mi26_1",
+    "mi26_2",
+    "mi26_3",
+    "mi26_4",
+    "mi26_5",
+    "mi26_6"
+   ],
+   "notes": "Song lead-in; feeds MA06.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi26_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi26_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi26_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi26_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi26_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi26_6"
+     ]
+    }
+   ]
+  },
+  "mi27": {
+   "title": "The Surveyor",
+   "characters": [
+    "vosk",
+    "quenn"
+   ],
+   "entry": {
+    "watch": {
+     "min": 18
+    }
+   },
+   "state_changes": [
+    "surveyor_present",
+    "surveyor_expelled",
+    "clue_sluice_guard"
+   ],
+   "cards": [
+    "mi27_1",
+    "mi27_2",
+    "mi27_3",
+    "mi27_4",
+    "mi27_5",
+    "mi27_6"
+   ],
+   "notes": "Suspicion; feeds MA03.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi27_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi27_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi27_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi27_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi27_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi27_6"
+     ]
+    }
+   ]
+  },
+  "mi28": {
+   "title": "The Keeper's Chair",
+   "characters": [
+    "mirren",
+    "tobin"
+   ],
+   "entry": {
+    "watch": {
+     "min": 5
+    }
+   },
+   "state_changes": [
+    "found_ledger"
+   ],
+   "cards": [
+    "mi28_1",
+    "mi28_2",
+    "mi28_3",
+    "mi28_4",
+    "mi28_5",
+    "mi28_6"
+   ],
+   "notes": "Living in Dray's house; feeds MA02.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi28_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi28_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi28_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi28_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi28_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi28_6"
+     ]
+    }
+   ]
+  },
+  "mi29": {
+   "title": "Hesse's Exposure",
+   "characters": [
+    "hesse",
+    "fennick",
+    "pell",
+    "ilse"
+   ],
+   "entry": {
+    "flags_all": [
+     "pressed_by_hesse"
+    ]
+   },
+   "state_changes": [
+    "hesse_hostile",
+    "skimming_rumor"
+   ],
+   "cards": [
+    "mi29_1",
+    "mi29_2",
+    "mi29_3",
+    "mi29_4",
+    "mi29_5",
+    "mi29_6"
+   ],
+   "notes": "Press; Company.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi29_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi29_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi29_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi29_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi29_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi29_6"
+     ]
+    }
+   ]
+  },
+  "mi30": {
+   "title": "The Boundary Stone",
+   "characters": [
+    "ilse",
+    "dace"
+   ],
+   "entry": {
+    "resources": {
+     "town": {
+      "max": 35
+     }
+    }
+   },
+   "state_changes": [
+    "boundary_rehearsed",
+    "moot_called"
+   ],
+   "cards": [
+    "mi30_1",
+    "mi30_2",
+    "mi30_3",
+    "mi30_4",
+    "mi30_5",
+    "mi30_6"
+   ],
+   "notes": "Town warning; feeds MA10 and end_res_town_min.",
+   "stages": [
+    {
+     "stage": 1,
+     "cards": [
+      "mi30_1"
+     ]
+    },
+    {
+     "stage": 2,
+     "cards": [
+      "mi30_2"
+     ]
+    },
+    {
+     "stage": 3,
+     "cards": [
+      "mi30_3"
+     ]
+    },
+    {
+     "stage": 4,
+     "cards": [
+      "mi30_4"
+     ]
+    },
+    {
+     "stage": 5,
+     "cards": [
+      "mi30_5"
+     ]
+    },
+    {
+     "stage": 6,
+     "cards": [
+      "mi30_6"
+     ]
+    }
+   ]
+  }
+ },
+ "endings": [
+  {
+   "id": "end_res_water_min",
+   "title": "The Dry Summit",
+   "kind": "resource_death",
+   "card": "end_res_water_min"
+  },
+  {
+   "id": "end_res_water_max",
+   "title": "The Breach",
+   "kind": "resource_death",
+   "card": "end_res_water_max"
+  },
+  {
+   "id": "end_res_traffic_min",
+   "title": "The Jam",
+   "kind": "resource_death",
+   "card": "end_res_traffic_min"
+  },
+  {
+   "id": "end_res_traffic_max",
+   "title": "The Pile-Up",
+   "kind": "resource_death",
+   "card": "end_res_traffic_max"
+  },
+  {
+   "id": "end_res_coffers_min",
+   "title": "Foreclosure",
+   "kind": "resource_death",
+   "card": "end_res_coffers_min"
+  },
+  {
+   "id": "end_res_coffers_max",
+   "title": "The Audit",
+   "kind": "resource_death",
+   "card": "end_res_coffers_max"
+  },
+  {
+   "id": "end_res_company_min",
+   "title": "Dismissal",
+   "kind": "resource_death",
+   "card": "end_res_company_min"
+  },
+  {
+   "id": "end_res_company_max",
+   "title": "The Promotion",
+   "kind": "resource_death",
+   "card": "end_res_company_max"
+  },
+  {
+   "id": "end_res_town_min",
+   "title": "Run Out",
+   "kind": "resource_death",
+   "card": "end_res_town_min"
+  },
+  {
+   "id": "end_res_town_max",
+   "title": "The Uprising",
+   "kind": "resource_death",
+   "card": "end_res_town_max"
+  },
+  {
+   "id": "end_ord_long_watch",
+   "title": "The Long Watch",
+   "kind": "ordinary",
+   "card": "end_ord_long_watch"
+  },
+  {
+   "id": "end_ord_transferred",
+   "title": "Transferred",
+   "kind": "ordinary",
+   "card": "end_ord_transferred"
+  },
+  {
+   "id": "end_ord_jubilee",
+   "title": "The Jubilee Keeper",
+   "kind": "ordinary",
+   "card": "end_ord_jubilee"
+  },
+  {
+   "id": "end_ord_towns_keeper",
+   "title": "Town's Keeper",
+   "kind": "ordinary",
+   "card": "end_ord_towns_keeper"
+  },
+  {
+   "id": "end_ord_companys_keeper",
+   "title": "Company's Keeper",
+   "kind": "ordinary",
+   "card": "end_ord_companys_keeper"
+  },
+  {
+   "id": "end_ord_quiet",
+   "title": "A Quiet Life",
+   "kind": "ordinary",
+   "card": "end_ord_quiet"
+  },
+  {
+   "id": "end_false_drought",
+   "title": "The Drought Report",
+   "kind": "false",
+   "card": "end_false_drought"
+  },
+  {
+   "id": "end_false_killer",
+   "title": "Dray's Killer",
+   "kind": "false",
+   "card": "end_false_killer"
+  },
+  {
+   "id": "end_false_purchase",
+   "title": "The Sorrel Purchase",
+   "kind": "false",
+   "card": "end_false_purchase"
+  },
+  {
+   "id": "end_false_clearance",
+   "title": "The Clearance",
+   "kind": "false",
+   "card": "end_false_clearance"
+  },
+  {
+   "id": "end_false_blessing",
+   "title": "The Dry Blessing",
+   "kind": "false",
+   "card": "end_false_blessing"
+  },
+  {
+   "id": "end_false_hero",
+   "title": "Keeper of the Courier",
+   "kind": "false",
+   "card": "end_false_hero"
+  },
+  {
+   "id": "end_rev_sluice",
+   "title": "Into the Dark Water",
+   "kind": "revelation",
+   "card": "end_rev_sluice"
+  },
+  {
+   "id": "end_rev_survey",
+   "title": "The Figures Do Not Close",
+   "kind": "revelation",
+   "card": "end_rev_survey"
+  },
+  {
+   "id": "end_rev_song",
+   "title": "The Last Verse",
+   "kind": "revelation",
+   "card": "end_rev_song"
+  },
+  {
+   "id": "end_rev_letters",
+   "title": "What the Water Uncovered",
+   "kind": "revelation",
+   "card": "end_rev_letters"
+  },
+  {
+   "id": "end_rev_file",
+   "title": "Filed",
+   "kind": "revelation",
+   "card": "end_rev_file"
+  },
+  {
+   "id": "end_rev_cipher",
+   "title": "The Gauge Speaks",
+   "kind": "revelation",
+   "card": "end_rev_cipher"
+  },
+  {
+   "id": "end_rev_crane",
+   "title": "Duly Noted",
+   "kind": "revelation",
+   "card": "end_rev_crane"
+  },
+  {
+   "id": "end_rev_tobin",
+   "title": "Tobin's Last Story",
+   "kind": "revelation",
+   "card": "end_rev_tobin"
+  },
+  {
+   "id": "end_rev_bram",
+   "title": "The Outfall",
+   "kind": "revelation",
+   "card": "end_rev_bram"
+  },
+  {
+   "id": "end_rev_vosk",
+   "title": "For the Record",
+   "kind": "revelation",
+   "card": "end_rev_vosk"
+  },
+  {
+   "id": "end_crisis_fire",
+   "title": "The Boatyard Fire",
+   "kind": "crisis",
+   "card": "end_crisis_fire"
+  },
+  {
+   "id": "end_crisis_riot",
+   "title": "The Riot",
+   "kind": "crisis",
+   "card": "end_crisis_riot"
+  },
+  {
+   "id": "end_crisis_frost",
+   "title": "The Frost Closure",
+   "kind": "crisis",
+   "card": "end_crisis_frost"
+  },
+  {
+   "id": "end_crisis_inquiry",
+   "title": "The Inquiry",
+   "kind": "crisis",
+   "card": "end_crisis_inquiry"
+  },
+  {
+   "id": "end_crisis_fever",
+   "title": "The Fever",
+   "kind": "crisis",
+   "card": "end_crisis_fever"
+  },
+  {
+   "id": "end_true_river",
+   "title": "The River Returned",
+   "kind": "true",
+   "card": "end_true_river"
+  },
+  {
+   "id": "end_true_ledger",
+   "title": "The Open Ledger",
+   "kind": "true",
+   "card": "end_true_ledger"
+  },
+  {
+   "id": "end_true_cut",
+   "title": "The Keeper's Cut",
+   "kind": "true",
+   "card": "end_true_cut"
+  }
+ ],
+ "true_routes": {
+  "end_true_river": {
+   "requires_unlocks_all": [
+    "unlock_cut_map"
+   ],
+   "requires_unlocks_two_of": [
+    "unlock_quenn_survey",
+    "unlock_lowmere_song",
+    "unlock_marrow_letters"
+   ],
+   "route_flag": "route_river",
+   "allies": [
+    "bram",
+    "wren",
+    "solas"
+   ],
+   "state": {
+    "resources": {
+     "town": {
+      "min": 40
+     }
+    },
+    "factions": {
+     "hullfolk": {
+      "min": 60
+     }
+    }
+   }
+  },
+  "end_true_ledger": {
+   "requires_unlocks_all": [
+    "unlock_cut_map"
+   ],
+   "requires_unlocks_two_of": [
+    "unlock_quenn_survey",
+    "unlock_lowmere_song",
+    "unlock_marrow_letters"
+   ],
+   "route_flag": "route_ledger",
+   "allies": [
+    "crane",
+    "quenn",
+    "hesse"
+   ],
+   "state": {
+    "resources": {
+     "company": {
+      "max": 60
+     }
+    },
+    "relationships": {
+     "crane": {
+      "min": 60
+     }
+    }
+   }
+  },
+  "end_true_cut": {
+   "requires_unlocks_all": [
+    "unlock_cut_map"
+   ],
+   "requires_unlocks_two_of": [
+    "unlock_quenn_survey",
+    "unlock_lowmere_song",
+    "unlock_marrow_letters"
+   ],
+   "route_flag": "route_cut",
+   "allies": [
+    "vosk",
+    "hale",
+    "tamm"
+   ],
+   "state": {
+    "resources": {
+     "coffers": {
+      "min": 60
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "min": 60
+     },
+     "hale": {
+      "min": 50
+     }
+    }
+   }
+  }
+ },
+ "unlocks": {
+  "unlock_drays_key": {
+   "source_arcs": [
+    "MA02"
+   ],
+   "enables": [
+    "MA11"
+   ]
+  },
+  "unlock_quenn_survey": {
+   "source_arcs": [
+    "MA05"
+   ],
+   "source_endings": [
+    "end_rev_survey"
+   ],
+   "enables": [
+    "end_true_ledger"
+   ]
+  },
+  "unlock_lowmere_song": {
+   "source_arcs": [
+    "MA06"
+   ],
+   "source_endings": [
+    "end_rev_song"
+   ],
+   "enables": [
+    "end_true_river"
+   ]
+  },
+  "unlock_marrow_letters": {
+   "source_arcs": [
+    "MA08"
+   ],
+   "source_endings": [
+    "end_rev_letters"
+   ],
+   "enables": [
+    "end_true_cut"
+   ]
+  },
+  "unlock_cut_map": {
+   "source_arcs": [
+    "MA11"
+   ],
+   "source_endings": [
+    "end_rev_cipher",
+    "end_rev_bram"
+   ],
+   "enables": [
+    "MA12"
+   ]
+  },
+  "unlock_vosk_file": {
+   "source_arcs": [
+    "MA09"
+   ],
+   "source_endings": [
+    "end_rev_file",
+    "end_rev_vosk"
+   ],
+   "enables": [
+    "end_res_company_max variant",
+    "end_true_ledger support"
+   ]
+  },
+  "unlock_dray_fate": {
+   "source_arcs": [
+    "MA11"
+   ],
+   "source_endings": [
+    "end_rev_sluice"
+   ],
+   "enables": [
+    "Mirren resolution cards"
+   ]
+  },
+  "unlock_quenn_courage": {
+   "source_arcs": [
+    "MA05"
+   ],
+   "enables": [
+    "meta_quenn_braver"
+   ]
+  }
+ },
+ "clues": {
+  "clue_reservoirs": "Reservoir reports never account for the level.",
+  "clue_dry_aqueduct": "Aqueduct dry in summer while the pound holds.",
+  "clue_iron_well": "Brewery well tastes of iron and rises with the pound.",
+  "clue_song": "The Song names a river going into the hill.",
+  "clue_charter": "Chapel charter thanks Marrow for the water she gave.",
+  "clue_sluice_guard": "Sluice house guarded harder than a disused valve.",
+  "clue_cipher": "Dray's ledger cipher keyed to the sill gauge.",
+  "clue_crane_counts": "Crane's counts match Quenn's.",
+  "clue_night_dredgers": "Dry Year crews came at night with no dredgers.",
+  "noticed_water_fall": "The water falls every watch."
+ }
+}

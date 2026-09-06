@@ -1,0 +1,12 @@
+{
+  "id": "src_telegram",
+  "name": "Telegram",
+  "role": "A slip from the wire",
+  "tier": "source",
+  "faction": "none",
+  "expressions": [
+    "neutral"
+  ],
+  "portrait_prefix": "src_telegram",
+  "accent_color": "#7C8FA6"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "tamm",
+  "name": "Jory Tamm",
+  "role": "Boatwright",
+  "tier": "supporting",
+  "faction": "town",
+  "expressions": [
+    "neutral",
+    "doubtful"
+  ],
+  "portrait_prefix": "tamm",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Sawdust, leather apron, caulking iron.",
+  "speech_rhythm": "Terse tradesman's estimates. 'It'll hold or it won't.'",
+  "vocabulary": [
+    "hold",
+    "seams",
+    "a week's work"
+  ],
+  "prohibited_phrases": [
+    "magnificent",
+    "irregular"
+  ],
+  "notes": "Repairs; hull evidence; Quenn's friend.",
+  "initial_relationship": 50
+}

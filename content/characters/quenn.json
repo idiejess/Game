@@ -1,0 +1,42 @@
+{
+  "id": "quenn",
+  "name": "Tamsin Quenn",
+  "role": "Company Engineer",
+  "tier": "major",
+  "faction": "company",
+  "expressions": [
+    "worried",
+    "absorbed",
+    "neutral",
+    "resolved"
+  ],
+  "portrait_prefix": "quenn",
+  "accent_color": "#3F7D5A",
+  "silhouette": "Small, ink-stained cuffs, oversized folio of drawings, hair escaping a cap.",
+  "speech_rhythm": "Fast, self-interrupting, numbers first, apologizes for facts.",
+  "vocabulary": [
+    "the figures",
+    "sorry",
+    "it doesn't close",
+    "roughly",
+    "the aqueduct"
+  ],
+  "prohibited_phrases": [
+    "magnificent",
+    "I swear",
+    "we hold",
+    "Schedule"
+  ],
+  "public_motivation": "Keep gates and paddles working with no budget.",
+  "private_motivation": "Make the reservoir sums balance. They never do.",
+  "fear": "Being right.",
+  "contradiction": "The most honest person on the summit keeps her findings in a drawer.",
+  "secret": "Holds a copy of Marrow's Y6 survey she has not dared read fully.",
+  "relationships": {
+    "vosk": "terror",
+    "pell": "exasperated fondness",
+    "tamm": "friendship, shared tools",
+    "mirren": "mentor"
+  },
+  "initial_relationship": 50
+}

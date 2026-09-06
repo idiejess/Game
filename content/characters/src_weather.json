@@ -1,0 +1,12 @@
+{
+  "id": "src_weather",
+  "name": "The Pound",
+  "role": "Weather and water",
+  "tier": "source",
+  "faction": "none",
+  "expressions": [
+    "neutral"
+  ],
+  "portrait_prefix": "src_weather",
+  "accent_color": "#7C8FA6"
+}

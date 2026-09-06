@@ -1,0 +1,41 @@
+{
+  "id": "ilse",
+  "name": "Ilse Harrow",
+  "role": "Innkeeper and Town Reeve",
+  "tier": "major",
+  "faction": "town",
+  "expressions": [
+    "neutral",
+    "wry",
+    "angry",
+    "grieving"
+  ],
+  "portrait_prefix": "ilse",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Solid, sleeves rolled, apron over a reeve's chain, a tally slate.",
+  "speech_rhythm": "Plain. One clause, then the price. 'Keeper' without warmth until earned, then no title at all.",
+  "vocabulary": [
+    "cellar",
+    "the moot",
+    "what it costs",
+    "your Company"
+  ],
+  "prohibited_phrases": [
+    "magnificent",
+    "irregular",
+    "the gift",
+    "blessed"
+  ],
+  "public_motivation": "Dry cellars, fair rent, work for the town.",
+  "private_motivation": "Her son drowned after the Y44 riot; the town must never rise and never be pushed again.",
+  "fear": "The town burning its own bridges.",
+  "contradiction": "The moderate who runs the town's only illegal water sale.",
+  "secret": "The brewery well is fed by a crack from the pound; the ale is Company water.",
+  "relationships": {
+    "pell": "rent war",
+    "bram": "old respect, mooring friction",
+    "cole": "rival",
+    "stroud": "friend"
+  },
+  "initial_relationship": 45
+}

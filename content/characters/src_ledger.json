@@ -1,0 +1,12 @@
+{
+  "id": "src_ledger",
+  "name": "The Keeper's Ledger",
+  "role": "Your own record",
+  "tier": "source",
+  "faction": "none",
+  "expressions": [
+    "neutral"
+  ],
+  "portrait_prefix": "src_ledger",
+  "accent_color": "#7C8FA6"
+}

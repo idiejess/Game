@@ -1,0 +1,27 @@
+{
+  "id": "petronel",
+  "name": "Petronel Ashby",
+  "role": "Hullfolk Singer",
+  "tier": "supporting",
+  "faction": "hullfolk",
+  "expressions": [
+    "neutral",
+    "singing"
+  ],
+  "portrait_prefix": "petronel",
+  "accent_color": "#8C6B2F",
+  "silhouette": "Tiny, shawled, a one-string fiddle.",
+  "speech_rhythm": "Song fragments and short memories.",
+  "vocabulary": [
+    "the river",
+    "we sang",
+    "into the hill"
+  ],
+  "prohibited_phrases": [
+    "irregular",
+    "magnificent",
+    "cargo"
+  ],
+  "notes": "Keeper of the Lowmere Song.",
+  "initial_relationship": 50
+}

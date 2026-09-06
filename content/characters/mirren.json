@@ -1,0 +1,41 @@
+{
+  "id": "mirren",
+  "name": "Mirren Dray",
+  "role": "Lock Hand",
+  "tier": "major",
+  "faction": "town",
+  "expressions": [
+    "guarded",
+    "neutral",
+    "hopeful",
+    "broken"
+  ],
+  "portrait_prefix": "mirren",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Young, wiry, oilskin too large (her father's), a windlass over the shoulder.",
+  "speech_rhythm": "Clipped. Drops the last word when it hurts. Direct questions.",
+  "vocabulary": [
+    "he",
+    "the study",
+    "did you",
+    "the paddles"
+  ],
+  "prohibited_phrases": [
+    "father",
+    "magnificent",
+    "irregular",
+    "cargo"
+  ],
+  "public_motivation": "Keep her post and her father's house.",
+  "private_motivation": "Find where Ansel Dray went.",
+  "fear": "That he left on purpose.",
+  "contradiction": "Works daily for the Company she suspects killed him.",
+  "secret": "Has his ciphered ledger; has told no one.",
+  "relationships": {
+    "quenn": "apprentice",
+    "vosk": "hostility",
+    "wren": "uneasy friendship",
+    "tobin": "the only one who tells stories of her father"
+  },
+  "initial_relationship": 40
+}

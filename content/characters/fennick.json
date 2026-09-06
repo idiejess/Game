@@ -1,0 +1,41 @@
+{
+  "id": "fennick",
+  "name": "Fennick Orr",
+  "role": "Telegraph Clerk",
+  "tier": "major",
+  "faction": "town",
+  "expressions": [
+    "eager",
+    "neutral",
+    "sheepish",
+    "frightened"
+  ],
+  "portrait_prefix": "fennick",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Gangly, eyeshade, ink on his nose, a fan of telegram slips.",
+  "speech_rhythm": "Breathless, parenthetical, tells you the thing he should not first.",
+  "vocabulary": [
+    "you'll never guess",
+    "in strictest confidence",
+    "the wire",
+    "I shouldn't"
+  ],
+  "prohibited_phrases": [
+    "we hold",
+    "Schedule",
+    "noted.",
+    "magnificent"
+  ],
+  "public_motivation": "Run the wire and be liked.",
+  "private_motivation": "Be important to someone; sells copies of telegrams.",
+  "fear": "Vosk.",
+  "contradiction": "The town's biggest leak keeps the Keeper's secrets when it counts.",
+  "secret": "Transmitted Dray's last wire and kept a copy.",
+  "relationships": {
+    "hesse": "customer",
+    "vane": "customer",
+    "vosk": "terror",
+    "mirren": "hopeless, never stated"
+  },
+  "initial_relationship": 55
+}

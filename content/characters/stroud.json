@@ -1,0 +1,26 @@
+{
+  "id": "stroud",
+  "name": "Dr. Aurelie Stroud",
+  "role": "Town Physician",
+  "tier": "supporting",
+  "faction": "town",
+  "expressions": [
+    "neutral",
+    "grave"
+  ],
+  "portrait_prefix": "stroud",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Black bag, spectacles on a cord, sensible boots.",
+  "speech_rhythm": "Clinical, kind, blunt about death.",
+  "vocabulary": [
+    "fever",
+    "rest",
+    "I have seen"
+  ],
+  "prohibited_phrases": [
+    "the gift",
+    "magnificent"
+  ],
+  "notes": "Fever, drowning, refugees; Fatigue counter.",
+  "initial_relationship": 50
+}

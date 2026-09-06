@@ -1,0 +1,41 @@
+{
+  "id": "pell",
+  "name": "Gideon Pell",
+  "role": "Superintendent",
+  "tier": "major",
+  "faction": "company",
+  "expressions": [
+    "beaming",
+    "neutral",
+    "wounded",
+    "stern"
+  ],
+  "portrait_prefix": "pell",
+  "accent_color": "#3F7D5A",
+  "silhouette": "Broad, waistcoat straining, Company-green sash, brass speaking trumpet he does not need.",
+  "speech_rhythm": "Long, rolling, three adjectives where one would do. Announces the player: 'Keeper!'",
+  "vocabulary": [
+    "magnificent",
+    "the Meridian spirit",
+    "throughput",
+    "our little difficulty"
+  ],
+  "prohibited_phrases": [
+    "damn",
+    "I doubt",
+    "tired",
+    "we hold"
+  ],
+  "public_motivation": "A glorious Jubilee and record traffic.",
+  "private_motivation": "To be remembered; a Board seat.",
+  "fear": "Irrelevance; Sorrel newspapers laughing.",
+  "contradiction": "Loves the canal and town sincerely and causes half its floods.",
+  "secret": "Reviving the Clearance Order draft 'as a contingency'.",
+  "relationships": {
+    "vosk": "thinks she is his subordinate",
+    "ilse": "feud over brewery rent",
+    "hesse": "obsessed with his reviews",
+    "crane": "rival in pomp"
+  },
+  "initial_relationship": 55
+}

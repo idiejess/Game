@@ -1,0 +1,42 @@
+{
+  "id": "bram",
+  "name": "Bram Holloway",
+  "role": "Holder of the Reed Reach",
+  "tier": "major",
+  "faction": "hullfolk",
+  "expressions": [
+    "neutral",
+    "patient",
+    "stern",
+    "mourning"
+  ],
+  "portrait_prefix": "bram",
+  "accent_color": "#8C6B2F",
+  "silhouette": "Old, immense, always seated on a bollard or gunwale, stitched-sailcloth coat, unlit pipe.",
+  "speech_rhythm": "Slow, plural ('we hold', 'we remember'), one proverb per meeting, never threat or plea.",
+  "vocabulary": [
+    "holding",
+    "the remembered",
+    "water debt",
+    "the river"
+  ],
+  "prohibited_phrases": [
+    "please",
+    "Company",
+    "!",
+    "quick",
+    "hurry"
+  ],
+  "public_motivation": "Keep the holdings; be left alone.",
+  "private_motivation": "Recover the Hullfolk's name; have the theft of the river said aloud.",
+  "fear": "That the young forget, or that they burn something.",
+  "contradiction": "A man of peace whose people could sabotage the canal, and who decides yearly not to.",
+  "secret": "Knows where the Cut's outfall is; has never gone in.",
+  "relationships": {
+    "wren": "grandfather in all but blood",
+    "petronel": "oldest friend",
+    "ilse": "respect, mooring feud",
+    "solas": "two old soldiers"
+  },
+  "initial_relationship": 40
+}

@@ -1,0 +1,26 @@
+{
+  "id": "kell",
+  "name": "Ambrose Kell",
+  "role": "Board Commissioner",
+  "tier": "supporting",
+  "faction": "company",
+  "expressions": [
+    "courteous",
+    "final"
+  ],
+  "portrait_prefix": "kell",
+  "accent_color": "#3F7D5A",
+  "silhouette": "Immaculate, silver-topped cane, never sits.",
+  "speech_rhythm": "Courteous menace; 'the Board's view'.",
+  "vocabulary": [
+    "the Board",
+    "regrettably",
+    "arrangements"
+  ],
+  "prohibited_phrases": [
+    "we hold",
+    "sorry"
+  ],
+  "notes": "Arrives in crises and endings; the Company embodied.",
+  "initial_relationship": 50
+}

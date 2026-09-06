@@ -1,0 +1,42 @@
+{
+  "id": "crane",
+  "name": "Matthias Crane",
+  "role": "Aldmere Customs Inspector",
+  "tier": "major",
+  "faction": "aldmere",
+  "expressions": [
+    "neutral",
+    "disapproving",
+    "delighted_by_a_clause",
+    "alarmed"
+  ],
+  "portrait_prefix": "crane",
+  "accent_color": "#3B5F8A",
+  "silhouette": "Precise, black coat, white stock, spectacles, bound statute book under the arm.",
+  "speech_rhythm": "Complete sentences with citations. Deadpan. Humor entirely accidental.",
+  "vocabulary": [
+    "the Compact",
+    "Schedule Four",
+    "duly",
+    "I note"
+  ],
+  "prohibited_phrases": [
+    "roughly",
+    "I feel",
+    "!",
+    "cargo, eh",
+    "magnificent"
+  ],
+  "public_motivation": "Enforce the Compact to the letter.",
+  "private_motivation": "Prove Aldmere could run the canal; a six-year report.",
+  "fear": "Disorder. Also being liked.",
+  "contradiction": "The rule-bound official becomes the truth's best witness because he will not lie.",
+  "secret": "Has been counting the water himself; his figures match Quenn's.",
+  "relationships": {
+    "vane": "loathing that is nearly fondness",
+    "solas": "an armed illegality",
+    "pell": "rival pomp",
+    "quenn": "admires her precision"
+  },
+  "initial_relationship": 50
+}

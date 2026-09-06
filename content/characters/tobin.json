@@ -1,0 +1,26 @@
+{
+  "id": "tobin",
+  "name": "Old Tobin",
+  "role": "Retired Keeper of Lock 8",
+  "tier": "supporting",
+  "faction": "town",
+  "expressions": [
+    "neutral",
+    "remembering"
+  ],
+  "portrait_prefix": "tobin",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Bent, forty-year-old Company coat, a tankard.",
+  "speech_rhythm": "Rambling stories with a true fact buried.",
+  "vocabulary": [
+    "in my day",
+    "Dray",
+    "the Dry Year"
+  ],
+  "prohibited_phrases": [
+    "magnificent",
+    "Schedule"
+  ],
+  "notes": "Oral history; Dray's friend; Dry Year witness.",
+  "initial_relationship": 50
+}

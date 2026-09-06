@@ -1,0 +1,26 @@
+{
+  "id": "hesse",
+  "name": "Lucan Hesse",
+  "role": "Editor, Sorrel Courier",
+  "tier": "supporting",
+  "faction": "sorrel",
+  "expressions": [
+    "curious",
+    "triumphant"
+  ],
+  "portrait_prefix": "hesse",
+  "accent_color": "#B4482B",
+  "silhouette": "Notebook, loud checked coat, cigar unlit.",
+  "speech_rhythm": "Headlines; questions as accusations.",
+  "vocabulary": [
+    "my readers",
+    "on the record",
+    "front page"
+  ],
+  "prohibited_phrases": [
+    "we hold",
+    "the gift"
+  ],
+  "notes": "Public opinion; expose or protect.",
+  "initial_relationship": 50
+}

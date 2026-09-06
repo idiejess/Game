@@ -1,0 +1,43 @@
+{
+  "id": "vosk",
+  "name": "Odile Vosk",
+  "role": "Summit Auditor",
+  "tier": "major",
+  "faction": "company",
+  "expressions": [
+    "neutral",
+    "measuring",
+    "tired",
+    "rare_warmth"
+  ],
+  "portrait_prefix": "vosk",
+  "accent_color": "#3F7D5A",
+  "silhouette": "Tall, narrow, grey travelling coat buttoned to the throat, document case held flat like a tray.",
+  "speech_rhythm": "Short declaratives. Never asks a question she cannot answer. Pauses before names.",
+  "vocabulary": [
+    "irregular",
+    "noted",
+    "the works",
+    "for the record",
+    "you will find"
+  ],
+  "prohibited_phrases": [
+    "I think",
+    "sorry",
+    "!",
+    "okay",
+    "please"
+  ],
+  "public_motivation": "Keep the summit accounts and the Keeper honest.",
+  "private_motivation": "Keep the Marrow Cut secret; disclosure ends canal, town and peace.",
+  "fear": "That she is the last who knows, and that she is wrong.",
+  "contradiction": "An auditor whose job is concealing the largest fraud on the canal.",
+  "secret": "Has read Marrow's letters; filed Dray as 'resigned'.",
+  "relationships": {
+    "pell": "contempt for his sincerity; protects him from it",
+    "quenn": "fears she will find the survey",
+    "mirren": "guilt",
+    "hale": "unspoken pact"
+  },
+  "initial_relationship": 45
+}

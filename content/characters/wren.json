@@ -1,0 +1,41 @@
+{
+  "id": "wren",
+  "name": "Wren Ashby",
+  "role": "Hullfolk Runner",
+  "tier": "major",
+  "faction": "hullfolk",
+  "expressions": [
+    "grinning",
+    "neutral",
+    "caught",
+    "serious"
+  ],
+  "portrait_prefix": "wren",
+  "accent_color": "#8C6B2F",
+  "silhouette": "Lean, barefoot on gunwales, patched jacket with too many pockets, a coil of line.",
+  "speech_rhythm": "Quick, deflecting, answers questions with offers; understatement.",
+  "vocabulary": [
+    "cargo",
+    "a favor",
+    "the old man",
+    "you didn't see"
+  ],
+  "prohibited_phrases": [
+    "we hold",
+    "we remember",
+    "Keeper, sir",
+    "magnificent"
+  ],
+  "public_motivation": "Money and passage.",
+  "private_motivation": "Get the Hullfolk something the town cannot take.",
+  "fear": "Ending like Bram, sitting on a bollard remembering.",
+  "contradiction": "The least sentimental Hullfolk learns the whole Song.",
+  "secret": "Runs rifles for Sorrel through the reeds.",
+  "relationships": {
+    "bram": "love, defiance",
+    "petronel": "grandmother",
+    "solas": "buyer, and the man she fears",
+    "mirren": "one honest friendship"
+  },
+  "initial_relationship": 45
+}

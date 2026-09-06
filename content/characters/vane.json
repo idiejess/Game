@@ -1,0 +1,41 @@
+{
+  "id": "vane",
+  "name": "Nessa Vane",
+  "role": "Sorrel Freight Agent",
+  "tier": "major",
+  "faction": "sorrel",
+  "expressions": [
+    "brisk",
+    "neutral",
+    "amused",
+    "furious"
+  ],
+  "portrait_prefix": "vane",
+  "accent_color": "#B4482B",
+  "silhouette": "Sharp travelling suit, a rate card in one hand and a pocket watch in the other.",
+  "speech_rhythm": "Fast, numbers and deadlines, interrupts, ends with a deal.",
+  "vocabulary": [
+    "delay costs",
+    "my principals",
+    "by the next watch",
+    "we can fix that"
+  ],
+  "prohibited_phrases": [
+    "Schedule",
+    "the gift",
+    "magnificent",
+    "we hold"
+  ],
+  "public_motivation": "Coal east, iron east, faster.",
+  "private_motivation": "Buy the canal's Sorrel half for a consortium.",
+  "fear": "That the canal is dying and her contracts with it.",
+  "contradiction": "Wants the Company gone and needs the canal to be a lie.",
+  "secret": "Her consortium is financed by the people who buy Wren's rifles.",
+  "relationships": {
+    "crane": "the loathing",
+    "solas": "employer",
+    "hesse": "feeds him stories",
+    "pell": "flatters him"
+  },
+  "initial_relationship": 50
+}

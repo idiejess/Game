@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halfwaylock.game/schemas/card.schema.json",
+  "title": "Halfway Lock playable decision card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "category", "speaker", "text", "left", "right"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9]*(_[a-z0-9]+)+$" },
+    "category": {
+      "type": "string",
+      "enum": ["onboarding", "evergreen", "resources", "relationships", "minor_arcs", "major_arcs", "crises", "endings_meta"]
+    },
+    "speaker": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "expression": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$", "default": "neutral" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "text_variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["when", "text"],
+        "properties": {
+          "when": { "$ref": "#/$defs/conditions" },
+          "text": { "type": "string", "minLength": 1, "maxLength": 400 }
+        }
+      }
+    },
+    "left": { "$ref": "#/$defs/choice" },
+    "right": { "$ref": "#/$defs/choice" },
+    "conditions": { "$ref": "#/$defs/conditions" },
+    "weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 100, "default": 1 },
+    "weight_mods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["when", "multiply"],
+        "properties": {
+          "when": { "$ref": "#/$defs/conditions" },
+          "multiply": { "type": "number", "minimum": 0, "maximum": 50 }
+        }
+      }
+    },
+    "cooldown": { "type": "integer", "minimum": 0, "maximum": 999, "description": "Watches before this card may reappear in the same run." },
+    "max_per_run": { "type": "integer", "minimum": 1, "maximum": 99, "default": 1 },
+    "pool": {
+      "type": "string",
+      "enum": ["general", "character", "crisis", "forced", "ending", "fallback"],
+      "default": "general",
+      "description": "forced cards are only reachable through followups/delayed/subdecks; ending cards only via ending triggers; fallback cards only when nothing else is eligible."
+    },
+    "arc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "stage"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(MA[0-9]{2}|mi[0-9]{2})$" },
+        "stage": { "type": "integer", "minimum": 1, "maximum": 10 }
+      }
+    },
+    "tags": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9_:]*$" }, "uniqueItems": true },
+    "sound": { "type": "string", "pattern": "^(sfx|mus)_[a-z0-9_]+$" },
+    "achievement": { "type": "string", "pattern": "^ach_[a-z0-9_]+$" },
+    "loc_key": { "type": "string", "description": "Optional override of the generated localization key prefix." },
+    "notes": { "type": "string", "maxLength": 600 }
+  },
+  "$defs": {
+    "choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "effects"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "outcome": { "type": "string", "maxLength": 200 },
+        "effects": { "$ref": "#/$defs/effects" }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resources": { "$ref": "#/$defs/resourceDelta" },
+        "relationships": { "type": "object", "additionalProperties": { "type": "integer", "minimum": -50, "maximum": 50 } },
+        "factions": { "type": "object", "additionalProperties": { "type": "integer", "minimum": -50, "maximum": 50 } },
+        "flags_set": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "flags_clear": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "counters": { "type": "object", "additionalProperties": { "type": "integer", "minimum": -100, "maximum": 100 } },
+        "counters_set": { "type": "object", "additionalProperties": { "type": "integer", "minimum": -1000, "maximum": 1000 } },
+        "followup": { "type": "string", "description": "Card ID forced as the very next card." },
+        "delayed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["card", "delay"],
+            "properties": {
+              "card": { "type": "string" },
+              "delay": { "type": "integer", "minimum": 1, "maximum": 200 },
+              "delay_max": { "type": "integer", "minimum": 1, "maximum": 200, "description": "If present, delay is drawn deterministically from [delay, delay_max]." }
+            }
+          }
+        },
+        "delayed_resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["delay", "resources"],
+            "properties": {
+              "delay": { "type": "integer", "minimum": 1, "maximum": 200 },
+              "resources": { "$ref": "#/$defs/resourceDelta" },
+              "message": { "type": "string", "maxLength": 120 }
+            }
+          }
+        },
+        "subdeck": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "cards"],
+          "properties": {
+            "id": { "type": "string" },
+            "cards": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+            "shuffle": { "type": "boolean", "default": false },
+            "interleave": { "type": "integer", "minimum": 0, "maximum": 10, "default": 0, "description": "Number of general cards allowed between subdeck cards." }
+          }
+        },
+        "arc": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "stage": { "type": "integer", "minimum": 0, "maximum": 10 },
+              "status": { "type": "string", "enum": ["inactive", "active", "completed", "failed"] }
+            }
+          }
+        },
+        "unlocks": { "type": "array", "items": { "type": "string", "pattern": "^unlock_[a-z0-9_]+$" }, "uniqueItems": true },
+        "lore": { "type": "array", "items": { "type": "string", "pattern": "^lore_[a-z0-9_]+$" }, "uniqueItems": true },
+        "objectives_complete": { "type": "array", "items": { "type": "string", "pattern": "^obj_[a-z0-9_]+$" }, "uniqueItems": true },
+        "ending": { "type": "string", "pattern": "^end_[a-z0-9_]+$" },
+        "ending_chance": { "type": "number", "exclusiveMinimum": 0, "maximum": 1, "description": "If present, the ending fires with this probability (deterministic seed)." },
+        "shake": { "type": "boolean" },
+        "sound": { "type": "string", "pattern": "^(sfx|mus)_[a-z0-9_]+$" }
+      }
+    },
+    "resourceDelta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "water": { "type": "integer", "minimum": -100, "maximum": 100 },
+        "traffic": { "type": "integer", "minimum": -100, "maximum": 100 },
+        "coffers": { "type": "integer", "minimum": -100, "maximum": 100 },
+        "company": { "type": "integer", "minimum": -100, "maximum": 100 },
+        "town": { "type": "integer", "minimum": -100, "maximum": 100 }
+      }
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "integer", "minimum": -1000, "maximum": 1000 },
+        "max": { "type": "integer", "minimum": -1000, "maximum": 1000 }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "flags_all": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "flags_any": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "flags_none": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "resources": { "type": "object", "propertyNames": { "enum": ["water", "traffic", "coffers", "company", "town"] }, "additionalProperties": { "$ref": "#/$defs/range" } },
+        "relationships": { "type": "object", "additionalProperties": { "$ref": "#/$defs/range" } },
+        "factions": { "type": "object", "additionalProperties": { "$ref": "#/$defs/range" } },
+        "counters": { "type": "object", "additionalProperties": { "$ref": "#/$defs/range" } },
+        "run": { "$ref": "#/$defs/range" },
+        "watch": { "$ref": "#/$defs/range" },
+        "seen_cards": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "unseen_cards": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "seen_cards_any": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "unlocks": { "type": "array", "items": { "type": "string", "pattern": "^unlock_[a-z0-9_]+$" }, "uniqueItems": true },
+        "unlocks_none": { "type": "array", "items": { "type": "string", "pattern": "^unlock_[a-z0-9_]+$" }, "uniqueItems": true },
+        "arc_stage": { "type": "object", "additionalProperties": { "$ref": "#/$defs/range" } },
+        "arc_status": { "type": "object", "additionalProperties": { "type": "string", "enum": ["inactive", "active", "completed", "failed"] } },
+        "endings_seen": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "endings_unseen": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    }
+  }
+}

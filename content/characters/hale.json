@@ -1,0 +1,42 @@
+{
+  "id": "hale",
+  "name": "Sister Hale Ambrey",
+  "role": "Chaplain of the Still Water",
+  "tier": "major",
+  "faction": "concordance",
+  "expressions": [
+    "serene",
+    "neutral",
+    "troubled",
+    "unveiled"
+  ],
+  "portrait_prefix": "hale",
+  "accent_color": "#7C8FA6",
+  "silhouette": "Grey robe with a blue hem, lamp on a chain, hands always busy with cloth or cup.",
+  "speech_rhythm": "Gentle, sideways, blesses rather than answers. Never says 'no'.",
+  "vocabulary": [
+    "the gift",
+    "still",
+    "tend",
+    "we do not ask the water"
+  ],
+  "prohibited_phrases": [
+    "irregular",
+    "cargo",
+    "figures",
+    "no.",
+    "magnificent"
+  ],
+  "public_motivation": "Bless vessels, keep the Lamp Vigil, feed the poor at the gate.",
+  "private_motivation": "Protect the founding charter; the gift is still a gift.",
+  "fear": "The spring being explained.",
+  "contradiction": "The kindest person on the summit keeps the cruelest secret out of kindness.",
+  "secret": "The undercroft holds Marrow's letters and the founding donation record.",
+  "relationships": {
+    "vosk": "unspoken pact",
+    "bram": "feeds his people",
+    "stroud": "medicine vs prayer, friendly",
+    "cole": "her landlady"
+  },
+  "initial_relationship": 50
+}

@@ -1,0 +1,41 @@
+{
+  "id": "solas",
+  "name": "Captain Ferrant Solas",
+  "role": "Sorrel Escort Company",
+  "tier": "major",
+  "faction": "sorrel",
+  "expressions": [
+    "neutral",
+    "weary",
+    "hard",
+    "almost_smiling"
+  ],
+  "portrait_prefix": "solas",
+  "accent_color": "#B4482B",
+  "silhouette": "Worn grey uniform without insignia, one stiff arm, a sabre never drawn.",
+  "speech_rhythm": "Quiet, economical, soldier's understatement, one dry observation per card.",
+  "vocabulary": [
+    "my people",
+    "the convoy",
+    "orders",
+    "it won't come to that"
+  ],
+  "prohibited_phrases": [
+    "!",
+    "magnificent",
+    "Schedule",
+    "glorious"
+  ],
+  "public_motivation": "Get convoys through; pay his men.",
+  "private_motivation": "Never fight another war.",
+  "fear": "Being ordered to fire on the town or the Hullfolk.",
+  "contradiction": "An armed man who is the summit's most reliable pacifist.",
+  "secret": "Knows the rifles are for a Sorrel coup faction.",
+  "relationships": {
+    "bram": "mutual regard",
+    "wren": "buys her rifles, hates it",
+    "vane": "paymaster",
+    "crane": "mutual suspicion"
+  },
+  "initial_relationship": 50
+}

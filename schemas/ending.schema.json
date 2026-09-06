@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halfwaylock.game/schemas/ending.schema.json",
+  "title": "Halfway Lock ending definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "kind", "card", "epilogue"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^end_[a-z0-9_]+$" },
+    "title": { "type": "string", "minLength": 1 },
+    "kind": { "type": "string", "enum": ["resource_death", "ordinary", "false", "revelation", "crisis", "true"] },
+    "card": { "type": "string", "description": "The endings_meta card shown when this ending fires." },
+    "epilogue": { "type": "string", "minLength": 1, "maxLength": 600 },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resource_edge": { "type": "object", "additionalProperties": false, "properties": { "resource": { "type": "string" }, "edge": { "type": "string", "enum": ["min", "max"] } }, "required": ["resource", "edge"] },
+        "watch_min": { "type": "integer" },
+        "conditions": { "$ref": "card.schema.json#/$defs/conditions" }
+      }
+    },
+    "unlocks": { "type": "array", "items": { "type": "string", "pattern": "^unlock_[a-z0-9_]+$" } },
+    "lore": { "type": "array", "items": { "type": "string", "pattern": "^lore_[a-z0-9_]+$" } },
+    "music": { "type": "string" },
+    "art": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

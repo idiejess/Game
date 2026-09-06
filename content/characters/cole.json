@@ -1,0 +1,26 @@
+{
+  "id": "cole",
+  "name": "Marguerite Cole",
+  "role": "Landlady and Moneylender",
+  "tier": "supporting",
+  "faction": "town",
+  "expressions": [
+    "pleasant",
+    "cold"
+  ],
+  "portrait_prefix": "cole",
+  "accent_color": "#9C5A3C",
+  "silhouette": "Widow's black, keys at the waist, a ledger of her own.",
+  "speech_rhythm": "Sweet, exact; every sentence carries interest.",
+  "vocabulary": [
+    "terms",
+    "kindly",
+    "due"
+  ],
+  "prohibited_phrases": [
+    "we hold",
+    "magnificent"
+  ],
+  "notes": "Loans; owns the chapel and half the town.",
+  "initial_relationship": 50
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halfwaylock.game/schemas/character.schema.json",
+  "title": "Halfway Lock character or source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "role", "tier", "faction", "expressions", "portrait_prefix"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "minLength": 1 },
+    "tier": { "type": "string", "enum": ["major", "supporting", "source"] },
+    "faction": { "type": "string", "enum": ["company", "town", "hullfolk", "aldmere", "sorrel", "concordance", "none"] },
+    "expressions": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" }, "minItems": 1, "uniqueItems": true },
+    "portrait_prefix": { "type": "string", "description": "Path prefix under res://assets/portraits/, e.g. vosk → vosk_neutral.png" },
+    "accent_color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "silhouette": { "type": "string" },
+    "speech_rhythm": { "type": "string" },
+    "vocabulary": { "type": "array", "items": { "type": "string" } },
+    "prohibited_phrases": { "type": "array", "items": { "type": "string" } },
+    "public_motivation": { "type": "string" },
+    "private_motivation": { "type": "string" },
+    "fear": { "type": "string" },
+    "contradiction": { "type": "string" },
+    "secret": { "type": "string" },
+    "relationships": { "type": "object", "additionalProperties": { "type": "string" } },
+    "initial_relationship": { "type": "integer", "minimum": 0, "maximum": 100, "default": 50 },
+    "gallery_unlock": { "type": "string", "description": "Card ID or condition note describing when the gallery entry appears." },
+    "notes": { "type": "string" }
+  }
+}

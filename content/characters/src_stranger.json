@@ -1,0 +1,12 @@
+{
+  "id": "src_stranger",
+  "name": "A Stranger",
+  "role": "An unnamed petitioner",
+  "tier": "source",
+  "faction": "none",
+  "expressions": [
+    "neutral"
+  ],
+  "portrait_prefix": "src_stranger",
+  "accent_color": "#7C8FA6"
+}
