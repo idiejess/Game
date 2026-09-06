@@ -1,106 +1,117 @@
 {
   "cards": 15,
-  "errors": [],
+  "errors": [
+    "[ma12_01] situation 49 words (6-40)"
+  ],
   "warnings": [
-    "[ma08_01] situation 43 words (6-40)",
-    "[ma08_02] situation 45 words (6-40)",
-    "[ma08_04] situation 45 words (6-40)",
-    "[ma08_05] slang 'whatever'",
-    "[ma08_06] situation 46 words (6-40)",
-    "[ma08_06] right outcome 26 words (>24)",
-    "[ma08_07] situation 47 words (6-40)",
-    "[ma08_12] situation 46 words (6-40)",
-    "[ma08_12] left outcome 26 words (>24)",
-    "[ma08_13] situation 47 words (6-40)",
-    "[ma08_14] situation 47 words (6-40)"
+    "[ma12_02] situation 47 words (6-40)",
+    "[ma12_02] left outcome 26 words (>24)",
+    "[ma12_03] situation 48 words (6-40)",
+    "[ma12_04] situation 45 words (6-40)",
+    "[ma12_06] situation 46 words (6-40)",
+    "[ma12_06] slang 'whatever'",
+    "[ma12_07] situation 44 words (6-40)",
+    "[ma12_08] situation 48 words (6-40)",
+    "[ma12_09] situation 45 words (6-40)",
+    "[ma12_10] situation 42 words (6-40)",
+    "[ma12_10] left outcome 29 words (>24)",
+    "[ma12_11] situation 45 words (6-40)",
+    "[ma12_11] left outcome 25 words (>24)",
+    "[ma12_12] situation 43 words (6-40)",
+    "[ma12_13] situation 45 words (6-40)",
+    "[ma12_14] situation 43 words (6-40)",
+    "[ma12_15] situation 47 words (6-40)"
   ],
   "speakers": {
-    "ilse": 3,
-    "hale": 7,
-    "stroud": 3,
-    "cole": 2
+    "src_ledger": 3,
+    "vosk": 3,
+    "bram": 3,
+    "quenn": 2,
+    "crane": 2,
+    "hale": 1,
+    "solas": 1
   },
   "top_openers": [
-    [
-      "the water",
-      2
-    ],
     [
       "you have",
       2
     ],
     [
-      "the pound's",
+      "dawn the",
+      2
+    ],
+    [
+      "the pound",
       1
     ],
     [
-      "the well's",
+      "i've read",
       1
     ],
     [
-      "cole's sent",
+      "whichever wheel",
       1
     ],
     [
-      "the undercroft",
+      "you will",
       1
     ],
     [
-      "six cases",
+      "the night",
       1
     ],
     [
-      "the 'worse'",
+      "constables eight",
       1
     ],
     [
-      "ilse asked",
+      "the town",
       1
     ],
     [
-      "vosk has",
+      "the wheel",
       1
     ]
   ],
   "top_labels": [
     [
-      "running the paddles full, now",
+      "gather allies",
       1
     ],
     [
-      "sandbags and town labor",
+      "do it alone",
       1
     ],
     [
-      "the well is the pound",
+      "tell her everything",
       1
     ],
     [
-      "ask quenn to look",
+      "tell her nothing",
       1
     ],
     [
-      "tell her the company objects",
+      "it will go home",
       1
     ],
     [
-      "keep the cellars dry instead",
+      "some of it",
       1
     ],
     [
-      "lower it for the chapel",
+      "there must be a fourth",
       1
     ],
     [
-      "what things?",
+      "three is enough",
       1
     ],
     [
-      "go down yourself",
+      "file it",
       1
     ],
     [
-      "send mirren",
+      "not yet",
       1
     ]
   ]

@@ -1,0 +1,929 @@
+{
+ "cards": [
+  {
+   "id": "ma12_01",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA12",
+    "stage": 1
+   },
+   "text": "You have the map, and enough of the rest to know what it is a map of. The pound falls a mark a watch, and one day soon it will not float a boat, and the choice will be made for you. It is time to make it yourself.",
+   "left": {
+    "label": "Gather allies",
+    "outcome": "You begin with the people who already know. There are more than you thought.",
+    "effects": {
+     "flags_set": [
+      "allies_gathered"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Do it alone",
+    "outcome": "Alone. Like Marrow. Like Dray. You know how that ended twice.",
+    "effects": {
+     "flags_set": [
+      "allies_gathered"
+     ],
+     "counters": {
+      "fatigue": 2,
+      "allies": -1
+     }
+    }
+   },
+   "conditions": {
+    "unlocks": [
+     "unlock_cut_map"
+    ],
+    "watch": {
+     "min": 60
+    },
+    "flags_none": [
+     "allies_gathered"
+    ]
+   },
+   "weight": 6,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_02",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "tired",
+   "arc": {
+    "id": "MA12",
+    "stage": 1
+   },
+   "text": "You have the map. I have seen the oilcloth. One wire to Ardent and there are constables at the sluice house by the week's end. For the record, I have not sent it. I am asking what you mean to do, so I can decide whether to.",
+   "left": {
+    "label": "Tell her everything",
+    "outcome": "She listens. She does not write. At the end: \"Noted. I will not send the wire. I do not yet know what I will do instead.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Tell her nothing",
+    "outcome": "\"Noted.\" She does not send the wire. She watches the north bank every night.",
+    "effects": {
+     "relationships": {
+      "vosk": -3
+     },
+     "counters": {
+      "suspicion": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "vosk_enemy"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma12_03",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA12",
+    "stage": 1
+   },
+   "text": "The pound is low. It will not float the Reach by the month's end. The young ones are ready to cut the bank and we are tired of telling them no. We know you have the map. We ask, once, plainly: will the river go home, or not?",
+   "left": {
+    "label": "It will go home",
+    "outcome": "\"Then we hold the night for you. All of us.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "flags_set": [
+      "promised_bram"
+     ],
+     "counters": {
+      "allies": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Some of it",
+    "outcome": "\"Some. We have never been offered some. We will think about some.\"",
+    "effects": {
+     "relationships": {
+      "bram": 3
+     },
+     "factions": {
+      "hullfolk": 2
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "hullfolk_cleared"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma12_04",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "MA12",
+    "stage": 2
+   },
+   "text": "I've read Dray's map and Marrow's drawings together. The second wheel opens a sluice to Lowmere. Fully open, the pound becomes a road. Half, it shares. Shut, we go on as we are until it fails. Those are the three. Sorry. There isn't a fourth.",
+   "left": {
+    "label": "There must be a fourth",
+    "outcome": "\"There isn't. I've looked. Roughly a hundred times.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Three is enough",
+    "outcome": "\"Three. Yes. It's more than most people get.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "quenn_silenced"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma12_05",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA12",
+    "stage": 2
+   },
+   "text": "Whichever wheel you turn, there is a second choice: whether the shores are told. If I file Schedule Nine, both shores know by evening and the charter is finished. If not, the Company survives and so does the lie. Say.",
+   "left": {
+    "label": "File it",
+    "outcome": "\"Duly. I shall need the engineer's signature and the newspaperman's press. I have both, I think.\"",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet",
+    "outcome": "\"Duly. I note I have waited six years. I can wait a week.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     },
+     "counters": {
+      "allies": 0
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma12_06",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "unveiled",
+   "arc": {
+    "id": "MA12",
+    "stage": 2
+   },
+   "text": "You will turn the wheel. I have known since the letters. I ask the only thing I have ever asked: whatever you turn it to, let the town keep its lamp. A chapel, a well, a reason to stay. That is all the gift ever was.",
+   "left": {
+    "label": "The town keeps its lamp",
+    "outcome": "\"Then I am with you. In the last pew, or at the wheel.\"",
+    "effects": {
+     "relationships": {
+      "hale": 8
+     },
+     "factions": {
+      "concordance": 5
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The town gets the truth first",
+    "outcome": "\"Then give it gently. Nobody has tried gently.\"",
+    "effects": {
+     "relationships": {
+      "hale": 3
+     },
+     "counters": {
+      "allies": 0,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma12_07",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA12",
+    "stage": 3
+   },
+   "text": "The night. Lamps at the sluice house door. Whoever stands with you stands there. Whoever does not is in the town or the Company house, waiting. The map is in your coat. The key is on its string. The wheel is forty steps down.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "route_river"
+      ]
+     },
+     "text": "The night. The Reach holds the towpath, forty boats, no fire. Solas's men, or what is left of them, stand between the town and the north bank. Bram is at the sluice house door. He has never stood at it. Forty steps down, the wheel."
+    },
+    {
+     "when": {
+      "flags_all": [
+       "route_ledger"
+      ]
+     },
+     "text": "The night. Crane at the sluice house door with Schedule Nine in a satchel. Quenn with her figures. Hesse with a boy ready to run to the press. Whatever the wheel does, it is done in the open. Forty steps down."
+    },
+    {
+     "when": {
+      "flags_all": [
+       "route_cut"
+      ]
+     },
+     "text": "The night. Vosk at the sluice house door with the Company key, which she has never used. Hale with her lamp. Tamm with rope and a new spindle for a wheel that has waited seventy years. Nobody else knows. Forty steps down."
+    }
+   ],
+   "left": {
+    "label": "Down",
+    "outcome": "Forty steps. The river. The wheel.",
+    "effects": {
+     "counters": {
+      "fatigue": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "A moment at the door",
+    "outcome": "You look at the pound. It is a mark lower than it was last night. It always is.",
+    "effects": {
+     "counters": {
+      "fatigue": 1
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 2
+     }
+    },
+    "flags_any": [
+     "route_river",
+     "route_ledger",
+     "route_cut"
+    ]
+   },
+   "weight": 6,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_08",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "MA12",
+    "stage": 3
+   },
+   "text": "Constables. Eight, from Ardent, on the towpath, with a Board warrant for the sluice house. I did not send for them. For the record, Pell did, in a panic, meaning well. For the record, they will not pass me. You will find I am standing in the door.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "vosk_enemy"
+      ]
+     },
+     "text": "Constables. Eight, from Ardent, with a Board warrant for the sluice house. I sent for them. For the record, I told you I would have to stop you. For the record, I am sorry. You will find I am standing in the door, and not on your side of it."
+    }
+   ],
+   "left": {
+    "label": "Go past her, down",
+    "outcome": "She lets you past, or she does not. Either way the constables do not follow. They are afraid of her. Everyone is.",
+    "effects": {
+     "relationships": {
+      "vosk": 2
+     },
+     "counters": {
+      "fatigue": 1
+     },
+     "resources": {
+      "company": -5
+     }
+    }
+   },
+   "right": {
+    "label": "Face the constables with her",
+    "outcome": "Two of you in a door against eight men with a warrant. They read it aloud. She says 'noted'. They go back to Ardent.",
+    "effects": {
+     "relationships": {
+      "vosk": 8
+     },
+     "resources": {
+      "company": -8
+     },
+     "counters": {
+      "suspicion": 5,
+      "allies": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 3
+     }
+    },
+    "flags_none": [
+     "route_cut"
+    ]
+   },
+   "weight": 4,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma12_09",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "patient",
+   "arc": {
+    "id": "MA12",
+    "stage": 3
+   },
+   "text": "The town has come out with lamps. Not for us, not against us. To see. Ilse is at the front. She asked what we are doing and I said 'holding for the gate'. She is still here. We ask the gate to speak to her.",
+   "left": {
+    "label": "Tell the town what is happening",
+    "outcome": "You stand on the wharf and tell them. River, hill, door, wheel. Nobody leaves. Ilse, at the end: 'Then get on with it.'",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -5
+     },
+     "relationships": {
+      "ilse": 8,
+      "bram": 4
+     },
+     "counters": {
+      "suspicion": 4,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Ilse to hold the town back",
+    "outcome": "She holds them. She does not ask what for. She will, later, at length.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "ilse": 4,
+      "bram": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_bram",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 3
+     }
+    },
+    "flags_none": [
+     "hullfolk_cleared"
+    ]
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma12_10",
+   "category": "major_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "MA12",
+    "stage": 4
+   },
+   "text": "The wheel. Marrow's. Dray oiled it. I've checked the gear; it'll turn. Full open and the Quell goes home and the pound goes to a road. Half and it shares. I've got my hand beside yours. Sorry. I'm not sorry. Say which.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "quenn_silenced"
+      ]
+     },
+     "text": "The wheel. Marrow's. Dray oiled it. Tamm has checked the gear; it will turn. Full open and the Quell goes home and the pound goes to a road. Half and it shares. There is nobody beside you who understands it. Say which anyway."
+    }
+   ],
+   "left": {
+    "label": "Full open",
+    "outcome": "The wheel turns until it stops. The slab lifts. The river goes south with a sound like a held breath let out. Behind you, the pound begins to fall.",
+    "effects": {
+     "flags_set": [
+      "sluice_rebuilt"
+     ],
+     "resources": {
+      "water": -15
+     },
+     "counters": {
+      "evidence": 3,
+      "water_drift_mod": 3
+     },
+     "relationships": {
+      "quenn": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Half",
+    "outcome": "Half a turn. The slab lifts a hand. The river divides. The roar behind you softens to a river's ordinary voice.",
+    "effects": {
+     "flags_set": [
+      "sluice_rebuilt"
+     ],
+     "resources": {
+      "water": -5
+     },
+     "counters": {
+      "evidence": 3,
+      "water_drift_mod": 1
+     },
+     "relationships": {
+      "quenn": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 3
+     }
+    },
+    "flags_any": [
+     "route_river",
+     "route_ledger",
+     "route_cut"
+    ]
+   },
+   "weight": 6,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_11",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA12",
+    "stage": 4
+   },
+   "text": "The roof groans the way Dray wrote that it groaned. Dust falls into the river. The fall that killed him is behind you and the way out is through it. Whoever came with you is shouting from the far side. The wheel is turned. Leave.",
+   "left": {
+    "label": "Through the fall, now",
+    "outcome": "On your belly, the river at your face, hands on the far side pulling. The roof comes down behind you. It was always going to.",
+    "effects": {
+     "counters": {
+      "fatigue": 4
+     },
+     "resources": {
+      "water": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Take the map from the niche first",
+    "outcome": "Dray's ledger under your arm, the fall, the hands, the roof. You have everything he had, and you are out.",
+    "effects": {
+     "counters": {
+      "fatigue": 5,
+      "evidence": 2
+     },
+     "resources": {
+      "water": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sluice_rebuilt"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 6,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_12",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "MA12",
+    "stage": 4
+   },
+   "text": "Trouble on the towpath. Constables, or Sorrel men, or the town, it doesn't matter which; men with staves and men with lamps. My people are between them. I've got no orders and no company. I've got a towpath. Tell me to hold it.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "sorrel_armed"
+      ]
+     },
+     "text": "Trouble on the towpath. The men the rifles were for have come to see what the Company is hiding. My people are between them and the door. I bought those rifles. I've got a towpath. Tell me to hold it, and tell me quickly."
+    }
+   ],
+   "left": {
+    "label": "Hold it",
+    "outcome": "\"Understood.\" He holds it. Nobody fires. It won't come to that, he said. It does not.",
+    "effects": {
+     "relationships": {
+      "solas": 10
+     },
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "solas_owed"
+     ]
+    }
+   },
+   "right": {
+    "label": "Stand aside; nobody dies for a door",
+    "outcome": "\"Nobody dies.\" He stands aside. They reach the door. Vosk is in it. Nobody passes Vosk.",
+    "effects": {
+     "relationships": {
+      "solas": 5,
+      "vosk": 4
+     },
+     "resources": {
+      "company": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "allies_gathered",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma12_13",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "mourning",
+   "arc": {
+    "id": "MA12",
+    "stage": 5
+   },
+   "text": "Dawn. The pound is falling to a road. Down the west flight, in a valley nobody living has seen, a river runs for the first time in eighty years. The young ones are singing. The debt is paid. We do not thank. We go home.",
+   "left": {
+    "label": "Go with them, to see the river",
+    "outcome": "The west flight, then a dry valley with a river in it, then forty boats going upstream for the first time.",
+    "effects": {
+     "ending": "end_true_river",
+     "lore": [
+      "lore_river_returned"
+     ],
+     "factions": {
+      "hullfolk": 20
+     }
+    }
+   },
+   "right": {
+    "label": "Keep the smaller gate",
+    "outcome": "Somebody must keep a seasonal canal. The town shrinks. The town stays. So do you.",
+    "effects": {
+     "ending": "end_true_river",
+     "lore": [
+      "lore_river_returned"
+     ],
+     "resources": {
+      "town": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sluice_rebuilt",
+     "route_river"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 4
+     }
+    },
+    "resources": {
+     "town": {
+      "min": 40
+     }
+    },
+    "factions": {
+     "hullfolk": {
+      "min": 60
+     }
+    }
+   },
+   "weight": 10,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_14",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "arc": {
+    "id": "MA12",
+    "stage": 5
+   },
+   "text": "Dawn. Schedule Nine is filed on both shores: the figures, the letters, the file, the front page, my seal. The charter is void by its own terms. Both shores must build a real reservoir. I note they will. I note I am weeping.",
+   "left": {
+    "label": "Sign as witness",
+    "outcome": "The last signature on the first honest document about the Meridian since Year 6.",
+    "effects": {
+     "ending": "end_true_ledger",
+     "lore": [
+      "lore_open_ledger"
+     ],
+     "factions": {
+      "aldmere": 10,
+      "sorrel": 10
+     }
+    }
+   },
+   "right": {
+    "label": "Let the town sign first",
+    "outcome": "Ilse. Dace. Tamm. Stroud. Fennick, shaking. Then you.",
+    "effects": {
+     "ending": "end_true_ledger",
+     "lore": [
+      "lore_open_ledger"
+     ],
+     "resources": {
+      "town": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sluice_rebuilt",
+     "route_ledger",
+     "crane_recruited"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 4
+     }
+    },
+    "resources": {
+     "company": {
+      "max": 60
+     }
+    },
+    "relationships": {
+     "crane": {
+      "min": 60
+     }
+    }
+   },
+   "weight": 10,
+   "tags": [
+    "res:company",
+    "true_route"
+   ]
+  },
+  {
+   "id": "ma12_15",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "rare_warmth",
+   "arc": {
+    "id": "MA12",
+    "stage": 5
+   },
+   "text": "Dawn. The sluice shares the river. The pound holds at a lower mark; Lowmere has a stream. Nobody in the town knows. Nobody in Ardent knows. The file says 'disused valve inspected, sound'. For the record, you have become me. You will find it is not nothing.",
+   "left": {
+    "label": "Take the key",
+    "outcome": "Brass, stamped S.H. Warm from the wheel. It was always going to be someone.",
+    "effects": {
+     "ending": "end_true_cut",
+     "lore": [
+      "lore_keepers_cut"
+     ],
+     "relationships": {
+      "vosk": 10
+     }
+    }
+   },
+   "right": {
+    "label": "Give the key to Hale",
+    "outcome": "\"We tend it,\" she says, and puts it on the chain with her lamp.",
+    "effects": {
+     "ending": "end_true_cut",
+     "lore": [
+      "lore_keepers_cut"
+     ],
+     "relationships": {
+      "hale": 10
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sluice_rebuilt",
+     "route_cut"
+    ],
+    "arc_stage": {
+     "MA12": {
+      "min": 4
+     }
+    },
+    "resources": {
+     "coffers": {
+      "min": 60
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "min": 60
+     },
+     "hale": {
+      "min": 50
+     }
+    }
+   },
+   "weight": 10,
+   "tags": [
+    "res:water",
+    "true_route"
+   ]
+  }
+ ]
+}

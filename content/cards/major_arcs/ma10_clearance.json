@@ -1,0 +1,1008 @@
+{
+ "cards": [
+  {
+   "id": "ma10_01",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "expression": "stern",
+   "arc": {
+    "id": "MA10",
+    "stage": 1
+   },
+   "text": "Keeper. The Board has asked for the contingency. The Clearance draft. I have sent it. I did not want to; I want you to know I did not want to. It comes back next week with the Board's seal or it does not. Either way, they have asked.",
+   "text_variants": [
+    {
+     "when": {
+      "run": {
+       "min": 2
+      }
+     },
+     "text": "Keeper. The Board has asked for the Clearance contingency again. It asked the last Keeper too. The last Keeper is not here. I have sent it. I want it known I did not want to."
+    }
+   ],
+   "left": {
+    "label": "Ask him to withdraw it",
+    "outcome": "\"Withdraw. From the Board.\" He tries. He is refused, kindly, by Kell.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "pell": 3
+     },
+     "flags_set": [
+      "clearance_drafted"
+     ],
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Board asked; the Board decides",
+    "outcome": "\"Yes. Yes, it does.\" He does not look at you.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 1
+     },
+     "flags_set": [
+      "clearance_drafted"
+     ],
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "flags_none": [
+     "hullfolk_cleared",
+     "clearance_refused"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "weight": 1.0,
+   "weight_mods": [
+    {
+     "when": {
+      "resources": {
+       "town": {
+        "max": 40
+       }
+      },
+      "factions": {
+       "hullfolk": {
+        "max": 40
+       }
+      }
+     },
+     "multiply": 4.0
+    },
+    {
+     "when": {
+      "run": {
+       "min": 2
+      },
+      "relationships": {
+       "pell": {
+        "min": 60
+       }
+      }
+     },
+     "multiply": 3.0
+    }
+   ],
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_02",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "arc": {
+    "id": "MA10",
+    "stage": 1
+   },
+   "text": "The Board's seal. The Clearance Order of Year 44, revived, for the removal of 'unlicensed vessels' from the Summit Pound. It requires the Keeper's signature to take effect at the summit. It is a magnificent document. I hate it.",
+   "left": {
+    "label": "Don't sign yet",
+    "outcome": "\"Yet. A good word. I shall tell them 'yet'.\"",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "pell": 2
+     },
+     "factions": {
+      "hullfolk": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Sign it",
+    "outcome": "You sign. Pell takes the pen from you as if it were hot.",
+    "effects": {
+     "resources": {
+      "company": 5
+     },
+     "relationships": {
+      "pell": -1
+     },
+     "flags_set": [
+      "clearance_signed"
+     ],
+     "factions": {
+      "hullfolk": -10
+     },
+     "counters": {
+      "hullfolk_offenses": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_drafted"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma10_03",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "expression": "wounded",
+   "arc": {
+    "id": "MA10",
+    "stage": 1
+   },
+   "text": "The Courier has the Clearance. Hesse has printed it, with my name on the draft and yours on the line for signatures, blank. The town is reading it in my inn. Well, Ilse's inn. Everyone's inn. Nobody's looking at me.",
+   "left": {
+    "label": "Tell the town you won't sign",
+    "outcome": "You say it at the inn. The town cheers. Ardent hears by evening.",
+    "effects": {
+     "resources": {
+      "town": 6,
+      "company": -5
+     },
+     "relationships": {
+      "pell": -2,
+      "ilse": 4,
+      "bram": 5
+     },
+     "flags_set": [
+      "clearance_refused"
+     ],
+     "factions": {
+      "hullfolk": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Say nothing",
+    "outcome": "The town reads your blank line and fills it in for you, in its head.",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "pell": 2
+     },
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_drafted",
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "clearance_signed",
+     "clearance_refused"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_04",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "expression": "angry",
+   "arc": {
+    "id": "MA10",
+    "stage": 2
+   },
+   "text": "The moot's called on the Clearance. Half the town wants the Reach gone: fewer moorings, fewer fish in the chamber, fewer people the Company can point at. Half remembers Year 44. I'm the reeve. I'm asking the Keeper to come and be shouted at.",
+   "left": {
+    "label": "Come to the moot",
+    "outcome": "Three hours. You are shouted at by both halves. At the end, Ilse says 'the moot has heard'. It has.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "flags_set": [
+      "moot_called"
+     ],
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Clearance is a Company matter",
+    "outcome": "\"Right. I'll tell them. I'll tell them the Company's not coming either.\"",
+    "effects": {
+     "resources": {
+      "town": -5
+     },
+     "relationships": {
+      "ilse": -5
+     },
+     "flags_set": [
+      "moot_called",
+      "moot_against"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_drafted",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_05",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "MA10",
+    "stage": 2
+   },
+   "text": "The moot's voted. Against the Clearance. Not for the Reach; against the Company doing it in our name. It's a small difference and it's the whole town. I'm to tell the Keeper. I'm telling. What the Keeper does with it is the Keeper's.",
+   "left": {
+    "label": "Refuse the Clearance in the moot's name",
+    "outcome": "You write to Ardent: the summit will not enforce. Pell weeps. Bram, hearing, stands up from his bollard.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -6
+     },
+     "relationships": {
+      "ilse": 6,
+      "bram": 8,
+      "pell": -4
+     },
+     "flags_set": [
+      "clearance_refused"
+     ],
+     "factions": {
+      "hullfolk": 8
+     }
+    }
+   },
+   "right": {
+    "label": "The moot doesn't sign Company orders",
+    "outcome": "\"No. You do.\"",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": 2
+     },
+     "relationships": {
+      "ilse": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "moot_called",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 2
+     }
+    },
+    "flags_none": [
+     "clearance_signed",
+     "clearance_refused"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_06",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA10",
+    "stage": 2
+   },
+   "text": "We know about the paper. We knew about the last one, in Year 44, and a Keeper died and we stayed. The young ones are saying it too, and they mean it differently. We ask the gate what it will sign.",
+   "left": {
+    "label": "I will not sign",
+    "outcome": "\"Then we hold. And we hold the young ones.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "flags_set": [
+      "clearance_refused"
+     ],
+     "resources": {
+      "company": -3
+     }
+    }
+   },
+   "right": {
+    "label": "I don't know yet",
+    "outcome": "\"Yet. We have heard 'yet' from a Keeper before. It was the last word he said to us.\"",
+    "effects": {
+     "relationships": {
+      "bram": -4
+     },
+     "factions": {
+      "hullfolk": -3
+     },
+     "flags_set": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_drafted",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 2
+     }
+    },
+    "flags_none": [
+     "clearance_signed"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_07",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "expression": "stern",
+   "arc": {
+    "id": "MA10",
+    "stage": 3
+   },
+   "text": "The order is signed, Keeper, by you, and Ardent has acknowledged it, and now Ardent asks how it will be enforced. I have no men. Solas has men. The Board suggests Solas. The Board suggests it in the voice it uses when it is not suggesting.",
+   "left": {
+    "label": "Ask Solas",
+    "outcome": "You ask. Solas listens. He says 'understood' and does not say yes.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "solas": -4
+     },
+     "factions": {
+      "hullfolk": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Enforce it with the hands, slowly",
+    "outcome": "Dace's men serve notice at the Reach. Very slowly. Very politely. Nothing moves for a month.",
+    "effects": {
+     "resources": {
+      "company": 1,
+      "town": -2
+     },
+     "relationships": {
+      "dace": -3,
+      "bram": -3
+     },
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_pell",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma10_08",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "MA10",
+    "stage": 3
+   },
+   "text": "You've asked me to clear the Reach. I've read the order. It's lawful. I've twelve men and they'd do it. I'm telling you now, once, before it's an order and not a question: I won't. Find someone else or find another way.",
+   "left": {
+    "label": "Another way; withdraw the request",
+    "outcome": "\"Thank you. I mean it.\" He goes to sit on Bram's bollard. Bram lets him.",
+    "effects": {
+     "relationships": {
+      "solas": 10,
+      "bram": 4
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ],
+     "resources": {
+      "company": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Then I'll find someone else",
+    "outcome": "\"You will. That's what worries me.\" Ardent sends men from Ardent. They are not Solas.",
+    "effects": {
+     "relationships": {
+      "solas": -8
+     },
+     "resources": {
+      "company": 2
+     },
+     "flags_set": [
+      "solas_refused_order",
+      "riot_brewing"
+     ],
+     "factions": {
+      "hullfolk": -5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_09",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "arc": {
+    "id": "MA10",
+    "stage": 3
+   },
+   "text": "Ardent has sent constables. Eight of them, from the capital, in Company green, with staves. They do not know the summit. They do not know the Reach. They know the order. They are asking the Keeper where to begin. Magnificent men. I hate them.",
+   "left": {
+    "label": "Begin with notice, not staves",
+    "outcome": "Notices on every hull at the Reach. Bram reads his aloud to the water.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "bram": -4
+     },
+     "factions": {
+      "hullfolk": -5
+     },
+     "counters": {
+      "hullfolk_offenses": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send them back to Ardent",
+    "outcome": "You send them back. Ardent is silent for a week. Then Kell comes.",
+    "effects": {
+     "resources": {
+      "company": -6,
+      "town": 3
+     },
+     "relationships": {
+      "pell": 2,
+      "bram": 3
+     },
+     "flags_set": [
+      "clearance_refused"
+     ],
+     "flags_clear": [
+      "clearance_signed"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_pell"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma10_10",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "mourning",
+   "arc": {
+    "id": "MA10",
+    "stage": 4
+   },
+   "text": "The constables have come to the Reach with the paper. We are going to sit down. All of us. On our decks, on the bank, on the towpath. We will not move and we will not fight. We ask the gate to watch.",
+   "left": {
+    "label": "Watch, and stand with them",
+    "outcome": "You sit on the towpath between the constables and the Reach. The constables do not know what to do with a Keeper. Nobody moves.",
+    "effects": {
+     "resources": {
+      "company": -6,
+      "town": 3
+     },
+     "relationships": {
+      "bram": 10
+     },
+     "factions": {
+      "hullfolk": 10
+     },
+     "flags_set": [
+      "clearance_refused"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Watch from the gate",
+    "outcome": "You watch. The constables wait a day, then two. On the third the town brings the Reach soup.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "bram": 3
+     },
+     "factions": {
+      "hullfolk": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_11",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "weary",
+   "arc": {
+    "id": "MA10",
+    "stage": 4
+   },
+   "text": "The constables asked me for men. I said no. They wired Ardent. Ardent ordered me. I said no to Ardent. That's the end of my company. I'd like someone to know I said no before I'm told I never worked here.",
+   "left": {
+    "label": "I'll say so in the Ledger",
+    "outcome": "\"The Ledger. Right.\" He nods. It is enough.",
+    "effects": {
+     "relationships": {
+      "solas": 8
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ],
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Lend them men; keep your company",
+    "outcome": "\"No.\" He does not lend them. He does not keep his company. He does not blame you for asking.",
+    "effects": {
+     "relationships": {
+      "solas": 2
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_12",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "arc": {
+    "id": "MA10",
+    "stage": 4
+   },
+   "text": "The young ones want to cut the east bank. Flood the town, drain the pound, end the canal. They know where. We have told them no. They ask why they should listen to an old man who has only held. We ask the gate for a reason.",
+   "left": {
+    "label": "The river can go back without a flood",
+    "outcome": "\"Can it.\" He looks at you very hard. \"Then say how, soon.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "flags_set": [
+      "promised_bram"
+     ],
+     "flags_clear": [
+      "riot_brewing"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Because the town has children too",
+    "outcome": "\"So do we. So did we. They listen to that. For now.\"",
+    "effects": {
+     "relationships": {
+      "bram": 4,
+      "ilse": 2
+     },
+     "factions": {
+      "hullfolk": 2
+     },
+     "flags_clear": [
+      "riot_brewing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma10_13",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "patient",
+   "arc": {
+    "id": "MA10",
+    "stage": 5
+   },
+   "text": "The constables have gone. The paper has gone with them. We held. The gate held too, in its way. We do not thank. We say: the next paper will come. We ask the gate to be here when it does.",
+   "left": {
+    "label": "I will be here",
+    "outcome": "\"Then we are two who hold.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "arc": {
+      "MA10": {
+       "status": "completed"
+      }
+     },
+     "flags_set": [
+      "clearance_refused"
+     ]
+    }
+   },
+   "right": {
+    "label": "The next Keeper may not be",
+    "outcome": "\"No. Nor the next Reach. We hold anyway.\"",
+    "effects": {
+     "relationships": {
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "arc": {
+      "MA10": {
+       "status": "completed"
+      }
+     },
+     "flags_set": [
+      "clearance_refused"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_refused",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 3
+     }
+    },
+    "flags_none": [
+     "hullfolk_cleared"
+    ]
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma10_14",
+   "category": "major_arcs",
+   "speaker": "pell",
+   "expression": "beaming",
+   "arc": {
+    "id": "MA10",
+    "stage": 5
+   },
+   "text": "It is done, Keeper. The Reach is clear. Forty boats down the west flight this morning, orderly, not a shot. The Board is magnificently pleased. The pound is very quiet. I find I do not like the quiet as much as I expected.",
+   "left": {
+    "label": "Neither do I",
+    "outcome": "\"No.\" He stands at the window a long time. Nobody sings at the summit again.",
+    "effects": {
+     "resources": {
+      "company": 6,
+      "town": -2
+     },
+     "relationships": {
+      "pell": 3
+     },
+     "flags_set": [
+      "hullfolk_cleared"
+     ],
+     "factions": {
+      "hullfolk": -20
+     },
+     "arc": {
+      "MA10": {
+       "status": "completed"
+      }
+     },
+     "delayed": [
+      {
+       "card": "ma06_15",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "The Board is pleased; that is the job",
+    "outcome": "\"The job. Yes. Magnificent.\" He does not sound as if he believes the word.",
+    "effects": {
+     "resources": {
+      "company": 8,
+      "town": -3
+     },
+     "relationships": {
+      "pell": 1
+     },
+     "flags_set": [
+      "hullfolk_cleared"
+     ],
+     "factions": {
+      "hullfolk": -20
+     },
+     "arc": {
+      "MA10": {
+       "status": "completed"
+      }
+     },
+     "delayed": [
+      {
+       "card": "ma06_15",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "clearance_signed",
+     "met_pell"
+    ],
+    "arc_stage": {
+     "MA10": {
+      "min": 4
+     }
+    },
+    "factions": {
+     "hullfolk": {
+      "max": 35
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma10_15",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "mourning",
+   "arc": {
+    "id": "MA10",
+    "stage": 5
+   },
+   "pool": "forced",
+   "text": "A young one threw a lamp at a constable. The constable had a stave. Now there is a boy on the towpath who will not stand up, and forty boats, and a town at its windows. We held forty years. It has happened anyway.",
+   "left": {
+    "label": "Send Stroud; stop the constables",
+    "outcome": "Stroud comes. The boy lives, barely. The constables go back to Ardent. Something is broken that soup will not mend.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": -5
+     },
+     "relationships": {
+      "bram": 3,
+      "stroud": 3
+     },
+     "factions": {
+      "hullfolk": -5
+     },
+     "flags_set": [
+      "riot_brewing",
+      "clearance_refused"
+     ],
+     "arc": {
+      "MA10": {
+       "status": "failed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "The order stands; clear the Reach",
+    "outcome": "It is cleared by dusk. The boy goes west on the last boat. The Reach is empty. So, in a way, is the summit.",
+    "effects": {
+     "resources": {
+      "company": 6,
+      "town": -6
+     },
+     "relationships": {
+      "bram": -15
+     },
+     "factions": {
+      "hullfolk": -25
+     },
+     "flags_set": [
+      "hullfolk_cleared"
+     ],
+     "arc": {
+      "MA10": {
+       "status": "failed"
+      }
+     },
+     "delayed": [
+      {
+       "card": "ma06_15",
+       "delay": 1
+      }
+     ]
+    }
+   },
+   "notes": "Forced via cri_town escalation while the Clearance is signed."
+  }
+ ]
+}

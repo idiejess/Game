@@ -1,0 +1,906 @@
+{
+ "cards": [
+  {
+   "id": "ma09_01",
+   "category": "major_arcs",
+   "speaker": "fennick",
+   "expression": "eager",
+   "arc": {
+    "id": "MA09",
+    "stage": 1
+   },
+   "text": "You'll never guess. Vosk keeps a file that isn't in the Company house. In the telegraph office. My office. Locked drawer, her key. Since Year 31, by the label. I've never opened it. I've thought about it every day for six years.",
+   "left": {
+    "label": "Keep thinking; don't open it",
+    "outcome": "\"Right. Right. Not opening it. I'm very good at not.\" He is not.",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Find out what's in it",
+    "outcome": "\"Find out. Right. How?\" You do not know yet. He looks delighted and terrified.",
+    "effects": {
+     "relationships": {
+      "fennick": 5
+     },
+     "counters": {
+      "evidence": 1,
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "counters": {
+     "suspicion": {
+      "min": 5
+     }
+    },
+    "relationships": {
+     "fennick": {
+      "min": 50
+     }
+    }
+   },
+   "weight": 1.5,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_02",
+   "category": "major_arcs",
+   "speaker": "hesse",
+   "expression": "curious",
+   "arc": {
+    "id": "MA09",
+    "stage": 1
+   },
+   "text": "Rumor, unprinted: the summit auditor keeps a file the Board has never seen. Rumor, also unprinted: it's why she's never been promoted. I don't print rumor. I collect it. I'm collecting yours. Do you have one?",
+   "left": {
+    "label": "I've heard the same",
+    "outcome": "\"Two rumors is a lead. Three is a story. Find me a third.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 4
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing for you",
+    "outcome": "\"Nothing. Everyone says nothing. Nothing is very loud, Keeper.\"",
+    "effects": {
+     "relationships": {
+      "hesse": -1
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_03",
+   "category": "major_arcs",
+   "speaker": "fennick",
+   "arc": {
+    "id": "MA09",
+    "stage": 1
+   },
+   "text": "The drawer's label says 'Y31 - S.H. - EYES BOARD ONLY'. And it's in a telegraph office at the top of a canal, not in Ardent. Either the Board doesn't want it, or somebody didn't want the Board to have it.",
+   "left": {
+    "label": "Somebody didn't want the Board to have it",
+    "outcome": "\"Vosk. It's Vosk's writing on the label. She's kept it from them.\" He sits down.",
+    "effects": {
+     "relationships": {
+      "fennick": 4
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ]
+    }
+   },
+   "right": {
+    "label": "The Board doesn't want it",
+    "outcome": "\"Then why's she kept it?\" A very good question.",
+    "effects": {
+     "relationships": {
+      "fennick": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_04",
+   "category": "major_arcs",
+   "speaker": "hesse",
+   "arc": {
+    "id": "MA09",
+    "stage": 2
+   },
+   "text": "I've got a locksmith in Sorrel who owes me. He could open a drawer in an afternoon, copy what's in it, and lock it again. Vosk would never know. I'd never print it without your word. I'm asking for your word to try.",
+   "left": {
+    "label": "Try",
+    "outcome": "The locksmith comes as a bargee. Fennick is sick twice. The drawer opens. The copy takes three hours.",
+    "effects": {
+     "relationships": {
+      "hesse": 5,
+      "fennick": 2
+     },
+     "flags_set": [
+      "vosk_file_seen"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Not like that",
+    "outcome": "\"Not like that. Fine. Like what, then?\" You do not know. Yet.",
+    "effects": {
+     "relationships": {
+      "hesse": -2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_fennick"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_05",
+   "category": "major_arcs",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "arc": {
+    "id": "MA09",
+    "stage": 2
+   },
+   "text": "I did it. I opened it. I had the drawer out and the file in my hands and I read the first page and I put it back and I've been sick and I'm sorry. The first page says 'the Marrow Cut'. And a date. Year 31. And 'collapse'.",
+   "left": {
+    "label": "You did well",
+    "outcome": "\"I did? I didn't feel well.\" He almost smiles.",
+    "effects": {
+     "relationships": {
+      "fennick": 8
+     },
+     "flags_set": [
+      "vosk_file_seen",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Never do that again",
+    "outcome": "\"Never. Right. I won't. I've got the first page memorized though. Sorry.\"",
+    "effects": {
+     "relationships": {
+      "fennick": 3
+     },
+     "flags_set": [
+      "vosk_file_seen"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 2
+     }
+    },
+    "flags_none": [
+     "vosk_file_seen"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_06",
+   "category": "major_arcs",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "arc": {
+    "id": "MA09",
+    "stage": 2
+   },
+   "text": "I've read the copy. All of it. Keeper, this isn't a story. This is the story. A tunnel through the Spine. A stolen river. A drowned engineer. Fifty years of a Board that knew. I could end the Company with forty column inches. I'm asking whether I should.",
+   "left": {
+    "label": "Not yet",
+    "outcome": "\"Not yet. Right. I'll hold it. I've never held anything this heavy.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 4
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Never; give me the copy",
+    "outcome": "He gives you the copy. He keeps a copy of the copy. You both know.",
+    "effects": {
+     "relationships": {
+      "hesse": 2
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_07",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "arc": {
+    "id": "MA09",
+    "stage": 3
+   },
+   "text": "I have been shown a document. I shall not say by whom. It describes a diversion of the River Quell through the Spine into the Summit Pound, constructed without either shore's consent. If true, the Compact was signed over a lie. I note that I am shaking.",
+   "left": {
+    "label": "It is true",
+    "outcome": "\"Then under Schedule Nine I am obliged to declare it. I have never been obliged to anything so large.\"",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "flags_set": [
+      "crane_recruited",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It is unproven",
+    "outcome": "\"Unproven. Duly. Then I shall prove it, or not. I have the figures. I have always had the figures.\"",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_08",
+   "category": "major_arcs",
+   "speaker": "hesse",
+   "arc": {
+    "id": "MA09",
+    "stage": 3
+   },
+   "text": "Here's the thing about a story this size. Whoever prints it first owns it. If Aldmere's Guilds get it, it's a war. If Sorrel's Assembly gets it, it's a purchase. If I get it, it's a newspaper. I'm the least bad. I'm asking you to agree.",
+   "left": {
+    "label": "You're the least bad",
+    "outcome": "\"Least bad. I'll have that on my stone.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_friendly"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Crane under the Compact is better",
+    "outcome": "\"A form. You'd rather a form than a front page. Fine. I'll print the form.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 1,
+      "crane": 4
+     },
+     "flags_set": [
+      "crane_recruited"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "hesse_has_story",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_09",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "arc": {
+    "id": "MA09",
+    "stage": 3
+   },
+   "text": "A question of leverage. The auditor has hidden this from her own Board for eleven years. That is either treason to the Company or loyalty to something larger. I note that if we approach her with it, we must know which before we knock.",
+   "left": {
+    "label": "Loyalty to something larger",
+    "outcome": "\"Then she may be an ally. Duly. I have never had one.\"",
+    "effects": {
+     "relationships": {
+      "crane": 4,
+      "vosk": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Treason; she's vulnerable",
+    "outcome": "\"Then she is a lever. I note I do not like levers. I note I shall use one.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2,
+      "vosk": -3
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_crane",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_10",
+   "category": "major_arcs",
+   "speaker": "hesse",
+   "expression": "curious",
+   "arc": {
+    "id": "MA09",
+    "stage": 4
+   },
+   "text": "I've set the type. THE RIVER UNDER THE HILL. Both shores, same morning. I haven't pulled the lever. I'm asking one more time, because once it's pulled, it's pulled, and the Company will come for somebody, and it won't be me.",
+   "left": {
+    "label": "Pull it",
+    "outcome": "By evening both shores know the shape of it. Ardent wires Vosk nine times. She answers none.",
+    "effects": {
+     "resources": {
+      "company": -10,
+      "town": 4
+     },
+     "relationships": {
+      "hesse": 8
+     },
+     "flags_set": [
+      "pressed_by_hesse",
+      "survey_published",
+      "suspicion_high"
+     ],
+     "counters": {
+      "suspicion": 6,
+      "evidence": 2
+     },
+     "factions": {
+      "aldmere": 5,
+      "sorrel": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Hold it; there's a better way",
+    "outcome": "\"Better than a front page. There isn't. But fine. Held.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "hesse_has_story"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_11",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "MA09",
+    "stage": 4
+   },
+   "text": "The file has been opened. I know because I count the pages. For the record, I have not reported it. For the record, I am asking who has read it. I will know if you lie. I would rather you did not make me know.",
+   "left": {
+    "label": "I have",
+    "outcome": "\"Noted.\" A very long pause. \"Then you know what I have carried. I hope you carry it better.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "flags_set": [
+      "vosk_confronted"
+     ],
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Hesse has",
+    "outcome": "\"Noted.\" She goes to the telegraph office. Fennick is not seen for two days.",
+    "effects": {
+     "relationships": {
+      "vosk": -6,
+      "fennick": -6,
+      "hesse": -2
+     },
+     "flags_set": [
+      "fennick_exposed",
+      "vosk_enemy"
+     ],
+     "counters": {
+      "suspicion": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_12",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA09",
+    "stage": 4
+   },
+   "text": "I have drafted the Schedule Nine declaration. It requires the auditor's file as an exhibit, the engineer's figures, and two inspectors' seals. I have one seal. The Sorrel agent is not an inspector. I note that the Compact did not anticipate this. I note that I have.",
+   "left": {
+    "label": "Vane signs as Sorrel's witness",
+    "outcome": "Vane signs. \"I've signed worse.\" It is, technically, irregular. It is, actually, the Compact working.",
+    "effects": {
+     "relationships": {
+      "crane": 6,
+      "vane": 5
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Wait for a Sorrel inspector",
+    "outcome": "\"Duly. Sorrel has never appointed one. I shall write and ask. It may take a year.\"",
+    "effects": {
+     "relationships": {
+      "crane": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "crane_recruited",
+     "met_vane"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_13",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "rare_warmth",
+   "arc": {
+    "id": "MA09",
+    "stage": 5
+   },
+   "text": "Take the file. All of it. I have kept it from the Board for eleven years because the Board would have burned it. You will not. You will find I am not surrendering. I am delegating. It is the most irregular thing I have ever done.",
+   "left": {
+    "label": "Take it",
+    "outcome": "Fifty years of the Company's knowledge in a canvas folder. It is heavier than the chest.",
+    "effects": {
+     "relationships": {
+      "vosk": 10
+     },
+     "unlocks": [
+      "unlock_vosk_file"
+     ],
+     "flags_set": [
+      "vosk_ally"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 4,
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Keep it; I'll come to you",
+    "outcome": "\"Noted.\" She keeps it. She leaves the drawer unlocked from that day.",
+    "effects": {
+     "relationships": {
+      "vosk": 8
+     },
+     "unlocks": [
+      "unlock_vosk_file"
+     ],
+     "flags_set": [
+      "vosk_ally"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_confronted",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "min": 50
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma09_14",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA09",
+    "stage": 5
+   },
+   "text": "The file is in Ardent. I sent it this morning, with a note that it was found in the telegraph clerk's possession. That is a lie. It keeps the clerk employed and you at your gate. You will find I have paid for both.",
+   "left": {
+    "label": "What did it cost you?",
+    "outcome": "\"My post, at the quarter's end. Noted. I have wanted to leave for eleven years.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 5,
+      "fennick": 2
+     },
+     "unlocks": [
+      "unlock_vosk_file"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "You should not have lied for us",
+    "outcome": "\"I have lied for the Company for eleven years. Once for someone else is not nothing.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 7
+     },
+     "unlocks": [
+      "unlock_vosk_file"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "min": 35,
+      "max": 49
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma09_15",
+   "category": "major_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "MA09",
+    "stage": 5
+   },
+   "text": "The file is burned. I burned it this morning. For the record, I did it because you would have used it, and you must not. You will find I am now the only record. You will find that was always the plan.",
+   "left": {
+    "label": "Then you are the record",
+    "outcome": "\"Noted.\" She is. She tells you nothing more for a long time.",
+    "effects": {
+     "relationships": {
+      "vosk": -2
+     },
+     "flags_set": [
+      "vosk_enemy"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "failed"
+      }
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Hesse has a copy",
+    "outcome": "\"Noted.\" Something in her face gives way. \"Then it was never mine to burn.\"",
+    "effects": {
+     "relationships": {
+      "vosk": -6,
+      "hesse": 2
+     },
+     "flags_set": [
+      "vosk_enemy"
+     ],
+     "unlocks": [
+      "unlock_vosk_file"
+     ],
+     "arc": {
+      "MA09": {
+       "status": "failed"
+      }
+     },
+     "counters": {
+      "suspicion": 5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "vosk_file_seen",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA09": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "vosk": {
+      "max": 34
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:company"
+   ]
+  }
+ ]
+}

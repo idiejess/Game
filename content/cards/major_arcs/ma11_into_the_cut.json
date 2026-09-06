@@ -1,0 +1,886 @@
+{
+ "cards": [
+  {
+   "id": "ma11_01",
+   "category": "major_arcs",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "arc": {
+    "id": "MA11",
+    "stage": 1
+   },
+   "text": "You have his key. I know you do; I've seen the ring. The door it fits is on the north bank and he went through it and didn't come back. I'm not asking you not to. I'm asking when, so I can be there.",
+   "left": {
+    "label": "Tonight, and you'll be there",
+    "outcome": "\"Tonight.\" She does not go to the paddles. She sharpens a lamp wick instead.",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet; not with you",
+    "outcome": "\"Not with me. Right. He said that too.\"",
+    "effects": {
+     "relationships": {
+      "mirren": -6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "flags_all": [
+     "met_mirren"
+    ]
+   },
+   "weight": 1.5,
+   "weight_mods": [
+    {
+     "when": {
+      "relationships": {
+       "mirren": {
+        "min": 50
+       }
+      }
+     },
+     "multiply": 2.0
+    },
+    {
+     "when": {
+      "relationships": {
+       "bram": {
+        "min": 50
+       }
+      }
+     },
+     "multiply": 2.0
+    }
+   ],
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma11_02",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA11",
+    "stage": 1
+   },
+   "text": "The gate has the key. The young one told us, and she does not tell us things. We will not go in; our grandmothers forbade it. But we will stand at the door with lamps. Nobody stood at the door for the last one.",
+   "left": {
+    "label": "Stand at the door",
+    "outcome": "\"We will stand. If you do not come out, we will remember that we stood.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Come in with me",
+    "outcome": "\"No.\" It is the first time he has said the word to you. \"We hold the door. That is all.\"",
+    "effects": {
+     "relationships": {
+      "bram": 2
+     },
+     "factions": {
+      "hullfolk": 1
+     }
+    }
+   },
+   "conditions": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "flags_all": [
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma11_03",
+   "category": "major_arcs",
+   "speaker": "tamm",
+   "expression": "doubtful",
+   "arc": {
+    "id": "MA11",
+    "stage": 1
+   },
+   "text": "You're going in the hill. Don't tell me you're not. I've seen men go in mines. Take rope, take two lamps, take someone who can carry you. I can carry you. I've carried heavier. It'll hold or it won't.",
+   "left": {
+    "label": "Bring Tamm",
+    "outcome": "\"Right. Rope's in the yard. Good rope.\" He does not say anything else. He does not need to.",
+    "effects": {
+     "relationships": {
+      "tamm": 8
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "met_tamm"
+     ]
+    }
+   },
+   "right": {
+    "label": "Rope and lamps, no Tamm",
+    "outcome": "\"Suit yourself. Rope's still in the yard.\" It is very good rope.",
+    "effects": {
+     "relationships": {
+      "tamm": 2
+     },
+     "flags_set": [
+      "met_tamm"
+     ],
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma11_04",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 2
+   },
+   "text": "The sluice house door. Iron straps, new. The key turns as if it had been oiled yesterday. Inside: a wheel the size of a cartwheel, seized with rust, and behind it, steps going down into the sound of a river.",
+   "left": {
+    "label": "Down the steps",
+    "outcome": "Forty steps. Wet stone. The sound grows until it is the only sound.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_opened",
+      "entered_cut"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Try the wheel first",
+    "outcome": "It does not move. It has not moved since Year 11. Something in the wall behind it groans.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_opened"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     },
+     "resources": {
+      "water": -1
+     }
+    }
+   },
+   "conditions": {
+    "unlocks": [
+     "unlock_drays_key"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 1
+     }
+    },
+    "flags_any": [
+     "sluice_house_seen",
+     "knows_cut"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma11_05",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 2
+   },
+   "text": "A tunnel, cut stone, straight as a rule, running west into the Spine. A river fills the lower half, fast and cold and brown. A ledge runs above the water. On the ledge, iron rings for a rope that is not there.",
+   "left": {
+    "label": "Follow the ledge west",
+    "outcome": "The rings go on. The river goes on. Somewhere ahead, a lamp that is not yours.",
+    "effects": {
+     "flags_set": [
+      "entered_cut",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Mark the entrance; go back for help",
+    "outcome": "You come back with Tamm and Wren and rope. The rings are for the rope. Somebody knew that once.",
+    "effects": {
+     "flags_set": [
+      "entered_cut",
+      "knows_cut"
+     ],
+     "relationships": {
+      "tamm": 3,
+      "wren": 3
+     },
+     "counters": {
+      "evidence": 2,
+      "allies": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sluice_house_opened"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma11_06",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 2
+   },
+   "text": "A fall of rock, half across the tunnel. Fresh, by the dust. The river piles against it and roars through the gap. On the near side, wedged in the rubble: a Company lamp, rusted, and a brass tag. 'A. DRAY. KEEPER. NO. 9.'",
+   "left": {
+    "label": "Go through the gap",
+    "outcome": "You go through on your belly with the river an inch from your face. On the far side the ledge is dry.",
+    "effects": {
+     "flags_set": [
+      "knows_dray_fate"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Stop here; take the tag",
+    "outcome": "You take the tag. You do not go through. You are the first person to come back from this far.",
+    "effects": {
+     "flags_set": [
+      "knows_dray_fate"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     },
+     "relationships": {
+      "mirren": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "entered_cut"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma11_07",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 3
+   },
+   "text": "Beyond the fall: a chamber cut into the hill. A second wheel, unrusted. A stone channel south, dry, blocked by a slab. Bones on the ledge, a Keeper's coat, and a ledger in oilcloth, in a niche where a hand could reach.",
+   "left": {
+    "label": "Take the ledger",
+    "outcome": "Dray's hand. A map of the Cut, the wheels, the south channel. 'Sluice to Lowmere. Marrow's. Never opened. Open it.'",
+    "effects": {
+     "flags_set": [
+      "cut_mapped",
+      "knows_dray_fate"
+     ],
+     "unlocks": [
+      "unlock_cut_map",
+      "unlock_dray_fate"
+     ],
+     "counters": {
+      "evidence": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Take the coat, for Mirren",
+    "outcome": "You take the coat and the ledger both. The coat is heavier.",
+    "effects": {
+     "flags_set": [
+      "cut_mapped",
+      "knows_dray_fate"
+     ],
+     "unlocks": [
+      "unlock_cut_map",
+      "unlock_dray_fate"
+     ],
+     "counters": {
+      "evidence": 4,
+      "fatigue": 1
+     },
+     "relationships": {
+      "mirren": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_dray_fate",
+     "entered_cut"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma11_08",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 3
+   },
+   "text": "The second wheel, unrusted because he oiled it. Dray's ledger says it opens the south channel: half the river to Lowmere, half to the pound. Marrow died before she could turn it. So did he. Your hand is on it.",
+   "left": {
+    "label": "Turn it a quarter",
+    "outcome": "It moves. The slab lifts a hand's width. Water goes south into the dark for the first time in eighty years. The roar behind you softens.",
+    "effects": {
+     "flags_set": [
+      "sluice_rebuilt"
+     ],
+     "counters": {
+      "evidence": 3,
+      "water_drift_mod": 1
+     },
+     "resources": {
+      "water": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Not yet; not alone",
+    "outcome": "You take your hand off it. It is the hardest thing you have done at the summit.",
+    "effects": {
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cut_mapped"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma11_09",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 3
+   },
+   "text": "Dray's last page. Not the map. Words. 'The roof is going. I have the key and the map and I cannot get back through the fall. Tell M. I did not leave. I was here the whole time. Tell her I was here.'",
+   "left": {
+    "label": "Copy it into the Ledger",
+    "outcome": "You copy it by the lamp. Your hand is steady. It should not be.",
+    "effects": {
+     "counters": {
+      "evidence": 2,
+      "fatigue": 2
+     },
+     "flags_set": [
+      "knows_dray_fate"
+     ]
+    }
+   },
+   "right": {
+    "label": "Take the page itself, for her",
+    "outcome": "You tear it out. It is the only page you will ever tear from anyone's ledger.",
+    "effects": {
+     "counters": {
+      "evidence": 1,
+      "fatigue": 2
+     },
+     "flags_set": [
+      "knows_dray_fate"
+     ],
+     "relationships": {
+      "mirren": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_dray_fate",
+     "cut_mapped"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma11_10",
+   "category": "major_arcs",
+   "speaker": "tamm",
+   "arc": {
+    "id": "MA11",
+    "stage": 4
+   },
+   "text": "You came out. Good. Rope held. I'd have said it would. The Hullfolk were at the door all night with lamps and the old man didn't sit down once. Whatever you've got in that oilcloth, wait till you've had a drink before you open it again.",
+   "left": {
+    "label": "Have the drink",
+    "outcome": "Ilse pours it without a word. The whole inn watches you not open the oilcloth.",
+    "effects": {
+     "relationships": {
+      "tamm": 4,
+      "ilse": 2
+     },
+     "counters": {
+      "fatigue": -2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Open it now",
+    "outcome": "You open it at the inn. The town sees a dead Keeper's hand. Something changes in the room.",
+    "effects": {
+     "relationships": {
+      "tamm": 1
+     },
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cut_mapped",
+     "met_tamm"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma11_11",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "patient",
+   "arc": {
+    "id": "MA11",
+    "stage": 4
+   },
+   "text": "You came out. The last one did not. We stood at the door and you came out. Whatever you do with what you found, we will hold the towpath for you when you do it. We have never held for a charter man.",
+   "left": {
+    "label": "You'll not be holding for a charter man",
+    "outcome": "\"No. For a gate. We said so. We were right.\"",
+    "effects": {
+     "relationships": {
+      "bram": 10
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "promised_bram"
+     ]
+    }
+   },
+   "right": {
+    "label": "Hold for yourselves, not me",
+    "outcome": "\"We have. Eighty years. It is time we held for something else.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cut_mapped",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma11_12",
+   "category": "major_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "MA11",
+    "stage": 4
+   },
+   "text": "Vosk is at the Keeper's house when you return, sitting in Dray's chair, which she has never done. She does not ask where you have been. She looks at the oilcloth under your arm. 'Noted,' she says. Then: 'Is he there?'",
+   "left": {
+    "label": "He is there",
+    "outcome": "\"Noted.\" She sits a long time. \"I filed him as resigned. I have never filed anything I hated more.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 6
+     },
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     },
+     "flags_set": [
+      "knows_dray_fate"
+     ]
+    }
+   },
+   "right": {
+    "label": "Say nothing",
+    "outcome": "\"Noted.\" She stands. At the door: \"The wheel. Did it turn?\" You do not answer that either.",
+    "effects": {
+     "relationships": {
+      "vosk": 2
+     },
+     "counters": {
+      "suspicion": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "cut_mapped",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma11_13",
+   "category": "major_arcs",
+   "speaker": "mirren",
+   "expression": "hopeful",
+   "arc": {
+    "id": "MA11",
+    "stage": 5
+   },
+   "text": "You came out. You've got something under your arm and you won't look at me and you've got his tag on a string round your neck, I can see the string. Tell me. You promised. Tell me first.",
+   "left": {
+    "label": "Tell her everything",
+    "outcome": "You tell her. The fall, the ledge, the coat, the page. 'Tell her I was here.' She does not cry. She sits down on the sill and does not get up until morning.",
+    "effects": {
+     "relationships": {
+      "mirren": 15
+     },
+     "flags_set": [
+      "told_mirren"
+     ],
+     "arc": {
+      "MA11": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "fatigue": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Give her the page and go",
+    "outcome": "You give her the page. You go to the gate. She reads it at the sill. When you come back she is at the paddles, working.",
+    "effects": {
+     "relationships": {
+      "mirren": 10
+     },
+     "flags_set": [
+      "told_mirren"
+     ],
+     "arc": {
+      "MA11": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_dray_fate",
+     "cut_mapped",
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "mirren": {
+      "min": 40
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma11_14",
+   "category": "major_arcs",
+   "speaker": "mirren",
+   "expression": "broken",
+   "arc": {
+    "id": "MA11",
+    "stage": 5
+   },
+   "text": "You've been in the hill and come out and haven't said a word to me in two days. I've known since I was nine what that means. I'm not asking any more. I'm telling you I know, so you can stop carrying it alone.",
+   "left": {
+    "label": "Tell her now",
+    "outcome": "You tell her. Late. It is worse late. She listens anyway, and at the end says, \"He was here. Good.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "flags_set": [
+      "told_mirren"
+     ],
+     "arc": {
+      "MA11": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Keep it; she has guessed enough",
+    "outcome": "\"Right.\" She goes to the paddles. She does not ask again. She does not stop knowing.",
+    "effects": {
+     "relationships": {
+      "mirren": -4
+     },
+     "flags_set": [
+      "mirren_knows_secret_kept"
+     ],
+     "arc": {
+      "MA11": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_dray_fate",
+     "cut_mapped",
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "MA11": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "mirren": {
+      "max": 39
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma11_15",
+   "category": "major_arcs",
+   "speaker": "mirren",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA11",
+    "stage": 5
+   },
+   "text": "I've put his coat on the hook. Where it was. I've put the tag on the study wall. I'm going to keep working the paddles. I wanted you to know I'm not leaving. He didn't leave either. Neither of us leaves. That's the family.",
+   "left": {
+    "label": "Neither of us leaves",
+    "outcome": "\"Right.\" She goes to the paddles. You go to the gate. It is a working day.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "resources": {
+      "town": 2
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "You could leave now, if you wanted",
+    "outcome": "\"I could. I couldn't before; I was waiting. Now I'm choosing. Different.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "told_mirren"
+    ],
+    "arc_status": {
+     "MA11": "completed"
+    },
+    "unseen_cards": [
+     "ma11_15"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ],
+   "notes": "Coda after telling Mirren."
+  }
+ ]
+}
