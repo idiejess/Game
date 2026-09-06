@@ -1,102 +1,106 @@
 {
   "cards": 15,
-  "errors": [
-    "[ma05_11] situation 50 words (6-40)"
-  ],
+  "errors": [],
   "warnings": [
-    "[ma05_04] situation 46 words (6-40)",
-    "[ma05_04] left outcome 26 words (>24)",
-    "[ma05_07] situation 42 words (6-40)",
-    "[ma05_08] situation 41 words (6-40)",
-    "[ma05_13] situation 41 words (6-40)",
-    "[ma05_14] situation 45 words (6-40)"
+    "[ma08_01] situation 43 words (6-40)",
+    "[ma08_02] situation 45 words (6-40)",
+    "[ma08_04] situation 45 words (6-40)",
+    "[ma08_05] slang 'whatever'",
+    "[ma08_06] situation 46 words (6-40)",
+    "[ma08_06] right outcome 26 words (>24)",
+    "[ma08_07] situation 47 words (6-40)",
+    "[ma08_12] situation 46 words (6-40)",
+    "[ma08_12] left outcome 26 words (>24)",
+    "[ma08_13] situation 47 words (6-40)",
+    "[ma08_14] situation 47 words (6-40)"
   ],
   "speakers": {
-    "quenn": 11,
-    "crane": 2,
-    "vosk": 2
+    "ilse": 3,
+    "hale": 7,
+    "stroud": 3,
+    "cole": 2
   },
   "top_openers": [
     [
-      "i have",
+      "the water",
+      2
+    ],
+    [
+      "you have",
+      2
+    ],
+    [
+      "the pound's",
       1
     ],
     [
-      "page forty",
+      "the well's",
       1
     ],
     [
-      "the missing",
+      "cole's sent",
       1
     ],
     [
-      "i want",
+      "the undercroft",
       1
     ],
     [
-      "cald tarn",
+      "six cases",
       1
     ],
     [
-      "vosk asked",
+      "the 'worse'",
       1
     ],
     [
-      "i understand",
+      "ilse asked",
       1
     ],
     [
-      "the figures",
-      1
-    ],
-    [
-      "the aldmere",
-      1
-    ],
-    [
-      "two explanations",
+      "vosk has",
       1
     ]
   ],
   "top_labels": [
     [
-      "read them together",
+      "running the paddles full, now",
       1
     ],
     [
-      "give me the drawer key",
+      "sandbags and town labor",
       1
     ],
     [
-      "then what fills it in the third summer?",
+      "the well is the pound",
       1
     ],
     [
-      "perhaps the reservoirs were enlarged",
+      "ask quenn to look",
       1
     ],
     [
-      "sluice house",
+      "tell her the company objects",
       1
     ],
     [
-      "someone's initials",
+      "keep the cellars dry instead",
       1
     ],
     [
-      "walk it with her",
+      "lower it for the chapel",
       1
     ],
     [
-      "send mirren with her",
+      "what things?",
       1
     ],
     [
-      "open the tarn sluice",
+      "go down yourself",
       1
     ],
     [
-      "leave it; see who closed it",
+      "send mirren",
       1
     ]
   ]

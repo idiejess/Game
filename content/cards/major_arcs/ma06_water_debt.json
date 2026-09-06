@@ -1,0 +1,930 @@
+{
+ "cards": [
+  {
+   "id": "ma06_01",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA06",
+    "stage": 1
+   },
+   "text": "The reeve's moot has voted the Reach a 'temporary mooring' with a fee. Temporary. We have held the Reach since the pound was dug. We ask the gate whether eighty years is temporary.",
+   "text_variants": [
+    {
+     "when": {
+      "flags_all": [
+       "honored_remembered"
+      ]
+     },
+     "text": "You stood with us at the remembering. The town has answered it: the moot has voted the Reach a 'temporary mooring' with a fee. We ask the gate whether it will stand with us twice."
+    }
+   ],
+   "left": {
+    "label": "Uphold the holding; no fee",
+    "outcome": "The moot is furious. The Reach is not grateful, exactly. It is watching.",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "relationships": {
+      "bram": 6,
+      "ilse": -3
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The town sets its fees",
+    "outcome": "\"So. A wall this year. We remember which years.\"",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "factions": {
+      "hullfolk": -6
+     },
+     "relationships": {
+      "bram": -5,
+      "ilse": 2
+     },
+     "counters": {
+      "hullfolk_offenses": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "factions": {
+     "hullfolk": {
+      "min": 40
+     }
+    },
+    "flags_none": [
+     "hullfolk_cleared"
+    ]
+   },
+   "weight": 1.5,
+   "weight_mods": [
+    {
+     "when": {
+      "flags_all": [
+       "honored_remembered"
+      ]
+     },
+     "multiply": 2.5
+    }
+   ],
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma06_02",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "arc": {
+    "id": "MA06",
+    "stage": 1
+   },
+   "text": "We do not say 'water debt' to charter men. We say 'mooring dispute'. It is a smaller thing and they understand it. The gate has heard us say the larger thing. We ask whether the gate wishes to understand it.",
+   "left": {
+    "label": "I wish to",
+    "outcome": "\"Then come to the Reach when the old singer sings. Not before.\"",
+    "effects": {
+     "relationships": {
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Moorings I can settle; debts I cannot",
+    "outcome": "\"Honest. We shall settle the mooring, then, and hold the debt.\"",
+    "effects": {
+     "relationships": {
+      "bram": 2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma06_03",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "MA06",
+    "stage": 1
+   },
+   "text": "You've taken the Reach's side on the moorings. Fine. Half the town's saying you've gone Hullfolk. The other half's asking what a water debt is, because Bram used the words at the moot and nobody knew them.",
+   "left": {
+    "label": "Ask Bram to explain it at moot",
+    "outcome": "He comes. He speaks for ten minutes. Nobody understands. Nobody forgets.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "relationships": {
+      "bram": 4,
+      "ilse": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It's a Hullfolk matter",
+    "outcome": "\"Everything's a Hullfolk matter till it floods my cellar.\"",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "ilse": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma06_04",
+   "category": "major_arcs",
+   "speaker": "petronel",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA06",
+    "stage": 2
+   },
+   "text": "Bram says you may come to the remembering. He has never said it of a Keeper. It is one night, no fire, names over the water from dusk to dawn. Forty names. Then one more that is not a person's. Come, or do not. We sing either way.",
+   "left": {
+    "label": "Come",
+    "outcome": "Forty names. Then: 'and the Quell, that went into the hill'. Nobody explains. Nobody needs to.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "relationships": {
+      "bram": 6,
+      "petronel": 6
+     },
+     "flags_set": [
+      "honored_remembered",
+      "met_petronel"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 2,
+      "song_verses": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Not this year",
+    "outcome": "\"Next year, then. If there is a Reach next year.\"",
+    "effects": {
+     "factions": {
+      "hullfolk": -3
+     },
+     "relationships": {
+      "petronel": -2,
+      "bram": -2
+     },
+     "flags_set": [
+      "met_petronel"
+     ]
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "MA06": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "honored_remembered"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma06_05",
+   "category": "major_arcs",
+   "speaker": "petronel",
+   "expression": "singing",
+   "arc": {
+    "id": "MA06",
+    "stage": 2
+   },
+   "text": "You heard the last name. The one that is not a name. It was a river, and we lived beside it, and one year it went into the hill and did not come out. We followed it here. That is who we are.",
+   "left": {
+    "label": "Where was the river?",
+    "outcome": "\"West. Lowmere. A valley. Dry now. Go and see, if you doubt an old woman.\"",
+    "effects": {
+     "relationships": {
+      "petronel": 5
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2,
+      "song_verses": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Why did it go into the hill?",
+    "outcome": "\"Ask the hill. Ask the charter men who dug it. We only sing what happened.\"",
+    "effects": {
+     "relationships": {
+      "petronel": 4
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "honored_remembered",
+     "met_petronel"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma06_06",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "patient",
+   "arc": {
+    "id": "MA06",
+    "stage": 2
+   },
+   "text": "You stood with us all night. The town saw. We do not thank; it is not our way. We say instead: the debt we speak of is not coin. It is water. It was ours. We ask the gate to hold the thought.",
+   "left": {
+    "label": "I hold it",
+    "outcome": "\"Then we are two.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Water belongs to nobody",
+    "outcome": "\"So the charter men said, once. Then they put it in a canal and charged for it.\"",
+    "effects": {
+     "relationships": {
+      "bram": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "honored_remembered"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma06_07",
+   "category": "major_arcs",
+   "speaker": "wren",
+   "expression": "serious",
+   "arc": {
+    "id": "MA06",
+    "stage": 3
+   },
+   "text": "The old woman's going to sing the whole thing. All the verses. She's never done it for anyone off the Reach. She's doing it for you, which means the old man asked her, which means something's changed. Come at dusk. Don't bring a lamp.",
+   "left": {
+    "label": "Come at dusk, no lamp",
+    "outcome": "Six verses. A river, a valley, men with picks, a hill that drank, a door, a key that is a number. The tenth mark.",
+    "effects": {
+     "relationships": {
+      "wren": 5,
+      "petronel": 6,
+      "bram": 4
+     },
+     "flags_set": [
+      "song_heard",
+      "clue_song",
+      "clue_cipher"
+     ],
+     "counters": {
+      "song_verses": 6,
+      "evidence": 4,
+      "cipher_progress": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Ask her to sing at the gate",
+    "outcome": "\"At the gate. Right. I'll ask. She'll say no. She said yes.\" Six verses at the sill. The town hears.",
+    "effects": {
+     "relationships": {
+      "wren": 3,
+      "petronel": 4
+     },
+     "resources": {
+      "town": 2
+     },
+     "flags_set": [
+      "song_heard",
+      "clue_song"
+     ],
+     "counters": {
+      "song_verses": 6,
+      "evidence": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "clue_song"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma06_08",
+   "category": "major_arcs",
+   "speaker": "wren",
+   "arc": {
+    "id": "MA06",
+    "stage": 3
+   },
+   "text": "So now you know. River, valley, hill, door. I've known since I was six and never cared. It was a song. Now there's a Keeper who's heard it and I find I care, and I don't like it. What are you going to do with it?",
+   "left": {
+    "label": "Find the door",
+    "outcome": "\"Right. Then I'm coming. Don't argue.\"",
+    "effects": {
+     "relationships": {
+      "wren": 6
+     },
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 1,
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing yet; know it first",
+    "outcome": "\"Knowing. Yes. The old man's done forty years of knowing. See how it suits you.\"",
+    "effects": {
+     "relationships": {
+      "wren": 2,
+      "bram": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "song_heard"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma06_09",
+   "category": "major_arcs",
+   "speaker": "petronel",
+   "arc": {
+    "id": "MA06",
+    "stage": 3
+   },
+   "text": "I have sung it now. It is yours as much as ours. There is one verse I did not sing. It names the place where the river comes out. Bram says it is his to give, not mine. He is right. He is also afraid.",
+   "left": {
+    "label": "Respect Bram's verse",
+    "outcome": "\"Good. He will give it when he gives it.\"",
+    "effects": {
+     "relationships": {
+      "petronel": 4,
+      "bram": 4
+     },
+     "factions": {
+      "hullfolk": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Sing it anyway",
+    "outcome": "She sings it, very quietly. 'Below the stone house, where the clear water runs.' She does not look at you.",
+    "effects": {
+     "relationships": {
+      "petronel": 2,
+      "bram": -5
+     },
+     "flags_set": [
+      "knows_cut",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 3,
+      "song_verses": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "song_heard",
+     "met_petronel"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma06_10",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA06",
+    "stage": 4
+   },
+   "text": "We have decided. Come to the north bank at the third bell. Bring no charter man. Bring the Dray girl if you like; she has the right. We will show the gate where the river comes out of the hill. We have never shown anyone.",
+   "left": {
+    "label": "Go alone",
+    "outcome": "Below the sluice house, in the dark: a boil of cold water. Iron on the tongue. The Quell.",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "flags_set": [
+      "knows_cut",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 4,
+      "fatigue": 1
+     },
+     "factions": {
+      "hullfolk": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Bring Mirren",
+    "outcome": "Mirren kneels at the water and puts her hand in it and does not take it out for a long time.",
+    "effects": {
+     "relationships": {
+      "bram": 8,
+      "mirren": 8
+     },
+     "flags_set": [
+      "knows_cut",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 4
+     },
+     "factions": {
+      "hullfolk": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "song_heard",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 3
+     }
+    },
+    "relationships": {
+     "bram": {
+      "min": 50
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma06_11",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "arc": {
+    "id": "MA06",
+    "stage": 4
+   },
+   "text": "You have seen it. Now you know what we know, and more, because you can read their books and we cannot. We ask the gate one thing, and we have never asked it: is there a way to give the river back?",
+   "left": {
+    "label": "There is a sluice; Marrow built it",
+    "outcome": "\"A door. The song says a door. So it is true all the way down.\"",
+    "effects": {
+     "relationships": {
+      "bram": 8
+     },
+     "flags_set": [
+      "promised_bram"
+     ],
+     "counters": {
+      "evidence": 2
+     },
+     "factions": {
+      "hullfolk": 5
+     }
+    }
+   },
+   "right": {
+    "label": "I don't know yet",
+    "outcome": "\"Yet. We have waited eighty years on 'yet'. We can wait a season on yours.\"",
+    "effects": {
+     "relationships": {
+      "bram": 4
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_cut"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma06_12",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "mourning",
+   "arc": {
+    "id": "MA06",
+    "stage": 4
+   },
+   "text": "If the river went back, this pound would be a road. The town would shrink. Our young ones would go home to a valley they have never seen. We do not know if that is justice. We know it is the debt.",
+   "left": {
+    "label": "The debt should be paid",
+    "outcome": "\"Then say so when it matters. Not to us. To them.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6
+     },
+     "flags_set": [
+      "promised_bram"
+     ],
+     "factions": {
+      "hullfolk": 4
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The town is owed something too",
+    "outcome": "\"It is. Eighty years of someone else's water. We do not say it is simple.\"",
+    "effects": {
+     "relationships": {
+      "bram": 3,
+      "ilse": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_cut"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma06_13",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "MA06",
+    "stage": 5
+   },
+   "text": "The moot sits tonight on the moorings again. We will come. We will say the words 'water debt' and we will say what they mean, in the town's own hall, for the first time. We ask the gate to stand beside us when we say it.",
+   "left": {
+    "label": "Stand beside them",
+    "outcome": "Bram speaks. He names the river. The hall is silent. Ilse, at the end, says 'the moot will consider'. It is the most anyone has ever said.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": -3
+     },
+     "factions": {
+      "hullfolk": 10
+     },
+     "relationships": {
+      "bram": 10,
+      "ilse": 2
+     },
+     "unlocks": [
+      "unlock_lowmere_song"
+     ],
+     "arc": {
+      "MA06": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Speak for them yourself",
+    "outcome": "You name the river to the town. The town looks at the Reach differently after, and at you.",
+    "effects": {
+     "resources": {
+      "town": 2,
+      "company": -4
+     },
+     "factions": {
+      "hullfolk": 8
+     },
+     "relationships": {
+      "bram": 8
+     },
+     "unlocks": [
+      "unlock_lowmere_song"
+     ],
+     "arc": {
+      "MA06": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "knows_cut",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA06": {
+      "min": 4
+     }
+    },
+    "flags_none": [
+     "hullfolk_cleared"
+    ]
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma06_14",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "arc": {
+    "id": "MA06",
+    "stage": 5
+   },
+   "text": "The debt is named. Whatever comes, it has been said aloud at the summit, in the town's hall, with a Keeper standing. That has not happened in eighty years. We do not thank. We give. Petronel's fiddle. It has one string. It is enough.",
+   "left": {
+    "label": "Take the fiddle",
+    "outcome": "One string. You cannot play it. You keep it on the study wall where the oilskin hangs.",
+    "effects": {
+     "relationships": {
+      "bram": 5,
+      "petronel": 5
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It should stay with the Reach",
+    "outcome": "\"It should. We wanted to see if you would say so.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6,
+      "petronel": 3
+     },
+     "factions": {
+      "hullfolk": 4
+     }
+    }
+   },
+   "conditions": {
+    "arc_status": {
+     "MA06": "completed"
+    },
+    "unlocks": [
+     "unlock_lowmere_song"
+    ],
+    "unseen_cards": [
+     "ma06_14"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:town"
+   ],
+   "notes": "Coda card; appears once after MA06 completes."
+  },
+  {
+   "id": "ma06_15",
+   "category": "major_arcs",
+   "speaker": "bram",
+   "expression": "mourning",
+   "arc": {
+    "id": "MA06",
+    "stage": 5
+   },
+   "pool": "forced",
+   "text": "The Reach is emptying. The charter men's order, or the town's, or the water's; it does not matter whose. We are going down the west flight. The song goes with us. We did not finish telling it to the gate. Perhaps the next gate.",
+   "left": {
+    "label": "Ask for the last verse before they go",
+    "outcome": "Petronel sings it from the stern as the boat drops out of sight. You have it. Barely.",
+    "effects": {
+     "factions": {
+      "hullfolk": 2
+     },
+     "relationships": {
+      "bram": 3,
+      "petronel": 3
+     },
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "song_verses": 1,
+      "evidence": 1
+     },
+     "arc": {
+      "MA06": {
+       "status": "failed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Let them go in silence",
+    "outcome": "Forty boats down the flight in silence. The town watches from the bank. Nobody sings at the summit again.",
+    "effects": {
+     "factions": {
+      "hullfolk": -5
+     },
+     "relationships": {
+      "bram": -3
+     },
+     "arc": {
+      "MA06": {
+       "status": "failed"
+      }
+     },
+     "resources": {
+      "town": -2
+     }
+    }
+   },
+   "notes": "Forced via MA10 clearance completion or cri_dry; ends the Water Debt arc."
+  }
+ ]
+}

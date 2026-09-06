@@ -1,0 +1,892 @@
+{
+ "cards": [
+  {
+   "id": "ma07_01",
+   "category": "major_arcs",
+   "speaker": "wren",
+   "expression": "caught",
+   "arc": {
+    "id": "MA07",
+    "stage": 1
+   },
+   "text": "You know about the reed cargo. Fine. Here's the rest: it's not cheese. It's long, it's oiled, it comes in fours, and it's going east to men who don't grow anything. I've moved it for a year. I'm asking whether I keep moving it.",
+   "left": {
+    "label": "Stop",
+    "outcome": "\"Stopped. They'll find someone else. Someone worse. Remember I said.\"",
+    "effects": {
+     "relationships": {
+      "wren": 4
+     },
+     "flags_set": [
+      "rifles_known",
+      "convoy_stopped"
+     ],
+     "counters": {
+      "sorrel_favors": -1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Keep moving it; I'll watch",
+    "outcome": "\"Watch. Right. Watching's what he did too.\"",
+    "effects": {
+     "relationships": {
+      "wren": 3
+     },
+     "flags_set": [
+      "rifles_known"
+     ],
+     "counters": {
+      "sorrel_favors": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "flags_any": [
+     "reeds_cargo"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "weight": 1.5,
+   "weight_mods": [
+    {
+     "when": {
+      "factions": {
+       "sorrel": {
+        "min": 55
+       }
+      }
+     },
+     "multiply": 2.0
+    }
+   ],
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_02",
+   "category": "major_arcs",
+   "speaker": "wren",
+   "arc": {
+    "id": "MA07",
+    "stage": 1
+   },
+   "text": "A crate came through the reeds last night that wasn't mine. Somebody's using my route without me. That's not business, that's an insult. It's also a problem, because they don't know the shallows and they'll ground where Crane can see.",
+   "left": {
+    "label": "Let them ground",
+    "outcome": "They ground. Crane finds rifles in the morning, and does not know whose route it is.",
+    "effects": {
+     "relationships": {
+      "wren": 3,
+      "crane": 4
+     },
+     "flags_set": [
+      "arms_held"
+     ],
+     "factions": {
+      "sorrel": -3,
+      "aldmere": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Warn them off; keep the route quiet",
+    "outcome": "Wren warns them. They stop using her route. They start using the gate.",
+    "effects": {
+     "relationships": {
+      "wren": 5
+     },
+     "flags_set": [
+      "night_passages"
+     ],
+     "counters": {
+      "passages_night": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_03",
+   "category": "major_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "MA07",
+    "stage": 1
+   },
+   "text": "A Sorrel barge declares 'agricultural implements'. Forty long crates. The bargee has the Sorrel Escort Company's seal and no other. Crane is at his post. He has seen the crates. He has not yet seen the seal.",
+   "left": {
+    "label": "Send it to Crane",
+    "outcome": "Crane refuses the second seal. The barge sits in the pound. Solas appears within the hour.",
+    "effects": {
+     "resources": {
+      "traffic": -3
+     },
+     "relationships": {
+      "crane": 5,
+      "solas": -3
+     },
+     "flags_set": [
+      "arms_held"
+     ],
+     "factions": {
+      "aldmere": 3
+     }
+    }
+   },
+   "right": {
+    "label": "One seal will serve",
+    "outcome": "The barge passes. Crane sees it go. He writes the time.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "crane": -6,
+      "solas": 3
+     },
+     "flags_set": [
+      "arms_passed",
+      "compact_breached"
+     ],
+     "factions": {
+      "sorrel": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "arms_held",
+     "arms_passed"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_04",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "weary",
+   "arc": {
+    "id": "MA07",
+    "stage": 2
+   },
+   "text": "Yes. They're mine. I buy them from the girl and I pass them to men I don't like for reasons I don't share. I was ordered to. I'm telling you because you've worked it out and I'd rather you heard it from the man than the crate.",
+   "left": {
+    "label": "Who are they for?",
+    "outcome": "\"Sorrel men who want a different Sorrel. Quickly. With those.\"",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     },
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "rifles_known"
+     ]
+    }
+   },
+   "right": {
+    "label": "Stop buying them",
+    "outcome": "\"Then I'm replaced by someone who doesn't ask the girl to be careful.\"",
+    "effects": {
+     "relationships": {
+      "solas": 2,
+      "wren": 2
+     },
+     "counters": {
+      "sorrel_favors": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_05",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "arc": {
+    "id": "MA07",
+    "stage": 2
+   },
+   "text": "Vane pays me. Vane's principals pay Vane. Vane's principals are the men the rifles are for. She doesn't know that. I think she doesn't know that. I'd like her to hear it from someone who isn't me. I'd like it to be you.",
+   "left": {
+    "label": "Tell Vane",
+    "outcome": "Vane goes white, then red, then very quiet. \"My principals. Right.\" She does not sleep that night.",
+    "effects": {
+     "relationships": {
+      "solas": 5,
+      "vane": 4
+     },
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "coup_warned"
+     ]
+    }
+   },
+   "right": {
+    "label": "She should hear it from you",
+    "outcome": "\"She should. I won't. That's the sort of man I am.\" He does, eventually, badly.",
+    "effects": {
+     "relationships": {
+      "solas": 1,
+      "vane": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_solas",
+     "met_vane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_06",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "MA07",
+    "stage": 2
+   },
+   "text": "There's a convoy coming. Six boats, my men, and under the coal the last of it. Enough for what they want. After that it doesn't matter what you or I do. This is the last gate it goes through. I wanted you to know how many there were.",
+   "left": {
+    "label": "When?",
+    "outcome": "\"Nine days. I'll be at the head of it. Whatever you decide, don't decide at the gate.\"",
+    "effects": {
+     "relationships": {
+      "solas": 6
+     },
+     "counters": {
+      "evidence": 2
+     },
+     "delayed": [
+      {
+       "card": "ma07_10",
+       "delay": 7,
+       "delay_max": 10
+      }
+     ]
+    }
+   },
+   "right": {
+    "label": "Turn it back yourself",
+    "outcome": "\"I can't. I've said. I can be slow. That's all I've got.\"",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     },
+     "flags_set": [
+      "solas_refused_order"
+     ],
+     "delayed": [
+      {
+       "card": "ma07_10",
+       "delay": 10,
+       "delay_max": 14
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_07",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "arc": {
+    "id": "MA07",
+    "stage": 3
+   },
+   "text": "I have counted the seals on Sorrel Escort cargo this quarter. Forty-one crates bore one seal. Mine was on none. Under Schedule Four, each is a breach. Under Schedule Four, I must report. I am telling you first. I am always telling you first.",
+   "left": {
+    "label": "Report it",
+    "outcome": "\"Duly.\" Aldmere is told. Aldmere sends a cutter. Solas sees it and goes very still.",
+    "effects": {
+     "relationships": {
+      "crane": 6,
+      "solas": -3
+     },
+     "factions": {
+      "aldmere": 5,
+      "sorrel": -5
+     },
+     "flags_set": [
+      "coup_warned"
+     ]
+    }
+   },
+   "right": {
+    "label": "Give me the convoy first",
+    "outcome": "\"One convoy. Duly. I note this is the last thing I hold for you.\"",
+    "effects": {
+     "relationships": {
+      "crane": -2,
+      "solas": 2
+     },
+     "counters": {
+      "aldmere_favors": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_08",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "arc": {
+    "id": "MA07",
+    "stage": 3
+   },
+   "text": "I will not seal arms for any faction. That is what I am for. If the convoy comes and you pass it, the Compact is a dead letter and I am a man in a black coat with a book. Which do you want at your gate?",
+   "left": {
+    "label": "The Compact",
+    "outcome": "\"Then I shall stand at my post when it comes. I have never stood at it for anything.\"",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "factions": {
+      "aldmere": 3
+     }
+    }
+   },
+   "right": {
+    "label": "A man with a book will do",
+    "outcome": "\"Duly.\" He does not stand at the post. He is there anyway, with the book.",
+    "effects": {
+     "relationships": {
+      "crane": -4
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_09",
+   "category": "major_arcs",
+   "speaker": "vane",
+   "expression": "furious",
+   "arc": {
+    "id": "MA07",
+    "stage": 3
+   },
+   "text": "My principals want the convoy through and they've told me to make sure. I've never been told to make sure before. I don't know what 'sure' costs. I know I don't want to pay it. Delay costs. This costs more.",
+   "left": {
+    "label": "Refuse your principals",
+    "outcome": "\"Refuse. Right. That's the end of me in Sorrel.\" She writes the letter anyway.",
+    "effects": {
+     "relationships": {
+      "vane": 8
+     },
+     "flags_set": [
+      "coup_warned"
+     ],
+     "factions": {
+      "sorrel": -4
+     },
+     "counters": {
+      "sorrel_favors": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Make sure; keep your post",
+    "outcome": "\"Make sure.\" She does. She is very good at it. She hates every minute.",
+    "effects": {
+     "relationships": {
+      "vane": 2,
+      "solas": -2
+     },
+     "factions": {
+      "sorrel": 3
+     },
+     "counters": {
+      "sorrel_favors": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known",
+     "met_vane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_10",
+   "category": "major_arcs",
+   "speaker": "vane",
+   "arc": {
+    "id": "MA07",
+    "stage": 4
+   },
+   "pool": "forced",
+   "text": "The convoy's in the pound. Six boats. Solas at the head, not looking at anyone. Crane at his post with his book. My principals' coin in my pocket. Your gate. Everyone's looking at the gate.",
+   "left": {
+    "label": "Open the gate",
+    "outcome": "Six boats down the east flight. Crane writes. Solas does not look back. Vane is sick over the wharf rail.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "company": -2
+     },
+     "relationships": {
+      "vane": 3,
+      "crane": -8,
+      "solas": 1
+     },
+     "flags_set": [
+      "sorrel_armed",
+      "compact_breached"
+     ],
+     "factions": {
+      "sorrel": 6,
+      "aldmere": -8
+     }
+    }
+   },
+   "right": {
+    "label": "The gate is closed",
+    "outcome": "You close it. Solas's men look at Solas. Solas looks at the water. Nobody moves.",
+    "effects": {
+     "resources": {
+      "traffic": -6
+     },
+     "relationships": {
+      "crane": 6,
+      "solas": 4
+     },
+     "flags_set": [
+      "convoy_stopped"
+     ],
+     "factions": {
+      "sorrel": -6,
+      "aldmere": 6
+     },
+     "followup": "ma07_11"
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "rifles_known"
+    ]
+   },
+   "tags": [
+    "res:traffic"
+   ],
+   "notes": "Forced via delayed from ma07_06."
+  },
+  {
+   "id": "ma07_11",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "MA07",
+    "stage": 4
+   },
+   "pool": "forced",
+   "text": "I have an order in my pocket that says force the gate. I have twelve men who'll do it if I say. I'm not saying. I'm standing here. My sergeant's asking me why. Tell me something I can tell him.",
+   "left": {
+    "label": "Tell him the Keeper has the Compact",
+    "outcome": "He tells the sergeant. The sergeant looks at Crane's book. It is enough, barely.",
+    "effects": {
+     "relationships": {
+      "solas": 8,
+      "crane": 4
+     },
+     "flags_set": [
+      "solas_refused_order",
+      "solas_owed"
+     ],
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Tell him I'll buy the coal",
+    "outcome": "You buy six boats of coal. The rifles under it stay in the pound. Nobody says the word.",
+    "effects": {
+     "resources": {
+      "coffers": -10
+     },
+     "relationships": {
+      "solas": 6,
+      "vane": 3
+     },
+     "flags_set": [
+      "solas_refused_order",
+      "arms_held"
+     ],
+     "factions": {
+      "sorrel": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "convoy_stopped"
+    ]
+   },
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_12",
+   "category": "major_arcs",
+   "speaker": "crane",
+   "arc": {
+    "id": "MA07",
+    "stage": 4
+   },
+   "text": "The convoy is held. I have inspected every crate and sealed none. Under the Compact they are impounded pending both shores. Both shores will argue for a year. I note that this is the Compact working. I note that I am very tired.",
+   "left": {
+    "label": "Warn Aldmere what they were for",
+    "outcome": "Aldmere learns of the coup faction. Sorrel's government learns Aldmere knows. Something in Sorrel goes quiet.",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "flags_set": [
+      "coup_warned"
+     ],
+     "factions": {
+      "aldmere": 5,
+      "sorrel": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Impounded is enough",
+    "outcome": "\"Duly. Enough.\" He goes to bed for the first time in three days.",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "convoy_stopped",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_13",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "almost_smiling",
+   "arc": {
+    "id": "MA07",
+    "stage": 5
+   },
+   "text": "I've been relieved of command. Wired this morning. The men are to go west under my sergeant. I'm to stay and 'await instructions'. There won't be any. I've been given the summit as a punishment. I find I don't mind.",
+   "left": {
+    "label": "Stay, then; the gate could use you",
+    "outcome": "\"The gate. Right.\" He takes a room at the Wheel. He turns paddles when Dace is short. He is, somehow, content.",
+    "effects": {
+     "relationships": {
+      "solas": 10
+     },
+     "resources": {
+      "town": 2
+     },
+     "arc": {
+      "MA07": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "allies": 1
+     },
+     "flags_set": [
+      "solas_owed"
+     ]
+    }
+   },
+   "right": {
+    "label": "Go west with your men",
+    "outcome": "\"Can't. Orders. First order I've been glad of.\" He stays anyway.",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     },
+     "arc": {
+      "MA07": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "convoy_stopped",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma07_14",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "expression": "weary",
+   "arc": {
+    "id": "MA07",
+    "stage": 5
+   },
+   "text": "News from Sorrel. There's been shooting in the capital. Not much. Enough. The rifles that went through your gate are in it. I'm not blaming you. I'm the one who bought them. I wanted you to hear the number. It's eleven.",
+   "left": {
+    "label": "Eleven",
+    "outcome": "\"Eleven.\" He does not say anything else for a week.",
+    "effects": {
+     "relationships": {
+      "solas": 2
+     },
+     "factions": {
+      "sorrel": -3
+     },
+     "counters": {
+      "fatigue": 2
+     },
+     "arc": {
+      "MA07": {
+       "status": "failed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Fewer than if you'd forced it",
+    "outcome": "\"It would. That's the sort of arithmetic I'm good at. I hate it.\"",
+    "effects": {
+     "relationships": {
+      "solas": 4
+     },
+     "arc": {
+      "MA07": {
+       "status": "failed"
+      }
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "sorrel_armed",
+     "met_solas"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "ma07_15",
+   "category": "major_arcs",
+   "speaker": "solas",
+   "arc": {
+    "id": "MA07",
+    "stage": 5
+   },
+   "text": "Whatever came of the convoy, you and I are the two men at this summit who know what was under the coal. Crane knows. Wren knows. That's four. Four's enough to hold a towpath, if it ever comes to that. I don't think it will. If it does.",
+   "left": {
+    "label": "Four is enough",
+    "outcome": "\"Four's enough.\" It becomes a phrase between you.",
+    "effects": {
+     "relationships": {
+      "solas": 6,
+      "crane": 2,
+      "wren": 2
+     },
+     "counters": {
+      "allies": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let's hope it never comes to that",
+    "outcome": "\"Hope. Right. I've done a lot of hoping. Some of it worked.\"",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "rifles_known"
+    ],
+    "arc_stage": {
+     "MA07": {
+      "min": 5
+     }
+    },
+    "arc_status": {
+     "MA07": "completed"
+    },
+    "unseen_cards": [
+     "ma07_15"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:traffic"
+   ],
+   "notes": "Coda after MA07 completes."
+  }
+ ]
+}

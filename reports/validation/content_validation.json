@@ -1,9 +1,9 @@
 {
   "ok": false,
   "errors": [
-    "[rel_hale_08] requires flag 'letters_taken' that no card sets",
     "[rel_ilse_09] requires flag 'clearance_signed' that no card sets",
-    "[end_false_clearance] requires flag 'hullfolk_cleared' that no card sets"
+    "[end_false_clearance] requires flag 'hullfolk_cleared' that no card sets",
+    "unreachable card: ma06_15 (forced, never referenced)"
   ],
   "warnings": [
     "assets/art_manifest.csv missing"
@@ -11,7 +11,6 @@
   "stats": {
     "schema_errors": 0,
     "unused_flags": [
-      "ale_sickness",
       "allies_gathered",
       "cut_mapped",
       "dace_grievances_heard",
@@ -38,7 +37,6 @@
       "sorrel_purchase_backed",
       "told_mirren",
       "vosk_confronted",
-      "well_closed",
       "windlass_missing"
     ],
     "unused_counters": [
@@ -48,33 +46,35 @@
       "p_hullfolk_honor",
       "p_keepers_lost"
     ],
-    "tradeoff_ratio": 0.749,
-    "pure_ratio": 0.093,
-    "delayed_ratio": 0.02,
-    "reactive_ratio": 0.906,
-    "unreachable": [],
-    "arcs_with_cards": 6,
+    "tradeoff_ratio": 0.728,
+    "pure_ratio": 0.088,
+    "delayed_ratio": 0.022,
+    "reactive_ratio": 0.911,
+    "unreachable": [
+      "ma06_15 (forced, never referenced)"
+    ],
+    "arcs_with_cards": 9,
     "clue_setters": {
       "noticed_water_fall": 4,
       "clue_dry_aqueduct": 6,
-      "clue_sluice_guard": 16,
-      "clue_charter": 8,
-      "clue_iron_well": 7,
+      "clue_sluice_guard": 17,
+      "clue_charter": 15,
+      "clue_iron_well": 9,
       "clue_reservoirs": 17,
-      "clue_cipher": 9,
+      "clue_cipher": 10,
       "clue_night_dredgers": 9,
       "clue_crane_counts": 8,
-      "clue_song": 7
+      "clue_song": 12
     },
-    "total_cards": 651,
-    "inventory_missing": 349,
+    "total_cards": 696,
+    "inventory_missing": 304,
     "by_category": {
       "onboarding": 30,
       "evergreen": 220,
       "resources": 150,
       "relationships": 120,
       "minor_arcs": 6,
-      "major_arcs": 75,
+      "major_arcs": 120,
       "endings_meta": 50
     },
     "fallback_cards": 0

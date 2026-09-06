@@ -1,0 +1,925 @@
+{
+ "cards": [
+  {
+   "id": "ma08_01",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "expression": "angry",
+   "arc": {
+    "id": "MA08",
+    "stage": 1
+   },
+   "text": "The pound's over the eighth mark and every cellar on the low street has water in it. Mine has a foot. I've the moot in my bar with wet boots asking what the Keeper's doing about it. What's the Keeper doing about it?",
+   "left": {
+    "label": "Running the paddles full, now",
+    "outcome": "Water thunders down the east flight. Lock 8 curses. The cellars begin to drain.",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -4,
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 4
+     },
+     "flags_set": [
+      "paddles_opened_full"
+     ],
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Sandbags and town labor",
+    "outcome": "Every hand on the low street with a sack. The water stays where it is. So do the sacks.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "ilse": 1,
+      "dace": 2
+     },
+     "flags_set": [
+      "sandbags_ordered",
+      "cellars_flooded"
+     ],
+     "counters": {
+      "flood_ignored": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "water": {
+      "min": 62
+     }
+    }
+   },
+   "weight": 1.5,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "ma08_02",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "MA08",
+    "stage": 1
+   },
+   "text": "The well's overflowing. Not the pound; the well. In my cellar. It comes up through the floor when the pound's high and I've never told anyone why because I don't know why. Now there's a Keeper in my cellar with a lamp, so tell me.",
+   "left": {
+    "label": "The well is the pound",
+    "outcome": "\"The same water. I've sold Company water as spring water for twenty years.\" She laughs. It is not a happy sound.",
+    "effects": {
+     "relationships": {
+      "ilse": 5
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Ask Quenn to look",
+    "outcome": "Quenn looks, goes red, says 'roughly, yes, the pound'. Ilse pours everyone a drink of it.",
+    "effects": {
+     "relationships": {
+      "ilse": 3,
+      "quenn": 3
+     },
+     "flags_set": [
+      "clue_iron_well",
+      "well_tested"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 1
+     }
+    },
+    "resources": {
+     "water": {
+      "min": 60
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_03",
+   "category": "major_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "MA08",
+    "stage": 1
+   },
+   "text": "Cole's sent round a notice: any tenant whose cellar floods twice this season loses the cellar. Not the house; the cellar. She'll rent them back as 'storage'. The moot wants the Keeper to tell her she can't. She can.",
+   "left": {
+    "label": "Tell her the Company objects",
+    "outcome": "The Company does not object. Cole knows that. She withdraws the notice anyway, for the look of it.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -1
+     },
+     "relationships": {
+      "ilse": 4,
+      "cole": -4
+     }
+    }
+   },
+   "right": {
+    "label": "Keep the cellars dry instead",
+    "outcome": "Paddles full for a week. The cellars dry. Lock 8's Keeper writes to Ardent.",
+    "effects": {
+     "resources": {
+      "water": -4,
+      "traffic": -3,
+      "town": 2
+     },
+     "relationships": {
+      "cole": 1
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse",
+     "met_cole"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma08_04",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "troubled",
+   "arc": {
+    "id": "MA08",
+    "stage": 2
+   },
+   "text": "The undercroft is under. The whole of it. I have never let anyone down there and now nobody can go. There are things in the far corner. I have tended them twenty years without touching them. I am asking the Keeper to lower the pound.",
+   "left": {
+    "label": "Lower it for the chapel",
+    "outcome": "You run the paddles two days for a chaplain's undercroft. The town wonders. The water goes down.",
+    "effects": {
+     "resources": {
+      "water": -5,
+      "traffic": -4
+     },
+     "factions": {
+      "concordance": 5
+     },
+     "relationships": {
+      "hale": 6
+     },
+     "flags_set": [
+      "undercroft_flooded"
+     ]
+    }
+   },
+   "right": {
+    "label": "What things?",
+    "outcome": "\"Papers. The founding. Nothing that would interest a Keeper.\" Everything that would.",
+    "effects": {
+     "relationships": {
+      "hale": -3
+     },
+     "flags_set": [
+      "undercroft_flooded",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 1
+     }
+    },
+    "resources": {
+     "water": {
+      "min": 62
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_05",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "arc": {
+    "id": "MA08",
+    "stage": 2
+   },
+   "text": "The water in the undercroft is going down. I went to the third step with a lamp and stopped. Whatever is in the corner, I cannot be the one to bring it up. I have tended it too long.",
+   "left": {
+    "label": "Go down yourself",
+    "outcome": "A chest, iron-strapped, on a stone shelf just above the water. Letters. An engineer's hand.",
+    "effects": {
+     "relationships": {
+      "hale": 3
+     },
+     "flags_set": [
+      "read_letters"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Send Mirren",
+    "outcome": "Mirren goes down with a lamp and comes up with a chest and a face like the sill gauge.",
+    "effects": {
+     "relationships": {
+      "hale": 2,
+      "mirren": 5
+     },
+     "flags_set": [
+      "read_letters"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "undercroft_flooded",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_06",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "serene",
+   "arc": {
+    "id": "MA08",
+    "stage": 2
+   },
+   "text": "You have the chest. I have not asked for it back. I will not. I ask only this: read them in order. She wrote them in order. The last one is the one that matters and nobody who reads them out of order gets that far.",
+   "left": {
+    "label": "Read them in order",
+    "outcome": "You read. Year 8, the cut begun. Year 10, the chapel founded 'to tend what I have given'. Year 11, the last. You stop before it.",
+    "effects": {
+     "relationships": {
+      "hale": 5
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 3,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Read the last one first",
+    "outcome": "'If the sluice fails, tell them nothing. Let them have the water.' You have read the end. Now the beginning makes sense, and hurts more.",
+    "effects": {
+     "relationships": {
+      "hale": -2
+     },
+     "flags_set": [
+      "clue_charter",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_07",
+   "category": "major_arcs",
+   "speaker": "stroud",
+   "expression": "grave",
+   "arc": {
+    "id": "MA08",
+    "stage": 3
+   },
+   "text": "Six cases of the shakes on the low street this week. All from houses with flooded cellars. All from houses that drink the brewery well. I have tested the well. It is the pound. The pound has something in it, since the high water. Iron, and worse.",
+   "left": {
+    "label": "Close the well",
+    "outcome": "Ilse closes the brewery. The town drinks Sorrel beer and blames you. The shakes stop.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "stroud": 6,
+      "ilse": -4
+     },
+     "flags_set": [
+      "well_closed",
+      "well_tested"
+     ],
+     "flags_clear": [
+      "ale_sickness"
+     ]
+    }
+   },
+   "right": {
+    "label": "Boil it and carry on",
+    "outcome": "Ilse boils it. Most of the town recovers. Two do not, quite.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "stroud": -3,
+      "ilse": 2
+     },
+     "flags_set": [
+      "ale_sickness",
+      "well_tested"
+     ],
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_08",
+   "category": "major_arcs",
+   "speaker": "stroud",
+   "arc": {
+    "id": "MA08",
+    "stage": 3
+   },
+   "text": "The 'worse' in the water is hill-silt. Clay. It comes only when the pound is high, and from the north bank, not the aqueduct. I know what dirt tastes like. This is dirt from inside a mountain.",
+   "left": {
+    "label": "Tell Quenn",
+    "outcome": "Quenn tastes it. \"The Spine. Yes. That's the Spine.\" She sits down.",
+    "effects": {
+     "relationships": {
+      "stroud": 4,
+      "quenn": 4
+     },
+     "flags_set": [
+      "clue_sluice_guard",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Keep it between us",
+    "outcome": "\"As you like. I keep a great many things between us and my patients.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 3
+     },
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "well_tested",
+     "met_stroud"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_09",
+   "category": "major_arcs",
+   "speaker": "stroud",
+   "expression": "neutral",
+   "arc": {
+    "id": "MA08",
+    "stage": 3
+   },
+   "text": "Ilse asked me to say the well was safe. It is not; nor very dangerous. I told her the truth. She has not spoken to me since. Twenty years of friendship. That is what the truth costs here.",
+   "left": {
+    "label": "Speak to Ilse for her",
+    "outcome": "You do. Ilse says 'she's right, that's the trouble'. They are friends again by the week's end.",
+    "effects": {
+     "relationships": {
+      "stroud": 5,
+      "ilse": 3
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The truth was right",
+    "outcome": "\"It was. It usually is. It is rarely kind.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "well_tested",
+     "met_stroud",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "ma08_10",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "unveiled",
+   "arc": {
+    "id": "MA08",
+    "stage": 4
+   },
+   "text": "You have read the letters. So the chapel has kept the Cut's secret seventy years, and the gift I bless every month is a theft. Say it. I would like to hear it in someone else's voice.",
+   "left": {
+    "label": "The gift is a theft",
+    "outcome": "\"Yes.\" She sits in the last pew. \"And it fed the town. Both. Both at once. I have never found a hymn for that.\"",
+    "effects": {
+     "relationships": {
+      "hale": 4
+     },
+     "flags_set": [
+      "hale_confessed"
+     ],
+     "counters": {
+      "evidence": 2
+     },
+     "factions": {
+      "concordance": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The gift is what it did",
+    "outcome": "\"That is what I decided, twenty years ago. It is a comfort to hear it in another voice. It is not a proof.\"",
+    "effects": {
+     "relationships": {
+      "hale": 8
+     },
+     "flags_set": [
+      "hale_confessed"
+     ],
+     "factions": {
+      "concordance": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_11",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "arc": {
+    "id": "MA08",
+    "stage": 4
+   },
+   "text": "Vosk has been to the chapel. She asked whether the chest was 'intact'. I said it was where it had always been, which is true, and empty, which I did not say. She looked at me a long time.",
+   "left": {
+    "label": "Return the letters to the undercroft",
+    "outcome": "Back in the chest, in order. Vosk checks the next month. \"Intact.\" She does not say noted.",
+    "effects": {
+     "relationships": {
+      "hale": 6,
+      "vosk": 2
+     },
+     "flags_clear": [
+      "letters_taken"
+     ],
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Keep them; the Ledger is safer",
+    "outcome": "The letters go in the Ledger. Vosk checks the chest. \"Noted.\" It is a long one.",
+    "effects": {
+     "relationships": {
+      "hale": 2,
+      "vosk": -4
+     },
+     "flags_set": [
+      "letters_taken"
+     ],
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_hale",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "ma08_12",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "troubled",
+   "arc": {
+    "id": "MA08",
+    "stage": 4
+   },
+   "text": "The last letter. You have not read it, or you have read it and not understood. She wrote it the night before the roof came down on her. It says what she wanted done if the sluice failed. It has failed. It is failing. Read it.",
+   "left": {
+    "label": "Read it",
+    "outcome": "'Tell them nothing. Let them have the water, and the town, and eighty years. Then let someone braver than me choose.' You are the someone.",
+    "effects": {
+     "relationships": {
+      "hale": 6
+     },
+     "flags_set": [
+      "knows_cut",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Read it to me",
+    "outcome": "She reads it aloud in the empty chapel. Her voice does not shake until the last line.",
+    "effects": {
+     "relationships": {
+      "hale": 8
+     },
+     "flags_set": [
+      "knows_cut",
+      "clue_charter"
+     ],
+     "counters": {
+      "evidence": 4
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_13",
+   "category": "major_arcs",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "arc": {
+    "id": "MA08",
+    "stage": 5
+   },
+   "text": "The chapel's founding charter is in my family's deeds. My grandfather witnessed it. I have read it, of course; I read everything I own. It thanks a donor for 'the water I have given'. I mention it because you look like someone who has just read letters.",
+   "left": {
+    "label": "Show me the charter",
+    "outcome": "Marrow's signature. Cole's grandfather's. And a clause: the chapel to 'tend the spring and ask nothing of it'. Ask nothing.",
+    "effects": {
+     "relationships": {
+      "cole": 4
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "unlocks": [
+      "unlock_marrow_letters"
+     ],
+     "arc": {
+      "MA08": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Give the charter to Hale",
+    "outcome": "Cole gives it, kindly, for a consideration. Hale reads it in the last pew and does not come out till dark.",
+    "effects": {
+     "relationships": {
+      "cole": 2,
+      "hale": 6
+     },
+     "resources": {
+      "coffers": -3
+     },
+     "flags_set": [
+      "clue_charter"
+     ],
+     "unlocks": [
+      "unlock_marrow_letters"
+     ],
+     "arc": {
+      "MA08": {
+       "status": "completed"
+      }
+     },
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_cole"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 4,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "ma08_14",
+   "category": "major_arcs",
+   "speaker": "cole",
+   "expression": "cold",
+   "arc": {
+    "id": "MA08",
+    "stage": 5
+   },
+   "text": "The flood is down and the cellars are drying and I have a list of tenants who cannot pay. I would like the Keeper to know I intend to be kind. I would like the Keeper to know kindness, from me, has a ledger of its own.",
+   "left": {
+    "label": "Pay their arrears from the Coffers",
+    "outcome": "You pay. Cole records it. The low street knows who paid, because Cole tells them.",
+    "effects": {
+     "resources": {
+      "coffers": -8,
+      "town": 6
+     },
+     "relationships": {
+      "cole": 4
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Be kind on your own account",
+    "outcome": "\"On my account. Kindly. Very well.\" She is. She never lets them forget it.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "cole": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 4
+     }
+    },
+    "resources": {
+     "water": {
+      "max": 60
+     }
+    }
+   },
+   "weight": 3,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "ma08_15",
+   "category": "major_arcs",
+   "speaker": "hale",
+   "expression": "serene",
+   "arc": {
+    "id": "MA08",
+    "stage": 5
+   },
+   "text": "The water has gone down and the chapel goes on. I will bless the vessels on the first of the month. I would like you to stand where Vosk stands. The last pew. Somebody should.",
+   "left": {
+    "label": "Stand in the last pew",
+    "outcome": "You stand where Vosk stands. She comes in and sees you there and, for once, sits beside someone.",
+    "effects": {
+     "relationships": {
+      "hale": 8,
+      "vosk": 3
+     },
+     "factions": {
+      "concordance": 4
+     },
+     "arc": {
+      "MA08": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Stand at the gate, as ever",
+    "outcome": "\"As ever. We tend what we can reach.\"",
+    "effects": {
+     "relationships": {
+      "hale": 3
+     },
+     "arc": {
+      "MA08": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "read_letters",
+     "met_hale"
+    ],
+    "arc_stage": {
+     "MA08": {
+      "min": 5
+     }
+    },
+    "arc_status": {
+     "MA08": "completed"
+    },
+    "unseen_cards": [
+     "ma08_15"
+    ]
+   },
+   "weight": 3,
+   "tags": [
+    "res:water"
+   ],
+   "notes": "Coda after MA08 completes."
+  }
+ ]
+}
