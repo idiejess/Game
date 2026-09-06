@@ -1,0 +1,155 @@
+{
+  "cards": [
+    {"id": "onb_01", "category": "onboarding", "speaker": "pell", "expression": "beaming",
+     "text": "Keeper! Welcome to the summit of the Meridian, the highest gate on the finest water road in the Vell. Here is the toll book. Guard it like a child.",
+     "left": {"label": "Read it tonight", "outcome": "Eighty years of figures, in eleven hands.", "effects": {"resources": {"company": 3}, "relationships": {"pell": 4}, "flags_set": ["met_pell"], "counters": {"fatigue": 1}}},
+     "right": {"label": "Ask about the last Keeper", "outcome": "Pell's smile stays where it is. His eyes do not.", "effects": {"relationships": {"pell": -2}, "counters": {"suspicion": 1}, "flags_set": ["met_pell"]}},
+     "pool": "forced", "weight": 1, "max_per_run": 1, "tags": ["res:company", "tutorial"],
+     "notes": "Always the first card of a run; forced by TurnController.begin_run."},
+
+    {"id": "onb_02", "category": "onboarding", "speaker": "src_gate", "text": "A grain barge from Aldmere waits below the top gate. Papers in order, the bargee says, if you would care to look.",
+     "left": {"label": "Check the papers", "outcome": "In order. The bargee spits, politely, over the side.", "effects": {"resources": {"traffic": -3, "company": 2}, "counters": {"inspections": 1}}},
+     "right": {"label": "Open the gate", "outcome": "The paddles run, the chamber fills, the barge rises.", "effects": {"resources": {"traffic": 4, "water": -2}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_03", "category": "onboarding", "speaker": "mirren", "expression": "guarded", "text": "Mirren Dray. Lock hand. I turn the paddles, you decide when. That oilskin on the hook is not for anyone.",
+     "left": {"label": "Leave it where it hangs", "outcome": "She nods once, which from her is a speech.", "effects": {"relationships": {"mirren": 6}, "flags_set": ["met_mirren"]}},
+     "right": {"label": "Ask whose it was", "outcome": "\"His.\" She goes to the paddles.", "effects": {"relationships": {"mirren": -3}, "flags_set": ["met_mirren"], "counters": {"cipher_progress": 0}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_04", "category": "onboarding", "speaker": "src_weather", "text": "The sill gauge reads one mark lower than the last entry in the book. The reservoir report, pinned beside it, says nothing has changed.",
+     "left": {"label": "Note it in the Ledger", "outcome": "A small line in a new hand.", "effects": {"flags_set": ["noticed_water_fall"], "counters": {"evidence": 1}}},
+     "right": {"label": "A dry week, nothing more", "outcome": "The gauge does not argue.", "effects": {"resources": {"company": 1}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:water", "tutorial", "clue"]},
+
+    {"id": "onb_05", "category": "onboarding", "speaker": "ilse", "text": "Ilse Harrow. I keep the Wheel and Windlass and, when nobody else will, the town. A room is two marks a week. A welcome costs more.",
+     "left": {"label": "Take the room", "outcome": "The bed is hard and the ale is good.", "effects": {"resources": {"coffers": -2, "town": 4}, "relationships": {"ilse": 4}, "flags_set": ["met_ilse"]}},
+     "right": {"label": "The Keeper's House will do", "outcome": "\"It will. It did for him.\"", "effects": {"resources": {"coffers": 1}, "relationships": {"ilse": -2, "mirren": 2}, "flags_set": ["met_ilse"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_06", "category": "onboarding", "speaker": "src_telegram", "text": "COMPANY TO KEEPER HALFWAY STOP REPORT TRAFFIC FIGURES EACH WATCH STOP DELAYS TO BE EXPLAINED STOP",
+     "left": {"label": "Report exactly", "outcome": "Fennick taps it out with his tongue between his teeth.", "effects": {"resources": {"company": 3}, "counters": {"fatigue": 1}}},
+     "right": {"label": "Report weekly", "outcome": "Nobody wires back. Nobody wires back for three days.", "effects": {"resources": {"company": -3, "town": 1}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 5, "sound": "sfx_telegram", "tags": ["res:company", "tutorial"]},
+
+    {"id": "onb_07", "category": "onboarding", "speaker": "quenn", "expression": "worried", "text": "Sorry. Tamsin Quenn, engineer. The east lower paddle is roughly forty years past its work. I need eleven marks for a new spindle. I know it's your first day.",
+     "left": {"label": "Approve the spindle", "outcome": "She is gone before you finish the signature.", "effects": {"resources": {"coffers": -6}, "relationships": {"quenn": 8}, "flags_set": ["met_quenn"]}},
+     "right": {"label": "Make it last a month", "outcome": "\"It might. Roughly.\"", "effects": {"resources": {"coffers": 2}, "relationships": {"quenn": -3}, "counters": {"repairs_deferred": 1}, "flags_set": ["met_quenn"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_08", "category": "onboarding", "speaker": "src_gate", "text": "A narrow boat of stitched sailcloth waits without a toll in hand. The woman at the tiller says the Hullfolk hold passage here, and always have.",
+     "left": {"label": "Passage without fee", "outcome": "She does not thank you. She looks at you, which may be more.", "effects": {"resources": {"coffers": -2, "company": -2}, "factions": {"hullfolk": 6}, "counters": {"hullfolk_favors": 1}}},
+     "right": {"label": "The toll is the toll", "outcome": "She pays in old coin and remembers your face.", "effects": {"resources": {"coffers": 2, "company": 2}, "factions": {"hullfolk": -6}, "counters": {"hullfolk_offenses": 1}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_09", "category": "onboarding", "speaker": "vosk", "expression": "measuring", "text": "Odile Vosk, Summit Auditor. I have read your first entries. The hand is legible. You will find I read everything.",
+     "left": {"label": "Then read this too", "outcome": "You hand her the page. She reads it. \"Noted.\"", "effects": {"resources": {"company": 2}, "relationships": {"vosk": 4}, "flags_set": ["met_vosk"]}},
+     "right": {"label": "Ask what she is looking for", "outcome": "\"Irregularities. For the record, there are none yet.\"", "effects": {"relationships": {"vosk": -2}, "counters": {"suspicion": 1}, "flags_set": ["met_vosk"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:company", "tutorial"]},
+
+    {"id": "onb_10", "category": "onboarding", "speaker": "crane", "text": "Matthias Crane, Aldmere Customs, under the Halfway Compact of Year 58. I note that Schedule Four requires my seal on any arms. I will be here every watch.",
+     "left": {"label": "Welcome his inspections", "outcome": "\"Duly noted.\" He almost smiles, and files it.", "effects": {"resources": {"traffic": -2}, "relationships": {"crane": 6}, "factions": {"aldmere": 3}, "flags_set": ["met_crane"]}},
+     "right": {"label": "Inspections slow the gate", "outcome": "\"The Compact does not mention speed.\"", "effects": {"resources": {"traffic": 2}, "relationships": {"crane": -4}, "factions": {"sorrel": 2}, "flags_set": ["met_crane"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_11", "category": "onboarding", "speaker": "vane", "expression": "brisk", "text": "Nessa Vane, Sorrel Freight. Your predecessor cost my principals nine days last quarter. Here is the rate card. Here is the bill for the nine days.",
+     "left": {"label": "The bill is not mine", "outcome": "\"By the next watch it will be. We can fix that.\"", "effects": {"resources": {"coffers": 2}, "relationships": {"vane": -4}, "flags_set": ["met_vane"]}},
+     "right": {"label": "Promise faster passage", "outcome": "She writes it down before you have finished.", "effects": {"resources": {"traffic": 3}, "relationships": {"vane": 5}, "factions": {"sorrel": 3}, "flags_set": ["met_vane"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_12", "category": "onboarding", "speaker": "fennick", "expression": "eager", "text": "Fennick Orr, the wire. In strictest confidence, Keeper, you'll never guess what the last one wired the night before he went. I shouldn't. Shall I?",
+     "left": {"label": "Tell me", "outcome": "\"Three words. 'Found the key.' Then nothing.\"", "effects": {"relationships": {"fennick": 4}, "counters": {"suspicion": 1, "evidence": 1}, "flags_set": ["met_fennick"]}},
+     "right": {"label": "Keep the wire's secrets", "outcome": "He looks at you as if you had refused a gift, then brightens.", "effects": {"resources": {"company": 2}, "relationships": {"fennick": -2}, "flags_set": ["met_fennick"]}},
+     "conditions": {"watch": {"max": 10}}, "weight": 6, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_13", "category": "onboarding", "speaker": "src_gate", "text": "A boat of grey-robed pilgrims asks to wait in the chamber while the chaplain blesses their hull. Two coal barges wait behind them.",
+     "left": {"label": "Let the blessing finish", "outcome": "It takes a while. The coal barges say so.", "effects": {"resources": {"traffic": -4, "town": 2}, "factions": {"concordance": 5, "sorrel": -2}}},
+     "right": {"label": "Bless them on the towpath", "outcome": "The chaplain does not argue. She never does.", "effects": {"resources": {"traffic": 3}, "factions": {"concordance": -3}}},
+     "conditions": {"watch": {"max": 10}}, "weight": 5, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_14", "category": "onboarding", "speaker": "bram", "expression": "patient", "text": "We are Bram Holloway. We hold the Reed Reach. Every Keeper is one of two things, and the water finds out which. Are you a gate, or a wall?",
+     "left": {"label": "A gate", "outcome": "\"Then we shall see it open.\"", "effects": {"factions": {"hullfolk": 5}, "relationships": {"bram": 5}, "flags_set": ["met_bram"]}},
+     "right": {"label": "The Company's Keeper", "outcome": "\"So was the last one. So was the first.\"", "effects": {"resources": {"company": 2}, "relationships": {"bram": -3}, "flags_set": ["met_bram"]}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_15", "category": "onboarding", "speaker": "wren", "expression": "grinning", "text": "Wren. I run things. Small favor: a crate goes down the east flight tonight and nobody writes it in the Book. Cargo. Nothing that bites.",
+     "left": {"label": "Not in my Book", "outcome": "\"Fair. I'll ask again when you're tired.\"", "effects": {"resources": {"company": 2}, "relationships": {"wren": -3}, "flags_set": ["met_wren"]}},
+     "right": {"label": "One crate", "outcome": "You didn't see it. A coin appears on the sill anyway.", "effects": {"resources": {"coffers": 3, "company": -2}, "relationships": {"wren": 6}, "counters": {"bribes_taken": 1, "hullfolk_favors": 1}, "flags_set": ["met_wren"]}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_16", "category": "onboarding", "speaker": "src_ledger", "text": "Dray's chair. Dray's desk. Dray's study door, locked, with no key on the ring you were given.",
+     "left": {"label": "Try the lock", "outcome": "It holds. Somebody meant it to.", "effects": {"counters": {"suspicion": 1, "evidence": 1}}},
+     "right": {"label": "Leave it for now", "outcome": "The chair, at least, is comfortable.", "effects": {"counters": {"fatigue": -1}}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_17", "category": "onboarding", "speaker": "hale", "expression": "serene", "text": "Sister Hale. We tend the Still Water chapel and bless what passes. The summit springs are a gift, Keeper. We do not ask the water where it comes from.",
+     "left": {"label": "Accept the blessing", "outcome": "Her lamp swings over the gates. The hands take off their caps.", "effects": {"resources": {"town": 3}, "factions": {"concordance": 5}, "relationships": {"hale": 4}, "flags_set": ["met_hale"]}},
+     "right": {"label": "Ask where it comes from", "outcome": "\"From the hill, as all still water does.\"", "effects": {"relationships": {"hale": -2}, "counters": {"evidence": 1}, "flags_set": ["met_hale"]}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:water", "tutorial", "clue"]},
+
+    {"id": "onb_18", "category": "onboarding", "speaker": "solas", "text": "Solas. Sorrel Escort Company. My convoys come through twice a month, armed and lawful. Tell me now how you want them handled. I would rather not learn it at the gate.",
+     "left": {"label": "Inspected like any boat", "outcome": "\"Understood. It won't come to trouble.\"", "effects": {"resources": {"traffic": -2, "company": 2}, "relationships": {"solas": 2, "crane": 3}, "flags_set": ["met_solas"]}},
+     "right": {"label": "Escorts pass on sight", "outcome": "\"My people will remember that.\"", "effects": {"resources": {"traffic": 3}, "relationships": {"solas": 6, "crane": -4}, "factions": {"sorrel": 3}, "flags_set": ["met_solas"]}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_19", "category": "onboarding", "speaker": "dace", "text": "Three things, Keeper. The upper gate weeps. The hands are two short. And the last Keeper owed us a round he never stood.",
+     "left": {"label": "Stand the round", "outcome": "Eleven tankards. Ilse counts them.", "effects": {"resources": {"coffers": -3, "town": 5}, "relationships": {"ilse": 2}, "flags_set": ["met_dace"]}},
+     "right": {"label": "Fix the gate first", "outcome": "\"Right. That's one of three.\"", "effects": {"resources": {"coffers": -4}, "flags_set": ["met_dace", "gates_repaired"], "counters": {"repairs_deferred": -1}}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_20", "category": "onboarding", "speaker": "src_weather", "text": "Rain all night. The pound is up a mark by morning and Ilse's cellar has an inch in it. She has sent a boy to say so.",
+     "left": {"label": "Run the east paddles", "outcome": "Water goes down the flight. Boats wait while it does.", "effects": {"resources": {"water": -4, "traffic": -2, "town": 3}}},
+     "right": {"label": "An inch is an inch", "outcome": "The boy goes back with nothing in his hands.", "effects": {"resources": {"town": -3}, "counters": {"flood_ignored": 1}}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:water", "tutorial"]},
+
+    {"id": "onb_21", "category": "onboarding", "speaker": "pell", "expression": "beaming", "text": "A target, Keeper! Every magnificent enterprise needs one. Forty vessels a week through the top gate. The Meridian spirit demands no less.",
+     "left": {"label": "Forty it is", "outcome": "He shakes your hand as if you had already done it.", "effects": {"resources": {"company": 4}, "relationships": {"pell": 5}, "flags_set": ["promised_pell"]}},
+     "right": {"label": "Thirty, and safely", "outcome": "\"Thirty. Well. A beginning.\"", "effects": {"resources": {"company": -2}, "relationships": {"pell": -3, "crane": 2}}},
+     "conditions": {"flags_all": ["met_pell"], "watch": {"max": 12}}, "weight": 5, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_22", "category": "onboarding", "speaker": "src_gate", "text": "A Sorrel coal barge and an Aldmere grain boat arrive at the same bell. Both bargees are already shouting. The chamber holds one.",
+     "left": {"label": "Grain first", "outcome": "Aldmere law says food before fuel. So does the grain boat.", "effects": {"factions": {"aldmere": 4, "sorrel": -4}, "relationships": {"crane": 2, "vane": -2}}},
+     "right": {"label": "Coal first", "outcome": "Sorrel's man tips his cap. Aldmere's writes something down.", "effects": {"factions": {"sorrel": 4, "aldmere": -4}, "relationships": {"vane": 2, "crane": -2}}},
+     "conditions": {"watch": {"max": 12}}, "weight": 5, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_23", "category": "onboarding", "speaker": "ilse", "expression": "wry", "text": "The Company store sells beer at Company prices in Company scrip. Mine costs coin and tastes of something. Where does the Keeper drink?",
+     "left": {"label": "The Wheel and Windlass", "outcome": "\"Then you'll hear things. Some of them true.\"", "effects": {"resources": {"town": 4, "company": -2}, "relationships": {"ilse": 4}}},
+     "right": {"label": "The Company store", "outcome": "\"Suit yourself. The scrip's no good here.\"", "effects": {"resources": {"company": 3, "town": -3}, "relationships": {"ilse": -3}}},
+     "conditions": {"flags_all": ["met_ilse"], "watch": {"max": 12}}, "weight": 5, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_24", "category": "onboarding", "speaker": "src_telegram", "text": "ALDMERE GUILDS TO KEEPER STOP GRAIN CONVOY NINE VESSELS ARRIVES TOMORROW STOP ANY DELAY WILL BE REPORTED UNDER THE COMPACT STOP",
+     "left": {"label": "Clear the pound for them", "outcome": "Other boats are asked, then told, to wait.", "effects": {"resources": {"traffic": -3}, "factions": {"aldmere": 5, "sorrel": -3}}},
+     "right": {"label": "They queue like anyone", "outcome": "Crane reads the wire twice and says nothing, loudly.", "effects": {"resources": {"traffic": 2}, "factions": {"aldmere": -4}, "relationships": {"crane": -2}}},
+     "conditions": {"watch": {"max": 12}}, "weight": 4, "sound": "sfx_telegram", "tags": ["res:company", "tutorial"]},
+
+    {"id": "onb_25", "category": "onboarding", "speaker": "mirren", "expression": "guarded", "text": "Did you open the study? You have the house. Nobody would say anything if you did.",
+     "left": {"label": "It is locked, and I left it", "outcome": "\"Good.\" Then, quieter: \"For now.\"", "effects": {"relationships": {"mirren": 5}}},
+     "right": {"label": "I mean to", "outcome": "She looks at the door, then at you, then at the paddles.", "effects": {"relationships": {"mirren": -2}, "counters": {"evidence": 1}}},
+     "conditions": {"flags_all": ["met_mirren"], "watch": {"min": 4, "max": 14}}, "weight": 4, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_26", "category": "onboarding", "speaker": "stroud", "text": "Aurelie Stroud, physician. Dray kept every watch himself for a year. I have seen what that does. Sleep when the bell allows, or I will be seeing you.",
+     "left": {"label": "Let Dace take a watch", "outcome": "You sleep. The gate does not fall down.", "effects": {"resources": {"coffers": -2}, "counters": {"fatigue": -2}, "flags_set": ["met_stroud"]}},
+     "right": {"label": "The gate needs a Keeper", "outcome": "\"So did he.\"", "effects": {"resources": {"company": 2}, "counters": {"fatigue": 2}, "flags_set": ["met_stroud"]}},
+     "conditions": {"watch": {"max": 14}}, "weight": 4, "tags": ["res:town", "tutorial"]},
+
+    {"id": "onb_27", "category": "onboarding", "speaker": "vosk", "text": "Watch six. Toll receipts exceed the book by two marks. Either a bargee overpaid, or something irregular. Which would you like it to be?",
+     "left": {"label": "An overpayment; return it", "outcome": "\"Noted. And the bargee's name?\" You do not have it.", "effects": {"resources": {"coffers": -2}, "relationships": {"vosk": 5}}},
+     "right": {"label": "Into the repair fund", "outcome": "\"For the record, that is not a fund.\"", "effects": {"resources": {"coffers": 2}, "relationships": {"vosk": -4}, "counters": {"suspicion": 1}}},
+     "conditions": {"flags_all": ["met_vosk"], "watch": {"min": 5, "max": 14}}, "weight": 4, "tags": ["res:coffers", "tutorial"]},
+
+    {"id": "onb_28", "category": "onboarding", "speaker": "src_weather", "text": "A dry week. The Cald Tarn aqueduct is a trickle you could step over. The pound, fed by it, is down only a mark. Somebody should find that strange.",
+     "left": {"label": "Ask Quenn about it", "outcome": "\"Sorry. Yes. It doesn't close. It never quite closes.\"", "effects": {"relationships": {"quenn": 3}, "flags_set": ["clue_dry_aqueduct"], "counters": {"evidence": 1}}},
+     "right": {"label": "Be glad of it", "outcome": "The boats float. That is the Keeper's business.", "effects": {"resources": {"company": 1}, "counters": {"fatigue": -1}}},
+     "conditions": {"watch": {"min": 5, "max": 14}}, "weight": 4, "tags": ["res:water", "tutorial", "clue"]},
+
+    {"id": "onb_29", "category": "onboarding", "speaker": "src_gate", "text": "A late boat, lamps out, asks passage after the last bell. The bargee is tired, he says. Dace, at the paddles, is looking at you.",
+     "left": {"label": "Light your lamps and wait", "outcome": "He waits. He is not pleased. Dace is.", "effects": {"resources": {"traffic": -2, "town": 2}, "counters": {"refusals": 1}}},
+     "right": {"label": "Pass him through", "outcome": "The chamber fills in the dark. Something shifts in his hold.", "effects": {"resources": {"traffic": 3, "company": -1}, "counters": {"passages_night": 1}}},
+     "conditions": {"watch": {"min": 5, "max": 14}}, "weight": 4, "tags": ["res:traffic", "tutorial"]},
+
+    {"id": "onb_30", "category": "onboarding", "speaker": "src_ledger", "text": "Eight watches. The book is in your hand now, and the town knows your face. You could write the first honest line about what kind of Keeper this will be.",
+     "left": {"label": "The Company's, first", "outcome": "The line dries. It can be crossed out later, in theory.", "effects": {"resources": {"company": 3}, "factions": {"company": 4}, "flags_set": ["tutorial_done"]}},
+     "right": {"label": "The gate's, first", "outcome": "The Company does not read the Ledger. Yet.", "effects": {"resources": {"town": 3}, "factions": {"town": 3}, "flags_set": ["tutorial_done"]}},
+     "conditions": {"watch": {"min": 7, "max": 16}}, "weight": 8, "tags": ["res:company", "tutorial"]}
+  ]
+}

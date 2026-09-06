@@ -1,0 +1,107 @@
+key,text
+ui.title,HALFWAY LOCK
+ui.subtitle,Keeper of the Meridian Canal
+ui.continue,Continue
+ui.new_run,New Keeper
+ui.save_slots,Save Slots
+ui.archive,Ledger Archive
+ui.gallery,Characters
+ui.endings,Ending History
+ui.settings,Settings
+ui.credits,Credits
+ui.keepers,Keepers
+ui.cards_seen,Cards seen
+ui.placeholder_notice,Development build: portraits and audio are labeled placeholders.
+ui.paused,Paused
+ui.pause,Pause
+ui.resume,Resume
+ui.history,History
+ui.objectives,Objectives
+ui.abandon,Abandon Keeper
+ui.to_title,Title Screen
+ui.back,Back
+ui.settings_access,Accessibility
+ui.settings_audio,Audio
+ui.text_size,Text size
+ui.high_contrast,High contrast
+ui.reduced_motion,Reduced motion
+ui.screen_shake,Screen shake
+ui.show_buttons,Show decision buttons
+ui.confirm_decisions,Confirm decisions
+ui.exact_effects,Show exact effects
+ui.subtitles,Subtitles for audio cues
+ui.music,Music
+ui.sfx,Sound
+ui.reset_settings,Reset settings
+ui.history_empty,No decisions yet this watch.
+ui.watch,Watch
+ui.keeper,Keeper
+ui.watches_kept,watches kept:
+ui.active_threads,Open threads
+ui.undiscovered,Not yet met
+ui.regard,Regard
+ui.rel.trusted,trusted
+ui.rel.warm,warm
+ui.rel.civil,civil
+ui.rel.cold,cold
+ui.rel.hostile,hostile
+ui.archive_intro,"What the Keepers of Halfway have written down, and passed on."
+ui.archive_empty,The Ledger is blank. Watch the water.
+ui.empty_slot,Empty
+ui.in_progress,in progress
+ui.between_runs,between runs
+ui.slot,Slot
+ui.delete,Delete
+ui.content_warning,Before you begin
+ui.content_warning_text,"Halfway Lock is a story about a canal, a town and the people who depend on both. It includes death and drowning described in text, displacement of a community, alcohol, and institutions behaving badly. Nothing is depicted graphically. Suitable for ages 13 and up."
+ui.controls_text,"Drag the card left or right, press the buttons beneath it, or use A/D or the arrow keys. Escape pauses. F1 opens developer tools."
+ui.understood,Understood
+ui.next_keeper,The next Keeper
+ui.ledger_records,The Ledger now records:
+ui.unlock_notice,The Ledger records: 
+ui.confirm_hint,Choose again to confirm: 
+ui.fallback_notice,A quiet watch.
+ui.res.water,Water
+ui.res.traffic,Traffic
+ui.res.coffers,Coffers
+ui.res.company,Company
+ui.res.town,Town
+ui.res_desc.water,Level of the Summit Pound. Too low grounds the boats; too high breaches the bank.
+ui.res_desc.traffic,Flow of vessels. Too low jams the canal; too high invites collision.
+ui.res_desc.coffers,The lock's account. Empty means foreclosure; a suspicious surplus means an audit.
+ui.res_desc.company,The Company's confidence. None means dismissal; total means becoming its face.
+ui.res_desc.town,Halfway's regard. None and you are run out; all and the town rises in your name.
+ui.audio.telegram,[telegraph clicks]
+ui.audio.warning,[warning bell]
+ui.audio.death,[iron strike and rushing water]
+ui.audio.unlock,[fiddle harmonic; a page turns]
+ui.audio.crisis_music,[urgent harmonium pulse]
+ui.unlock.unlock_drays_key,Dray's brass key stamped S.H.
+ui.unlock.unlock_quenn_survey,Marrow's Year 6 survey: the reservoirs were never enough
+ui.unlock.unlock_lowmere_song,The Lowmere Song: the river that went into the hill
+ui.unlock.unlock_marrow_letters,Marrow's letters to the chapel
+ui.unlock.unlock_cut_map,A map of the Marrow Cut
+ui.unlock.unlock_vosk_file,Vosk's Year 31 file
+ui.unlock.unlock_dray_fate,What became of Ansel Dray
+ui.unlock.unlock_quenn_courage,Quenn's courage
+ui.unlock.unlock_true_river,The River Returned
+ui.unlock.unlock_true_ledger,The Open Ledger
+ui.unlock.unlock_true_cut,The Keeper's Cut
+ui.lore.lore_dry_summit,The pound can fall below the sills. The Company blames the Keeper.
+ui.lore.lore_breach,The east embankment fails when the pound runs high for too long.
+ui.lore.lore_drought_report,Publishing the reservoir figures alone changes nothing. The Company calls it drought.
+ui.lore.lore_vosk_removed,Removing Vosk brings a new auditor asking the same questions.
+ui.lore.lore_clearance,When the Hullfolk leave the summit the Song leaves with them.
+ui.lore.lore_dray_fate,Ansel Dray went into the Cut behind the sluice house and did not come out.
+ui.lore.lore_survey,Marrow's survey shows the reservoirs would dry the pound every third summer.
+ui.lore.lore_song,The Song names the River Quell going into the hill.
+ui.lore.lore_letters,Marrow wrote to the chapel of the water she had given.
+ui.lore.lore_vosk_file,The Company has known since the Dry Year.
+ui.lore.lore_cut_map,Dray's ledger is a map of the Cut keyed to the sill gauge.
+ui.lore.lore_crane_counts,Crane's six years of water counts match the engineer's.
+ui.lore.lore_night_dredgers,Dry Year crews came at night to dredge a reservoir with no dredgers.
+ui.lore.lore_outfall,The Cut's outfall is on the north bank below the sluice house.
+ui.lore.lore_vosk_confession,Vosk keeps the secret because she believes the truth ends the canal.
+ui.lore.lore_river_returned,The Quell can be sent home. The canal becomes a seasonal road.
+ui.lore.lore_open_ledger,Under the Compact the truth can be filed on both shores at once.
+ui.lore.lore_keepers_cut,Marrow's regulating sluice can be finished. Nobody need know.

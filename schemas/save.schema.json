@@ -49,6 +49,7 @@
         "subdecks": { "type": "array", "items": { "type": "object", "required": ["id", "cards"], "properties": { "id": { "type": "string" }, "cards": { "type": "array", "items": { "type": "string" } }, "interleave": { "type": "integer" }, "since": { "type": "integer" } } } },
         "rng_state": { "type": "integer" },
         "current_card": { "type": ["string", "null"] },
+        "pending_ending": { "type": "string" },
         "fallback_count": { "type": "integer" },
         "ended": { "type": ["string", "null"] }
       }
