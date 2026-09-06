@@ -1,0 +1,3102 @@
+{
+ "cards": [
+  {
+   "id": "mi22_1",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "expression": "amused",
+   "arc": {
+    "id": "mi22",
+    "stage": 1
+   },
+   "text": "Crane and I have a bet. A month's wages each. He says the pound will be lower at the solstice than today, rain or no rain. I say water goes up when it rains. You hold the stakes. You're the only one who won't take a cut.",
+   "left": {
+    "label": "Hold the stakes",
+    "outcome": "Two months' wages in the Keeper's drawer. Crane writes a receipt. Vane writes a rude one.",
+    "effects": {
+     "relationships": {
+      "vane": 3,
+      "crane": 3
+     },
+     "flags_set": [
+      "wager_on"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ilse holds them",
+    "outcome": "Ilse holds them and charges both for the privilege. Crane pays. Vane argues, then pays.",
+    "effects": {
+     "relationships": {
+      "vane": 1,
+      "crane": 1,
+      "ilse": 2
+     },
+     "flags_set": [
+      "wager_on"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_vane"
+    ],
+    "flags_none": [
+     "wager_on"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:water",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi22_2",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "arc": {
+    "id": "mi22",
+    "stage": 2
+   },
+   "text": "I have taken a wager. I have never taken a wager. The Compact does not forbid it, which I checked twice. I shall win, because I have six years of gauge readings and the Sorrel agent has an opinion. I have never wanted to win anything before.",
+   "left": {
+    "label": "Show me the readings",
+    "outcome": "Six years, to the sixteenth of a mark, in a black book. The pound falls a mark a watch, always, whatever the rain.",
+    "effects": {
+     "relationships": {
+      "crane": 5
+     },
+     "flags_set": [
+      "clue_crane_counts"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Enjoy wanting to win",
+    "outcome": "\"Enjoy. Duly. I shall try. I am not built for it.\"",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "wager_on"
+    ],
+    "arc_stage": {
+     "mi22": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi22_3",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "arc": {
+    "id": "mi22",
+    "stage": 3
+   },
+   "text": "Crane's wager. He'll win. Sorry, but he will, because the pound doesn't do what rain does. I've a year of readings that say so and he's six, and we've never compared them, because he's Aldmere and I'm Company. Should we?",
+   "left": {
+    "label": "Compare them",
+    "outcome": "Four hours at the inn with two black books. They match to the sixteenth. Crane says 'duly'. Quenn says 'sorry'. Both mean 'so it is true'.",
+    "effects": {
+     "relationships": {
+      "quenn": 5,
+      "crane": 5
+     },
+     "flags_set": [
+      "clue_crane_counts",
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Company and Aldmere keep their own books",
+    "outcome": "\"Right. Roughly. Yes.\" She keeps hers. He keeps his. They say the same thing to nobody.",
+    "effects": {
+     "relationships": {
+      "quenn": -1
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "wager_on",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "mi22": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi22_4",
+   "category": "minor_arcs",
+   "speaker": "vane",
+   "arc": {
+    "id": "mi22",
+    "stage": 4
+   },
+   "text": "It's rained for a week. The pound's up a finger. A finger. I've watched water my whole life; I move coal on it. A week of rain should be a mark. I'm going to lose this bet and I don't understand why.",
+   "left": {
+    "label": "The pound isn't fed by rain",
+    "outcome": "\"Then what feeds it?\" You do not say. She writes something down for the first time in your presence.",
+    "effects": {
+     "relationships": {
+      "vane": 4
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 1,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Water is strange up here",
+    "outcome": "\"Strange. Right. Fine. I'll pay. I'll want to know why, later.\"",
+    "effects": {
+     "relationships": {
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "wager_on",
+     "met_vane"
+    ],
+    "arc_stage": {
+     "mi22": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi22_5",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "arc": {
+    "id": "mi22",
+    "stage": 5
+   },
+   "text": "Solstice. The pound is a mark and a half lower than the day of the wager. I have won. The Sorrel agent has paid with a bow. I do not want the money. I want to know why I was right. I have wanted that for six years.",
+   "left": {
+    "label": "Tell him why",
+    "outcome": "You tell him what you know. He listens without moving. At the end: \"Then the Compact was signed over a lie. Duly. I shall need to think.\"",
+    "effects": {
+     "relationships": {
+      "crane": 8
+     },
+     "flags_set": [
+      "crane_recruited"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Give the winnings to the poor box",
+    "outcome": "He gives them. Hale blesses the coin. Vane, hearing, gives the same again out of spite.",
+    "effects": {
+     "relationships": {
+      "crane": 4,
+      "hale": 2,
+      "vane": 1
+     },
+     "resources": {
+      "town": 3
+     },
+     "factions": {
+      "concordance": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "wager_on",
+     "met_crane"
+    ],
+    "arc_stage": {
+     "mi22": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "mi22_6",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi22",
+    "stage": 6
+   },
+   "text": "The wager is settled and two people who have never agreed on anything now agree on one number: a mark a watch, rain or none. In the Ledger you write the number. Beneath it, in Dray's hand, the same number, and a question mark.",
+   "left": {
+    "label": "Write the answer under the question mark",
+    "outcome": "'The Cut.' Two words, under a question thirty years old.",
+    "effects": {
+     "counters": {
+      "evidence": 2
+     },
+     "flags_set": [
+      "noticed_water_fall"
+     ],
+     "arc": {
+      "mi22": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Leave the question mark",
+    "outcome": "The question mark stays. Someone else can answer it. You have the number.",
+    "effects": {
+     "counters": {
+      "evidence": 1,
+      "fatigue": -1
+     },
+     "flags_clear": [
+      "wager_on"
+     ],
+     "arc": {
+      "mi22": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "wager_on"
+    ],
+    "arc_stage": {
+     "mi22": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi23_1",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "arc": {
+    "id": "mi23",
+    "stage": 1
+   },
+   "text": "Three things. A windlass is gone from the lock house. The good one, Dray's. The hands say Hullfolk, because the hands always say Hullfolk. And Mirren says if anyone says Hullfolk again she'll put them in the pound, and she means it.",
+   "left": {
+    "label": "Search the lock house first",
+    "outcome": "You search. Nothing. The hands look at the Reach. Mirren looks at the hands.",
+    "effects": {
+     "flags_set": [
+      "windlass_missing"
+     ],
+     "relationships": {
+      "mirren": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Ask at the Reach",
+    "outcome": "You ask. Bram says 'we do not take windlasses'. Forty faces say the same. Mirren does not speak to you for a day.",
+    "effects": {
+     "flags_set": [
+      "windlass_missing",
+      "windlass_blamed_hullfolk"
+     ],
+     "relationships": {
+      "mirren": -4,
+      "bram": -3
+     },
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren",
+     "met_bram",
+     "met_dace"
+    ],
+    "flags_none": [
+     "windlass_missing"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi23_2",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "arc": {
+    "id": "mi23",
+    "stage": 2
+   },
+   "text": "It was his. The windlass. He made the handle himself, from the old gate beam. I've worked every paddle at this lock with it. Whoever took it didn't take a windlass, they took him, again. I'm not asking you to find it. I'm telling you I'm going to.",
+   "left": {
+    "label": "Find it together",
+    "outcome": "You and Mirren search the summit for a week. You find three other things nobody knew were missing. Not the windlass.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Let her look; keep the gate",
+    "outcome": "She looks. She does not come to the paddles for two days. Dace covers. He does not complain.",
+    "effects": {
+     "relationships": {
+      "mirren": 2,
+      "dace": 2
+     },
+     "resources": {
+      "traffic": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "windlass_missing"
+    ],
+    "arc_stage": {
+     "mi23": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi23_3",
+   "category": "minor_arcs",
+   "speaker": "bram",
+   "expression": "stern",
+   "arc": {
+    "id": "mi23",
+    "stage": 3
+   },
+   "text": "The town says the Reach took the dead Keeper's windlass. We did not. We have never taken iron from the gate; we remember what happened in Year 44 to a boy who took a rope. We ask the gate to say so where the town can hear.",
+   "left": {
+    "label": "Say so, at the inn",
+    "outcome": "You say at the inn that the Reach did not take it. The town does not believe you. It stops saying so aloud, which is a start.",
+    "effects": {
+     "relationships": {
+      "bram": 6,
+      "ilse": -1
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "resources": {
+      "town": -1
+     },
+     "flags_clear": [
+      "windlass_blamed_hullfolk"
+     ]
+    }
+   },
+   "right": {
+    "label": "I don't know who took it",
+    "outcome": "\"No. But you know who did not. We ask you to say that much.\" You do not, yet.",
+    "effects": {
+     "relationships": {
+      "bram": -2
+     },
+     "factions": {
+      "hullfolk": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "windlass_missing",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "mi23": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi23_4",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi23",
+    "stage": 4
+   },
+   "text": "The windlass. Perrin's boy had it. Took it to sell for his father's rent, lost his nerve at Lock 7, hid it in Tobin's woodpile. Tobin brought it to me, because Tobin's town. It's under my bar. What do I do with a boy?",
+   "left": {
+    "label": "Nothing; give the windlass back",
+    "outcome": "The windlass goes back on its hook. Perrin's boy is never named. Mirren knows anyway and says nothing.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 4,
+      "mirren": 4
+     },
+     "flags_clear": [
+      "windlass_missing"
+     ]
+    }
+   },
+   "right": {
+    "label": "The boy apologizes to Mirren",
+    "outcome": "He does, shaking. Mirren listens. She says 'right' and gives him a windlass of his own to carry. He carries it for years.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "ilse": 3,
+      "mirren": 6
+     },
+     "flags_clear": [
+      "windlass_missing"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "windlass_missing",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi23": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi23_5",
+   "category": "minor_arcs",
+   "speaker": "wren",
+   "expression": "serious",
+   "arc": {
+    "id": "mi23",
+    "stage": 5
+   },
+   "text": "So it was a town boy. The town said us for a fortnight and now nobody's going to say sorry to the Reach, because nobody ever does. I'm not asking for sorry. Will you say, at the gate, who it wasn't?",
+   "left": {
+    "label": "Say it at the gate",
+    "outcome": "You say it to the queue, the hands, the town. 'It was not the Reach.' Bram, on his bollard, does not look up. He heard.",
+    "effects": {
+     "relationships": {
+      "wren": 5,
+      "bram": 5
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "resources": {
+      "town": -1
+     },
+     "flags_clear": [
+      "windlass_blamed_hullfolk"
+     ]
+    }
+   },
+   "right": {
+    "label": "It's settled; let it lie",
+    "outcome": "\"Settled. Right. It's always settled, for you lot.\"",
+    "effects": {
+     "relationships": {
+      "wren": -3
+     },
+     "factions": {
+      "hullfolk": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "arc_stage": {
+     "mi23": {
+      "min": 4
+     }
+    },
+    "flags_none": [
+     "windlass_missing"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi23_6",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "expression": "hopeful",
+   "arc": {
+    "id": "mi23",
+    "stage": 6
+   },
+   "text": "It's back on the hook. His windlass. I've worked the paddles with it all day and it's the same and it isn't. I've decided something. I'm going to teach Perrin's boy the paddles. With it. Someone should learn them from someone who learned them from him.",
+   "left": {
+    "label": "Teach him",
+    "outcome": "She teaches him. He is hopeless, then less so. She uses her father's words without noticing.",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "resources": {
+      "town": 3
+     },
+     "flags_clear": [
+      "hands_short"
+     ],
+     "arc": {
+      "mi23": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Teach me first",
+    "outcome": "\"You? Right.\" She teaches you. You are worse than the boy. She almost laughs.",
+    "effects": {
+     "relationships": {
+      "mirren": 6
+     },
+     "counters": {
+      "fatigue": 1
+     },
+     "arc": {
+      "mi23": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "mi23": {
+      "min": 5
+     }
+    },
+    "flags_none": [
+     "windlass_missing"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi24_1",
+   "category": "minor_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "mi24",
+    "stage": 1
+   },
+   "text": "A boat at the gate after the last bell with no lamps, no name, and a man at the tiller who says 'the Captain sent us' and nothing else. Solas, you assume. The man does not confirm it. Dace is at the paddles, waiting.",
+   "left": {
+    "label": "Pass it, dark",
+    "outcome": "It goes through in the dark. Something in its hold shifts with a sound like iron.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "company": -1
+     },
+     "flags_set": [
+      "night_passages"
+     ],
+     "counters": {
+      "passages_night": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Lamps and a name, or wait for dawn",
+    "outcome": "It waits for dawn. At dawn it is gone, back down the west flight. Solas, asked, says 'not mine'.",
+    "effects": {
+     "resources": {
+      "traffic": -1
+     },
+     "relationships": {
+      "solas": 2,
+      "dace": 2
+     },
+     "counters": {
+      "refusals": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "flags_none": [
+     "night_passages"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi24_2",
+   "category": "minor_arcs",
+   "speaker": "solas",
+   "expression": "weary",
+   "arc": {
+    "id": "mi24",
+    "stage": 2
+   },
+   "text": "A boat came through at night saying I sent it. I didn't. Someone's using my name at your gate. That's a compliment or the start of something I'll be blamed for. Tell me the next time it happens, before you open.",
+   "left": {
+    "label": "I'll tell you first",
+    "outcome": "\"Good.\" He waits at the gate three nights. On the third, a dark boat. He goes aboard alone. It leaves, fast, west.",
+    "effects": {
+     "relationships": {
+      "solas": 6
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I'll stop night boats entirely",
+    "outcome": "\"That's cleaner. It won't stop them. It'll move them to the reeds.\" It does.",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     },
+     "flags_clear": [
+      "night_passages"
+     ],
+     "flags_set": [
+      "reeds_cargo"
+     ],
+     "resources": {
+      "traffic": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "arc_stage": {
+     "mi24": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi24_3",
+   "category": "minor_arcs",
+   "speaker": "src_gate",
+   "arc": {
+    "id": "mi24",
+    "stage": 3
+   },
+   "text": "Another dark boat. This one has a lamp: one, lit, then covered as it nears the gate. The man at the tiller says nothing at all. In the bow, under a tarpaulin, something long. Solas is not at the gate. Nobody is, but you and Dace.",
+   "left": {
+    "label": "Lift the tarpaulin",
+    "outcome": "Rifles, oiled, in fours. The man at the tiller does not move. He is waiting to see what you do.",
+    "effects": {
+     "flags_set": [
+      "rifles_known",
+      "reeds_cargo"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     },
+     "resources": {
+      "traffic": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Open the gate; ask nothing",
+    "outcome": "It passes. The man at the tiller nods once. Dace does not look at you.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "night_passages",
+      "sorrel_armed"
+     ],
+     "counters": {
+      "passages_night": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi24": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi24_4",
+   "category": "minor_arcs",
+   "speaker": "crane",
+   "expression": "alarmed",
+   "arc": {
+    "id": "mi24",
+    "stage": 4
+   },
+   "text": "The night watch at my post has recorded four unlit vessels through the summit this month. I was asleep for all four. An inspector who sleeps is one the Compact did not anticipate. I am moving my bed to the post.",
+   "left": {
+    "label": "Don't; I'll wake you",
+    "outcome": "You wake him for the next dark boat. He arrives in a nightshirt with his statute book. The boat turns back at the sight.",
+    "effects": {
+     "relationships": {
+      "crane": 6
+     },
+     "resources": {
+      "traffic": -1
+     },
+     "flags_clear": [
+      "night_passages"
+     ]
+    }
+   },
+   "right": {
+    "label": "Move your bed; it's your post",
+    "outcome": "He moves it. He sleeps badly and inspects well. The dark boats find the reeds.",
+    "effects": {
+     "relationships": {
+      "crane": 3
+     },
+     "flags_set": [
+      "reeds_cargo"
+     ],
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "arc_stage": {
+     "mi24": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi24_5",
+   "category": "minor_arcs",
+   "speaker": "solas",
+   "expression": "hard",
+   "arc": {
+    "id": "mi24",
+    "stage": 5
+   },
+   "text": "I've found who's using my name. My own sergeant, paid by men above me to run boats through a gate I'm supposed to be watching. I've put him on a boat west. I've no authority to. I did it anyway. It's said once, to someone.",
+   "left": {
+    "label": "It's said",
+    "outcome": "\"Good.\" He sits on Bram's bollard that night. Bram lets him have it for an hour.",
+    "effects": {
+     "relationships": {
+      "solas": 8
+     },
+     "flags_set": [
+      "solas_refused_order",
+      "coup_warned"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Report the sergeant to Sorrel yourself",
+    "outcome": "You write to Sorrel. Sorrel does nothing. The sergeant is back in a month, at Lock 4, with a promotion.",
+    "effects": {
+     "relationships": {
+      "solas": 3
+     },
+     "factions": {
+      "sorrel": -3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ],
+    "arc_stage": {
+     "mi24": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi24_6",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi24",
+    "stage": 6
+   },
+   "text": "No dark boats this month. Solas at the gate most nights, unasked, his good arm on the beam. Crane's bed at his post. Dace's lamp on the sill. Whatever came through at night has found another way. You write 'the gate is lit'.",
+   "left": {
+    "label": "Keep it lit",
+    "outcome": "A lamp on the sill every night, at the Coffers' cost. It is the cheapest thing you have bought.",
+    "effects": {
+     "resources": {
+      "coffers": -1,
+      "company": 1
+     },
+     "relationships": {
+      "solas": 3,
+      "crane": 2
+     },
+     "flags_clear": [
+      "night_passages"
+     ],
+     "arc": {
+      "mi24": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Let the dark come back; watch it",
+    "outcome": "You let the lamp go out. The boats come back. This time you know what to look for.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "flags_set": [
+      "night_passages",
+      "reeds_cargo"
+     ],
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi24": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi24": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "mi25_1",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "expression": "worried",
+   "arc": {
+    "id": "mi25",
+    "stage": 1
+   },
+   "text": "The budget. There's one and it's small and Pell wants it for bunting and I want it for the lower gate's heel post, which is rotten, which I've said in three reports nobody's read. I know which one the Board can see from Ardent.",
+   "left": {
+    "label": "Heel post",
+    "outcome": "\"Thank you. Sorry. Thank you.\" Pell is wounded for a week. The gate does not fall down.",
+    "effects": {
+     "resources": {
+      "coffers": -5
+     },
+     "relationships": {
+      "quenn": 6,
+      "pell": -3
+     },
+     "flags_set": [
+      "budget_repairs",
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "right": {
+    "label": "Bunting",
+    "outcome": "\"Bunting. Right. I'll patch the post. Roughly.\" She patches it. It weeps.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "quenn": -4,
+      "pell": 4
+     },
+     "flags_set": [
+      "gates_leaking"
+     ],
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_pell"
+    ],
+    "flags_none": [
+     "budget_repairs"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi25_2",
+   "category": "minor_arcs",
+   "speaker": "pell",
+   "expression": "wounded",
+   "arc": {
+    "id": "mi25",
+    "stage": 2
+   },
+   "text": "Quenn has told you about heel posts. I am sure heel posts are important. I am also sure the Board has never once written to me about a heel post and has written four times about bunting. I do not make the Board. I read its letters.",
+   "left": {
+    "label": "Ask the Board for a heel post budget",
+    "outcome": "You write to Ardent about a heel post. Ardent replies, astonished, with money. Pell frames the reply.",
+    "effects": {
+     "resources": {
+      "coffers": 4,
+      "company": -1
+     },
+     "relationships": {
+      "pell": 3,
+      "quenn": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Bunting next year; posts this",
+    "outcome": "\"Next year. Yes. There is always next year, until there is not.\"",
+    "effects": {
+     "relationships": {
+      "pell": -1,
+      "quenn": 2
+     },
+     "resources": {
+      "coffers": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "arc_stage": {
+     "mi25": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi25_3",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "arc": {
+    "id": "mi25",
+    "stage": 3
+   },
+   "text": "I've found money. Not the budget; older. A maintenance fund from Year 31, never drawn, in Vosk's ledger, for 'north bank works'. Forty marks. Sitting there. Vosk says it's 'reserved'. For what? Nothing's been done on the north bank since Year 31. Officially.",
+   "left": {
+    "label": "Ask Vosk to release it",
+    "outcome": "\"Noted. No.\" A pause. \"For the record, it is for the day the north bank needs it. You will find that day is coming.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 1,
+      "quenn": 3
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Leave it reserved",
+    "outcome": "\"Reserved. Right.\" Quenn looks at the north bank a long time.",
+    "effects": {
+     "relationships": {
+      "quenn": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi25": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi25_4",
+   "category": "minor_arcs",
+   "speaker": "tamm",
+   "arc": {
+    "id": "mi25",
+    "stage": 4
+   },
+   "text": "Quenn wants a heel post and I've got the oak, seasoned, the best I've had. I'll cut it for the Company's price. Or the town's price, which is half, if the town gets to say it gave the Keeper a gate. It'll hold either way.",
+   "left": {
+    "label": "The town's price; the town's gate",
+    "outcome": "The town gives the Keeper a heel post. There is a small ceremony. Pell attends, magnificently uncertain.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "town": 5,
+      "company": -1
+     },
+     "relationships": {
+      "tamm": 5,
+      "quenn": 3
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "right": {
+    "label": "The Company's price; the Company's gate",
+    "outcome": "Company oak, Company gate. It holds. Nobody says anything about it.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "company": 2
+     },
+     "relationships": {
+      "tamm": 2,
+      "quenn": 3
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "mi25": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi25_5",
+   "category": "minor_arcs",
+   "speaker": "pell",
+   "expression": "beaming",
+   "arc": {
+    "id": "mi25",
+    "stage": 5
+   },
+   "text": "Keeper! The heel post! I stood on it. It did not move. I have stood under bunting my whole career and I now see that bunting does not hold a gate. I shall write to the Board about heel posts. They will not understand.",
+   "left": {
+    "label": "Write it",
+    "outcome": "Nine pages on heel posts. Ardent files it under 'bunting'. Quenn keeps a copy.",
+    "effects": {
+     "relationships": {
+      "pell": 5,
+      "quenn": 3
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Stand on it again",
+    "outcome": "He stands on it again. Then Quenn does. Then Dace. It becomes a thing the summit does.",
+    "effects": {
+     "relationships": {
+      "pell": 4,
+      "quenn": 2,
+      "dace": 2
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "gates_repaired",
+     "met_pell"
+    ],
+    "arc_stage": {
+     "mi25": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi25_6",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "arc": {
+    "id": "mi25",
+    "stage": 6
+   },
+   "text": "The gate's sound. Both gates. First time since I came. I've written it in my report and I've written it without 'sorry' and I've written it without 'roughly'. I'd like you to read it. It's one line. It took six years.",
+   "left": {
+    "label": "Read it",
+    "outcome": "'The summit gates are sound. T. Quenn, Engineer.' You read it twice. She watches you read it.",
+    "effects": {
+     "relationships": {
+      "quenn": 8
+     },
+     "flags_set": [
+      "quenn_brave"
+     ],
+     "counters": {
+      "repairs_deferred": -2
+     },
+     "arc": {
+      "mi25": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Send it to Ardent",
+    "outcome": "Ardent receives a one-line report and does not know what to do with it. It is the first honest line from the summit in years.",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "resources": {
+      "company": 2
+     },
+     "flags_set": [
+      "quenn_brave"
+     ],
+     "arc": {
+      "mi25": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "gates_repaired",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "mi25": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi26_1",
+   "category": "minor_arcs",
+   "speaker": "petronel",
+   "expression": "neutral",
+   "arc": {
+    "id": "mi26",
+    "stage": 1
+   },
+   "text": "They have taken my fiddle. The charter men. For mooring fees. It has one string and no value and it is the only thing I own that came from the valley. I do not ask. Wren asks. I am telling the gate what was taken and from whom.",
+   "left": {
+    "label": "Return the fiddle; waive the fee",
+    "outcome": "The fiddle goes back to the Reach. The fee is written off. Vosk, later: 'a fiddle. Noted.'",
+    "effects": {
+     "resources": {
+      "coffers": -1,
+      "company": -1
+     },
+     "relationships": {
+      "petronel": 8,
+      "wren": 3
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "flags_set": [
+      "fiddle_returned",
+      "met_petronel"
+     ]
+    }
+   },
+   "right": {
+    "label": "The fee stands; the fiddle waits",
+    "outcome": "The fiddle sits in the toll office. She does not sing for a month. The Reach is very quiet.",
+    "effects": {
+     "resources": {
+      "coffers": 1
+     },
+     "relationships": {
+      "petronel": -5
+     },
+     "factions": {
+      "hullfolk": -4
+     },
+     "flags_set": [
+      "fiddle_impounded",
+      "met_petronel"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren"
+    ],
+    "flags_none": [
+     "fiddle_impounded",
+     "fiddle_returned"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi26_2",
+   "category": "minor_arcs",
+   "speaker": "wren",
+   "expression": "serious",
+   "arc": {
+    "id": "mi26",
+    "stage": 2
+   },
+   "text": "The fiddle. Grandmother's. You've got it or you've given it back; either way you know what it is now. It's the only thing on the Reach older than the canal. Whatever it cost in fees, I'll pay. Don't make a thing of it.",
+   "left": {
+    "label": "No fee; it's hers",
+    "outcome": "\"No fee. Right.\" She does not thank you. She brings you a fish every week for a year.",
+    "effects": {
+     "relationships": {
+      "wren": 6,
+      "petronel": 3
+     },
+     "factions": {
+      "hullfolk": 3
+     },
+     "flags_set": [
+      "fiddle_returned"
+     ],
+     "flags_clear": [
+      "fiddle_impounded"
+     ]
+    }
+   },
+   "right": {
+    "label": "Take her fee; return it",
+    "outcome": "She pays. The fiddle goes back. She has paid a Company fee and it sits badly with her.",
+    "effects": {
+     "resources": {
+      "coffers": 2
+     },
+     "relationships": {
+      "wren": 2,
+      "petronel": 2
+     },
+     "flags_set": [
+      "fiddle_returned"
+     ],
+     "flags_clear": [
+      "fiddle_impounded"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_wren",
+     "met_petronel"
+    ],
+    "arc_stage": {
+     "mi26": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "mi26_3",
+   "category": "minor_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "mi26",
+    "stage": 3
+   },
+   "text": "A fiddle was impounded for mooring fees and released without payment from the debtor. For the record, the Book does not have a column for fiddles. I have made one. You will find I would like to know what the fiddle plays.",
+   "left": {
+    "label": "A song about a river",
+    "outcome": "\"Noted.\" A long pause. \"I have heard it. From the Company house, at night. I did not know it had words.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 3
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "One string; not much",
+    "outcome": "\"Noted.\" She writes it. She does not believe it. She has heard it too.",
+    "effects": {
+     "relationships": {
+      "vosk": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fiddle_returned",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi26": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi26_4",
+   "category": "minor_arcs",
+   "speaker": "petronel",
+   "expression": "singing",
+   "arc": {
+    "id": "mi26",
+    "stage": 4
+   },
+   "text": "You gave it back. Or you let it be bought back, which is the same to a fiddle. I will play you something for it. Not the song. A piece of the song. The part about the door. You will not understand it. Nobody does, the first time.",
+   "left": {
+    "label": "Listen",
+    "outcome": "One string. A door in a hill. A key that is a number. Ten. You understand more than she thinks.",
+    "effects": {
+     "relationships": {
+      "petronel": 6
+     },
+     "flags_set": [
+      "clue_song",
+      "clue_cipher"
+     ],
+     "counters": {
+      "song_verses": 1,
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Play it for Mirren too",
+    "outcome": "Mirren listens with her hands flat on the gunwale. At 'ten' she looks up.",
+    "effects": {
+     "relationships": {
+      "petronel": 5,
+      "mirren": 5
+     },
+     "flags_set": [
+      "clue_song",
+      "clue_cipher"
+     ],
+     "counters": {
+      "song_verses": 1,
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fiddle_returned"
+    ],
+    "arc_stage": {
+     "mi26": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi26_5",
+   "category": "minor_arcs",
+   "speaker": "bram",
+   "expression": "patient",
+   "arc": {
+    "id": "mi26",
+    "stage": 5
+   },
+   "text": "The old singer says you heard the door verse. She does not play it for charter men. She played it for a gate. We have talked about what a gate is owed for that. We have decided: nothing. We tell you, so you know it was decided.",
+   "left": {
+    "label": "Nothing is right",
+    "outcome": "\"Yes. We thought you would say so. It is why we decided it.\"",
+    "effects": {
+     "relationships": {
+      "bram": 6,
+      "petronel": 3
+     },
+     "factions": {
+      "hullfolk": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Ask for the rest of the song",
+    "outcome": "\"The rest is not owed. The rest is given, when it is given. Ask again when the water is lower.\"",
+    "effects": {
+     "relationships": {
+      "bram": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fiddle_returned",
+     "met_bram"
+    ],
+    "arc_stage": {
+     "mi26": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi26_6",
+   "category": "minor_arcs",
+   "speaker": "petronel",
+   "arc": {
+    "id": "mi26",
+    "stage": 6
+   },
+   "text": "I am old and the fiddle is older and one day soon one of us will stop. When I stop, the fiddle goes to Wren, and the song goes to whoever has heard it. Hear the rest, before I stop. Old women do not request.",
+   "left": {
+    "label": "Hear the rest, now",
+    "outcome": "All of it. Six verses on one string at dusk. The river, the hill, the door, the number, the debt, the dawn.",
+    "effects": {
+     "relationships": {
+      "petronel": 10
+     },
+     "flags_set": [
+      "song_heard",
+      "clue_song"
+     ],
+     "counters": {
+      "song_verses": 6,
+      "evidence": 3
+     },
+     "arc": {
+      "mi26": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "When the water is lower",
+    "outcome": "\"Lower. It will be. I may not.\" She is, as it happens. She sings it then, at the sill, for the town.",
+    "effects": {
+     "relationships": {
+      "petronel": 4
+     },
+     "counters": {
+      "song_verses": 1
+     },
+     "arc": {
+      "mi26": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "fiddle_returned"
+    ],
+    "arc_stage": {
+     "mi26": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi27_1",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi27",
+    "stage": 1
+   },
+   "text": "A man on the north bank with a theodolite and a notebook. Not Company; his coat is wrong. Not Sorrel; his accent is wrong. He is surveying the bank below the sluice house with great care and no permit. He says he is 'interested in old water'.",
+   "left": {
+    "label": "Ask what he's found",
+    "outcome": "\"A channel. Cut stone. Straight as a rule. Going into the hill. Do you know what it is?\" You do not say.",
+    "effects": {
+     "flags_set": [
+      "surveyor_present",
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send him off Company ground",
+    "outcome": "He goes. He leaves his notebook on the bank, by accident or otherwise.",
+    "effects": {
+     "flags_set": [
+      "surveyor_present",
+      "surveyor_expelled"
+     ],
+     "resources": {
+      "company": 1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 18
+    },
+    "flags_none": [
+     "surveyor_present"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi27_2",
+   "category": "minor_arcs",
+   "speaker": "vosk",
+   "expression": "measuring",
+   "arc": {
+    "id": "mi27",
+    "stage": 2
+   },
+   "text": "There is a man surveying the north bank. I have asked him to leave and he has declined, citing a right of way I did not know existed. I am asking the Keeper to remove him. For the record, I do not often ask.",
+   "left": {
+    "label": "Remove him",
+    "outcome": "You remove him. He goes with his notebook. Vosk watches from the Company house and does not say noted.",
+    "effects": {
+     "relationships": {
+      "vosk": 5
+     },
+     "flags_set": [
+      "surveyor_expelled"
+     ],
+     "resources": {
+      "company": 2
+     },
+     "counters": {
+      "suspicion": -1
+     }
+    }
+   },
+   "right": {
+    "label": "A right of way stands",
+    "outcome": "\"Noted.\" He surveys for a week. She watches every hour of it.",
+    "effects": {
+     "relationships": {
+      "vosk": -4
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "surveyor_present",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi27": {
+      "min": 1
+     }
+    },
+    "flags_none": [
+     "surveyor_expelled"
+    ]
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi27_3",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi27",
+    "stage": 3
+   },
+   "text": "The surveyor's notebook. Bearings along the north bank. A sketch of a stone channel. A word, underlined: 'Quell?' And a name in Ardent that is not the Board's. The same name Vosk writes to monthly, if you have seen Fennick's book.",
+   "left": {
+    "label": "Copy the bearings into the Ledger",
+    "outcome": "Bearings, sketch, word, name. The Ledger has a map now, of sorts.",
+    "effects": {
+     "counters": {
+      "evidence": 3,
+      "cipher_progress": 1
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Give the notebook to Vosk",
+    "outcome": "\"Noted.\" She reads the name and goes very still. \"He works for the same man I do. Nobody told me.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 5
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "surveyor_present"
+    ],
+    "arc_stage": {
+     "mi27": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi27_4",
+   "category": "minor_arcs",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "arc": {
+    "id": "mi27",
+    "stage": 4
+   },
+   "text": "The surveyor's bearings run straight to where the missing page says the sluice house is. Someone in Ardent knows exactly where to look and sent a man to look at it. Sorry. Why now?",
+   "left": {
+    "label": "Because the water is falling",
+    "outcome": "\"Because it's falling faster. Yes. They've noticed. They're deciding what to do. Sorry. That's worse.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "clue_reservoirs",
+      "knows_cut"
+     ],
+     "counters": {
+      "evidence": 3,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Because someone told them",
+    "outcome": "\"Vosk. Or Fennick. Or you.\" She does not mean it. She does not take it back.",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "surveyor_present",
+     "met_quenn"
+    ],
+    "arc_stage": {
+     "mi27": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi27_5",
+   "category": "minor_arcs",
+   "speaker": "vosk",
+   "expression": "tired",
+   "arc": {
+    "id": "mi27",
+    "stage": 5
+   },
+   "text": "The surveyor was sent by the man I report to. Not the Board. The man. He did not tell me. That means he no longer trusts me to watch the summit alone. I have watched it alone for eleven years. I am tired.",
+   "left": {
+    "label": "Watch it with her",
+    "outcome": "\"Noted.\" She sits a long time. \"You will find I have never been offered that.\"",
+    "effects": {
+     "relationships": {
+      "vosk": 8
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     },
+     "flags_set": [
+      "vosk_ally"
+     ]
+    }
+   },
+   "right": {
+    "label": "Ask who the man is",
+    "outcome": "\"A name in Ardent. Old. He was at the Dry Year. He is the last who was.\" She does not give the name. She does not need to.",
+    "effects": {
+     "relationships": {
+      "vosk": 4
+     },
+     "counters": {
+      "evidence": 3,
+      "suspicion": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "surveyor_present",
+     "met_vosk"
+    ],
+    "arc_stage": {
+     "mi27": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi27_6",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi27",
+    "stage": 6
+   },
+   "text": "The surveyor has gone. His bearings are in the Ledger or in Vosk's drawer or in Ardent. The north bank is as it was: a stone house with iron straps, a clear stream, a slump in the bank. Someone in Ardent has a map now. So do you.",
+   "left": {
+    "label": "Walk the bearings yourself",
+    "outcome": "You walk them. They end at the sluice house door. They always did.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 2,
+      "fatigue": 1
+     },
+     "flags_clear": [
+      "surveyor_present"
+     ],
+     "arc": {
+      "mi27": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Let Ardent have its map",
+    "outcome": "Ardent has a map. You have a gate. For now, the gate is the thing that opens.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "flags_clear": [
+      "surveyor_present"
+     ],
+     "arc": {
+      "mi27": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "surveyor_present"
+    ],
+    "arc_stage": {
+     "mi27": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "mi28_1",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi28",
+    "stage": 1
+   },
+   "text": "Dray's house. His chair, his desk, his oilskin on the hook, his daughter at the paddles. You sleep in his bed and eat at his table and write in his Ledger. The study door is locked. It is the only door in the house that is.",
+   "left": {
+    "label": "Ask Mirren for the key",
+    "outcome": "She has it. She has had it the whole time. She does not give it to you. Not yet.",
+    "effects": {
+     "relationships": {
+      "mirren": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Leave it locked",
+    "outcome": "It stays locked. You learn the house around it, like a tongue around a missing tooth.",
+    "effects": {
+     "counters": {
+      "fatigue": -1
+     },
+     "relationships": {
+      "mirren": 3
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 5
+    },
+    "flags_none": [
+     "found_ledger"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi28_2",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "arc": {
+    "id": "mi28",
+    "stage": 2
+   },
+   "text": "You moved the lamp. In the study. I know because I look through the window every night and the lamp's on the desk and it was on the shelf. He kept it on the shelf. Did you go in?",
+   "left": {
+    "label": "Through the open window",
+    "outcome": "\"Right.\" She does not believe you. She does not push. She puts the lamp back through the window.",
+    "effects": {
+     "relationships": {
+      "mirren": 1
+     }
+    }
+   },
+   "right": {
+    "label": "I went in",
+    "outcome": "\"You went in.\" She is white. \"What did you see?\" You saw a desk, a drawer, and a ledger that is not the Ledger.",
+    "effects": {
+     "relationships": {
+      "mirren": -4
+     },
+     "flags_set": [
+      "found_ledger"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "mi28": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi28_3",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi28",
+    "stage": 3
+   },
+   "text": "Night. The house makes his sounds: a stair that speaks, a shutter that argues with the wind. On the study desk: a ledger in cipher, tide tables for a canal, a pencil worn to nothing. He was working on something when he stopped.",
+   "left": {
+    "label": "Sit at his desk till dawn",
+    "outcome": "You sit. You do not open anything. At dawn Mirren finds you there and, for once, does not look angry.",
+    "effects": {
+     "relationships": {
+      "mirren": 4
+     },
+     "counters": {
+      "fatigue": 2,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Go to bed; it is his desk",
+    "outcome": "You go to bed. The stair speaks. The shutter argues. The desk waits.",
+    "effects": {
+     "counters": {
+      "fatigue": -1
+     },
+     "relationships": {
+      "mirren": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi28": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi28_4",
+   "category": "minor_arcs",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "arc": {
+    "id": "mi28",
+    "stage": 4
+   },
+   "text": "You're in his house. I was in it once, the week before. He'd moved the chair to the window. Said he wanted to see the north bank. I said what's on the north bank. He said 'the tenth mark, Tobin'. Do you know what he meant?",
+   "left": {
+    "label": "I'm beginning to",
+    "outcome": "\"Beginning. Aye. He was further than beginning. Look where it got him.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "met_tobin",
+      "clue_cipher"
+     ],
+     "counters": {
+      "evidence": 2,
+      "tobin_pieces": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Move the chair back",
+    "outcome": "You move the chair back from the window. It does not help. You know what he was looking at now.",
+    "effects": {
+     "relationships": {
+      "tobin": 2,
+      "mirren": 2
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "arc_stage": {
+     "mi28": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi28_5",
+   "category": "minor_arcs",
+   "speaker": "mirren",
+   "arc": {
+    "id": "mi28",
+    "stage": 5
+   },
+   "text": "Here. The study key. I've had it since he went. I've been in every night and touched nothing. You sit in his chair and don't pretend it's yours, and Tobin says you can read what's on the desk. Don't move the lamp.",
+   "left": {
+    "label": "Take the key",
+    "outcome": "A brass study key. The first of two brass keys. You do not move the lamp.",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "flags_set": [
+      "found_ledger"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Go in together, first time",
+    "outcome": "You go in together. She touches the desk. You touch nothing. The ledger is in cipher. She says 'his game'. You say 'the gauge'. Something begins.",
+    "effects": {
+     "relationships": {
+      "mirren": 10
+     },
+     "flags_set": [
+      "found_ledger",
+      "clue_cipher"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "arc_stage": {
+     "mi28": {
+      "min": 4
+     }
+    },
+    "relationships": {
+     "mirren": {
+      "min": 40
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi28_6",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi28",
+    "stage": 6
+   },
+   "text": "The study is open. The house is one house now. Mirren comes in sometimes and sits in his chair, which she never did, and says nothing, which she always did. The desk has two ledgers on it. They are starting to say the same things.",
+   "left": {
+    "label": "Keep both ledgers on the desk",
+    "outcome": "Two ledgers, two hands, one desk. Whoever comes next will have both.",
+    "effects": {
+     "relationships": {
+      "mirren": 4
+     },
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi28": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Give Mirren the chair, for good",
+    "outcome": "You take the desk chair to the window. She keeps his. It is, finally, her house too.",
+    "effects": {
+     "relationships": {
+      "mirren": 8
+     },
+     "resources": {
+      "town": 2
+     },
+     "arc": {
+      "mi28": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "found_ledger"
+    ],
+    "arc_stage": {
+     "mi28": {
+      "min": 5
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi29_1",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "arc": {
+    "id": "mi29",
+    "stage": 1
+   },
+   "text": "Front page, both shores, tomorrow. 'THE KEEPER'S SECRET.' The study, or the wires, or the reeds; I've got enough for one. I'm telling you tonight because you've got till dawn to give me a better story. There isn't one. But you've got till dawn.",
+   "left": {
+    "label": "Give him the water figures instead",
+    "outcome": "He reads them. He stops smiling. 'THE KEEPER'S SECRET' becomes 'THE SUMMIT'S WATER'. It is a bigger story and a worse one for Ardent.",
+    "effects": {
+     "resources": {
+      "company": -6,
+      "town": 2
+     },
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_has_story",
+      "pressed_by_hesse"
+     ],
+     "counters": {
+      "suspicion": 4,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Print what you have",
+    "outcome": "He prints it. It is about the study. The town reads that the Keeper sits in a dead man's room at night. It is not untrue.",
+    "effects": {
+     "resources": {
+      "town": -3,
+      "company": -2
+     },
+     "relationships": {
+      "hesse": 2,
+      "mirren": -3
+     },
+     "flags_set": [
+      "hesse_hostile",
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "pressed_by_hesse",
+     "met_hesse"
+    ],
+    "flags_none": [
+     "hesse_hostile",
+     "hesse_friendly"
+    ]
+   },
+   "weight": 1.2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi29_2",
+   "category": "minor_arcs",
+   "speaker": "fennick",
+   "expression": "frightened",
+   "arc": {
+    "id": "mi29",
+    "stage": 2
+   },
+   "text": "It was me. Hesse's story. He asked what you did at night and I said the study and it's on the front page. I'll resign. I've written it. I've never resigned from anything. Do I send it to Ardent or to you?",
+   "left": {
+    "label": "Tear it up",
+    "outcome": "You tear it up. He watches the pieces fall and does not speak for a long time. Then: 'I'll stop selling. All of it. Everyone.'",
+    "effects": {
+     "relationships": {
+      "fennick": 10
+     },
+     "flags_set": [
+      "fennick_trusted"
+     ]
+    }
+   },
+   "right": {
+    "label": "Send it to Ardent",
+    "outcome": "Ardent accepts. A new clerk comes. He reads nothing. He knows nothing. Nobody at the summit knows anything now.",
+    "effects": {
+     "relationships": {
+      "fennick": -10
+     },
+     "resources": {
+      "company": 2
+     },
+     "flags_set": [
+      "fennick_exposed"
+     ],
+     "counters": {
+      "suspicion": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_fennick"
+    ],
+    "arc_stage": {
+     "mi29": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi29_3",
+   "category": "minor_arcs",
+   "speaker": "pell",
+   "expression": "stern",
+   "arc": {
+    "id": "mi29",
+    "stage": 3
+   },
+   "text": "The Board reads the Courier. It does not read my reports; it reads the Courier. And the Courier says the summit Keeper has a secret. I care that the Board has asked me what it is, and I have said 'bunting'.",
+   "left": {
+    "label": "Tell him the secret",
+    "outcome": "You tell Pell about the study, the cipher, the water. He listens with his mouth open. 'Magnificent. Terrible. Tell nobody I know.'",
+    "effects": {
+     "relationships": {
+      "pell": 6
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Bunting will do",
+    "outcome": "\"Bunting. Yes. I am good at bunting.\" The Board accepts bunting. It always has.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "pell": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "arc_stage": {
+     "mi29": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi29_4",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "arc": {
+    "id": "mi29",
+    "stage": 4
+   },
+   "text": "The follow-up. Readers want one. I could write 'THE KEEPER ANSWERS' if you'd answer, or 'THE KEEPER SILENT' if you won't, or 'THE SUPERINTENDENT SAYS BUNTING', which is my favorite. What'll it be? I'm not a cruel man. I'm a man with a press.",
+   "left": {
+    "label": "Answer",
+    "outcome": "You answer. Plainly. About the water. It is the first time the summit's figures have been in print. Ardent's wires that night are very long.",
+    "effects": {
+     "resources": {
+      "company": -5,
+      "town": 4
+     },
+     "relationships": {
+      "hesse": 6
+     },
+     "flags_set": [
+      "hesse_has_story",
+      "hesse_friendly"
+     ],
+     "flags_clear": [
+      "hesse_hostile"
+     ],
+     "counters": {
+      "suspicion": 4,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Silent",
+    "outcome": "'THE KEEPER SILENT.' It reads as dignity in Sorrel and guilt in Aldmere.",
+    "effects": {
+     "resources": {
+      "company": 1,
+      "town": -1
+     },
+     "relationships": {
+      "hesse": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "mi29": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "mi29_5",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "mi29",
+    "stage": 5
+   },
+   "text": "The town's read the Courier. It says the Keeper has a secret, and the town's decided what: you're Dray's bastard, or Vosk's lover, or a Sorrel spy, or all three. It's the best week the inn's had in years. Don't ruin it with the truth.",
+   "left": {
+    "label": "Don't ruin it",
+    "outcome": "You let the town have its theories. They are better than the truth and worse. The inn does very well.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 4
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Tell the town the truth, at the inn",
+    "outcome": "You tell the inn about the water. The inn is quiet. Then somebody says 'so not Vosk's lover, then' and the inn roars.",
+    "effects": {
+     "resources": {
+      "town": 3,
+      "company": -3
+     },
+     "relationships": {
+      "ilse": 3
+     },
+     "counters": {
+      "suspicion": 3,
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi29": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "comic"
+   ]
+  },
+  {
+   "id": "mi29_6",
+   "category": "minor_arcs",
+   "speaker": "hesse",
+   "expression": "curious",
+   "arc": {
+    "id": "mi29",
+    "stage": 6
+   },
+   "text": "Last piece. 'WHAT THE SUMMIT KEEPS'. It's about the gauge. A drawing of it with the tenth mark, the painted-over one, drawn in. My readers won't know what it means. Someone in Ardent will. Shall I run it?",
+   "left": {
+    "label": "Run it",
+    "outcome": "A drawing of a gauge with ten marks on the front page of both shores. Ardent wires Vosk nine times. Vosk answers none.",
+    "effects": {
+     "resources": {
+      "company": -4
+     },
+     "relationships": {
+      "hesse": 6,
+      "vosk": -2
+     },
+     "flags_set": [
+      "hesse_friendly",
+      "clue_cipher"
+     ],
+     "counters": {
+      "suspicion": 4,
+      "evidence": 2
+     },
+     "arc": {
+      "mi29": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Hold it; give me a month",
+    "outcome": "\"A month. Held. I've never held anything a month. I'll try.\" He does. Barely.",
+    "effects": {
+     "relationships": {
+      "hesse": 3
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ],
+     "counters": {
+      "evidence": 1
+     },
+     "arc": {
+      "mi29": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ],
+    "arc_stage": {
+     "mi29": {
+      "min": 5
+     }
+    },
+    "flags_any": [
+     "clue_cipher",
+     "found_ledger"
+    ]
+   },
+   "weight": 2,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi30_1",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "expression": "wry",
+   "arc": {
+    "id": "mi30",
+    "stage": 1
+   },
+   "text": "The boundary stone. Town's cleared the path to it. That's a thing the town does when it's thinking about a Keeper. Doesn't mean it'll walk you there. Means it's remembering the way. I'm telling you as reeve. As Ilse, I'd like you to notice.",
+   "left": {
+    "label": "Walk to the stone yourself, in daylight",
+    "outcome": "You walk to the stone alone and stand there and walk back. The town sees. It is not what they expected.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 4
+     },
+     "flags_set": [
+      "boundary_rehearsed"
+     ],
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Have the path let grow",
+    "outcome": "You order it left. It grows back in a season. The town clears it again in a night.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "ilse": -2
+     },
+     "flags_set": [
+      "boundary_rehearsed"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "town": {
+      "max": 35
+     }
+    },
+    "flags_none": [
+     "boundary_rehearsed"
+    ]
+   },
+   "weight": 1.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi30_2",
+   "category": "minor_arcs",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "arc": {
+    "id": "mi30",
+    "stage": 2
+   },
+   "text": "Three things. The town's asked the hands whether they'd walk with them, if it came to the stone. Half said yes. The other half said they'd have to ask me. And I've been asked, and I've said I'd ask you what you'd want me to say.",
+   "left": {
+    "label": "Say what you believe",
+    "outcome": "\"Right.\" He says he'd walk with the Keeper, not the town. Half the hands look at their boots. Half nod.",
+    "effects": {
+     "resources": {
+      "town": -1
+     },
+     "relationships": {
+      "dace": 6
+     }
+    }
+   },
+   "right": {
+    "label": "Say you'd walk with the town",
+    "outcome": "\"You'd want that?\" He says it. The hands are relieved. You are, oddly, safer.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "dace": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "boundary_rehearsed",
+     "met_dace"
+    ],
+    "arc_stage": {
+     "mi30": {
+      "min": 1
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi30_3",
+   "category": "minor_arcs",
+   "speaker": "src_stranger",
+   "arc": {
+    "id": "mi30",
+    "stage": 3
+   },
+   "text": "A child at the Keeper's door with a lamp. Lit. In daylight. The town is 'practising' and she has been sent to see if the Keeper would like to hold one, 'so you know how heavy'. Behind her, adults are pretending not to watch.",
+   "left": {
+    "label": "Hold the lamp",
+    "outcome": "It is heavy. You hold it a long time. The child takes it back and says 'now you know'. The adults stop pretending.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "counters": {
+      "fatigue": 1
+     },
+     "relationships": {
+      "ilse": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Send her home",
+    "outcome": "She goes. The lamp goes with her. The adults stop watching and start talking.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "flags_set": [
+      "moot_called"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "boundary_rehearsed"
+    ],
+    "arc_stage": {
+     "mi30": {
+      "min": 2
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi30_4",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi30",
+    "stage": 4
+   },
+   "text": "The moot's met on you. Not to walk you out; to decide whether to decide. It decided not to decide, this month. Next month it might. What will you have done by then that the town can see? One thing. It doesn't have to be big.",
+   "left": {
+    "label": "The low street drain",
+    "outcome": "Company timber, town labor, a drain the low street has wanted for forty years. It is seen.",
+    "effects": {
+     "resources": {
+      "coffers": -5,
+      "town": 6
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "flags_clear": [
+      "cellars_flooded",
+      "moot_called"
+     ],
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing; the town can walk me or not",
+    "outcome": "\"Right. Brave. Stupid. Same thing here.\" The moot meets again.",
+    "effects": {
+     "resources": {
+      "town": -4
+     },
+     "relationships": {
+      "ilse": -3
+     },
+     "flags_set": [
+      "moot_called",
+      "moot_against"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "boundary_rehearsed",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi30": {
+      "min": 3
+     }
+    }
+   },
+   "weight": 2.5,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "mi30_5",
+   "category": "minor_arcs",
+   "speaker": "src_ledger",
+   "arc": {
+    "id": "mi30",
+    "stage": 5
+   },
+   "text": "The Ledger's boundary stone page. Year 44: 'walked at dusk; the lamps were kind'. Year 61: 'walked at dawn; nobody spoke'. Dray's: 'the path is clear again. I have done nothing they can see. I am going to do something they cannot.'",
+   "left": {
+    "label": "Do something they can see",
+    "outcome": "You choose visible. The gate at the bell, the drain, the moot. The path grows over by summer.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "counters": {
+      "town_favors": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Do something they cannot",
+    "outcome": "You choose Dray's way. The north bank, at night. The path stays clear. So does the way to the sluice house.",
+    "effects": {
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     },
+     "resources": {
+      "town": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "boundary_rehearsed"
+    ],
+    "arc_stage": {
+     "mi30": {
+      "min": 4
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "mi30_6",
+   "category": "minor_arcs",
+   "speaker": "ilse",
+   "arc": {
+    "id": "mi30",
+    "stage": 6
+   },
+   "text": "The path to the stone's grown over. Nobody's cleared it. That's the town deciding, the way it decides: by not doing a thing. You'll not be walked out this season. As reeve, I'm telling you. As Ilse, I'm glad, and I'll deny it.",
+   "left": {
+    "label": "Thank her, as Ilse",
+    "outcome": "\"Don't. Drink your drink.\" You drink. She does not charge for it.",
+    "effects": {
+     "resources": {
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 6
+     },
+     "flags_clear": [
+      "boundary_rehearsed",
+      "moot_called",
+      "moot_against"
+     ],
+     "arc": {
+      "mi30": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "right": {
+    "label": "Clear the path yourself; keep it honest",
+    "outcome": "You clear the path to the stone and keep it clear. The town does not know what to make of a Keeper who does that. It respects it.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 4,
+      "dace": 2
+     },
+     "flags_clear": [
+      "moot_called",
+      "moot_against"
+     ],
+     "arc": {
+      "mi30": {
+       "status": "completed"
+      }
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "boundary_rehearsed",
+     "met_ilse"
+    ],
+    "arc_stage": {
+     "mi30": {
+      "min": 5
+     }
+    },
+    "resources": {
+     "town": {
+      "min": 35
+     }
+    }
+   },
+   "weight": 2,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
+}

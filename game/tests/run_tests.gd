@@ -9,7 +9,7 @@ var root: Node
 
 func _ready() -> void:
 	root = get_tree().root
-	var tests := load("res://game/tests/EngineTests.gd").new()
+	var tests = load("res://game/tests/EngineTests.gd").new()
 	tests.runner = self
 	for m in tests.get_method_list():
 		var n: String = m["name"]

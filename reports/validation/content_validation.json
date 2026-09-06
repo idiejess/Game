@@ -8,17 +8,13 @@
     "schema_errors": 0,
     "unused_flags": [
       "dray_accused_vosk",
-      "fiddle_impounded",
-      "fiddle_returned",
-      "hesse_hostile",
       "jubilee_funded",
       "p_jailed_wren",
       "p_prev_keeper_dismissed",
       "p_told_mirren",
       "p_true_ending_seen",
       "promised_ilse",
-      "sorrel_purchase_backed",
-      "windlass_missing"
+      "sorrel_purchase_backed"
     ],
     "unused_counters": [
       "ledger_days",
@@ -26,36 +22,36 @@
       "p_hullfolk_honor",
       "p_keepers_lost"
     ],
-    "tradeoff_ratio": 0.7,
-    "pure_ratio": 0.097,
-    "delayed_ratio": 0.037,
-    "reactive_ratio": 0.933,
+    "tradeoff_ratio": 0.697,
+    "pure_ratio": 0.094,
+    "delayed_ratio": 0.035,
+    "reactive_ratio": 0.937,
     "unreachable": [],
-    "arcs_with_cards": 33,
+    "arcs_with_cards": 42,
     "clue_setters": {
-      "noticed_water_fall": 11,
+      "noticed_water_fall": 12,
       "clue_dry_aqueduct": 6,
-      "clue_sluice_guard": 28,
+      "clue_sluice_guard": 31,
       "clue_charter": 17,
       "clue_iron_well": 12,
-      "clue_reservoirs": 19,
-      "clue_cipher": 12,
+      "clue_reservoirs": 22,
+      "clue_cipher": 17,
       "clue_night_dredgers": 12,
-      "clue_crane_counts": 9,
-      "clue_song": 19
+      "clue_crane_counts": 11,
+      "clue_song": 22
     },
-    "total_cards": 946,
-    "inventory_missing": 54,
+    "total_cards": 1000,
+    "inventory_missing": 0,
     "by_category": {
       "onboarding": 30,
       "evergreen": 220,
       "resources": 150,
       "relationships": 120,
-      "minor_arcs": 126,
+      "minor_arcs": 180,
       "major_arcs": 180,
       "crises": 70,
       "endings_meta": 50
     },
-    "fallback_cards": 0
+    "fallback_cards": 4
   }
 }

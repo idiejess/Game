@@ -1,0 +1,852 @@
+{
+  "failures": 4,
+  "generated": "2026-09-06T20:12:54",
+  "results": [
+    {
+      "message": "content loaded without errors: []",
+      "ok": true,
+      "test": "test_content_loads"
+    },
+    {
+      "message": "card count 1000 == 1000",
+      "ok": true,
+      "test": "test_content_loads"
+    },
+    {
+      "message": "25 character/source records (25)",
+      "ok": true,
+      "test": "test_content_loads"
+    },
+    {
+      "message": "40 endings (40)",
+      "ok": true,
+      "test": "test_content_loads"
+    },
+    {
+      "message": "at least 3 fallback cards (4)",
+      "ok": true,
+      "test": "test_content_loads"
+    },
+    {
+      "message": "0 inventory ids without cards",
+      "ok": true,
+      "test": "test_unique_ids_and_inventory"
+    },
+    {
+      "message": "inventory has 1000 ids",
+      "ok": true,
+      "test": "test_unique_ids_and_inventory"
+    },
+    {
+      "message": "undeclared flags/counters: []",
+      "ok": true,
+      "test": "test_registries_cover_all_flags_and_counters"
+    },
+    {
+      "message": "invalid card produced 2 errors (unknown field + unknown resource)",
+      "ok": true,
+      "test": "test_loader_rejects_invalid_card"
+    },
+    {
+      "message": "en localization has 5130 strings",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "has key ui.title",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "has key ui.new_run",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "has key ui.res.water",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "has key ui.res.town",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "has key ui.watch",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "card localization mirror present",
+      "ok": true,
+      "test": "test_localization_keys_present"
+    },
+    {
+      "message": "missing portraits: []",
+      "ok": true,
+      "test": "test_portraits_exist_for_every_expression"
+    },
+    {
+      "message": "missing audio placeholders: []",
+      "ok": true,
+      "test": "test_audio_assets_exist"
+    },
+    {
+      "message": "first run is run 1",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "traffic starts at 50",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "coffers starts at 50",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "company starts at 50",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "town starts at 50",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "first card is onb_01 (got onb_01)",
+      "ok": true,
+      "test": "test_run_start_defaults"
+    },
+    {
+      "message": "same seed produces same 25-card sequence",
+      "ok": true,
+      "test": "test_deterministic_seed"
+    },
+    {
+      "message": "different seed produces a different sequence",
+      "ok": true,
+      "test": "test_deterministic_seed"
+    },
+    {
+      "message": "flag-gated arc card ineligible at start: missing flag met_mirren",
+      "ok": true,
+      "test": "test_eligibility_filtering"
+    },
+    {
+      "message": "ma02_01 eligible once conditions met: ",
+      "ok": true,
+      "test": "test_eligibility_filtering"
+    },
+    {
+      "message": "ending-pool card never eligible via selection",
+      "ok": true,
+      "test": "test_eligibility_filtering"
+    },
+    {
+      "message": "forced-pool card never eligible via selection",
+      "ok": true,
+      "test": "test_eligibility_filtering"
+    },
+    {
+      "message": "max_per_run=1 card exhausted after one showing",
+      "ok": true,
+      "test": "test_cooldown_and_max_per_run"
+    },
+    {
+      "message": "cooldown blocks re-selection",
+      "ok": true,
+      "test": "test_cooldown_and_max_per_run"
+    },
+    {
+      "message": "cooldown expires after 3 watches",
+      "ok": true,
+      "test": "test_cooldown_and_max_per_run"
+    },
+    {
+      "message": "followup queued at front",
+      "ok": true,
+      "test": "test_forced_followup_and_delayed"
+    },
+    {
+      "message": "delayed card due in 2 watches",
+      "ok": true,
+      "test": "test_forced_followup_and_delayed"
+    },
+    {
+      "message": "delayed card not drawn before due (got onb_04)",
+      "ok": true,
+      "test": "test_forced_followup_and_delayed"
+    },
+    {
+      "message": "delayed card drawn when due (got onb_07)",
+      "ok": true,
+      "test": "test_forced_followup_and_delayed"
+    },
+    {
+      "message": "delayed town +7 applied on due watch",
+      "ok": true,
+      "test": "test_delayed_resources_apply"
+    },
+    {
+      "message": "subdeck cards drawn in order (onb_05, onb_06)",
+      "ok": true,
+      "test": "test_subdeck_sequence"
+    },
+    {
+      "message": "water drifts -1 per watch",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
+      "message": "coffers 0 -> Foreclosure",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
+      "message": "town 100 -> Uprising",
+      "ok": true,
+      "test": "test_water_drift_and_resource_death"
+    },
+    {
+      "message": "ending staged after edge (got end_res_water_min)",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "ending card shown before ending screen",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "run ended with Dry Summit",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "ending recorded in profile",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "persistent flag recorded",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "revelation ending grants unlock_dray_fate",
+      "ok": true,
+      "test": "test_ending_flow_and_unlocks"
+    },
+    {
+      "message": "TE1 finale eligible under its conditions: ",
+      "ok": true,
+      "test": "test_true_ending_trigger_from_card"
+    },
+    {
+      "message": "true ending staged from card effect (got end_true_river)",
+      "ok": true,
+      "test": "test_true_ending_trigger_from_card"
+    },
+    {
+      "message": "run ended with The River Returned",
+      "ok": true,
+      "test": "test_true_ending_trigger_from_card"
+    },
+    {
+      "message": "true ending persisted",
+      "ok": true,
+      "test": "test_true_ending_trigger_from_card"
+    },
+    {
+      "message": "fallback card returned when pool exhausted (evg_order_16)",
+      "ok": true,
+      "test": "test_no_empty_pool_fallback"
+    },
+    {
+      "message": "fallback counted",
+      "ok": true,
+      "test": "test_no_empty_pool_fallback"
+    },
+    {
+      "message": "run ended (steps=101, ending=end_ord_long_watch)",
+      "ok": true,
+      "test": "test_long_run_never_stalls"
+    },
+    {
+      "message": "no fallback needed in a 100-watch centered run (0)",
+      "ok": true,
+      "test": "test_long_run_never_stalls"
+    },
+    {
+      "message": "at least 60 distinct cards in 100 watches (101)",
+      "ok": true,
+      "test": "test_selection_variety"
+    },
+    {
+      "message": "save slot 3",
+      "ok": true,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "load slot 3: ok",
+      "ok": true,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "watch restored",
+      "ok": false,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "resources restored",
+      "ok": false,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "flags restored",
+      "ok": true,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "unlocks restored",
+      "ok": true,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "history restored",
+      "ok": true,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "rng state restored",
+      "ok": false,
+      "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "corrupt save rejected",
+      "ok": true,
+      "test": "test_invalid_save_recovery"
+    },
+    {
+      "message": "fresh profile after corrupt save",
+      "ok": true,
+      "test": "test_invalid_save_recovery"
+    },
+    {
+      "message": "recovered from backup: primary save invalid; recovered from backup",
+      "ok": true,
+      "test": "test_invalid_save_recovery"
+    },
+    {
+      "message": "report mentions backup",
+      "ok": true,
+      "test": "test_invalid_save_recovery"
+    },
+    {
+      "message": "v1 save loads",
+      "ok": true,
+      "test": "test_save_migration_v1"
+    },
+    {
+      "message": "run number preserved",
+      "ok": false,
+      "test": "test_save_migration_v1"
+    },
+    {
+      "message": "endings migrated to records",
+      "ok": true,
+      "test": "test_save_migration_v1"
+    },
+    {
+      "message": "persistent_flags added",
+      "ok": true,
+      "test": "test_save_migration_v1"
+    },
+    {
+      "message": "stale card reference dropped",
+      "ok": true,
+      "test": "test_save_migration_v1"
+    },
+    {
+      "message": "future save version rejected without crash",
+      "ok": true,
+      "test": "test_future_save_rejected"
+    },
+    {
+      "message": "second run is run 2",
+      "ok": true,
+      "test": "test_persistent_progression_between_runs"
+    },
+    {
+      "message": "honored remembered persisted",
+      "ok": true,
+      "test": "test_persistent_progression_between_runs"
+    },
+    {
+      "message": "hullfolk opener applied (+8) -> 58",
+      "ok": true,
+      "test": "test_persistent_progression_between_runs"
+    },
+    {
+      "message": "meta opener queued on run 2",
+      "ok": true,
+      "test": "test_persistent_progression_between_runs"
+    },
+    {
+      "message": "three true routes",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending end_true_river defined",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending card end_true_river exists",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending end_true_ledger defined",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending card end_true_ledger exists",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending end_true_cut defined",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "true ending card end_true_cut exists",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "12 major + 30 minor arcs",
+      "ok": true,
+      "test": "test_true_ending_routes_defined"
+    },
+    {
+      "message": "ending end_res_water_min card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_water_max card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_traffic_min card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_traffic_max card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_coffers_min card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_coffers_max card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_company_min card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_company_max card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_town_min card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_res_town_max card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_long_watch card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_transferred card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_jubilee card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_towns_keeper card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_companys_keeper card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_ord_quiet card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_drought card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_killer card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_purchase card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_clearance card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_blessing card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_false_hero card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_sluice card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_survey card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_song card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_letters card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_file card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_cipher card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_crane card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_tobin card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_bram card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_rev_vosk card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_crisis_fire card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_crisis_riot card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_crisis_frost card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_crisis_inquiry card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_crisis_fever card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_true_river card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_true_ledger card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "ending end_true_cut card exists",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA01 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA02 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA03 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA04 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA05 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA06 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA07 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA08 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA09 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA10 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA11 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc MA12 has 15 cards (15)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi01 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi02 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi03 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi04 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi05 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi06 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi07 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi08 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi09 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi10 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi11 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi12 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi13 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi14 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi15 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi16 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi17 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi18 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi19 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi20 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi21 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi22 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi23 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi24 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi25 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi26 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi27 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi28 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi29 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    },
+    {
+      "message": "arc mi30 has 6 cards (6)",
+      "ok": true,
+      "test": "test_every_ending_has_card_and_every_arc_has_cards"
+    }
+  ],
+  "total": 169
+}

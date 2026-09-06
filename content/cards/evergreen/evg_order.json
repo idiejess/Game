@@ -1,84 +1,823 @@
 {
-  "cards": [
-    {"id": "evg_order_01", "category": "evergreen", "speaker": "src_gate", "text": "Company mail goes first; that is the rule. The Company mail today is one sack, one clerk, and a boat that could carry forty. Nine grain barges wait behind it.",
-     "left": {"label": "Mail first, as written", "outcome": "One sack rises grandly through the chamber.", "effects": {"resources": {"company": 3, "traffic": -3}}},
-     "right": {"label": "Mail waits for the grain", "outcome": "The clerk complains by wire. From your own telegraph office.", "effects": {"resources": {"traffic": 4, "company": -3}, "factions": {"aldmere": 2}}},
-     "cooldown": 20, "tags": ["res:traffic"]},
-    {"id": "evg_order_02", "category": "evergreen", "speaker": "crane", "text": "Two vessels claim the same arrival bell. I have consulted the Compact. It provides that the Keeper decides, which I note is unhelpful, and that the Keeper's decision is final, which is worse.",
-     "left": {"label": "The Aldmere boat", "outcome": "\"Duly.\" The Sorrel bargee says something about Aldmere inspectors.", "effects": {"factions": {"aldmere": 3, "sorrel": -3}, "relationships": {"crane": 2}}},
-     "right": {"label": "The Sorrel boat", "outcome": "\"Duly.\" He writes it down a little harder than necessary.", "effects": {"factions": {"sorrel": 3, "aldmere": -3}, "relationships": {"crane": -2, "vane": 2}}},
-     "conditions": {"flags_all": ["met_crane"]}, "cooldown": 18, "tags": ["res:traffic"]},
-    {"id": "evg_order_03", "category": "evergreen", "speaker": "pell", "expression": "beaming", "text": "Keeper! A Board member's private launch, brass and mahogany, is at the bottom of the queue. I need not say what a magnificent impression it would make to bring it up first.",
-     "left": {"label": "Bring it up first", "outcome": "The launch gleams. The queue does not.", "effects": {"resources": {"company": 4, "traffic": -3, "town": -2}, "relationships": {"pell": 4}}},
-     "right": {"label": "It takes its turn", "outcome": "\"Its turn. Of course. A principled position, Keeper. A brave one.\"", "effects": {"resources": {"company": -3, "town": 2}, "relationships": {"pell": -3, "crane": 2}}},
-     "conditions": {"flags_all": ["met_pell"]}, "cooldown": 40, "tags": ["res:company"]},
-    {"id": "evg_order_04", "category": "evergreen", "speaker": "solas", "text": "My convoy is four boats and I would rather they went through together. Splitting an armed convoy is how accidents start. Your queue would rather they didn't.",
-     "left": {"label": "Together", "outcome": "Four boats, one hour, nobody else moves.", "effects": {"resources": {"traffic": -4}, "relationships": {"solas": 5}, "factions": {"sorrel": 2}}},
-     "right": {"label": "One at a time, in turn", "outcome": "\"Understood. It won't come to trouble.\" It does not.", "effects": {"resources": {"traffic": 2}, "relationships": {"solas": -3, "crane": 2}}},
-     "conditions": {"flags_all": ["met_solas"]}, "cooldown": 20, "tags": ["res:traffic"]},
-    {"id": "evg_order_05", "category": "evergreen", "speaker": "src_stranger", "text": "A woman with a sick child asks to jump the queue for the physician on the Aldmere side. The child is quiet in the way children should not be. Eleven boats are ahead of her.",
-     "left": {"label": "Bring her through now", "outcome": "Nobody in the queue complains. Not aloud.", "effects": {"resources": {"traffic": -2, "town": 3}, "relationships": {"stroud": 2}}},
-     "right": {"label": "Send for Stroud instead", "outcome": "Stroud comes to the boat. It takes an hour. The child lives.", "effects": {"resources": {"coffers": -2, "town": 2}, "relationships": {"stroud": 3}}},
-     "cooldown": 40, "tags": ["res:town"]},
-    {"id": "evg_order_06", "category": "evergreen", "speaker": "src_gate", "text": "A tug with six barges in tow wants the chamber six times in a row. The rule says arrival order. The tug says it has been doing this for twenty years.",
-     "left": {"label": "Six in a row", "outcome": "An afternoon of one tug. The queue plays cards.", "effects": {"resources": {"traffic": 3, "town": -2}}},
-     "right": {"label": "Alternate with the queue", "outcome": "The tug master spits. Twenty years, he says.", "effects": {"resources": {"traffic": -2, "town": 2}}},
-     "cooldown": 25, "tags": ["res:traffic"]},
-    {"id": "evg_order_07", "category": "evergreen", "speaker": "crane", "expression": "disapproving", "text": "The Sorrel escort vessel has moored across the approach to my inspection post. I note that this is not forbidden. I note also that it is not an accident.",
-     "left": {"label": "Have it moved", "outcome": "Solas moves it himself, without comment.", "effects": {"relationships": {"crane": 4, "solas": -3}}},
-     "right": {"label": "Inspect from the towpath", "outcome": "\"I can. I shall. I note it.\"", "effects": {"relationships": {"crane": -3, "solas": 2}, "resources": {"traffic": 2}}},
-     "conditions": {"flags_all": ["met_crane", "met_solas"]}, "cooldown": 30, "tags": ["res:traffic"]},
-    {"id": "evg_order_08", "category": "evergreen", "speaker": "pell", "expression": "stern", "text": "The Board notes, Keeper, that the summit passed eleven fewer vessels than Lock 8 last month. Lock 8 is downhill. I would like an explanation I can send without wincing.",
-     "left": {"label": "Fewer inspections this month", "outcome": "Numbers rise. Crane's eyebrows rise with them.", "effects": {"resources": {"traffic": 4, "company": 3}, "relationships": {"crane": -3}, "flags_set": ["inspections_waived"]}},
-     "right": {"label": "Lock 8 has more water", "outcome": "\"Water. Yes. I shall not send that.\"", "effects": {"resources": {"company": -3}, "relationships": {"pell": -2}, "counters": {"evidence": 1}}},
-     "conditions": {"flags_all": ["met_pell"], "resources": {"traffic": {"max": 50}}}, "cooldown": 30, "tags": ["res:traffic"]},
-    {"id": "evg_order_09", "category": "evergreen", "speaker": "solas", "expression": "weary", "text": "One of my men has been drinking at the Wheel and started something with a lock hand. My people, my discipline. Unless you would rather it was yours.",
-     "left": {"label": "Your discipline", "outcome": "The man is sent down the west flight that night. Quietly.", "effects": {"relationships": {"solas": 5}, "resources": {"town": 1}}},
-     "right": {"label": "The town's law", "outcome": "Ilse fines him. He pays. Solas watches.", "effects": {"relationships": {"solas": -3, "ilse": 3}, "resources": {"town": 3}}},
-     "conditions": {"flags_all": ["met_solas", "met_ilse"]}, "cooldown": 35, "tags": ["res:town"]},
-    {"id": "evg_order_10", "category": "evergreen", "speaker": "src_stranger", "text": "An Aldmere magistrate on a private boat produces a writ commanding the Keeper to give him precedence over 'commercial traffic'. The writ is not addressed to a Company lock.",
-     "left": {"label": "Honor the writ", "outcome": "He passes. Crane looks pained; the writ is irregular and he knows it.", "effects": {"factions": {"aldmere": 4}, "resources": {"traffic": -2, "company": -2}}},
-     "right": {"label": "This is a Company gate", "outcome": "He threatens a report. Pell frames the report.", "effects": {"factions": {"aldmere": -4}, "resources": {"company": 3}, "relationships": {"pell": 2}}},
-     "cooldown": 40, "tags": ["res:company"]},
-    {"id": "evg_order_11", "category": "evergreen", "speaker": "src_gate", "text": "The night watch reports a boat that moved up three places in the queue while the others slept. Its bargee says the others agreed. The others say otherwise.",
-     "left": {"label": "Send it to the back", "outcome": "The queue cheers, briefly.", "effects": {"resources": {"traffic": -1, "town": 2}}},
-     "right": {"label": "Where it is, it stays", "outcome": "The queue learns something about nights.", "effects": {"resources": {"traffic": 2, "town": -2}, "counters": {"passages_night": 1}}},
-     "cooldown": 25, "tags": ["res:traffic"]},
-    {"id": "evg_order_12", "category": "evergreen", "speaker": "crane", "expression": "delighted_by_a_clause", "text": "An extraordinary situation. The Compact grants precedence to 'perishable foodstuffs'. The vessel before us carries ice. I have been unable to determine whether ice perishes.",
-     "left": {"label": "Ice perishes", "outcome": "\"A bold reading. I shall cite you.\"", "effects": {"resources": {"traffic": 2}, "relationships": {"crane": 4}, "factions": {"aldmere": 2}}},
-     "right": {"label": "Ice is a mineral", "outcome": "\"Also bold. I shall cite you for that too.\"", "effects": {"resources": {"traffic": -1}, "relationships": {"crane": 3}}},
-     "conditions": {"flags_all": ["met_crane"]}, "cooldown": 45, "tags": ["res:traffic"]},
-    {"id": "evg_order_13", "category": "evergreen", "speaker": "pell", "text": "A Sorrel newspaperman has asked for a place on the first boat of the day, to see the sunrise from the summit. Think of the description, Keeper. Think of the adjectives.",
-     "left": {"label": "Give Hesse the sunrise", "outcome": "The adjectives are many and mostly about Pell.", "effects": {"resources": {"company": 2}, "relationships": {"hesse": 4, "pell": 3}, "flags_set": ["met_hesse"]}},
-     "right": {"label": "He can queue like anyone", "outcome": "The Courier describes the queue instead.", "effects": {"relationships": {"hesse": -4, "pell": -2}, "flags_set": ["met_hesse"], "resources": {"town": 1}}},
-     "conditions": {"flags_all": ["met_pell"]}, "cooldown": 40, "tags": ["res:company"]},
-    {"id": "evg_order_14", "category": "evergreen", "speaker": "solas", "expression": "hard", "text": "An Aldmere boat has been moored alongside my convoy all night, and a man on it has been counting my crates. I have not touched him. I am telling you before I have to decide whether to.",
-     "left": {"label": "Move the Aldmere boat", "outcome": "The counter is Crane's clerk. Crane is unrepentant.", "effects": {"relationships": {"solas": 4, "crane": -3}, "factions": {"aldmere": -2}}},
-     "right": {"label": "Counting is not a crime", "outcome": "\"No. It's how they start.\"", "effects": {"relationships": {"solas": -4, "crane": 3}, "factions": {"sorrel": -2}}},
-     "conditions": {"flags_all": ["met_solas", "met_crane"]}, "cooldown": 35, "tags": ["res:traffic"]},
-    {"id": "evg_order_15", "category": "evergreen", "speaker": "src_stranger", "text": "A funeral boat, black cloth over a long shape, asks quiet passage before the day's traffic. The Hullfolk at the tiller do not ask for a fee. They do not ask at all; they wait.",
-     "left": {"label": "Open the gate in silence", "outcome": "The chamber fills without a bell. The queue takes off its caps.", "effects": {"resources": {"traffic": -2}, "factions": {"hullfolk": 6}, "counters": {"hullfolk_favors": 1}}},
-     "right": {"label": "The queue is the queue", "outcome": "They wait four hours. Nobody sings.", "effects": {"resources": {"traffic": 1, "company": 1}, "factions": {"hullfolk": -8}, "counters": {"hullfolk_offenses": 1}}},
-     "cooldown": 40, "tags": ["res:town"]},
-    {"id": "evg_order_16", "category": "evergreen", "speaker": "src_gate", "text": "Fog. Boats are arriving that cannot see the gate. The hands want to close until it lifts. The bargees want a lamp on the sill and a chance.",
-     "left": {"label": "Close until it lifts", "outcome": "A wasted morning and no dented hulls.", "effects": {"resources": {"traffic": -4}, "relationships": {"dace": 3}}},
-     "right": {"label": "Lamps on the sill; keep working", "outcome": "One barge kisses the gate. Nothing breaks. This time.", "effects": {"resources": {"traffic": 3}, "relationships": {"dace": -2}, "counters": {"repairs_deferred": 1}}},
-     "cooldown": 20, "tags": ["res:traffic"]},
-    {"id": "evg_order_17", "category": "evergreen", "speaker": "crane", "text": "I have prepared a revised order-of-passage schedule based on cargo class, arrival bell and shore of origin, weighted. It is eleven pages. I believe it would end all disputes.",
-     "left": {"label": "Adopt it", "outcome": "Disputes end. Everyone hates the schedule equally, which is a kind of peace.", "effects": {"resources": {"traffic": 2, "town": -2}, "relationships": {"crane": 8, "vane": -3}}},
-     "right": {"label": "The Keeper decides, as written", "outcome": "\"I anticipated that. Page eleven addresses it.\"", "effects": {"relationships": {"crane": -3}, "resources": {"company": 1}}},
-     "conditions": {"flags_all": ["met_crane"], "relationships": {"crane": {"min": 50}}}, "cooldown": 50, "tags": ["res:traffic"]},
-    {"id": "evg_order_18", "category": "evergreen", "speaker": "pell", "expression": "wounded", "text": "Keeper, a Board member's nephew was made to wait behind a coal barge. Behind coal, Keeper. I have had a letter. I have had two.",
-     "left": {"label": "Apologize by wire", "outcome": "You sign a letter you did not write.", "effects": {"resources": {"company": 3}, "relationships": {"pell": 3}}},
-     "right": {"label": "Coal keeps Aldmere warm", "outcome": "\"It does. Nephews do not know that.\"", "effects": {"resources": {"company": -3, "town": 2}, "relationships": {"pell": -2}}},
-     "conditions": {"flags_all": ["met_pell"], "watch": {"min": 15}}, "cooldown": 45, "tags": ["res:company"]},
-    {"id": "evg_order_19", "category": "evergreen", "speaker": "solas", "expression": "almost_smiling", "text": "Your lock hand, the Dray girl, has told my sergeant that convoys wait like anyone. My sergeant has told her what he thinks of that. She won. I thought you should know who runs your gate.",
-     "left": {"label": "She does, at the paddles", "outcome": "\"Good. I'd rather deal with someone who wins.\"", "effects": {"relationships": {"solas": 3, "mirren": 4}}},
-     "right": {"label": "Remind her who decides", "outcome": "Mirren says nothing. She says it very clearly.", "effects": {"relationships": {"mirren": -5, "solas": 1}, "resources": {"company": 1}}},
-     "conditions": {"flags_all": ["met_solas", "met_mirren"]}, "cooldown": 40, "tags": ["res:town"]},
-    {"id": "evg_order_20", "category": "evergreen", "speaker": "src_stranger", "text": "A Concordance pilgrim on foot asks to ride the next boat through, any boat, to reach the Lamp Vigil by dusk. No bargee wants a stranger aboard. One might, for a mark.",
-     "left": {"label": "Pay the mark", "outcome": "She goes through on a coal barge, singing quietly.", "effects": {"resources": {"coffers": -1}, "factions": {"concordance": 4}}},
-     "right": {"label": "She walks the towpath", "outcome": "She thanks you anyway. It is a long walk.", "effects": {"factions": {"concordance": -2}, "resources": {"town": 1}}},
-     "conditions": {"flags_all": ["met_hale"]}, "cooldown": 40, "tags": ["res:water"]}
-  ]
+ "cards": [
+  {
+   "id": "evg_order_01",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "Company mail goes first; that is the rule. The Company mail today is one sack, one clerk, and a boat that could carry forty. Nine grain barges wait behind it.",
+   "left": {
+    "label": "Mail first, as written",
+    "outcome": "One sack rises grandly through the chamber.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "traffic": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Mail waits for the grain",
+    "outcome": "The clerk complains by wire. From your own telegraph office.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "company": -3
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "cooldown": 20,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_02",
+   "category": "evergreen",
+   "speaker": "crane",
+   "text": "Two vessels claim the same arrival bell. I have consulted the Compact. It provides that the Keeper decides, which I note is unhelpful, and that the Keeper's decision is final, which is worse.",
+   "left": {
+    "label": "The Aldmere boat",
+    "outcome": "\"Duly.\" The Sorrel bargee says something about Aldmere inspectors.",
+    "effects": {
+     "factions": {
+      "aldmere": 3,
+      "sorrel": -3
+     },
+     "relationships": {
+      "crane": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The Sorrel boat",
+    "outcome": "\"Duly.\" He writes it down a little harder than necessary.",
+    "effects": {
+     "factions": {
+      "sorrel": 3,
+      "aldmere": -3
+     },
+     "relationships": {
+      "crane": -2,
+      "vane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ]
+   },
+   "cooldown": 18,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_03",
+   "category": "evergreen",
+   "speaker": "pell",
+   "expression": "beaming",
+   "text": "Keeper! A Board member's private launch, brass and mahogany, is at the bottom of the queue. I need not say what a magnificent impression it would make to bring it up first.",
+   "left": {
+    "label": "Bring it up first",
+    "outcome": "The launch gleams. The queue does not.",
+    "effects": {
+     "resources": {
+      "company": 4,
+      "traffic": -3,
+      "town": -2
+     },
+     "relationships": {
+      "pell": 4
+     }
+    }
+   },
+   "right": {
+    "label": "It takes its turn",
+    "outcome": "\"Its turn. Of course. A principled position, Keeper. A brave one.\"",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 2
+     },
+     "relationships": {
+      "pell": -3,
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_order_04",
+   "category": "evergreen",
+   "speaker": "solas",
+   "text": "My convoy is four boats and I would rather they went through together. Splitting an armed convoy is how accidents start. Your queue would rather they didn't.",
+   "left": {
+    "label": "Together",
+    "outcome": "Four boats, one hour, nobody else moves.",
+    "effects": {
+     "resources": {
+      "traffic": -4
+     },
+     "relationships": {
+      "solas": 5
+     },
+     "factions": {
+      "sorrel": 2
+     }
+    }
+   },
+   "right": {
+    "label": "One at a time, in turn",
+    "outcome": "\"Understood. It won't come to trouble.\" It does not.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "solas": -3,
+      "crane": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas"
+    ]
+   },
+   "cooldown": 20,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_05",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A woman with a sick child asks to jump the queue for the physician on the Aldmere side. The child is quiet in the way children should not be. Eleven boats are ahead of her.",
+   "left": {
+    "label": "Bring her through now",
+    "outcome": "Nobody in the queue complains. Not aloud.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 3
+     },
+     "relationships": {
+      "stroud": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Send for Stroud instead",
+    "outcome": "Stroud comes to the boat. It takes an hour. The child lives.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 2
+     },
+     "relationships": {
+      "stroud": 3
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_order_06",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "A tug with six barges in tow wants the chamber six times in a row. The rule says arrival order. The tug says it has been doing this for twenty years.",
+   "left": {
+    "label": "Six in a row",
+    "outcome": "An afternoon of one tug. The queue plays cards.",
+    "effects": {
+     "resources": {
+      "traffic": 3,
+      "town": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Alternate with the queue",
+    "outcome": "The tug master spits. Twenty years, he says.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 2
+     }
+    }
+   },
+   "cooldown": 8,
+   "tags": [
+    "res:traffic"
+   ],
+   "pool": "fallback",
+   "max_per_run": 6,
+   "notes": "Fallback pool: generic gate situation drawn only when nothing else is eligible."
+  },
+  {
+   "id": "evg_order_07",
+   "category": "evergreen",
+   "speaker": "crane",
+   "expression": "disapproving",
+   "text": "The Sorrel escort vessel has moored across the approach to my inspection post. I note that this is not forbidden. I note also that it is not an accident.",
+   "left": {
+    "label": "Have it moved",
+    "outcome": "Solas moves it himself, without comment.",
+    "effects": {
+     "relationships": {
+      "crane": 4,
+      "solas": -3
+     }
+    }
+   },
+   "right": {
+    "label": "Inspect from the towpath",
+    "outcome": "\"I can. I shall. I note it.\"",
+    "effects": {
+     "relationships": {
+      "crane": -3,
+      "solas": 2
+     },
+     "resources": {
+      "traffic": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane",
+     "met_solas"
+    ]
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_08",
+   "category": "evergreen",
+   "speaker": "pell",
+   "expression": "stern",
+   "text": "The Board notes, Keeper, that the summit passed eleven fewer vessels than Lock 8 last month. Lock 8 is downhill. I would like an explanation I can send without wincing.",
+   "left": {
+    "label": "Fewer inspections this month",
+    "outcome": "Numbers rise. Crane's eyebrows rise with them.",
+    "effects": {
+     "resources": {
+      "traffic": 4,
+      "company": 3
+     },
+     "relationships": {
+      "crane": -3
+     },
+     "flags_set": [
+      "inspections_waived"
+     ]
+    }
+   },
+   "right": {
+    "label": "Lock 8 has more water",
+    "outcome": "\"Water. Yes. I shall not send that.\"",
+    "effects": {
+     "resources": {
+      "company": -3
+     },
+     "relationships": {
+      "pell": -2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "resources": {
+     "traffic": {
+      "max": 50
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_09",
+   "category": "evergreen",
+   "speaker": "solas",
+   "expression": "weary",
+   "text": "One of my men has been drinking at the Wheel and started something with a lock hand. My people, my discipline. Unless you would rather it was yours.",
+   "left": {
+    "label": "Your discipline",
+    "outcome": "The man is sent down the west flight that night. Quietly.",
+    "effects": {
+     "relationships": {
+      "solas": 5
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The town's law",
+    "outcome": "Ilse fines him. He pays. Solas watches.",
+    "effects": {
+     "relationships": {
+      "solas": -3,
+      "ilse": 3
+     },
+     "resources": {
+      "town": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_ilse"
+    ]
+   },
+   "cooldown": 35,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_order_10",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "An Aldmere magistrate on a private boat produces a writ commanding the Keeper to give him precedence over 'commercial traffic'. The writ is not addressed to a Company lock.",
+   "left": {
+    "label": "Honor the writ",
+    "outcome": "He passes. Crane looks pained; the writ is irregular and he knows it.",
+    "effects": {
+     "factions": {
+      "aldmere": 4
+     },
+     "resources": {
+      "traffic": -2,
+      "company": -2
+     }
+    }
+   },
+   "right": {
+    "label": "This is a Company gate",
+    "outcome": "He threatens a report. Pell frames the report.",
+    "effects": {
+     "factions": {
+      "aldmere": -4
+     },
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 2
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_order_11",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "The night watch reports a boat that moved up three places in the queue while the others slept. Its bargee says the others agreed. The others say otherwise.",
+   "left": {
+    "label": "Send it to the back",
+    "outcome": "The queue cheers, briefly.",
+    "effects": {
+     "resources": {
+      "traffic": -1,
+      "town": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Where it is, it stays",
+    "outcome": "The queue learns something about nights.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -2
+     },
+     "counters": {
+      "passages_night": 1
+     }
+    }
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_12",
+   "category": "evergreen",
+   "speaker": "crane",
+   "expression": "delighted_by_a_clause",
+   "text": "An extraordinary situation. The Compact grants precedence to 'perishable foodstuffs'. The vessel before us carries ice. I have been unable to determine whether ice perishes.",
+   "left": {
+    "label": "Ice perishes",
+    "outcome": "\"A bold reading. I shall cite you.\"",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "crane": 4
+     },
+     "factions": {
+      "aldmere": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Ice is a mineral",
+    "outcome": "\"Also bold. I shall cite you for that too.\"",
+    "effects": {
+     "resources": {
+      "traffic": -1
+     },
+     "relationships": {
+      "crane": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ]
+   },
+   "cooldown": 45,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_13",
+   "category": "evergreen",
+   "speaker": "pell",
+   "text": "A Sorrel newspaperman has asked for a place on the first boat of the day, to see the sunrise from the summit. Think of the description, Keeper. Think of the adjectives.",
+   "left": {
+    "label": "Give Hesse the sunrise",
+    "outcome": "The adjectives are many and mostly about Pell.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "hesse": 4,
+      "pell": 3
+     },
+     "flags_set": [
+      "met_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "He can queue like anyone",
+    "outcome": "The Courier describes the queue instead.",
+    "effects": {
+     "relationships": {
+      "hesse": -4,
+      "pell": -2
+     },
+     "flags_set": [
+      "met_hesse"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_order_14",
+   "category": "evergreen",
+   "speaker": "solas",
+   "expression": "hard",
+   "text": "An Aldmere boat has been moored alongside my convoy all night, and a man on it has been counting my crates. I have not touched him. I am telling you before I have to decide whether to.",
+   "left": {
+    "label": "Move the Aldmere boat",
+    "outcome": "The counter is Crane's clerk. Crane is unrepentant.",
+    "effects": {
+     "relationships": {
+      "solas": 4,
+      "crane": -3
+     },
+     "factions": {
+      "aldmere": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Counting is not a crime",
+    "outcome": "\"No. It's how they start.\"",
+    "effects": {
+     "relationships": {
+      "solas": -4,
+      "crane": 3
+     },
+     "factions": {
+      "sorrel": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_crane"
+    ]
+   },
+   "cooldown": 35,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_15",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A funeral boat, black cloth over a long shape, asks quiet passage before the day's traffic. The Hullfolk at the tiller do not ask for a fee. They do not ask at all; they wait.",
+   "left": {
+    "label": "Open the gate in silence",
+    "outcome": "The chamber fills without a bell. The queue takes off its caps.",
+    "effects": {
+     "resources": {
+      "traffic": -2
+     },
+     "factions": {
+      "hullfolk": 6
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The queue is the queue",
+    "outcome": "They wait four hours. Nobody sings.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "company": 1
+     },
+     "factions": {
+      "hullfolk": -8
+     },
+     "counters": {
+      "hullfolk_offenses": 1
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_order_16",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "Fog. Boats are arriving that cannot see the gate. The hands want to close until it lifts. The bargees want a lamp on the sill and a chance.",
+   "left": {
+    "label": "Close until it lifts",
+    "outcome": "A wasted morning and no dented hulls.",
+    "effects": {
+     "resources": {
+      "traffic": -4
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Lamps on the sill; keep working",
+    "outcome": "One barge kisses the gate. Nothing breaks. This time.",
+    "effects": {
+     "resources": {
+      "traffic": 3
+     },
+     "relationships": {
+      "dace": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "cooldown": 8,
+   "tags": [
+    "res:traffic"
+   ],
+   "pool": "fallback",
+   "max_per_run": 6,
+   "notes": "Fallback pool: generic gate situation drawn only when nothing else is eligible."
+  },
+  {
+   "id": "evg_order_17",
+   "category": "evergreen",
+   "speaker": "crane",
+   "text": "I have prepared a revised order-of-passage schedule based on cargo class, arrival bell and shore of origin, weighted. It is eleven pages. I believe it would end all disputes.",
+   "left": {
+    "label": "Adopt it",
+    "outcome": "Disputes end. Everyone hates the schedule equally, which is a kind of peace.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -2
+     },
+     "relationships": {
+      "crane": 8,
+      "vane": -3
+     }
+    }
+   },
+   "right": {
+    "label": "The Keeper decides, as written",
+    "outcome": "\"I anticipated that. Page eleven addresses it.\"",
+    "effects": {
+     "relationships": {
+      "crane": -3
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_crane"
+    ],
+    "relationships": {
+     "crane": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_order_18",
+   "category": "evergreen",
+   "speaker": "pell",
+   "expression": "wounded",
+   "text": "Keeper, a Board member's nephew was made to wait behind a coal barge. Behind coal, Keeper. I have had a letter. I have had two.",
+   "left": {
+    "label": "Apologize by wire",
+    "outcome": "You sign a letter you did not write.",
+    "effects": {
+     "resources": {
+      "company": 3
+     },
+     "relationships": {
+      "pell": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Coal keeps Aldmere warm",
+    "outcome": "\"It does. Nephews do not know that.\"",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 2
+     },
+     "relationships": {
+      "pell": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_pell"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 45,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_order_19",
+   "category": "evergreen",
+   "speaker": "solas",
+   "expression": "almost_smiling",
+   "text": "Your lock hand, the Dray girl, has told my sergeant that convoys wait like anyone. My sergeant has told her what he thinks of that. She won. I thought you should know who runs your gate.",
+   "left": {
+    "label": "She does, at the paddles",
+    "outcome": "\"Good. I'd rather deal with someone who wins.\"",
+    "effects": {
+     "relationships": {
+      "solas": 3,
+      "mirren": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Remind her who decides",
+    "outcome": "Mirren says nothing. She says it very clearly.",
+    "effects": {
+     "relationships": {
+      "mirren": -5,
+      "solas": 1
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_solas",
+     "met_mirren"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_order_20",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A Concordance pilgrim on foot asks to ride the next boat through, any boat, to reach the Lamp Vigil by dusk. No bargee wants a stranger aboard. One might, for a mark.",
+   "left": {
+    "label": "Pay the mark",
+    "outcome": "She goes through on a coal barge, singing quietly.",
+    "effects": {
+     "resources": {
+      "coffers": -1
+     },
+     "factions": {
+      "concordance": 4
+     }
+    }
+   },
+   "right": {
+    "label": "She walks the towpath",
+    "outcome": "She thanks you anyway. It is a long walk.",
+    "effects": {
+     "factions": {
+      "concordance": -2
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:water"
+   ]
+  }
+ ]
 }
