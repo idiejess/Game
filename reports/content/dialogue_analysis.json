@@ -1,49 +1,53 @@
 {
-  "cards": 100,
+  "cards": 121,
   "errors": [],
   "warnings": [
-    "[end_ord_jubilee] slang 'bro'"
+    "[ma02_06] situation 33 words (6-32)",
+    "[ma02_10] situation 38 words (6-32)",
+    "[ma02_12] situation 35 words (6-32)",
+    "opener 'three things' used by 4 cards (3.3%)"
   ],
   "speakers": {
-    "src_ledger": 8,
+    "src_ledger": 12,
     "pell": 6,
-    "ilse": 6,
-    "vosk": 9,
+    "ilse": 8,
+    "vosk": 11,
     "quenn": 4,
     "vane": 6,
     "hale": 3,
     "hesse": 1,
     "src_weather": 5,
-    "dace": 5,
+    "dace": 6,
     "kell": 3,
     "src_telegram": 3,
     "solas": 2,
     "petronel": 1,
-    "fennick": 2,
-    "mirren": 3,
+    "fennick": 4,
+    "mirren": 10,
     "crane": 8,
-    "tobin": 1,
+    "tobin": 2,
     "bram": 5,
     "tamm": 1,
     "stroud": 3,
-    "src_gate": 10,
-    "wren": 5
+    "src_gate": 11,
+    "wren": 5,
+    "src_stranger": 1
   },
   "top_openers": [
+    [
+      "three things",
+      4
+    ],
+    [
+      "you have",
+      3
+    ],
     [
       "at the",
       3
     ],
     [
-      "three things",
-      3
-    ],
-    [
       "there is",
-      2
-    ],
-    [
-      "you have",
       2
     ],
     [

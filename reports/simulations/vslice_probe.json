@@ -1,0 +1,497 @@
+{
+ "generated": "2026-09-06 18:16:03",
+ "seconds": 0.7,
+ "cards": 121,
+ "runs": 240,
+ "strategies": [
+  "random",
+  "balance",
+  "risk_seek",
+  "risk_avoid",
+  "loyalist:vosk",
+  "loyalist:bram",
+  "loyalist:mirren",
+  "faction:company",
+  "faction:hullfolk",
+  "mystery",
+  "short_term",
+  "long_term"
+ ],
+ "mean_length": 32.74,
+ "median_length": 31.0,
+ "length_distribution": {
+  "20-29": 100,
+  "30-39": 94,
+  "40-49": 45,
+  "50-59": 1
+ },
+ "endings": {
+  "STALL": 236,
+  "end_res_water_min": 3,
+  "end_res_traffic_max": 1
+ },
+ "death_by_resource": {
+  "water": 3,
+  "traffic": 1
+ },
+ "true_endings": {},
+ "stalls": 236,
+ "fallback_runs": 236,
+ "fallback_total": 236,
+ "selection_sources": {
+  "forced": 532,
+  "weighted": 7158,
+  "delayed": 171,
+  "fallback": 236
+ },
+ "unseen_cards": [
+  "meta_hullfolk_gift",
+  "meta_quenn_braver",
+  "meta_route_cut_gate",
+  "meta_route_ledger_gate",
+  "meta_route_river_gate"
+ ],
+ "unseen_count": 5,
+ "rare_cards": [
+  "end_res_traffic_max"
+ ],
+ "rare_count": 1,
+ "overrepresented": [
+  [
+   "onb_01",
+   240
+  ],
+  [
+   "mi01_1",
+   240
+  ],
+  [
+   "evg_cargo_01",
+   240
+  ],
+  [
+   "evg_cargo_11",
+   240
+  ],
+  [
+   "evg_cargo_06",
+   240
+  ],
+  [
+   "evg_cargo_16",
+   240
+  ],
+  [
+   "evg_cargo_20",
+   239
+  ],
+  [
+   "mi01_2",
+   235
+  ],
+  [
+   "mi01_3",
+   235
+  ],
+  [
+   "mi01_4",
+   235
+  ],
+  [
+   "mi01_5",
+   235
+  ],
+  [
+   "mi01_6",
+   235
+  ],
+  [
+   "meta_new_keeper_2",
+   204
+  ],
+  [
+   "meta_town_remembers",
+   130
+  ],
+  [
+   "onb_30",
+   106
+  ]
+ ],
+ "arc_entry_rate": {
+  "MA02": 0.3417,
+  "mi01": 1.0
+ },
+ "arc_completion_rate": {
+  "MA02": 0.2042,
+  "mi01": 0.9792
+ },
+ "character_appearance_rate": {
+  "bram": 0.4167,
+  "crane": 0.3458,
+  "dace": 0.9875,
+  "fennick": 0.5792,
+  "hale": 0.3625,
+  "ilse": 0.9833,
+  "mirren": 0.3417,
+  "pell": 1.0,
+  "quenn": 0.4333,
+  "solas": 0.3958,
+  "src_gate": 1.0,
+  "src_ledger": 1.0,
+  "src_stranger": 0.9792,
+  "src_telegram": 0.5083,
+  "src_weather": 0.75,
+  "stroud": 0.325,
+  "tobin": 0.3417,
+  "vane": 0.3875,
+  "vosk": 0.6083,
+  "wren": 0.3542
+ },
+ "unlock_rate": {
+  "unlock_drays_key": 0.7542
+ },
+ "per_strategy": {
+  "random": {
+   "runs": 20,
+   "mean_length": 32,
+   "median_length": 29.5,
+   "endings": {
+    "STALL": 18,
+    "end_res_water_min": 2
+   }
+  },
+  "balance": {
+   "runs": 20,
+   "mean_length": 33.1,
+   "median_length": 31.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "risk_seek": {
+   "runs": 20,
+   "mean_length": 31.9,
+   "median_length": 30.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "risk_avoid": {
+   "runs": 20,
+   "mean_length": 34.5,
+   "median_length": 34.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "loyalist:vosk": {
+   "runs": 20,
+   "mean_length": 33.6,
+   "median_length": 31.5,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "loyalist:bram": {
+   "runs": 20,
+   "mean_length": 31.9,
+   "median_length": 29.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "loyalist:mirren": {
+   "runs": 20,
+   "mean_length": 32.9,
+   "median_length": 31.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "faction:company": {
+   "runs": 20,
+   "mean_length": 32.2,
+   "median_length": 31.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "faction:hullfolk": {
+   "runs": 20,
+   "mean_length": 33.0,
+   "median_length": 32.0,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "mystery": {
+   "runs": 20,
+   "mean_length": 34.0,
+   "median_length": 34.5,
+   "endings": {
+    "STALL": 20
+   }
+  },
+  "short_term": {
+   "runs": 20,
+   "mean_length": 34,
+   "median_length": 32.5,
+   "endings": {
+    "STALL": 18,
+    "end_res_traffic_max": 1,
+    "end_res_water_min": 1
+   }
+  },
+  "long_term": {
+   "runs": 20,
+   "mean_length": 29.9,
+   "median_length": 29.0,
+   "endings": {
+    "STALL": 20
+   }
+  }
+ },
+ "card_appearance_top": [
+  [
+   "onb_01",
+   240
+  ],
+  [
+   "mi01_1",
+   240
+  ],
+  [
+   "evg_cargo_01",
+   240
+  ],
+  [
+   "evg_cargo_11",
+   240
+  ],
+  [
+   "evg_cargo_06",
+   240
+  ],
+  [
+   "evg_cargo_16",
+   240
+  ],
+  [
+   "evg_cargo_20",
+   239
+  ],
+  [
+   "mi01_2",
+   235
+  ],
+  [
+   "mi01_3",
+   235
+  ],
+  [
+   "mi01_4",
+   235
+  ],
+  [
+   "mi01_5",
+   235
+  ],
+  [
+   "mi01_6",
+   235
+  ],
+  [
+   "meta_new_keeper_2",
+   204
+  ],
+  [
+   "meta_town_remembers",
+   130
+  ],
+  [
+   "onb_30",
+   106
+  ],
+  [
+   "onb_07",
+   104
+  ],
+  [
+   "onb_09",
+   104
+  ],
+  [
+   "onb_14",
+   100
+  ],
+  [
+   "onb_18",
+   95
+  ],
+  [
+   "onb_19",
+   94
+  ],
+  [
+   "evg_cargo_15",
+   94
+  ],
+  [
+   "evg_cargo_10",
+   94
+  ],
+  [
+   "evg_cargo_05",
+   94
+  ],
+  [
+   "onb_21",
+   93
+  ],
+  [
+   "onb_20",
+   93
+  ],
+  [
+   "onb_11",
+   93
+  ],
+  [
+   "evg_cargo_03",
+   93
+  ],
+  [
+   "evg_cargo_18",
+   93
+  ],
+  [
+   "evg_cargo_13",
+   93
+  ],
+  [
+   "onb_02",
+   92
+  ],
+  [
+   "onb_17",
+   87
+  ],
+  [
+   "onb_12",
+   87
+  ],
+  [
+   "onb_05",
+   87
+  ],
+  [
+   "onb_08",
+   86
+  ],
+  [
+   "onb_15",
+   85
+  ],
+  [
+   "evg_cargo_14",
+   85
+  ],
+  [
+   "evg_cargo_04",
+   85
+  ],
+  [
+   "evg_cargo_19",
+   85
+  ],
+  [
+   "onb_16",
+   83
+  ],
+  [
+   "onb_10",
+   83
+  ]
+ ],
+ "card_appearance_all": {
+  "onb_01": 240,
+  "onb_04": 79,
+  "onb_17": 87,
+  "onb_02": 92,
+  "onb_06": 68,
+  "onb_22": 80,
+  "onb_03": 82,
+  "onb_16": 83,
+  "onb_08": 86,
+  "onb_26": 78,
+  "onb_21": 93,
+  "onb_30": 106,
+  "ma02_01": 82,
+  "ma02_03": 79,
+  "mi01_1": 240,
+  "ma02_02": 75,
+  "evg_cargo_20": 239,
+  "mi01_2": 235,
+  "ma02_04": 82,
+  "ma02_06": 69,
+  "ma02_05": 82,
+  "ma02_07": 82,
+  "ma02_09": 79,
+  "evg_cargo_01": 240,
+  "ma02_08": 76,
+  "mi01_3": 235,
+  "ma02_10": 82,
+  "ma02_13": 79,
+  "ma02_14": 79,
+  "mi01_4": 235,
+  "mi01_5": 235,
+  "evg_cargo_11": 240,
+  "mi01_6": 235,
+  "evg_cargo_06": 240,
+  "evg_cargo_16": 240,
+  "meta_new_keeper_2": 204,
+  "onb_15": 85,
+  "onb_07": 104,
+  "onb_10": 83,
+  "onb_28": 66,
+  "onb_14": 100,
+  "onb_12": 87,
+  "onb_29": 74,
+  "evg_cargo_02": 83,
+  "evg_cargo_07": 82,
+  "evg_cargo_09": 82,
+  "evg_cargo_14": 85,
+  "evg_cargo_04": 85,
+  "evg_cargo_19": 85,
+  "onb_24": 69,
+  "onb_19": 94,
+  "meta_new_keeper_3": 76,
+  "onb_20": 93,
+  "evg_cargo_15": 94,
+  "meta_town_remembers": 130,
+  "evg_cargo_10": 94,
+  "ma02_12": 49,
+  "evg_cargo_05": 94,
+  "onb_09": 104,
+  "onb_27": 23,
+  "onb_05": 87,
+  "onb_11": 93,
+  "evg_cargo_03": 93,
+  "evg_cargo_18": 93,
+  "evg_cargo_13": 93,
+  "onb_18": 95,
+  "onb_23": 30,
+  "meta_vosk_remembers": 42,
+  "evg_cargo_08": 31,
+  "ma02_15": 20,
+  "evg_cargo_17": 31,
+  "end_res_water_min": 3,
+  "ma02_11": 46,
+  "onb_13": 81,
+  "meta_ledger_cipher": 9,
+  "evg_cargo_12": 32,
+  "onb_25": 22,
+  "end_res_traffic_max": 1
+ }
+}

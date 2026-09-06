@@ -70,7 +70,7 @@ def main():
             if b in low:
                 errors.append(f"[{cid}] banned phrase '{b}'")
         for s in SLANG:
-            if s in low:
+            if re.search(r"\b" + re.escape(s.strip(".,")) + r"\b", low):
                 warnings.append(f"[{cid}] slang '{s.strip()}'")
         if c["speaker"] != "src_ledger":
             for m in MECHANICS:
