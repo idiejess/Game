@@ -1,139 +1,159 @@
 {
-  "cards": 36,
-  "errors": [],
+  "cards": 54,
+  "errors": [
+    "[mi19_3] situation 51 words (6-40)"
+  ],
   "warnings": [
-    "[mi07_1] situation 43 words (6-40)",
-    "[mi07_2] situation 48 words (6-40)",
-    "[mi07_3] situation 44 words (6-40)",
-    "[mi07_5] situation 45 words (6-40)",
-    "[mi08_1] situation 45 words (6-40)",
-    "[mi08_2] situation 44 words (6-40)",
-    "[mi08_4] situation 46 words (6-40)",
-    "[mi08_5] situation 48 words (6-40)",
-    "[mi08_6] situation 41 words (6-40)",
-    "[mi09_2] situation 41 words (6-40)",
-    "[mi09_3] situation 48 words (6-40)",
-    "[mi09_4] situation 46 words (6-40)",
-    "[mi09_5] situation 42 words (6-40)",
-    "[mi09_6] situation 41 words (6-40)",
-    "[mi10_1] situation 44 words (6-40)",
-    "[mi10_2] situation 41 words (6-40)",
-    "[mi10_3] situation 44 words (6-40)",
-    "[mi10_5] situation 44 words (6-40)",
-    "[mi10_5] right outcome 25 words (>24)",
-    "[mi10_6] situation 44 words (6-40)",
-    "[mi11_1] right outcome 25 words (>24)",
-    "[mi11_2] situation 44 words (6-40)",
-    "[mi11_3] situation 42 words (6-40)",
-    "[mi11_4] situation 42 words (6-40)",
-    "[mi11_5] situation 41 words (6-40)",
-    "[mi11_6] situation 44 words (6-40)",
-    "[mi12_1] situation 44 words (6-40)",
-    "[mi12_2] situation 44 words (6-40)",
-    "[mi12_3] situation 42 words (6-40)",
-    "[mi12_4] situation 45 words (6-40)",
-    "[mi12_5] situation 41 words (6-40)",
-    "[mi12_6] situation 42 words (6-40)"
+    "[mi13_1] situation 42 words (6-40)",
+    "[mi13_3] situation 44 words (6-40)",
+    "[mi13_4] situation 47 words (6-40)",
+    "[mi13_5] situation 45 words (6-40)",
+    "[mi13_6] left outcome 25 words (>24)",
+    "[mi14_1] situation 43 words (6-40)",
+    "[mi14_2] situation 44 words (6-40)",
+    "[mi14_3] situation 43 words (6-40)",
+    "[mi14_4] situation 46 words (6-40)",
+    "[mi14_5] situation 41 words (6-40)",
+    "[mi14_5] left outcome 25 words (>24)",
+    "[mi15_2] situation 45 words (6-40)",
+    "[mi15_4] situation 45 words (6-40)",
+    "[mi15_5] situation 47 words (6-40)",
+    "[mi15_6] situation 44 words (6-40)",
+    "[mi15_6] right outcome 25 words (>24)",
+    "[mi16_1] situation 47 words (6-40)",
+    "[mi16_2] situation 45 words (6-40)",
+    "[mi16_3] situation 45 words (6-40)",
+    "[mi16_4] situation 46 words (6-40)",
+    "[mi16_5] left outcome 27 words (>24)",
+    "[mi16_6] situation 48 words (6-40)",
+    "[mi17_1] situation 41 words (6-40)",
+    "[mi17_2] situation 44 words (6-40)",
+    "[mi17_2] right outcome 28 words (>24)",
+    "[mi17_3] situation 47 words (6-40)",
+    "[mi17_4] situation 42 words (6-40)",
+    "[mi17_6] situation 42 words (6-40)",
+    "[mi17_6] left outcome 32 words (>24)",
+    "[mi18_1] situation 47 words (6-40)",
+    "[mi18_3] situation 46 words (6-40)",
+    "[mi18_4] situation 45 words (6-40)",
+    "[mi18_5] situation 47 words (6-40)",
+    "[mi19_1] situation 48 words (6-40)",
+    "[mi19_2] situation 46 words (6-40)",
+    "[mi19_4] situation 47 words (6-40)",
+    "[mi19_6] situation 46 words (6-40)",
+    "[mi20_2] situation 42 words (6-40)",
+    "[mi20_2] 3 exclamation marks",
+    "[mi20_6] situation 48 words (6-40)",
+    "[mi21_1] situation 46 words (6-40)",
+    "[mi21_2] situation 44 words (6-40)",
+    "[mi21_3] situation 48 words (6-40)",
+    "[mi21_4] situation 47 words (6-40)",
+    "[mi21_4] left outcome 30 words (>24)",
+    "[mi21_5] situation 42 words (6-40)"
   ],
   "speakers": {
-    "hesse": 3,
-    "fennick": 1,
-    "pell": 1,
-    "src_telegram": 1,
-    "tobin": 4,
-    "mirren": 3,
+    "fennick": 3,
+    "src_telegram": 2,
     "vosk": 2,
-    "hale": 3,
-    "src_stranger": 5,
-    "crane": 2,
+    "src_ledger": 2,
+    "ilse": 6,
+    "pell": 4,
+    "cole": 4,
+    "dace": 2,
+    "wren": 6,
     "src_gate": 2,
-    "dace": 1,
-    "ilse": 2,
-    "solas": 2,
-    "src_ledger": 1,
-    "stroud": 3
+    "bram": 2,
+    "src_weather": 2,
+    "vane": 1,
+    "quenn": 1,
+    "hale": 5,
+    "petronel": 1,
+    "tamm": 3,
+    "crane": 2,
+    "src_stranger": 2,
+    "kell": 2
   },
   "top_openers": [
     [
-      "there's a",
-      3
-    ],
-    [
-      "the pilgrims",
+      "i have",
       2
     ],
     [
-      "lucan hesse",
+      "three things",
+      2
+    ],
+    [
+      "keeper the",
+      2
+    ],
+    [
+      "a wire",
       1
     ],
     [
-      "hesse asked",
+      "i've made",
       1
     ],
     [
-      "i've got",
+      "the telegraph",
       1
     ],
     [
-      "the courier",
+      "vosk knows",
       1
     ],
     [
-      "ardent's written",
+      "fennick's book",
       1
     ],
     [
-      "company to",
+      "the company",
       1
     ],
     [
-      "you want",
-      1
-    ],
-    [
-      "second piece",
+      "the scrip",
       1
     ]
   ],
   "top_labels": [
     [
-      "they said resigned; i didn't believe it",
+      "thank him",
+      2
+    ],
+    [
+      "keep reading; tell nobody",
       1
     ],
     [
-      "no comment on the last one",
+      "stop reading",
       1
     ],
     [
-      "it's something",
+      "ask what else vosk reports",
       1
     ],
     [
-      "give the marks to the poor box",
+      "show me the book",
       1
     ],
     [
-      "run it",
+      "burn the book",
       1
     ],
     [
-      "something duller",
+      "i have",
       1
     ],
     [
-      "ask hesse for a piece on pell",
+      "i have not",
       1
     ],
     [
-      "newspapers mention who they like",
+      "she wants you to keep it",
       1
     ],
     [
-      "print the letter",
-      1
-    ],
-    [
-      "don't; they'll come for you",
+      "give it to me for safekeeping",
       1
     ]
   ]
