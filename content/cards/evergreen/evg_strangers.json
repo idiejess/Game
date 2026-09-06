@@ -1,0 +1,894 @@
+{
+ "cards": [
+  {
+   "id": "evg_strangers_01",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A man in a good coat asks to buy the Keeper's house. Not rent. Buy. He names a sum that would keep the gate for a year, and does not say why.",
+   "left": {
+    "label": "Not for sale",
+    "outcome": "He leaves his card. It has no name, only an Ardent address.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Ask what he'd pay for the study alone",
+    "outcome": "He pauses a moment too long. \"The house. Or nothing.\"",
+    "effects": {
+     "counters": {
+      "suspicion": 2,
+      "evidence": 1
+     },
+     "relationships": {
+      "mirren": -2
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_02",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "A boat of travelling players offers a free performance for the town in exchange for passage. Their play, they say, is about a canal. Everyone's plays are about a canal, this year.",
+   "left": {
+    "label": "Passage for a play",
+    "outcome": "The play is bad and the town loves it. There is a Keeper in it who drowns.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 4
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Toll like anyone",
+    "outcome": "They pay, and perform at the Reach for free, out of spite.",
+    "effects": {
+     "resources": {
+      "coffers": 2
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_03",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "expression": "curious",
+   "text": "I'm writing a piece on the Keepers of Halfway. Nine in eighty years, and four didn't leave by the flight. Dray makes five. I'd like a quote about the chair. Anything. Even 'no comment' is a quote.",
+   "left": {
+    "label": "The chair is comfortable",
+    "outcome": "KEEPER: 'THE CHAIR IS COMFORTABLE'. It is read as bravery or stupidity, by shore.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "hesse": 3
+     },
+     "flags_set": [
+      "pressed_by_hesse"
+     ]
+    }
+   },
+   "right": {
+    "label": "Ask about the four",
+    "outcome": "\"Drowned, drowned, run out, 'resigned'. You knew that.\" You did not.",
+    "effects": {
+     "relationships": {
+      "hesse": 2
+     },
+     "counters": {
+      "evidence": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_strangers_04",
+   "category": "evergreen",
+   "speaker": "tobin",
+   "text": "In my day the Keeper at Lock 8, that's me, used to swap a keg with the Keeper at 9 every solstice. Nobody's done it since Dray. I've brought the keg. You've got nothing to swap. I know. Sit down.",
+   "left": {
+    "label": "Sit down",
+    "outcome": "Three hours. Somewhere in the second, the Dry Year.",
+    "effects": {
+     "resources": {
+      "town": 2
+     },
+     "relationships": {
+      "tobin": 6
+     },
+     "flags_set": [
+      "met_tobin",
+      "tobin_story_1"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "fatigue": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Another night",
+    "outcome": "\"There's fewer of those than you think, Keeper.\" He leaves the keg.",
+    "effects": {
+     "relationships": {
+      "tobin": -2
+     },
+     "flags_set": [
+      "met_tobin"
+     ],
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 6
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_05",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "A boat from the east with a woman who says she is Dray's sister. Nobody knew he had one. She asks to see the study. Mirren has never heard of her. Neither, it seems, had he.",
+   "left": {
+    "label": "Let her see the study",
+    "outcome": "She looks at the desk and touches nothing and leaves. Mirren watches from the door.",
+    "effects": {
+     "relationships": {
+      "mirren": -3
+     },
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Family or not, no",
+    "outcome": "She goes down the flight. Stroud, later: \"She had his eyes. Or I wanted her to.\"",
+    "effects": {
+     "relationships": {
+      "mirren": 3,
+      "stroud": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud",
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_06",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A drover wants to swim forty cattle across the pound rather than pay the ferry. Forty cattle in a canal. Crane is somewhere finding the schedule for livestock in water. Dace is laughing.",
+   "left": {
+    "label": "Swim them",
+    "outcome": "Forty cattle cross. One tries the chamber. The town talks about it for a year.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 4,
+      "water": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The ferry, and the fee",
+    "outcome": "He pays, furious. Crane arrives with the schedule too late and is desolate.",
+    "effects": {
+     "resources": {
+      "coffers": 3,
+      "traffic": 1
+     },
+     "relationships": {
+      "crane": -1
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_strangers_07",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "A boat with no name, no cargo and one passenger, who asks to go down the east flight 'before anyone from Sorrel asks'. He has coin, and the look of a man out of other things.",
+   "left": {
+    "label": "Down the flight, quietly",
+    "outcome": "He goes. Two days later, Sorrel asks. You say nothing.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "factions": {
+      "sorrel": -2,
+      "aldmere": 1
+     },
+     "counters": {
+      "passages_night": 1
+     }
+    }
+   },
+   "right": {
+    "label": "He waits with the rest",
+    "outcome": "Solas's men are at the gate by evening. He does not run. He looks at you.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "factions": {
+      "sorrel": 3
+     },
+     "relationships": {
+      "solas": 2
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_strangers_08",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "text": "Sorrel says the summit Keeper is secretly Aldmere's man. Aldmere says you are Sorrel's. I could print both; it would be very funny. Or neither, for a favor.",
+   "left": {
+    "label": "Print both",
+    "outcome": "Both shores are briefly united in being annoyed with you.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "factions": {
+      "aldmere": -2,
+      "sorrel": -2
+     },
+     "relationships": {
+      "hesse": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Neither; name the favor",
+    "outcome": "\"A seat on the first Jubilee boat. That's all. For now.\"",
+    "effects": {
+     "relationships": {
+      "hesse": 2
+     },
+     "resources": {
+      "company": 1
+     },
+     "counters": {
+      "bribes_taken": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_strangers_09",
+   "category": "evergreen",
+   "speaker": "tobin",
+   "expression": "remembering",
+   "text": "The Dry Year, since you ask. Pound went to the sills. Company said drought. Then men came up the west flight at night, forty of 'em, said they were dredging the reservoir. I looked. No dredgers. Picks.",
+   "left": {
+    "label": "Picks for what?",
+    "outcome": "\"Never found out. They went up the north bank and came down a month later, thin.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "clue_night_dredgers",
+      "tobin_story_2"
+     ],
+     "counters": {
+      "tobin_pieces": 1,
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Drought does strange things",
+    "outcome": "\"It does. It doesn't hand out picks.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 1
+     },
+     "flags_set": [
+      "tobin_story_2"
+     ],
+     "counters": {
+      "tobin_pieces": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "tobin_story_1"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_10",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "expression": "grave",
+   "text": "A bargee has a fever I have seen in the coalfield towns. If it is what I think, his boat must not go down the east flight. If not, I have ruined his season for nothing.",
+   "left": {
+    "label": "Hold the boat",
+    "outcome": "It is what she thought. Three boats are held. Nobody dies.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 3
+     },
+     "relationships": {
+      "stroud": 5
+     },
+     "flags_set": [
+      "fever_aboard"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let him go; watch the town",
+    "outcome": "The boat goes. Nothing happens. Stroud does not sleep for a week.",
+    "effects": {
+     "resources": {
+      "traffic": 2
+     },
+     "relationships": {
+      "stroud": -4
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "flags_none": [
+     "fever_aboard",
+     "quarantine"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_11",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A child, alone, on the towpath, with a note pinned to her coat that says 'Halfway'. Nothing else. She does not speak. Hale would take her. Ilse would take her. The Company has a form.",
+   "left": {
+    "label": "The chapel",
+    "outcome": "Hale takes her hand. The child speaks, eventually, in a Lowmere accent nobody recognizes.",
+    "effects": {
+     "factions": {
+      "concordance": 4
+     },
+     "relationships": {
+      "hale": 3
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The inn",
+    "outcome": "Ilse takes her without a word and feeds her for a year.",
+    "effects": {
+     "resources": {
+      "town": 3
+     },
+     "relationships": {
+      "ilse": 4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale",
+     "met_ilse"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_12",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "A boat of Sorrel students on a walking tour want to see 'the famous sluice house'. Famous to whom, you ask. To a professor in Sorrel, they say, who lectures on it and has never seen it either.",
+   "left": {
+    "label": "Show them the door",
+    "outcome": "They sketch a locked door. One asks why the straps are new.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "flags_set": [
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "suspicion": 1,
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "There is nothing to see",
+    "outcome": "They sketch the chapel instead. Vosk, somewhere, relaxes.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "vosk": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_13",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "expression": "triumphant",
+   "text": "Scoop. The Company's Board has three seats empty and the Superintendent of Halfway has applied for one. Pell. On the Board. I'd like your reaction. I'd settle for your face.",
+   "left": {
+    "label": "He'd be good at it",
+    "outcome": "\"Diplomatic. I'll print 'supportive'.\" Pell is touched.",
+    "effects": {
+     "relationships": {
+      "pell": 5,
+      "hesse": 1
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "right": {
+    "label": "No comment",
+    "outcome": "\"'Keeper declines to support Superintendent.' That's the headline you've bought.\"",
+    "effects": {
+     "relationships": {
+      "pell": -5,
+      "hesse": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "met_pell"
+    ],
+    "watch": {
+     "min": 25
+    }
+   },
+   "cooldown": 120,
+   "tags": [
+    "res:company"
+   ]
+  },
+  {
+   "id": "evg_strangers_14",
+   "category": "evergreen",
+   "speaker": "tobin",
+   "text": "Dray sat where you're sitting and asked me the same question you're about to ask. I told him the same thing. Then he went and did something about it. I'm not sure I should tell you again.",
+   "left": {
+    "label": "Tell me",
+    "outcome": "\"The water don't come from the reservoirs. Never did. Ask the old woman at the Reach what it does come from.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 4
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 2,
+      "tobin_pieces": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Don't",
+    "outcome": "\"Sensible. He wasn't. I liked him for it.\"",
+    "effects": {
+     "relationships": {
+      "tobin": 2
+     },
+     "counters": {
+      "fatigue": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tobin"
+    ],
+    "counters": {
+     "tobin_pieces": {
+      "min": 2
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_15",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "You have a cough a month old and a color I do not like. The summit air is thin and the water cold. Go down to Aldmere for a week. The gate will not fall down.",
+   "left": {
+    "label": "Go down for a week",
+    "outcome": "A week below. You come back with color and to a gate that did not fall down.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "company": -2
+     },
+     "counters": {
+      "fatigue": -6
+     },
+     "relationships": {
+      "stroud": 4,
+      "dace": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The gate needs its Keeper",
+    "outcome": "\"So Dray said. I attended him twice that year.\"",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "counters": {
+      "fatigue": 2
+     },
+     "relationships": {
+      "stroud": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "counters": {
+     "fatigue": {
+      "min": 8
+     }
+    }
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_16",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A Sorrel engineer, retired, asks to see the paddle gear 'for old times'. He worked on the Sorrel flight in Marrow's day. He is very old. He calls the pound 'the Quell' once, and corrects himself.",
+   "left": {
+    "label": "Ask about the Quell",
+    "outcome": "\"A river. West of here. Dried up. Long time ago.\" He will not say more.",
+    "effects": {
+     "flags_set": [
+      "clue_song"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Show him the gear",
+    "outcome": "He weeps at the paddle gear. Engineers do, apparently.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "quenn": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_17",
+   "category": "evergreen",
+   "speaker": "src_gate",
+   "text": "A very fine Aldmere yacht, a lady aboard who does not give her name, asks passage west and offers a sum to have the Book say she went east.",
+   "left": {
+    "label": "The Book says east",
+    "outcome": "The Book lies. The sum is large. Crane, weeks later, asks about a yacht.",
+    "effects": {
+     "resources": {
+      "coffers": 6,
+      "company": -2
+     },
+     "counters": {
+      "bribes_taken": 2
+     },
+     "relationships": {
+      "crane": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The Book says what happened",
+    "outcome": "She pays the ordinary toll and looks at you with something like respect.",
+    "effects": {
+     "resources": {
+      "coffers": 1,
+      "company": 1
+     },
+     "factions": {
+      "aldmere": 1
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_strangers_18",
+   "category": "evergreen",
+   "speaker": "hesse",
+   "text": "A reader has sent the Courier a letter claiming a Halfway Keeper once found 'a door under the water'. Unsigned. Aldmere postmark. I don't print anonymous letters. I do show them to people who might know.",
+   "left": {
+    "label": "I know nothing of doors",
+    "outcome": "\"Everyone says that. It's the least interesting thing anyone says.\"",
+    "effects": {
+     "relationships": {
+      "hesse": -1
+     },
+     "counters": {
+      "suspicion": 0
+     }
+    }
+   },
+   "right": {
+    "label": "Let me see the hand",
+    "outcome": "You have seen the hand. On a ciphered ledger.",
+    "effects": {
+     "relationships": {
+      "hesse": 3
+     },
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     },
+     "flags_set": [
+      "hesse_has_story"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hesse",
+     "found_ledger"
+    ]
+   },
+   "cooldown": 150,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_strangers_19",
+   "category": "evergreen",
+   "speaker": "tobin",
+   "text": "I'm not long for it, Keeper. Stroud says so with her face. I've got a Company coat forty years old and a tankard and a story I never finished telling Dray. Which do you want?",
+   "left": {
+    "label": "The story",
+    "outcome": "He tells it. It ends with men going into the hill and the pound rising the next spring.",
+    "effects": {
+     "relationships": {
+      "tobin": 5
+     },
+     "flags_set": [
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "tobin_pieces": 2,
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The coat",
+    "outcome": "\"Sensible. Warmer than a story.\" It fits, almost.",
+    "effects": {
+     "relationships": {
+      "tobin": 3
+     },
+     "resources": {
+      "town": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tobin"
+    ],
+    "watch": {
+     "min": 30
+    }
+   },
+   "cooldown": 200,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_strangers_20",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "Fennick has fainted at his key. Overwork and no food, he says. Fear, I say. He keeps asking whether Vosk has been to see me. Has something been happening on the wire I should know about?",
+   "left": {
+    "label": "Tell her what you know",
+    "outcome": "She listens like a physician. \"Then he needs rest, and you need care.\"",
+    "effects": {
+     "relationships": {
+      "stroud": 4,
+      "fennick": 2
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Nothing you should know",
+    "outcome": "\"I see. Then I shall treat the symptom.\"",
+    "effects": {
+     "relationships": {
+      "stroud": -2,
+      "fennick": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud",
+     "met_fennick"
+    ],
+    "counters": {
+     "suspicion": {
+      "min": 4
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
+}

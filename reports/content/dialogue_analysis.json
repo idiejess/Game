@@ -1,118 +1,112 @@
 {
-  "cards": 40,
+  "cards": 20,
   "errors": [],
   "warnings": [
-    "[evg_town_life_02] situation 36 words (6-32)",
-    "[evg_town_life_03] situation 36 words (6-32)",
-    "[evg_town_life_04] situation 34 words (6-32)",
-    "[evg_town_life_08] situation 35 words (6-32)",
-    "[evg_town_life_09] situation 34 words (6-32)",
-    "[evg_town_life_13] situation 34 words (6-32)",
-    "[evg_town_life_16] situation 35 words (6-32)",
-    "[evg_town_life_18] situation 36 words (6-32)",
-    "[evg_town_life_19] situation 37 words (6-32)",
-    "[evg_town_life_20] situation 35 words (6-32)",
-    "[evg_company_orders_02] situation 33 words (6-32)",
-    "[evg_company_orders_05] situation 38 words (6-32)",
-    "[evg_company_orders_14] situation 33 words (6-32)",
-    "[evg_company_orders_15] situation 35 words (6-32)",
-    "[evg_company_orders_20] situation 37 words (6-32)",
-    "opener 'the board' used by 5 cards (12.5%)",
-    "opener 'company to' used by 4 cards (10.0%)"
+    "[evg_strangers_03] situation 37 words (6-32)",
+    "[evg_strangers_04] situation 38 words (6-32)",
+    "[evg_strangers_05] situation 36 words (6-32)",
+    "[evg_strangers_06] situation 33 words (6-32)",
+    "[evg_strangers_07] situation 36 words (6-32)",
+    "[evg_strangers_09] situation 37 words (6-32)",
+    "[evg_strangers_10] situation 36 words (6-32)",
+    "[evg_strangers_11] situation 35 words (6-32)",
+    "[evg_strangers_12] situation 38 words (6-32)",
+    "[evg_strangers_14] situation 37 words (6-32)",
+    "[evg_strangers_15] situation 36 words (6-32)",
+    "[evg_strangers_16] situation 36 words (6-32)",
+    "[evg_strangers_18] situation 36 words (6-32)",
+    "[evg_strangers_19] situation 35 words (6-32)",
+    "[evg_strangers_20] situation 36 words (6-32)",
+    "opener 'a boat' used by 4 cards (20.0%)"
   ],
   "speakers": {
-    "ilse": 5,
-    "cole": 4,
-    "stroud": 4,
     "src_stranger": 4,
-    "dace": 3,
-    "src_telegram": 4,
-    "pell": 4,
-    "vosk": 4,
-    "kell": 4,
-    "fennick": 4
+    "src_gate": 4,
+    "hesse": 4,
+    "tobin": 4,
+    "stroud": 4
   },
   "top_openers": [
     [
-      "the board",
-      5
-    ],
-    [
-      "company to",
+      "a boat",
       4
     ],
     [
-      "three things",
-      3
-    ],
-    [
-      "market day",
+      "a man",
       1
     ],
     [
-      "the dray",
+      "i'm writing",
       1
     ],
     [
-      "the lock",
+      "in my",
       1
     ],
     [
-      "a travelling",
+      "a drover",
       1
     ],
     [
-      "somebody from",
+      "sorrel says",
       1
     ],
     [
-      "the town",
+      "the dry",
       1
     ],
     [
-      "a lock",
+      "a bargee",
+      1
+    ],
+    [
+      "a child",
+      1
+    ],
+    [
+      "scoop the",
       1
     ]
   ],
   "top_labels": [
     [
-      "stalls on the towpath",
+      "not for sale",
       1
     ],
     [
-      "the towpath tows",
+      "ask what he'd pay for the study alone",
       1
     ],
     [
-      "the keeper stays",
+      "passage for a play",
       1
     ],
     [
-      "let it to mirren",
+      "toll like anyone",
       1
     ],
     [
-      "fence the sill",
+      "the chair is comfortable",
       1
     ],
     [
-      "it is how they learn",
+      "ask about the four",
       1
     ],
     [
-      "let them play",
+      "sit down",
       1
     ],
     [
-      "move them along",
+      "another night",
       1
     ],
     [
-      "the chamber for the race",
+      "let her see the study",
       1
     ],
     [
-      "race below the gate",
+      "family or not, no",
       1
     ]
   ]
