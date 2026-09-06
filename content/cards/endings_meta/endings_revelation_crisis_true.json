@@ -1,0 +1,111 @@
+{
+  "cards": [
+    {"id": "end_rev_sluice", "category": "endings_meta", "speaker": "src_ledger", "pool": "ending",
+     "text": "Behind the sluice house the tunnel goes down, then under. Your lamp lasts long enough to show a second lamp, rusted, and a coat on the stone that had been Dray's. The water is very cold.",
+     "left": {"label": "Reach for the coat", "outcome": "The Ledger records what you saw. Not what came after.", "effects": {"flags_set": ["knows_dray_fate"]}},
+     "right": {"label": "Turn back", "outcome": "The way back is not where you left it.", "effects": {"flags_set": ["knows_dray_fate"], "counters": {"fatigue": 2}}},
+     "tags": ["ending", "res:water"], "notes": "Death by drowning in the Cut; unlock_dray_fate granted by the ending record."},
+
+    {"id": "end_rev_survey", "category": "endings_meta", "speaker": "quenn", "expression": "resolved", "pool": "ending",
+     "text": "They've dismissed you. One watch after you read it. I'm copying the survey out by hand before they empty the drawer. Take the copy. Put it somewhere they don't read.",
+     "left": {"label": "The Ledger", "outcome": "\"Good. Sorry. Good.\"", "effects": {"relationships": {"quenn": 5}}},
+     "right": {"label": "Give it to Crane", "outcome": "\"He'll file it. That's roughly the same thing.\"", "effects": {"relationships": {"crane": 5}}},
+     "tags": ["ending", "res:company"]},
+
+    {"id": "end_rev_song", "category": "endings_meta", "speaker": "petronel", "expression": "singing", "pool": "ending",
+     "text": "At the boundary stone, while the town stands with its lamps, the old woman sings the last verse. The one about the river that went into the hill. The town hears it too.",
+     "left": {"label": "Listen to the end", "outcome": "You have the words now. The Ledger has them.", "effects": {"flags_set": ["song_heard"]}},
+     "right": {"label": "Ask the town if they heard", "outcome": "Some of them did. Ilse did.", "effects": {"flags_set": ["song_heard"], "relationships": {"ilse": 3}}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_rev_letters", "category": "endings_meta", "speaker": "hale", "expression": "unveiled", "pool": "ending",
+     "text": "The Breach has emptied the undercroft into Chapel Street. Hale is on her knees in the mud gathering letters in an engineer's hand. She looks up at you and holds one out.",
+     "left": {"label": "Take it", "outcome": "\"The water I have given.\" Marrow's hand. You read it by lamplight, once.", "effects": {"flags_set": ["read_letters"]}},
+     "right": {"label": "Help her gather them", "outcome": "She gives you one anyway, at the end.", "effects": {"flags_set": ["read_letters"], "relationships": {"hale": 5}}},
+     "tags": ["ending", "res:water"]},
+
+    {"id": "end_rev_file", "category": "endings_meta", "speaker": "fennick", "expression": "frightened", "pool": "ending",
+     "text": "They found you with Vosk's file open on the desk. You're removed. I shouldn't tell you this, Keeper, but I wired the first page to the Ledger office before they took it. In strictest confidence.",
+     "left": {"label": "Thank him", "outcome": "He goes red to the eyeshade.", "effects": {"relationships": {"fennick": 8}, "flags_set": ["vosk_file_seen"]}},
+     "right": {"label": "Tell him to burn his copy", "outcome": "\"I already did. The other copy.\"", "effects": {"flags_set": ["vosk_file_seen"]}},
+     "tags": ["ending", "res:coffers"]},
+
+    {"id": "end_rev_cipher", "category": "endings_meta", "speaker": "mirren", "expression": "hopeful", "pool": "ending",
+     "text": "The last night, and the cipher gives. It was the gauge marks all along. The ledger is a map. She reads it over your shoulder and says nothing for a long time.",
+     "left": {"label": "Give her the ledger", "outcome": "\"He drew this. He was going in.\" She keeps it.", "effects": {"flags_set": ["cipher_solved"], "relationships": {"mirren": 10}}},
+     "right": {"label": "Copy it into the Ledger first", "outcome": "She lets you. Then she takes it.", "effects": {"flags_set": ["cipher_solved"], "counters": {"cipher_progress": 6}}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_rev_crane", "category": "endings_meta", "speaker": "crane", "expression": "neutral", "pool": "ending",
+     "text": "You are dismissed and I am recalled. I note that my report under Schedule Nine includes six years of water counts. Aldmere will not read it. I have taken the liberty of a second copy.",
+     "left": {"label": "For the Ledger", "outcome": "\"Duly. I did not say that.\"", "effects": {"flags_set": ["clue_crane_counts"], "relationships": {"crane": 5}}},
+     "right": {"label": "For Quenn", "outcome": "\"She has them already. Hers are more precise.\"", "effects": {"flags_set": ["clue_crane_counts"], "relationships": {"quenn": 3}}},
+     "tags": ["ending", "res:traffic"]},
+
+    {"id": "end_rev_tobin", "category": "endings_meta", "speaker": "tobin", "expression": "remembering", "pool": "ending",
+     "text": "Tobin's gone, in the spring, in his chair. He left you the tankard and a story he never finished: the Dry Year men who came at night to dredge a reservoir, with no dredgers, and went into the hill instead.",
+     "left": {"label": "Write it down", "outcome": "In the Ledger, in full, for the next one.", "effects": {"flags_set": ["clue_night_dredgers"]}},
+     "right": {"label": "Tell it to Mirren", "outcome": "She listens the way he did.", "effects": {"flags_set": ["clue_night_dredgers"], "relationships": {"mirren": 5}}},
+     "tags": ["ending", "res:water"]},
+
+    {"id": "end_rev_bram", "category": "endings_meta", "speaker": "bram", "expression": "stern", "pool": "ending",
+     "text": "At the boundary stone Bram Holloway stands up, which he does not do. \"We hold a place on the north bank where the water comes out of the hill. We have never said it. We say it now, to a gate.\"",
+     "left": {"label": "Take the bearing", "outcome": "He gives it in the old way, by lamps and stones.", "effects": {"flags_set": ["knows_cut"]}},
+     "right": {"label": "Ask why now", "outcome": "\"Because you are leaving, and the remembered are not.\"", "effects": {"flags_set": ["knows_cut"], "relationships": {"bram": 5}}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_rev_vosk", "category": "endings_meta", "speaker": "vosk", "expression": "rare_warmth", "pool": "ending",
+     "text": "I deliver this one myself. You are dismissed. For the record, and only for the record, the Company has known since the Dry Year. I will leave the door open behind me. You will find that is not an accident.",
+     "left": {"label": "Ask why she is telling you", "outcome": "\"Because the next one will ask too, and I am tired.\"", "effects": {"flags_set": ["vosk_file_seen"], "relationships": {"vosk": 5}}},
+     "right": {"label": "Go through the door", "outcome": "The file is on her desk. You have one watch.", "effects": {"flags_set": ["vosk_file_seen"], "counters": {"evidence": 2}}},
+     "tags": ["ending", "res:company"]},
+
+    {"id": "end_crisis_fire", "category": "endings_meta", "speaker": "tamm", "expression": "doubtful", "pool": "ending",
+     "text": "Yard's gone to the waterline. Season's hulls with it. Town says Company. Company says you. I say you were holding a bucket, same as me, and it'll hold or it won't.",
+     "left": {"label": "Stay and help clear", "outcome": "Three days of ash. Then the telegram.", "effects": {"resources": {"town": 3}}},
+     "right": {"label": "Face the Company first", "outcome": "The telegram is already written.", "effects": {}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_crisis_riot", "category": "endings_meta", "speaker": "ilse", "expression": "angry", "pool": "ending",
+     "text": "It started at my inn and ended at your gate. Nobody remembers who threw the first lamp. The Company's report will say you failed to prevent it. Mine says nothing. I have said enough.",
+     "left": {"label": "You could have stopped it", "outcome": "\"So could you. Earlier.\"", "effects": {}},
+     "right": {"label": "Nobody could", "outcome": "\"Somebody did, once. Then his son drowned.\"", "effects": {"relationships": {"ilse": 3}}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_crisis_frost", "category": "endings_meta", "speaker": "stroud", "expression": "grave", "pool": "ending",
+     "text": "Forty boats frozen in the pound and the Company store half empty for a month. Two children did not see the thaw. The ice is going now. So, I think, are you.",
+     "left": {"label": "On the first barge down", "outcome": "Nobody sees you off. That is a kindness.", "effects": {}},
+     "right": {"label": "Ask if you could have done more", "outcome": "\"Yes. So could I. That is the job.\"", "effects": {"relationships": {"stroud": 3}}},
+     "tags": ["ending", "res:traffic"]},
+
+    {"id": "end_crisis_inquiry", "category": "endings_meta", "speaker": "kell", "expression": "final", "pool": "ending",
+     "text": "The inquiry finds as follows. The order bore your signature. The Company keeps orders. Regrettably, it does not keep Keepers who sign them. The Board's view is that this concludes matters.",
+     "left": {"label": "Ask who drafted the order", "outcome": "\"The Board's view is that this is immaterial.\"", "effects": {"counters": {"suspicion": 1}}},
+     "right": {"label": "Sign the finding", "outcome": "Your signature again. It is what they keep.", "effects": {}},
+     "tags": ["ending", "res:company"]},
+
+    {"id": "end_crisis_fever", "category": "endings_meta", "speaker": "stroud", "expression": "grave", "pool": "ending",
+     "text": "It came up the east flight in a boat with a clean bill. You have it now. I will sit with you. There was nothing to be done, I will say afterward, and I am not certain it is true.",
+     "left": {"label": "Ask her to say it anyway", "outcome": "She does. She is a good physician.", "effects": {"relationships": {"stroud": 3}}},
+     "right": {"label": "Tell her what you noticed about the water", "outcome": "She writes it down. Doctors keep ledgers too.", "effects": {"counters": {"evidence": 1}}},
+     "tags": ["ending", "res:town"]},
+
+    {"id": "end_true_river", "category": "endings_meta", "speaker": "bram", "expression": "mourning", "pool": "ending",
+     "text": "Dawn. Marrow's sluice is open and the Quell is going home under the hill. The pound is falling to a road. \"We have never thanked a gate,\" Bram says. \"We are learning.\"",
+     "left": {"label": "Go down with them", "outcome": "The west flight, then a dry valley with a river in it.", "effects": {"lore": ["lore_river_returned"], "factions": {"hullfolk": 20}}},
+     "right": {"label": "Keep the smaller gate", "outcome": "A seasonal canal needs a Keeper too.", "effects": {"lore": ["lore_river_returned"], "resources": {"town": 5}}},
+     "conditions": {"flags_all": ["route_river"]}, "tags": ["ending", "true", "res:water"]},
+
+    {"id": "end_true_ledger", "category": "endings_meta", "speaker": "crane", "expression": "delighted_by_a_clause", "pool": "ending",
+     "text": "Under the Compact, Schedule Nine, both shores now hold the same document in the same watch: Quenn's figures, Marrow's letters, Hesse's front page, my seal. I note that the Company has no schedule for this.",
+     "left": {"label": "Sign as witness", "outcome": "The charter falls within the year. The canal does not.", "effects": {"lore": ["lore_open_ledger"], "factions": {"aldmere": 10, "sorrel": 10}}},
+     "right": {"label": "Let the town sign first", "outcome": "Ilse signs. Then Dace. Then everyone.", "effects": {"lore": ["lore_open_ledger"], "resources": {"town": 5}}},
+     "conditions": {"flags_all": ["route_ledger"]}, "tags": ["ending", "true", "res:company"]},
+
+    {"id": "end_true_cut", "category": "endings_meta", "speaker": "vosk", "expression": "rare_warmth", "pool": "ending",
+     "text": "The regulating sluice she died building is finished. The pound holds. Lowmere has a stream by autumn. Nobody knows. For the record, you have chosen to be me. You will find it is not nothing.",
+     "left": {"label": "Take the key", "outcome": "Brass, stamped S.H. It was always going to be someone.", "effects": {"lore": ["lore_keepers_cut"], "relationships": {"vosk": 10}}},
+     "right": {"label": "Give the key to Hale", "outcome": "\"We tend it,\" she says. \"That is all we ever did.\"", "effects": {"lore": ["lore_keepers_cut"], "relationships": {"hale": 10}}},
+     "conditions": {"flags_all": ["route_cut"]}, "tags": ["ending", "true", "res:water"]}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "cards": [
+    {"id": "meta_new_keeper_2", "category": "endings_meta", "speaker": "src_ledger", "pool": "forced",
+     "text": "The Ledger is waiting on the desk, in a hand that is not yours. The last Keeper wrote until the last watch. The last line is unfinished.",
+     "text_variants": [
+       {"when": {"flags_all": ["p_prev_keeper_died_water"]}, "text": "The Ledger is waiting on the desk, water-stained. The last Keeper wrote about the gauge until the water came for the house."},
+       {"when": {"flags_all": ["p_prev_keeper_run_out"]}, "text": "The Ledger is waiting on the desk. Someone left it there after the last Keeper was walked to the stone. The town, then, still respects the book."}
+     ],
+     "left": {"label": "Read it through", "outcome": "You know what they knew. It is not nothing.", "effects": {"counters": {"evidence": 2, "fatigue": 1}}},
+     "right": {"label": "Start a fresh page", "outcome": "Their hand stays under yours, page after page.", "effects": {"counters": {"fatigue": -1}}},
+     "notes": "Forced as the second card of run 2+."},
+
+    {"id": "meta_new_keeper_3", "category": "endings_meta", "speaker": "src_ledger", "pool": "general",
+     "text": "Three Keepers in the chair since Dray. The town has stopped learning names. At the inn they call you 'the new one', and the one before you 'the other one'.",
+     "left": {"label": "Earn the name", "outcome": "It will take a while. It always does.", "effects": {"resources": {"town": 2}, "counters": {"town_favors": 1}}},
+     "right": {"label": "'The new one' will do", "outcome": "Less to lose, that way.", "effects": {"resources": {"company": 2}}},
+     "conditions": {"run": {"min": 3}, "watch": {"min": 2, "max": 12}}, "weight": 4, "tags": ["res:town", "meta"]},
+
+    {"id": "meta_town_remembers", "category": "endings_meta", "speaker": "ilse", "expression": "wry", "pool": "general",
+     "text": "The one before you. I remember one thing about them, and it isn't the thing they'd choose. That's how the town works. What will yours be?",
+     "text_variants": [
+       {"when": {"flags_all": ["p_honored_remembered"]}, "text": "The one before you stood with the boat people at their remembering. Town didn't like it. Town remembers it anyway. What will yours be?"},
+       {"when": {"flags_all": ["p_clearance_done"]}, "text": "The one before you signed the paper that cleared the Reach. Quieter now. Some of us liked it. I am not telling you which. What will yours be?"}
+     ],
+     "left": {"label": "Something the town chooses", "outcome": "\"Then start drinking here.\"", "effects": {"resources": {"town": 3}, "relationships": {"ilse": 3}}},
+     "right": {"label": "Something I choose", "outcome": "\"They all say that.\"", "effects": {"relationships": {"ilse": -2}, "resources": {"company": 1}}},
+     "conditions": {"run": {"min": 2}, "flags_all": ["met_ilse"], "watch": {"max": 20}}, "weight": 4, "tags": ["res:town", "meta"]},
+
+    {"id": "meta_vosk_remembers", "category": "endings_meta", "speaker": "vosk", "expression": "measuring", "pool": "general",
+     "text": "You have asked about the reservoirs. Noted. The last one asked that too, and the one before. You will find the answer is the same. You will also find I am tired of giving it.",
+     "left": {"label": "Then give a different one", "outcome": "\"For the record: no.\" But she stays a moment longer.", "effects": {"counters": {"suspicion": 1}, "relationships": {"vosk": 2}}},
+     "right": {"label": "Withdraw the question", "outcome": "\"Noted.\"", "effects": {"resources": {"company": 2}, "counters": {"suspicion": -1}}},
+     "conditions": {"run": {"min": 2}, "flags_all": ["met_vosk"], "flags_any": ["noticed_water_fall", "clue_reservoirs", "clue_dry_aqueduct"]}, "weight": 4, "tags": ["res:company", "meta"]},
+
+    {"id": "meta_hullfolk_gift", "category": "endings_meta", "speaker": "bram", "expression": "patient", "pool": "general",
+     "text": "A Keeper of this chair once stood with us at the remembering. We do not forget a chair. There is a smoked pike on your sill. It is not a bribe. We do not do those.",
+     "left": {"label": "Accept it", "outcome": "\"Then we are two who remember.\"", "effects": {"factions": {"hullfolk": 5}, "relationships": {"bram": 6}, "flags_set": ["met_bram"]}},
+     "right": {"label": "Return it with thanks", "outcome": "\"We hold the thanks. Keep the fish.\"", "effects": {"resources": {"company": 1}, "relationships": {"bram": 2}, "flags_set": ["met_bram"]}},
+     "conditions": {"flags_all": ["p_honored_remembered"], "watch": {"max": 15}}, "weight": 5, "tags": ["res:town", "meta"]},
+
+    {"id": "meta_quenn_braver", "category": "endings_meta", "speaker": "quenn", "expression": "resolved", "pool": "general",
+     "text": "I've decided something. Sorry. The last Keeper kept me out of trouble and I let them. This time I'm going to say the figures out loud, to whoever asks. Will you ask?",
+     "left": {"label": "Ask", "outcome": "\"The aqueduct can't do it. It never could. Roughly.\"", "effects": {"relationships": {"quenn": 6}, "flags_set": ["clue_reservoirs", "met_quenn"], "counters": {"evidence": 1}}},
+     "right": {"label": "Not yet", "outcome": "\"All right. I'll be here.\"", "effects": {"relationships": {"quenn": 2}, "flags_set": ["met_quenn"]}},
+     "conditions": {"flags_all": ["p_protected_quenn"], "watch": {"max": 20}}, "weight": 5, "tags": ["res:water", "meta"]},
+
+    {"id": "meta_ledger_cipher", "category": "endings_meta", "speaker": "src_ledger", "pool": "general",
+     "text": "Tucked in the Ledger: pages of a cipher, half worked, in two different hands. Somebody before you got this far with Dray's book and no further.",
+     "left": {"label": "Pick up where they stopped", "outcome": "The gauge marks. It has to be the gauge marks.", "effects": {"counters": {"cipher_progress": 2, "fatigue": 1}, "flags_set": ["clue_cipher"]}},
+     "right": {"label": "Give the pages to Mirren", "outcome": "She takes them without a word and does not come to the paddles till noon.", "effects": {"relationships": {"mirren": 8}, "counters": {"cipher_progress": 1}}},
+     "conditions": {"counters": {"p_cipher_progress": {"min": 1}}, "watch": {"min": 3, "max": 30}}, "weight": 5, "tags": ["res:town", "meta"]},
+
+    {"id": "meta_route_river_gate", "category": "endings_meta", "speaker": "bram", "expression": "stern", "pool": "general",
+     "text": "You know where the water comes from. So do we, now, in words. If the sluice is opened the river goes home and this pound becomes a road. We ask a gate one thing: will you open it?",
+     "left": {"label": "I will open it", "outcome": "\"Then we will hold the night for you.\"", "effects": {"flags_set": ["route_river", "promised_bram"], "counters": {"allies": 3}, "factions": {"hullfolk": 10}}},
+     "right": {"label": "Not that way", "outcome": "\"Then we remember that too.\"", "effects": {"relationships": {"bram": -6}, "factions": {"hullfolk": -5}}},
+     "conditions": {"unlocks": ["unlock_cut_map"], "flags_none": ["route_river", "route_ledger", "route_cut", "hullfolk_cleared"], "factions": {"hullfolk": {"min": 55}}, "watch": {"min": 50}}, "weight": 8, "tags": ["res:water", "meta", "true_route"]},
+
+    {"id": "meta_route_ledger_gate", "category": "endings_meta", "speaker": "crane", "expression": "alarmed", "pool": "general",
+     "text": "I have read your evidence. I note three conditions for my seal under Schedule Nine: the engineer signs, the newspaper prints the same day on both shores, and nothing is altered. Nothing.",
+     "left": {"label": "Agreed, all three", "outcome": "\"Duly. I will need a night to draft it properly.\"", "effects": {"flags_set": ["route_ledger", "crane_recruited"], "counters": {"allies": 3}, "relationships": {"crane": 8}}},
+     "right": {"label": "Not that way", "outcome": "\"I note that. I note everything.\"", "effects": {"relationships": {"crane": -5}}},
+     "conditions": {"unlocks": ["unlock_cut_map"], "flags_none": ["route_river", "route_ledger", "route_cut"], "relationships": {"crane": {"min": 55}}, "resources": {"company": {"max": 65}}, "watch": {"min": 50}}, "weight": 8, "tags": ["res:company", "meta", "true_route"]},
+
+    {"id": "meta_route_cut_gate", "category": "endings_meta", "speaker": "vosk", "expression": "tired", "pool": "general",
+     "text": "You know. I have known since I was your age. Marrow died building a sluice that would have shared the water. It can be finished, quietly, with Hale's letters and a boatwright who does not talk. It stays a secret. Ours.",
+     "left": {"label": "Ours, then", "outcome": "\"Noted. I have wanted to say that for a long time.\"", "effects": {"flags_set": ["route_cut", "vosk_ally"], "counters": {"allies": 3}, "relationships": {"vosk": 10}}},
+     "right": {"label": "Not that way", "outcome": "\"Then you will find I have to stop you. For the record, I am sorry.\"", "effects": {"flags_set": ["vosk_enemy"], "relationships": {"vosk": -10}, "counters": {"suspicion": 4}}},
+     "conditions": {"unlocks": ["unlock_cut_map"], "flags_none": ["route_river", "route_ledger", "route_cut", "vosk_enemy"], "relationships": {"vosk": {"min": 55}}, "resources": {"coffers": {"min": 50}}, "watch": {"min": 50}}, "weight": 8, "tags": ["res:water", "meta", "true_route"]}
+  ]
+}

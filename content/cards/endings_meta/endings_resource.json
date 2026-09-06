@@ -1,0 +1,67 @@
+{
+  "cards": [
+    {"id": "end_res_water_min", "category": "endings_meta", "speaker": "src_weather", "pool": "ending",
+     "text": "The gauge reads nothing. A grain barge settles onto the sill with a sound like a door closing. The chamber is a stone room with a boat in it.",
+     "text_variants": [{"when": {"relationships": {"quenn": {"min": 60}}}, "text": "The gauge reads nothing. Quenn stands beside you with her folio shut. \"The figures said this,\" she says. \"Sorry. They said this.\""}],
+     "left": {"label": "Write the true figures", "outcome": "The last entry in your hand.", "effects": {"lore": ["lore_dry_summit"], "counters": {"evidence": 1}}},
+     "right": {"label": "Write 'drought'", "outcome": "The Company will read it, and agree.", "effects": {"lore": ["lore_dry_summit"], "resources": {"company": 2}}},
+     "tags": ["res:water", "ending"], "notes": "Dry Summit ending card."},
+
+    {"id": "end_res_water_max", "category": "endings_meta", "speaker": "src_weather", "pool": "ending",
+     "text": "At the third bell the east embankment goes. The sound is not loud. Then the town's lamps go out one street at a time, from the bottom up.",
+     "text_variants": [{"when": {"resources": {"town": {"max": 30}}}, "text": "At the third bell the east embankment goes. Nobody sandbagged; nobody would come when you called. The town's lamps go out from the bottom up."}],
+     "left": {"label": "Run for the paddles", "outcome": "Too late, and you know it.", "effects": {"lore": ["lore_breach"], "shake": true}},
+     "right": {"label": "Run for the town", "outcome": "You carry a child up Chapel Street. It is one.", "effects": {"lore": ["lore_breach"], "resources": {"town": 5}, "shake": true}},
+     "tags": ["res:water", "ending"], "notes": "Breach ending card."},
+
+    {"id": "end_res_traffic_min", "category": "endings_meta", "speaker": "pell", "expression": "wounded", "pool": "ending",
+     "text": "Keeper. Forty-one vessels between here and Lock 6. Aldmere has closed its flight. The Board has wired. I did not read it aloud. I am reading it to you now.",
+     "left": {"label": "Ask what it says", "outcome": "\"'Remove.' One word. They used to write more.\"", "effects": {"relationships": {"pell": 2}}},
+     "right": {"label": "You know what it says", "outcome": "He folds it very small.", "effects": {"relationships": {"pell": -2}}},
+     "tags": ["res:traffic", "ending"]},
+
+    {"id": "end_res_traffic_max", "category": "endings_meta", "speaker": "dace", "expression": "fed_up", "pool": "ending",
+     "text": "Two in the chamber, Keeper, both at speed, because nobody was counting any more. The coal boat's under the grain boat. Stroud is down there. Three things: you'll want to come, you'll want to not, and it doesn't matter.",
+     "left": {"label": "Go down", "outcome": "You go down.", "effects": {"resources": {"town": 3}, "shake": true}},
+     "right": {"label": "Send for the Company", "outcome": "Dace looks at you the way he looks at a broken paddle.", "effects": {"relationships": {"dace": -10}, "shake": true}},
+     "tags": ["res:traffic", "ending"]},
+
+    {"id": "end_res_coffers_min", "category": "endings_meta", "speaker": "kell", "expression": "final", "pool": "ending",
+     "text": "The Board regrets. Wages unpaid for three watches constitute abandonment of the works. The account is closed and the appointment with it. Arrangements have been made for your furniture.",
+     "left": {"label": "Ask who bought it", "outcome": "\"Mrs Cole, at a fair price. Regrettably.\"", "effects": {}},
+     "right": {"label": "Ask who keeps the gate", "outcome": "\"Someone will. Someone always does.\"", "effects": {"counters": {"suspicion": 1}}},
+     "tags": ["res:coffers", "ending"]},
+
+    {"id": "end_res_coffers_max", "category": "endings_meta", "speaker": "vosk", "expression": "measuring", "pool": "ending",
+     "text": "The account shows a surplus the toll table cannot produce. For the record, I asked you twice. There is one explanation in the manual. The constables know it too.",
+     "text_variants": [{"when": {"relationships": {"vosk": {"min": 65}}}, "text": "The account shows a surplus the toll table cannot produce. I asked you twice, and I wanted you to have an answer. You will find I have written the kindest version that is still true."}],
+     "left": {"label": "It was for the gates", "outcome": "\"Noted. It is not what the manual calls it.\"", "effects": {}},
+     "right": {"label": "Say nothing", "outcome": "\"Noted.\"", "effects": {"relationships": {"vosk": 2}}},
+     "tags": ["res:coffers", "ending"]},
+
+    {"id": "end_res_company_min", "category": "endings_meta", "speaker": "src_telegram", "pool": "ending",
+     "text": "COMPANY TO KEEPER HALFWAY STOP APPOINTMENT REVOKED STOP VACATE BY NEXT WATCH STOP HAND BOOK AND KEYS TO AUDITOR STOP",
+     "left": {"label": "Hand over the Book", "outcome": "Vosk takes it without opening it.", "effects": {}},
+     "right": {"label": "Tear out your pages first", "outcome": "The Ledger is not the Book. You keep the Ledger.", "effects": {"counters": {"evidence": 1}}},
+     "sound": "sfx_telegram", "tags": ["res:company", "ending"]},
+
+    {"id": "end_res_company_max", "category": "endings_meta", "speaker": "kell", "expression": "courteous", "pool": "ending",
+     "text": "The Board's view is that you are the Meridian Canal. Your likeness will go on the Jubilee medal and your name on every statement about the water. You need only say yes.",
+     "text_variants": [{"when": {"unlocks": ["unlock_vosk_file"]}, "text": "The Board's view is that you are the Meridian Canal. You have read the file, so you understand exactly what the medal is for. You need only say yes."}],
+     "left": {"label": "Yes", "outcome": "The medal is bronze. The crowd, later, will know the face.", "effects": {"factions": {"company": 5}}},
+     "right": {"label": "Ask for time", "outcome": "\"The Board's view is that there is none.\"", "effects": {"counters": {"suspicion": 1}}},
+     "tags": ["res:company", "ending"]},
+
+    {"id": "end_res_town_min", "category": "endings_meta", "speaker": "ilse", "expression": "grieving", "pool": "ending",
+     "text": "Nobody is shouting. The doors are barred, the tow ropes are cut, and the town is walking you to the boundary stone with lamps. I am carrying one. I am sorry about that.",
+     "left": {"label": "Walk with them", "outcome": "At the stone she says, \"It costs what it costs.\"", "effects": {"relationships": {"ilse": 3}}},
+     "right": {"label": "Ask her to stop it", "outcome": "\"I could have. Before.\"", "effects": {}},
+     "tags": ["res:town", "ending"]},
+
+    {"id": "end_res_town_max", "category": "endings_meta", "speaker": "solas", "expression": "hard", "pool": "ending",
+     "text": "The town has risen for you and against the charter. I have orders to take you east. I have also told my people not to load. Come quietly and nobody here learns what a rifle sounds like.",
+     "left": {"label": "Go quietly", "outcome": "The town watches. Nobody fires. He was right about that.", "effects": {"relationships": {"solas": 5}}},
+     "right": {"label": "Ask the town to stand down", "outcome": "They do, for you. Then you go east anyway.", "effects": {"resources": {"town": -5}, "relationships": {"solas": 3}}},
+     "tags": ["res:town", "ending"]}
+  ]
+}

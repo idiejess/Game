@@ -1,0 +1,75 @@
+{
+  "cards": [
+    {"id": "end_ord_long_watch", "category": "endings_meta", "speaker": "src_ledger", "pool": "ending",
+     "text": "A hundred watches. The Company offers a cottage below Lock 7 and a pension in scrip. The gauge on the sill reads what it reads. Somebody else will have to notice.",
+     "left": {"label": "Take the cottage", "outcome": "The garden floods every spring. You keep it anyway.", "effects": {"resources": {"town": 3}}},
+     "right": {"label": "Ask for one more year", "outcome": "\"Regrettably.\" The cottage, then.", "effects": {"resources": {"company": -3}}},
+     "tags": ["ending"]},
+
+    {"id": "end_ord_transferred", "category": "endings_meta", "speaker": "pell", "expression": "beaming", "pool": "ending",
+     "text": "Keeper! Magnificent news. Lock 3, Sorrel side. Quieter water, a bigger house, a lower toll book. The Board calls it a promotion and so, Keeper, shall we.",
+     "left": {"label": "Accept it", "outcome": "The barge down is the first you have ridden in a year.", "effects": {"relationships": {"pell": 3}}},
+     "right": {"label": "Ask why", "outcome": "\"Our little difficulty, Keeper. Nothing more.\"", "effects": {"counters": {"suspicion": 1}}},
+     "tags": ["ending"]},
+
+    {"id": "end_ord_jubilee", "category": "endings_meta", "speaker": "pell", "expression": "beaming", "pool": "ending",
+     "text": "Eighty years, a record day, and not one boat grounded. Your name goes on the plaque beside the top gate. Bronze, Keeper. The Meridian spirit, cast in bronze.",
+     "left": {"label": "Stand for the unveiling", "outcome": "Bronze goes green, in time. So does everything here.", "effects": {"resources": {"company": 3}}},
+     "right": {"label": "Put Quenn's name beside yours", "outcome": "He agrees at once, and means it.", "effects": {"relationships": {"quenn": 8, "pell": 2}}},
+     "conditions": {"flags_all": ["jubilee_held"]}, "tags": ["ending"]},
+
+    {"id": "end_ord_towns_keeper", "category": "endings_meta", "speaker": "ilse", "expression": "wry", "pool": "ending",
+     "text": "The moot voted you a chair. Not a title. A chair, by the fire, and a tankard with your name on it. Your Company gave nothing. You knew that.",
+     "left": {"label": "Sit in it", "outcome": "\"Costs nothing. First thing here that does.\"", "effects": {"relationships": {"ilse": 5}}},
+     "right": {"label": "Give the chair to Dace", "outcome": "Dace sits in it once, to be polite, and never again.", "effects": {"relationships": {"dace": 8, "ilse": 2}}},
+     "tags": ["ending"]},
+
+    {"id": "end_ord_companys_keeper", "category": "endings_meta", "speaker": "vosk", "expression": "neutral", "pool": "ending",
+     "text": "Your file reads 'reliable'. For the record, that is the Company's highest word. You have kept the gate a hundred watches and never once asked me about the sluice house.",
+     "left": {"label": "Ask her now", "outcome": "\"No.\" She almost smiles. \"You will find that was the right time.\"", "effects": {"counters": {"suspicion": 2}}},
+     "right": {"label": "Say it was not your business", "outcome": "\"Noted.\"", "effects": {"relationships": {"vosk": 3}}},
+     "tags": ["ending"]},
+
+    {"id": "end_ord_quiet", "category": "endings_meta", "speaker": "src_ledger", "pool": "ending",
+     "text": "There is a wedding at the Still Water chapel and the whole summit comes, the geese included. The gauge reads what it reads. For once, you are not looking at it.",
+     "left": {"label": "Dance", "outcome": "Badly. Nobody minds.", "effects": {"resources": {"town": 3}}},
+     "right": {"label": "Watch the water anyway", "outcome": "Old habits. It is a mark lower than it was.", "effects": {"counters": {"evidence": 1}}},
+     "tags": ["ending"]},
+
+    {"id": "end_false_drought", "category": "endings_meta", "speaker": "quenn", "expression": "resolved", "pool": "ending",
+     "text": "It's published. The figures, all of them. The Board has thanked me, blamed the weather, raised the tolls and commissioned a tenth reservoir. Twelve years to fill. Sorry. I thought it would be different.",
+     "left": {"label": "It was the right thing", "outcome": "\"It was a thing. Roughly.\"", "effects": {"relationships": {"quenn": 5}, "lore": ["lore_drought_report"]}},
+     "right": {"label": "The figures were never the whole of it", "outcome": "\"No. What was?\" You do not know yet.", "effects": {"counters": {"evidence": 1}, "lore": ["lore_drought_report"]}},
+     "tags": ["ending", "res:water"]},
+
+    {"id": "end_false_killer", "category": "endings_meta", "speaker": "vosk", "expression": "tired", "pool": "ending",
+     "text": "You have accused me of Dray's death and the Board has accepted it. I am removed. For the record, I did not kill him. For the record, I know where he is. You will not ask.",
+     "left": {"label": "Ask", "outcome": "She is already walking.", "effects": {"counters": {"suspicion": 1}, "lore": ["lore_vosk_removed"]}},
+     "right": {"label": "Let her go", "outcome": "A new auditor arrives within the week, and asks the same questions.", "effects": {"lore": ["lore_vosk_removed"]}},
+     "tags": ["ending", "res:company"]},
+
+    {"id": "end_false_purchase", "category": "endings_meta", "speaker": "vane", "expression": "amused", "pool": "ending",
+     "text": "Done. My principals own the Sorrel half as of this watch. Tolls down, traffic up, and you stay on at a better wage. Delay costs, Keeper, and now it costs me. Shake.",
+     "left": {"label": "Shake", "outcome": "Two summers later the pound falls to the sills and nobody in Sorrel knows why.", "effects": {"resources": {"coffers": 5}}},
+     "right": {"label": "Ask what she knows about the water", "outcome": "\"That it floats coal. What else is there?\"", "effects": {"relationships": {"vane": -3}}},
+     "tags": ["ending", "res:traffic"]},
+
+    {"id": "end_false_clearance", "category": "endings_meta", "speaker": "pell", "expression": "stern", "pool": "ending",
+     "text": "The Reed Reach is clear. Not a shot, Keeper, not one. The boats went down the west flight this morning. Quieter, isn't it. Our little difficulty, resolved at last.",
+     "left": {"label": "It is quieter", "outcome": "Nobody sings at the summit again.", "effects": {"lore": ["lore_clearance"]}},
+     "right": {"label": "Ask where they went", "outcome": "\"West. Where they came from, one assumes.\" One assumes wrong.", "effects": {"counters": {"evidence": 1}, "lore": ["lore_clearance"]}},
+     "conditions": {"flags_all": ["hullfolk_cleared"]}, "tags": ["ending", "res:town"]},
+
+    {"id": "end_false_blessing", "category": "endings_meta", "speaker": "hale", "expression": "serene", "pool": "ending",
+     "text": "Nine nights of the Lamp Vigil, and on the tenth, rain for a week. The pound is full. The chapel is full. We do not ask the water, Keeper. We tend it, and it answers.",
+     "left": {"label": "Kneel with the rest", "outcome": "It is a comfort. It is also a wet season.", "effects": {"factions": {"concordance": 5}}},
+     "right": {"label": "Ask how long it will last", "outcome": "\"As long as it is tended.\" She believes it. Almost.", "effects": {"counters": {"evidence": 1}}},
+     "tags": ["ending", "res:water"]},
+
+    {"id": "end_false_hero", "category": "endings_meta", "speaker": "hesse", "expression": "triumphant", "pool": "ending",
+     "text": "Front page on both shores. THE KEEPER WHO WOULD NOT BEND. You're famous, Keeper. The Company can't dismiss a hero, so it's giving you a lecture tour, and the summit a new Keeper, and the sluice house a new lock.",
+     "left": {"label": "Take the tour", "outcome": "You tell the story forty times. It gets shorter.", "effects": {"resources": {"company": 3}}},
+     "right": {"label": "Ask about the new lock", "outcome": "\"Off the record? Big one.\"", "effects": {"counters": {"suspicion": 1}}},
+     "tags": ["ending", "res:company"]}
+  ]
+}

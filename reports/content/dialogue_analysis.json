@@ -1,0 +1,116 @@
+{
+  "cards": 100,
+  "errors": [],
+  "warnings": [
+    "[end_ord_jubilee] slang 'bro'"
+  ],
+  "speakers": {
+    "src_ledger": 8,
+    "pell": 6,
+    "ilse": 6,
+    "vosk": 9,
+    "quenn": 4,
+    "vane": 6,
+    "hale": 3,
+    "hesse": 1,
+    "src_weather": 5,
+    "dace": 5,
+    "kell": 3,
+    "src_telegram": 3,
+    "solas": 2,
+    "petronel": 1,
+    "fennick": 2,
+    "mirren": 3,
+    "crane": 8,
+    "tobin": 1,
+    "bram": 5,
+    "tamm": 1,
+    "stroud": 3,
+    "src_gate": 10,
+    "wren": 5
+  },
+  "top_openers": [
+    [
+      "at the",
+      3
+    ],
+    [
+      "three things",
+      3
+    ],
+    [
+      "there is",
+      2
+    ],
+    [
+      "you have",
+      2
+    ],
+    [
+      "company to",
+      2
+    ],
+    [
+      "you know",
+      2
+    ],
+    [
+      "a sorrel",
+      2
+    ],
+    [
+      "a boat",
+      2
+    ],
+    [
+      "a hundred",
+      1
+    ],
+    [
+      "keeper magnificent",
+      1
+    ]
+  ],
+  "top_labels": [
+    [
+      "not that way",
+      3
+    ],
+    [
+      "accept it",
+      2
+    ],
+    [
+      "ask",
+      2
+    ],
+    [
+      "open it",
+      2
+    ],
+    [
+      "take the cottage",
+      1
+    ],
+    [
+      "ask for one more year",
+      1
+    ],
+    [
+      "ask why",
+      1
+    ],
+    [
+      "stand for the unveiling",
+      1
+    ],
+    [
+      "put quenn's name beside yours",
+      1
+    ],
+    [
+      "sit in it",
+      1
+    ]
+  ]
+}
