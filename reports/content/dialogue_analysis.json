@@ -1,119 +1,118 @@
 {
-  "cards": 121,
+  "cards": 40,
   "errors": [],
   "warnings": [
-    "[ma02_06] situation 33 words (6-32)",
-    "[ma02_10] situation 38 words (6-32)",
-    "[ma02_12] situation 35 words (6-32)",
-    "opener 'three things' used by 4 cards (3.3%)"
+    "[evg_town_life_02] situation 36 words (6-32)",
+    "[evg_town_life_03] situation 36 words (6-32)",
+    "[evg_town_life_04] situation 34 words (6-32)",
+    "[evg_town_life_08] situation 35 words (6-32)",
+    "[evg_town_life_09] situation 34 words (6-32)",
+    "[evg_town_life_13] situation 34 words (6-32)",
+    "[evg_town_life_16] situation 35 words (6-32)",
+    "[evg_town_life_18] situation 36 words (6-32)",
+    "[evg_town_life_19] situation 37 words (6-32)",
+    "[evg_town_life_20] situation 35 words (6-32)",
+    "[evg_company_orders_02] situation 33 words (6-32)",
+    "[evg_company_orders_05] situation 38 words (6-32)",
+    "[evg_company_orders_14] situation 33 words (6-32)",
+    "[evg_company_orders_15] situation 35 words (6-32)",
+    "[evg_company_orders_20] situation 37 words (6-32)",
+    "opener 'the board' used by 5 cards (12.5%)",
+    "opener 'company to' used by 4 cards (10.0%)"
   ],
   "speakers": {
-    "src_ledger": 12,
-    "pell": 6,
-    "ilse": 8,
-    "vosk": 11,
-    "quenn": 4,
-    "vane": 6,
-    "hale": 3,
-    "hesse": 1,
-    "src_weather": 5,
-    "dace": 6,
-    "kell": 3,
-    "src_telegram": 3,
-    "solas": 2,
-    "petronel": 1,
-    "fennick": 4,
-    "mirren": 10,
-    "crane": 8,
-    "tobin": 2,
-    "bram": 5,
-    "tamm": 1,
-    "stroud": 3,
-    "src_gate": 11,
-    "wren": 5,
-    "src_stranger": 1
+    "ilse": 5,
+    "cole": 4,
+    "stroud": 4,
+    "src_stranger": 4,
+    "dace": 3,
+    "src_telegram": 4,
+    "pell": 4,
+    "vosk": 4,
+    "kell": 4,
+    "fennick": 4
   },
   "top_openers": [
     [
-      "three things",
-      4
-    ],
-    [
-      "you have",
-      3
-    ],
-    [
-      "at the",
-      3
-    ],
-    [
-      "there is",
-      2
+      "the board",
+      5
     ],
     [
       "company to",
-      2
+      4
     ],
     [
-      "you know",
-      2
+      "three things",
+      3
     ],
     [
-      "a sorrel",
-      2
-    ],
-    [
-      "a boat",
-      2
-    ],
-    [
-      "a hundred",
+      "market day",
       1
     ],
     [
-      "keeper magnificent",
+      "the dray",
+      1
+    ],
+    [
+      "the lock",
+      1
+    ],
+    [
+      "a travelling",
+      1
+    ],
+    [
+      "somebody from",
+      1
+    ],
+    [
+      "the town",
+      1
+    ],
+    [
+      "a lock",
       1
     ]
   ],
   "top_labels": [
     [
-      "not that way",
-      3
-    ],
-    [
-      "accept it",
-      2
-    ],
-    [
-      "ask",
-      2
-    ],
-    [
-      "open it",
-      2
-    ],
-    [
-      "take the cottage",
+      "stalls on the towpath",
       1
     ],
     [
-      "ask for one more year",
+      "the towpath tows",
       1
     ],
     [
-      "ask why",
+      "the keeper stays",
       1
     ],
     [
-      "stand for the unveiling",
+      "let it to mirren",
       1
     ],
     [
-      "put quenn's name beside yours",
+      "fence the sill",
       1
     ],
     [
-      "sit in it",
+      "it is how they learn",
+      1
+    ],
+    [
+      "let them play",
+      1
+    ],
+    [
+      "move them along",
+      1
+    ],
+    [
+      "the chamber for the race",
+      1
+    ],
+    [
+      "race below the gate",
       1
     ]
   ]

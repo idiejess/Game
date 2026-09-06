@@ -148,7 +148,7 @@ def reference_check(cards, rep):
         spk = c["speaker"]
         if spk not in chars:
             rep.err(f"[{cid}] unknown speaker {spk}")
-        elif c.get("expression", "neutral") not in chars[spk]["expressions"]:
+        elif "expression" in c and c["expression"] not in chars[spk]["expressions"]:
             rep.err(f"[{cid}] speaker {spk} has no expression {c.get('expression')}")
         for side in ("left", "right"):
             eff = c[side]["effects"]
