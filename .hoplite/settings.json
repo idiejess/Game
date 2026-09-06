@@ -7,11 +7,11 @@
 	"scripts": {
 		"setup": {
 			"enabled": true,
-			"command": null
+			"command": "set -e; if ! command -v godot >/dev/null 2>&1; then curl -sSL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip && (cd /tmp && unzip -o -q godot.zip && sudo mv Godot_v4.7.2-stable_linux.x86_64 /usr/local/bin/godot && rm godot.zip); fi; TPL=\"$HOME/.local/share/godot/export_templates/4.7.2.stable\"; if [ ! -f \"$TPL/linux_release.x86_64\" ]; then mkdir -p \"$TPL\" && curl -sSL -o /tmp/tpz.tpz https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz && (cd /tmp && unzip -o -q -j tpz.tpz templates/linux_release.x86_64 templates/linux_debug.x86_64 templates/windows_release_x86_64.exe templates/windows_debug_x86_64.exe templates/web_release.zip templates/web_debug.zip templates/web_nothreads_release.zip templates/web_nothreads_debug.zip templates/version.txt -d \"$TPL\" && rm tpz.tpz); fi; pip3 install -q --break-system-packages jsonschema pillow numpy; godot --headless --import --path . >/dev/null 2>&1 || true"
 		},
 		"run": {
 			"enabled": true,
-			"command": null
+			"command": "python3 tools/serve_web.py --export --port 3000"
 		},
 		"archive": {
 			"enabled": true,
@@ -19,7 +19,7 @@
 		},
 		"check": {
 			"enabled": true,
-			"command": null
+			"command": "python3 tools/validate_content.py && python3 tools/analyze_dialogue.py && godot --headless --path . game/tests/TestRunner.tscn"
 		}
 	},
 	"mcpServers": []

@@ -303,6 +303,110 @@ func test_save_load_roundtrip() -> void:
 	SaveManager.delete_slot(3)
 
 
+## Full-state regression: every run/profile field survives a save/load, numbers stay ints, and the
+## selection sequence after loading equals the sequence of an uninterrupted run (RNG continuation).
+func test_save_load_full_state_and_rng_continuation() -> void:
+	GameState.reset_profile()
+	var tc := _fresh_run(4040)
+	for i in range(8):
+		tc.decide("left" if i % 2 == 0 else "right")
+	GameState.apply_effects({
+		"relationships": {"vosk": 7}, "factions": {"hullfolk": -6},
+		"flags_set": ["found_ledger"], "counters": {"cipher_progress": 2},
+		"delayed": [{"card": "onb_07", "delay": 5}],
+		"delayed_resources": [{"delay": 4, "resources": {"town": 3}, "message": "late"}],
+		"followup": "onb_06", "arc": {"MA02": {"stage": 2, "status": "active"}},
+		"unlocks": ["unlock_drays_key"], "lore": ["lore_test"],
+	}, "test")
+	GameState.run["cooldowns"]["onb_02"] = 4
+	GameState.profile["endings"].append({"id": "end_res_town_min", "run": 1, "watch": 3})
+	GameState.add_persistent_counter("p_keepers_lost", 2)
+	GameState.set_flag("p_told_mirren", true)
+	var snap: Dictionary = GameState.snapshot()
+	var current: String = tc.current_card_id
+	ok(SaveManager.save(3), "save slot 3")
+	# Uninterrupted continuation reference.
+	var ref_seq: Array = []
+	for i in range(12):
+		if not GameState.in_run():
+			break
+		ref_seq.append(tc.current_card_id)
+		tc.decide("right")
+	# Reload and replay the same decisions.
+	GameState.reset_profile()
+	ok(SaveManager.load(3), "load slot 3: " + SaveManager.last_load_report)
+	var r: Dictionary = GameState.run
+	var s: Dictionary = snap["run"]
+	ok(r["watch"] == s["watch"] and typeof(r["watch"]) == TYPE_INT, "watch restored as int")
+	ok(r["seed"] == s["seed"], "seed restored")
+	ok(r["resources"] == s["resources"], "resources restored")
+	ok(r["relationships"] == s["relationships"], "relationships restored")
+	ok(r["factions"] == s["factions"], "factions restored")
+	ok(r["flags"] == s["flags"], "flags restored")
+	ok(r["counters"] == s["counters"], "counters restored")
+	ok(r["history"] == s["history"], "history restored")
+	ok(r["cooldowns"] == s["cooldowns"], "cooldowns restored")
+	ok(r["delayed"] == s["delayed"], "delayed cards restored")
+	ok(r["delayed_resources"] == s["delayed_resources"], "delayed resources restored")
+	ok(r["forced_queue"] == s["forced_queue"], "forced queue restored")
+	ok(r["arcs"] == s["arcs"], "active arcs restored")
+	ok(r["appearances"] == s["appearances"], "appearances restored")
+	ok(r["current_card"] == current, "current card restored (%s)" % str(r["current_card"]))
+	ok(GameState.rng.state == int(s["rng_state"]), "rng state restored")
+	var p: Dictionary = GameState.profile
+	ok(p["run_number"] == 1 and typeof(p["run_number"]) == TYPE_INT, "run number restored as int")
+	ok(p["endings"] == snap["profile"]["endings"], "endings restored")
+	ok(p["unlocks"].has("unlock_drays_key") and p["lore"].has("lore_test"), "unlocks and lore restored")
+	ok(p["persistent_counters"] == snap["profile"]["persistent_counters"], "persistent counters restored")
+	ok(p["persistent_flags"] == snap["profile"]["persistent_flags"], "persistent flags restored")
+	ok(p["discovered_cards"] == snap["profile"]["discovered_cards"], "discovered cards restored")
+	ok(p["total_watches"] == snap["profile"]["total_watches"], "total watches restored")
+	var tc2 := TurnController.new()
+	tc2.autosave = false
+	tc2.resume_run()
+	var seq: Array = []
+	for i in range(12):
+		if not GameState.in_run():
+			break
+		seq.append(tc2.current_card_id)
+		tc2.decide("right")
+	ok(seq == ref_seq, "card sequence after load equals uninterrupted sequence")
+	SaveManager.delete_slot(3)
+
+
+func test_save_ended_run_and_persistent_between_sessions() -> void:
+	GameState.reset_profile()
+	var tc := _fresh_run(4141)
+	GameState.set_flag("honored_remembered", true)
+	GameState.end_run("end_res_town_min")
+	ok(SaveManager.save(3), "ended run saved")
+	GameState.reset_profile()
+	ok(SaveManager.load(3), "loaded after ending")
+	ok(not GameState.in_run() and GameState.run.is_empty(), "ended run is not resumed")
+	ok(GameState.profile["run_number"] == 1 and GameState.has_ending("end_res_town_min"), "profile keeps run number and ending")
+	ok(GameState.profile["persistent_flags"].has("p_honored_remembered"), "persistent flag survives save")
+	var tc2 := _fresh_run(4142)
+	ok(GameState.run_number() == 2 and GameState.get_faction("hullfolk") == 58, "next run applies persistent opener")
+	SaveManager.delete_slot(3)
+
+
+func test_save_ignores_removed_content_references() -> void:
+	GameState.reset_profile()
+	var tc := _fresh_run(4343)
+	GameState.run["forced_queue"].append("card_that_no_longer_exists")
+	GameState.run["delayed"].append({"card": "gone_card", "due": 3})
+	GameState.run["cooldowns"]["gone_card"] = 2
+	GameState.profile["discovered_cards"].append("gone_card")
+	SaveManager.save(3)
+	GameState.reset_profile()
+	ok(SaveManager.load(3), "save with stale references loads")
+	ok(not GameState.run["forced_queue"].has("card_that_no_longer_exists"), "stale forced card dropped")
+	ok(GameState.run["delayed"].is_empty(), "stale delayed card dropped")
+	ok(not GameState.run["cooldowns"].has("gone_card"), "stale cooldown dropped")
+	ok(not GameState.profile["discovered_cards"].has("gone_card"), "stale discovered card dropped")
+	SaveManager.delete_slot(3)
+
+
 func test_invalid_save_recovery() -> void:
 	var path: String = SaveManager.slot_path(3)
 	var f := FileAccess.open(path, FileAccess.WRITE)

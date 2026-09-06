@@ -1,6 +1,6 @@
 {
-  "failures": 4,
-  "generated": "2026-09-06T20:12:54",
+  "failures": 0,
+  "generated": "2026-09-06T21:24:44",
   "results": [
     {
       "message": "content loaded without errors: []",
@@ -299,12 +299,12 @@
     },
     {
       "message": "watch restored",
-      "ok": false,
+      "ok": true,
       "test": "test_save_load_roundtrip"
     },
     {
       "message": "resources restored",
-      "ok": false,
+      "ok": true,
       "test": "test_save_load_roundtrip"
     },
     {
@@ -324,8 +324,173 @@
     },
     {
       "message": "rng state restored",
-      "ok": false,
+      "ok": true,
       "test": "test_save_load_roundtrip"
+    },
+    {
+      "message": "save slot 3",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "load slot 3: ok",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "watch restored as int",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "seed restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "resources restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "relationships restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "factions restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "flags restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "counters restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "history restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "cooldowns restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "delayed cards restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "delayed resources restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "forced queue restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "active arcs restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "appearances restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "current card restored (onb_29)",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "rng state restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "run number restored as int",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "endings restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "unlocks and lore restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "persistent counters restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "persistent flags restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "discovered cards restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "total watches restored",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "card sequence after load equals uninterrupted sequence",
+      "ok": true,
+      "test": "test_save_load_full_state_and_rng_continuation"
+    },
+    {
+      "message": "ended run saved",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "loaded after ending",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "ended run is not resumed",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "profile keeps run number and ending",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "persistent flag survives save",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "next run applies persistent opener",
+      "ok": true,
+      "test": "test_save_ended_run_and_persistent_between_sessions"
+    },
+    {
+      "message": "save with stale references loads",
+      "ok": true,
+      "test": "test_save_ignores_removed_content_references"
     },
     {
       "message": "corrupt save rejected",
@@ -354,7 +519,7 @@
     },
     {
       "message": "run number preserved",
-      "ok": false,
+      "ok": true,
       "test": "test_save_migration_v1"
     },
     {
@@ -848,5 +1013,5 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     }
   ],
-  "total": 169
+  "total": 202
 }

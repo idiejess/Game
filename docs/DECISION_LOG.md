@@ -59,3 +59,16 @@ the produced set equals the inventory set exactly.
 Ordinary play shows direction arrows (▲/▼, single or double) for previewed resource changes.
 The exact-effect accessibility option displays numeric deltas. This keeps mobile readability
 while satisfying the clarity requirement.
+
+## D-007 — Save numbers are re-typed on read, not on write
+The four reported save failures had one root cause: Godot's `JSON.parse` returns every number as
+`float`, and the load-time sanitizers compare `typeof()` against integer defaults, discarding
+`watch`, `seed`, `rng_state`, `run_number` and `resources`. Alternatives: (a) loosen the sanitizers
+to accept floats everywhere, (b) store numbers as strings, (c) coerce whole-valued floats back to
+ints once in `SaveManager._read`. Chosen (c): one place, keeps the strict typing that protects
+against corrupt saves, changes no on-disk format, and old saves load unchanged.
+
+## D-008 — Branch and remote
+The imported repository had no `main` branch on the remote (only the import branch
+`hoplite/aitna-17a46edb`). Work proceeds on the thread branch `hoplite/phleious-16c2ad27` and the
+draft PR targets the repository's configured base branch. No history is rewritten.
