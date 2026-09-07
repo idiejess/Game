@@ -59,23 +59,38 @@ Unsigned. `application/*` version fields are empty in the preset; fill `product_
 before a public build. Code signing (`codesign/*`) needs a certificate the repository does not hold.
 rcedit is not required for an unsigned build.
 
-### Android (not built)
-Preset exists (`package/unique_name=com.halfwaylock.$genname`, version 0.1.0/1). Needs the Android
-SDK, a debug or release keystore and the Android export templates; none are in the sandbox.
-Orientation is portrait (`display/window/handheld/orientation=4`).
+### Android playtest APK
+The `Android` preset exports the ARM64 debug/playtest APK as
+`export/android/HalfwayLock-0.1.0-playtest.apk`. It uses the temporary package ID
+`com.halfwaylock.playtest`, version `0.1.0-playtest` (code `1`), a portrait-first window, and
+Godot's default Android API 24 (Android 7.0) minimum SDK. Networking permissions are empty and the game
+does not request network access. The debug keystore is local to the build machine; never commit a
+keystore or its password.
+
+The versioned setup script installs OpenJDK 17, Android command-line tools, Platform Tools,
+Build Tools 35.0.1, Platform 35, and the Godot 4.7.2 Android templates. Configure Godot's Android
+SDK and Java SDK editor paths before exporting locally, then run:
+```
+mkdir -p export/android
+godot --headless --path . --export-debug Android export/android/HalfwayLock-0.1.0-playtest.apk
+sha256sum export/android/HalfwayLock-0.1.0-playtest.apk
+```
+The repository workflow `.github/workflows/android-playtest-apk.yml` produces the same named APK
+and its `SHA256SUMS.txt` sidecar as a downloadable GitHub Actions artifact.
 
 ### iOS / macOS (no preset)
 Not attempted: both need Apple developer credentials. The project has no platform-specific code, so
 adding a preset in the editor is the only step besides signing.
 
 ## Versioning
-`project.godot` `config/version` and the Android `version/name` are both `0.1.0`; bump together.
+`project.godot` `config/version` and the Android `version/name` are both `0.1.0-playtest`; bump
+them together.
 Save files carry `SaveManager.SAVE_VERSION` (currently 2); extend `SaveManager.migrate()` when the schema changes (`test_save_migration_v1` covers the v1→v2 path).
 
-## Results of the last export attempt (2026-09-06, sandbox)
+## Results of the last export attempt (2026-09-07, sandbox)
 | Target | Result | Verified by |
 |---|---|---|
 | Linux x86_64 | built (79 MB) | `--smoke` passes: 1000 cards, 30 watches, save/load round-trip |
 | Windows x86_64 | built (115 MB, unsigned) | not executed (no Windows host); same PCK as Linux |
 | Web | built (index.wasm 39 MB, index.pck 5.7 MB) | loads to title screen under `serve_web.py`; interactive play not verified because the sandbox browser has no WebGL 2 |
-| Android | not built | no SDK/keystore |
+| Android ARM64 | built (31 MiB, debug-signed) | package and v2/v3 signing validated; device install/smoke unavailable in sandbox |
