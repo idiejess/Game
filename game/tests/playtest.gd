@@ -119,6 +119,34 @@ func _ready() -> void:
 	ok(GameState.watch == before_watch + 1, "confirm mode: second press commits")
 	Settings.data["confirm_decisions"] = false
 
+	# 3b. With motion enabled, the next card must come back on screen after the fly-out commit
+	# (regression: it stayed a viewport off to the side, invisible, though input still worked).
+	Settings.data["reduced_motion"] = false
+	Settings.changed.emit()
+	before_watch = GameState.watch
+	main._request_decision("left")
+	await _settle(1.0)
+	ok(GameState.watch == before_watch + 1, "motion on: decision committed")
+	ok(main.card_view.position.is_equal_approx(main.card_view._origin), "motion on: next card is back at its origin (pos %s, origin %s)" % [str(main.card_view.position), str(main.card_view._origin)])
+	ok(main.card_view.modulate.a > 0.99, "motion on: next card is fully visible (alpha %.2f)" % main.card_view.modulate.a)
+	# Pointer drag past the threshold commits (regression: drag distance was always 0).
+	before_watch = GameState.watch
+	var cv: CardView = main.card_view
+	var start: Vector2 = cv.position + cv.size / 2.0
+	var threshold: float = cv.get_viewport_rect().size.x * CardView.THRESHOLD_RATIO
+	var travel: float = threshold * 1.2
+	_pointer(cv, start, true)
+	await _frames(1)
+	for i in range(1, 9):
+		_pointer_move(cv, start + Vector2(travel * i / 8.0, 0))
+		await _frames(1)
+	ok(is_equal_approx(cv._offset, travel), "drag offset tracks the pointer (%.0f, expected %.0f)" % [cv._offset, travel])
+	_pointer(cv, start + Vector2(travel, 0), false)
+	await _settle(1.0)
+	ok(GameState.watch == before_watch + 1, "drag past threshold committed the decision")
+	Settings.data["reduced_motion"] = true
+	Settings.changed.emit()
+
 	# 4. Screens reachable during a run.
 	for s in ["pause", "settings", "history", "objectives", "gallery", "archive", "endings"]:
 		main._show_screen(s)
@@ -127,6 +155,15 @@ func _ready() -> void:
 	main._close_screens()
 	await _frames(1)
 	ok(not main._any_screen_visible(), "screens close back to play")
+	# Escape backs out one level (regression: from a title sub-screen it left a blank view).
+	main._show_screen("settings")
+	await _frames(1)
+	_escape()
+	await _frames(2)
+	ok(main._current_screen == "pause", "Escape from in-run settings returns to pause (got '%s')" % main._current_screen)
+	_escape()
+	await _frames(2)
+	ok(not main._any_screen_visible(), "Escape from pause resumes play")
 
 	# 5. Text scale + high contrast applied live.
 	Settings.set_value("text_scale", 1.6)
@@ -145,6 +182,11 @@ func _ready() -> void:
 	main._show_screen("title")
 	await _frames(2)
 	ok(not main.game_layer.visible, "title hides the game layer")
+	main._show_screen("settings")
+	await _frames(1)
+	_escape()
+	await _frames(2)
+	ok(main._current_screen == "title", "Escape from title settings returns to the title (got '%s')" % main._current_screen)
 	GameState.reset_profile()
 	ok(SaveManager.load(slot), "load slot %d" % slot)
 	main.continue_run()
@@ -239,6 +281,33 @@ func _policy(card: Dictionary) -> String:
 			best_score = score
 			best = side
 	return best
+
+
+## Pointer events delivered straight to the card. `pos` is in the card holder's space (the card
+## moves and rotates while dragged, so the local position is derived per event, as the viewport does).
+func _pointer(cv: Control, pos: Vector2, pressed: bool) -> void:
+	var ev := InputEventMouseButton.new()
+	ev.button_index = MOUSE_BUTTON_LEFT
+	ev.pressed = pressed
+	ev.position = cv.get_transform().affine_inverse() * pos
+	ev.global_position = cv.get_parent().get_global_transform() * pos
+	cv._gui_input(ev)
+
+
+func _pointer_move(cv: Control, pos: Vector2) -> void:
+	var ev := InputEventMouseMotion.new()
+	ev.position = cv.get_transform().affine_inverse() * pos
+	ev.global_position = cv.get_parent().get_global_transform() * pos
+	ev.button_mask = MOUSE_BUTTON_MASK_LEFT
+	cv._gui_input(ev)
+
+
+func _escape() -> void:
+	var ev := InputEventKey.new()
+	ev.keycode = KEY_ESCAPE
+	ev.physical_keycode = KEY_ESCAPE
+	ev.pressed = true
+	main._unhandled_input(ev)
 
 
 func _press_first_button() -> void:

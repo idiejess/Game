@@ -1,5 +1,5 @@
 extends PanelContainer
-## In-game developer panel (F1). Search/force cards, edit state, inspect eligibility and weights,
+## In-game developer panel (F12). Search/force cards, edit state, inspect eligibility and weights,
 ## show history, reload content, export state, reset progression.
 
 var main
@@ -28,7 +28,7 @@ func _ready() -> void:
 	box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(box)
 	var title := Label.new()
-	title.text = "DEVELOPER PANEL (F1 to close)"
+	title.text = "DEVELOPER PANEL (F12 to close)"
 	title.add_theme_color_override("font_color", UITheme.LAMP_AMBER)
 	box.add_child(title)
 	log_label = Label.new()

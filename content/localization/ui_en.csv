@@ -11,6 +11,7 @@ ui.settings,Settings
 ui.credits,Credits
 ui.keepers,Keepers
 ui.cards_seen,Cards seen
+ui.endings_count,Endings
 ui.placeholder_notice,Preview build: art and audio are candidates awaiting final production.
 ui.paused,Paused
 ui.pause,Pause

@@ -70,7 +70,10 @@ func save_settings() -> void:
 
 
 func reset_defaults() -> void:
+	# The content-warning acknowledgement is a record, not a preference; keep it.
+	var seen: bool = bool(get_value("content_warnings_seen"))
 	data = DEFAULTS.duplicate(true)
+	data["content_warnings_seen"] = seen
 	save_settings()
 	changed.emit()
 

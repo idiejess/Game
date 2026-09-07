@@ -503,6 +503,36 @@ func test_save_ended_run_and_persistent_between_sessions() -> void:
 	SaveManager.delete_slot(3)
 
 
+func test_save_at_watch_zero_resumes() -> void:
+	# Quitting on the very first card must not lose the Keeper (and inflate the run number).
+	GameState.reset_profile()
+	var tc := _fresh_run(4444)
+	var first: String = tc.current_card_id
+	ok(GameState.watch == 0, "still on watch 0")
+	ok(SaveManager.save(3), "saved at watch 0")
+	var summary: Dictionary = SaveManager.slot_summary(3)
+	ok(summary.get("in_run", false), "slot summary reports the watch-0 run as in progress")
+	GameState.reset_profile()
+	ok(SaveManager.load(3), "loaded watch-0 save")
+	ok(GameState.in_run() and GameState.run_number() == 1, "watch-0 run resumed as run 1 (got run %d, in_run=%s)" % [GameState.run_number(), str(GameState.in_run())])
+	var tc2 := TurnController.new()
+	tc2.autosave = false
+	tc2.resume_run()
+	ok(tc2.current_card_id == first, "same first card after resume (%s vs %s)" % [tc2.current_card_id, first])
+	SaveManager.delete_slot(3)
+
+
+func test_settings_reset_keeps_content_warning_ack() -> void:
+	var saved: Dictionary = Settings.data.duplicate(true)
+	Settings.data["content_warnings_seen"] = true
+	Settings.data["text_scale"] = 1.4
+	Settings.reset_defaults()
+	ok(Settings.get_value("text_scale") == Settings.DEFAULTS["text_scale"], "reset restores text scale default")
+	ok(Settings.get_value("content_warnings_seen") == true, "reset keeps the content-warning acknowledgement")
+	Settings.data = saved
+	Settings.save_settings()
+
+
 func test_save_ignores_removed_content_references() -> void:
 	GameState.reset_profile()
 	var tc := _fresh_run(4343)

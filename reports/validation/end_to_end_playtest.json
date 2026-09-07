@@ -1,14 +1,13 @@
 {
-	"checks": 47,
-	"ending": "end_res_water_min",
+	"checks": 55,
+	"ending": "end_false_blessing",
 	"failures": 0,
-	"generated": "2026-09-07T00:47:34",
+	"generated": "2026-09-07T08:17:30",
 	"godot": "4.7.2-stable (official)",
 	"log": [
-		"watch 25 res={ \"water\": 26, \"traffic\": 40, \"coffers\": 50, \"company\": 50, \"town\": 52 } card=evg_weather_16",
-		"watch 50 res={ \"water\": 10, \"traffic\": 45, \"coffers\": 51, \"company\": 48, \"town\": 52 } card=rel_pell_06",
-		"ending: end_res_water_min at watch 63, run 1",
-		"subtitles emitted: 14; unlock notices: 0; fallbacks: 0"
+		"watch 25 res={ \"water\": 28, \"traffic\": 47, \"coffers\": 52, \"company\": 52, \"town\": 51 } card=evg_company_orders_01",
+		"ending: end_false_blessing at watch 31, run 1",
+		"subtitles emitted: 3; unlock notices: 0; fallbacks: 0"
 	],
 	"results": [
 		{
@@ -76,6 +75,26 @@
 			"ok": true
 		},
 		{
+			"check": "motion on: decision committed",
+			"ok": true
+		},
+		{
+			"check": "motion on: next card is back at its origin (pos (612.0, 0.0), origin (612.0, 0.0))",
+			"ok": true
+		},
+		{
+			"check": "motion on: next card is fully visible (alpha 1.00)",
+			"ok": true
+		},
+		{
+			"check": "drag offset tracks the pointer (645, expected 645)",
+			"ok": true
+		},
+		{
+			"check": "drag past threshold committed the decision",
+			"ok": true
+		},
+		{
 			"check": "screen pause opens",
 			"ok": true
 		},
@@ -108,6 +127,14 @@
 			"ok": true
 		},
 		{
+			"check": "Escape from in-run settings returns to pause (got 'pause')",
+			"ok": true
+		},
+		{
+			"check": "Escape from pause resumes play",
+			"ok": true
+		},
+		{
 			"check": "theme rebuilt at text scale 1.6",
 			"ok": true
 		},
@@ -117,6 +144,10 @@
 		},
 		{
 			"check": "title hides the game layer",
+			"ok": true
+		},
+		{
+			"check": "Escape from title settings returns to the title (got 'title')",
 			"ok": true
 		},
 		{
@@ -132,7 +163,7 @@
 			"ok": true
 		},
 		{
-			"check": "same card shown after continue (mi13_2)",
+			"check": "same card shown after continue (ma04_01)",
 			"ok": true
 		},
 		{
@@ -140,7 +171,7 @@
 			"ok": true
 		},
 		{
-			"check": "exactly one ending fired (got 1 after 52 watches)",
+			"check": "exactly one ending fired (got 1 after 18 watches)",
 			"ok": true
 		},
 		{
@@ -202,7 +233,7 @@
 	],
 	"seed": 4242,
 	"slot": 3,
-	"subtitles": 14,
+	"subtitles": 3,
 	"unlock_notices": 0,
-	"watches_to_ending": 52
+	"watches_to_ending": 18
 }

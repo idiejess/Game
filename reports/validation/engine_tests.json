@@ -1,6 +1,6 @@
 {
   "failures": 0,
-  "generated": "2026-09-07T00:47:22",
+  "generated": "2026-09-07T08:17:22",
   "results": [
     {
       "message": "content loaded without errors: []",
@@ -48,7 +48,7 @@
       "test": "test_loader_rejects_invalid_card"
     },
     {
-      "message": "en localization has 5142 strings",
+      "message": "en localization has 5143 strings",
       "ok": true,
       "test": "test_localization_keys_present"
     },
@@ -708,6 +708,46 @@
       "test": "test_save_ended_run_and_persistent_between_sessions"
     },
     {
+      "message": "still on watch 0",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "saved at watch 0",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "slot summary reports the watch-0 run as in progress",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "loaded watch-0 save",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "watch-0 run resumed as run 1 (got run 1, in_run=true)",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "same first card after resume (onb_01 vs onb_01)",
+      "ok": true,
+      "test": "test_save_at_watch_zero_resumes"
+    },
+    {
+      "message": "reset restores text scale default",
+      "ok": true,
+      "test": "test_settings_reset_keeps_content_warning_ack"
+    },
+    {
+      "message": "reset keeps the content-warning acknowledgement",
+      "ok": true,
+      "test": "test_settings_reset_keeps_content_warning_ack"
+    },
+    {
       "message": "save with stale references loads",
       "ok": true,
       "test": "test_save_ignores_removed_content_references"
@@ -1253,5 +1293,5 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     }
   ],
-  "total": 250
+  "total": 258
 }
