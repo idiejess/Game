@@ -1,0 +1,49 @@
+name: Android playtest APK
+
+on:
+  push:
+    branches:
+      - hoplite/phleious-16c2ad27-android-playtest-apk
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot export templates
+        run: |
+          set -euo pipefail
+          curl -sSL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          install -m 755 /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 "$HOME/.local/bin/godot"
+          mkdir -p "$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          curl -sSL -o /tmp/templates.tpz https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz
+          unzip -q -j /tmp/templates.tpz templates/android_debug.apk templates/android_release.apk templates/version.txt -d "$HOME/.local/share/godot/export_templates/4.7.2.stable"
+      - name: Configure Android debug export
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq openjdk-17-jdk-headless
+          godot --headless --editor --path . --quit
+          settings="$HOME/.config/godot/editor_settings-4.7.tres"
+          sed -i 's|export/android/java_sdk_path = ""|export/android/java_sdk_path = "/usr/lib/jvm/java-17-openjdk-amd64"|' "$settings"
+          sed -i "s|export/android/android_sdk_path = \".*\"|export/android/android_sdk_path = \"$ANDROID_HOME\"|" "$settings"
+      - name: Export debug APK
+        run: |
+          set -euo pipefail
+          mkdir -p export/android
+          godot --headless --import --path .
+          godot --headless --path . --export-debug Android export/android/HalfwayLock-0.1.0-playtest.apk
+          sha256sum export/android/HalfwayLock-0.1.0-playtest.apk > export/android/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HalfwayLock-0.1.0-playtest
+          path: |
+            export/android/HalfwayLock-0.1.0-playtest.apk
+            export/android/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
