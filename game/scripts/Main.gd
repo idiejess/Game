@@ -7,6 +7,7 @@ const MAX_COLUMN_WIDTH := 720.0
 var turn := TurnController.new()
 var water_line: WaterLine
 var column: Control
+var screen_backdrop: ColorRect
 var game_layer: Control
 var hud: VBoxContainer
 var meters: Dictionary = {}
@@ -74,6 +75,16 @@ func _build() -> void:
 	column = Control.new()
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(column)
+
+	# Full-viewport dimmer behind menu screens; the column-bound screen sits on top of it so the
+	# HUD never shows beside a menu on wide (desktop/landscape) viewports.
+	screen_backdrop = ColorRect.new()
+	screen_backdrop.set_anchors_preset(Control.PRESET_FULL_RECT)
+	screen_backdrop.color = Color(0.06, 0.1, 0.1, 1.0)
+	screen_backdrop.mouse_filter = Control.MOUSE_FILTER_STOP
+	screen_backdrop.visible = false
+	add_child(screen_backdrop)
+	move_child(column, screen_backdrop.get_index())
 
 	game_layer = Control.new()
 	game_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -185,7 +196,9 @@ func _build() -> void:
 ## Letterbox the play column on wide displays; full width on portrait phones.
 func _layout() -> void:
 	var vs := get_viewport_rect().size
-	var w: float = min(vs.x, MAX_COLUMN_WIDTH if vs.x > vs.y else vs.x)
+	# Large text needs a wider column or the five-meter HUD overflows it in landscape.
+	var max_w: float = MAX_COLUMN_WIDTH * max(1.0, float(Settings.get_value("text_scale")))
+	var w: float = min(vs.x, max_w if vs.x > vs.y else vs.x)
 	column.position = Vector2((vs.x - w) / 2.0, 0)
 	column.size = Vector2(w, vs.y)
 	_layout_card()
@@ -449,6 +462,8 @@ func _close_screens() -> void:
 		_screen_node.queue_free()
 	_screen_node = null
 	_current_screen = ""
+	if screen_backdrop:
+		screen_backdrop.visible = false
 	if game_layer.visible and card_view.visible:
 		card_view.grab_focus()
 
@@ -459,6 +474,7 @@ func _show_screen(name: String, args: Dictionary = {}) -> void:
 	var Screens = load("res://game/UI/Screens.gd")
 	_screen_node = Screens.make(name, self, args)
 	screens.add_child(_screen_node)
+	screen_backdrop.visible = true
 	if name == "title":
 		game_layer.visible = false
 		AudioBus.play_music("mus_title")

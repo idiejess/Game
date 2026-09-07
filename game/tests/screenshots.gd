@@ -52,6 +52,10 @@ func _ready() -> void:
 	main = load("res://game/scripts/Main.gd").new()
 	main.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(main)
+	# Main._ready loads slot 1 (the player's profile); keep the captures on a fresh Keeper.
+	GameState.reset_profile()
+	SaveManager.current_slot = slot
+	main._show_screen("title")
 	await _frames(4)
 	await _shot("01_title")
 	main.start_new_run(4242)

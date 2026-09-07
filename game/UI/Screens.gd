@@ -6,7 +6,7 @@ extends RefCounted
 
 
 static func make(name: String, main, args: Dictionary) -> Control:
-	var root := _overlay()
+	var root := _overlay(name not in ["ending", "title", "content_warning", "content_error"])
 	var scroll := ScrollContainer.new()
 	scroll.set_anchors_preset(Control.PRESET_FULL_RECT)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -58,11 +58,11 @@ static func _walk(n: Node) -> Array:
 	return out
 
 
-static func _overlay() -> Control:
+static func _overlay(translucent: bool = true) -> Control:
 	var root := PanelContainer.new()
 	root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color(0.06, 0.1, 0.1, 0.94)
+	sb.bg_color = Color(0.06, 0.1, 0.1, 0.94 if translucent else 1.0)
 	root.add_theme_stylebox_override("panel", sb)
 	root.mouse_filter = Control.MOUSE_FILTER_STOP
 	return root
@@ -122,7 +122,7 @@ static func _title(box: Control, main) -> void:
 	_label(box, "%s: %d   %s: %d / %d   %s: %d" % [Loc.ui("keepers", "Keepers"), rn, Loc.ui("cards_seen", "Cards seen"),
 		GameState.profile["discovered_cards"].size(), ContentDB.cards.size(), Loc.ui("endings", "Endings"),
 		GameState.profile["endings"].size()], true)
-	_label(box, Loc.ui("placeholder_notice", "Development build: portraits and audio are labeled placeholders."), true)
+	_label(box, Loc.ui("placeholder_notice", "Preview build: art and audio are candidates awaiting final production."), true)
 
 
 static func _pause(box: Control, main) -> void:
