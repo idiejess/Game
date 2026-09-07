@@ -635,7 +635,7 @@
    "id": "res_coffers_13",
    "category": "resources",
    "speaker": "dace",
-   "text": "Three things. A bargee's offered to pay his toll in coal instead of coin. The Company store'll take coal. And half the hands have no coal at home.",
+   "text": "Two things. A bargee's offered to pay his toll in coal instead of coin, and the Company store'll take coal. And half the hands have no coal at home.",
    "left": {
     "label": "Coal to the hands",
     "outcome": "Warm houses, empty Book. Vosk notes a toll paid in 'kind'.",
@@ -1015,7 +1015,7 @@
    "id": "res_coffers_20",
    "category": "resources",
    "speaker": "dace",
-   "text": "Three things. The chest is heavy. The hands know it's heavy because they carry it. And they've asked, politely, whether a heavy chest means a bonus or just a heavier chest.",
+   "text": "The chest is heavy. The hands know it's heavy because they carry it. And they've asked, politely, whether a heavy chest means a bonus or just a heavier chest.",
    "left": {
     "label": "A bonus",
     "outcome": "A mark a man. Ilse's takings double for a night.",

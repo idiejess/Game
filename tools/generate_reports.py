@@ -97,6 +97,48 @@ def content_report(cards):
     print("wrote docs/CONTENT_REPORT.md")
 
 
+def _balance_assessment(sim):
+    """Design-target comparison. Targets come from docs/NARRATIVE_BIBLE.md / DECISION_LOG D-009."""
+    runs = sim["runs"] or 1
+    ends = sim["endings"]
+
+    def share(pred):
+        return sum(v for k, v in ends.items() if k and pred(k)) / runs
+    water = ends.get("end_res_water_min", 0) / runs
+    in_band = sum(v for k, v in sim["length_distribution"].items()
+                  if 40 <= int(k.split("-")[0]) < 120) / runs
+    true_share = sum(sim["true_endings"].values()) / runs
+    rev_share = share(lambda k: k.startswith("end_rev"))
+    major = [a for a in sim["arc_entry_rate"] if a.startswith("MA")]
+    major_done = sum(1 for a in major if sim["arc_completion_rate"].get(a, 0) > 0)
+    keeper = sim["per_strategy"].get("keeper", {})
+    keeper_100 = keeper.get("endings", {}).get("end_ord_long_watch", 0) / max(1, keeper.get("runs", 1))
+    distinct = sum(1 for k, v in ends.items() if k and v > 0)
+    rows = [
+        ("Runs 40–119 watches", f"{in_band:.0%}", "majority", in_band >= 0.5),
+        ("Median run length", str(sim["median_length"]), "40–120", 40 <= sim["median_length"] <= 120),
+        ("Water-edge deaths (all strategies)", f"{water:.0%}", "dominant but < 70%", water < 0.70),
+        ("Keeper strategy reaches watch 100", f"{keeper_100:.0%}", "≥ 30%", keeper_100 >= 0.3),
+        ("Distinct endings reached", f"{distinct} / 40", "≥ 20 in 10k scripted runs", distinct >= 20),
+        ("Revelation endings", f"{rev_share:.1%}", "1–10%", 0.01 <= rev_share <= 0.10),
+        ("True endings", f"{true_share:.2%}", "rare (0.05–2%)", 0.0005 <= true_share <= 0.02),
+        ("Major arcs completed at least once", f"{major_done} / {len(major)}", "12 / 12", major_done == len(major)),
+        ("Stalls", str(sim["stalls"]), "0", sim["stalls"] == 0),
+        ("Fallback-card runs", str(sim["fallback_runs"]), "< 1%", sim["fallback_runs"] / runs < 0.01),
+        ("Unseen cards", str(sim["unseen_count"]), "informational", True),
+    ]
+    out = ["## Assessment against design targets", "| Metric | Value | Target | Status |", "|---|---|---|---|"]
+    for name, val, tgt, ok in rows:
+        out.append(f"| {name} | {val} | {tgt} | {'OK' if ok else 'ATTENTION'} |")
+    out += ["",
+            "Notes: strategies are scripted policies, not players; they never read clue text, so mystery "
+            "endings and arc completions are lower bounds. Unseen cards are almost all late arc beats or "
+            "resource cards gated on states (very high Town, very low Coffers, sustained Water ≥ 62) that "
+            "scripted play rarely sustains; they are reachable by construction (see `reports/content/arc_audit.json`). "
+            "Rows marked ATTENTION are tracked in `docs/REMAINING_WORK.md`.", ""]
+    return out
+
+
 def balance_report(cards):
     p = ROOT / "reports" / "simulations" / "simulation.json"
     if not p.exists():
@@ -104,8 +146,9 @@ def balance_report(cards):
         return
     sim = json.loads(p.read_text())
     lines = ["# Balance Report — Halfway Lock", "",
-             f"Generated {time.strftime('%Y-%m-%d %H:%M')} from `{p.relative_to(ROOT)}` ({sim['runs']} runs, {sim['seconds']}s, {len(sim['strategies'])} strategies).", "",
-             "## Run length", f"- Mean: **{sim['mean_length']}** watches; median: **{sim['median_length']}**",
+             f"Generated {time.strftime('%Y-%m-%d %H:%M')} from `{p.relative_to(ROOT)}` ({sim['runs']} runs, {sim['seconds']}s, {len(sim['strategies'])} strategies).", ""]
+    lines += _balance_assessment(sim)
+    lines += ["## Run length", f"- Mean: **{sim['mean_length']}** watches; median: **{sim['median_length']}**",
              "", "| Watches | Runs |", "|---|---|"] + [f"| {k} | {v} |" for k, v in sim["length_distribution"].items()]
     lines += ["", "## Endings", "| Ending | Runs | Share |", "|---|---|---|"] + [f"| {k} | {v} | {v/sim['runs']:.1%} |" for k, v in sim["endings"].items()]
     lines += ["", "## Deaths by resource edge", "| Resource | Runs | Share of deaths |", "|---|---|---|"]

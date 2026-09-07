@@ -1,84 +1,955 @@
 {
-  "cards": [
-    {"id": "evg_maintenance_01", "category": "evergreen", "speaker": "quenn", "expression": "worried", "text": "The east paddle gear has two teeth gone. Sorry. It'll run, roughly, but one more and it won't. A new wheel is twelve marks and a week from Ardent. A patched one is three marks and Tamm.",
-     "left": {"label": "New wheel from Ardent", "outcome": "A week of one paddle. Then a gear that will outlive you.", "effects": {"resources": {"coffers": -8, "traffic": -3}, "relationships": {"quenn": 5}, "flags_set": ["gates_repaired"]}},
-     "right": {"label": "Tamm patches it", "outcome": "\"It'll hold or it won't,\" says Tamm. It holds. For now.", "effects": {"resources": {"coffers": -3}, "relationships": {"tamm": 2, "quenn": -1}, "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_quenn"]}, "cooldown": 30, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_02", "category": "evergreen", "speaker": "tamm", "text": "Somebody's been at the sluice house door with a bar. Not me. Company wants it re-hung with iron straps. I can do it. I'd rather know why a valve house nobody uses needs iron straps.",
-     "left": {"label": "Hang it as asked", "outcome": "Iron straps on a disused door. Tamm shakes his head all day.", "effects": {"resources": {"company": 3, "coffers": -3}, "flags_set": ["clue_sluice_guard"], "counters": {"evidence": 1}}},
-     "right": {"label": "Leave it; ask Vosk why", "outcome": "\"Because the Board lists it. You will find lists are not explained.\"", "effects": {"resources": {"company": -2}, "relationships": {"vosk": -2}, "flags_set": ["clue_sluice_guard", "sluice_house_seen"], "counters": {"evidence": 2, "suspicion": 1}}},
-     "conditions": {"flags_all": ["met_tamm"], "watch": {"min": 12}}, "cooldown": 80, "tags": ["res:company", "clue"]},
-    {"id": "evg_maintenance_03", "category": "evergreen", "speaker": "dace", "text": "Three things. The towpath's washed out below the gate. Horses can't tow past it. And the Company's answer, by wire, was 'note it'.",
-     "left": {"label": "Fill it with town labor", "outcome": "A day's work, a barrel of ale, a towpath.", "effects": {"resources": {"coffers": -3, "traffic": 3, "town": 2}, "relationships": {"dace": 3}}},
-     "right": {"label": "Note it", "outcome": "Horses go round by the field. The farmer sends a bill.", "effects": {"resources": {"traffic": -4, "company": 1}, "counters": {"repairs_deferred": 1}, "delayed_resources": [{"delay": 6, "resources": {"coffers": -2}, "message": "The farmer's bill for the trampled field arrives."}]}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 40, "tags": ["res:traffic"]},
-    {"id": "evg_maintenance_04", "category": "evergreen", "speaker": "mirren", "text": "He used to grease the paddle spindles every seventh watch. Nobody's done it since. I can, if you want it done his way. Or the Company way, which is when they squeal.",
-     "left": {"label": "His way", "outcome": "She does it in silence, the way he must have.", "effects": {"resources": {"coffers": -1}, "relationships": {"mirren": 5}, "counters": {"repairs_deferred": -1}}},
-     "right": {"label": "The Company way", "outcome": "\"Right.\" They squeal within the month.", "effects": {"resources": {"coffers": 1}, "relationships": {"mirren": -3}, "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_mirren"]}, "cooldown": 40, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_05", "category": "evergreen", "speaker": "src_weather", "text": "A gate beam has cracked in the frost with a sound the whole town heard. The gate still shuts. Quenn says it will shut until it does not, and cannot say when that is.",
-     "left": {"label": "Close the gate; replace the beam", "outcome": "Three days. The queue reaches Lock 7. The new beam is oak.", "effects": {"resources": {"traffic": -8, "coffers": -6}, "flags_set": ["gates_repaired"], "flags_clear": ["gates_leaking"]}},
-     "right": {"label": "Strap it and keep working", "outcome": "Iron straps. It shuts. Every bang makes the hands flinch.", "effects": {"resources": {"coffers": -2}, "counters": {"repairs_deferred": 2}, "flags_set": ["gates_leaking"]}},
-     "conditions": {"watch": {"min": 15}}, "cooldown": 60, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_06", "category": "evergreen", "speaker": "quenn", "expression": "absorbed", "text": "I've found the original gate drawings. Marrow's hand. There's a note in the margin: 'sill gauge to read ten, not nine; see S.H.' I don't know what S.H. is. Sorry. Do you?",
-     "left": {"label": "Sluice house", "outcome": "\"Oh. Yes. That's, yes. That would be it.\" She goes quiet.", "effects": {"relationships": {"quenn": 4}, "flags_set": ["clue_cipher"], "counters": {"evidence": 2, "cipher_progress": 1}}},
-     "right": {"label": "Someone's initials", "outcome": "\"Nobody with those. I checked the rolls. Roughly all of them.\"", "effects": {"relationships": {"quenn": 2}, "counters": {"evidence": 1}}},
-     "conditions": {"flags_all": ["met_quenn"], "watch": {"min": 15}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_07", "category": "evergreen", "speaker": "tamm", "expression": "doubtful", "text": "Company's sent a crate of new paddle gear. Wrong pattern. Made for the Sorrel locks, which are a hand wider. I can make it fit. It'll never be right. Or I send it back and we wait.",
-     "left": {"label": "Make it fit", "outcome": "It fits. It grinds. Tamm hates it personally.", "effects": {"resources": {"coffers": -2, "traffic": 1}, "relationships": {"tamm": -2}, "counters": {"repairs_deferred": 1}}},
-     "right": {"label": "Send it back", "outcome": "Six weeks. The old gear holds, sullenly.", "effects": {"resources": {"traffic": -2, "company": -1}, "relationships": {"tamm": 3}}},
-     "conditions": {"flags_all": ["met_tamm"]}, "cooldown": 60, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_08", "category": "evergreen", "speaker": "dace", "expression": "fed_up", "text": "Three things. The hands want gloves. The Company says gloves are 'personal equipment'. And I've got two men with hands like raw meat from the winter windlass.",
-     "left": {"label": "Gloves from the Coffers", "outcome": "Twelve pairs. Vosk notes it as 'irregular but small'.", "effects": {"resources": {"coffers": -2, "town": 3}, "relationships": {"dace": 5}}},
-     "right": {"label": "Personal equipment", "outcome": "\"Right. I'll tell them the Company said so. They'll remember which Company.\"", "effects": {"resources": {"company": 1, "town": -3}, "relationships": {"dace": -4}}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_maintenance_09", "category": "evergreen", "speaker": "mirren", "expression": "guarded", "text": "The lower gate's leaking round the heel post. He noticed that too, the month before. He wrote it in the Book. Nobody read it. I'm telling you so it's said twice.",
-     "left": {"label": "Fix it this week", "outcome": "She watches you write the order. Something eases.", "effects": {"resources": {"coffers": -4}, "relationships": {"mirren": 6}, "flags_set": ["gates_repaired"], "flags_clear": ["gates_leaking"]}},
-     "right": {"label": "Note it, as he did", "outcome": "\"Right. Twice in the Book, then.\"", "effects": {"relationships": {"mirren": -4}, "flags_set": ["gates_leaking"], "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_mirren"], "watch": {"min": 10}}, "cooldown": 50, "tags": ["res:water"]},
-    {"id": "evg_maintenance_10", "category": "evergreen", "speaker": "src_weather", "text": "The chamber floor has a hollow sound at the north corner when the water is out. It always has, the hands say. Nobody has ever looked. Looking means a dry chamber for a day.",
-     "left": {"label": "Drain it and look", "outcome": "A void under the floor, and old brickwork, and the sound of running water where there should be none.", "effects": {"resources": {"traffic": -5}, "flags_set": ["clue_sluice_guard"], "counters": {"evidence": 2, "suspicion": 1}}},
-     "right": {"label": "It always has", "outcome": "The boats keep moving over the hollow sound.", "effects": {"resources": {"traffic": 1}}},
-     "conditions": {"watch": {"min": 18}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_11", "category": "evergreen", "speaker": "quenn", "text": "I need to close the aqueduct for a day to clear it. It won't affect the pound, which, sorry, it should. It should affect it a great deal. I'd like you to watch the gauge while it's closed.",
-     "left": {"label": "Watch the gauge", "outcome": "A day with the aqueduct shut. The pound falls its usual mark, and no more.", "effects": {"relationships": {"quenn": 6}, "flags_set": ["clue_dry_aqueduct"], "counters": {"evidence": 2}}},
-     "right": {"label": "Clear it; don't tell the Company", "outcome": "\"I wasn't going to. Sorry. I never do.\"", "effects": {"relationships": {"quenn": 3}, "resources": {"coffers": -1}}},
-     "conditions": {"flags_all": ["met_quenn"], "watch": {"min": 15}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_12", "category": "evergreen", "speaker": "tamm", "text": "There's a hull at my yard with a false bottom. Hullfolk boat. I'm not saying whose. I'm saying if I fix it, I've fixed a smuggler's boat, and if I don't, she sinks in the pound with a family aboard.",
-     "left": {"label": "Fix it", "outcome": "The false bottom is repaired along with the true one. Nobody mentions either.", "effects": {"resources": {"company": -1}, "factions": {"hullfolk": 4}, "relationships": {"tamm": 3, "wren": 2}, "flags_set": ["false_bottom_found", "reeds_cargo"]}},
-     "right": {"label": "Report it to Crane", "outcome": "Crane inspects. Finds cheese. The Hullfolk do not use Tamm's yard again.", "effects": {"resources": {"company": 2}, "factions": {"hullfolk": -6}, "relationships": {"tamm": -4, "crane": 3, "wren": -5}, "flags_set": ["false_bottom_found"]}},
-     "conditions": {"flags_all": ["met_tamm", "met_wren"]}, "cooldown": 100, "tags": ["res:traffic"]},
-    {"id": "evg_maintenance_13", "category": "evergreen", "speaker": "dace", "text": "Three things. The bollards on the wharf are rotten. A Sorrel barge pulled one clean out. And the Company's sent a man to count the bollards, not replace them.",
-     "left": {"label": "Replace them all", "outcome": "Tamm's oak. A week. A wharf that will hold a fleet.", "effects": {"resources": {"coffers": -6, "traffic": -2}, "relationships": {"tamm": 3, "dace": 3}}},
-     "right": {"label": "Replace the one", "outcome": "One new bollard among the rotten ones, like a tooth.", "effects": {"resources": {"coffers": -1}, "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 60, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_14", "category": "evergreen", "speaker": "mirren", "text": "The Company wants the old gauge board replaced with a new brass one. Nine marks. The old board has ten, and his pencil marks on it. I'd rather it stayed. I'd rather you said so.",
-     "left": {"label": "The old board stays", "outcome": "\"Thank you.\" The first time she has said it.", "effects": {"resources": {"company": -2}, "relationships": {"mirren": 7}, "flags_set": ["clue_cipher"]}},
-     "right": {"label": "Brass, nine marks", "outcome": "She takes the old board home. The tenth mark goes with it.", "effects": {"resources": {"company": 2}, "relationships": {"mirren": -5}}},
-     "conditions": {"flags_all": ["met_mirren"], "watch": {"min": 12}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_15", "category": "evergreen", "speaker": "src_weather", "text": "The pound's north bank is slumping near the sluice house. A yard of it went into the water overnight. The Company's surveyors will say 'drainage'. It is where the clear stream comes out.",
-     "left": {"label": "Shore it up with town labor", "outcome": "Stone and timber. The bank holds. The stream finds a new way out.", "effects": {"resources": {"coffers": -4, "town": -1}, "flags_set": ["embankment_weak"], "counters": {"evidence": 1}}},
-     "right": {"label": "Report it and wait", "outcome": "Company men arrive at night, with lamps, and no surveyors.", "effects": {"resources": {"company": 2}, "flags_set": ["embankment_weak", "clue_night_dredgers"], "counters": {"evidence": 2, "suspicion": 1}}},
-     "conditions": {"watch": {"min": 20}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_16", "category": "evergreen", "speaker": "quenn", "expression": "resolved", "text": "I want to put a second gauge on the pound, at the Reach end, and read them both every watch. If they ever disagree, we'll know where the water goes in. The Company won't like a second gauge.",
-     "left": {"label": "Put it in", "outcome": "Two gauges. They disagree by the third day, at the north bank.", "effects": {"resources": {"coffers": -3, "company": -2}, "relationships": {"quenn": 6}, "flags_set": ["clue_reservoirs"], "counters": {"evidence": 2, "suspicion": 1}}},
-     "right": {"label": "One gauge is the rule", "outcome": "\"Right. Sorry. One gauge.\" She measures the Reach end with a stick anyway.", "effects": {"resources": {"company": 1}, "relationships": {"quenn": -2}}},
-     "conditions": {"flags_all": ["met_quenn"], "relationships": {"quenn": {"min": 50}}}, "cooldown": 100, "tags": ["res:water", "clue"]},
-    {"id": "evg_maintenance_17", "category": "evergreen", "speaker": "tamm", "text": "The Reed Reach wants their mooring stage rebuilt and they'll pay in fish and labor. Company rule says no Company timber to the Reach. Half my timber's Company. I've lost track which half.",
-     "left": {"label": "Lose track a little more", "outcome": "A new stage at the Reach, built of timber nobody can identify.", "effects": {"resources": {"company": -2}, "factions": {"hullfolk": 5}, "relationships": {"tamm": 3}, "counters": {"hullfolk_favors": 1}}},
-     "right": {"label": "Keep track", "outcome": "The Reach builds with driftwood. It holds. It looks like it might not.", "effects": {"resources": {"company": 2}, "factions": {"hullfolk": -3}}},
-     "conditions": {"flags_all": ["met_tamm", "met_bram"]}, "cooldown": 80, "tags": ["res:town"]},
-    {"id": "evg_maintenance_18", "category": "evergreen", "speaker": "dace", "text": "Three things. The Company inspector wants the hands to wear numbers. Numbers, Keeper, on their coats. The hands say they'll wear them on their backsides. And Vosk is coming Tuesday.",
-     "left": {"label": "Numbers on coats", "outcome": "They wear them. Upside down. Vosk notes it without expression.", "effects": {"resources": {"company": 2, "town": -3}, "relationships": {"dace": -3, "vosk": 1}}},
-     "right": {"label": "Names are enough", "outcome": "\"Right. I'll tell Vosk you said names.\" She notes that too.", "effects": {"resources": {"company": -2, "town": 3}, "relationships": {"dace": 4, "vosk": -1}}},
-     "conditions": {"flags_all": ["met_dace", "met_vosk"]}, "cooldown": 80, "tags": ["res:town"]},
-    {"id": "evg_maintenance_19", "category": "evergreen", "speaker": "mirren", "expression": "neutral", "text": "The winter stores: lamp oil, rope, tallow, sand. He used to order double and the Company used to complain. Last winter nobody ordered and the hands worked the frost in the dark.",
-     "left": {"label": "Order double", "outcome": "Vosk complains. The hands do not work in the dark.", "effects": {"resources": {"coffers": -5}, "relationships": {"mirren": 4, "dace": 3, "vosk": -1}}},
-     "right": {"label": "Order what the Company allows", "outcome": "\"Right.\" The dark comes early that winter.", "effects": {"resources": {"coffers": -2, "company": 1}, "relationships": {"mirren": -2}, "counters": {"repairs_deferred": 1}}},
-     "conditions": {"flags_all": ["met_mirren"], "watch": {"min": 10}}, "cooldown": 80, "tags": ["res:coffers"]},
-    {"id": "evg_maintenance_20", "category": "evergreen", "speaker": "quenn", "text": "Sorry. Good news, for once. I've got the west paddles running true for the first time in years. The gate fills a quarter faster. Do you want to tell the Company, or keep it for a bad day?",
-     "left": {"label": "Tell the Company", "outcome": "Pell announces it. Throughput targets rise to match.", "effects": {"resources": {"company": 4, "traffic": 3}, "relationships": {"quenn": 2, "pell": 2}}},
-     "right": {"label": "Keep it for a bad day", "outcome": "\"A reserve. Yes. Roughly what he'd have done.\"", "effects": {"resources": {"traffic": 1}, "relationships": {"quenn": 5}, "counters": {"repairs_deferred": -1}}},
-     "conditions": {"flags_all": ["met_quenn"], "flags_any": ["gates_repaired"]}, "cooldown": 100, "tags": ["res:traffic"]}
-  ]
+ "cards": [
+  {
+   "id": "evg_maintenance_01",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "worried",
+   "text": "The east paddle gear has two teeth gone. Sorry. It'll run, roughly, but one more and it won't. A new wheel is twelve marks and a week from Ardent. A patched one is three marks and Tamm.",
+   "left": {
+    "label": "New wheel from Ardent",
+    "outcome": "A week of one paddle. Then a gear that will outlive you.",
+    "effects": {
+     "resources": {
+      "coffers": -8,
+      "traffic": -3
+     },
+     "relationships": {
+      "quenn": 5
+     },
+     "flags_set": [
+      "gates_repaired"
+     ]
+    }
+   },
+   "right": {
+    "label": "Tamm patches it",
+    "outcome": "\"It'll hold or it won't,\" says Tamm. It holds. For now.",
+    "effects": {
+     "resources": {
+      "coffers": -3
+     },
+     "relationships": {
+      "tamm": 2,
+      "quenn": -1
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ]
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_02",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "Somebody's been at the sluice house door with a bar. Not me. Company wants it re-hung with iron straps. I can do it. I'd rather know why a valve house nobody uses needs iron straps.",
+   "left": {
+    "label": "Hang it as asked",
+    "outcome": "Iron straps on a disused door. Tamm shakes his head all day.",
+    "effects": {
+     "resources": {
+      "company": 3,
+      "coffers": -3
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Leave it; ask Vosk why",
+    "outcome": "\"Because the Board lists it. You will find lists are not explained.\"",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "vosk": -2
+     },
+     "flags_set": [
+      "clue_sluice_guard",
+      "sluice_house_seen"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:company",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_03",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Towpath's washed out below the gate. Horses can't tow past it. The Company's answer, by wire, was 'note it'.",
+   "left": {
+    "label": "Fill it with town labor",
+    "outcome": "A day's work, a barrel of ale, a towpath.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "traffic": 3,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Note it",
+    "outcome": "Horses go round by the field. The farmer sends a bill.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "company": 1
+     },
+     "counters": {
+      "repairs_deferred": 1
+     },
+     "delayed_resources": [
+      {
+       "delay": 6,
+       "resources": {
+        "coffers": -2
+       },
+       "message": "The farmer's bill for the trampled field arrives."
+      }
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_maintenance_04",
+   "category": "evergreen",
+   "speaker": "mirren",
+   "text": "He used to grease the paddle spindles every seventh watch. Nobody's done it since. I can, if you want it done his way. Or the Company way, which is when they squeal.",
+   "left": {
+    "label": "His way",
+    "outcome": "She does it in silence, the way he must have.",
+    "effects": {
+     "resources": {
+      "coffers": -1
+     },
+     "relationships": {
+      "mirren": 5
+     },
+     "counters": {
+      "repairs_deferred": -1
+     }
+    }
+   },
+   "right": {
+    "label": "The Company way",
+    "outcome": "\"Right.\" They squeal within the month.",
+    "effects": {
+     "resources": {
+      "coffers": 1
+     },
+     "relationships": {
+      "mirren": -3
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ]
+   },
+   "cooldown": 40,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_05",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "A gate beam has cracked in the frost with a sound the whole town heard. The gate still shuts. Quenn says it will shut until it does not, and cannot say when that is.",
+   "left": {
+    "label": "Close the gate; replace the beam",
+    "outcome": "Three days. The queue reaches Lock 7. The new beam is oak.",
+    "effects": {
+     "resources": {
+      "traffic": -8,
+      "coffers": -6
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "right": {
+    "label": "Strap it and keep working",
+    "outcome": "Iron straps. It shuts. Every bang makes the hands flinch.",
+    "effects": {
+     "resources": {
+      "coffers": -2
+     },
+     "counters": {
+      "repairs_deferred": 2
+     },
+     "flags_set": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_06",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "absorbed",
+   "text": "I've found the original gate drawings. Marrow's hand. There's a note in the margin: 'sill gauge to read ten, not nine; see S.H.' I don't know what S.H. is. Sorry. Do you?",
+   "left": {
+    "label": "Sluice house",
+    "outcome": "\"Oh. Yes. That's, yes. That would be it.\" She goes quiet.",
+    "effects": {
+     "relationships": {
+      "quenn": 4
+     },
+     "flags_set": [
+      "clue_cipher"
+     ],
+     "counters": {
+      "evidence": 2,
+      "cipher_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Someone's initials",
+    "outcome": "\"Nobody with those. I checked the rolls. Roughly all of them.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 2
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_07",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "expression": "doubtful",
+   "text": "Company's sent a crate of new paddle gear. Wrong pattern. Made for the Sorrel locks, which are a hand wider. I can make it fit. It'll never be right. Or I send it back and we wait.",
+   "left": {
+    "label": "Make it fit",
+    "outcome": "It fits. It grinds. Tamm hates it personally.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "traffic": 1
+     },
+     "relationships": {
+      "tamm": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Send it back",
+    "outcome": "Six weeks. The old gear holds, sullenly.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "company": -1
+     },
+     "relationships": {
+      "tamm": 3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_08",
+   "category": "evergreen",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "Three things. The hands want gloves. The Company says gloves are 'personal equipment'. And I've got two men with hands like raw meat from the winter windlass.",
+   "left": {
+    "label": "Gloves from the Coffers",
+    "outcome": "Twelve pairs. Vosk notes it as 'irregular but small'.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 3
+     },
+     "relationships": {
+      "dace": 5
+     }
+    }
+   },
+   "right": {
+    "label": "Personal equipment",
+    "outcome": "\"Right. I'll tell them the Company said so. They'll remember which Company.\"",
+    "effects": {
+     "resources": {
+      "company": 1,
+      "town": -3
+     },
+     "relationships": {
+      "dace": -4
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_maintenance_09",
+   "category": "evergreen",
+   "speaker": "mirren",
+   "expression": "guarded",
+   "text": "The lower gate's leaking round the heel post. He noticed that too, the month before. He wrote it in the Book. Nobody read it. I'm telling you so it's said twice.",
+   "left": {
+    "label": "Fix it this week",
+    "outcome": "She watches you write the order. Something eases.",
+    "effects": {
+     "resources": {
+      "coffers": -4
+     },
+     "relationships": {
+      "mirren": 6
+     },
+     "flags_set": [
+      "gates_repaired"
+     ],
+     "flags_clear": [
+      "gates_leaking"
+     ]
+    }
+   },
+   "right": {
+    "label": "Note it, as he did",
+    "outcome": "\"Right. Twice in the Book, then.\"",
+    "effects": {
+     "relationships": {
+      "mirren": -4
+     },
+     "flags_set": [
+      "gates_leaking"
+     ],
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:water"
+   ]
+  },
+  {
+   "id": "evg_maintenance_10",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "The chamber floor has a hollow sound at the north corner when the water is out. It always has, the hands say. Nobody has ever looked. Looking means a dry chamber for a day.",
+   "left": {
+    "label": "Drain it and look",
+    "outcome": "A void under the floor, and old brickwork, and the sound of running water where there should be none.",
+    "effects": {
+     "resources": {
+      "traffic": -5
+     },
+     "flags_set": [
+      "clue_sluice_guard"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It always has",
+    "outcome": "The boats keep moving over the hollow sound.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 18
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_11",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "text": "I need to close the aqueduct for a day to clear it. It won't affect the pound, which, sorry, it should. It should affect it a great deal. I'd like you to watch the gauge while it's closed.",
+   "left": {
+    "label": "Watch the gauge",
+    "outcome": "A day with the aqueduct shut. The pound falls its usual mark, and no more.",
+    "effects": {
+     "relationships": {
+      "quenn": 6
+     },
+     "flags_set": [
+      "clue_dry_aqueduct"
+     ],
+     "counters": {
+      "evidence": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Clear it; don't tell the Company",
+    "outcome": "\"I wasn't going to. Sorry. I never do.\"",
+    "effects": {
+     "relationships": {
+      "quenn": 3
+     },
+     "resources": {
+      "coffers": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_12",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "There's a hull at my yard with a false bottom. Hullfolk boat. I'm not saying whose. I'm saying if I fix it, I've fixed a smuggler's boat, and if I don't, she sinks in the pound with a family aboard.",
+   "left": {
+    "label": "Fix it",
+    "outcome": "The false bottom is repaired along with the true one. Nobody mentions either.",
+    "effects": {
+     "resources": {
+      "company": -1
+     },
+     "factions": {
+      "hullfolk": 4
+     },
+     "relationships": {
+      "tamm": 3,
+      "wren": 2
+     },
+     "flags_set": [
+      "false_bottom_found",
+      "reeds_cargo"
+     ]
+    }
+   },
+   "right": {
+    "label": "Report it to Crane",
+    "outcome": "Crane inspects. Finds cheese. The Hullfolk do not use Tamm's yard again.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "factions": {
+      "hullfolk": -6
+     },
+     "relationships": {
+      "tamm": -4,
+      "crane": 3,
+      "wren": -5
+     },
+     "flags_set": [
+      "false_bottom_found"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm",
+     "met_wren"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:traffic"
+   ]
+  },
+  {
+   "id": "evg_maintenance_13",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "The bollards on the wharf are rotten. A Sorrel barge pulled one clean out this morning. And the Company's sent a man to count the bollards, not replace them.",
+   "left": {
+    "label": "Replace them all",
+    "outcome": "Tamm's oak. A week. A wharf that will hold a fleet.",
+    "effects": {
+     "resources": {
+      "coffers": -6,
+      "traffic": -2
+     },
+     "relationships": {
+      "tamm": 3,
+      "dace": 3
+     }
+    }
+   },
+   "right": {
+    "label": "Replace the one",
+    "outcome": "One new bollard among the rotten ones, like a tooth.",
+    "effects": {
+     "resources": {
+      "coffers": -1
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_14",
+   "category": "evergreen",
+   "speaker": "mirren",
+   "text": "The Company wants the old gauge board replaced with a new brass one. Nine marks. The old board has ten, and his pencil marks on it. I'd rather it stayed. I'd rather you said so.",
+   "left": {
+    "label": "The old board stays",
+    "outcome": "\"Thank you.\" The first time she has said it.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "relationships": {
+      "mirren": 7
+     },
+     "flags_set": [
+      "clue_cipher"
+     ]
+    }
+   },
+   "right": {
+    "label": "Brass, nine marks",
+    "outcome": "She takes the old board home. The tenth mark goes with it.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "relationships": {
+      "mirren": -5
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_15",
+   "category": "evergreen",
+   "speaker": "src_weather",
+   "text": "The pound's north bank is slumping near the sluice house. A yard of it went into the water overnight. The Company's surveyors will say 'drainage'. It is where the clear stream comes out.",
+   "left": {
+    "label": "Shore it up with town labor",
+    "outcome": "Stone and timber. The bank holds. The stream finds a new way out.",
+    "effects": {
+     "resources": {
+      "coffers": -4,
+      "town": -1
+     },
+     "flags_set": [
+      "embankment_weak"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Report it and wait",
+    "outcome": "Company men arrive at night, with lamps, and no surveyors.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "flags_set": [
+      "embankment_weak",
+      "clue_night_dredgers"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "watch": {
+     "min": 20
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_16",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "expression": "resolved",
+   "text": "I want to put a second gauge on the pound, at the Reach end, and read them both every watch. If they ever disagree, we'll know where the water goes in. The Company won't like a second gauge.",
+   "left": {
+    "label": "Put it in",
+    "outcome": "Two gauges. They disagree by the third day, at the north bank.",
+    "effects": {
+     "resources": {
+      "coffers": -3,
+      "company": -2
+     },
+     "relationships": {
+      "quenn": 6
+     },
+     "flags_set": [
+      "clue_reservoirs"
+     ],
+     "counters": {
+      "evidence": 2,
+      "suspicion": 1
+     }
+    }
+   },
+   "right": {
+    "label": "One gauge is the rule",
+    "outcome": "\"Right. Sorry. One gauge.\" She measures the Reach end with a stick anyway.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "quenn": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "relationships": {
+     "quenn": {
+      "min": 50
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:water",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_maintenance_17",
+   "category": "evergreen",
+   "speaker": "tamm",
+   "text": "The Reed Reach wants their mooring stage rebuilt and they'll pay in fish and labor. Company rule says no Company timber to the Reach. Half my timber's Company. I've lost track which half.",
+   "left": {
+    "label": "Lose track a little more",
+    "outcome": "A new stage at the Reach, built of timber nobody can identify.",
+    "effects": {
+     "resources": {
+      "company": -2
+     },
+     "factions": {
+      "hullfolk": 5
+     },
+     "relationships": {
+      "tamm": 3
+     },
+     "counters": {
+      "hullfolk_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Keep track",
+    "outcome": "The Reach builds with driftwood. It holds. It looks like it might not.",
+    "effects": {
+     "resources": {
+      "company": 2
+     },
+     "factions": {
+      "hullfolk": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_tamm",
+     "met_bram"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_maintenance_18",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Three things. The Company inspector wants the hands to wear numbers. Numbers, Keeper, on their coats. The hands say they'll wear them on their backsides. And Vosk is coming Tuesday.",
+   "left": {
+    "label": "Numbers on coats",
+    "outcome": "They wear them. Upside down. Vosk notes it without expression.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -3
+     },
+     "relationships": {
+      "dace": -3,
+      "vosk": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Names are enough",
+    "outcome": "\"Right. I'll tell Vosk you said names.\" She notes that too.",
+    "effects": {
+     "resources": {
+      "company": -2,
+      "town": 3
+     },
+     "relationships": {
+      "dace": 4,
+      "vosk": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace",
+     "met_vosk"
+    ]
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_maintenance_19",
+   "category": "evergreen",
+   "speaker": "mirren",
+   "expression": "neutral",
+   "text": "The winter stores: lamp oil, rope, tallow, sand. He used to order double and the Company used to complain. Last winter nobody ordered and the hands worked the frost in the dark.",
+   "left": {
+    "label": "Order double",
+    "outcome": "Vosk complains. The hands do not work in the dark.",
+    "effects": {
+     "resources": {
+      "coffers": -5
+     },
+     "relationships": {
+      "mirren": 4,
+      "dace": 3,
+      "vosk": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Order what the Company allows",
+    "outcome": "\"Right.\" The dark comes early that winter.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "company": 1
+     },
+     "relationships": {
+      "mirren": -2
+     },
+     "counters": {
+      "repairs_deferred": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_maintenance_20",
+   "category": "evergreen",
+   "speaker": "quenn",
+   "text": "Sorry. Good news, for once. I've got the west paddles running true for the first time in years. The gate fills a quarter faster. Do you want to tell the Company, or keep it for a bad day?",
+   "left": {
+    "label": "Tell the Company",
+    "outcome": "Pell announces it. Throughput targets rise to match.",
+    "effects": {
+     "resources": {
+      "company": 4,
+      "traffic": 3
+     },
+     "relationships": {
+      "quenn": 2,
+      "pell": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Keep it for a bad day",
+    "outcome": "\"A reserve. Yes. Roughly what he'd have done.\"",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "quenn": 5
+     },
+     "counters": {
+      "repairs_deferred": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_quenn"
+    ],
+    "flags_any": [
+     "gates_repaired"
+    ]
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:traffic"
+   ]
+  }
+ ]
 }

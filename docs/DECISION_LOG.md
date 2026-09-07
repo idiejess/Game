@@ -59,3 +59,70 @@ the produced set equals the inventory set exactly.
 Ordinary play shows direction arrows (▲/▼, single or double) for previewed resource changes.
 The exact-effect accessibility option displays numeric deltas. This keeps mobile readability
 while satisfying the clarity requirement.
+
+## D-007 — Save numbers are re-typed on read, not on write
+The four reported save failures had one root cause: Godot's `JSON.parse` returns every number as
+`float`, and the load-time sanitizers compare `typeof()` against integer defaults, discarding
+`watch`, `seed`, `rng_state`, `run_number` and `resources`. Alternatives: (a) loosen the sanitizers
+to accept floats everywhere, (b) store numbers as strings, (c) coerce whole-valued floats back to
+ints once in `SaveManager._read`. Chosen (c): one place, keeps the strict typing that protects
+against corrupt saves, changes no on-disk format, and old saves load unchanged.
+
+## D-008 — Branch and remote
+The imported repository had no `main` branch on the remote (only the import branch
+`hoplite/aitna-17a46edb`). Work proceeds on the thread branch `hoplite/phleious-16c2ad27` and the
+draft PR targets the repository's configured base branch. No history is rewritten.
+
+## D-009 — Balance: traffic-coupled water drift and arc bonus ×5
+A 10,000-run baseline showed 74% of runs ending in The Dry Summit, median 50 watches (design target
+40–120), 12 major arcs entering but almost never completing (MA10 0.0%, MA01 0.2%), and true
+endings at 0.04%. Experiments (`tools/sim_experiment.py`, 360 runs each): halving drift pushed the
+median to 86 and cut water deaths to 41% but removes the clock the whole mystery rests on; doubling
+water gains barely moved anything (only 16 raising effects exist); coupling drift to Traffic
+(+1 at ≤35, −1 at ≥70) keeps the clock, gives the player an actual lever (the bible's "opening the
+gate spends Water for Traffic"), and cut water deaths to 67%; raising the arc-active bonus from ×3 to
+×5 raised arc completions ~40% with no other side effect. Both shipped; the "keeper" simulator
+strategy (plays water as the clock) now reaches watch 100 in 80% of runs, so the game is winnable
+by a player who understands it. Water still dominates deaths by design.
+
+## D-010 — Endings are triggered from data, not code
+26 of 40 endings had no way to fire: only resource edges, the watch-100 retirement and three
+card-fired endings existed in code. Rather than hard-code 26 conditions, `endings.json` gained
+`trigger` blocks (resource-edge variants with conditions, condition triggers with `watch_min`,
+long-watch candidates); `GameState` evaluates them and the simulator mirrors it. The validator now
+rejects an ending nothing can fire.
+
+## D-011 — Analyzer false positives narrowed, not silenced
+"whatever it was" / "no way down" are ordinary English, so slang detection now requires the
+standalone interjection. Pell's double exclamations are his defined voice and are exempt; other
+speakers are still flagged. `flag` in the literal flags-on-a-barge card is exempt. Crisis and arc
+situations up to 48 words remain warnings (documented in `docs/CONTENT_REPORT.md`) because the
+UI now scrolls long text rather than clipping it.
+
+## D-012 — Simulator candidate order must match the engine
+The Python simulator iterated candidates sorted by id while `ContentDB` indexes unconditional cards
+before conditional ones. Same seed, same weights, different pick. Fixed in the simulator and pinned
+by `test_engine_matches_python_simulator` (40-card trace + resources for seed 12345).
+
+## D-013 — Credits and notices are generated, never hand-written
+`CREDITS.md` and `THIRD_PARTY_NOTICES.md` come from `tools/build_credits.py`, which reads the asset
+licence register, both manifests and the engine's own `Engine.get_copyright_info()` (dumped by
+`tools/dump_engine_licenses.gd`). The generator refuses to run if a register row is missing
+provenance or carries an NC/ND/personal/educational licence. With no sourced assets the register is
+a header only, and the documents say so instead of inventing attributions.
+
+## D-014 — End-to-end playtest is a UI-level harness, not a claim
+No human has played the build. Rather than describe a playthrough, `game/tests/Playtest.tscn` drives
+the real `Main` scene through the same decision entry point as touch, buttons and keys, covering
+first launch → run → screens → save/continue → ending → second Keeper → reload. Its 47 checks and the
+things it cannot cover are in `reports/validation/end_to_end_playtest.md`.
+
+## D-015 — MA08/MA12 left as documented gaps rather than tuned blind
+The 10k simulation completes 10 of 12 major arcs. Experiments lowering MA08's Water gate (62→56→52)
+changed nothing, so the gate is not the bottleneck; scripted policies never hold Water high. Changing
+content or weights to satisfy a simulator that cannot play for the arc risks flattening the design, so
+the gap is recorded in `docs/REMAINING_WORK.md` for a human playthrough or a purpose-built strategy.
+
+## D-016 — Build output is invisible to the editor
+`export/` gained a tracked `.gdignore` after Godot began importing exported PNGs from `export/web/`
+as project resources. The directory stays git-ignored otherwise.

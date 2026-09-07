@@ -20,12 +20,12 @@ func setup(rid: String) -> void:
 	add_child(top)
 	label = Label.new()
 	label.text = "%s %s" % [UITheme.RESOURCE_GLYPHS[rid], Loc.ui("res." + rid, rid.capitalize())]
-	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_font_size_override("font_size", UITheme.scaled(24))
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	top.add_child(label)
 	preview_label = Label.new()
 	preview_label.text = ""
-	preview_label.add_theme_font_size_override("font_size", 26)
+	preview_label.add_theme_font_size_override("font_size", UITheme.scaled(26))
 	preview_label.add_theme_color_override("font_color", UITheme.LAMP_AMBER)
 	top.add_child(preview_label)
 	bar = ProgressBar.new()
@@ -43,10 +43,17 @@ func setup(rid: String) -> void:
 	bar.add_theme_stylebox_override("fill", fill)
 	add_child(bar)
 	value_label = Label.new()
-	value_label.add_theme_font_size_override("font_size", 20)
+	value_label.add_theme_font_size_override("font_size", UITheme.scaled(20))
 	value_label.visible = false
 	add_child(value_label)
 	tooltip_text = Loc.ui("res_desc." + rid, "")
+	Settings.changed.connect(refresh_scale)
+
+
+func refresh_scale() -> void:
+	label.add_theme_font_size_override("font_size", UITheme.scaled(24))
+	preview_label.add_theme_font_size_override("font_size", UITheme.scaled(26))
+	value_label.add_theme_font_size_override("font_size", UITheme.scaled(20))
 
 
 func set_value(v: int, animate: bool = true) -> void:

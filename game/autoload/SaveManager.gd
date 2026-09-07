@@ -45,6 +45,9 @@ func slot_summary(slot: int) -> Dictionary:
 
 func build_payload() -> Dictionary:
 	var gs = GameState
+	if not gs.run.is_empty():
+		# Some RNG consumers (fallback pick, delay_max) do not write the state back themselves.
+		gs.run["rng_state"] = gs.rng.state
 	return {
 		"save_version": SAVE_VERSION,
 		"content_version": ContentDB.content_version,
@@ -93,7 +96,27 @@ func _read(path: String) -> Dictionary:
 		return {}
 	if not (json.data is Dictionary):
 		return {}
-	return json.data
+	return _coerce_numbers(json.data)
+
+
+## JSON parses every number as float; the sanitizers compare typeof() against int defaults, so
+## whole-valued floats must become ints again or watch/seed/rng_state/run_number reset silently.
+static func _coerce_numbers(v: Variant) -> Variant:
+	match typeof(v):
+		TYPE_FLOAT:
+			return int(v) if is_equal_approx(v, floor(v)) else v
+		TYPE_DICTIONARY:
+			var out := {}
+			for k in v:
+				out[k] = _coerce_numbers(v[k])
+			return out
+		TYPE_ARRAY:
+			var arr := []
+			for item in v:
+				arr.append(_coerce_numbers(item))
+			return arr
+		_:
+			return v
 
 
 ## Loads a slot into GameState. Falls back to the backup, then to a fresh profile.

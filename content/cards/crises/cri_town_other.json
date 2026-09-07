@@ -635,7 +635,7 @@
    "category": "crises",
    "speaker": "dace",
    "pool": "crisis",
-   "text": "Three things. The fire's out. It took the yard and two houses on the low street. And the town says it started at the Company warehouse, from a Company lamp, and wants to know why the Company's lamp oil was stacked against Tamm's fence.",
+   "text": "Fire's out. It took the yard and two houses on the low street. And the town says it started at the Company warehouse, from a Company lamp, and wants to know why the Company's lamp oil was stacked against Tamm's fence.",
    "left": {
     "label": "Ask the Company the same",
     "outcome": "You write to Ardent. Ardent replies that lamp oil storage is 'at Keeper's discretion'. It was not. It is now.",

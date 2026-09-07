@@ -45,7 +45,7 @@ func _build() -> void:
 	sb.content_margin_left = 34
 	sb.content_margin_right = 34
 	sb.content_margin_top = 26
-	sb.content_margin_bottom = 26
+	sb.content_margin_bottom = 130  # reserved strip for the floating decision tabs
 	sb.shadow_color = Color(0, 0, 0, 0.45)
 	sb.shadow_size = 18
 	sb.shadow_offset = Vector2(0, 10)
@@ -72,52 +72,75 @@ func _build() -> void:
 	header.add_child(names)
 	name_label = Label.new()
 	name_label.add_theme_color_override("font_color", UITheme.INK)
-	name_label.add_theme_font_size_override("font_size", 36)
+	name_label.add_theme_font_size_override("font_size", UITheme.scaled(36))
 	names.add_child(name_label)
 	role_label = Label.new()
 	role_label.add_theme_color_override("font_color", UITheme.INK.lightened(0.35))
-	role_label.add_theme_font_size_override("font_size", 24)
+	role_label.add_theme_font_size_override("font_size", UITheme.scaled(24))
 	names.add_child(role_label)
 
-	var portrait_frame := CenterContainer.new()
-	portrait_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	portrait_frame.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	v.add_child(portrait_frame)
 	portrait = TextureRect.new()
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	portrait.custom_minimum_size = Vector2(420, 520)
+	# Small minimum so the text block wins when space is short; expand-fill takes the rest.
+	portrait.custom_minimum_size = Vector2(160, 200)
 	portrait.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	portrait_frame.add_child(portrait)
+	portrait.size_flags_stretch_ratio = 2.0
+	portrait.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	v.add_child(portrait)
 	placeholder_label = Label.new()
 	placeholder_label.text = ""
 	placeholder_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	placeholder_label.add_theme_color_override("font_color", UITheme.INK.lightened(0.5))
-	placeholder_label.add_theme_font_size_override("font_size", 20)
+	placeholder_label.add_theme_font_size_override("font_size", UITheme.scaled(20))
 	placeholder_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	v.add_child(placeholder_label)
 
 	text_label = RichTextLabel.new()
 	text_label.bbcode_enabled = false
-	text_label.fit_content = true
-	text_label.scroll_active = false
+	# Not fit_content: the label takes the remaining height and scrolls only when a long text at a
+	# large text-size does not fit, so the decision tabs and buttons always stay on screen.
+	text_label.fit_content = false
+	text_label.scroll_active = true
+	text_label.scroll_following = false
 	text_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	text_label.add_theme_color_override("default_color", UITheme.INK)
-	text_label.add_theme_font_size_override("normal_font_size", 36)
-	text_label.custom_minimum_size = Vector2(0, 200)
+	text_label.add_theme_font_size_override("normal_font_size", UITheme.scaled(36))
+	text_label.custom_minimum_size = Vector2(0, 160)
+	text_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	text_label.size_flags_stretch_ratio = 3.0
 	text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	v.add_child(text_label)
 
+	# Decision tabs float over the lower edge of the paper so they never steal text height.
 	var tabs := HBoxContainer.new()
 	tabs.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	v.add_child(tabs)
+	tabs.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+	tabs.offset_left = 30
+	tabs.offset_right = -30
+	tabs.offset_top = -120
+	tabs.offset_bottom = -22
+	tabs.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	tabs.alignment = BoxContainer.ALIGNMENT_END
+	add_child(tabs)
 	left_tab = _make_tab(HORIZONTAL_ALIGNMENT_LEFT)
 	tabs.add_child(left_tab)
 	right_tab = _make_tab(HORIZONTAL_ALIGNMENT_RIGHT)
 	tabs.add_child(right_tab)
 	pivot_offset = size / 2.0
 	resized.connect(func(): pivot_offset = Vector2(size.x / 2.0, size.y))
+	Settings.changed.connect(refresh_scale)
+
+
+## Re-applies text-size dependent font sizes (called when settings change).
+func refresh_scale() -> void:
+	name_label.add_theme_font_size_override("font_size", UITheme.scaled(36))
+	role_label.add_theme_font_size_override("font_size", UITheme.scaled(24))
+	placeholder_label.add_theme_font_size_override("font_size", UITheme.scaled(20))
+	text_label.add_theme_font_size_override("normal_font_size", UITheme.scaled(36))
+	left_tab.add_theme_font_size_override("font_size", UITheme.scaled(28))
+	right_tab.add_theme_font_size_override("font_size", UITheme.scaled(28))
 
 
 func _make_tab(align: int) -> Label:
@@ -125,8 +148,10 @@ func _make_tab(align: int) -> Label:
 	l.horizontal_alignment = align
 	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	l.add_theme_color_override("font_color", UITheme.INK)
-	l.add_theme_font_size_override("font_size", 28)
+	l.add_theme_font_size_override("font_size", UITheme.scaled(28))
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	l.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+	l.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	l.modulate.a = 0.0
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return l

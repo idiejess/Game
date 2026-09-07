@@ -100,7 +100,7 @@ card.cri_fire_01.left,Every hand; requisition the town
 card.cri_fire_01.left_outcome,The whole town on a bucket chain from the pound. The hulls are lost. The town is not.
 card.cri_fire_01.right,Cut the yard loose; save the warehouse
 card.cri_fire_01.right_outcome,The yard burns to the waterline. The warehouse stands. Tamm watches his life go up and says nothing to you again for a month.
-card.cri_fire_02.text,"Three things. The fire's out. It took the yard and two houses on the low street. And the town says it started at the Company warehouse, from a Company lamp, and wants to know why the Company's lamp oil was stacked against Tamm's fence."
+card.cri_fire_02.text,"Fire's out. It took the yard and two houses on the low street. And the town says it started at the Company warehouse, from a Company lamp, and wants to know why the Company's lamp oil was stacked against Tamm's fence."
 card.cri_fire_02.left,Ask the Company the same
 card.cri_fire_02.left_outcome,You write to Ardent. Ardent replies that lamp oil storage is 'at Keeper's discretion'. It was not. It is now.
 card.cri_fire_02.right,Fires start; nobody's to blame
@@ -260,7 +260,7 @@ card.cri_pileup_01.left,Drop the paddles; dive for the bargee
 card.cri_pileup_01.left_outcome,You go in. He comes out. The boats settle against each other like tired animals. Nobody is under them.
 card.cri_pileup_01.right,Drop the paddles; Dace gets the bargee
 card.cri_pileup_01.right_outcome,Dace gets him with a hook. The boats settle. The third has a hole in her bow you could put a barrel through.
-card.cri_pileup_02.text,"Three things. The coal boat's holed and sinking in the chamber. If she goes down there the gate's blocked for a month. I can beach her on the sill if we drain now, and lose the sill facing. Or she sinks. Pick."
+card.cri_pileup_02.text,"The coal boat's holed and sinking in the chamber. If she goes down there the gate's blocked for a month. I can beach her on the sill if we drain now, and lose the sill facing. Or she sinks. Pick."
 card.cri_pileup_02.left,Drain and beach her
 card.cri_pileup_02.left_outcome,She grounds on the sill with a sound of breaking stone. The chamber is clear by dark. The sill is not what it was.
 card.cri_pileup_02.right,Let her sink; raise her later
@@ -626,7 +626,7 @@ card.evg_cargo_14.left,Company mail
 card.evg_cargo_14.left_outcome,It goes through first. You sign a lie in the Book.
 card.evg_cargo_14.right,Pay the fee from the Coffers
 card.evg_cargo_14.right_outcome,"Legal, slow, and yours."
-card.evg_cargo_15.text,"Three things. The barge is riding low. The bargee says ballast. And there's a smell, Keeper, like a cellar with a cat in it."
+card.evg_cargo_15.text,"Barge riding low, Keeper. The bargee says ballast. And there's a smell like a cellar with a cat in it."
 card.evg_cargo_15.left,Open it
 card.evg_cargo_15.left_outcome,"Cheese. A hold of it, ripening in the sun. The hands will not go down."
 card.evg_cargo_15.right,"Pass it, quickly"
@@ -966,7 +966,7 @@ card.evg_maintenance_02.left,Hang it as asked
 card.evg_maintenance_02.left_outcome,Iron straps on a disused door. Tamm shakes his head all day.
 card.evg_maintenance_02.right,Leave it; ask Vosk why
 card.evg_maintenance_02.right_outcome,"""Because the Board lists it. You will find lists are not explained."""
-card.evg_maintenance_03.text,"Three things. The towpath's washed out below the gate. Horses can't tow past it. And the Company's answer, by wire, was 'note it'."
+card.evg_maintenance_03.text,"Towpath's washed out below the gate. Horses can't tow past it. The Company's answer, by wire, was 'note it'."
 card.evg_maintenance_03.left,Fill it with town labor
 card.evg_maintenance_03.left_outcome,"A day's work, a barrel of ale, a towpath."
 card.evg_maintenance_03.right,Note it
@@ -1016,7 +1016,7 @@ card.evg_maintenance_12.left,Fix it
 card.evg_maintenance_12.left_outcome,The false bottom is repaired along with the true one. Nobody mentions either.
 card.evg_maintenance_12.right,Report it to Crane
 card.evg_maintenance_12.right_outcome,Crane inspects. Finds cheese. The Hullfolk do not use Tamm's yard again.
-card.evg_maintenance_13.text,"Three things. The bollards on the wharf are rotten. A Sorrel barge pulled one clean out. And the Company's sent a man to count the bollards, not replace them."
+card.evg_maintenance_13.text,"The bollards on the wharf are rotten. A Sorrel barge pulled one clean out this morning. And the Company's sent a man to count the bollards, not replace them."
 card.evg_maintenance_13.left,Replace them all
 card.evg_maintenance_13.left_outcome,Tamm's oak. A week. A wharf that will hold a fleet.
 card.evg_maintenance_13.right,Replace the one
@@ -1136,7 +1136,7 @@ card.evg_order_16.left,Close until it lifts
 card.evg_order_16.left_outcome,A wasted morning and no dented hulls.
 card.evg_order_16.right,Lamps on the sill; keep working
 card.evg_order_16.right_outcome,One barge kisses the gate. Nothing breaks. This time.
-card.evg_order_17.text,"I have prepared a revised order-of-passage schedule based on cargo class, arrival bell and shore of origin, weighted. It is eleven pages. I believe it would end all disputes."
+card.evg_order_17.text,"A revised order-of-passage schedule, based on cargo class, arrival bell and shore of origin, weighted. Eleven pages. I believe it would end all disputes."
 card.evg_order_17.left,Adopt it
 card.evg_order_17.left_outcome,"Disputes end. Everyone hates the schedule equally, which is a kind of peace."
 card.evg_order_17.right,"The Keeper decides, as written"
@@ -1251,7 +1251,7 @@ card.evg_shores_19.left,Neither; the Company keeps the gate
 card.evg_shores_19.left_outcome,"KEEPER LOYAL, says the Courier, in a tone."
 card.evg_shores_19.right,Whoever fixes the water
 card.evg_shores_19.right_outcome,"He stops writing. ""What's wrong with the water?"""
-card.evg_shores_20.text,"I have discovered that the Compact, read strictly, obliges the Keeper to host a joint shore conference at the summit every seven years. None has ever been held. We are, I calculate, eleven years overdue."
+card.evg_shores_20.text,"The Compact, read strictly, obliges the Keeper to host a joint shore conference at the summit every seven years. None has ever been held. We are, I calculate, eleven years overdue."
 card.evg_shores_20.left,Hold the conference
 card.evg_shores_20.left_outcome,Delegates from both shores. Three days. Nothing is decided and everyone is impressed.
 card.evg_shores_20.right,Eleven more years won't hurt
@@ -1501,7 +1501,7 @@ card.evg_town_life_09.left,"Dawn, at the gate"
 card.evg_town_life_09.left_outcome,"The mail waits twenty minutes. The clerk cries, a little."
 card.evg_town_life_09.right,The chapel is for weddings
 card.evg_town_life_09.right_outcome,They marry in the chapel. It is fine. It is not the gate.
-card.evg_town_life_10.text,"Three things. A hand's been caught selling Company lamp oil at the inn. It's Perrin, who's got four children. And Vosk hasn't heard yet."
+card.evg_town_life_10.text,"One thing, and it's a bad one. A hand's been caught selling Company lamp oil at the inn. It's Perrin, who's got four children. Vosk hasn't heard yet."
 card.evg_town_life_10.left,Dismiss him quietly
 card.evg_town_life_10.left_outcome,Perrin goes down the flight. The others learn it.
 card.evg_town_life_10.right,Dock his wages; keep him
@@ -1566,7 +1566,7 @@ card.evg_weather_02.left,"Check again, with me"
 card.evg_weather_02.left_outcome,You walk the aqueduct together. It is a trickle. The pound is not.
 card.evg_weather_02.right,Be glad the pound holds
 card.evg_weather_02.right_outcome,"""I am. That's what worries me. Roughly."""
-card.evg_weather_03.text,"Three things. Wind's from the west, hard. The top gate won't hold shut against it without a man on the beam all night. And I've only got two men."
+card.evg_weather_03.text,"Wind's from the west, hard. The top gate won't hold shut against it without a man on the beam all night. I've got two men."
 card.evg_weather_03.left,You stand the beam
 card.evg_weather_03.left_outcome,"A long night. The gate holds. So, barely, do you."
 card.evg_weather_03.right,Requisition a man from the inn
@@ -2291,7 +2291,7 @@ card.ma09_06.left,Not yet
 card.ma09_06.left_outcome,"""Not yet. Right. I'll hold it. I've never held anything this heavy."""
 card.ma09_06.right,Never; give me the copy
 card.ma09_06.right_outcome,He gives you the copy. He keeps a copy of the copy. You both know.
-card.ma09_07.text,"I have been shown a document. I shall not say by whom. It describes a diversion of the River Quell through the Spine into the Summit Pound, constructed without either shore's consent. If true, the Compact was signed over a lie. I note that I am shaking."
+card.ma09_07.text,"A document has been shown to me. I shall not say by whom. It describes a diversion of the River Quell through the Spine into the Summit Pound, constructed without either shore's consent. If true, the Compact was signed over a lie. I note that I am shaking."
 card.ma09_07.left,It is true
 card.ma09_07.left_outcome,"""Then under Schedule Nine I am obliged to declare it. I have never been obliged to anything so large."""
 card.ma09_07.right,It is unproven
@@ -2907,7 +2907,7 @@ card.mi10_3.left,Leave her to the Reach
 card.mi10_3.left_outcome,"The Reach has a cow. She gives milk. Bram, asked, says only 'she holds'."
 card.mi10_3.right,Rope her out with a boat
 card.mi10_3.right_outcome,"Six hands, a boat, a rope, an hour. She comes out. She goes back in by dusk."
-card.mi10_4.text,"Three things. The cow's still in the Reach. The hands have started leaving her hay. And the Company's sent a wire asking why the summit's traffic log has an entry that reads 'forty cattle, swimming, one outstanding'."
+card.mi10_4.text,"Report, Keeper. The cow's still in the Reach. The hands have started leaving her hay. And the Company's sent a wire asking why the summit's traffic log has an entry that reads 'forty cattle, swimming, one outstanding'."
 card.mi10_4.left,"Reply: 'livestock in transit, Schedule Two'"
 card.mi10_4.left_outcome,"Ardent does not reply. Crane, shown the wire, is prouder than you have ever seen him."
 card.mi10_4.right,Reply: 'clerical error'
@@ -3258,7 +3258,7 @@ card.mi22_1.left,Hold the stakes
 card.mi22_1.left_outcome,Two months' wages in the Keeper's drawer. Crane writes a receipt. Vane writes a rude one.
 card.mi22_1.right,Ilse holds them
 card.mi22_1.right_outcome,"Ilse holds them and charges both for the privilege. Crane pays. Vane argues, then pays."
-card.mi22_2.text,"I have taken a wager. I have never taken a wager. The Compact does not forbid it, which I checked twice. I shall win, because I have six years of gauge readings and the Sorrel agent has an opinion. I have never wanted to win anything before."
+card.mi22_2.text,"A wager. I have never taken a wager. The Compact does not forbid it, which I checked twice. I shall win, because I have six years of gauge readings and the Sorrel agent has an opinion. I have never wanted to win anything before."
 card.mi22_2.left,Show me the readings
 card.mi22_2.left_outcome,"Six years, to the sixteenth of a mark, in a black book. The pound falls a mark a watch, always, whatever the rain."
 card.mi22_2.right,Enjoy wanting to win
@@ -3283,7 +3283,7 @@ card.mi22_6.left,Write the answer under the question mark
 card.mi22_6.left_outcome,"'The Cut.' Two words, under a question thirty years old."
 card.mi22_6.right,Leave the question mark
 card.mi22_6.right_outcome,The question mark stays. Someone else can answer it. You have the number.
-card.mi23_1.text,"Three things. A windlass is gone from the lock house. The good one, Dray's. The hands say Hullfolk, because the hands always say Hullfolk. And Mirren says if anyone says Hullfolk again she'll put them in the pound, and she means it."
+card.mi23_1.text,"A windlass is gone from the lock house. The good one, Dray's. The hands say Hullfolk, because the hands always say Hullfolk. And Mirren says if anyone says Hullfolk again she'll put them in the pound, and she means it."
 card.mi23_1.left,Search the lock house first
 card.mi23_1.left_outcome,You search. Nothing. The hands look at the Reach. Mirren looks at the hands.
 card.mi23_1.right,Ask at the Reach
@@ -3728,7 +3728,7 @@ card.rel_crane_01.left,"Sit with him, not adjoining"
 card.rel_crane_01.left_outcome,"He talks about the Compact for an hour. It is, unexpectedly, fascinating."
 card.rel_crane_01.right,The adjoining table is fine
 card.rel_crane_01.right_outcome,"""Duly. It is, in fact, fine."""
-card.rel_crane_02.text,"I have found, in the Compact's third appendix, a provision that the Keeper may request an inspector's assistance 'in any matter touching the water'. Any matter. It has never been invoked. I should very much like it to be."
+card.rel_crane_02.text,The Compact's third appendix contains a provision that the Keeper may request an inspector's assistance 'in any matter touching the water'. Any matter. It has never been invoked. I should very much like it to be.
 card.rel_crane_02.left,Invoke it: help me read the gauge
 card.rel_crane_02.left_outcome,"He reads the gauge every watch for a month, to the sixteenth of a mark. His figures match Quenn's."
 card.rel_crane_02.right,Perhaps later
@@ -4333,7 +4333,7 @@ card.res_coffers_12.left,"Pay her back, all of it"
 card.res_coffers_12.left_outcome,Six marks. She tries to refuse. She takes it.
 card.res_coffers_12.right,Ask Tamm for tallow instead
 card.res_coffers_12.right_outcome,"Tallow. The gears run, greasy and slow. Quenn does not complain."
-card.res_coffers_13.text,Three things. A bargee's offered to pay his toll in coal instead of coin. The Company store'll take coal. And half the hands have no coal at home.
+card.res_coffers_13.text,"Two things. A bargee's offered to pay his toll in coal instead of coin, and the Company store'll take coal. And half the hands have no coal at home."
 card.res_coffers_13.left,Coal to the hands
 card.res_coffers_13.left_outcome,"Warm houses, empty Book. Vosk notes a toll paid in 'kind'."
 card.res_coffers_13.right,"Coal to the store, coin to the chest"
@@ -4368,7 +4368,7 @@ card.res_coffers_19.left,Marrow's pattern; the whole surplus
 card.res_coffers_19.left_outcome,"Six weeks. The gear runs like water. Vosk approves the spend without a word, which is unheard of."
 card.res_coffers_19.right,Keep the surplus for a bad year
 card.res_coffers_19.right_outcome,"""Right. Sensible. Sorry. I'll patch it."""
-card.res_coffers_20.text,"Three things. The chest is heavy. The hands know it's heavy because they carry it. And they've asked, politely, whether a heavy chest means a bonus or just a heavier chest."
+card.res_coffers_20.text,"The chest is heavy. The hands know it's heavy because they carry it. And they've asked, politely, whether a heavy chest means a bonus or just a heavier chest."
 card.res_coffers_20.left,A bonus
 card.res_coffers_20.left_outcome,A mark a man. Ilse's takings double for a night.
 card.res_coffers_20.right,A heavier chest
@@ -4653,7 +4653,7 @@ card.res_town_16.left,Let them call it what they like
 card.res_town_16.left_outcome,The name sticks. Vosk hears it. She writes it down.
 card.res_town_16.right,It is the Company's gate
 card.res_town_16.right_outcome,"""Say it at the inn, then. Loud. They need reminding, for their own good."""
-card.res_town_17.text,Three things. The hands have made you a sign for the gate. It says KEEPER'S LOCK. They want to hang it over the Company's. And Pell's coming Thursday.
+card.res_town_17.text,The hands have made you a sign for the gate. It says KEEPER'S LOCK. They want to hang it over the Company's. And Pell's coming Thursday.
 card.res_town_17.left,Hang it
 card.res_town_17.left_outcome,KEEPER'S LOCK over MERIDIAN CANAL COMPANY. Pell sees it Thursday and goes a color.
 card.res_town_17.right,"Hang it in the lock house, inside"
@@ -4748,7 +4748,7 @@ card.res_traffic_05.left,Ask his men to keep order
 card.res_traffic_05.left_outcome,Armed Sorrel men on a Company towpath. Order is kept. Crane writes a very long letter.
 card.res_traffic_05.right,Dace and the hands keep order
 card.res_traffic_05.right_outcome,"The hands do it, badly, and are not paid for it."
-card.res_traffic_06.text,Three things. The hands are working double watches. One's fallen asleep on the beam and nearly gone in. And the queue's started calling us 'the Halfway sleepers'.
+card.res_traffic_06.text,"Double watches, Keeper. One hand's fallen asleep on the beam and nearly gone in. And the queue's started calling us 'the Halfway sleepers'."
 card.res_traffic_06.left,Hire day labor from the queue
 card.res_traffic_06.left_outcome,Bargees turn paddles for their own boats. It is chaos and it works.
 card.res_traffic_06.right,Rest the hands; the queue waits
@@ -4808,7 +4808,7 @@ card.res_traffic_17.left,All three
 card.res_traffic_17.left_outcome,The gate runs day and night. A barge called *Keeper* goes east. Crane goes pale.
 card.res_traffic_17.right,None; it is fast enough
 card.res_traffic_17.right_outcome,"""Fast enough. There's no such thing. Fine."""
-card.res_traffic_18.text,"I have inspected four vessels today of the sixty that passed. Four. Under the Compact I am entitled to inspect any. I am entitled, not able. I am asking you to make me able."
+card.res_traffic_18.text,"Four vessels inspected today, of the sixty that passed. Four. Under the Compact I am entitled to inspect any. I am entitled, not able. I am asking you to make me able."
 card.res_traffic_18.left,Hold every fifth boat for him
 card.res_traffic_18.left_outcome,"""Duly. Thank you."" He inspects with a thoroughness that is almost joy."
 card.res_traffic_18.right,Inspect what you can
@@ -4863,7 +4863,7 @@ card.res_traffic_28.left,Slow it
 card.res_traffic_28.left_outcome,The night boats stop. Some of them go round by the Reach. Wren says nothing.
 card.res_traffic_28.right,The gate is not a border
 card.res_traffic_28.right_outcome,"""It's the only one there is."""
-card.res_traffic_29.text,"Three things. We've passed more boats this month than in any month in the Book. The pound's down four marks for it. And the hands have asked, politely, what happens when there's no water left to pass them on."
+card.res_traffic_29.text,"We've passed more boats this month than in any month in the Book. The pound's down four marks for it. And the hands have asked, politely, what happens when there's no water left to pass them on."
 card.res_traffic_29.left,Tell them the truth: I don't know
 card.res_traffic_29.left_outcome,"""Right. Honest. They'll take honest."""
 card.res_traffic_29.right,The reservoirs will make it up
@@ -4973,7 +4973,7 @@ card.res_water_20.left,"The paddles, now"
 card.res_water_20.left_outcome,The undercroft drains over two days. She goes down alone with a lamp.
 card.res_water_20.right,Ask what things
 card.res_water_20.right_outcome,"""The founding papers. Letters. Nothing that concerns the gate."" Everything concerns the gate."
-card.res_water_21.text,Three things. Water's over the top gate's sill when she's shut. That means she's not shut. That means anything in the chamber's going down the flight whether we like it or not.
+card.res_water_21.text,Water's over the top gate's sill when she's shut. That means she's not shut. That means anything in the chamber's going down the flight whether we like it or not.
 card.res_water_21.left,Clear the chamber; nothing passes
 card.res_water_21.left_outcome,No boats. The chamber is a waterfall for a day.
 card.res_water_21.right,Pass boats on the flood

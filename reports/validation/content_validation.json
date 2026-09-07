@@ -1,9 +1,7 @@
 {
   "ok": true,
   "errors": [],
-  "warnings": [
-    "assets/art_manifest.csv missing"
-  ],
+  "warnings": [],
   "stats": {
     "schema_errors": 0,
     "unused_flags": [
@@ -22,6 +20,7 @@
       "p_hullfolk_honor",
       "p_keepers_lost"
     ],
+    "endings_reachable": 40,
     "tradeoff_ratio": 0.697,
     "pure_ratio": 0.094,
     "delayed_ratio": 0.035,
@@ -52,6 +51,8 @@
       "crises": 70,
       "endings_meta": 50
     },
+    "art_assets": 165,
+    "art_missing_files": [],
     "fallback_cards": 4
   }
 }

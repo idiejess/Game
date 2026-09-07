@@ -535,7 +535,7 @@
    "category": "relationships",
    "speaker": "crane",
    "expression": "delighted_by_a_clause",
-   "text": "I have found, in the Compact's third appendix, a provision that the Keeper may request an inspector's assistance 'in any matter touching the water'. Any matter. It has never been invoked. I should very much like it to be.",
+   "text": "The Compact's third appendix contains a provision that the Keeper may request an inspector's assistance 'in any matter touching the water'. Any matter. It has never been invoked. I should very much like it to be.",
    "left": {
     "label": "Invoke it: help me read the gauge",
     "outcome": "He reads the gauge every watch for a month, to the sixteenth of a mark. His figures match Quenn's.",

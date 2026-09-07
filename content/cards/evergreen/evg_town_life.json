@@ -1,84 +1,885 @@
 {
-  "cards": [
-    {"id": "evg_town_life_01", "category": "evergreen", "speaker": "ilse", "text": "Market day. Half the town wants the towpath for stalls and the other half wants it for towing. The moot has asked the Keeper to say which half is right.",
-     "left": {"label": "Stalls on the towpath", "outcome": "A slow day for boats, a good one for pies.", "effects": {"resources": {"traffic": -3, "town": 4}, "relationships": {"ilse": 2}}},
-     "right": {"label": "The towpath tows", "outcome": "The stalls go up Chapel Street. The pies are further away.", "effects": {"resources": {"traffic": 2, "town": -2}}},
-     "conditions": {"flags_all": ["met_ilse"]}, "cooldown": 25, "tags": ["res:town"]},
-    {"id": "evg_town_life_02", "category": "evergreen", "speaker": "cole", "expression": "pleasant", "text": "The Dray house has been Company property since the father left. I could take the lease and let it kindly to the daughter at a fair rent. Or the Keeper could go on living in it.",
-     "left": {"label": "The Keeper stays", "outcome": "\"Of course. It is a good house. I only mention it.\"", "effects": {"relationships": {"cole": -2, "mirren": 2}, "flags_set": ["met_cole"]}},
-     "right": {"label": "Let it to Mirren", "outcome": "Mirren pays Cole rent for her own house. She does not thank you.", "effects": {"resources": {"town": 1}, "relationships": {"cole": 4, "mirren": -3}, "flags_set": ["met_cole"]}},
-     "conditions": {"flags_all": ["met_mirren"], "watch": {"min": 10}}, "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_03", "category": "evergreen", "speaker": "stroud", "text": "The lock hands' children swim in the pound below the gate. Every summer I treat one for a paddle-wash. Every summer someone tells me it is how they learn. This summer I am telling you.",
-     "left": {"label": "Fence the sill", "outcome": "The children swim from the Reed Reach instead, and the Hullfolk teach them.", "effects": {"resources": {"coffers": -2, "town": 2}, "relationships": {"stroud": 4}, "factions": {"hullfolk": 2}}},
-     "right": {"label": "It is how they learn", "outcome": "\"So I hear. Every summer.\"", "effects": {"relationships": {"stroud": -3}, "resources": {"town": 1}}},
-     "conditions": {"flags_all": ["met_stroud"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_town_life_04", "category": "evergreen", "speaker": "src_stranger", "text": "A travelling puppet show wants to set up on the wharf. Its principal act, the handbill says, is 'The Lock Keeper Who Would Not Open'. The handbill has a drawing. It is not flattering.",
-     "left": {"label": "Let them play", "outcome": "The town laughs for an hour, mostly at you. It helps, oddly.", "effects": {"resources": {"town": 5, "company": -1}}},
-     "right": {"label": "Move them along", "outcome": "They play at the Reed Reach. The Hullfolk laugh instead.", "effects": {"resources": {"town": -2, "company": 1}, "factions": {"hullfolk": 1}}},
-     "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_05", "category": "evergreen", "speaker": "dace", "text": "Three things. It's the hands' feast day. They want the chamber for the raft race. And last year the winner was Company mail, which nobody's forgotten.",
-     "left": {"label": "The chamber for the race", "outcome": "Mirren wins on a door. The mail waits.", "effects": {"resources": {"traffic": -4, "town": 5}, "relationships": {"dace": 4, "mirren": 2}}},
-     "right": {"label": "Race below the gate", "outcome": "\"Right. Below. Where the current is.\" Nobody drowns. Nearly.", "effects": {"resources": {"traffic": 1, "town": 1}, "relationships": {"dace": -1}}},
-     "conditions": {"flags_all": ["met_dace"], "watch": {"min": 10}}, "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_06", "category": "evergreen", "speaker": "ilse", "expression": "angry", "text": "Somebody from the Company measured my cellar this morning. For 'drainage'. Nobody measures a cellar for drainage. What does your Company want with my cellar?",
-     "left": {"label": "Find out", "outcome": "Quenn, red-faced: the pound's leaking into the brewery well. It always has.", "effects": {"relationships": {"ilse": 4, "quenn": 2}, "flags_set": ["clue_iron_well"], "counters": {"evidence": 1}}},
-     "right": {"label": "Drainage, presumably", "outcome": "\"Presumably. Your Company presumes a lot.\"", "effects": {"relationships": {"ilse": -4}, "resources": {"company": 1}}},
-     "conditions": {"flags_all": ["met_ilse"], "watch": {"min": 12}}, "cooldown": 50, "tags": ["res:town", "clue"]},
-    {"id": "evg_town_life_07", "category": "evergreen", "speaker": "cole", "text": "The town wants a schoolroom. I have a building. The Company has a lease on it for 'future works' it has never begun. A word from the Keeper would release it.",
-     "left": {"label": "Release the lease", "outcome": "Pell signs, sulking. Children arrive.", "effects": {"resources": {"company": -3, "town": 5}, "relationships": {"cole": 3, "pell": -2}}},
-     "right": {"label": "Future works are the Company's", "outcome": "\"Of course. The children can wait. They are good at it.\"", "effects": {"resources": {"company": 2, "town": -3}, "relationships": {"cole": -2}}},
-     "conditions": {"flags_all": ["met_cole"]}, "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_08", "category": "evergreen", "speaker": "stroud", "expression": "grave", "text": "A lock hand's wife is dying and wants to be taken down to her people on the Aldmere side. The flight is closed for repairs. I can keep her comfortable for two days. No more.",
-     "left": {"label": "Open the flight for one boat", "outcome": "Quenn's crew stands aside. The boat goes down in silence.", "effects": {"resources": {"traffic": -2, "coffers": -2, "town": 5}, "relationships": {"stroud": 5, "quenn": -1}}},
-     "right": {"label": "She stays; make her comfortable", "outcome": "She dies at Halfway. Her people come up later.", "effects": {"resources": {"town": -3}, "relationships": {"stroud": 1}, "counters": {"fatigue": 1}}},
-     "conditions": {"flags_all": ["met_stroud"], "watch": {"min": 12}}, "cooldown": 80, "tags": ["res:town"]},
-    {"id": "evg_town_life_09", "category": "evergreen", "speaker": "src_stranger", "text": "A young couple from the town ask the Keeper to witness their marriage at the top gate, at dawn, before the first boat. Hale is willing. The first boat is a Company mail packet.",
-     "left": {"label": "Dawn, at the gate", "outcome": "The mail waits twenty minutes. The clerk cries, a little.", "effects": {"resources": {"town": 4, "company": -1}, "factions": {"concordance": 2}, "relationships": {"hale": 2}}},
-     "right": {"label": "The chapel is for weddings", "outcome": "They marry in the chapel. It is fine. It is not the gate.", "effects": {"resources": {"company": 1}, "relationships": {"hale": 1}}},
-     "conditions": {"flags_all": ["met_hale"]}, "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_10", "category": "evergreen", "speaker": "dace", "expression": "fed_up", "text": "Three things. A hand's been caught selling Company lamp oil at the inn. It's Perrin, who's got four children. And Vosk hasn't heard yet.",
-     "left": {"label": "Dismiss him quietly", "outcome": "Perrin goes down the flight. The others learn it.", "effects": {"resources": {"company": 2, "town": -4}, "relationships": {"dace": -3}, "flags_set": ["hands_short"]}},
-     "right": {"label": "Dock his wages; keep him", "outcome": "\"Right. I'll tell him. He'll cry. Then he'll work.\"", "effects": {"resources": {"coffers": 1, "town": 2}, "relationships": {"dace": 4}, "counters": {"suspicion": 1}}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_town_life_11", "category": "evergreen", "speaker": "ilse", "expression": "wry", "text": "The inn's out of Iron Spring and the well's low because the pound's low. I'm buying Sorrel beer at Sorrel prices. The town blames you, since the water's yours.",
-     "left": {"label": "Subsidize the beer", "outcome": "The Coffers buy a town's goodwill by the barrel.", "effects": {"resources": {"coffers": -4, "town": 4}, "relationships": {"ilse": 3}}},
-     "right": {"label": "The water is nobody's", "outcome": "\"Tell that to the well.\"", "effects": {"resources": {"town": -2}, "relationships": {"ilse": -1}, "counters": {"evidence": 1}}},
-     "conditions": {"flags_all": ["met_ilse"], "resources": {"water": {"max": 40}}}, "cooldown": 30, "tags": ["res:town", "clue"]},
-    {"id": "evg_town_life_12", "category": "evergreen", "speaker": "cole", "expression": "cold", "text": "A tenant of mine, a lock hand, has not paid in two months. I could put him out. Or the Company could guarantee his rent from his wages, with your signature.",
-     "left": {"label": "Guarantee the rent", "outcome": "Wages go to Cole before they go to the hand.", "effects": {"resources": {"coffers": -2, "town": 2}, "relationships": {"cole": 4, "dace": -2}}},
-     "right": {"label": "The Company does not guarantee rents", "outcome": "He is put out. He sleeps at the Reed Reach.", "effects": {"resources": {"town": -3}, "relationships": {"cole": -2}, "factions": {"hullfolk": 2}}},
-     "conditions": {"flags_all": ["met_cole"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_town_life_13", "category": "evergreen", "speaker": "stroud", "text": "There is a case of the shakes at the inn: a bargee, feverish, insisting he drank nothing but the well water. I would like to test the well. Ilse would not like me to.",
-     "left": {"label": "Test the well", "outcome": "Iron, and something else. Stroud's face does not change. Ilse's does.", "effects": {"relationships": {"stroud": 4, "ilse": -4}, "flags_set": ["well_tested", "clue_iron_well"], "counters": {"evidence": 1}}},
-     "right": {"label": "It was the Sorrel beer", "outcome": "\"Perhaps. I have seen worse. I have also seen wells.\"", "effects": {"relationships": {"ilse": 3, "stroud": -3}}},
-     "conditions": {"flags_all": ["met_stroud", "met_ilse"], "flags_none": ["well_tested"]}, "cooldown": 50, "tags": ["res:town", "clue"]},
-    {"id": "evg_town_life_14", "category": "evergreen", "speaker": "src_stranger", "text": "An old bargeman, retiring, asks to name his last boat after the Keeper and paint it on the bow. He has already bought the paint. The Book has a fee for renaming.",
-     "left": {"label": "Waive the fee", "outcome": "There is a coal barge with your name on it. It goes east forever.", "effects": {"resources": {"coffers": -1, "town": 3}}},
-     "right": {"label": "The fee is the fee", "outcome": "He pays it, and names the boat something else.", "effects": {"resources": {"coffers": 1, "town": -1}}},
-     "cooldown": 80, "tags": ["res:town"]},
-    {"id": "evg_town_life_15", "category": "evergreen", "speaker": "dace", "text": "Three things, and these are good ones. The hands have finished the new bollards early. They want the afternoon. And Perrin's wife has had a fifth.",
-     "left": {"label": "Give them the afternoon", "outcome": "The wharf is empty and cheerful. Boats wait and do not mind.", "effects": {"resources": {"traffic": -2, "town": 4}, "relationships": {"dace": 4}}},
-     "right": {"label": "Finish the week's work first", "outcome": "\"Right.\" Perrin's fifth waits with everyone else.", "effects": {"resources": {"traffic": 2, "town": -2}, "relationships": {"dace": -3}}},
-     "conditions": {"flags_all": ["met_dace"]}, "cooldown": 50, "tags": ["res:town"]},
-    {"id": "evg_town_life_16", "category": "evergreen", "speaker": "ilse", "text": "The moot's asked me to stand for reeve again and I've said I'll do it if the Keeper comes to the moot. Once. To listen. Nobody's asked a Keeper before. They're not sure you're allowed.",
-     "left": {"label": "Come to the moot", "outcome": "You listen for three hours. It changes how the town looks at you.", "effects": {"resources": {"town": 5, "company": -2}, "relationships": {"ilse": 5}, "counters": {"town_favors": 1}}},
-     "right": {"label": "The Keeper answers to the Company", "outcome": "\"Right. I stand anyway. Remember I asked.\"", "effects": {"resources": {"company": 2, "town": -3}, "relationships": {"ilse": -3}}},
-     "conditions": {"flags_all": ["met_ilse"], "watch": {"min": 15}}, "cooldown": 70, "tags": ["res:town"]},
-    {"id": "evg_town_life_17", "category": "evergreen", "speaker": "cole", "text": "I have been asked to fund the Jubilee bunting and have said I will if the Keeper agrees to a small plaque on the Company house. My name. Modest lettering.",
-     "left": {"label": "A modest plaque", "outcome": "The lettering is not modest.", "effects": {"resources": {"coffers": 4, "company": 1}, "relationships": {"cole": 5}, "counters": {"jubilee_progress": 1}}},
-     "right": {"label": "The Company funds its own bunting", "outcome": "\"Of course. Quite right. Kindly remember I offered.\"", "effects": {"resources": {"coffers": -2}, "relationships": {"cole": -3}}},
-     "conditions": {"flags_all": ["met_cole", "jubilee_planned"]}, "cooldown": 60, "tags": ["res:coffers"]},
-    {"id": "evg_town_life_18", "category": "evergreen", "speaker": "stroud", "text": "You have not slept a full night in a week. I can see it from here. Dray did this. I am not saying you are Dray. I am saying I have seen the end of it.",
-     "left": {"label": "Sleep tonight; Dace has the gate", "outcome": "You sleep. You dream about the gauge.", "effects": {"counters": {"fatigue": -4}, "resources": {"coffers": -1}, "relationships": {"stroud": 3}, "flags_set": ["fatigue_warning"]}},
-     "right": {"label": "After the season", "outcome": "\"That is what he said.\"", "effects": {"counters": {"fatigue": 1}, "relationships": {"stroud": -2}, "flags_set": ["fatigue_warning"]}},
-     "conditions": {"flags_all": ["met_stroud"], "counters": {"fatigue": {"min": 5}}}, "cooldown": 20, "tags": ["res:town"]},
-    {"id": "evg_town_life_19", "category": "evergreen", "speaker": "src_stranger", "text": "A boy from the town has been caught riding the paddle beam as the gate opens. It is the best thing he has ever done, he says. His mother wants him whipped. The hands want him hired.",
-     "left": {"label": "Hire him", "outcome": "Dace gets an apprentice who is afraid of nothing.", "effects": {"resources": {"coffers": -1, "town": 3}, "relationships": {"dace": 3}, "flags_clear": ["hands_short"]}},
-     "right": {"label": "His mother's decision", "outcome": "He is whipped, and rides the beam again the next week.", "effects": {"resources": {"town": 1}, "counters": {"fatigue": 0}}},
-     "cooldown": 60, "tags": ["res:town"]},
-    {"id": "evg_town_life_20", "category": "evergreen", "speaker": "ilse", "expression": "grieving", "text": "It's the day my son drowned. Every year the town leaves a lamp on the sill and every year the Company takes it off for the first boat. This year I'm asking the Keeper first.",
-     "left": {"label": "The lamp stays all day", "outcome": "The first boat waits for the lamp. The bargee knew the story.", "effects": {"resources": {"traffic": -3, "town": 4}, "relationships": {"ilse": 8}}},
-     "right": {"label": "Until the first boat, as ever", "outcome": "\"As ever.\" She takes the lamp off herself.", "effects": {"resources": {"traffic": 1}, "relationships": {"ilse": -6}}},
-     "conditions": {"flags_all": ["met_ilse"], "watch": {"min": 20}, "relationships": {"ilse": {"min": 40}}}, "cooldown": 100, "tags": ["res:town"]}
-  ]
+ "cards": [
+  {
+   "id": "evg_town_life_01",
+   "category": "evergreen",
+   "speaker": "ilse",
+   "text": "Market day. Half the town wants the towpath for stalls and the other half wants it for towing. The moot has asked the Keeper to say which half is right.",
+   "left": {
+    "label": "Stalls on the towpath",
+    "outcome": "A slow day for boats, a good one for pies.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The towpath tows",
+    "outcome": "The stalls go up Chapel Street. The pies are further away.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ]
+   },
+   "cooldown": 25,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_02",
+   "category": "evergreen",
+   "speaker": "cole",
+   "expression": "pleasant",
+   "text": "The Dray house has been Company property since the father left. I could take the lease and let it kindly to the daughter at a fair rent. Or the Keeper could go on living in it.",
+   "left": {
+    "label": "The Keeper stays",
+    "outcome": "\"Of course. It is a good house. I only mention it.\"",
+    "effects": {
+     "relationships": {
+      "cole": -2,
+      "mirren": 2
+     },
+     "flags_set": [
+      "met_cole"
+     ]
+    }
+   },
+   "right": {
+    "label": "Let it to Mirren",
+    "outcome": "Mirren pays Cole rent for her own house. She does not thank you.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "relationships": {
+      "cole": 4,
+      "mirren": -3
+     },
+     "flags_set": [
+      "met_cole"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_mirren"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_03",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "The lock hands' children swim in the pound below the gate. Every summer I treat one for a paddle-wash. Every summer someone tells me it is how they learn. This summer I am telling you.",
+   "left": {
+    "label": "Fence the sill",
+    "outcome": "The children swim from the Reed Reach instead, and the Hullfolk teach them.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 2
+     },
+     "relationships": {
+      "stroud": 4
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "right": {
+    "label": "It is how they learn",
+    "outcome": "\"So I hear. Every summer.\"",
+    "effects": {
+     "relationships": {
+      "stroud": -3
+     },
+     "resources": {
+      "town": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_04",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A travelling puppet show wants to set up on the wharf. Its principal act, the handbill says, is 'The Lock Keeper Who Would Not Open'. The handbill has a drawing. It is not flattering.",
+   "left": {
+    "label": "Let them play",
+    "outcome": "The town laughs for an hour, mostly at you. It helps, oddly.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -1
+     }
+    }
+   },
+   "right": {
+    "label": "Move them along",
+    "outcome": "They play at the Reed Reach. The Hullfolk laugh instead.",
+    "effects": {
+     "resources": {
+      "town": -2,
+      "company": 1
+     },
+     "factions": {
+      "hullfolk": 1
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_05",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Three things. It's the hands' feast day. They want the chamber for the raft race. And last year the winner was Company mail, which nobody's forgotten.",
+   "left": {
+    "label": "The chamber for the race",
+    "outcome": "Mirren wins on a door. The mail waits.",
+    "effects": {
+     "resources": {
+      "traffic": -4,
+      "town": 5
+     },
+     "relationships": {
+      "dace": 4,
+      "mirren": 2
+     }
+    }
+   },
+   "right": {
+    "label": "Race below the gate",
+    "outcome": "\"Right. Below. Where the current is.\" Nobody drowns. Nearly.",
+    "effects": {
+     "resources": {
+      "traffic": 1,
+      "town": 1
+     },
+     "relationships": {
+      "dace": -1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ],
+    "watch": {
+     "min": 10
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_06",
+   "category": "evergreen",
+   "speaker": "ilse",
+   "expression": "angry",
+   "text": "Somebody from the Company measured my cellar this morning. For 'drainage'. Nobody measures a cellar for drainage. What does your Company want with my cellar?",
+   "left": {
+    "label": "Find out",
+    "outcome": "Quenn, red-faced: the pound's leaking into the brewery well. It always has.",
+    "effects": {
+     "relationships": {
+      "ilse": 4,
+      "quenn": 2
+     },
+     "flags_set": [
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "Drainage, presumably",
+    "outcome": "\"Presumably. Your Company presumes a lot.\"",
+    "effects": {
+     "relationships": {
+      "ilse": -4
+     },
+     "resources": {
+      "company": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_town_life_07",
+   "category": "evergreen",
+   "speaker": "cole",
+   "text": "The town wants a schoolroom. I have a building. The Company has a lease on it for 'future works' it has never begun. A word from the Keeper would release it.",
+   "left": {
+    "label": "Release the lease",
+    "outcome": "Pell signs, sulking. Children arrive.",
+    "effects": {
+     "resources": {
+      "company": -3,
+      "town": 5
+     },
+     "relationships": {
+      "cole": 3,
+      "pell": -2
+     }
+    }
+   },
+   "right": {
+    "label": "Future works are the Company's",
+    "outcome": "\"Of course. The children can wait. They are good at it.\"",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -3
+     },
+     "relationships": {
+      "cole": -2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_08",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "expression": "grave",
+   "text": "A lock hand's wife is dying and wants to be taken down to her people on the Aldmere side. The flight is closed for repairs. I can keep her comfortable for two days. No more.",
+   "left": {
+    "label": "Open the flight for one boat",
+    "outcome": "Quenn's crew stands aside. The boat goes down in silence.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "coffers": -2,
+      "town": 5
+     },
+     "relationships": {
+      "stroud": 5,
+      "quenn": -1
+     }
+    }
+   },
+   "right": {
+    "label": "She stays; make her comfortable",
+    "outcome": "She dies at Halfway. Her people come up later.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "stroud": 1
+     },
+     "counters": {
+      "fatigue": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "watch": {
+     "min": 12
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_09",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A young couple from the town ask the Keeper to witness their marriage at the top gate, at dawn, before the first boat. Hale is willing. The first boat is a Company mail packet.",
+   "left": {
+    "label": "Dawn, at the gate",
+    "outcome": "The mail waits twenty minutes. The clerk cries, a little.",
+    "effects": {
+     "resources": {
+      "town": 4,
+      "company": -1
+     },
+     "factions": {
+      "concordance": 2
+     },
+     "relationships": {
+      "hale": 2
+     }
+    }
+   },
+   "right": {
+    "label": "The chapel is for weddings",
+    "outcome": "They marry in the chapel. It is fine. It is not the gate.",
+    "effects": {
+     "resources": {
+      "company": 1
+     },
+     "relationships": {
+      "hale": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_hale"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_10",
+   "category": "evergreen",
+   "speaker": "dace",
+   "expression": "fed_up",
+   "text": "One thing, and it's a bad one. A hand's been caught selling Company lamp oil at the inn. It's Perrin, who's got four children. Vosk hasn't heard yet.",
+   "left": {
+    "label": "Dismiss him quietly",
+    "outcome": "Perrin goes down the flight. The others learn it.",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -4
+     },
+     "relationships": {
+      "dace": -3
+     },
+     "flags_set": [
+      "hands_short"
+     ]
+    }
+   },
+   "right": {
+    "label": "Dock his wages; keep him",
+    "outcome": "\"Right. I'll tell him. He'll cry. Then he'll work.\"",
+    "effects": {
+     "resources": {
+      "coffers": 1,
+      "town": 2
+     },
+     "relationships": {
+      "dace": 4
+     },
+     "counters": {
+      "suspicion": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_11",
+   "category": "evergreen",
+   "speaker": "ilse",
+   "expression": "wry",
+   "text": "The inn's out of Iron Spring and the well's low because the pound's low. I'm buying Sorrel beer at Sorrel prices. The town blames you, since the water's yours.",
+   "left": {
+    "label": "Subsidize the beer",
+    "outcome": "The Coffers buy a town's goodwill by the barrel.",
+    "effects": {
+     "resources": {
+      "coffers": -4,
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The water is nobody's",
+    "outcome": "\"Tell that to the well.\"",
+    "effects": {
+     "resources": {
+      "town": -2
+     },
+     "relationships": {
+      "ilse": -1
+     },
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "resources": {
+     "water": {
+      "max": 40
+     }
+    }
+   },
+   "cooldown": 30,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_town_life_12",
+   "category": "evergreen",
+   "speaker": "cole",
+   "expression": "cold",
+   "text": "A tenant of mine, a lock hand, has not paid in two months. I could put him out. Or the Company could guarantee his rent from his wages, with your signature.",
+   "left": {
+    "label": "Guarantee the rent",
+    "outcome": "Wages go to Cole before they go to the hand.",
+    "effects": {
+     "resources": {
+      "coffers": -2,
+      "town": 2
+     },
+     "relationships": {
+      "cole": 4,
+      "dace": -2
+     }
+    }
+   },
+   "right": {
+    "label": "The Company does not guarantee rents",
+    "outcome": "He is put out. He sleeps at the Reed Reach.",
+    "effects": {
+     "resources": {
+      "town": -3
+     },
+     "relationships": {
+      "cole": -2
+     },
+     "factions": {
+      "hullfolk": 2
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_13",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "There is a case of the shakes at the inn: a bargee, feverish, insisting he drank nothing but the well water. I would like to test the well. Ilse would not like me to.",
+   "left": {
+    "label": "Test the well",
+    "outcome": "Iron, and something else. Stroud's face does not change. Ilse's does.",
+    "effects": {
+     "relationships": {
+      "stroud": 4,
+      "ilse": -4
+     },
+     "flags_set": [
+      "well_tested",
+      "clue_iron_well"
+     ],
+     "counters": {
+      "evidence": 1
+     }
+    }
+   },
+   "right": {
+    "label": "It was the Sorrel beer",
+    "outcome": "\"Perhaps. I have seen worse. I have also seen wells.\"",
+    "effects": {
+     "relationships": {
+      "ilse": 3,
+      "stroud": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud",
+     "met_ilse"
+    ],
+    "flags_none": [
+     "well_tested"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town",
+    "clue"
+   ]
+  },
+  {
+   "id": "evg_town_life_14",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "An old bargeman, retiring, asks to name his last boat after the Keeper and paint it on the bow. He has already bought the paint. The Book has a fee for renaming.",
+   "left": {
+    "label": "Waive the fee",
+    "outcome": "There is a coal barge with your name on it. It goes east forever.",
+    "effects": {
+     "resources": {
+      "coffers": -1,
+      "town": 3
+     }
+    }
+   },
+   "right": {
+    "label": "The fee is the fee",
+    "outcome": "He pays it, and names the boat something else.",
+    "effects": {
+     "resources": {
+      "coffers": 1,
+      "town": -1
+     }
+    }
+   },
+   "cooldown": 80,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_15",
+   "category": "evergreen",
+   "speaker": "dace",
+   "text": "Three things, and these are good ones. The hands have finished the new bollards early. They want the afternoon. And Perrin's wife has had a fifth.",
+   "left": {
+    "label": "Give them the afternoon",
+    "outcome": "The wharf is empty and cheerful. Boats wait and do not mind.",
+    "effects": {
+     "resources": {
+      "traffic": -2,
+      "town": 4
+     },
+     "relationships": {
+      "dace": 4
+     }
+    }
+   },
+   "right": {
+    "label": "Finish the week's work first",
+    "outcome": "\"Right.\" Perrin's fifth waits with everyone else.",
+    "effects": {
+     "resources": {
+      "traffic": 2,
+      "town": -2
+     },
+     "relationships": {
+      "dace": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_dace"
+    ]
+   },
+   "cooldown": 50,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_16",
+   "category": "evergreen",
+   "speaker": "ilse",
+   "text": "The moot's asked me to stand for reeve again and I've said I'll do it if the Keeper comes to the moot. Once. To listen. Nobody's asked a Keeper before. They're not sure you're allowed.",
+   "left": {
+    "label": "Come to the moot",
+    "outcome": "You listen for three hours. It changes how the town looks at you.",
+    "effects": {
+     "resources": {
+      "town": 5,
+      "company": -2
+     },
+     "relationships": {
+      "ilse": 5
+     },
+     "counters": {
+      "town_favors": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The Keeper answers to the Company",
+    "outcome": "\"Right. I stand anyway. Remember I asked.\"",
+    "effects": {
+     "resources": {
+      "company": 2,
+      "town": -3
+     },
+     "relationships": {
+      "ilse": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 15
+    }
+   },
+   "cooldown": 70,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_17",
+   "category": "evergreen",
+   "speaker": "cole",
+   "text": "I have been asked to fund the Jubilee bunting and have said I will if the Keeper agrees to a small plaque on the Company house. My name. Modest lettering.",
+   "left": {
+    "label": "A modest plaque",
+    "outcome": "The lettering is not modest.",
+    "effects": {
+     "resources": {
+      "coffers": 4,
+      "company": 1
+     },
+     "relationships": {
+      "cole": 5
+     },
+     "counters": {
+      "jubilee_progress": 1
+     }
+    }
+   },
+   "right": {
+    "label": "The Company funds its own bunting",
+    "outcome": "\"Of course. Quite right. Kindly remember I offered.\"",
+    "effects": {
+     "resources": {
+      "coffers": -2
+     },
+     "relationships": {
+      "cole": -3
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_cole",
+     "jubilee_planned"
+    ]
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:coffers"
+   ]
+  },
+  {
+   "id": "evg_town_life_18",
+   "category": "evergreen",
+   "speaker": "stroud",
+   "text": "You have not slept a full night in a week. I can see it from here. Dray did this. I am not saying you are Dray. I am saying I have seen the end of it.",
+   "left": {
+    "label": "Sleep tonight; Dace has the gate",
+    "outcome": "You sleep. You dream about the gauge.",
+    "effects": {
+     "counters": {
+      "fatigue": -4
+     },
+     "resources": {
+      "coffers": -1
+     },
+     "relationships": {
+      "stroud": 3
+     },
+     "flags_set": [
+      "fatigue_warning"
+     ]
+    }
+   },
+   "right": {
+    "label": "After the season",
+    "outcome": "\"That is what he said.\"",
+    "effects": {
+     "counters": {
+      "fatigue": 1
+     },
+     "relationships": {
+      "stroud": -2
+     },
+     "flags_set": [
+      "fatigue_warning"
+     ]
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_stroud"
+    ],
+    "counters": {
+     "fatigue": {
+      "min": 5
+     }
+    }
+   },
+   "cooldown": 20,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_19",
+   "category": "evergreen",
+   "speaker": "src_stranger",
+   "text": "A boy from the town has been caught riding the paddle beam as the gate opens. It is the best thing he has ever done, he says. His mother wants him whipped. The hands want him hired.",
+   "left": {
+    "label": "Hire him",
+    "outcome": "Dace gets an apprentice who is afraid of nothing.",
+    "effects": {
+     "resources": {
+      "coffers": -1,
+      "town": 3
+     },
+     "relationships": {
+      "dace": 3
+     },
+     "flags_clear": [
+      "hands_short"
+     ]
+    }
+   },
+   "right": {
+    "label": "His mother's decision",
+    "outcome": "He is whipped, and rides the beam again the next week.",
+    "effects": {
+     "resources": {
+      "town": 1
+     },
+     "counters": {
+      "fatigue": 0
+     }
+    }
+   },
+   "cooldown": 60,
+   "tags": [
+    "res:town"
+   ]
+  },
+  {
+   "id": "evg_town_life_20",
+   "category": "evergreen",
+   "speaker": "ilse",
+   "expression": "grieving",
+   "text": "It's the day my son drowned. Every year the town leaves a lamp on the sill and every year the Company takes it off for the first boat. This year I'm asking the Keeper first.",
+   "left": {
+    "label": "The lamp stays all day",
+    "outcome": "The first boat waits for the lamp. The bargee knew the story.",
+    "effects": {
+     "resources": {
+      "traffic": -3,
+      "town": 4
+     },
+     "relationships": {
+      "ilse": 8
+     }
+    }
+   },
+   "right": {
+    "label": "Until the first boat, as ever",
+    "outcome": "\"As ever.\" She takes the lamp off herself.",
+    "effects": {
+     "resources": {
+      "traffic": 1
+     },
+     "relationships": {
+      "ilse": -6
+     }
+    }
+   },
+   "conditions": {
+    "flags_all": [
+     "met_ilse"
+    ],
+    "watch": {
+     "min": 20
+    },
+    "relationships": {
+     "ilse": {
+      "min": 40
+     }
+    }
+   },
+   "cooldown": 100,
+   "tags": [
+    "res:town"
+   ]
+  }
+ ]
 }

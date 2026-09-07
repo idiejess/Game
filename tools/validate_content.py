@@ -173,9 +173,32 @@ def reference_check(cards, rep):
         for rc in cond.get("relationships", {}):
             if rc not in chars:
                 rep.err(f"[{cid}] condition on unknown character {rc}")
+    flags_reg = {f["id"] for f in load_json(ROOT / "content" / "FLAG_REGISTRY.json")["flags"]}
+    counters_reg = {c["id"] for c in load_json(ROOT / "content" / "COUNTER_REGISTRY.json")["counters"]}
+    triggered = 0
     for eid, e in endings.items():
         if e["card"] not in cards:
             rep.err(f"ending {eid} -> unknown card {e['card']}")
+        elif cards[e["card"]].get("pool") != "ending":
+            rep.err(f"ending {eid}: card {e['card']} must be in the 'ending' pool")
+        trig = e.get("trigger", {})
+        cond = trig.get("conditions", {})
+        for k in ("flags_all", "flags_any", "flags_none"):
+            for f in cond.get(k, []):
+                if f not in flags_reg:
+                    rep.err(f"ending {eid}: trigger flag {f} undeclared")
+        for k in cond.get("counters", {}):
+            if k not in counters_reg:
+                rep.err(f"ending {eid}: trigger counter {k} undeclared")
+        for rc in cond.get("relationships", {}):
+            if rc not in chars:
+                rep.err(f"ending {eid}: trigger relationship with unknown character {rc}")
+        fired_by_card = any(c[s]["effects"].get("ending") == eid for c in cards.values() for s in ("left", "right"))
+        if trig or fired_by_card:
+            triggered += 1
+        else:
+            rep.err(f"ending {eid} has no trigger and no card fires it (unreachable)")
+    rep.stats["endings_reachable"] = triggered
     return chars, endings
 
 
@@ -346,10 +369,17 @@ def manifest_check(rep):
         return
     with open(p, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    missing = [r["filename"] for r in rows if not (ROOT / "assets" / r["filename"]).exists()]
-    approved_placeholder = [r["asset_id"] for r in rows if r["approval_status"] == "approved" and r["integration_status"] == "placeholder"]
+    # Ending illustrations are optional (the ending screen falls back to a background);
+    # every other manifest row must resolve to a file. Deep checks live in tools/validate_assets.py.
+    missing = []
+    for r in rows:
+        path = ROOT / r["destination_path"] / r["final_filename"]
+        if not path.exists() and r["asset_type"] != "ending_illustration":
+            missing.append(str(path.relative_to(ROOT)))
+    approved_placeholder = [r["asset_id"] for r in rows
+                            if r["user_approval_status"] == "approved_by_user" and r["placeholder_status"] != "final"]
     for a in approved_placeholder:
-        rep.err(f"art manifest: {a} is approved but integration is placeholder")
+        rep.err(f"art manifest: {a} is approved_by_user but placeholder_status is not final")
     rep.stats["art_assets"] = len(rows)
     rep.stats["art_missing_files"] = missing
     for m in missing:

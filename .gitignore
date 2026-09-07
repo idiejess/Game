@@ -3,6 +3,7 @@
 *.import.tmp
 export/
 !export/.gitkeep
+!export/.gdignore
 # Python
 __pycache__/
 *.pyc
@@ -10,3 +11,4 @@ __pycache__/
 .DS_Store
 # Local sandbox
 /tmp/
+reports/screenshots/

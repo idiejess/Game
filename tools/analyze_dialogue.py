@@ -19,9 +19,14 @@ from collections import Counter, defaultdict
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BANNED = ["the air is thick", "little did", "a chill ran", "you can't help but", "in a world where", "delve", "tapestry",
           "testament to", "palpable", "unbeknownst", "a testament"]
-SLANG = ["okay", "guys", "cool.", "yeah", "hey,", "bro", "whatever", "no way"]
+SLANG = ["okay", "guys", "cool.", "yeah", "hey,", "bro"]
+# Only standalone interjections count as slang; "whatever it was" / "no way down" are plain English.
+SLANG_STANDALONE = [r"\bwhatever[.!?]", r"\bno way[.!?]"]
 MECHANICS = ["resource", "flag", " stat ", "points", "level up", "unlock", "cooldown"]
+# Literal in-world uses that are not mechanics terminology.
+LITERAL_OK = {"flag": ["flown", "fly ", "flags on", "barge", "mast"]}
 NO_EXCLAIM = {"vosk", "bram", "solas", "crane"}
+EXCLAIM_ALLOWED = {"pell"}  # Pell announces; repeated exclamation is his defined voice
 
 
 def words(s):
@@ -72,9 +77,14 @@ def main():
         for s in SLANG:
             if re.search(r"\b" + re.escape(s.strip(".,")) + r"\b", low):
                 warnings.append(f"[{cid}] slang '{s.strip()}'")
+        for rx in SLANG_STANDALONE:
+            if re.search(rx, low):
+                warnings.append(f"[{cid}] slang interjection {rx}")
         if c["speaker"] != "src_ledger":
             for m in MECHANICS:
                 if m in low and "unlock" not in low.replace("unlocked the", ""):
+                    if any(ctx in low for ctx in LITERAL_OK.get(m.strip(), [])):
+                        continue
                     warnings.append(f"[{cid}] mechanics word '{m.strip()}'")
         spk = c["speaker"]
         ch = chars.get(spk, {})
@@ -85,7 +95,7 @@ def main():
                 warnings.append(f"[{cid}] {spk} uses prohibited phrase '{ph}'")
         if spk in NO_EXCLAIM and "!" in t:
             errors.append(f"[{cid}] {spk} never exclaims")
-        if t.count("!") > 1:
+        if t.count("!") > 1 and spk not in EXCLAIM_ALLOWED:
             warnings.append(f"[{cid}] {t.count('!')} exclamation marks")
         if t.count("...") + t.count("\u2026") + t.count("\u2014") > 1:
             warnings.append(f"[{cid}] too many ellipses/dashes")

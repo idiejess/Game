@@ -7,6 +7,7 @@ const MAX_COLUMN_WIDTH := 720.0
 var turn := TurnController.new()
 var water_line: WaterLine
 var column: Control
+var screen_backdrop: ColorRect
 var game_layer: Control
 var hud: VBoxContainer
 var meters: Dictionary = {}
@@ -44,6 +45,9 @@ func _ready() -> void:
 	if not ContentDB.loaded:
 		_show_screen("content_error")
 		return
+	if OS.get_cmdline_user_args().has("--smoke"):
+		_smoke_test()
+		return
 	SaveManager.load(1)
 	if not Settings.get_value("content_warnings_seen"):
 		_show_screen("content_warning")
@@ -71,6 +75,16 @@ func _build() -> void:
 	column = Control.new()
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(column)
+
+	# Full-viewport dimmer behind menu screens; the column-bound screen sits on top of it so the
+	# HUD never shows beside a menu on wide (desktop/landscape) viewports.
+	screen_backdrop = ColorRect.new()
+	screen_backdrop.set_anchors_preset(Control.PRESET_FULL_RECT)
+	screen_backdrop.color = Color(0.06, 0.1, 0.1, 1.0)
+	screen_backdrop.mouse_filter = Control.MOUSE_FILTER_STOP
+	screen_backdrop.visible = false
+	add_child(screen_backdrop)
+	move_child(column, screen_backdrop.get_index())
 
 	game_layer = Control.new()
 	game_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -182,7 +196,9 @@ func _build() -> void:
 ## Letterbox the play column on wide displays; full width on portrait phones.
 func _layout() -> void:
 	var vs := get_viewport_rect().size
-	var w: float = min(vs.x, MAX_COLUMN_WIDTH if vs.x > vs.y else vs.x)
+	# Large text needs a wider column or the five-meter HUD overflows it in landscape.
+	var max_w: float = MAX_COLUMN_WIDTH * max(1.0, float(Settings.get_value("text_scale")))
+	var w: float = min(vs.x, max_w if vs.x > vs.y else vs.x)
 	column.position = Vector2((vs.x - w) / 2.0, 0)
 	column.size = Vector2(w, vs.y)
 	_layout_card()
@@ -193,15 +209,60 @@ func _layout_card() -> void:
 		return
 	var hs := card_holder.size
 	var cw: float = min(hs.x, 640.0)
-	var chh: float = min(hs.y, 1100.0)
+	var chh: float = min(hs.y, 1500.0)
 	card_view.size = Vector2(cw, chh)
 	card_view.pivot_offset = Vector2(cw / 2.0, chh)
 	card_view.set_origin(Vector2((hs.x - cw) / 2.0, (hs.y - chh) / 2.0))
 
 
+## Developer tools ship disabled in release exports; debug builds, the editor and the
+## `--dev` command-line flag enable them.
+static func dev_tools_enabled() -> bool:
+	return OS.is_debug_build() or OS.has_feature("editor") or OS.get_cmdline_user_args().has("--dev")
+
+
+## `--smoke` (works in exported builds): plays 30 watches on a fixed seed into save slot 3, reloads,
+## verifies the state round-trips, prints a summary and exits non-zero on any failure.
+func _smoke_test() -> void:
+	var failures := 0
+	SaveManager.current_slot = 3
+	SaveManager.delete_slot(3)
+	GameState.reset_profile()
+	turn.autosave = false
+	turn.begin_run(4242)
+	game_layer.visible = true
+	var i := 0
+	while GameState.in_run() and i < 30:
+		turn.decide("left" if i % 2 == 0 else "right")
+		i += 1
+	print("smoke: cards=%d watch=%d resources=%s ended=%s fallbacks=%d" % [ContentDB.cards.size(), GameState.watch, str(GameState.run["resources"]), str(GameState.run.get("ended")), int(GameState.run["fallback_count"])])
+	if GameState.in_run():
+		var snap: Dictionary = GameState.snapshot()
+		if not SaveManager.save(3):
+			failures += 1
+			printerr("smoke: save failed")
+		GameState.reset_profile()
+		if not SaveManager.load(3):
+			failures += 1
+			printerr("smoke: load failed")
+		if GameState.run.get("resources") != snap["run"]["resources"] or GameState.run.get("watch") != snap["run"]["watch"]:
+			failures += 1
+			printerr("smoke: state did not round-trip")
+		print("smoke: save/load round-trip %s" % ("ok" if failures == 0 else "FAILED"))
+	if ContentDB.cards.size() != ContentDB.EXPECTED_TOTAL:
+		failures += 1
+	if Loc.strings.size() < 1000:
+		failures += 1
+		printerr("smoke: localization not loaded (%d strings)" % Loc.strings.size())
+	SaveManager.delete_slot(3)
+	get_tree().quit(1 if failures > 0 else 0)
+
+
 # ------------------------------------------------------------------ input
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_dev_panel"):
+		if not dev_tools_enabled():
+			return
 		dev_panel.visible = not dev_panel.visible
 		if dev_panel.visible:
 			dev_panel.refresh()
@@ -401,6 +462,8 @@ func _close_screens() -> void:
 		_screen_node.queue_free()
 	_screen_node = null
 	_current_screen = ""
+	if screen_backdrop:
+		screen_backdrop.visible = false
 	if game_layer.visible and card_view.visible:
 		card_view.grab_focus()
 
@@ -411,6 +474,7 @@ func _show_screen(name: String, args: Dictionary = {}) -> void:
 	var Screens = load("res://game/UI/Screens.gd")
 	_screen_node = Screens.make(name, self, args)
 	screens.add_child(_screen_node)
+	screen_backdrop.visible = true
 	if name == "title":
 		game_layer.visible = false
 		AudioBus.play_music("mus_title")

@@ -64,7 +64,7 @@
     "id": "mi22",
     "stage": 2
    },
-   "text": "I have taken a wager. I have never taken a wager. The Compact does not forbid it, which I checked twice. I shall win, because I have six years of gauge readings and the Sorrel agent has an opinion. I have never wanted to win anything before.",
+   "text": "A wager. I have never taken a wager. The Compact does not forbid it, which I checked twice. I shall win, because I have six years of gauge readings and the Sorrel agent has an opinion. I have never wanted to win anything before.",
    "left": {
     "label": "Show me the readings",
     "outcome": "Six years, to the sixteenth of a mark, in a black book. The pound falls a mark a watch, always, whatever the rain.",
@@ -339,7 +339,7 @@
     "id": "mi23",
     "stage": 1
    },
-   "text": "Three things. A windlass is gone from the lock house. The good one, Dray's. The hands say Hullfolk, because the hands always say Hullfolk. And Mirren says if anyone says Hullfolk again she'll put them in the pound, and she means it.",
+   "text": "A windlass is gone from the lock house. The good one, Dray's. The hands say Hullfolk, because the hands always say Hullfolk. And Mirren says if anyone says Hullfolk again she'll put them in the pound, and she means it.",
    "left": {
     "label": "Search the lock house first",
     "outcome": "You search. Nothing. The hands look at the Reach. Mirren looks at the hands.",

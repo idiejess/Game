@@ -343,7 +343,7 @@
     "id": "MA09",
     "stage": 3
    },
-   "text": "I have been shown a document. I shall not say by whom. It describes a diversion of the River Quell through the Spine into the Summit Pound, constructed without either shore's consent. If true, the Compact was signed over a lie. I note that I am shaking.",
+   "text": "A document has been shown to me. I shall not say by whom. It describes a diversion of the River Quell through the Spine into the Summit Pound, constructed without either shore's consent. If true, the Compact was signed over a lie. I note that I am shaking.",
    "left": {
     "label": "It is true",
     "outcome": "\"Then under Schedule Nine I am obliged to declare it. I have never been obliged to anything so large.\"",
