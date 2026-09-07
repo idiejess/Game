@@ -24,6 +24,7 @@ var screens: Control
 var dev_panel: Control
 var _pending_confirm := ""
 var _shake_amount := 0.0
+var _drag_armed := false
 var _ended := false
 
 
@@ -269,8 +270,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 	if not game_layer.visible or _ended or _any_screen_visible():
-		if event.is_action_pressed("pause_menu") and _any_screen_visible() and _current_screen in ["pause", "settings", "history", "gallery", "archive", "objectives", "endings"]:
-			_close_screens()
+		if event.is_action_pressed("pause_menu") and _any_screen_visible():
+			# Escape backs out one level, mirroring each screen's Back button.
+			match _current_screen:
+				"pause":
+					_close_screens()
+				"settings", "history", "objectives", "gallery", "archive":
+					_show_screen("pause" if GameState.in_run() and game_layer.visible and not _ended else "title")
+				"endings", "slots", "credits":
+					_show_screen("title")
+				_:
+					return
 			get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause_menu"):
@@ -304,8 +314,11 @@ func _on_drag_progress(side: String, ratio: float) -> void:
 		if side != "":
 			d = int(TurnController.preview(card_view.card, side).get(r, 0))
 		meters[r].set_preview(d, ratio)
-	if ratio >= 1.0 and side != "":
+	# Cue once when the drag crosses the commit threshold, not on every motion event past it.
+	var armed := ratio >= 1.0 and side != ""
+	if armed and not _drag_armed:
 		AudioBus.play_sfx("sfx_card_tilt")
+	_drag_armed = armed
 
 
 func _request_decision(side: String) -> void:
@@ -313,7 +326,7 @@ func _request_decision(side: String) -> void:
 		return
 	if Settings.get_value("confirm_decisions") and _pending_confirm != side:
 		_pending_confirm = side
-		var label: String = card_view.card[side]["label"]
+		var label: String = Loc.card_text(card_view.card, side, card_view.card[side]["label"])
 		_show_message(Loc.ui("confirm_hint", "Choose again to confirm: ") + label)
 		card_view.preview_side(side)
 		return

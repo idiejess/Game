@@ -172,17 +172,20 @@ func show_card(c: Dictionary, animate: bool = true) -> void:
 	left_tab.modulate.a = 0.0
 	right_tab.modulate.a = 0.0
 	_load_portrait(c)
+	_dragging = false
+	# Take focus before animating: the previous focus owner's focus_exited may call clear_preview.
+	grab_focus()
+	_kill_tween()
 	if animate and Settings.motion_scale() > 0.0:
 		modulate.a = 0.0
-		position.y = _origin.y + 80
-		_kill_tween()
+		# Reset x too: the previous commit tween left the card a full viewport off to one side.
+		position = _origin + Vector2(0, 80)
 		_tween = create_tween().set_parallel(true)
 		_tween.tween_property(self, "modulate:a", 1.0, RISE_TIME)
 		_tween.tween_property(self, "position:y", _origin.y, RISE_TIME).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	else:
 		modulate.a = 1.0
 		position = _origin
-	grab_focus()
 
 
 func _resolve_text(c: Dictionary) -> String:
@@ -217,6 +220,8 @@ func set_origin(p: Vector2) -> void:
 func _gui_input(event: InputEvent) -> void:
 	if _locked:
 		return
+	# Touch and mouse both drive the drag; with pointer emulation on, one gesture arrives as both
+	# kinds of event, so a press while already dragging is ignored and a second release is a no-op.
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			_begin_drag(event.position)
@@ -234,15 +239,23 @@ func _gui_input(event: InputEvent) -> void:
 		accept_event()
 
 
+## Event positions are local to the card, which itself moves and rotates while dragging, so
+## track the pointer in the parent's coordinate space (unaffected by this control's transform).
+func _to_parent_space(local_pos: Vector2) -> Vector2:
+	return get_transform() * local_pos
+
+
 func _begin_drag(local_pos: Vector2) -> void:
+	if _dragging:
+		return
 	_dragging = true
-	_drag_start = get_global_mouse_position()
+	_drag_start = _to_parent_space(local_pos)
 	_kill_tween()
 	AudioBus.play_sfx("sfx_card_drag")
 
 
-func _update_drag(_local: Vector2) -> void:
-	var dx := get_global_mouse_position().x - _drag_start.x
+func _update_drag(local_pos: Vector2) -> void:
+	var dx := _to_parent_space(local_pos).x - _drag_start.x
 	_set_offset(dx)
 
 
@@ -294,7 +307,8 @@ func preview_side(side: String) -> void:
 
 
 func clear_preview() -> void:
-	if _locked or _dragging:
+	# Nothing to undo when the card is centered; skipping avoids a snap sound on every hover.
+	if _locked or _dragging or is_zero_approx(_offset):
 		return
 	snap_back()
 

@@ -25,6 +25,12 @@ func slot_exists(slot: int) -> bool:
 	return FileAccess.file_exists(slot_path(slot)) or FileAccess.file_exists(backup_path(slot))
 
 
+## A saved run is resumable when it exists and has not ended; watch 0 (first card still showing)
+## counts, otherwise quitting there loses the Keeper and inflates the run number.
+static func _run_resumable(run) -> bool:
+	return run is Dictionary and run.has("seed") and run.get("ended", null) == null
+
+
 func slot_summary(slot: int) -> Dictionary:
 	var data := _read(slot_path(slot))
 	if data.is_empty():
@@ -37,7 +43,7 @@ func slot_summary(slot: int) -> Dictionary:
 		"run_number": int(prof.get("run_number", 0)),
 		"endings": prof.get("endings", []).size(),
 		"unlocks": prof.get("unlocks", []).size(),
-		"in_run": run is Dictionary and run.get("ended", null) == null and int(run.get("watch", 0)) > 0,
+		"in_run": _run_resumable(run),
 		"watch": int(run.get("watch", 0)) if run is Dictionary else 0,
 		"saved_at": str(data.get("saved_at", "")),
 	}
@@ -147,7 +153,7 @@ func load(slot: int = -1) -> bool:
 	GameState.profile = data["profile"]
 	_ensure_profile_keys(GameState.profile)
 	var run = data.get("run", null)
-	if run is Dictionary and run.get("ended", null) == null and int(run.get("watch", 0)) > 0:
+	if _run_resumable(run):
 		GameState.run = _sanitize_run(run)
 		GameState.rng = Rng.new(int(run.get("seed", 1)))
 		GameState.rng.state = int(run.get("rng_state", GameState.rng.state))

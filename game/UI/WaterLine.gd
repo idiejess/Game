@@ -10,6 +10,8 @@ var _t := 0.0
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	set_anchors_preset(Control.PRESET_FULL_RECT)
+	# With reduced motion there is no per-frame redraw, so a contrast toggle must trigger one.
+	Settings.changed.connect(queue_redraw)
 
 
 func set_water(v: int) -> void:

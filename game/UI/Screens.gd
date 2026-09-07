@@ -120,7 +120,7 @@ static func _title(box: Control, main) -> void:
 	_button(box, Loc.ui("credits", "Credits"), func(): main._show_screen("credits"))
 	var rn := int(GameState.profile.get("run_number", 0))
 	_label(box, "%s: %d   %s: %d / %d   %s: %d" % [Loc.ui("keepers", "Keepers"), rn, Loc.ui("cards_seen", "Cards seen"),
-		GameState.profile["discovered_cards"].size(), ContentDB.cards.size(), Loc.ui("endings", "Endings"),
+		GameState.profile["discovered_cards"].size(), ContentDB.cards.size(), Loc.ui("endings_count", "Endings"),
 		GameState.profile["endings"].size()], true)
 	_label(box, Loc.ui("placeholder_notice", "Preview build: art and audio are candidates awaiting final production."), true)
 
@@ -198,14 +198,15 @@ static func _history(box: Control, main) -> void:
 	var h: Array = GameState.run.get("history", [])
 	if h.is_empty():
 		_label(box, Loc.ui("history_empty", "No decisions yet this watch."))
-	for i in range(h.size() - 1, max(-1, h.size() - 40), -1):
+	# Newest first, at most 40 entries; the stop index is exclusive.
+	for i in range(h.size() - 1, max(-1, h.size() - 41), -1):
 		var rec: Dictionary = h[i]
 		var card := ContentDB.get_card(rec["card"])
 		if card.is_empty():
 			continue
 		var ch := ContentDB.get_character(card["speaker"])
 		var l := _label(box, "%s %d  %s: %s\n   → %s" % [Loc.ui("watch", "Watch"), int(rec["watch"]), ch.get("name", ""),
-			card["text"], card[rec["choice"]]["label"]], true)
+			Loc.card_text(card, "text", card["text"]), Loc.card_text(card, rec["choice"], card[rec["choice"]]["label"])], true)
 	_back(box, main)
 
 
@@ -315,7 +316,7 @@ static func _slots(box: Control, main, args: Dictionary) -> void:
 		var s := SaveManager.slot_summary(slot)
 		var desc := Loc.ui("empty_slot", "Empty")
 		if not s.is_empty():
-			desc = "%s %d · %d %s · %s" % [Loc.ui("keeper", "Keeper"), int(s["run_number"]), int(s["endings"]), Loc.ui("endings", "endings"),
+			desc = "%s %d · %d %s · %s" % [Loc.ui("keeper", "Keeper"), int(s["run_number"]), int(s["endings"]), Loc.ui("endings_count", "Endings").to_lower(),
 				(Loc.ui("in_progress", "in progress") if s["in_run"] else Loc.ui("between_runs", "between runs"))]
 		var row := HBoxContainer.new()
 		box.add_child(row)
@@ -325,7 +326,10 @@ static func _slots(box: Control, main, args: Dictionary) -> void:
 		b.custom_minimum_size = Vector2(0, 96)
 		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		b.pressed.connect(func():
-			SaveManager.save()
+			# Persist the slot being left, unless it holds nothing yet (avoids writing an empty
+			# "Keeper 0" file over an unused slot).
+			if int(GameState.profile.get("run_number", 0)) > 0 or GameState.in_run():
+				SaveManager.save()
 			SaveManager.load(slot)
 			main._ended = true
 			main._show_screen("title"))
@@ -338,6 +342,8 @@ static func _slots(box: Control, main, args: Dictionary) -> void:
 			SaveManager.delete_slot(slot)
 			if slot == SaveManager.current_slot:
 				GameState.reset_profile()
+				# The run shown behind the title belongs to the deleted profile.
+				main._ended = true
 			main._show_screen("slots", args))
 		row.add_child(del)
 	_back(box, main, "title")
