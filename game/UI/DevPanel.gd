@@ -18,7 +18,7 @@ var log_label: Label
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = Color(0, 0, 0, 0.93)
 	add_theme_stylebox_override("panel", sb)
@@ -67,6 +67,10 @@ func _ready() -> void:
 	_btn(actions, "Save now", func(): SaveManager.save(); _log("saved slot %d" % SaveManager.current_slot))
 	_btn(actions, "Reset progression", _reset)
 	_btn(actions, "New run", func(): main.start_new_run(); refresh())
+	_btn(actions, "Asset review", func():
+		var gallery = load("res://game/UI/AssetReview.gd").new()
+		gallery.main = main
+		main.add_child(gallery))
 
 	var h := HBoxContainer.new()
 	h.size_flags_vertical = Control.SIZE_EXPAND_FILL

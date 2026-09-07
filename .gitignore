@@ -3,6 +3,7 @@
 *.import.tmp
 export/
 !export/.gitkeep
+!export/.gdignore
 # Python
 __pycache__/
 *.pyc

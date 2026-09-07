@@ -103,3 +103,26 @@ UI now scrolls long text rather than clipping it.
 The Python simulator iterated candidates sorted by id while `ContentDB` indexes unconditional cards
 before conditional ones. Same seed, same weights, different pick. Fixed in the simulator and pinned
 by `test_engine_matches_python_simulator` (40-card trace + resources for seed 12345).
+
+## D-013 — Credits and notices are generated, never hand-written
+`CREDITS.md` and `THIRD_PARTY_NOTICES.md` come from `tools/build_credits.py`, which reads the asset
+licence register, both manifests and the engine's own `Engine.get_copyright_info()` (dumped by
+`tools/dump_engine_licenses.gd`). The generator refuses to run if a register row is missing
+provenance or carries an NC/ND/personal/educational licence. With no sourced assets the register is
+a header only, and the documents say so instead of inventing attributions.
+
+## D-014 — End-to-end playtest is a UI-level harness, not a claim
+No human has played the build. Rather than describe a playthrough, `game/tests/Playtest.tscn` drives
+the real `Main` scene through the same decision entry point as touch, buttons and keys, covering
+first launch → run → screens → save/continue → ending → second Keeper → reload. Its 47 checks and the
+things it cannot cover are in `reports/validation/end_to_end_playtest.md`.
+
+## D-015 — MA08/MA12 left as documented gaps rather than tuned blind
+The 10k simulation completes 10 of 12 major arcs. Experiments lowering MA08's Water gate (62→56→52)
+changed nothing, so the gate is not the bottleneck; scripted policies never hold Water high. Changing
+content or weights to satisfy a simulator that cannot play for the arc risks flattening the design, so
+the gap is recorded in `docs/REMAINING_WORK.md` for a human playthrough or a purpose-built strategy.
+
+## D-016 — Build output is invisible to the editor
+`export/` gained a tracked `.gdignore` after Godot began importing exported PNGs from `export/web/`
+as project resources. The directory stays git-ignored otherwise.

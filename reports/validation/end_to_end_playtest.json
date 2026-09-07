@@ -1,0 +1,208 @@
+{
+	"checks": 47,
+	"ending": "end_res_water_min",
+	"failures": 0,
+	"generated": "2026-09-07T00:29:25",
+	"godot": "4.7.2-stable (official)",
+	"log": [
+		"watch 25 res={ \"water\": 26, \"traffic\": 40, \"coffers\": 50, \"company\": 50, \"town\": 52 } card=evg_weather_16",
+		"watch 50 res={ \"water\": 10, \"traffic\": 45, \"coffers\": 51, \"company\": 48, \"town\": 52 } card=rel_pell_06",
+		"ending: end_res_water_min at watch 63, run 1",
+		"subtitles emitted: 14; unlock notices: 0; fallbacks: 0"
+	],
+	"results": [
+		{
+			"check": "first launch shows content warning (got content_warning)",
+			"ok": true
+		},
+		{
+			"check": "content warning acknowledged persists",
+			"ok": true
+		},
+		{
+			"check": "title after content warning (got title)",
+			"ok": true
+		},
+		{
+			"check": "run started",
+			"ok": true
+		},
+		{
+			"check": "first card is onb_01 (got onb_01)",
+			"ok": true
+		},
+		{
+			"check": "card view shows a card",
+			"ok": true
+		},
+		{
+			"check": "meter water matches state",
+			"ok": true
+		},
+		{
+			"check": "meter traffic matches state",
+			"ok": true
+		},
+		{
+			"check": "meter coffers matches state",
+			"ok": true
+		},
+		{
+			"check": "meter company matches state",
+			"ok": true
+		},
+		{
+			"check": "meter town matches state",
+			"ok": true
+		},
+		{
+			"check": "decision via _request_decision advanced the watch",
+			"ok": true
+		},
+		{
+			"check": "history recorded the decision",
+			"ok": true
+		},
+		{
+			"check": "confirm mode: first press does not commit",
+			"ok": true
+		},
+		{
+			"check": "confirm mode shows a hint",
+			"ok": true
+		},
+		{
+			"check": "confirm mode: second press commits",
+			"ok": true
+		},
+		{
+			"check": "screen pause opens",
+			"ok": true
+		},
+		{
+			"check": "screen settings opens",
+			"ok": true
+		},
+		{
+			"check": "screen history opens",
+			"ok": true
+		},
+		{
+			"check": "screen objectives opens",
+			"ok": true
+		},
+		{
+			"check": "screen gallery opens",
+			"ok": true
+		},
+		{
+			"check": "screen archive opens",
+			"ok": true
+		},
+		{
+			"check": "screen endings opens",
+			"ok": true
+		},
+		{
+			"check": "screens close back to play",
+			"ok": true
+		},
+		{
+			"check": "theme rebuilt at text scale 1.6",
+			"ok": true
+		},
+		{
+			"check": "manual save to slot 3",
+			"ok": true
+		},
+		{
+			"check": "title hides the game layer",
+			"ok": true
+		},
+		{
+			"check": "load slot 3",
+			"ok": true
+		},
+		{
+			"check": "resources restored after continue",
+			"ok": true
+		},
+		{
+			"check": "watch restored after continue",
+			"ok": true
+		},
+		{
+			"check": "same card shown after continue (mi13_2)",
+			"ok": true
+		},
+		{
+			"check": "history restored",
+			"ok": true
+		},
+		{
+			"check": "exactly one ending fired (got 1 after 52 watches)",
+			"ok": true
+		},
+		{
+			"check": "ending screen shown (got ending)",
+			"ok": true
+		},
+		{
+			"check": "card hidden on ending screen",
+			"ok": true
+		},
+		{
+			"check": "ending recorded in Ledger",
+			"ok": true
+		},
+		{
+			"check": "run is over",
+			"ok": true
+		},
+		{
+			"check": "run number 2",
+			"ok": true
+		},
+		{
+			"check": "unlocks persist into the next run",
+			"ok": true
+		},
+		{
+			"check": "second run opens with onb_01 and the meta card ([\"onb_01\", \"meta_new_keeper_2\"])",
+			"ok": true
+		},
+		{
+			"check": "autosave-style save mid second run",
+			"ok": true
+		},
+		{
+			"check": "ending history screen after a recorded ending",
+			"ok": true
+		},
+		{
+			"check": "credits screen",
+			"ok": true
+		},
+		{
+			"check": "reload slot after second run",
+			"ok": true
+		},
+		{
+			"check": "second run resumes from disk",
+			"ok": true
+		},
+		{
+			"check": "Ledger ending history survives reload",
+			"ok": true
+		},
+		{
+			"check": "no fallback cards drawn",
+			"ok": true
+		}
+	],
+	"seed": 4242,
+	"slot": 3,
+	"subtitles": 14,
+	"unlock_notices": 0,
+	"watches_to_ending": 52
+}

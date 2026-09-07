@@ -73,7 +73,7 @@ func decide(side: String) -> Dictionary:
 		ending = GameState.advance_watch()
 	if ending == "":
 		ending = GameState.check_triggered_endings()
-	if ending == "" and GameState.watch >= GameState.LONG_WATCH and not GameState.has_flag("allies_gathered"):
+	if ending == "" and GameState.watch >= GameState.LONG_WATCH and (not GameState.has_flag("allies_gathered") or GameState.watch >= GameState.HARD_WATCH_LIMIT):
 		ending = GameState.long_watch_ending()
 	if ending != "":
 		_stage_ending(ending)

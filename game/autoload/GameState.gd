@@ -17,6 +17,7 @@ const TRAFFIC_QUIET := 35        # traffic at or below: pound recovers +1 per wa
 const TRAFFIC_BUSY := 70         # traffic at or above: pound loses an extra -1 per watch
 const LEDGER_DAY_INTERVAL := 20
 const LONG_WATCH := 100
+const HARD_WATCH_LIMIT := 160    # MA12 may delay retirement, but never past this
 
 var profile: Dictionary = {}
 var run: Dictionary = {}

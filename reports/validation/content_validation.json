@@ -1,9 +1,7 @@
 {
   "ok": true,
   "errors": [],
-  "warnings": [
-    "assets/art_manifest.csv missing"
-  ],
+  "warnings": [],
   "stats": {
     "schema_errors": 0,
     "unused_flags": [
@@ -53,6 +51,8 @@
       "crises": 70,
       "endings_meta": 50
     },
+    "art_assets": 165,
+    "art_missing_files": [],
     "fallback_cards": 4
   }
 }

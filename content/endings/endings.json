@@ -155,7 +155,7 @@
    "lore": [
     "lore_drought_report"
    ],
-   "music": "mus_ending_fail"
+   "music": "mus_ending_ordinary"
   },
   {
    "id": "end_true_river",
@@ -339,7 +339,7 @@
    "lore": [
     "lore_vosk_removed"
    ],
-   "music": "mus_ending_fail",
+   "music": "mus_ending_ordinary",
    "trigger": {
     "watch_min": 40,
     "conditions": {
@@ -357,7 +357,7 @@
    "kind": "false",
    "card": "end_false_purchase",
    "epilogue": "Vane's consortium bought the Sorrel half of the canal. Tolls fell. Traffic rose. The Keeper was retained at a better wage. In the second summer the pound fell to the sills and nobody in Sorrel knew why.",
-   "music": "mus_ending_fail",
+   "music": "mus_ending_ordinary",
    "trigger": {
     "watch_min": 40,
     "conditions": {
@@ -381,7 +381,7 @@
    "lore": [
     "lore_clearance"
    ],
-   "music": "mus_ending_fail",
+   "music": "mus_ending_ordinary",
    "trigger": {
     "watch_min": 30,
     "conditions": {
@@ -400,7 +400,7 @@
    "kind": "false",
    "card": "end_false_blessing",
    "epilogue": "The Lamp Vigil lasted nine nights and on the tenth it rained for a week. The pound rose. The chapel filled. The Keeper knelt with the rest and did not ask the water where it came from.",
-   "music": "mus_ending_fail",
+   "music": "mus_ending_ordinary",
    "trigger": {
     "watch_min": 30,
     "conditions": {
@@ -420,7 +420,7 @@
    "kind": "false",
    "card": "end_false_hero",
    "epilogue": "Hesse made the Keeper famous on both shores. The Company could not dismiss a hero. It gave the Keeper a lecture tour instead, and the summit a new Keeper, and the sluice house a new lock.",
-   "music": "mus_ending_fail",
+   "music": "mus_ending_ordinary",
    "trigger": {
     "watch_min": 40,
     "conditions": {

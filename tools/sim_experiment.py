@@ -57,6 +57,11 @@ def run_variant(name, runs, seed):
         S.Sim.advance = advance
     if name.startswith("arcbonus"):
         S.ARC_ACTIVE_BONUS = float(name[8:])
+    if name.startswith("ma08gate"):
+        # Lower the High Water entry threshold (water min) to test arc reachability.
+        thr = int(name[8:] or 55)
+        for cid in ("ma08_01", "ma08_02", "ma08_04"):
+            cards[cid]["conditions"]["resources"]["water"]["min"] = thr
     if name == "combo":
         # traffic-coupled drift + water gains capped at +8 (x2) + arc bonus 5
         def advance(self):

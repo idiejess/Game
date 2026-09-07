@@ -1,0 +1,1 @@
+Passing the commit threshold. Mood: click. Instrumentation/source: pitch-swept sine. Duration ≈ 0.05s. Loop: no. Original composition only; no copyrighted samples; no imitation of an identifiable work or living composer. See docs/AUDIO_BIBLE.md.

@@ -369,10 +369,17 @@ def manifest_check(rep):
         return
     with open(p, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    missing = [r["filename"] for r in rows if not (ROOT / "assets" / r["filename"]).exists()]
-    approved_placeholder = [r["asset_id"] for r in rows if r["approval_status"] == "approved" and r["integration_status"] == "placeholder"]
+    # Ending illustrations are optional (the ending screen falls back to a background);
+    # every other manifest row must resolve to a file. Deep checks live in tools/validate_assets.py.
+    missing = []
+    for r in rows:
+        path = ROOT / r["destination_path"] / r["final_filename"]
+        if not path.exists() and r["asset_type"] != "ending_illustration":
+            missing.append(str(path.relative_to(ROOT)))
+    approved_placeholder = [r["asset_id"] for r in rows
+                            if r["user_approval_status"] == "approved_by_user" and r["placeholder_status"] != "final"]
     for a in approved_placeholder:
-        rep.err(f"art manifest: {a} is approved but integration is placeholder")
+        rep.err(f"art manifest: {a} is approved_by_user but placeholder_status is not final")
     rep.stats["art_assets"] = len(rows)
     rep.stats["art_missing_files"] = missing
     for m in missing:

@@ -19,7 +19,7 @@
 		},
 		"check": {
 			"enabled": true,
-			"command": "python3 tools/validate_content.py && python3 tools/analyze_dialogue.py && godot --headless --path . game/tests/TestRunner.tscn"
+			"command": "python3 tools/validate_content.py && python3 tools/analyze_dialogue.py && python3 tools/audit_arcs.py && python3 tools/validate_assets.py && godot --headless --path . game/tests/TestRunner.tscn && godot --headless --path . game/tests/Playtest.tscn"
 		}
 	},
 	"mcpServers": []

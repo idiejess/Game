@@ -68,6 +68,29 @@ func test_localization_keys_present() -> void:
 	ok(Loc.strings.has("card.onb_01.text"), "card localization mirror present")
 
 
+func test_accessibility_settings() -> void:
+	var saved := Settings.data.duplicate(true)
+	Settings.data["reduced_motion"] = true
+	ok(Settings.motion_scale() == 0.0, "reduced motion zeroes motion scale")
+	Settings.data["reduced_motion"] = false
+	ok(Settings.motion_scale() == 1.0, "motion scale restored")
+	Settings.data["text_scale"] = 1.6
+	ok(UITheme.scaled(30) == 48, "scaled() honours text scale (%d)" % UITheme.scaled(30))
+	for hc in [false, true]:
+		var t := UITheme.build(1.6, hc)
+		ok(t.default_font_size == int(UITheme.BASE_FONT * 1.6), "theme font size scales (hc=%s)" % hc)
+		var fg: Color = t.get_color("font_color", "Label")
+		var bg: Color = (t.get_stylebox("panel", "PanelContainer") as StyleBoxFlat).bg_color
+		var contrast: float = abs(fg.get_luminance() - bg.get_luminance())
+		ok(contrast > 0.5, "label/panel luminance contrast %.2f (hc=%s)" % [contrast, hc])
+	for sfx in AudioBus._sub_keys:
+		var k: String = "ui." + AudioBus._sub_keys[sfx].trim_prefix("ui.")
+		ok(Loc.strings.has(k), "subtitle text exists for " + sfx)
+	for key in ["text_scale", "high_contrast", "reduced_motion", "screen_shake", "show_buttons", "confirm_decisions", "show_exact_effects", "subtitles"]:
+		ok(Settings.DEFAULTS.has(key), "settings default for " + key)
+	Settings.data = saved
+
+
 func test_portraits_exist_for_every_expression() -> void:
 	var missing: Array = []
 	for cid in ContentDB.characters:
@@ -81,8 +104,8 @@ func test_portraits_exist_for_every_expression() -> void:
 
 func test_audio_assets_exist() -> void:
 	var missing: Array = []
-	for id in ["sfx_card_drag", "sfx_card_commit", "sfx_res_up", "sfx_res_down", "sfx_warning", "sfx_death", "sfx_unlock", "sfx_telegram", "mus_title", "mus_ambient", "mus_crisis"]:
-		if not FileAccess.file_exists("res://assets/audio/%s.wav" % id):
+	for id in ["sfx_card_drag", "sfx_card_commit", "sfx_res_up", "sfx_res_down", "sfx_warning", "sfx_death", "sfx_unlock", "sfx_telegram", "sfx_revelation", "sfx_success", "mus_title", "mus_ambient", "mus_crisis", "mus_ending_fail", "mus_ending_true", "mus_ending_ordinary"]:
+		if AudioBus.asset_path(id) == "":
 			missing.append(id)
 	ok(missing.is_empty(), "missing audio placeholders: " + str(missing))
 

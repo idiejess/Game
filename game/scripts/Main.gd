@@ -44,6 +44,9 @@ func _ready() -> void:
 	if not ContentDB.loaded:
 		_show_screen("content_error")
 		return
+	if OS.get_cmdline_user_args().has("--smoke"):
+		_smoke_test()
+		return
 	SaveManager.load(1)
 	if not Settings.get_value("content_warnings_seen"):
 		_show_screen("content_warning")
@@ -203,6 +206,43 @@ func _layout_card() -> void:
 ## `--dev` command-line flag enable them.
 static func dev_tools_enabled() -> bool:
 	return OS.is_debug_build() or OS.has_feature("editor") or OS.get_cmdline_user_args().has("--dev")
+
+
+## `--smoke` (works in exported builds): plays 30 watches on a fixed seed into save slot 3, reloads,
+## verifies the state round-trips, prints a summary and exits non-zero on any failure.
+func _smoke_test() -> void:
+	var failures := 0
+	SaveManager.current_slot = 3
+	SaveManager.delete_slot(3)
+	GameState.reset_profile()
+	turn.autosave = false
+	turn.begin_run(4242)
+	game_layer.visible = true
+	var i := 0
+	while GameState.in_run() and i < 30:
+		turn.decide("left" if i % 2 == 0 else "right")
+		i += 1
+	print("smoke: cards=%d watch=%d resources=%s ended=%s fallbacks=%d" % [ContentDB.cards.size(), GameState.watch, str(GameState.run["resources"]), str(GameState.run.get("ended")), int(GameState.run["fallback_count"])])
+	if GameState.in_run():
+		var snap: Dictionary = GameState.snapshot()
+		if not SaveManager.save(3):
+			failures += 1
+			printerr("smoke: save failed")
+		GameState.reset_profile()
+		if not SaveManager.load(3):
+			failures += 1
+			printerr("smoke: load failed")
+		if GameState.run.get("resources") != snap["run"]["resources"] or GameState.run.get("watch") != snap["run"]["watch"]:
+			failures += 1
+			printerr("smoke: state did not round-trip")
+		print("smoke: save/load round-trip %s" % ("ok" if failures == 0 else "FAILED"))
+	if ContentDB.cards.size() != ContentDB.EXPECTED_TOTAL:
+		failures += 1
+	if Loc.strings.size() < 1000:
+		failures += 1
+		printerr("smoke: localization not loaded (%d strings)" % Loc.strings.size())
+	SaveManager.delete_slot(3)
+	get_tree().quit(1 if failures > 0 else 0)
 
 
 # ------------------------------------------------------------------ input

@@ -44,6 +44,13 @@ static func make(name: String, main, args: Dictionary) -> Control:
 	return root
 
 
+static func _first_existing(paths: Array) -> String:
+	for p in paths:
+		if ResourceLoader.exists(p):
+			return p
+	return ""
+
+
 static func _walk(n: Node) -> Array:
 	var out := [n]
 	for c in n.get_children():
@@ -338,10 +345,12 @@ static func _slots(box: Control, main, args: Dictionary) -> void:
 
 static func _credits(box: Control, main) -> void:
 	_title_label(box, Loc.ui("credits", "Credits"))
-	_label(box, "HALFWAY LOCK — Keeper of the Meridian Canal")
-	_label(box, "An original narrative decision game. Design, writing, engineering and tooling produced in-repository; see docs/ for the full bibles.", true)
-	_label(box, "Built with Godot Engine 4 (MIT). Portraits and audio in this build are labeled placeholders awaiting final production.", true)
-	_label(box, "Content warnings: death and drowning (described, not depicted); displacement; alcohol; institutional injustice.", true)
+	_label(box, Loc.ui("credits_line1", "HALFWAY LOCK — Keeper of the Meridian Canal"))
+	_label(box, Loc.ui("credits_line2", "An original narrative decision game. Design, writing, code, art and audio were produced for this project; nothing is borrowed from another game."), true)
+	_label(box, Loc.ui("credits_line3", "Built with Godot Engine 4 (MIT licence). Full third-party notices ship as THIRD_PARTY_NOTICES.md; asset provenance is in CREDITS.md."), true)
+	_label(box, Loc.ui("credits_line4", "Art and audio in this build are original procedural candidates awaiting final production."), true)
+	_label(box, Loc.ui("credits_line5", "Content warnings: death and drowning (described, not depicted); displacement; alcohol; institutional injustice."), true)
+	_label(box, Loc.ui("credits_line6", "Privacy: the game stores settings and saves on this device only and sends nothing anywhere."), true)
 	_back(box, main, "title")
 
 
@@ -360,6 +369,20 @@ static func _ending(box: Control, main, args: Dictionary) -> void:
 	var kind := str(e.get("kind", ""))
 	_label(box, {"true": "A TRUE ENDING", "revelation": "THE LEDGER GROWS", "false": "AN ENDING, OF SORTS"}.get(kind, "THE KEEPER'S WATCH ENDS"), true)
 	_title_label(box, str(e.get("title", eid)))
+	# Illustration: the ending's own picture when produced, else its background variant. Missing
+	# files are skipped so an incomplete asset pass never breaks the screen.
+	var art := _first_existing(["res://assets/endings/ending_%s.png" % eid.trim_prefix("end_"),
+		"res://assets/backgrounds/bg_ending_%s.png" % ("true" if kind == "true" else ("fail" if kind in ["resource_death", "crisis"] else "true")),
+		"res://assets/backgrounds/bg_pound_night.png"])
+	if art != "":
+		var tex := TextureRect.new()
+		tex.texture = load(art)
+		tex.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		tex.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		tex.custom_minimum_size = Vector2(0, 260)
+		tex.clip_contents = true
+		tex.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		box.add_child(tex)
 	_label(box, str(e.get("epilogue", "")))
 	_label(box, "%s %d · %s %d" % [Loc.ui("keeper", "Keeper"), GameState.run_number(), Loc.ui("watches_kept", "watches kept:"), GameState.watch], true)
 	var new_unlocks: Array = e.get("unlocks", [])

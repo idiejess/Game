@@ -1,6 +1,6 @@
 {
   "failures": 0,
-  "generated": "2026-09-06T22:48:21",
+  "generated": "2026-09-07T00:34:07",
   "results": [
     {
       "message": "content loaded without errors: []",
@@ -48,7 +48,7 @@
       "test": "test_loader_rejects_invalid_card"
     },
     {
-      "message": "en localization has 5130 strings",
+      "message": "en localization has 5142 strings",
       "ok": true,
       "test": "test_localization_keys_present"
     },
@@ -81,6 +81,141 @@
       "message": "card localization mirror present",
       "ok": true,
       "test": "test_localization_keys_present"
+    },
+    {
+      "message": "reduced motion zeroes motion scale",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "motion scale restored",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "scaled() honours text scale (48)",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "theme font size scales (hc=false)",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "label/panel luminance contrast 0.69 (hc=false)",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "theme font size scales (hc=true)",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "label/panel luminance contrast 1.00 (hc=true)",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_telegram",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_warning",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_death",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_unlock",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_revelation",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_success",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_res_danger",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_gate_move",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for sfx_bell",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for mus_crisis",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for mus_ending_true",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "subtitle text exists for mus_ending_fail",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for text_scale",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for high_contrast",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for reduced_motion",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for screen_shake",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for show_buttons",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for confirm_decisions",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for show_exact_effects",
+      "ok": true,
+      "test": "test_accessibility_settings"
+    },
+    {
+      "message": "settings default for subtitles",
+      "ok": true,
+      "test": "test_accessibility_settings"
     },
     {
       "message": "missing portraits: []",
@@ -1118,5 +1253,5 @@
       "test": "test_every_ending_has_card_and_every_arc_has_cards"
     }
   ],
-  "total": 223
+  "total": 250
 }

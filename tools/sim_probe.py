@@ -72,7 +72,7 @@ def main():
                     high[res] += 1
             if not ending:
                 ending = sim.check_triggered_endings()
-            if not ending and r["watch"] >= S.LONG_WATCH and not sim.has_flag("allies_gathered"):
+            if not ending and r["watch"] >= S.LONG_WATCH and (not sim.has_flag("allies_gathered") or r["watch"] >= S.HARD_WATCH_LIMIT):
                 ending = sim.long_watch_ending()
             if ending:
                 e = endings.get(ending, {})

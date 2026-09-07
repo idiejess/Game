@@ -27,6 +27,7 @@ REPEAT_PENALTY, UNDISCOVERED_BONUS, ARC_ACTIVE_BONUS = 0.25, 1.6, 5.0
 RESOURCE_DANGER_BONUS, SPEAKER_RECENT_PENALTY, CATEGORY_RECENT_PENALTY = 2.5, 0.4, 0.6
 CRISIS_BASE_WEIGHT, MAX_DELAY_POSTPONES = 0.15, 3
 LEDGER_DAY_INTERVAL, LONG_WATCH, WATER_DRIFT = 20, 100, -1
+HARD_WATCH_LIMIT = 160
 TRAFFIC_QUIET, TRAFFIC_BUSY = 35, 70
 
 
@@ -539,7 +540,7 @@ class Sim:
                 ending = self.advance()
             if not ending:
                 ending = self.check_triggered_endings()
-            if not ending and r["watch"] >= LONG_WATCH and not self.has_flag("allies_gathered"):
+            if not ending and r["watch"] >= LONG_WATCH and (not self.has_flag("allies_gathered") or r["watch"] >= HARD_WATCH_LIMIT):
                 ending = self.long_watch_ending()
             if ending:
                 e = self.endings.get(ending, {})

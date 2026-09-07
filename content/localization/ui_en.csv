@@ -105,3 +105,15 @@ ui.lore.lore_vosk_confession,Vosk keeps the secret because she believes the trut
 ui.lore.lore_river_returned,The Quell can be sent home. The canal becomes a seasonal road.
 ui.lore.lore_open_ledger,Under the Compact the truth can be filed on both shores at once.
 ui.lore.lore_keepers_cut,Marrow's regulating sluice can be finished. Nobody need know.
+ui.audio.revelation,[low swell; something gives way]
+ui.audio.success,[plucked bass and a single bell]
+ui.audio.gate,[gate timbers groan; chain runs]
+ui.audio.bell,[the summit bell]
+ui.audio.true_music,[the River theme on a lone fiddle]
+ui.audio.fail_music,[a bell; the harmonium dies away]
+ui.credits_line1,HALFWAY LOCK — Keeper of the Meridian Canal
+ui.credits_line2,"An original narrative decision game. Design, writing, code, art and audio were produced for this project; nothing is borrowed from another game."
+ui.credits_line3,Built with Godot Engine 4 (MIT licence). Full third-party notices ship as THIRD_PARTY_NOTICES.md; asset provenance is in CREDITS.md.
+ui.credits_line4,Art and audio in this build are original procedural candidates awaiting final production.
+ui.credits_line5,"Content warnings: death and drowning (described, not depicted); displacement; alcohol; institutional injustice."
+ui.credits_line6,Privacy: the game stores settings and saves on this device only and sends nothing anywhere.

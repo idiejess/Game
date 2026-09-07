@@ -50,7 +50,7 @@ func _ready() -> void:
 	SaveManager.delete_slot(slot)
 	GameState.reset_profile()
 	main = load("res://game/scripts/Main.gd").new()
-	main.set_anchors_preset(Control.PRESET_FULL_RECT)
+	main.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(main)
 	await _frames(4)
 	await _shot("01_title")
@@ -104,8 +104,15 @@ func _ready() -> void:
 	await _shot("12_ending_screen")
 	if OS.has_feature("editor") or OS.is_debug_build():
 		main.dev_panel.visible = true
+		main.dev_panel.refresh()
 		await _frames(3)
 		await _shot("13_dev_panel")
+		var gallery = load("res://game/UI/AssetReview.gd").new()
+		gallery.main = main
+		main.add_child(gallery)
+		await _frames(3)
+		await _shot("13b_asset_review")
+		gallery.queue_free()
 		main.dev_panel.visible = false
 	main._show_screen("credits")
 	await _frames(3)
